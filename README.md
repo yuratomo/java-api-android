@@ -2,6 +2,8 @@ java-api-android
 =============
 Define of java-api-complete.vim for android
 
+namespaces
+----------
     android.accessibilityservice
     android.accounts
     android.animation
