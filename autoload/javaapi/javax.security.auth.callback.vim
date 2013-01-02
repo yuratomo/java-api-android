@@ -13,7 +13,7 @@ call javaapi#class('PasswordCallback', 'Serializable', [
   \ javaapi#method(0,'clearPassword(', ')', 'void'),
   \ ])
 
-call javaapi#class('UnsupportedCallbackException', '', [
+call javaapi#class('UnsupportedCallbackException', 'Exception', [
   \ javaapi#method(0,'UnsupportedCallbackException(', 'Callback)', 'public'),
   \ javaapi#method(0,'UnsupportedCallbackException(', 'Callback, String)', 'public'),
   \ javaapi#method(0,'getCallback(', ')', 'Callback'),

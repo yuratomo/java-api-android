@@ -6,12 +6,12 @@ call javaapi#interface('DSAParams', '', [
   \ javaapi#method(0,'getG(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('ECPrivateKey', '', [
+call javaapi#interface('ECPrivateKey', 'ECKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getS(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('DSAPrivateKey', '', [
+call javaapi#interface('DSAPrivateKey', 'PrivateKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getX(', ')', 'BigInteger'),
   \ ])
@@ -29,12 +29,12 @@ call javaapi#interface('ECKey', '', [
   \ javaapi#method(0,'getParams(', ')', 'ECParameterSpec'),
   \ ])
 
-call javaapi#interface('DSAPublicKey', '', [
+call javaapi#interface('DSAPublicKey', 'PublicKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getY(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('RSAPrivateCrtKey', '', [
+call javaapi#interface('RSAPrivateCrtKey', 'RSAPrivateKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getPublicExponent(', ')', 'BigInteger'),
   \ javaapi#method(0,'getPrimeP(', ')', 'BigInteger'),
@@ -44,12 +44,12 @@ call javaapi#interface('RSAPrivateCrtKey', '', [
   \ javaapi#method(0,'getCrtCoefficient(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('RSAPublicKey', '', [
+call javaapi#interface('RSAPublicKey', 'RSAKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getPublicExponent(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('RSAMultiPrimePrivateCrtKey', '', [
+call javaapi#interface('RSAMultiPrimePrivateCrtKey', 'RSAPrivateKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getPublicExponent(', ')', 'BigInteger'),
   \ javaapi#method(0,'getPrimeP(', ')', 'BigInteger'),
@@ -64,12 +64,12 @@ call javaapi#interface('RSAKey', '', [
   \ javaapi#method(0,'getModulus(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('RSAPrivateKey', '', [
+call javaapi#interface('RSAPrivateKey', 'RSAKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getPrivateExponent(', ')', 'BigInteger'),
   \ ])
 
-call javaapi#interface('ECPublicKey', '', [
+call javaapi#interface('ECPublicKey', 'ECKey', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getW(', ')', 'ECPoint'),
   \ ])

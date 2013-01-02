@@ -1,426 +1,5 @@
 call javaapi#namespace('android.os')
 
-call javaapi#class('Status', '', [
-  \ javaapi#field(1,'FINISHED', 'Status'),
-  \ javaapi#field(1,'PENDING', 'Status'),
-  \ javaapi#field(1,'RUNNING', 'Status'),
-  \ javaapi#method(1,'values(', ')', 'Status[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Status'),
-  \ ])
-
-call javaapi#class('ResultReceiver', 'Parcelable', [
-  \ javaapi#field(1,'CREATOR', 'ResultReceiver>'),
-  \ javaapi#method(0,'ResultReceiver(', 'Handler)', 'public'),
-  \ javaapi#method(0,'send(', 'int, Bundle)', 'void'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#interface('Creator<T>', '', [
-  \ javaapi#method(0,'createFromParcel(', 'Parcel)', 'T'),
-  \ javaapi#method(0,'newArray(', 'int)', 'T[]'),
-  \ ])
-
-call javaapi#class('UserManager', '', [
-  \ javaapi#method(0,'getUserName(', ')', 'String'),
-  \ javaapi#method(0,'isUserAGoat(', ')', 'boolean'),
-  \ javaapi#method(0,'isUserRunning(', 'UserHandle)', 'boolean'),
-  \ javaapi#method(0,'isUserRunningOrStopping(', 'UserHandle)', 'boolean'),
-  \ javaapi#method(0,'getSerialNumberForUser(', 'UserHandle)', 'long'),
-  \ javaapi#method(0,'getUserForSerialNumber(', 'long)', 'UserHandle'),
-  \ javaapi#method(0,'getUserCount(', ')', 'int'),
-  \ ])
-
-call javaapi#interface('ClassLoaderCreator<T>', '', [
-  \ javaapi#method(0,'createFromParcel(', 'Parcel, ClassLoader)', 'T'),
-  \ ])
-
-call javaapi#interface('ProgressListener', '', [
-  \ javaapi#method(0,'onProgress(', 'int)', 'void'),
-  \ ])
-
-call javaapi#class('WakeLock', '', [
-  \ javaapi#method(0,'setReferenceCounted(', 'boolean)', 'void'),
-  \ javaapi#method(0,'acquire(', ')', 'void'),
-  \ javaapi#method(0,'acquire(', 'long)', 'void'),
-  \ javaapi#method(0,'release(', ')', 'void'),
-  \ javaapi#method(0,'isHeld(', ')', 'boolean'),
-  \ javaapi#method(0,'setWorkSource(', 'WorkSource)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('WorkSource', 'Parcelable', [
-  \ javaapi#field(1,'CREATOR', 'WorkSource>'),
-  \ javaapi#method(0,'WorkSource(', ')', 'public'),
-  \ javaapi#method(0,'WorkSource(', 'WorkSource)', 'public'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'diff(', 'WorkSource)', 'boolean'),
-  \ javaapi#method(0,'set(', 'WorkSource)', 'void'),
-  \ javaapi#method(0,'add(', 'WorkSource)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'WorkSource)', 'boolean'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('ConditionVariable', '', [
-  \ javaapi#method(0,'ConditionVariable(', ')', 'public'),
-  \ javaapi#method(0,'ConditionVariable(', 'boolean)', 'public'),
-  \ javaapi#method(0,'open(', ')', 'void'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'block(', ')', 'void'),
-  \ javaapi#method(0,'block(', 'long)', 'boolean'),
-  \ ])
-
-call javaapi#class('StrictMode', '', [
-  \ javaapi#method(1,'setThreadPolicy(', 'ThreadPolicy)', 'void'),
-  \ javaapi#method(1,'getThreadPolicy(', ')', 'ThreadPolicy'),
-  \ javaapi#method(1,'allowThreadDiskWrites(', ')', 'ThreadPolicy'),
-  \ javaapi#method(1,'allowThreadDiskReads(', ')', 'ThreadPolicy'),
-  \ javaapi#method(1,'setVmPolicy(', 'VmPolicy)', 'void'),
-  \ javaapi#method(1,'getVmPolicy(', ')', 'VmPolicy'),
-  \ javaapi#method(1,'enableDefaults(', ')', 'void'),
-  \ javaapi#method(1,'noteSlowCall(', 'String)', 'void'),
-  \ ])
-
-call javaapi#class('MemoryFile', '', [
-  \ javaapi#method(0,'MemoryFile(', 'String, int) throws IOException', 'public'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'isPurgingAllowed(', ')', 'boolean'),
-  \ javaapi#method(0,'allowPurging(', 'boolean) throws IOException', 'boolean'),
-  \ javaapi#method(0,'getInputStream(', ')', 'InputStream'),
-  \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
-  \ javaapi#method(0,'readBytes(', 'byte[], int, int, int) throws IOException', 'int'),
-  \ javaapi#method(0,'writeBytes(', 'byte[], int, int, int) throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('Entry', 'Closeable', [
-  \ javaapi#field(1,'CREATOR', 'Entry>'),
-  \ javaapi#method(0,'Entry(', 'String, long)', 'public'),
-  \ javaapi#method(0,'Entry(', 'String, long, String)', 'public'),
-  \ javaapi#method(0,'Entry(', 'String, long, byte[], int)', 'public'),
-  \ javaapi#method(0,'Entry(', 'String, long, ParcelFileDescriptor, int)', 'public'),
-  \ javaapi#method(0,'Entry(', 'String, long, File, int) throws IOException', 'public'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'getTag(', ')', 'String'),
-  \ javaapi#method(0,'getTimeMillis(', ')', 'long'),
-  \ javaapi#method(0,'getFlags(', ')', 'int'),
-  \ javaapi#method(0,'getText(', 'int)', 'String'),
-  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#class('VERSION', '', [
-  \ javaapi#field(1,'INCREMENTAL', 'String'),
-  \ javaapi#field(1,'RELEASE', 'String'),
-  \ javaapi#field(1,'SDK', 'String'),
-  \ javaapi#field(1,'SDK_INT', 'int'),
-  \ javaapi#field(1,'CODENAME', 'String'),
-  \ javaapi#method(0,'VERSION(', ')', 'public'),
-  \ ])
-
-call javaapi#class('RemoteException', '', [
-  \ javaapi#method(0,'RemoteException(', ')', 'public'),
-  \ javaapi#method(0,'RemoteException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('ThreadPolicy', '', [
-  \ javaapi#field(1,'LAX', 'ThreadPolicy'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('BadParcelableException', '', [
-  \ javaapi#method(0,'BadParcelableException(', 'String)', 'public'),
-  \ javaapi#method(0,'BadParcelableException(', 'Exception)', 'public'),
-  \ ])
-
-call javaapi#class('AsyncTask<Params,Progress,Result>', '', [
-  \ javaapi#field(1,'THREAD_POOL_EXECUTOR', 'Executor'),
-  \ javaapi#field(1,'SERIAL_EXECUTOR', 'Executor'),
-  \ javaapi#method(0,'AsyncTask(', ')', 'public'),
-  \ javaapi#method(0,'getStatus(', ')', 'Status'),
-  \ javaapi#method(0,'isCancelled(', ')', 'boolean'),
-  \ javaapi#method(0,'cancel(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'get(', ') throws InterruptedException, ExecutionException', 'Result'),
-  \ javaapi#method(0,'get(', 'long, TimeUnit) throws InterruptedException, ExecutionException, TimeoutException', 'Result'),
-  \ javaapi#method(0,'execute(', ')', 'Result>'),
-  \ javaapi#method(0,'executeOnExecutor(', 'Executor, )', 'Result>'),
-  \ javaapi#method(1,'execute(', 'Runnable)', 'void'),
-  \ ])
-
-call javaapi#class('Debug', '', [
-  \ javaapi#field(1,'TRACE_COUNT_ALLOCS', 'int'),
-  \ javaapi#field(1,'SHOW_FULL_DETAIL', 'int'),
-  \ javaapi#field(1,'SHOW_CLASSLOADER', 'int'),
-  \ javaapi#field(1,'SHOW_INITIALIZED', 'int'),
-  \ javaapi#method(1,'waitForDebugger(', ')', 'void'),
-  \ javaapi#method(1,'waitingForDebugger(', ')', 'boolean'),
-  \ javaapi#method(1,'isDebuggerConnected(', ')', 'boolean'),
-  \ javaapi#method(1,'changeDebugPort(', 'int)', 'void'),
-  \ javaapi#method(1,'startNativeTracing(', ')', 'void'),
-  \ javaapi#method(1,'stopNativeTracing(', ')', 'void'),
-  \ javaapi#method(1,'enableEmulatorTraceOutput(', ')', 'void'),
-  \ javaapi#method(1,'startMethodTracing(', ')', 'void'),
-  \ javaapi#method(1,'startMethodTracing(', 'String)', 'void'),
-  \ javaapi#method(1,'startMethodTracing(', 'String, int)', 'void'),
-  \ javaapi#method(1,'startMethodTracing(', 'String, int, int)', 'void'),
-  \ javaapi#method(1,'stopMethodTracing(', ')', 'void'),
-  \ javaapi#method(1,'threadCpuTimeNanos(', ')', 'long'),
-  \ javaapi#method(1,'startAllocCounting(', ')', 'void'),
-  \ javaapi#method(1,'stopAllocCounting(', ')', 'void'),
-  \ javaapi#method(1,'getGlobalAllocCount(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalAllocSize(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalFreedCount(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalFreedSize(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalClassInitCount(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalClassInitTime(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalExternalAllocCount(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalExternalAllocSize(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalExternalFreedCount(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalExternalFreedSize(', ')', 'int'),
-  \ javaapi#method(1,'getGlobalGcInvocationCount(', ')', 'int'),
-  \ javaapi#method(1,'getThreadAllocCount(', ')', 'int'),
-  \ javaapi#method(1,'getThreadAllocSize(', ')', 'int'),
-  \ javaapi#method(1,'getThreadExternalAllocCount(', ')', 'int'),
-  \ javaapi#method(1,'getThreadExternalAllocSize(', ')', 'int'),
-  \ javaapi#method(1,'getThreadGcInvocationCount(', ')', 'int'),
-  \ javaapi#method(1,'resetGlobalAllocCount(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalAllocSize(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalFreedCount(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalFreedSize(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalClassInitCount(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalClassInitTime(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalExternalAllocCount(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalExternalAllocSize(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalExternalFreedCount(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalExternalFreedSize(', ')', 'void'),
-  \ javaapi#method(1,'resetGlobalGcInvocationCount(', ')', 'void'),
-  \ javaapi#method(1,'resetThreadAllocCount(', ')', 'void'),
-  \ javaapi#method(1,'resetThreadAllocSize(', ')', 'void'),
-  \ javaapi#method(1,'resetThreadExternalAllocCount(', ')', 'void'),
-  \ javaapi#method(1,'resetThreadExternalAllocSize(', ')', 'void'),
-  \ javaapi#method(1,'resetThreadGcInvocationCount(', ')', 'void'),
-  \ javaapi#method(1,'resetAllCounts(', ')', 'void'),
-  \ javaapi#method(1,'getNativeHeapSize(', ')', 'long'),
-  \ javaapi#method(1,'getNativeHeapAllocatedSize(', ')', 'long'),
-  \ javaapi#method(1,'getNativeHeapFreeSize(', ')', 'long'),
-  \ javaapi#method(1,'getMemoryInfo(', 'MemoryInfo)', 'void'),
-  \ javaapi#method(1,'getPss(', ')', 'long'),
-  \ javaapi#method(1,'setAllocationLimit(', 'int)', 'int'),
-  \ javaapi#method(1,'setGlobalAllocationLimit(', 'int)', 'int'),
-  \ javaapi#method(1,'printLoadedClasses(', 'int)', 'void'),
-  \ javaapi#method(1,'getLoadedClassCount(', ')', 'int'),
-  \ javaapi#method(1,'dumpHprofData(', 'String) throws IOException', 'void'),
-  \ javaapi#method(1,'getBinderSentTransactions(', ')', 'int'),
-  \ javaapi#method(1,'getBinderReceivedTransactions(', ')', 'int'),
-  \ javaapi#method(1,'getBinderLocalObjectCount(', ')', 'int'),
-  \ javaapi#method(1,'getBinderProxyObjectCount(', ')', 'int'),
-  \ javaapi#method(1,'getBinderDeathObjectCount(', ')', 'int'),
-  \ javaapi#method(1,'dumpService(', 'String, FileDescriptor, String[])', 'boolean'),
-  \ ])
-
-call javaapi#interface('DeathRecipient', '', [
-  \ javaapi#method(0,'binderDied(', ')', 'void'),
-  \ ])
-
-call javaapi#class('PatternMatcher', 'Parcelable', [
-  \ javaapi#field(1,'PATTERN_LITERAL', 'int'),
-  \ javaapi#field(1,'PATTERN_PREFIX', 'int'),
-  \ javaapi#field(1,'PATTERN_SIMPLE_GLOB', 'int'),
-  \ javaapi#field(1,'CREATOR', 'PatternMatcher>'),
-  \ javaapi#method(0,'PatternMatcher(', 'String, int)', 'public'),
-  \ javaapi#method(0,'PatternMatcher(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getType(', ')', 'int'),
-  \ javaapi#method(0,'match(', 'String)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#class('TransactionTooLargeException', '', [
-  \ javaapi#method(0,'TransactionTooLargeException(', ')', 'public'),
-  \ ])
-
-call javaapi#class('Bundle', 'Cloneable', [
-  \ javaapi#field(1,'EMPTY', 'Bundle'),
-  \ javaapi#field(1,'CREATOR', 'Bundle>'),
-  \ javaapi#method(0,'Bundle(', ')', 'public'),
-  \ javaapi#method(0,'Bundle(', 'ClassLoader)', 'public'),
-  \ javaapi#method(0,'Bundle(', 'int)', 'public'),
-  \ javaapi#method(0,'Bundle(', 'Bundle)', 'public'),
-  \ javaapi#method(0,'setClassLoader(', 'ClassLoader)', 'void'),
-  \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'containsKey(', 'String)', 'boolean'),
-  \ javaapi#method(0,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,'remove(', 'String)', 'void'),
-  \ javaapi#method(0,'putAll(', 'Bundle)', 'void'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ javaapi#method(0,'hasFileDescriptors(', ')', 'boolean'),
-  \ javaapi#method(0,'putBoolean(', 'String, boolean)', 'void'),
-  \ javaapi#method(0,'putByte(', 'String, byte)', 'void'),
-  \ javaapi#method(0,'putChar(', 'String, char)', 'void'),
-  \ javaapi#method(0,'putShort(', 'String, short)', 'void'),
-  \ javaapi#method(0,'putInt(', 'String, int)', 'void'),
-  \ javaapi#method(0,'putLong(', 'String, long)', 'void'),
-  \ javaapi#method(0,'putFloat(', 'String, float)', 'void'),
-  \ javaapi#method(0,'putDouble(', 'String, double)', 'void'),
-  \ javaapi#method(0,'putString(', 'String, String)', 'void'),
-  \ javaapi#method(0,'putCharSequence(', 'String, CharSequence)', 'void'),
-  \ javaapi#method(0,'putParcelable(', 'String, Parcelable)', 'void'),
-  \ javaapi#method(0,'putParcelableArray(', 'String, Parcelable[])', 'void'),
-  \ javaapi#method(0,'putParcelableArrayList(', 'String, ArrayList<? extends Parcelable>)', 'void'),
-  \ javaapi#method(0,'putSparseParcelableArray(', 'String, SparseArray<? extends Parcelable>)', 'void'),
-  \ javaapi#method(0,'putIntegerArrayList(', 'String, ArrayList<Integer>)', 'void'),
-  \ javaapi#method(0,'putStringArrayList(', 'String, ArrayList<String>)', 'void'),
-  \ javaapi#method(0,'putCharSequenceArrayList(', 'String, ArrayList<CharSequence>)', 'void'),
-  \ javaapi#method(0,'putSerializable(', 'String, Serializable)', 'void'),
-  \ javaapi#method(0,'putBooleanArray(', 'String, boolean[])', 'void'),
-  \ javaapi#method(0,'putByteArray(', 'String, byte[])', 'void'),
-  \ javaapi#method(0,'putShortArray(', 'String, short[])', 'void'),
-  \ javaapi#method(0,'putCharArray(', 'String, char[])', 'void'),
-  \ javaapi#method(0,'putIntArray(', 'String, int[])', 'void'),
-  \ javaapi#method(0,'putLongArray(', 'String, long[])', 'void'),
-  \ javaapi#method(0,'putFloatArray(', 'String, float[])', 'void'),
-  \ javaapi#method(0,'putDoubleArray(', 'String, double[])', 'void'),
-  \ javaapi#method(0,'putStringArray(', 'String, String[])', 'void'),
-  \ javaapi#method(0,'putCharSequenceArray(', 'String, CharSequence[])', 'void'),
-  \ javaapi#method(0,'putBundle(', 'String, Bundle)', 'void'),
-  \ javaapi#method(0,'getBoolean(', 'String)', 'boolean'),
-  \ javaapi#method(0,'getBoolean(', 'String, boolean)', 'boolean'),
-  \ javaapi#method(0,'getByte(', 'String)', 'byte'),
-  \ javaapi#method(0,'getByte(', 'String, byte)', 'Byte'),
-  \ javaapi#method(0,'getChar(', 'String)', 'char'),
-  \ javaapi#method(0,'getChar(', 'String, char)', 'char'),
-  \ javaapi#method(0,'getShort(', 'String)', 'short'),
-  \ javaapi#method(0,'getShort(', 'String, short)', 'short'),
-  \ javaapi#method(0,'getInt(', 'String)', 'int'),
-  \ javaapi#method(0,'getInt(', 'String, int)', 'int'),
-  \ javaapi#method(0,'getLong(', 'String)', 'long'),
-  \ javaapi#method(0,'getLong(', 'String, long)', 'long'),
-  \ javaapi#method(0,'getFloat(', 'String)', 'float'),
-  \ javaapi#method(0,'getFloat(', 'String, float)', 'float'),
-  \ javaapi#method(0,'getDouble(', 'String)', 'double'),
-  \ javaapi#method(0,'getDouble(', 'String, double)', 'double'),
-  \ javaapi#method(0,'getString(', 'String)', 'String'),
-  \ javaapi#method(0,'getString(', 'String, String)', 'String'),
-  \ javaapi#method(0,'getCharSequence(', 'String)', 'CharSequence'),
-  \ javaapi#method(0,'getCharSequence(', 'String, CharSequence)', 'CharSequence'),
-  \ javaapi#method(0,'getBundle(', 'String)', 'Bundle'),
-  \ javaapi#method(0,'getParcelable(', 'String)', 'T'),
-  \ javaapi#method(0,'getParcelableArray(', 'String)', 'Parcelable[]'),
-  \ javaapi#method(0,'getParcelableArrayList(', 'String)', 'ArrayList<T>'),
-  \ javaapi#method(0,'getSparseParcelableArray(', 'String)', 'SparseArray<T>'),
-  \ javaapi#method(0,'getSerializable(', 'String)', 'Serializable'),
-  \ javaapi#method(0,'getIntegerArrayList(', 'String)', 'Integer>'),
-  \ javaapi#method(0,'getStringArrayList(', 'String)', 'String>'),
-  \ javaapi#method(0,'getCharSequenceArrayList(', 'String)', 'CharSequence>'),
-  \ javaapi#method(0,'getBooleanArray(', 'String)', 'boolean[]'),
-  \ javaapi#method(0,'getByteArray(', 'String)', 'byte[]'),
-  \ javaapi#method(0,'getShortArray(', 'String)', 'short[]'),
-  \ javaapi#method(0,'getCharArray(', 'String)', 'char[]'),
-  \ javaapi#method(0,'getIntArray(', 'String)', 'int[]'),
-  \ javaapi#method(0,'getLongArray(', 'String)', 'long[]'),
-  \ javaapi#method(0,'getFloatArray(', 'String)', 'float[]'),
-  \ javaapi#method(0,'getDoubleArray(', 'String)', 'double[]'),
-  \ javaapi#method(0,'getStringArray(', 'String)', 'String[]'),
-  \ javaapi#method(0,'getCharSequenceArray(', 'String)', 'CharSequence[]'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('PowerManager', '', [
-  \ javaapi#field(1,'PARTIAL_WAKE_LOCK', 'int'),
-  \ javaapi#field(1,'SCREEN_DIM_WAKE_LOCK', 'int'),
-  \ javaapi#field(1,'SCREEN_BRIGHT_WAKE_LOCK', 'int'),
-  \ javaapi#field(1,'FULL_WAKE_LOCK', 'int'),
-  \ javaapi#field(1,'ACQUIRE_CAUSES_WAKEUP', 'int'),
-  \ javaapi#field(1,'ON_AFTER_RELEASE', 'int'),
-  \ javaapi#method(0,'newWakeLock(', 'int, String)', 'WakeLock'),
-  \ javaapi#method(0,'userActivity(', 'long, boolean)', 'void'),
-  \ javaapi#method(0,'goToSleep(', 'long)', 'void'),
-  \ javaapi#method(0,'wakeUp(', 'long)', 'void'),
-  \ javaapi#method(0,'isScreenOn(', ')', 'boolean'),
-  \ javaapi#method(0,'reboot(', 'String)', 'void'),
-  \ ])
-
-call javaapi#class('VERSION_CODES', '', [
-  \ javaapi#field(1,'CUR_DEVELOPMENT', 'int'),
-  \ javaapi#field(1,'BASE', 'int'),
-  \ javaapi#field(1,'BASE_1_1', 'int'),
-  \ javaapi#field(1,'CUPCAKE', 'int'),
-  \ javaapi#field(1,'DONUT', 'int'),
-  \ javaapi#field(1,'ECLAIR', 'int'),
-  \ javaapi#field(1,'ECLAIR_0_1', 'int'),
-  \ javaapi#field(1,'ECLAIR_MR1', 'int'),
-  \ javaapi#field(1,'FROYO', 'int'),
-  \ javaapi#field(1,'GINGERBREAD', 'int'),
-  \ javaapi#field(1,'GINGERBREAD_MR1', 'int'),
-  \ javaapi#field(1,'HONEYCOMB', 'int'),
-  \ javaapi#field(1,'HONEYCOMB_MR1', 'int'),
-  \ javaapi#field(1,'HONEYCOMB_MR2', 'int'),
-  \ javaapi#field(1,'ICE_CREAM_SANDWICH', 'int'),
-  \ javaapi#field(1,'ICE_CREAM_SANDWICH_MR1', 'int'),
-  \ javaapi#field(1,'JELLY_BEAN', 'int'),
-  \ javaapi#field(1,'JELLY_BEAN_MR1', 'int'),
-  \ javaapi#method(0,'VERSION_CODES(', ')', 'public'),
-  \ ])
-
-call javaapi#class('Handler', '', [
-  \ javaapi#method(0,'Handler(', ')', 'public'),
-  \ javaapi#method(0,'Handler(', 'Callback)', 'public'),
-  \ javaapi#method(0,'Handler(', 'Looper)', 'public'),
-  \ javaapi#method(0,'Handler(', 'Looper, Callback)', 'public'),
-  \ javaapi#method(0,'handleMessage(', 'Message)', 'void'),
-  \ javaapi#method(0,'dispatchMessage(', 'Message)', 'void'),
-  \ javaapi#method(0,'getMessageName(', 'Message)', 'String'),
-  \ javaapi#method(0,'obtainMessage(', ')', 'Message'),
-  \ javaapi#method(0,'obtainMessage(', 'int)', 'Message'),
-  \ javaapi#method(0,'obtainMessage(', 'int, Object)', 'Message'),
-  \ javaapi#method(0,'obtainMessage(', 'int, int, int)', 'Message'),
-  \ javaapi#method(0,'obtainMessage(', 'int, int, int, Object)', 'Message'),
-  \ javaapi#method(0,'post(', 'Runnable)', 'boolean'),
-  \ javaapi#method(0,'postAtTime(', 'Runnable, long)', 'boolean'),
-  \ javaapi#method(0,'postAtTime(', 'Runnable, Object, long)', 'boolean'),
-  \ javaapi#method(0,'postDelayed(', 'Runnable, long)', 'boolean'),
-  \ javaapi#method(0,'postAtFrontOfQueue(', 'Runnable)', 'boolean'),
-  \ javaapi#method(0,'removeCallbacks(', 'Runnable)', 'void'),
-  \ javaapi#method(0,'removeCallbacks(', 'Runnable, Object)', 'void'),
-  \ javaapi#method(0,'sendMessage(', 'Message)', 'boolean'),
-  \ javaapi#method(0,'sendEmptyMessage(', 'int)', 'boolean'),
-  \ javaapi#method(0,'sendEmptyMessageDelayed(', 'int, long)', 'boolean'),
-  \ javaapi#method(0,'sendEmptyMessageAtTime(', 'int, long)', 'boolean'),
-  \ javaapi#method(0,'sendMessageDelayed(', 'Message, long)', 'boolean'),
-  \ javaapi#method(0,'sendMessageAtTime(', 'Message, long)', 'boolean'),
-  \ javaapi#method(0,'sendMessageAtFrontOfQueue(', 'Message)', 'boolean'),
-  \ javaapi#method(0,'removeMessages(', 'int)', 'void'),
-  \ javaapi#method(0,'removeMessages(', 'int, Object)', 'void'),
-  \ javaapi#method(0,'removeCallbacksAndMessages(', 'Object)', 'void'),
-  \ javaapi#method(0,'hasMessages(', 'int)', 'boolean'),
-  \ javaapi#method(0,'hasMessages(', 'int, Object)', 'boolean'),
-  \ javaapi#method(0,'getLooper(', ')', 'Looper'),
-  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Vibrator', '', [
-  \ javaapi#method(0,'hasVibrator(', ')', 'boolean'),
-  \ javaapi#method(0,'vibrate(', 'long)', 'void'),
-  \ javaapi#method(0,'vibrate(', 'long[], int)', 'void'),
-  \ javaapi#method(0,'cancel(', ')', 'void'),
-  \ ])
-
-
 call javaapi#interface('Parcelable', '', [
   \ javaapi#field(1,'PARCELABLE_WRITE_RETURN_VALUE', 'int'),
   \ javaapi#field(1,'CONTENTS_FILE_DESCRIPTOR', 'int'),
@@ -490,7 +69,7 @@ call javaapi#interface('IdleHandler', '', [
   \ javaapi#method(0,'queueIdle(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HandlerThread', '', [
+call javaapi#class('HandlerThread', 'Thread', [
   \ javaapi#method(0,'HandlerThread(', 'String)', 'public'),
   \ javaapi#method(0,'HandlerThread(', 'String, int)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
@@ -708,7 +287,7 @@ call javaapi#class('Parcel', '', [
   \ javaapi#method(0,'readSerializable(', ')', 'Serializable'),
   \ ])
 
-call javaapi#class('ParcelFormatException', '', [
+call javaapi#class('ParcelFormatException', 'RuntimeException', [
   \ javaapi#method(0,'ParcelFormatException(', ')', 'public'),
   \ javaapi#method(0,'ParcelFormatException(', 'String)', 'public'),
   \ ])
@@ -742,7 +321,7 @@ call javaapi#class('BatteryManager', '', [
   \ javaapi#method(0,'BatteryManager(', ')', 'public'),
   \ ])
 
-call javaapi#class('AutoCloseOutputStream', '', [
+call javaapi#class('AutoCloseOutputStream', 'FileOutputStream', [
   \ javaapi#method(0,'AutoCloseOutputStream(', 'ParcelFileDescriptor)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
@@ -759,7 +338,7 @@ call javaapi#class('CountDownTimer', '', [
   \ javaapi#method(0,'onFinish(', ')', 'void'),
   \ ])
 
-call javaapi#class('RemoteCallbackList<E', '', [
+call javaapi#class('RemoteCallbackList<E', 'IInterface>', [
   \ javaapi#method(0,'RemoteCallbackList(', ')', 'public'),
   \ javaapi#method(0,'register(', 'E)', 'boolean'),
   \ javaapi#method(0,'register(', 'E, Object)', 'boolean'),
@@ -815,7 +394,7 @@ call javaapi#class('VmPolicy', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DeadObjectException', '', [
+call javaapi#class('DeadObjectException', 'RemoteException', [
   \ javaapi#method(0,'DeadObjectException(', ')', 'public'),
   \ ])
 
@@ -841,7 +420,7 @@ call javaapi#class('RecoverySystem', '', [
   \ javaapi#method(1,'rebootWipeCache(', 'Context) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('OperationCanceledException', '', [
+call javaapi#class('OperationCanceledException', 'RuntimeException', [
   \ javaapi#method(0,'OperationCanceledException(', ')', 'public'),
   \ javaapi#method(0,'OperationCanceledException(', 'String)', 'public'),
   \ ])
@@ -879,7 +458,7 @@ call javaapi#class('ParcelUuid', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('AutoCloseInputStream', '', [
+call javaapi#class('AutoCloseInputStream', 'FileInputStream', [
   \ javaapi#method(0,'AutoCloseInputStream(', 'ParcelFileDescriptor)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
@@ -1018,7 +597,7 @@ call javaapi#interface('IInterface', '', [
   \ javaapi#method(0,'asBinder(', ')', 'IBinder'),
   \ ])
 
-call javaapi#class('NetworkOnMainThreadException', '', [
+call javaapi#class('NetworkOnMainThreadException', 'RuntimeException', [
   \ javaapi#method(0,'NetworkOnMainThreadException(', ')', 'public'),
   \ ])
 
@@ -1038,5 +617,427 @@ call javaapi#class('StatFs', '', [
   \ javaapi#method(0,'getBlockCount(', ')', 'int'),
   \ javaapi#method(0,'getFreeBlocks(', ')', 'int'),
   \ javaapi#method(0,'getAvailableBlocks(', ')', 'int'),
+  \ ])
+
+call javaapi#namespace('android.os')
+
+call javaapi#class('Status', 'Status>', [
+  \ javaapi#field(1,'FINISHED', 'Status'),
+  \ javaapi#field(1,'PENDING', 'Status'),
+  \ javaapi#field(1,'RUNNING', 'Status'),
+  \ javaapi#method(1,'values(', ')', 'Status[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Status'),
+  \ ])
+
+call javaapi#class('ResultReceiver', 'Parcelable', [
+  \ javaapi#field(1,'CREATOR', 'ResultReceiver>'),
+  \ javaapi#method(0,'ResultReceiver(', 'Handler)', 'public'),
+  \ javaapi#method(0,'send(', 'int, Bundle)', 'void'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#interface('Creator<T>', '', [
+  \ javaapi#method(0,'createFromParcel(', 'Parcel)', 'T'),
+  \ javaapi#method(0,'newArray(', 'int)', 'T[]'),
+  \ ])
+
+call javaapi#class('UserManager', '', [
+  \ javaapi#method(0,'getUserName(', ')', 'String'),
+  \ javaapi#method(0,'isUserAGoat(', ')', 'boolean'),
+  \ javaapi#method(0,'isUserRunning(', 'UserHandle)', 'boolean'),
+  \ javaapi#method(0,'isUserRunningOrStopping(', 'UserHandle)', 'boolean'),
+  \ javaapi#method(0,'getSerialNumberForUser(', 'UserHandle)', 'long'),
+  \ javaapi#method(0,'getUserForSerialNumber(', 'long)', 'UserHandle'),
+  \ javaapi#method(0,'getUserCount(', ')', 'int'),
+  \ ])
+
+call javaapi#interface('ClassLoaderCreator<T>', 'Creator<T>', [
+  \ javaapi#method(0,'createFromParcel(', 'Parcel, ClassLoader)', 'T'),
+  \ ])
+
+call javaapi#interface('ProgressListener', '', [
+  \ javaapi#method(0,'onProgress(', 'int)', 'void'),
+  \ ])
+
+call javaapi#class('WakeLock', '', [
+  \ javaapi#method(0,'setReferenceCounted(', 'boolean)', 'void'),
+  \ javaapi#method(0,'acquire(', ')', 'void'),
+  \ javaapi#method(0,'acquire(', 'long)', 'void'),
+  \ javaapi#method(0,'release(', ')', 'void'),
+  \ javaapi#method(0,'isHeld(', ')', 'boolean'),
+  \ javaapi#method(0,'setWorkSource(', 'WorkSource)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('WorkSource', 'Parcelable', [
+  \ javaapi#field(1,'CREATOR', 'WorkSource>'),
+  \ javaapi#method(0,'WorkSource(', ')', 'public'),
+  \ javaapi#method(0,'WorkSource(', 'WorkSource)', 'public'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'diff(', 'WorkSource)', 'boolean'),
+  \ javaapi#method(0,'set(', 'WorkSource)', 'void'),
+  \ javaapi#method(0,'add(', 'WorkSource)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'WorkSource)', 'boolean'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('ConditionVariable', '', [
+  \ javaapi#method(0,'ConditionVariable(', ')', 'public'),
+  \ javaapi#method(0,'ConditionVariable(', 'boolean)', 'public'),
+  \ javaapi#method(0,'open(', ')', 'void'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'block(', ')', 'void'),
+  \ javaapi#method(0,'block(', 'long)', 'boolean'),
+  \ ])
+
+call javaapi#class('StrictMode', '', [
+  \ javaapi#method(1,'setThreadPolicy(', 'ThreadPolicy)', 'void'),
+  \ javaapi#method(1,'getThreadPolicy(', ')', 'ThreadPolicy'),
+  \ javaapi#method(1,'allowThreadDiskWrites(', ')', 'ThreadPolicy'),
+  \ javaapi#method(1,'allowThreadDiskReads(', ')', 'ThreadPolicy'),
+  \ javaapi#method(1,'setVmPolicy(', 'VmPolicy)', 'void'),
+  \ javaapi#method(1,'getVmPolicy(', ')', 'VmPolicy'),
+  \ javaapi#method(1,'enableDefaults(', ')', 'void'),
+  \ javaapi#method(1,'noteSlowCall(', 'String)', 'void'),
+  \ ])
+
+call javaapi#class('MemoryFile', '', [
+  \ javaapi#method(0,'MemoryFile(', 'String, int) throws IOException', 'public'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'length(', ')', 'int'),
+  \ javaapi#method(0,'isPurgingAllowed(', ')', 'boolean'),
+  \ javaapi#method(0,'allowPurging(', 'boolean) throws IOException', 'boolean'),
+  \ javaapi#method(0,'getInputStream(', ')', 'InputStream'),
+  \ javaapi#method(0,'getOutputStream(', ')', 'OutputStream'),
+  \ javaapi#method(0,'readBytes(', 'byte[], int, int, int) throws IOException', 'int'),
+  \ javaapi#method(0,'writeBytes(', 'byte[], int, int, int) throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('Entry', 'Closeable', [
+  \ javaapi#field(1,'CREATOR', 'Entry>'),
+  \ javaapi#method(0,'Entry(', 'String, long)', 'public'),
+  \ javaapi#method(0,'Entry(', 'String, long, String)', 'public'),
+  \ javaapi#method(0,'Entry(', 'String, long, byte[], int)', 'public'),
+  \ javaapi#method(0,'Entry(', 'String, long, ParcelFileDescriptor, int)', 'public'),
+  \ javaapi#method(0,'Entry(', 'String, long, File, int) throws IOException', 'public'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'getTag(', ')', 'String'),
+  \ javaapi#method(0,'getTimeMillis(', ')', 'long'),
+  \ javaapi#method(0,'getFlags(', ')', 'int'),
+  \ javaapi#method(0,'getText(', 'int)', 'String'),
+  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#class('VERSION', '', [
+  \ javaapi#field(1,'INCREMENTAL', 'String'),
+  \ javaapi#field(1,'RELEASE', 'String'),
+  \ javaapi#field(1,'SDK', 'String'),
+  \ javaapi#field(1,'SDK_INT', 'int'),
+  \ javaapi#field(1,'CODENAME', 'String'),
+  \ javaapi#method(0,'VERSION(', ')', 'public'),
+  \ ])
+
+call javaapi#class('RemoteException', 'AndroidException', [
+  \ javaapi#method(0,'RemoteException(', ')', 'public'),
+  \ javaapi#method(0,'RemoteException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('ThreadPolicy', '', [
+  \ javaapi#field(1,'LAX', 'ThreadPolicy'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('BadParcelableException', 'AndroidRuntimeException', [
+  \ javaapi#method(0,'BadParcelableException(', 'String)', 'public'),
+  \ javaapi#method(0,'BadParcelableException(', 'Exception)', 'public'),
+  \ ])
+
+call javaapi#class('AsyncTask<Params,Progress,Result>', '', [
+  \ javaapi#field(1,'THREAD_POOL_EXECUTOR', 'Executor'),
+  \ javaapi#field(1,'SERIAL_EXECUTOR', 'Executor'),
+  \ javaapi#method(0,'AsyncTask(', ')', 'public'),
+  \ javaapi#method(0,'getStatus(', ')', 'Status'),
+  \ javaapi#method(0,'isCancelled(', ')', 'boolean'),
+  \ javaapi#method(0,'cancel(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,'get(', ') throws InterruptedException, ExecutionException', 'Result'),
+  \ javaapi#method(0,'get(', 'long, TimeUnit) throws InterruptedException, ExecutionException, TimeoutException', 'Result'),
+  \ javaapi#method(0,'execute(', ')', 'Result>'),
+  \ javaapi#method(0,'executeOnExecutor(', 'Executor, )', 'Result>'),
+  \ javaapi#method(1,'execute(', 'Runnable)', 'void'),
+  \ ])
+
+call javaapi#class('Debug', '', [
+  \ javaapi#field(1,'TRACE_COUNT_ALLOCS', 'int'),
+  \ javaapi#field(1,'SHOW_FULL_DETAIL', 'int'),
+  \ javaapi#field(1,'SHOW_CLASSLOADER', 'int'),
+  \ javaapi#field(1,'SHOW_INITIALIZED', 'int'),
+  \ javaapi#method(1,'waitForDebugger(', ')', 'void'),
+  \ javaapi#method(1,'waitingForDebugger(', ')', 'boolean'),
+  \ javaapi#method(1,'isDebuggerConnected(', ')', 'boolean'),
+  \ javaapi#method(1,'changeDebugPort(', 'int)', 'void'),
+  \ javaapi#method(1,'startNativeTracing(', ')', 'void'),
+  \ javaapi#method(1,'stopNativeTracing(', ')', 'void'),
+  \ javaapi#method(1,'enableEmulatorTraceOutput(', ')', 'void'),
+  \ javaapi#method(1,'startMethodTracing(', ')', 'void'),
+  \ javaapi#method(1,'startMethodTracing(', 'String)', 'void'),
+  \ javaapi#method(1,'startMethodTracing(', 'String, int)', 'void'),
+  \ javaapi#method(1,'startMethodTracing(', 'String, int, int)', 'void'),
+  \ javaapi#method(1,'stopMethodTracing(', ')', 'void'),
+  \ javaapi#method(1,'threadCpuTimeNanos(', ')', 'long'),
+  \ javaapi#method(1,'startAllocCounting(', ')', 'void'),
+  \ javaapi#method(1,'stopAllocCounting(', ')', 'void'),
+  \ javaapi#method(1,'getGlobalAllocCount(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalAllocSize(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalFreedCount(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalFreedSize(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalClassInitCount(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalClassInitTime(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalExternalAllocCount(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalExternalAllocSize(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalExternalFreedCount(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalExternalFreedSize(', ')', 'int'),
+  \ javaapi#method(1,'getGlobalGcInvocationCount(', ')', 'int'),
+  \ javaapi#method(1,'getThreadAllocCount(', ')', 'int'),
+  \ javaapi#method(1,'getThreadAllocSize(', ')', 'int'),
+  \ javaapi#method(1,'getThreadExternalAllocCount(', ')', 'int'),
+  \ javaapi#method(1,'getThreadExternalAllocSize(', ')', 'int'),
+  \ javaapi#method(1,'getThreadGcInvocationCount(', ')', 'int'),
+  \ javaapi#method(1,'resetGlobalAllocCount(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalAllocSize(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalFreedCount(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalFreedSize(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalClassInitCount(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalClassInitTime(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalExternalAllocCount(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalExternalAllocSize(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalExternalFreedCount(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalExternalFreedSize(', ')', 'void'),
+  \ javaapi#method(1,'resetGlobalGcInvocationCount(', ')', 'void'),
+  \ javaapi#method(1,'resetThreadAllocCount(', ')', 'void'),
+  \ javaapi#method(1,'resetThreadAllocSize(', ')', 'void'),
+  \ javaapi#method(1,'resetThreadExternalAllocCount(', ')', 'void'),
+  \ javaapi#method(1,'resetThreadExternalAllocSize(', ')', 'void'),
+  \ javaapi#method(1,'resetThreadGcInvocationCount(', ')', 'void'),
+  \ javaapi#method(1,'resetAllCounts(', ')', 'void'),
+  \ javaapi#method(1,'getNativeHeapSize(', ')', 'long'),
+  \ javaapi#method(1,'getNativeHeapAllocatedSize(', ')', 'long'),
+  \ javaapi#method(1,'getNativeHeapFreeSize(', ')', 'long'),
+  \ javaapi#method(1,'getMemoryInfo(', 'MemoryInfo)', 'void'),
+  \ javaapi#method(1,'getPss(', ')', 'long'),
+  \ javaapi#method(1,'setAllocationLimit(', 'int)', 'int'),
+  \ javaapi#method(1,'setGlobalAllocationLimit(', 'int)', 'int'),
+  \ javaapi#method(1,'printLoadedClasses(', 'int)', 'void'),
+  \ javaapi#method(1,'getLoadedClassCount(', ')', 'int'),
+  \ javaapi#method(1,'dumpHprofData(', 'String) throws IOException', 'void'),
+  \ javaapi#method(1,'getBinderSentTransactions(', ')', 'int'),
+  \ javaapi#method(1,'getBinderReceivedTransactions(', ')', 'int'),
+  \ javaapi#method(1,'getBinderLocalObjectCount(', ')', 'int'),
+  \ javaapi#method(1,'getBinderProxyObjectCount(', ')', 'int'),
+  \ javaapi#method(1,'getBinderDeathObjectCount(', ')', 'int'),
+  \ javaapi#method(1,'dumpService(', 'String, FileDescriptor, String[])', 'boolean'),
+  \ ])
+
+call javaapi#interface('DeathRecipient', '', [
+  \ javaapi#method(0,'binderDied(', ')', 'void'),
+  \ ])
+
+call javaapi#class('PatternMatcher', 'Parcelable', [
+  \ javaapi#field(1,'PATTERN_LITERAL', 'int'),
+  \ javaapi#field(1,'PATTERN_PREFIX', 'int'),
+  \ javaapi#field(1,'PATTERN_SIMPLE_GLOB', 'int'),
+  \ javaapi#field(1,'CREATOR', 'PatternMatcher>'),
+  \ javaapi#method(0,'PatternMatcher(', 'String, int)', 'public'),
+  \ javaapi#method(0,'PatternMatcher(', 'Parcel)', 'public'),
+  \ javaapi#method(0,'getPath(', ')', 'String'),
+  \ javaapi#method(0,'getType(', ')', 'int'),
+  \ javaapi#method(0,'match(', 'String)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#class('TransactionTooLargeException', 'RemoteException', [
+  \ javaapi#method(0,'TransactionTooLargeException(', ')', 'public'),
+  \ ])
+
+call javaapi#class('Bundle', 'Cloneable', [
+  \ javaapi#field(1,'EMPTY', 'Bundle'),
+  \ javaapi#field(1,'CREATOR', 'Bundle>'),
+  \ javaapi#method(0,'Bundle(', ')', 'public'),
+  \ javaapi#method(0,'Bundle(', 'ClassLoader)', 'public'),
+  \ javaapi#method(0,'Bundle(', 'int)', 'public'),
+  \ javaapi#method(0,'Bundle(', 'Bundle)', 'public'),
+  \ javaapi#method(0,'setClassLoader(', 'ClassLoader)', 'void'),
+  \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'containsKey(', 'String)', 'boolean'),
+  \ javaapi#method(0,'get(', 'String)', 'Object'),
+  \ javaapi#method(0,'remove(', 'String)', 'void'),
+  \ javaapi#method(0,'putAll(', 'Bundle)', 'void'),
+  \ javaapi#method(0,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,'hasFileDescriptors(', ')', 'boolean'),
+  \ javaapi#method(0,'putBoolean(', 'String, boolean)', 'void'),
+  \ javaapi#method(0,'putByte(', 'String, byte)', 'void'),
+  \ javaapi#method(0,'putChar(', 'String, char)', 'void'),
+  \ javaapi#method(0,'putShort(', 'String, short)', 'void'),
+  \ javaapi#method(0,'putInt(', 'String, int)', 'void'),
+  \ javaapi#method(0,'putLong(', 'String, long)', 'void'),
+  \ javaapi#method(0,'putFloat(', 'String, float)', 'void'),
+  \ javaapi#method(0,'putDouble(', 'String, double)', 'void'),
+  \ javaapi#method(0,'putString(', 'String, String)', 'void'),
+  \ javaapi#method(0,'putCharSequence(', 'String, CharSequence)', 'void'),
+  \ javaapi#method(0,'putParcelable(', 'String, Parcelable)', 'void'),
+  \ javaapi#method(0,'putParcelableArray(', 'String, Parcelable[])', 'void'),
+  \ javaapi#method(0,'putParcelableArrayList(', 'String, ArrayList<? extends Parcelable>)', 'void'),
+  \ javaapi#method(0,'putSparseParcelableArray(', 'String, SparseArray<? extends Parcelable>)', 'void'),
+  \ javaapi#method(0,'putIntegerArrayList(', 'String, ArrayList<Integer>)', 'void'),
+  \ javaapi#method(0,'putStringArrayList(', 'String, ArrayList<String>)', 'void'),
+  \ javaapi#method(0,'putCharSequenceArrayList(', 'String, ArrayList<CharSequence>)', 'void'),
+  \ javaapi#method(0,'putSerializable(', 'String, Serializable)', 'void'),
+  \ javaapi#method(0,'putBooleanArray(', 'String, boolean[])', 'void'),
+  \ javaapi#method(0,'putByteArray(', 'String, byte[])', 'void'),
+  \ javaapi#method(0,'putShortArray(', 'String, short[])', 'void'),
+  \ javaapi#method(0,'putCharArray(', 'String, char[])', 'void'),
+  \ javaapi#method(0,'putIntArray(', 'String, int[])', 'void'),
+  \ javaapi#method(0,'putLongArray(', 'String, long[])', 'void'),
+  \ javaapi#method(0,'putFloatArray(', 'String, float[])', 'void'),
+  \ javaapi#method(0,'putDoubleArray(', 'String, double[])', 'void'),
+  \ javaapi#method(0,'putStringArray(', 'String, String[])', 'void'),
+  \ javaapi#method(0,'putCharSequenceArray(', 'String, CharSequence[])', 'void'),
+  \ javaapi#method(0,'putBundle(', 'String, Bundle)', 'void'),
+  \ javaapi#method(0,'getBoolean(', 'String)', 'boolean'),
+  \ javaapi#method(0,'getBoolean(', 'String, boolean)', 'boolean'),
+  \ javaapi#method(0,'getByte(', 'String)', 'byte'),
+  \ javaapi#method(0,'getByte(', 'String, byte)', 'Byte'),
+  \ javaapi#method(0,'getChar(', 'String)', 'char'),
+  \ javaapi#method(0,'getChar(', 'String, char)', 'char'),
+  \ javaapi#method(0,'getShort(', 'String)', 'short'),
+  \ javaapi#method(0,'getShort(', 'String, short)', 'short'),
+  \ javaapi#method(0,'getInt(', 'String)', 'int'),
+  \ javaapi#method(0,'getInt(', 'String, int)', 'int'),
+  \ javaapi#method(0,'getLong(', 'String)', 'long'),
+  \ javaapi#method(0,'getLong(', 'String, long)', 'long'),
+  \ javaapi#method(0,'getFloat(', 'String)', 'float'),
+  \ javaapi#method(0,'getFloat(', 'String, float)', 'float'),
+  \ javaapi#method(0,'getDouble(', 'String)', 'double'),
+  \ javaapi#method(0,'getDouble(', 'String, double)', 'double'),
+  \ javaapi#method(0,'getString(', 'String)', 'String'),
+  \ javaapi#method(0,'getString(', 'String, String)', 'String'),
+  \ javaapi#method(0,'getCharSequence(', 'String)', 'CharSequence'),
+  \ javaapi#method(0,'getCharSequence(', 'String, CharSequence)', 'CharSequence'),
+  \ javaapi#method(0,'getBundle(', 'String)', 'Bundle'),
+  \ javaapi#method(0,'getParcelable(', 'String)', 'T'),
+  \ javaapi#method(0,'getParcelableArray(', 'String)', 'Parcelable[]'),
+  \ javaapi#method(0,'getParcelableArrayList(', 'String)', 'ArrayList<T>'),
+  \ javaapi#method(0,'getSparseParcelableArray(', 'String)', 'SparseArray<T>'),
+  \ javaapi#method(0,'getSerializable(', 'String)', 'Serializable'),
+  \ javaapi#method(0,'getIntegerArrayList(', 'String)', 'Integer>'),
+  \ javaapi#method(0,'getStringArrayList(', 'String)', 'String>'),
+  \ javaapi#method(0,'getCharSequenceArrayList(', 'String)', 'CharSequence>'),
+  \ javaapi#method(0,'getBooleanArray(', 'String)', 'boolean[]'),
+  \ javaapi#method(0,'getByteArray(', 'String)', 'byte[]'),
+  \ javaapi#method(0,'getShortArray(', 'String)', 'short[]'),
+  \ javaapi#method(0,'getCharArray(', 'String)', 'char[]'),
+  \ javaapi#method(0,'getIntArray(', 'String)', 'int[]'),
+  \ javaapi#method(0,'getLongArray(', 'String)', 'long[]'),
+  \ javaapi#method(0,'getFloatArray(', 'String)', 'float[]'),
+  \ javaapi#method(0,'getDoubleArray(', 'String)', 'double[]'),
+  \ javaapi#method(0,'getStringArray(', 'String)', 'String[]'),
+  \ javaapi#method(0,'getCharSequenceArray(', 'String)', 'CharSequence[]'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('PowerManager', '', [
+  \ javaapi#field(1,'PARTIAL_WAKE_LOCK', 'int'),
+  \ javaapi#field(1,'SCREEN_DIM_WAKE_LOCK', 'int'),
+  \ javaapi#field(1,'SCREEN_BRIGHT_WAKE_LOCK', 'int'),
+  \ javaapi#field(1,'FULL_WAKE_LOCK', 'int'),
+  \ javaapi#field(1,'ACQUIRE_CAUSES_WAKEUP', 'int'),
+  \ javaapi#field(1,'ON_AFTER_RELEASE', 'int'),
+  \ javaapi#method(0,'newWakeLock(', 'int, String)', 'WakeLock'),
+  \ javaapi#method(0,'userActivity(', 'long, boolean)', 'void'),
+  \ javaapi#method(0,'goToSleep(', 'long)', 'void'),
+  \ javaapi#method(0,'wakeUp(', 'long)', 'void'),
+  \ javaapi#method(0,'isScreenOn(', ')', 'boolean'),
+  \ javaapi#method(0,'reboot(', 'String)', 'void'),
+  \ ])
+
+call javaapi#class('VERSION_CODES', '', [
+  \ javaapi#field(1,'CUR_DEVELOPMENT', 'int'),
+  \ javaapi#field(1,'BASE', 'int'),
+  \ javaapi#field(1,'BASE_1_1', 'int'),
+  \ javaapi#field(1,'CUPCAKE', 'int'),
+  \ javaapi#field(1,'DONUT', 'int'),
+  \ javaapi#field(1,'ECLAIR', 'int'),
+  \ javaapi#field(1,'ECLAIR_0_1', 'int'),
+  \ javaapi#field(1,'ECLAIR_MR1', 'int'),
+  \ javaapi#field(1,'FROYO', 'int'),
+  \ javaapi#field(1,'GINGERBREAD', 'int'),
+  \ javaapi#field(1,'GINGERBREAD_MR1', 'int'),
+  \ javaapi#field(1,'HONEYCOMB', 'int'),
+  \ javaapi#field(1,'HONEYCOMB_MR1', 'int'),
+  \ javaapi#field(1,'HONEYCOMB_MR2', 'int'),
+  \ javaapi#field(1,'ICE_CREAM_SANDWICH', 'int'),
+  \ javaapi#field(1,'ICE_CREAM_SANDWICH_MR1', 'int'),
+  \ javaapi#field(1,'JELLY_BEAN', 'int'),
+  \ javaapi#field(1,'JELLY_BEAN_MR1', 'int'),
+  \ javaapi#method(0,'VERSION_CODES(', ')', 'public'),
+  \ ])
+
+call javaapi#class('Handler', '', [
+  \ javaapi#method(0,'Handler(', ')', 'public'),
+  \ javaapi#method(0,'Handler(', 'Callback)', 'public'),
+  \ javaapi#method(0,'Handler(', 'Looper)', 'public'),
+  \ javaapi#method(0,'Handler(', 'Looper, Callback)', 'public'),
+  \ javaapi#method(0,'handleMessage(', 'Message)', 'void'),
+  \ javaapi#method(0,'dispatchMessage(', 'Message)', 'void'),
+  \ javaapi#method(0,'getMessageName(', 'Message)', 'String'),
+  \ javaapi#method(0,'obtainMessage(', ')', 'Message'),
+  \ javaapi#method(0,'obtainMessage(', 'int)', 'Message'),
+  \ javaapi#method(0,'obtainMessage(', 'int, Object)', 'Message'),
+  \ javaapi#method(0,'obtainMessage(', 'int, int, int)', 'Message'),
+  \ javaapi#method(0,'obtainMessage(', 'int, int, int, Object)', 'Message'),
+  \ javaapi#method(0,'post(', 'Runnable)', 'boolean'),
+  \ javaapi#method(0,'postAtTime(', 'Runnable, long)', 'boolean'),
+  \ javaapi#method(0,'postAtTime(', 'Runnable, Object, long)', 'boolean'),
+  \ javaapi#method(0,'postDelayed(', 'Runnable, long)', 'boolean'),
+  \ javaapi#method(0,'postAtFrontOfQueue(', 'Runnable)', 'boolean'),
+  \ javaapi#method(0,'removeCallbacks(', 'Runnable)', 'void'),
+  \ javaapi#method(0,'removeCallbacks(', 'Runnable, Object)', 'void'),
+  \ javaapi#method(0,'sendMessage(', 'Message)', 'boolean'),
+  \ javaapi#method(0,'sendEmptyMessage(', 'int)', 'boolean'),
+  \ javaapi#method(0,'sendEmptyMessageDelayed(', 'int, long)', 'boolean'),
+  \ javaapi#method(0,'sendEmptyMessageAtTime(', 'int, long)', 'boolean'),
+  \ javaapi#method(0,'sendMessageDelayed(', 'Message, long)', 'boolean'),
+  \ javaapi#method(0,'sendMessageAtTime(', 'Message, long)', 'boolean'),
+  \ javaapi#method(0,'sendMessageAtFrontOfQueue(', 'Message)', 'boolean'),
+  \ javaapi#method(0,'removeMessages(', 'int)', 'void'),
+  \ javaapi#method(0,'removeMessages(', 'int, Object)', 'void'),
+  \ javaapi#method(0,'removeCallbacksAndMessages(', 'Object)', 'void'),
+  \ javaapi#method(0,'hasMessages(', 'int)', 'boolean'),
+  \ javaapi#method(0,'hasMessages(', 'int, Object)', 'boolean'),
+  \ javaapi#method(0,'getLooper(', ')', 'Looper'),
+  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('Vibrator', '', [
+  \ javaapi#method(0,'hasVibrator(', ')', 'boolean'),
+  \ javaapi#method(0,'vibrate(', 'long)', 'void'),
+  \ javaapi#method(0,'vibrate(', 'long[], int)', 'void'),
+  \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])
 

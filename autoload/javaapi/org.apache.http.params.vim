@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.params')
 
-call javaapi#class('DefaultedHttpParams', '', [
+call javaapi#class('DefaultedHttpParams', 'AbstractHttpParams', [
   \ javaapi#method(0,'DefaultedHttpParams(', 'HttpParams, HttpParams)', 'public'),
   \ javaapi#method(0,'copy(', ')', 'HttpParams'),
   \ javaapi#method(0,'getParameter(', 'String)', 'Object'),
@@ -26,7 +26,7 @@ call javaapi#class('HttpProtocolParams', 'CoreProtocolPNames', [
   \ javaapi#method(1,'setUseExpectContinue(', 'HttpParams, boolean)', 'void'),
   \ ])
 
-call javaapi#class('BasicHttpParams', '', [
+call javaapi#class('BasicHttpParams', 'AbstractHttpParams', [
   \ javaapi#method(0,'BasicHttpParams(', ')', 'public'),
   \ javaapi#method(0,'getParameter(', 'String)', 'Object'),
   \ javaapi#method(0,'setParameter(', 'String, Object)', 'HttpParams'),
@@ -82,7 +82,7 @@ call javaapi#interface('CoreProtocolPNames', '', [
   \ javaapi#field(1,'WAIT_FOR_CONTINUE', 'String'),
   \ ])
 
-call javaapi#class('HttpConnectionParamBean', '', [
+call javaapi#class('HttpConnectionParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'HttpConnectionParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setSoTimeout(', 'int)', 'void'),
   \ javaapi#method(0,'setTcpNoDelay(', 'boolean)', 'void'),
@@ -92,7 +92,7 @@ call javaapi#class('HttpConnectionParamBean', '', [
   \ javaapi#method(0,'setStaleCheckingEnabled(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('HttpProtocolParamBean', '', [
+call javaapi#class('HttpProtocolParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'HttpProtocolParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setHttpElementCharset(', 'String)', 'void'),
   \ javaapi#method(0,'setContentCharset(', 'String)', 'void'),

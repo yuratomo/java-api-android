@@ -32,26 +32,26 @@ call javaapi#class('AbstractVerifier', 'X509HostnameVerifier', [
   \ javaapi#method(1,'countDots(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('StrictHostnameVerifier', '', [
+call javaapi#class('StrictHostnameVerifier', 'AbstractVerifier', [
   \ javaapi#method(0,'StrictHostnameVerifier(', ')', 'public'),
   \ javaapi#method(0,'verify(', 'String, String[], String[]) throws SSLException', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AllowAllHostnameVerifier', '', [
+call javaapi#class('AllowAllHostnameVerifier', 'AbstractVerifier', [
   \ javaapi#method(0,'AllowAllHostnameVerifier(', ')', 'public'),
   \ javaapi#method(0,'verify(', 'String, String[], String[])', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('X509HostnameVerifier', '', [
+call javaapi#interface('X509HostnameVerifier', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ javaapi#method(0,'verify(', 'String, SSLSocket) throws IOException', 'void'),
   \ javaapi#method(0,'verify(', 'String, X509Certificate) throws SSLException', 'void'),
   \ javaapi#method(0,'verify(', 'String, String[], String[]) throws SSLException', 'void'),
   \ ])
 
-call javaapi#class('BrowserCompatHostnameVerifier', '', [
+call javaapi#class('BrowserCompatHostnameVerifier', 'AbstractVerifier', [
   \ javaapi#method(0,'BrowserCompatHostnameVerifier(', ')', 'public'),
   \ javaapi#method(0,'verify(', 'String, String[], String[]) throws SSLException', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),

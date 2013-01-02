@@ -1,6 +1,6 @@
 call javaapi#namespace('android.security')
 
-call javaapi#class('KeyChainException', '', [
+call javaapi#class('KeyChainException', 'Exception', [
   \ javaapi#method(0,'KeyChainException(', ')', 'public'),
   \ javaapi#method(0,'KeyChainException(', 'String)', 'public'),
   \ javaapi#method(0,'KeyChainException(', 'String, Throwable)', 'public'),

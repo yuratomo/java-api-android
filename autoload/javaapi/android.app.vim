@@ -1,772 +1,5 @@
 call javaapi#namespace('android.app')
 
-call javaapi#class('AlertDialog', '', [
-  \ javaapi#field(1,'THEME_TRADITIONAL', 'int'),
-  \ javaapi#field(1,'THEME_HOLO_DARK', 'int'),
-  \ javaapi#field(1,'THEME_HOLO_LIGHT', 'int'),
-  \ javaapi#field(1,'THEME_DEVICE_DEFAULT_DARK', 'int'),
-  \ javaapi#field(1,'THEME_DEVICE_DEFAULT_LIGHT', 'int'),
-  \ javaapi#method(0,'getButton(', 'int)', 'Button'),
-  \ javaapi#method(0,'getListView(', ')', 'ListView'),
-  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setCustomTitle(', 'View)', 'void'),
-  \ javaapi#method(0,'setMessage(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setView(', 'View)', 'void'),
-  \ javaapi#method(0,'setView(', 'View, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'setButton(', 'int, CharSequence, Message)', 'void'),
-  \ javaapi#method(0,'setButton(', 'int, CharSequence, OnClickListener)', 'void'),
-  \ javaapi#method(0,'setButton(', 'CharSequence, Message)', 'void'),
-  \ javaapi#method(0,'setButton2(', 'CharSequence, Message)', 'void'),
-  \ javaapi#method(0,'setButton3(', 'CharSequence, Message)', 'void'),
-  \ javaapi#method(0,'setButton(', 'CharSequence, OnClickListener)', 'void'),
-  \ javaapi#method(0,'setButton2(', 'CharSequence, OnClickListener)', 'void'),
-  \ javaapi#method(0,'setButton3(', 'CharSequence, OnClickListener)', 'void'),
-  \ javaapi#method(0,'setIcon(', 'int)', 'void'),
-  \ javaapi#method(0,'setIcon(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setIconAttribute(', 'int)', 'void'),
-  \ javaapi#method(0,'setInverseBackgroundForced(', 'boolean)', 'void'),
-  \ javaapi#method(0,'onKeyDown(', 'int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onKeyUp(', 'int, KeyEvent)', 'boolean'),
-  \ ])
-
-call javaapi#class('ProcessErrorStateInfo', 'Parcelable', [
-  \ javaapi#field(1,'NO_ERROR', 'int'),
-  \ javaapi#field(1,'CRASHED', 'int'),
-  \ javaapi#field(1,'NOT_RESPONDING', 'int'),
-  \ javaapi#field(0,'condition', 'int'),
-  \ javaapi#field(0,'processName', 'String'),
-  \ javaapi#field(0,'pid', 'int'),
-  \ javaapi#field(0,'uid', 'int'),
-  \ javaapi#field(0,'tag', 'String'),
-  \ javaapi#field(0,'shortMsg', 'String'),
-  \ javaapi#field(0,'longMsg', 'String'),
-  \ javaapi#field(0,'stackTrace', 'String'),
-  \ javaapi#field(0,'crashData', 'byte[]'),
-  \ javaapi#field(1,'CREATOR', 'ProcessErrorStateInfo>'),
-  \ javaapi#method(0,'ProcessErrorStateInfo(', ')', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('ActivityResult', '', [
-  \ javaapi#method(0,'ActivityResult(', 'int, Intent)', 'public'),
-  \ javaapi#method(0,'getResultCode(', ')', 'int'),
-  \ javaapi#method(0,'getResultData(', ')', 'Intent'),
-  \ ])
-
-call javaapi#class('InboxStyle', '', [
-  \ javaapi#method(0,'InboxStyle(', ')', 'public'),
-  \ javaapi#method(0,'InboxStyle(', 'Builder)', 'public'),
-  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'InboxStyle'),
-  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'InboxStyle'),
-  \ javaapi#method(0,'addLine(', 'CharSequence)', 'InboxStyle'),
-  \ javaapi#method(0,'build(', ')', 'Notification'),
-  \ ])
-
-call javaapi#class('ExpandableListActivity', '', [
-  \ javaapi#method(0,'ExpandableListActivity(', ')', 'public'),
-  \ javaapi#method(0,'onCreateContextMenu(', 'ContextMenu, View, ContextMenuInfo)', 'void'),
-  \ javaapi#method(0,'onChildClick(', 'ExpandableListView, View, int, int, long)', 'boolean'),
-  \ javaapi#method(0,'onGroupCollapse(', 'int)', 'void'),
-  \ javaapi#method(0,'onGroupExpand(', 'int)', 'void'),
-  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
-  \ javaapi#method(0,'setListAdapter(', 'ExpandableListAdapter)', 'void'),
-  \ javaapi#method(0,'getExpandableListView(', ')', 'ExpandableListView'),
-  \ javaapi#method(0,'getExpandableListAdapter(', ')', 'ExpandableListAdapter'),
-  \ javaapi#method(0,'getSelectedId(', ')', 'long'),
-  \ javaapi#method(0,'getSelectedPosition(', ')', 'long'),
-  \ javaapi#method(0,'setSelectedChild(', 'int, int, boolean)', 'boolean'),
-  \ javaapi#method(0,'setSelectedGroup(', 'int)', 'void'),
-  \ ])
-
-call javaapi#class('ActivityMonitor', '', [
-  \ javaapi#method(0,'ActivityMonitor(', 'IntentFilter, ActivityResult, boolean)', 'public'),
-  \ javaapi#method(0,'ActivityMonitor(', 'String, ActivityResult, boolean)', 'public'),
-  \ javaapi#method(0,'getFilter(', ')', 'IntentFilter'),
-  \ javaapi#method(0,'getResult(', ')', 'ActivityResult'),
-  \ javaapi#method(0,'isBlocking(', ')', 'boolean'),
-  \ javaapi#method(0,'getHits(', ')', 'int'),
-  \ javaapi#method(0,'getLastActivity(', ')', 'Activity'),
-  \ javaapi#method(0,'waitForActivity(', ')', 'Activity'),
-  \ javaapi#method(0,'waitForActivityWithTimeout(', 'long)', 'Activity'),
-  \ ])
-
-call javaapi#class('ActivityGroup', '', [
-  \ javaapi#method(0,'ActivityGroup(', ')', 'public'),
-  \ javaapi#method(0,'ActivityGroup(', 'boolean)', 'public'),
-  \ javaapi#method(0,'getCurrentActivity(', ')', 'Activity'),
-  \ javaapi#method(0,'getLocalActivityManager(', ')', 'LocalActivityManager'),
-  \ ])
-
-call javaapi#interface('OnNavigationListener', '', [
-  \ javaapi#method(0,'onNavigationItemSelected(', 'int, long)', 'boolean'),
-  \ ])
-
-call javaapi#class('CanceledException', '', [
-  \ javaapi#method(0,'CanceledException(', ')', 'public'),
-  \ javaapi#method(0,'CanceledException(', 'String)', 'public'),
-  \ javaapi#method(0,'CanceledException(', 'Exception)', 'public'),
-  \ ])
-
-call javaapi#class('BigTextStyle', '', [
-  \ javaapi#method(0,'BigTextStyle(', ')', 'public'),
-  \ javaapi#method(0,'BigTextStyle(', 'Builder)', 'public'),
-  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'BigTextStyle'),
-  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'BigTextStyle'),
-  \ javaapi#method(0,'bigText(', 'CharSequence)', 'BigTextStyle'),
-  \ javaapi#method(0,'build(', ')', 'Notification'),
-  \ ])
-
-call javaapi#class('NotificationManager', '', [
-  \ javaapi#method(0,'notify(', 'int, Notification)', 'void'),
-  \ javaapi#method(0,'notify(', 'String, int, Notification)', 'void'),
-  \ javaapi#method(0,'cancel(', 'int)', 'void'),
-  \ javaapi#method(0,'cancel(', 'String, int)', 'void'),
-  \ javaapi#method(0,'cancelAll(', ')', 'void'),
-  \ ])
-
-call javaapi#class('Application', '', [
-  \ javaapi#method(0,'Application(', ')', 'public'),
-  \ javaapi#method(0,'onCreate(', ')', 'void'),
-  \ javaapi#method(0,'onTerminate(', ')', 'void'),
-  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
-  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
-  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
-  \ javaapi#method(0,'registerComponentCallbacks(', 'ComponentCallbacks)', 'void'),
-  \ javaapi#method(0,'unregisterComponentCallbacks(', 'ComponentCallbacks)', 'void'),
-  \ javaapi#method(0,'registerActivityLifecycleCallbacks(', 'ActivityLifecycleCallbacks)', 'void'),
-  \ javaapi#method(0,'unregisterActivityLifecycleCallbacks(', 'ActivityLifecycleCallbacks)', 'void'),
-  \ ])
-
-call javaapi#interface('OnBackStackChangedListener', '', [
-  \ javaapi#method(0,'onBackStackChanged(', ')', 'void'),
-  \ ])
-
-call javaapi#class('AliasActivity', '', [
-  \ javaapi#method(0,'AliasActivity(', ')', 'public'),
-  \ ])
-
-call javaapi#class('RecentTaskInfo', 'Parcelable', [
-  \ javaapi#field(0,'id', 'int'),
-  \ javaapi#field(0,'persistentId', 'int'),
-  \ javaapi#field(0,'baseIntent', 'Intent'),
-  \ javaapi#field(0,'origActivity', 'ComponentName'),
-  \ javaapi#field(0,'description', 'CharSequence'),
-  \ javaapi#field(1,'CREATOR', 'RecentTaskInfo>'),
-  \ javaapi#method(0,'RecentTaskInfo(', ')', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('ProgressDialog', '', [
-  \ javaapi#field(1,'STYLE_SPINNER', 'int'),
-  \ javaapi#field(1,'STYLE_HORIZONTAL', 'int'),
-  \ javaapi#method(0,'ProgressDialog(', 'Context)', 'public'),
-  \ javaapi#method(0,'ProgressDialog(', 'Context, int)', 'public'),
-  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence)', 'ProgressDialog'),
-  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean)', 'ProgressDialog'),
-  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean, boolean)', 'ProgressDialog'),
-  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean, boolean, OnCancelListener)', 'ProgressDialog'),
-  \ javaapi#method(0,'onStart(', ')', 'void'),
-  \ javaapi#method(0,'setProgress(', 'int)', 'void'),
-  \ javaapi#method(0,'setSecondaryProgress(', 'int)', 'void'),
-  \ javaapi#method(0,'getProgress(', ')', 'int'),
-  \ javaapi#method(0,'getSecondaryProgress(', ')', 'int'),
-  \ javaapi#method(0,'getMax(', ')', 'int'),
-  \ javaapi#method(0,'setMax(', 'int)', 'void'),
-  \ javaapi#method(0,'incrementProgressBy(', 'int)', 'void'),
-  \ javaapi#method(0,'incrementSecondaryProgressBy(', 'int)', 'void'),
-  \ javaapi#method(0,'setProgressDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setIndeterminateDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setIndeterminate(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isIndeterminate(', ')', 'boolean'),
-  \ javaapi#method(0,'setMessage(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setProgressStyle(', 'int)', 'void'),
-  \ javaapi#method(0,'setProgressNumberFormat(', 'String)', 'void'),
-  \ javaapi#method(0,'setProgressPercentFormat(', 'NumberFormat)', 'void'),
-  \ ])
-
-call javaapi#class('Service', '', [
-  \ javaapi#field(1,'START_CONTINUATION_MASK', 'int'),
-  \ javaapi#field(1,'START_STICKY_COMPATIBILITY', 'int'),
-  \ javaapi#field(1,'START_STICKY', 'int'),
-  \ javaapi#field(1,'START_NOT_STICKY', 'int'),
-  \ javaapi#field(1,'START_REDELIVER_INTENT', 'int'),
-  \ javaapi#field(1,'START_FLAG_REDELIVERY', 'int'),
-  \ javaapi#field(1,'START_FLAG_RETRY', 'int'),
-  \ javaapi#method(0,'Service(', ')', 'public'),
-  \ javaapi#method(0,'getApplication(', ')', 'Application'),
-  \ javaapi#method(0,'onCreate(', ')', 'void'),
-  \ javaapi#method(0,'onStart(', 'Intent, int)', 'void'),
-  \ javaapi#method(0,'onStartCommand(', 'Intent, int, int)', 'int'),
-  \ javaapi#method(0,'onDestroy(', ')', 'void'),
-  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
-  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
-  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
-  \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),
-  \ javaapi#method(0,'onUnbind(', 'Intent)', 'boolean'),
-  \ javaapi#method(0,'onRebind(', 'Intent)', 'void'),
-  \ javaapi#method(0,'onTaskRemoved(', 'Intent)', 'void'),
-  \ javaapi#method(0,'stopSelf(', ')', 'void'),
-  \ javaapi#method(0,'stopSelf(', 'int)', 'void'),
-  \ javaapi#method(0,'stopSelfResult(', 'int)', 'boolean'),
-  \ javaapi#method(0,'startForeground(', 'int, Notification)', 'void'),
-  \ javaapi#method(0,'stopForeground(', 'boolean)', 'void'),
-  \ ])
-
-call javaapi#class('UiModeManager', '', [
-  \ javaapi#field(1,'ACTION_ENTER_CAR_MODE', 'String'),
-  \ javaapi#field(1,'ACTION_EXIT_CAR_MODE', 'String'),
-  \ javaapi#field(1,'ACTION_ENTER_DESK_MODE', 'String'),
-  \ javaapi#field(1,'ACTION_EXIT_DESK_MODE', 'String'),
-  \ javaapi#field(1,'MODE_NIGHT_AUTO', 'int'),
-  \ javaapi#field(1,'MODE_NIGHT_NO', 'int'),
-  \ javaapi#field(1,'MODE_NIGHT_YES', 'int'),
-  \ javaapi#field(1,'ENABLE_CAR_MODE_GO_CAR_HOME', 'int'),
-  \ javaapi#field(1,'DISABLE_CAR_MODE_GO_HOME', 'int'),
-  \ javaapi#method(0,'enableCarMode(', 'int)', 'void'),
-  \ javaapi#method(0,'disableCarMode(', 'int)', 'void'),
-  \ javaapi#method(0,'getCurrentModeType(', ')', 'int'),
-  \ javaapi#method(0,'setNightMode(', 'int)', 'void'),
-  \ javaapi#method(0,'getNightMode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('DatePickerDialog', '', [
-  \ javaapi#method(0,'DatePickerDialog(', 'Context, OnDateSetListener, int, int, int)', 'public'),
-  \ javaapi#method(0,'DatePickerDialog(', 'Context, int, OnDateSetListener, int, int, int)', 'public'),
-  \ javaapi#method(0,'onClick(', 'DialogInterface, int)', 'void'),
-  \ javaapi#method(0,'onDateChanged(', 'DatePicker, int, int, int)', 'void'),
-  \ javaapi#method(0,'getDatePicker(', ')', 'DatePicker'),
-  \ javaapi#method(0,'updateDate(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'onSaveInstanceState(', ')', 'Bundle'),
-  \ javaapi#method(0,'onRestoreInstanceState(', 'Bundle)', 'void'),
-  \ ])
-
-call javaapi#class('InstantiationException', '', [
-  \ javaapi#method(0,'InstantiationException(', 'String, Exception)', 'public'),
-  \ ])
-
-call javaapi#class('SearchManager', 'OnCancelListener', [
-  \ javaapi#field(1,'MENU_KEY', 'char'),
-  \ javaapi#field(1,'MENU_KEYCODE', 'int'),
-  \ javaapi#field(1,'QUERY', 'String'),
-  \ javaapi#field(1,'USER_QUERY', 'String'),
-  \ javaapi#field(1,'APP_DATA', 'String'),
-  \ javaapi#field(1,'ACTION_KEY', 'String'),
-  \ javaapi#field(1,'EXTRA_DATA_KEY', 'String'),
-  \ javaapi#field(1,'EXTRA_SELECT_QUERY', 'String'),
-  \ javaapi#field(1,'EXTRA_NEW_SEARCH', 'String'),
-  \ javaapi#field(1,'EXTRA_WEB_SEARCH_PENDINGINTENT', 'String'),
-  \ javaapi#field(1,'CURSOR_EXTRA_KEY_IN_PROGRESS', 'String'),
-  \ javaapi#field(1,'ACTION_MSG', 'String'),
-  \ javaapi#field(1,'FLAG_QUERY_REFINEMENT', 'int'),
-  \ javaapi#field(1,'SUGGEST_URI_PATH_QUERY', 'String'),
-  \ javaapi#field(1,'SUGGEST_MIME_TYPE', 'String'),
-  \ javaapi#field(1,'SUGGEST_URI_PATH_SHORTCUT', 'String'),
-  \ javaapi#field(1,'SHORTCUT_MIME_TYPE', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_FORMAT', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_1', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_2', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_2_URL', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_ICON_1', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_ICON_2', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_ACTION', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_DATA', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_EXTRA_DATA', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_DATA_ID', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_QUERY', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_SHORTCUT_ID', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_SPINNER_WHILE_REFRESHING', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_FLAGS', 'String'),
-  \ javaapi#field(1,'SUGGEST_COLUMN_LAST_ACCESS_HINT', 'String'),
-  \ javaapi#field(1,'SUGGEST_NEVER_MAKE_SHORTCUT', 'String'),
-  \ javaapi#field(1,'SUGGEST_PARAMETER_LIMIT', 'String'),
-  \ javaapi#field(1,'INTENT_ACTION_GLOBAL_SEARCH', 'String'),
-  \ javaapi#field(1,'INTENT_ACTION_SEARCH_SETTINGS', 'String'),
-  \ javaapi#field(1,'INTENT_ACTION_WEB_SEARCH_SETTINGS', 'String'),
-  \ javaapi#field(1,'INTENT_ACTION_SEARCHABLES_CHANGED', 'String'),
-  \ javaapi#field(1,'INTENT_GLOBAL_SEARCH_ACTIVITY_CHANGED', 'String'),
-  \ javaapi#field(1,'INTENT_ACTION_SEARCH_SETTINGS_CHANGED', 'String'),
-  \ javaapi#method(0,'startSearch(', 'String, boolean, ComponentName, Bundle, boolean)', 'void'),
-  \ javaapi#method(0,'getGlobalSearchActivity(', ')', 'ComponentName'),
-  \ javaapi#method(0,'triggerSearch(', 'String, ComponentName, Bundle)', 'void'),
-  \ javaapi#method(0,'stopSearch(', ')', 'void'),
-  \ javaapi#method(0,'setOnDismissListener(', 'OnDismissListener)', 'void'),
-  \ javaapi#method(0,'setOnCancelListener(', 'OnCancelListener)', 'void'),
-  \ javaapi#method(0,'onCancel(', 'DialogInterface)', 'void'),
-  \ javaapi#method(0,'onDismiss(', 'DialogInterface)', 'void'),
-  \ javaapi#method(0,'getSearchableInfo(', 'ComponentName)', 'SearchableInfo'),
-  \ javaapi#method(0,'getSearchablesInGlobalSearch(', ')', 'SearchableInfo>'),
-  \ ])
-
-call javaapi#interface('OnKeyguardExitResult', '', [
-  \ javaapi#method(0,'onKeyguardExitResult(', 'boolean)', 'void'),
-  \ ])
-
-call javaapi#class('RunningAppProcessInfo', 'Parcelable', [
-  \ javaapi#field(0,'processName', 'String'),
-  \ javaapi#field(0,'pid', 'int'),
-  \ javaapi#field(0,'uid', 'int'),
-  \ javaapi#field(0,'pkgList', 'String[]'),
-  \ javaapi#field(0,'lastTrimLevel', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_FOREGROUND', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_VISIBLE', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_PERCEPTIBLE', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_SERVICE', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_BACKGROUND', 'int'),
-  \ javaapi#field(1,'IMPORTANCE_EMPTY', 'int'),
-  \ javaapi#field(0,'importance', 'int'),
-  \ javaapi#field(0,'lru', 'int'),
-  \ javaapi#field(1,'REASON_UNKNOWN', 'int'),
-  \ javaapi#field(1,'REASON_PROVIDER_IN_USE', 'int'),
-  \ javaapi#field(1,'REASON_SERVICE_IN_USE', 'int'),
-  \ javaapi#field(0,'importanceReasonCode', 'int'),
-  \ javaapi#field(0,'importanceReasonPid', 'int'),
-  \ javaapi#field(0,'importanceReasonComponent', 'ComponentName'),
-  \ javaapi#field(1,'CREATOR', 'RunningAppProcessInfo>'),
-  \ javaapi#method(0,'RunningAppProcessInfo(', ')', 'public'),
-  \ javaapi#method(0,'RunningAppProcessInfo(', 'String, int, String[])', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('Query', '', [
-  \ javaapi#method(0,'Query(', ')', 'public'),
-  \ javaapi#method(0,'setFilterById(', ')', 'Query'),
-  \ javaapi#method(0,'setFilterByStatus(', 'int)', 'Query'),
-  \ ])
-
-call javaapi#interface('TabListener', '', [
-  \ javaapi#method(0,'onTabSelected(', 'Tab, FragmentTransaction)', 'void'),
-  \ javaapi#method(0,'onTabUnselected(', 'Tab, FragmentTransaction)', 'void'),
-  \ javaapi#method(0,'onTabReselected(', 'Tab, FragmentTransaction)', 'void'),
-  \ ])
-
-call javaapi#interface('OnBreadCrumbClickListener', '', [
-  \ javaapi#method(0,'onBreadCrumbClick(', 'BackStackEntry, int)', 'boolean'),
-  \ ])
-
-call javaapi#interface('OnDateSetListener', '', [
-  \ javaapi#method(0,'onDateSet(', 'DatePicker, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#class('MemoryInfo', 'Parcelable', [
-  \ javaapi#field(0,'availMem', 'long'),
-  \ javaapi#field(0,'totalMem', 'long'),
-  \ javaapi#field(0,'threshold', 'long'),
-  \ javaapi#field(0,'lowMemory', 'boolean'),
-  \ javaapi#field(1,'CREATOR', 'MemoryInfo>'),
-  \ javaapi#method(0,'MemoryInfo(', ')', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('WallpaperManager', '', [
-  \ javaapi#field(1,'ACTION_LIVE_WALLPAPER_CHOOSER', 'String'),
-  \ javaapi#field(1,'ACTION_CHANGE_LIVE_WALLPAPER', 'String'),
-  \ javaapi#field(1,'EXTRA_LIVE_WALLPAPER_COMPONENT', 'String'),
-  \ javaapi#field(1,'WALLPAPER_PREVIEW_META_DATA', 'String'),
-  \ javaapi#field(1,'COMMAND_TAP', 'String'),
-  \ javaapi#field(1,'COMMAND_SECONDARY_TAP', 'String'),
-  \ javaapi#field(1,'COMMAND_DROP', 'String'),
-  \ javaapi#method(1,'getInstance(', 'Context)', 'WallpaperManager'),
-  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'peekDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'getFastDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'peekFastDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'forgetLoadedWallpaper(', ')', 'void'),
-  \ javaapi#method(0,'getWallpaperInfo(', ')', 'WallpaperInfo'),
-  \ javaapi#method(0,'setResource(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'setBitmap(', 'Bitmap) throws IOException', 'void'),
-  \ javaapi#method(0,'setStream(', 'InputStream) throws IOException', 'void'),
-  \ javaapi#method(0,'hasResourceWallpaper(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getDesiredMinimumWidth(', ')', 'int'),
-  \ javaapi#method(0,'getDesiredMinimumHeight(', ')', 'int'),
-  \ javaapi#method(0,'suggestDesiredDimensions(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setWallpaperOffsets(', 'IBinder, float, float)', 'void'),
-  \ javaapi#method(0,'setWallpaperOffsetSteps(', 'float, float)', 'void'),
-  \ javaapi#method(0,'sendWallpaperCommand(', 'IBinder, String, int, int, int, Bundle)', 'void'),
-  \ javaapi#method(0,'clearWallpaperOffsets(', 'IBinder)', 'void'),
-  \ javaapi#method(0,'clear(', ') throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('BigPictureStyle', '', [
-  \ javaapi#method(0,'BigPictureStyle(', ')', 'public'),
-  \ javaapi#method(0,'BigPictureStyle(', 'Builder)', 'public'),
-  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'BigPictureStyle'),
-  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'BigPictureStyle'),
-  \ javaapi#method(0,'bigPicture(', 'Bitmap)', 'BigPictureStyle'),
-  \ javaapi#method(0,'bigLargeIcon(', 'Bitmap)', 'BigPictureStyle'),
-  \ javaapi#method(0,'build(', ')', 'Notification'),
-  \ ])
-
-call javaapi#interface('ActivityLifecycleCallbacks', '', [
-  \ javaapi#method(0,'onActivityCreated(', 'Activity, Bundle)', 'void'),
-  \ javaapi#method(0,'onActivityStarted(', 'Activity)', 'void'),
-  \ javaapi#method(0,'onActivityResumed(', 'Activity)', 'void'),
-  \ javaapi#method(0,'onActivityPaused(', 'Activity)', 'void'),
-  \ javaapi#method(0,'onActivityStopped(', 'Activity)', 'void'),
-  \ javaapi#method(0,'onActivitySaveInstanceState(', 'Activity, Bundle)', 'void'),
-  \ javaapi#method(0,'onActivityDestroyed(', 'Activity)', 'void'),
-  \ ])
-
-call javaapi#interface('LoaderCallbacks<D>', '', [
-  \ javaapi#method(0,'onCreateLoader(', 'int, Bundle)', 'Loader<D>'),
-  \ javaapi#method(0,'onLoadFinished(', 'Loader<D>, D)', 'void'),
-  \ javaapi#method(0,'onLoaderReset(', 'Loader<D>)', 'void'),
-  \ ])
-
-call javaapi#class('Activity', '', [
-  \ javaapi#field(1,'RESULT_CANCELED', 'int'),
-  \ javaapi#field(1,'RESULT_OK', 'int'),
-  \ javaapi#field(1,'RESULT_FIRST_USER', 'int'),
-  \ javaapi#field(1,'DEFAULT_KEYS_DISABLE', 'int'),
-  \ javaapi#field(1,'DEFAULT_KEYS_DIALER', 'int'),
-  \ javaapi#field(1,'DEFAULT_KEYS_SHORTCUT', 'int'),
-  \ javaapi#field(1,'DEFAULT_KEYS_SEARCH_LOCAL', 'int'),
-  \ javaapi#field(1,'DEFAULT_KEYS_SEARCH_GLOBAL', 'int'),
-  \ javaapi#method(0,'Activity(', ')', 'public'),
-  \ javaapi#method(0,'getIntent(', ')', 'Intent'),
-  \ javaapi#method(0,'setIntent(', 'Intent)', 'void'),
-  \ javaapi#method(0,'getApplication(', ')', 'Application'),
-  \ javaapi#method(0,'isChild(', ')', 'boolean'),
-  \ javaapi#method(0,'getParent(', ')', 'Activity'),
-  \ javaapi#method(0,'getWindowManager(', ')', 'WindowManager'),
-  \ javaapi#method(0,'getWindow(', ')', 'Window'),
-  \ javaapi#method(0,'getLoaderManager(', ')', 'LoaderManager'),
-  \ javaapi#method(0,'getCurrentFocus(', ')', 'View'),
-  \ javaapi#method(0,'onCreateThumbnail(', 'Bitmap, Canvas)', 'boolean'),
-  \ javaapi#method(0,'onCreateDescription(', ')', 'CharSequence'),
-  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
-  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
-  \ javaapi#method(0,'getLastNonConfigurationInstance(', ')', 'Object'),
-  \ javaapi#method(0,'onRetainNonConfigurationInstance(', ')', 'Object'),
-  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
-  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
-  \ javaapi#method(0,'getFragmentManager(', ')', 'FragmentManager'),
-  \ javaapi#method(0,'onAttachFragment(', 'Fragment)', 'void'),
-  \ javaapi#method(0,'managedQuery(', 'Uri, String[], String, String[], String)', 'Cursor'),
-  \ javaapi#method(0,'startManagingCursor(', 'Cursor)', 'void'),
-  \ javaapi#method(0,'stopManagingCursor(', 'Cursor)', 'void'),
-  \ javaapi#method(0,'findViewById(', 'int)', 'View'),
-  \ javaapi#method(0,'getActionBar(', ')', 'ActionBar'),
-  \ javaapi#method(0,'setContentView(', 'int)', 'void'),
-  \ javaapi#method(0,'setContentView(', 'View)', 'void'),
-  \ javaapi#method(0,'setContentView(', 'View, LayoutParams)', 'void'),
-  \ javaapi#method(0,'addContentView(', 'View, LayoutParams)', 'void'),
-  \ javaapi#method(0,'setFinishOnTouchOutside(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDefaultKeyMode(', 'int)', 'void'),
-  \ javaapi#method(0,'onKeyDown(', 'int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onKeyLongPress(', 'int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onKeyUp(', 'int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onKeyMultiple(', 'int, int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onBackPressed(', ')', 'void'),
-  \ javaapi#method(0,'onKeyShortcut(', 'int, KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'onTouchEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'onTrackballEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'onGenericMotionEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'onUserInteraction(', ')', 'void'),
-  \ javaapi#method(0,'onWindowAttributesChanged(', 'LayoutParams)', 'void'),
-  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
-  \ javaapi#method(0,'onWindowFocusChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,'onAttachedToWindow(', ')', 'void'),
-  \ javaapi#method(0,'onDetachedFromWindow(', ')', 'void'),
-  \ javaapi#method(0,'hasWindowFocus(', ')', 'boolean'),
-  \ javaapi#method(0,'dispatchKeyEvent(', 'KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'dispatchKeyShortcutEvent(', 'KeyEvent)', 'boolean'),
-  \ javaapi#method(0,'dispatchTouchEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'dispatchTrackballEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'dispatchGenericMotionEvent(', 'MotionEvent)', 'boolean'),
-  \ javaapi#method(0,'dispatchPopulateAccessibilityEvent(', 'AccessibilityEvent)', 'boolean'),
-  \ javaapi#method(0,'onCreatePanelView(', 'int)', 'View'),
-  \ javaapi#method(0,'onCreatePanelMenu(', 'int, Menu)', 'boolean'),
-  \ javaapi#method(0,'onPreparePanel(', 'int, View, Menu)', 'boolean'),
-  \ javaapi#method(0,'onMenuOpened(', 'int, Menu)', 'boolean'),
-  \ javaapi#method(0,'onMenuItemSelected(', 'int, MenuItem)', 'boolean'),
-  \ javaapi#method(0,'onPanelClosed(', 'int, Menu)', 'void'),
-  \ javaapi#method(0,'invalidateOptionsMenu(', ')', 'void'),
-  \ javaapi#method(0,'onCreateOptionsMenu(', 'Menu)', 'boolean'),
-  \ javaapi#method(0,'onPrepareOptionsMenu(', 'Menu)', 'boolean'),
-  \ javaapi#method(0,'onOptionsItemSelected(', 'MenuItem)', 'boolean'),
-  \ javaapi#method(0,'onNavigateUp(', ')', 'boolean'),
-  \ javaapi#method(0,'onNavigateUpFromChild(', 'Activity)', 'boolean'),
-  \ javaapi#method(0,'onCreateNavigateUpTaskStack(', 'TaskStackBuilder)', 'void'),
-  \ javaapi#method(0,'onPrepareNavigateUpTaskStack(', 'TaskStackBuilder)', 'void'),
-  \ javaapi#method(0,'onOptionsMenuClosed(', 'Menu)', 'void'),
-  \ javaapi#method(0,'openOptionsMenu(', ')', 'void'),
-  \ javaapi#method(0,'closeOptionsMenu(', ')', 'void'),
-  \ javaapi#method(0,'onCreateContextMenu(', 'ContextMenu, View, ContextMenuInfo)', 'void'),
-  \ javaapi#method(0,'registerForContextMenu(', 'View)', 'void'),
-  \ javaapi#method(0,'unregisterForContextMenu(', 'View)', 'void'),
-  \ javaapi#method(0,'openContextMenu(', 'View)', 'void'),
-  \ javaapi#method(0,'closeContextMenu(', ')', 'void'),
-  \ javaapi#method(0,'onContextItemSelected(', 'MenuItem)', 'boolean'),
-  \ javaapi#method(0,'onContextMenuClosed(', 'Menu)', 'void'),
-  \ javaapi#method(0,'showDialog(', 'int)', 'void'),
-  \ javaapi#method(0,'showDialog(', 'int, Bundle)', 'boolean'),
-  \ javaapi#method(0,'dismissDialog(', 'int)', 'void'),
-  \ javaapi#method(0,'removeDialog(', 'int)', 'void'),
-  \ javaapi#method(0,'onSearchRequested(', ')', 'boolean'),
-  \ javaapi#method(0,'startSearch(', 'String, boolean, Bundle, boolean)', 'void'),
-  \ javaapi#method(0,'triggerSearch(', 'String, Bundle)', 'void'),
-  \ javaapi#method(0,'takeKeyEvents(', 'boolean)', 'void'),
-  \ javaapi#method(0,'requestWindowFeature(', 'int)', 'boolean'),
-  \ javaapi#method(0,'setFeatureDrawableResource(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setFeatureDrawableUri(', 'int, Uri)', 'void'),
-  \ javaapi#method(0,'setFeatureDrawable(', 'int, Drawable)', 'void'),
-  \ javaapi#method(0,'setFeatureDrawableAlpha(', 'int, int)', 'void'),
-  \ javaapi#method(0,'getLayoutInflater(', ')', 'LayoutInflater'),
-  \ javaapi#method(0,'getMenuInflater(', ')', 'MenuInflater'),
-  \ javaapi#method(0,'startActivityForResult(', 'Intent, int)', 'void'),
-  \ javaapi#method(0,'startActivityForResult(', 'Intent, int, Bundle)', 'void'),
-  \ javaapi#method(0,'startIntentSenderForResult(', 'IntentSender, int, Intent, int, int, int) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'startIntentSenderForResult(', 'IntentSender, int, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'startActivity(', 'Intent)', 'void'),
-  \ javaapi#method(0,'startActivity(', 'Intent, Bundle)', 'void'),
-  \ javaapi#method(0,'startActivities(', 'Intent[])', 'void'),
-  \ javaapi#method(0,'startActivities(', 'Intent[], Bundle)', 'void'),
-  \ javaapi#method(0,'startIntentSender(', 'IntentSender, Intent, int, int, int) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'startIntentSender(', 'IntentSender, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'startActivityIfNeeded(', 'Intent, int)', 'boolean'),
-  \ javaapi#method(0,'startActivityIfNeeded(', 'Intent, int, Bundle)', 'boolean'),
-  \ javaapi#method(0,'startNextMatchingActivity(', 'Intent)', 'boolean'),
-  \ javaapi#method(0,'startNextMatchingActivity(', 'Intent, Bundle)', 'boolean'),
-  \ javaapi#method(0,'startActivityFromChild(', 'Activity, Intent, int)', 'void'),
-  \ javaapi#method(0,'startActivityFromChild(', 'Activity, Intent, int, Bundle)', 'void'),
-  \ javaapi#method(0,'startActivityFromFragment(', 'Fragment, Intent, int)', 'void'),
-  \ javaapi#method(0,'startActivityFromFragment(', 'Fragment, Intent, int, Bundle)', 'void'),
-  \ javaapi#method(0,'startIntentSenderFromChild(', 'Activity, IntentSender, int, Intent, int, int, int) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'startIntentSenderFromChild(', 'Activity, IntentSender, int, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
-  \ javaapi#method(0,'overridePendingTransition(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setResult(', 'int)', 'void'),
-  \ javaapi#method(0,'setResult(', 'int, Intent)', 'void'),
-  \ javaapi#method(0,'getCallingPackage(', ')', 'String'),
-  \ javaapi#method(0,'getCallingActivity(', ')', 'ComponentName'),
-  \ javaapi#method(0,'setVisible(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isFinishing(', ')', 'boolean'),
-  \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
-  \ javaapi#method(0,'isChangingConfigurations(', ')', 'boolean'),
-  \ javaapi#method(0,'recreate(', ')', 'void'),
-  \ javaapi#method(0,'finish(', ')', 'void'),
-  \ javaapi#method(0,'finishAffinity(', ')', 'void'),
-  \ javaapi#method(0,'finishFromChild(', 'Activity)', 'void'),
-  \ javaapi#method(0,'finishActivity(', 'int)', 'void'),
-  \ javaapi#method(0,'finishActivityFromChild(', 'Activity, int)', 'void'),
-  \ javaapi#method(0,'createPendingResult(', 'int, Intent, int)', 'PendingIntent'),
-  \ javaapi#method(0,'setRequestedOrientation(', 'int)', 'void'),
-  \ javaapi#method(0,'getRequestedOrientation(', ')', 'int'),
-  \ javaapi#method(0,'getTaskId(', ')', 'int'),
-  \ javaapi#method(0,'isTaskRoot(', ')', 'boolean'),
-  \ javaapi#method(0,'moveTaskToBack(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'getLocalClassName(', ')', 'String'),
-  \ javaapi#method(0,'getComponentName(', ')', 'ComponentName'),
-  \ javaapi#method(0,'getPreferences(', 'int)', 'SharedPreferences'),
-  \ javaapi#method(0,'getSystemService(', 'String)', 'Object'),
-  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setTitle(', 'int)', 'void'),
-  \ javaapi#method(0,'setTitleColor(', 'int)', 'void'),
-  \ javaapi#method(0,'getTitle(', ')', 'CharSequence'),
-  \ javaapi#method(0,'getTitleColor(', ')', 'int'),
-  \ javaapi#method(0,'setProgressBarVisibility(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setProgressBarIndeterminateVisibility(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setProgressBarIndeterminate(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setProgress(', 'int)', 'void'),
-  \ javaapi#method(0,'setSecondaryProgress(', 'int)', 'void'),
-  \ javaapi#method(0,'setVolumeControlStream(', 'int)', 'void'),
-  \ javaapi#method(0,'getVolumeControlStream(', ')', 'int'),
-  \ javaapi#method(0,'runOnUiThread(', 'Runnable)', 'void'),
-  \ javaapi#method(0,'onCreateView(', 'String, Context, AttributeSet)', 'View'),
-  \ javaapi#method(0,'onCreateView(', 'View, String, Context, AttributeSet)', 'View'),
-  \ javaapi#method(0,'dump(', 'String, FileDescriptor, PrintWriter, String[])', 'void'),
-  \ javaapi#method(0,'startActionMode(', 'Callback)', 'ActionMode'),
-  \ javaapi#method(0,'onWindowStartingActionMode(', 'Callback)', 'ActionMode'),
-  \ javaapi#method(0,'onActionModeStarted(', 'ActionMode)', 'void'),
-  \ javaapi#method(0,'onActionModeFinished(', 'ActionMode)', 'void'),
-  \ javaapi#method(0,'shouldUpRecreateTask(', 'Intent)', 'boolean'),
-  \ javaapi#method(0,'navigateUpTo(', 'Intent)', 'boolean'),
-  \ javaapi#method(0,'navigateUpToFromChild(', 'Activity, Intent)', 'boolean'),
-  \ javaapi#method(0,'getParentActivityIntent(', ')', 'Intent'),
-  \ ])
-
-call javaapi#class('KeyguardLock', '', [
-  \ javaapi#method(0,'disableKeyguard(', ')', 'void'),
-  \ javaapi#method(0,'reenableKeyguard(', ')', 'void'),
-  \ ])
-
-call javaapi#interface('OnDismissListener', '', [
-  \ javaapi#method(0,'onDismiss(', ')', 'void'),
-  \ ])
-
-call javaapi#class('ActionBar', '', [
-  \ javaapi#field(1,'NAVIGATION_MODE_STANDARD', 'int'),
-  \ javaapi#field(1,'NAVIGATION_MODE_LIST', 'int'),
-  \ javaapi#field(1,'NAVIGATION_MODE_TABS', 'int'),
-  \ javaapi#field(1,'DISPLAY_USE_LOGO', 'int'),
-  \ javaapi#field(1,'DISPLAY_SHOW_HOME', 'int'),
-  \ javaapi#field(1,'DISPLAY_HOME_AS_UP', 'int'),
-  \ javaapi#field(1,'DISPLAY_SHOW_TITLE', 'int'),
-  \ javaapi#field(1,'DISPLAY_SHOW_CUSTOM', 'int'),
-  \ javaapi#method(0,'ActionBar(', ')', 'public'),
-  \ javaapi#method(0,'setCustomView(', 'View)', 'void'),
-  \ javaapi#method(0,'setCustomView(', 'View, LayoutParams)', 'void'),
-  \ javaapi#method(0,'setCustomView(', 'int)', 'void'),
-  \ javaapi#method(0,'setIcon(', 'int)', 'void'),
-  \ javaapi#method(0,'setIcon(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setLogo(', 'int)', 'void'),
-  \ javaapi#method(0,'setLogo(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setListNavigationCallbacks(', 'SpinnerAdapter, OnNavigationListener)', 'void'),
-  \ javaapi#method(0,'setSelectedNavigationItem(', 'int)', 'void'),
-  \ javaapi#method(0,'getSelectedNavigationIndex(', ')', 'int'),
-  \ javaapi#method(0,'getNavigationItemCount(', ')', 'int'),
-  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setTitle(', 'int)', 'void'),
-  \ javaapi#method(0,'setSubtitle(', 'CharSequence)', 'void'),
-  \ javaapi#method(0,'setSubtitle(', 'int)', 'void'),
-  \ javaapi#method(0,'setDisplayOptions(', 'int)', 'void'),
-  \ javaapi#method(0,'setDisplayOptions(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setDisplayUseLogoEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDisplayShowHomeEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDisplayHomeAsUpEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDisplayShowTitleEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDisplayShowCustomEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setBackgroundDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setStackedBackgroundDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'setSplitBackgroundDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'getCustomView(', ')', 'View'),
-  \ javaapi#method(0,'getTitle(', ')', 'CharSequence'),
-  \ javaapi#method(0,'getSubtitle(', ')', 'CharSequence'),
-  \ javaapi#method(0,'getNavigationMode(', ')', 'int'),
-  \ javaapi#method(0,'setNavigationMode(', 'int)', 'void'),
-  \ javaapi#method(0,'getDisplayOptions(', ')', 'int'),
-  \ javaapi#method(0,'newTab(', ')', 'Tab'),
-  \ javaapi#method(0,'addTab(', 'Tab)', 'void'),
-  \ javaapi#method(0,'addTab(', 'Tab, boolean)', 'void'),
-  \ javaapi#method(0,'addTab(', 'Tab, int)', 'void'),
-  \ javaapi#method(0,'addTab(', 'Tab, int, boolean)', 'void'),
-  \ javaapi#method(0,'removeTab(', 'Tab)', 'void'),
-  \ javaapi#method(0,'removeTabAt(', 'int)', 'void'),
-  \ javaapi#method(0,'removeAllTabs(', ')', 'void'),
-  \ javaapi#method(0,'selectTab(', 'Tab)', 'void'),
-  \ javaapi#method(0,'getSelectedTab(', ')', 'Tab'),
-  \ javaapi#method(0,'getTabAt(', 'int)', 'Tab'),
-  \ javaapi#method(0,'getTabCount(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'show(', ')', 'void'),
-  \ javaapi#method(0,'hide(', ')', 'void'),
-  \ javaapi#method(0,'isShowing(', ')', 'boolean'),
-  \ javaapi#method(0,'addOnMenuVisibilityListener(', 'OnMenuVisibilityListener)', 'void'),
-  \ javaapi#method(0,'removeOnMenuVisibilityListener(', 'OnMenuVisibilityListener)', 'void'),
-  \ javaapi#method(0,'setHomeButtonEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'getThemedContext(', ')', 'Context'),
-  \ ])
-
-call javaapi#class('RunningServiceInfo', '', [
-  \ javaapi#field(0,'durationMillis', 'long'),
-  \ javaapi#field(0,'serviceDetails', 'String'),
-  \ javaapi#method(0,'RunningServiceInfo(', ')', 'public'),
-  \ javaapi#method(0,'RunningServiceInfo(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
-  \ ])
-
-call javaapi#class('RunningTaskInfo', 'Parcelable', [
-  \ javaapi#field(0,'id', 'int'),
-  \ javaapi#field(0,'baseActivity', 'ComponentName'),
-  \ javaapi#field(0,'topActivity', 'ComponentName'),
-  \ javaapi#field(0,'thumbnail', 'Bitmap'),
-  \ javaapi#field(0,'description', 'CharSequence'),
-  \ javaapi#field(0,'numActivities', 'int'),
-  \ javaapi#field(0,'numRunning', 'int'),
-  \ javaapi#field(1,'CREATOR', 'RunningTaskInfo>'),
-  \ javaapi#method(0,'RunningTaskInfo(', ')', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#interface('BackStackEntry', '', [
-  \ javaapi#method(0,'getId(', ')', 'int'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getBreadCrumbTitleRes(', ')', 'int'),
-  \ javaapi#method(0,'getBreadCrumbShortTitleRes(', ')', 'int'),
-  \ javaapi#method(0,'getBreadCrumbTitle(', ')', 'CharSequence'),
-  \ javaapi#method(0,'getBreadCrumbShortTitle(', ')', 'CharSequence'),
-  \ ])
-
-call javaapi#class('CrashInfo', '', [
-  \ javaapi#field(0,'exceptionClassName', 'String'),
-  \ javaapi#field(0,'exceptionMessage', 'String'),
-  \ javaapi#field(0,'throwFileName', 'String'),
-  \ javaapi#field(0,'throwClassName', 'String'),
-  \ javaapi#field(0,'throwMethodName', 'String'),
-  \ javaapi#field(0,'throwLineNumber', 'int'),
-  \ javaapi#field(0,'stackTrace', 'String'),
-  \ javaapi#method(0,'CrashInfo(', ')', 'public'),
-  \ javaapi#method(0,'CrashInfo(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'CrashInfo(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
-  \ ])
-
-call javaapi#class('Style', '', [
-  \ javaapi#method(0,'Style(', ')', 'public'),
-  \ javaapi#method(0,'setBuilder(', 'Builder)', 'void'),
-  \ javaapi#method(0,'build(', ')', 'Notification'),
-  \ ])
-
-
-call javaapi#interface('OnCancelListener', '', [
-  \ javaapi#method(0,'onCancel(', ')', 'void'),
-  \ ])
-
-call javaapi#class('TimePickerDialog', '', [
-  \ javaapi#method(0,'TimePickerDialog(', 'Context, OnTimeSetListener, int, int, boolean)', 'public'),
-  \ javaapi#method(0,'TimePickerDialog(', 'Context, int, OnTimeSetListener, int, int, boolean)', 'public'),
-  \ javaapi#method(0,'onClick(', 'DialogInterface, int)', 'void'),
-  \ javaapi#method(0,'updateTime(', 'int, int)', 'void'),
-  \ javaapi#method(0,'onTimeChanged(', 'TimePicker, int, int)', 'void'),
-  \ javaapi#method(0,'onSaveInstanceState(', ')', 'Bundle'),
-  \ javaapi#method(0,'onRestoreInstanceState(', 'Bundle)', 'void'),
-  \ ])
-
-call javaapi#class('AnrInfo', '', [
-  \ javaapi#field(0,'activity', 'String'),
-  \ javaapi#field(0,'cause', 'String'),
-  \ javaapi#field(0,'info', 'String'),
-  \ javaapi#method(0,'AnrInfo(', ')', 'public'),
-  \ javaapi#method(0,'AnrInfo(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
-  \ ])
-
-call javaapi#class('FragmentBreadCrumbs', '', [
-  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context)', 'public'),
-  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context, AttributeSet)', 'public'),
-  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context, AttributeSet, int)', 'public'),
-  \ javaapi#method(0,'setActivity(', 'Activity)', 'void'),
-  \ javaapi#method(0,'setMaxVisible(', 'int)', 'void'),
-  \ javaapi#method(0,'setParentTitle(', 'CharSequence, CharSequence, OnClickListener)', 'void'),
-  \ javaapi#method(0,'setOnBreadCrumbClickListener(', 'OnBreadCrumbClickListener)', 'void'),
-  \ javaapi#method(0,'setTitle(', 'CharSequence, CharSequence)', 'void'),
-  \ javaapi#method(0,'onBackStackChanged(', ')', 'void'),
-  \ ])
-
-call javaapi#class('ListActivity', '', [
-  \ javaapi#method(0,'ListActivity(', ')', 'public'),
-  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
-  \ javaapi#method(0,'setListAdapter(', 'ListAdapter)', 'void'),
-  \ javaapi#method(0,'setSelection(', 'int)', 'void'),
-  \ javaapi#method(0,'getSelectedItemPosition(', ')', 'int'),
-  \ javaapi#method(0,'getSelectedItemId(', ')', 'long'),
-  \ javaapi#method(0,'getListView(', ')', 'ListView'),
-  \ javaapi#method(0,'getListAdapter(', ')', 'ListAdapter'),
-  \ ])
-
-
 call javaapi#class('IconResizer', '', [
   \ javaapi#method(0,'IconResizer(', 'LauncherActivity)', 'public'),
   \ javaapi#method(0,'createIconThumbnail(', 'Drawable)', 'Drawable'),
@@ -869,7 +102,7 @@ call javaapi#class('Instrumentation', '', [
   \ javaapi#method(0,'getBinderCounts(', ')', 'Bundle'),
   \ ])
 
-call javaapi#class('MediaRouteActionProvider', '', [
+call javaapi#class('MediaRouteActionProvider', 'ActionProvider', [
   \ javaapi#method(0,'MediaRouteActionProvider(', 'Context)', 'public'),
   \ javaapi#method(0,'setRouteTypes(', 'int)', 'void'),
   \ javaapi#method(0,'onCreateActionView(', ')', 'View'),
@@ -880,7 +113,7 @@ call javaapi#class('MediaRouteActionProvider', '', [
   \ javaapi#method(0,'isVisible(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('IntentService', '', [
+call javaapi#class('IntentService', 'Service', [
   \ javaapi#method(0,'IntentService(', 'String)', 'public'),
   \ javaapi#method(0,'setIntentRedelivery(', 'boolean)', 'void'),
   \ javaapi#method(0,'onCreate(', ')', 'void'),
@@ -894,14 +127,14 @@ call javaapi#interface('OnFinished', '', [
   \ javaapi#method(0,'onSendFinished(', 'PendingIntent, Intent, int, String, Bundle)', 'void'),
   \ ])
 
-call javaapi#class('LauncherActivity', '', [
+call javaapi#class('LauncherActivity', 'ListActivity', [
   \ javaapi#method(0,'LauncherActivity(', ')', 'public'),
   \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
   \ javaapi#method(0,'setTitle(', 'int)', 'void'),
   \ javaapi#method(0,'makeListItems(', ')', 'ListItem>'),
   \ ])
 
-call javaapi#class('MediaRouteButton', '', [
+call javaapi#class('MediaRouteButton', 'View', [
   \ javaapi#method(0,'MediaRouteButton(', 'Context)', 'public'),
   \ javaapi#method(0,'MediaRouteButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'MediaRouteButton(', 'Context, AttributeSet, int)', 'public'),
@@ -1102,7 +335,7 @@ call javaapi#class('LocalActivityManager', '', [
   \ javaapi#method(0,'dispatchDestroy(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('ListFragment', '', [
+call javaapi#class('ListFragment', 'Fragment', [
   \ javaapi#method(0,'ListFragment(', ')', 'public'),
   \ javaapi#method(0,'onCreateView(', 'LayoutInflater, ViewGroup, Bundle)', 'View'),
   \ javaapi#method(0,'onViewCreated(', 'View, Bundle)', 'void'),
@@ -1168,7 +401,7 @@ call javaapi#class('RunningServiceInfo', 'Parcelable', [
   \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
   \ ])
 
-call javaapi#class('NativeActivity', '', [
+call javaapi#class('NativeActivity', 'Activity', [
   \ javaapi#field(1,'META_DATA_LIB_NAME', 'String'),
   \ javaapi#field(1,'META_DATA_FUNC_NAME', 'String'),
   \ javaapi#method(0,'NativeActivity(', ')', 'public'),
@@ -1233,7 +466,7 @@ call javaapi#class('Tab', '', [
   \ javaapi#method(0,'getContentDescription(', ')', 'CharSequence'),
   \ ])
 
-call javaapi#class('TabActivity', '', [
+call javaapi#class('TabActivity', 'ActivityGroup', [
   \ javaapi#method(0,'TabActivity(', ')', 'public'),
   \ javaapi#method(0,'setDefaultTab(', 'String)', 'void'),
   \ javaapi#method(0,'setDefaultTab(', 'int)', 'void'),
@@ -1277,7 +510,7 @@ call javaapi#class('FragmentTransaction', '', [
   \ javaapi#method(0,'commitAllowingStateLoss(', ')', 'int'),
   \ ])
 
-call javaapi#class('Presentation', '', [
+call javaapi#class('Presentation', 'Dialog', [
   \ javaapi#method(0,'Presentation(', 'Context, Display)', 'public'),
   \ javaapi#method(0,'Presentation(', 'Context, Display, int)', 'public'),
   \ javaapi#method(0,'getDisplay(', ')', 'Display'),
@@ -1287,7 +520,7 @@ call javaapi#class('Presentation', '', [
   \ javaapi#method(0,'onDisplayChanged(', ')', 'void'),
   \ ])
 
-call javaapi#class('DialogFragment', '', [
+call javaapi#class('DialogFragment', 'Fragment', [
   \ javaapi#field(1,'STYLE_NORMAL', 'int'),
   \ javaapi#field(1,'STYLE_NO_TITLE', 'int'),
   \ javaapi#field(1,'STYLE_NO_FRAME', 'int'),
@@ -1682,7 +915,7 @@ call javaapi#class('SavedState', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'MarginLayoutParams', [
   \ javaapi#field(0,'gravity', 'int'),
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
@@ -1690,5 +923,774 @@ call javaapi#class('LayoutParams', '', [
   \ javaapi#method(0,'LayoutParams(', 'int)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'LayoutParams)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'LayoutParams)', 'public'),
+  \ ])
+
+call javaapi#namespace('android.app')
+
+call javaapi#interface('OnCancelListener', '', [
+  \ javaapi#method(0,'onCancel(', ')', 'void'),
+  \ ])
+
+call javaapi#class('TimePickerDialog', 'AlertDialog', [
+  \ javaapi#method(0,'TimePickerDialog(', 'Context, OnTimeSetListener, int, int, boolean)', 'public'),
+  \ javaapi#method(0,'TimePickerDialog(', 'Context, int, OnTimeSetListener, int, int, boolean)', 'public'),
+  \ javaapi#method(0,'onClick(', 'DialogInterface, int)', 'void'),
+  \ javaapi#method(0,'updateTime(', 'int, int)', 'void'),
+  \ javaapi#method(0,'onTimeChanged(', 'TimePicker, int, int)', 'void'),
+  \ javaapi#method(0,'onSaveInstanceState(', ')', 'Bundle'),
+  \ javaapi#method(0,'onRestoreInstanceState(', 'Bundle)', 'void'),
+  \ ])
+
+call javaapi#class('AnrInfo', '', [
+  \ javaapi#field(0,'activity', 'String'),
+  \ javaapi#field(0,'cause', 'String'),
+  \ javaapi#field(0,'info', 'String'),
+  \ javaapi#method(0,'AnrInfo(', ')', 'public'),
+  \ javaapi#method(0,'AnrInfo(', 'Parcel)', 'public'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
+  \ ])
+
+call javaapi#class('FragmentBreadCrumbs', 'ViewGroup', [
+  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context)', 'public'),
+  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context, AttributeSet)', 'public'),
+  \ javaapi#method(0,'FragmentBreadCrumbs(', 'Context, AttributeSet, int)', 'public'),
+  \ javaapi#method(0,'setActivity(', 'Activity)', 'void'),
+  \ javaapi#method(0,'setMaxVisible(', 'int)', 'void'),
+  \ javaapi#method(0,'setParentTitle(', 'CharSequence, CharSequence, OnClickListener)', 'void'),
+  \ javaapi#method(0,'setOnBreadCrumbClickListener(', 'OnBreadCrumbClickListener)', 'void'),
+  \ javaapi#method(0,'setTitle(', 'CharSequence, CharSequence)', 'void'),
+  \ javaapi#method(0,'onBackStackChanged(', ')', 'void'),
+  \ ])
+
+call javaapi#class('ListActivity', 'Activity', [
+  \ javaapi#method(0,'ListActivity(', ')', 'public'),
+  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
+  \ javaapi#method(0,'setListAdapter(', 'ListAdapter)', 'void'),
+  \ javaapi#method(0,'setSelection(', 'int)', 'void'),
+  \ javaapi#method(0,'getSelectedItemPosition(', ')', 'int'),
+  \ javaapi#method(0,'getSelectedItemId(', ')', 'long'),
+  \ javaapi#method(0,'getListView(', ')', 'ListView'),
+  \ javaapi#method(0,'getListAdapter(', ')', 'ListAdapter'),
+  \ ])
+
+call javaapi#namespace('android.app')
+
+call javaapi#class('AlertDialog', 'Dialog', [
+  \ javaapi#field(1,'THEME_TRADITIONAL', 'int'),
+  \ javaapi#field(1,'THEME_HOLO_DARK', 'int'),
+  \ javaapi#field(1,'THEME_HOLO_LIGHT', 'int'),
+  \ javaapi#field(1,'THEME_DEVICE_DEFAULT_DARK', 'int'),
+  \ javaapi#field(1,'THEME_DEVICE_DEFAULT_LIGHT', 'int'),
+  \ javaapi#method(0,'getButton(', 'int)', 'Button'),
+  \ javaapi#method(0,'getListView(', ')', 'ListView'),
+  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setCustomTitle(', 'View)', 'void'),
+  \ javaapi#method(0,'setMessage(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setView(', 'View)', 'void'),
+  \ javaapi#method(0,'setView(', 'View, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'setButton(', 'int, CharSequence, Message)', 'void'),
+  \ javaapi#method(0,'setButton(', 'int, CharSequence, OnClickListener)', 'void'),
+  \ javaapi#method(0,'setButton(', 'CharSequence, Message)', 'void'),
+  \ javaapi#method(0,'setButton2(', 'CharSequence, Message)', 'void'),
+  \ javaapi#method(0,'setButton3(', 'CharSequence, Message)', 'void'),
+  \ javaapi#method(0,'setButton(', 'CharSequence, OnClickListener)', 'void'),
+  \ javaapi#method(0,'setButton2(', 'CharSequence, OnClickListener)', 'void'),
+  \ javaapi#method(0,'setButton3(', 'CharSequence, OnClickListener)', 'void'),
+  \ javaapi#method(0,'setIcon(', 'int)', 'void'),
+  \ javaapi#method(0,'setIcon(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setIconAttribute(', 'int)', 'void'),
+  \ javaapi#method(0,'setInverseBackgroundForced(', 'boolean)', 'void'),
+  \ javaapi#method(0,'onKeyDown(', 'int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onKeyUp(', 'int, KeyEvent)', 'boolean'),
+  \ ])
+
+call javaapi#class('ProcessErrorStateInfo', 'Parcelable', [
+  \ javaapi#field(1,'NO_ERROR', 'int'),
+  \ javaapi#field(1,'CRASHED', 'int'),
+  \ javaapi#field(1,'NOT_RESPONDING', 'int'),
+  \ javaapi#field(0,'condition', 'int'),
+  \ javaapi#field(0,'processName', 'String'),
+  \ javaapi#field(0,'pid', 'int'),
+  \ javaapi#field(0,'uid', 'int'),
+  \ javaapi#field(0,'tag', 'String'),
+  \ javaapi#field(0,'shortMsg', 'String'),
+  \ javaapi#field(0,'longMsg', 'String'),
+  \ javaapi#field(0,'stackTrace', 'String'),
+  \ javaapi#field(0,'crashData', 'byte[]'),
+  \ javaapi#field(1,'CREATOR', 'ProcessErrorStateInfo>'),
+  \ javaapi#method(0,'ProcessErrorStateInfo(', ')', 'public'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('ActivityResult', '', [
+  \ javaapi#method(0,'ActivityResult(', 'int, Intent)', 'public'),
+  \ javaapi#method(0,'getResultCode(', ')', 'int'),
+  \ javaapi#method(0,'getResultData(', ')', 'Intent'),
+  \ ])
+
+call javaapi#class('InboxStyle', 'Style', [
+  \ javaapi#method(0,'InboxStyle(', ')', 'public'),
+  \ javaapi#method(0,'InboxStyle(', 'Builder)', 'public'),
+  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'InboxStyle'),
+  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'InboxStyle'),
+  \ javaapi#method(0,'addLine(', 'CharSequence)', 'InboxStyle'),
+  \ javaapi#method(0,'build(', ')', 'Notification'),
+  \ ])
+
+call javaapi#class('ExpandableListActivity', 'Activity', [
+  \ javaapi#method(0,'ExpandableListActivity(', ')', 'public'),
+  \ javaapi#method(0,'onCreateContextMenu(', 'ContextMenu, View, ContextMenuInfo)', 'void'),
+  \ javaapi#method(0,'onChildClick(', 'ExpandableListView, View, int, int, long)', 'boolean'),
+  \ javaapi#method(0,'onGroupCollapse(', 'int)', 'void'),
+  \ javaapi#method(0,'onGroupExpand(', 'int)', 'void'),
+  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
+  \ javaapi#method(0,'setListAdapter(', 'ExpandableListAdapter)', 'void'),
+  \ javaapi#method(0,'getExpandableListView(', ')', 'ExpandableListView'),
+  \ javaapi#method(0,'getExpandableListAdapter(', ')', 'ExpandableListAdapter'),
+  \ javaapi#method(0,'getSelectedId(', ')', 'long'),
+  \ javaapi#method(0,'getSelectedPosition(', ')', 'long'),
+  \ javaapi#method(0,'setSelectedChild(', 'int, int, boolean)', 'boolean'),
+  \ javaapi#method(0,'setSelectedGroup(', 'int)', 'void'),
+  \ ])
+
+call javaapi#class('ActivityMonitor', '', [
+  \ javaapi#method(0,'ActivityMonitor(', 'IntentFilter, ActivityResult, boolean)', 'public'),
+  \ javaapi#method(0,'ActivityMonitor(', 'String, ActivityResult, boolean)', 'public'),
+  \ javaapi#method(0,'getFilter(', ')', 'IntentFilter'),
+  \ javaapi#method(0,'getResult(', ')', 'ActivityResult'),
+  \ javaapi#method(0,'isBlocking(', ')', 'boolean'),
+  \ javaapi#method(0,'getHits(', ')', 'int'),
+  \ javaapi#method(0,'getLastActivity(', ')', 'Activity'),
+  \ javaapi#method(0,'waitForActivity(', ')', 'Activity'),
+  \ javaapi#method(0,'waitForActivityWithTimeout(', 'long)', 'Activity'),
+  \ ])
+
+call javaapi#class('ActivityGroup', 'Activity', [
+  \ javaapi#method(0,'ActivityGroup(', ')', 'public'),
+  \ javaapi#method(0,'ActivityGroup(', 'boolean)', 'public'),
+  \ javaapi#method(0,'getCurrentActivity(', ')', 'Activity'),
+  \ javaapi#method(0,'getLocalActivityManager(', ')', 'LocalActivityManager'),
+  \ ])
+
+call javaapi#interface('OnNavigationListener', '', [
+  \ javaapi#method(0,'onNavigationItemSelected(', 'int, long)', 'boolean'),
+  \ ])
+
+call javaapi#class('CanceledException', 'AndroidException', [
+  \ javaapi#method(0,'CanceledException(', ')', 'public'),
+  \ javaapi#method(0,'CanceledException(', 'String)', 'public'),
+  \ javaapi#method(0,'CanceledException(', 'Exception)', 'public'),
+  \ ])
+
+call javaapi#class('BigTextStyle', 'Style', [
+  \ javaapi#method(0,'BigTextStyle(', ')', 'public'),
+  \ javaapi#method(0,'BigTextStyle(', 'Builder)', 'public'),
+  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'BigTextStyle'),
+  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'BigTextStyle'),
+  \ javaapi#method(0,'bigText(', 'CharSequence)', 'BigTextStyle'),
+  \ javaapi#method(0,'build(', ')', 'Notification'),
+  \ ])
+
+call javaapi#class('NotificationManager', '', [
+  \ javaapi#method(0,'notify(', 'int, Notification)', 'void'),
+  \ javaapi#method(0,'notify(', 'String, int, Notification)', 'void'),
+  \ javaapi#method(0,'cancel(', 'int)', 'void'),
+  \ javaapi#method(0,'cancel(', 'String, int)', 'void'),
+  \ javaapi#method(0,'cancelAll(', ')', 'void'),
+  \ ])
+
+call javaapi#class('Application', 'ContextWrapper', [
+  \ javaapi#method(0,'Application(', ')', 'public'),
+  \ javaapi#method(0,'onCreate(', ')', 'void'),
+  \ javaapi#method(0,'onTerminate(', ')', 'void'),
+  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
+  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
+  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
+  \ javaapi#method(0,'registerComponentCallbacks(', 'ComponentCallbacks)', 'void'),
+  \ javaapi#method(0,'unregisterComponentCallbacks(', 'ComponentCallbacks)', 'void'),
+  \ javaapi#method(0,'registerActivityLifecycleCallbacks(', 'ActivityLifecycleCallbacks)', 'void'),
+  \ javaapi#method(0,'unregisterActivityLifecycleCallbacks(', 'ActivityLifecycleCallbacks)', 'void'),
+  \ ])
+
+call javaapi#interface('OnBackStackChangedListener', '', [
+  \ javaapi#method(0,'onBackStackChanged(', ')', 'void'),
+  \ ])
+
+call javaapi#class('AliasActivity', 'Activity', [
+  \ javaapi#method(0,'AliasActivity(', ')', 'public'),
+  \ ])
+
+call javaapi#class('RecentTaskInfo', 'Parcelable', [
+  \ javaapi#field(0,'id', 'int'),
+  \ javaapi#field(0,'persistentId', 'int'),
+  \ javaapi#field(0,'baseIntent', 'Intent'),
+  \ javaapi#field(0,'origActivity', 'ComponentName'),
+  \ javaapi#field(0,'description', 'CharSequence'),
+  \ javaapi#field(1,'CREATOR', 'RecentTaskInfo>'),
+  \ javaapi#method(0,'RecentTaskInfo(', ')', 'public'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('ProgressDialog', 'AlertDialog', [
+  \ javaapi#field(1,'STYLE_SPINNER', 'int'),
+  \ javaapi#field(1,'STYLE_HORIZONTAL', 'int'),
+  \ javaapi#method(0,'ProgressDialog(', 'Context)', 'public'),
+  \ javaapi#method(0,'ProgressDialog(', 'Context, int)', 'public'),
+  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence)', 'ProgressDialog'),
+  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean)', 'ProgressDialog'),
+  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean, boolean)', 'ProgressDialog'),
+  \ javaapi#method(1,'show(', 'Context, CharSequence, CharSequence, boolean, boolean, OnCancelListener)', 'ProgressDialog'),
+  \ javaapi#method(0,'onStart(', ')', 'void'),
+  \ javaapi#method(0,'setProgress(', 'int)', 'void'),
+  \ javaapi#method(0,'setSecondaryProgress(', 'int)', 'void'),
+  \ javaapi#method(0,'getProgress(', ')', 'int'),
+  \ javaapi#method(0,'getSecondaryProgress(', ')', 'int'),
+  \ javaapi#method(0,'getMax(', ')', 'int'),
+  \ javaapi#method(0,'setMax(', 'int)', 'void'),
+  \ javaapi#method(0,'incrementProgressBy(', 'int)', 'void'),
+  \ javaapi#method(0,'incrementSecondaryProgressBy(', 'int)', 'void'),
+  \ javaapi#method(0,'setProgressDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setIndeterminateDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setIndeterminate(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isIndeterminate(', ')', 'boolean'),
+  \ javaapi#method(0,'setMessage(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setProgressStyle(', 'int)', 'void'),
+  \ javaapi#method(0,'setProgressNumberFormat(', 'String)', 'void'),
+  \ javaapi#method(0,'setProgressPercentFormat(', 'NumberFormat)', 'void'),
+  \ ])
+
+call javaapi#class('Service', 'ContextWrapper', [
+  \ javaapi#field(1,'START_CONTINUATION_MASK', 'int'),
+  \ javaapi#field(1,'START_STICKY_COMPATIBILITY', 'int'),
+  \ javaapi#field(1,'START_STICKY', 'int'),
+  \ javaapi#field(1,'START_NOT_STICKY', 'int'),
+  \ javaapi#field(1,'START_REDELIVER_INTENT', 'int'),
+  \ javaapi#field(1,'START_FLAG_REDELIVERY', 'int'),
+  \ javaapi#field(1,'START_FLAG_RETRY', 'int'),
+  \ javaapi#method(0,'Service(', ')', 'public'),
+  \ javaapi#method(0,'getApplication(', ')', 'Application'),
+  \ javaapi#method(0,'onCreate(', ')', 'void'),
+  \ javaapi#method(0,'onStart(', 'Intent, int)', 'void'),
+  \ javaapi#method(0,'onStartCommand(', 'Intent, int, int)', 'int'),
+  \ javaapi#method(0,'onDestroy(', ')', 'void'),
+  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
+  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
+  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
+  \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),
+  \ javaapi#method(0,'onUnbind(', 'Intent)', 'boolean'),
+  \ javaapi#method(0,'onRebind(', 'Intent)', 'void'),
+  \ javaapi#method(0,'onTaskRemoved(', 'Intent)', 'void'),
+  \ javaapi#method(0,'stopSelf(', ')', 'void'),
+  \ javaapi#method(0,'stopSelf(', 'int)', 'void'),
+  \ javaapi#method(0,'stopSelfResult(', 'int)', 'boolean'),
+  \ javaapi#method(0,'startForeground(', 'int, Notification)', 'void'),
+  \ javaapi#method(0,'stopForeground(', 'boolean)', 'void'),
+  \ ])
+
+call javaapi#class('UiModeManager', '', [
+  \ javaapi#field(1,'ACTION_ENTER_CAR_MODE', 'String'),
+  \ javaapi#field(1,'ACTION_EXIT_CAR_MODE', 'String'),
+  \ javaapi#field(1,'ACTION_ENTER_DESK_MODE', 'String'),
+  \ javaapi#field(1,'ACTION_EXIT_DESK_MODE', 'String'),
+  \ javaapi#field(1,'MODE_NIGHT_AUTO', 'int'),
+  \ javaapi#field(1,'MODE_NIGHT_NO', 'int'),
+  \ javaapi#field(1,'MODE_NIGHT_YES', 'int'),
+  \ javaapi#field(1,'ENABLE_CAR_MODE_GO_CAR_HOME', 'int'),
+  \ javaapi#field(1,'DISABLE_CAR_MODE_GO_HOME', 'int'),
+  \ javaapi#method(0,'enableCarMode(', 'int)', 'void'),
+  \ javaapi#method(0,'disableCarMode(', 'int)', 'void'),
+  \ javaapi#method(0,'getCurrentModeType(', ')', 'int'),
+  \ javaapi#method(0,'setNightMode(', 'int)', 'void'),
+  \ javaapi#method(0,'getNightMode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('DatePickerDialog', 'AlertDialog', [
+  \ javaapi#method(0,'DatePickerDialog(', 'Context, OnDateSetListener, int, int, int)', 'public'),
+  \ javaapi#method(0,'DatePickerDialog(', 'Context, int, OnDateSetListener, int, int, int)', 'public'),
+  \ javaapi#method(0,'onClick(', 'DialogInterface, int)', 'void'),
+  \ javaapi#method(0,'onDateChanged(', 'DatePicker, int, int, int)', 'void'),
+  \ javaapi#method(0,'getDatePicker(', ')', 'DatePicker'),
+  \ javaapi#method(0,'updateDate(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'onSaveInstanceState(', ')', 'Bundle'),
+  \ javaapi#method(0,'onRestoreInstanceState(', 'Bundle)', 'void'),
+  \ ])
+
+call javaapi#class('InstantiationException', 'AndroidRuntimeException', [
+  \ javaapi#method(0,'InstantiationException(', 'String, Exception)', 'public'),
+  \ ])
+
+call javaapi#class('SearchManager', 'OnCancelListener', [
+  \ javaapi#field(1,'MENU_KEY', 'char'),
+  \ javaapi#field(1,'MENU_KEYCODE', 'int'),
+  \ javaapi#field(1,'QUERY', 'String'),
+  \ javaapi#field(1,'USER_QUERY', 'String'),
+  \ javaapi#field(1,'APP_DATA', 'String'),
+  \ javaapi#field(1,'ACTION_KEY', 'String'),
+  \ javaapi#field(1,'EXTRA_DATA_KEY', 'String'),
+  \ javaapi#field(1,'EXTRA_SELECT_QUERY', 'String'),
+  \ javaapi#field(1,'EXTRA_NEW_SEARCH', 'String'),
+  \ javaapi#field(1,'EXTRA_WEB_SEARCH_PENDINGINTENT', 'String'),
+  \ javaapi#field(1,'CURSOR_EXTRA_KEY_IN_PROGRESS', 'String'),
+  \ javaapi#field(1,'ACTION_MSG', 'String'),
+  \ javaapi#field(1,'FLAG_QUERY_REFINEMENT', 'int'),
+  \ javaapi#field(1,'SUGGEST_URI_PATH_QUERY', 'String'),
+  \ javaapi#field(1,'SUGGEST_MIME_TYPE', 'String'),
+  \ javaapi#field(1,'SUGGEST_URI_PATH_SHORTCUT', 'String'),
+  \ javaapi#field(1,'SHORTCUT_MIME_TYPE', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_FORMAT', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_1', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_2', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_TEXT_2_URL', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_ICON_1', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_ICON_2', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_ACTION', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_DATA', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_EXTRA_DATA', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_INTENT_DATA_ID', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_QUERY', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_SHORTCUT_ID', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_SPINNER_WHILE_REFRESHING', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_FLAGS', 'String'),
+  \ javaapi#field(1,'SUGGEST_COLUMN_LAST_ACCESS_HINT', 'String'),
+  \ javaapi#field(1,'SUGGEST_NEVER_MAKE_SHORTCUT', 'String'),
+  \ javaapi#field(1,'SUGGEST_PARAMETER_LIMIT', 'String'),
+  \ javaapi#field(1,'INTENT_ACTION_GLOBAL_SEARCH', 'String'),
+  \ javaapi#field(1,'INTENT_ACTION_SEARCH_SETTINGS', 'String'),
+  \ javaapi#field(1,'INTENT_ACTION_WEB_SEARCH_SETTINGS', 'String'),
+  \ javaapi#field(1,'INTENT_ACTION_SEARCHABLES_CHANGED', 'String'),
+  \ javaapi#field(1,'INTENT_GLOBAL_SEARCH_ACTIVITY_CHANGED', 'String'),
+  \ javaapi#field(1,'INTENT_ACTION_SEARCH_SETTINGS_CHANGED', 'String'),
+  \ javaapi#method(0,'startSearch(', 'String, boolean, ComponentName, Bundle, boolean)', 'void'),
+  \ javaapi#method(0,'getGlobalSearchActivity(', ')', 'ComponentName'),
+  \ javaapi#method(0,'triggerSearch(', 'String, ComponentName, Bundle)', 'void'),
+  \ javaapi#method(0,'stopSearch(', ')', 'void'),
+  \ javaapi#method(0,'setOnDismissListener(', 'OnDismissListener)', 'void'),
+  \ javaapi#method(0,'setOnCancelListener(', 'OnCancelListener)', 'void'),
+  \ javaapi#method(0,'onCancel(', 'DialogInterface)', 'void'),
+  \ javaapi#method(0,'onDismiss(', 'DialogInterface)', 'void'),
+  \ javaapi#method(0,'getSearchableInfo(', 'ComponentName)', 'SearchableInfo'),
+  \ javaapi#method(0,'getSearchablesInGlobalSearch(', ')', 'SearchableInfo>'),
+  \ ])
+
+call javaapi#interface('OnKeyguardExitResult', '', [
+  \ javaapi#method(0,'onKeyguardExitResult(', 'boolean)', 'void'),
+  \ ])
+
+call javaapi#class('RunningAppProcessInfo', 'Parcelable', [
+  \ javaapi#field(0,'processName', 'String'),
+  \ javaapi#field(0,'pid', 'int'),
+  \ javaapi#field(0,'uid', 'int'),
+  \ javaapi#field(0,'pkgList', 'String[]'),
+  \ javaapi#field(0,'lastTrimLevel', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_FOREGROUND', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_VISIBLE', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_PERCEPTIBLE', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_SERVICE', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_BACKGROUND', 'int'),
+  \ javaapi#field(1,'IMPORTANCE_EMPTY', 'int'),
+  \ javaapi#field(0,'importance', 'int'),
+  \ javaapi#field(0,'lru', 'int'),
+  \ javaapi#field(1,'REASON_UNKNOWN', 'int'),
+  \ javaapi#field(1,'REASON_PROVIDER_IN_USE', 'int'),
+  \ javaapi#field(1,'REASON_SERVICE_IN_USE', 'int'),
+  \ javaapi#field(0,'importanceReasonCode', 'int'),
+  \ javaapi#field(0,'importanceReasonPid', 'int'),
+  \ javaapi#field(0,'importanceReasonComponent', 'ComponentName'),
+  \ javaapi#field(1,'CREATOR', 'RunningAppProcessInfo>'),
+  \ javaapi#method(0,'RunningAppProcessInfo(', ')', 'public'),
+  \ javaapi#method(0,'RunningAppProcessInfo(', 'String, int, String[])', 'public'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('Query', '', [
+  \ javaapi#method(0,'Query(', ')', 'public'),
+  \ javaapi#method(0,'setFilterById(', ')', 'Query'),
+  \ javaapi#method(0,'setFilterByStatus(', 'int)', 'Query'),
+  \ ])
+
+call javaapi#interface('TabListener', '', [
+  \ javaapi#method(0,'onTabSelected(', 'Tab, FragmentTransaction)', 'void'),
+  \ javaapi#method(0,'onTabUnselected(', 'Tab, FragmentTransaction)', 'void'),
+  \ javaapi#method(0,'onTabReselected(', 'Tab, FragmentTransaction)', 'void'),
+  \ ])
+
+call javaapi#interface('OnBreadCrumbClickListener', '', [
+  \ javaapi#method(0,'onBreadCrumbClick(', 'BackStackEntry, int)', 'boolean'),
+  \ ])
+
+call javaapi#interface('OnDateSetListener', '', [
+  \ javaapi#method(0,'onDateSet(', 'DatePicker, int, int, int)', 'void'),
+  \ ])
+
+call javaapi#class('MemoryInfo', 'Parcelable', [
+  \ javaapi#field(0,'availMem', 'long'),
+  \ javaapi#field(0,'totalMem', 'long'),
+  \ javaapi#field(0,'threshold', 'long'),
+  \ javaapi#field(0,'lowMemory', 'boolean'),
+  \ javaapi#field(1,'CREATOR', 'MemoryInfo>'),
+  \ javaapi#method(0,'MemoryInfo(', ')', 'public'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('WallpaperManager', '', [
+  \ javaapi#field(1,'ACTION_LIVE_WALLPAPER_CHOOSER', 'String'),
+  \ javaapi#field(1,'ACTION_CHANGE_LIVE_WALLPAPER', 'String'),
+  \ javaapi#field(1,'EXTRA_LIVE_WALLPAPER_COMPONENT', 'String'),
+  \ javaapi#field(1,'WALLPAPER_PREVIEW_META_DATA', 'String'),
+  \ javaapi#field(1,'COMMAND_TAP', 'String'),
+  \ javaapi#field(1,'COMMAND_SECONDARY_TAP', 'String'),
+  \ javaapi#field(1,'COMMAND_DROP', 'String'),
+  \ javaapi#method(1,'getInstance(', 'Context)', 'WallpaperManager'),
+  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,'peekDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,'getFastDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,'peekFastDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,'forgetLoadedWallpaper(', ')', 'void'),
+  \ javaapi#method(0,'getWallpaperInfo(', ')', 'WallpaperInfo'),
+  \ javaapi#method(0,'setResource(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'setBitmap(', 'Bitmap) throws IOException', 'void'),
+  \ javaapi#method(0,'setStream(', 'InputStream) throws IOException', 'void'),
+  \ javaapi#method(0,'hasResourceWallpaper(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getDesiredMinimumWidth(', ')', 'int'),
+  \ javaapi#method(0,'getDesiredMinimumHeight(', ')', 'int'),
+  \ javaapi#method(0,'suggestDesiredDimensions(', 'int, int)', 'void'),
+  \ javaapi#method(0,'setWallpaperOffsets(', 'IBinder, float, float)', 'void'),
+  \ javaapi#method(0,'setWallpaperOffsetSteps(', 'float, float)', 'void'),
+  \ javaapi#method(0,'sendWallpaperCommand(', 'IBinder, String, int, int, int, Bundle)', 'void'),
+  \ javaapi#method(0,'clearWallpaperOffsets(', 'IBinder)', 'void'),
+  \ javaapi#method(0,'clear(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('BigPictureStyle', 'Style', [
+  \ javaapi#method(0,'BigPictureStyle(', ')', 'public'),
+  \ javaapi#method(0,'BigPictureStyle(', 'Builder)', 'public'),
+  \ javaapi#method(0,'setBigContentTitle(', 'CharSequence)', 'BigPictureStyle'),
+  \ javaapi#method(0,'setSummaryText(', 'CharSequence)', 'BigPictureStyle'),
+  \ javaapi#method(0,'bigPicture(', 'Bitmap)', 'BigPictureStyle'),
+  \ javaapi#method(0,'bigLargeIcon(', 'Bitmap)', 'BigPictureStyle'),
+  \ javaapi#method(0,'build(', ')', 'Notification'),
+  \ ])
+
+call javaapi#interface('ActivityLifecycleCallbacks', '', [
+  \ javaapi#method(0,'onActivityCreated(', 'Activity, Bundle)', 'void'),
+  \ javaapi#method(0,'onActivityStarted(', 'Activity)', 'void'),
+  \ javaapi#method(0,'onActivityResumed(', 'Activity)', 'void'),
+  \ javaapi#method(0,'onActivityPaused(', 'Activity)', 'void'),
+  \ javaapi#method(0,'onActivityStopped(', 'Activity)', 'void'),
+  \ javaapi#method(0,'onActivitySaveInstanceState(', 'Activity, Bundle)', 'void'),
+  \ javaapi#method(0,'onActivityDestroyed(', 'Activity)', 'void'),
+  \ ])
+
+call javaapi#interface('LoaderCallbacks<D>', '', [
+  \ javaapi#method(0,'onCreateLoader(', 'int, Bundle)', 'Loader<D>'),
+  \ javaapi#method(0,'onLoadFinished(', 'Loader<D>, D)', 'void'),
+  \ javaapi#method(0,'onLoaderReset(', 'Loader<D>)', 'void'),
+  \ ])
+
+call javaapi#class('Activity', 'ContextThemeWrapper', [
+  \ javaapi#field(1,'RESULT_CANCELED', 'int'),
+  \ javaapi#field(1,'RESULT_OK', 'int'),
+  \ javaapi#field(1,'RESULT_FIRST_USER', 'int'),
+  \ javaapi#field(1,'DEFAULT_KEYS_DISABLE', 'int'),
+  \ javaapi#field(1,'DEFAULT_KEYS_DIALER', 'int'),
+  \ javaapi#field(1,'DEFAULT_KEYS_SHORTCUT', 'int'),
+  \ javaapi#field(1,'DEFAULT_KEYS_SEARCH_LOCAL', 'int'),
+  \ javaapi#field(1,'DEFAULT_KEYS_SEARCH_GLOBAL', 'int'),
+  \ javaapi#method(0,'Activity(', ')', 'public'),
+  \ javaapi#method(0,'getIntent(', ')', 'Intent'),
+  \ javaapi#method(0,'setIntent(', 'Intent)', 'void'),
+  \ javaapi#method(0,'getApplication(', ')', 'Application'),
+  \ javaapi#method(0,'isChild(', ')', 'boolean'),
+  \ javaapi#method(0,'getParent(', ')', 'Activity'),
+  \ javaapi#method(0,'getWindowManager(', ')', 'WindowManager'),
+  \ javaapi#method(0,'getWindow(', ')', 'Window'),
+  \ javaapi#method(0,'getLoaderManager(', ')', 'LoaderManager'),
+  \ javaapi#method(0,'getCurrentFocus(', ')', 'View'),
+  \ javaapi#method(0,'onCreateThumbnail(', 'Bitmap, Canvas)', 'boolean'),
+  \ javaapi#method(0,'onCreateDescription(', ')', 'CharSequence'),
+  \ javaapi#method(0,'onConfigurationChanged(', 'Configuration)', 'void'),
+  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
+  \ javaapi#method(0,'getLastNonConfigurationInstance(', ')', 'Object'),
+  \ javaapi#method(0,'onRetainNonConfigurationInstance(', ')', 'Object'),
+  \ javaapi#method(0,'onLowMemory(', ')', 'void'),
+  \ javaapi#method(0,'onTrimMemory(', 'int)', 'void'),
+  \ javaapi#method(0,'getFragmentManager(', ')', 'FragmentManager'),
+  \ javaapi#method(0,'onAttachFragment(', 'Fragment)', 'void'),
+  \ javaapi#method(0,'managedQuery(', 'Uri, String[], String, String[], String)', 'Cursor'),
+  \ javaapi#method(0,'startManagingCursor(', 'Cursor)', 'void'),
+  \ javaapi#method(0,'stopManagingCursor(', 'Cursor)', 'void'),
+  \ javaapi#method(0,'findViewById(', 'int)', 'View'),
+  \ javaapi#method(0,'getActionBar(', ')', 'ActionBar'),
+  \ javaapi#method(0,'setContentView(', 'int)', 'void'),
+  \ javaapi#method(0,'setContentView(', 'View)', 'void'),
+  \ javaapi#method(0,'setContentView(', 'View, LayoutParams)', 'void'),
+  \ javaapi#method(0,'addContentView(', 'View, LayoutParams)', 'void'),
+  \ javaapi#method(0,'setFinishOnTouchOutside(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDefaultKeyMode(', 'int)', 'void'),
+  \ javaapi#method(0,'onKeyDown(', 'int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onKeyLongPress(', 'int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onKeyUp(', 'int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onKeyMultiple(', 'int, int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onBackPressed(', ')', 'void'),
+  \ javaapi#method(0,'onKeyShortcut(', 'int, KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'onTouchEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'onTrackballEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'onGenericMotionEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'onUserInteraction(', ')', 'void'),
+  \ javaapi#method(0,'onWindowAttributesChanged(', 'LayoutParams)', 'void'),
+  \ javaapi#method(0,'onContentChanged(', ')', 'void'),
+  \ javaapi#method(0,'onWindowFocusChanged(', 'boolean)', 'void'),
+  \ javaapi#method(0,'onAttachedToWindow(', ')', 'void'),
+  \ javaapi#method(0,'onDetachedFromWindow(', ')', 'void'),
+  \ javaapi#method(0,'hasWindowFocus(', ')', 'boolean'),
+  \ javaapi#method(0,'dispatchKeyEvent(', 'KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'dispatchKeyShortcutEvent(', 'KeyEvent)', 'boolean'),
+  \ javaapi#method(0,'dispatchTouchEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'dispatchTrackballEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'dispatchGenericMotionEvent(', 'MotionEvent)', 'boolean'),
+  \ javaapi#method(0,'dispatchPopulateAccessibilityEvent(', 'AccessibilityEvent)', 'boolean'),
+  \ javaapi#method(0,'onCreatePanelView(', 'int)', 'View'),
+  \ javaapi#method(0,'onCreatePanelMenu(', 'int, Menu)', 'boolean'),
+  \ javaapi#method(0,'onPreparePanel(', 'int, View, Menu)', 'boolean'),
+  \ javaapi#method(0,'onMenuOpened(', 'int, Menu)', 'boolean'),
+  \ javaapi#method(0,'onMenuItemSelected(', 'int, MenuItem)', 'boolean'),
+  \ javaapi#method(0,'onPanelClosed(', 'int, Menu)', 'void'),
+  \ javaapi#method(0,'invalidateOptionsMenu(', ')', 'void'),
+  \ javaapi#method(0,'onCreateOptionsMenu(', 'Menu)', 'boolean'),
+  \ javaapi#method(0,'onPrepareOptionsMenu(', 'Menu)', 'boolean'),
+  \ javaapi#method(0,'onOptionsItemSelected(', 'MenuItem)', 'boolean'),
+  \ javaapi#method(0,'onNavigateUp(', ')', 'boolean'),
+  \ javaapi#method(0,'onNavigateUpFromChild(', 'Activity)', 'boolean'),
+  \ javaapi#method(0,'onCreateNavigateUpTaskStack(', 'TaskStackBuilder)', 'void'),
+  \ javaapi#method(0,'onPrepareNavigateUpTaskStack(', 'TaskStackBuilder)', 'void'),
+  \ javaapi#method(0,'onOptionsMenuClosed(', 'Menu)', 'void'),
+  \ javaapi#method(0,'openOptionsMenu(', ')', 'void'),
+  \ javaapi#method(0,'closeOptionsMenu(', ')', 'void'),
+  \ javaapi#method(0,'onCreateContextMenu(', 'ContextMenu, View, ContextMenuInfo)', 'void'),
+  \ javaapi#method(0,'registerForContextMenu(', 'View)', 'void'),
+  \ javaapi#method(0,'unregisterForContextMenu(', 'View)', 'void'),
+  \ javaapi#method(0,'openContextMenu(', 'View)', 'void'),
+  \ javaapi#method(0,'closeContextMenu(', ')', 'void'),
+  \ javaapi#method(0,'onContextItemSelected(', 'MenuItem)', 'boolean'),
+  \ javaapi#method(0,'onContextMenuClosed(', 'Menu)', 'void'),
+  \ javaapi#method(0,'showDialog(', 'int)', 'void'),
+  \ javaapi#method(0,'showDialog(', 'int, Bundle)', 'boolean'),
+  \ javaapi#method(0,'dismissDialog(', 'int)', 'void'),
+  \ javaapi#method(0,'removeDialog(', 'int)', 'void'),
+  \ javaapi#method(0,'onSearchRequested(', ')', 'boolean'),
+  \ javaapi#method(0,'startSearch(', 'String, boolean, Bundle, boolean)', 'void'),
+  \ javaapi#method(0,'triggerSearch(', 'String, Bundle)', 'void'),
+  \ javaapi#method(0,'takeKeyEvents(', 'boolean)', 'void'),
+  \ javaapi#method(0,'requestWindowFeature(', 'int)', 'boolean'),
+  \ javaapi#method(0,'setFeatureDrawableResource(', 'int, int)', 'void'),
+  \ javaapi#method(0,'setFeatureDrawableUri(', 'int, Uri)', 'void'),
+  \ javaapi#method(0,'setFeatureDrawable(', 'int, Drawable)', 'void'),
+  \ javaapi#method(0,'setFeatureDrawableAlpha(', 'int, int)', 'void'),
+  \ javaapi#method(0,'getLayoutInflater(', ')', 'LayoutInflater'),
+  \ javaapi#method(0,'getMenuInflater(', ')', 'MenuInflater'),
+  \ javaapi#method(0,'startActivityForResult(', 'Intent, int)', 'void'),
+  \ javaapi#method(0,'startActivityForResult(', 'Intent, int, Bundle)', 'void'),
+  \ javaapi#method(0,'startIntentSenderForResult(', 'IntentSender, int, Intent, int, int, int) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'startIntentSenderForResult(', 'IntentSender, int, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'startActivity(', 'Intent)', 'void'),
+  \ javaapi#method(0,'startActivity(', 'Intent, Bundle)', 'void'),
+  \ javaapi#method(0,'startActivities(', 'Intent[])', 'void'),
+  \ javaapi#method(0,'startActivities(', 'Intent[], Bundle)', 'void'),
+  \ javaapi#method(0,'startIntentSender(', 'IntentSender, Intent, int, int, int) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'startIntentSender(', 'IntentSender, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'startActivityIfNeeded(', 'Intent, int)', 'boolean'),
+  \ javaapi#method(0,'startActivityIfNeeded(', 'Intent, int, Bundle)', 'boolean'),
+  \ javaapi#method(0,'startNextMatchingActivity(', 'Intent)', 'boolean'),
+  \ javaapi#method(0,'startNextMatchingActivity(', 'Intent, Bundle)', 'boolean'),
+  \ javaapi#method(0,'startActivityFromChild(', 'Activity, Intent, int)', 'void'),
+  \ javaapi#method(0,'startActivityFromChild(', 'Activity, Intent, int, Bundle)', 'void'),
+  \ javaapi#method(0,'startActivityFromFragment(', 'Fragment, Intent, int)', 'void'),
+  \ javaapi#method(0,'startActivityFromFragment(', 'Fragment, Intent, int, Bundle)', 'void'),
+  \ javaapi#method(0,'startIntentSenderFromChild(', 'Activity, IntentSender, int, Intent, int, int, int) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'startIntentSenderFromChild(', 'Activity, IntentSender, int, Intent, int, int, int, Bundle) throws SendIntentException', 'void'),
+  \ javaapi#method(0,'overridePendingTransition(', 'int, int)', 'void'),
+  \ javaapi#method(0,'setResult(', 'int)', 'void'),
+  \ javaapi#method(0,'setResult(', 'int, Intent)', 'void'),
+  \ javaapi#method(0,'getCallingPackage(', ')', 'String'),
+  \ javaapi#method(0,'getCallingActivity(', ')', 'ComponentName'),
+  \ javaapi#method(0,'setVisible(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isFinishing(', ')', 'boolean'),
+  \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
+  \ javaapi#method(0,'isChangingConfigurations(', ')', 'boolean'),
+  \ javaapi#method(0,'recreate(', ')', 'void'),
+  \ javaapi#method(0,'finish(', ')', 'void'),
+  \ javaapi#method(0,'finishAffinity(', ')', 'void'),
+  \ javaapi#method(0,'finishFromChild(', 'Activity)', 'void'),
+  \ javaapi#method(0,'finishActivity(', 'int)', 'void'),
+  \ javaapi#method(0,'finishActivityFromChild(', 'Activity, int)', 'void'),
+  \ javaapi#method(0,'createPendingResult(', 'int, Intent, int)', 'PendingIntent'),
+  \ javaapi#method(0,'setRequestedOrientation(', 'int)', 'void'),
+  \ javaapi#method(0,'getRequestedOrientation(', ')', 'int'),
+  \ javaapi#method(0,'getTaskId(', ')', 'int'),
+  \ javaapi#method(0,'isTaskRoot(', ')', 'boolean'),
+  \ javaapi#method(0,'moveTaskToBack(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,'getLocalClassName(', ')', 'String'),
+  \ javaapi#method(0,'getComponentName(', ')', 'ComponentName'),
+  \ javaapi#method(0,'getPreferences(', 'int)', 'SharedPreferences'),
+  \ javaapi#method(0,'getSystemService(', 'String)', 'Object'),
+  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setTitle(', 'int)', 'void'),
+  \ javaapi#method(0,'setTitleColor(', 'int)', 'void'),
+  \ javaapi#method(0,'getTitle(', ')', 'CharSequence'),
+  \ javaapi#method(0,'getTitleColor(', ')', 'int'),
+  \ javaapi#method(0,'setProgressBarVisibility(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setProgressBarIndeterminateVisibility(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setProgressBarIndeterminate(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setProgress(', 'int)', 'void'),
+  \ javaapi#method(0,'setSecondaryProgress(', 'int)', 'void'),
+  \ javaapi#method(0,'setVolumeControlStream(', 'int)', 'void'),
+  \ javaapi#method(0,'getVolumeControlStream(', ')', 'int'),
+  \ javaapi#method(0,'runOnUiThread(', 'Runnable)', 'void'),
+  \ javaapi#method(0,'onCreateView(', 'String, Context, AttributeSet)', 'View'),
+  \ javaapi#method(0,'onCreateView(', 'View, String, Context, AttributeSet)', 'View'),
+  \ javaapi#method(0,'dump(', 'String, FileDescriptor, PrintWriter, String[])', 'void'),
+  \ javaapi#method(0,'startActionMode(', 'Callback)', 'ActionMode'),
+  \ javaapi#method(0,'onWindowStartingActionMode(', 'Callback)', 'ActionMode'),
+  \ javaapi#method(0,'onActionModeStarted(', 'ActionMode)', 'void'),
+  \ javaapi#method(0,'onActionModeFinished(', 'ActionMode)', 'void'),
+  \ javaapi#method(0,'shouldUpRecreateTask(', 'Intent)', 'boolean'),
+  \ javaapi#method(0,'navigateUpTo(', 'Intent)', 'boolean'),
+  \ javaapi#method(0,'navigateUpToFromChild(', 'Activity, Intent)', 'boolean'),
+  \ javaapi#method(0,'getParentActivityIntent(', ')', 'Intent'),
+  \ ])
+
+call javaapi#class('KeyguardLock', '', [
+  \ javaapi#method(0,'disableKeyguard(', ')', 'void'),
+  \ javaapi#method(0,'reenableKeyguard(', ')', 'void'),
+  \ ])
+
+call javaapi#interface('OnDismissListener', '', [
+  \ javaapi#method(0,'onDismiss(', ')', 'void'),
+  \ ])
+
+call javaapi#class('ActionBar', '', [
+  \ javaapi#field(1,'NAVIGATION_MODE_STANDARD', 'int'),
+  \ javaapi#field(1,'NAVIGATION_MODE_LIST', 'int'),
+  \ javaapi#field(1,'NAVIGATION_MODE_TABS', 'int'),
+  \ javaapi#field(1,'DISPLAY_USE_LOGO', 'int'),
+  \ javaapi#field(1,'DISPLAY_SHOW_HOME', 'int'),
+  \ javaapi#field(1,'DISPLAY_HOME_AS_UP', 'int'),
+  \ javaapi#field(1,'DISPLAY_SHOW_TITLE', 'int'),
+  \ javaapi#field(1,'DISPLAY_SHOW_CUSTOM', 'int'),
+  \ javaapi#method(0,'ActionBar(', ')', 'public'),
+  \ javaapi#method(0,'setCustomView(', 'View)', 'void'),
+  \ javaapi#method(0,'setCustomView(', 'View, LayoutParams)', 'void'),
+  \ javaapi#method(0,'setCustomView(', 'int)', 'void'),
+  \ javaapi#method(0,'setIcon(', 'int)', 'void'),
+  \ javaapi#method(0,'setIcon(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setLogo(', 'int)', 'void'),
+  \ javaapi#method(0,'setLogo(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setListNavigationCallbacks(', 'SpinnerAdapter, OnNavigationListener)', 'void'),
+  \ javaapi#method(0,'setSelectedNavigationItem(', 'int)', 'void'),
+  \ javaapi#method(0,'getSelectedNavigationIndex(', ')', 'int'),
+  \ javaapi#method(0,'getNavigationItemCount(', ')', 'int'),
+  \ javaapi#method(0,'setTitle(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setTitle(', 'int)', 'void'),
+  \ javaapi#method(0,'setSubtitle(', 'CharSequence)', 'void'),
+  \ javaapi#method(0,'setSubtitle(', 'int)', 'void'),
+  \ javaapi#method(0,'setDisplayOptions(', 'int)', 'void'),
+  \ javaapi#method(0,'setDisplayOptions(', 'int, int)', 'void'),
+  \ javaapi#method(0,'setDisplayUseLogoEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDisplayShowHomeEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDisplayHomeAsUpEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDisplayShowTitleEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDisplayShowCustomEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setBackgroundDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setStackedBackgroundDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'setSplitBackgroundDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'getCustomView(', ')', 'View'),
+  \ javaapi#method(0,'getTitle(', ')', 'CharSequence'),
+  \ javaapi#method(0,'getSubtitle(', ')', 'CharSequence'),
+  \ javaapi#method(0,'getNavigationMode(', ')', 'int'),
+  \ javaapi#method(0,'setNavigationMode(', 'int)', 'void'),
+  \ javaapi#method(0,'getDisplayOptions(', ')', 'int'),
+  \ javaapi#method(0,'newTab(', ')', 'Tab'),
+  \ javaapi#method(0,'addTab(', 'Tab)', 'void'),
+  \ javaapi#method(0,'addTab(', 'Tab, boolean)', 'void'),
+  \ javaapi#method(0,'addTab(', 'Tab, int)', 'void'),
+  \ javaapi#method(0,'addTab(', 'Tab, int, boolean)', 'void'),
+  \ javaapi#method(0,'removeTab(', 'Tab)', 'void'),
+  \ javaapi#method(0,'removeTabAt(', 'int)', 'void'),
+  \ javaapi#method(0,'removeAllTabs(', ')', 'void'),
+  \ javaapi#method(0,'selectTab(', 'Tab)', 'void'),
+  \ javaapi#method(0,'getSelectedTab(', ')', 'Tab'),
+  \ javaapi#method(0,'getTabAt(', 'int)', 'Tab'),
+  \ javaapi#method(0,'getTabCount(', ')', 'int'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'show(', ')', 'void'),
+  \ javaapi#method(0,'hide(', ')', 'void'),
+  \ javaapi#method(0,'isShowing(', ')', 'boolean'),
+  \ javaapi#method(0,'addOnMenuVisibilityListener(', 'OnMenuVisibilityListener)', 'void'),
+  \ javaapi#method(0,'removeOnMenuVisibilityListener(', 'OnMenuVisibilityListener)', 'void'),
+  \ javaapi#method(0,'setHomeButtonEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'getThemedContext(', ')', 'Context'),
+  \ ])
+
+call javaapi#class('RunningServiceInfo', '', [
+  \ javaapi#field(0,'durationMillis', 'long'),
+  \ javaapi#field(0,'serviceDetails', 'String'),
+  \ javaapi#method(0,'RunningServiceInfo(', ')', 'public'),
+  \ javaapi#method(0,'RunningServiceInfo(', 'Parcel)', 'public'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
+  \ ])
+
+call javaapi#class('RunningTaskInfo', 'Parcelable', [
+  \ javaapi#field(0,'id', 'int'),
+  \ javaapi#field(0,'baseActivity', 'ComponentName'),
+  \ javaapi#field(0,'topActivity', 'ComponentName'),
+  \ javaapi#field(0,'thumbnail', 'Bitmap'),
+  \ javaapi#field(0,'description', 'CharSequence'),
+  \ javaapi#field(0,'numActivities', 'int'),
+  \ javaapi#field(0,'numRunning', 'int'),
+  \ javaapi#field(1,'CREATOR', 'RunningTaskInfo>'),
+  \ javaapi#method(0,'RunningTaskInfo(', ')', 'public'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#interface('BackStackEntry', '', [
+  \ javaapi#method(0,'getId(', ')', 'int'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getBreadCrumbTitleRes(', ')', 'int'),
+  \ javaapi#method(0,'getBreadCrumbShortTitleRes(', ')', 'int'),
+  \ javaapi#method(0,'getBreadCrumbTitle(', ')', 'CharSequence'),
+  \ javaapi#method(0,'getBreadCrumbShortTitle(', ')', 'CharSequence'),
+  \ ])
+
+call javaapi#class('CrashInfo', '', [
+  \ javaapi#field(0,'exceptionClassName', 'String'),
+  \ javaapi#field(0,'exceptionMessage', 'String'),
+  \ javaapi#field(0,'throwFileName', 'String'),
+  \ javaapi#field(0,'throwClassName', 'String'),
+  \ javaapi#field(0,'throwMethodName', 'String'),
+  \ javaapi#field(0,'throwLineNumber', 'int'),
+  \ javaapi#field(0,'stackTrace', 'String'),
+  \ javaapi#method(0,'CrashInfo(', ')', 'public'),
+  \ javaapi#method(0,'CrashInfo(', 'Throwable)', 'public'),
+  \ javaapi#method(0,'CrashInfo(', 'Parcel)', 'public'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'dump(', 'Printer, String)', 'void'),
+  \ ])
+
+call javaapi#class('Style', '', [
+  \ javaapi#method(0,'Style(', ')', 'public'),
+  \ javaapi#method(0,'setBuilder(', 'Builder)', 'void'),
+  \ javaapi#method(0,'build(', ')', 'Notification'),
   \ ])
 

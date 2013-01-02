@@ -1,6 +1,6 @@
 call javaapi#namespace('java.util.concurrent.locks')
 
-call javaapi#class('AbstractQueuedSynchronizer', '', [
+call javaapi#class('AbstractQueuedSynchronizer', 'AbstractOwnableSynchronizer', [
   \ javaapi#method(0,'acquire(', 'int)', 'void'),
   \ javaapi#method(0,'acquireInterruptibly(', 'int) throws InterruptedException', 'void'),
   \ javaapi#method(0,'tryAcquireNanos(', 'int, long) throws InterruptedException', 'boolean'),
@@ -63,7 +63,7 @@ call javaapi#interface('Lock', '', [
   \ javaapi#method(0,'newCondition(', ')', 'Condition'),
   \ ])
 
-call javaapi#class('AbstractQueuedLongSynchronizer', '', [
+call javaapi#class('AbstractQueuedLongSynchronizer', 'AbstractOwnableSynchronizer', [
   \ javaapi#method(0,'acquire(', 'long)', 'void'),
   \ javaapi#method(0,'acquireInterruptibly(', 'long) throws InterruptedException', 'void'),
   \ javaapi#method(0,'tryAcquireNanos(', 'long, long) throws InterruptedException', 'boolean'),

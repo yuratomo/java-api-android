@@ -18,7 +18,7 @@ call javaapi#class('ResponseDate', 'HttpResponseInterceptor', [
   \ javaapi#method(0,'process(', 'HttpResponse, HttpContext) throws HttpException, IOException', 'void'),
   \ ])
 
-call javaapi#interface('HttpProcessor', '', [
+call javaapi#interface('HttpProcessor', 'HttpResponseInterceptor', [
   \ ])
 
 call javaapi#class('BasicHttpContext', 'HttpContext', [
@@ -211,7 +211,7 @@ call javaapi#class('RequestContent', 'HttpRequestInterceptor', [
   \ javaapi#method(0,'process(', 'HttpRequest, HttpContext) throws HttpException, IOException', 'void'),
   \ ])
 
-call javaapi#class('SyncBasicHttpContext', '', [
+call javaapi#class('SyncBasicHttpContext', 'BasicHttpContext', [
   \ javaapi#method(0,'SyncBasicHttpContext(', 'HttpContext)', 'public'),
   \ javaapi#method(0,'getAttribute(', 'String)', 'Object'),
   \ javaapi#method(0,'setAttribute(', 'String, Object)', 'void'),

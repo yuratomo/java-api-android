@@ -1,6 +1,6 @@
 call javaapi#namespace('android.app.backup')
 
-call javaapi#class('SharedPreferencesBackupHelper', '', [
+call javaapi#class('SharedPreferencesBackupHelper', 'FileBackupHelperBase', [
   \ javaapi#method(0,'SharedPreferencesBackupHelper(', 'Context, )', 'public'),
   \ javaapi#method(0,'performBackup(', 'ParcelFileDescriptor, BackupDataOutput, ParcelFileDescriptor)', 'void'),
   \ javaapi#method(0,'restoreEntity(', 'BackupDataInputStream)', 'void'),
@@ -12,14 +12,14 @@ call javaapi#class('BackupDataOutput', '', [
   \ javaapi#method(0,'writeEntityData(', 'byte[], int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('FileBackupHelper', '', [
+call javaapi#class('FileBackupHelper', 'FileBackupHelperBase', [
   \ javaapi#method(0,'FileBackupHelper(', 'Context, )', 'public'),
   \ javaapi#method(0,'performBackup(', 'ParcelFileDescriptor, BackupDataOutput, ParcelFileDescriptor)', 'void'),
   \ javaapi#method(0,'restoreEntity(', 'BackupDataInputStream)', 'void'),
   \ javaapi#method(0,'writeNewStateDescription(', 'ParcelFileDescriptor)', 'void'),
   \ ])
 
-call javaapi#class('BackupAgentHelper', '', [
+call javaapi#class('BackupAgentHelper', 'BackupAgent', [
   \ javaapi#method(0,'BackupAgentHelper(', ')', 'public'),
   \ javaapi#method(0,'onBackup(', 'ParcelFileDescriptor, BackupDataOutput, ParcelFileDescriptor) throws IOException', 'void'),
   \ javaapi#method(0,'onRestore(', 'BackupDataInput, int, ParcelFileDescriptor) throws IOException', 'void'),
@@ -32,7 +32,7 @@ call javaapi#interface('BackupHelper', '', [
   \ javaapi#method(0,'writeNewStateDescription(', 'ParcelFileDescriptor)', 'void'),
   \ ])
 
-call javaapi#class('BackupDataInputStream', '', [
+call javaapi#class('BackupDataInputStream', 'InputStream', [
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[]) throws IOException', 'int'),
@@ -61,7 +61,7 @@ call javaapi#class('FileBackupHelperBase', '', [
   \ javaapi#method(0,'writeNewStateDescription(', 'ParcelFileDescriptor)', 'void'),
   \ ])
 
-call javaapi#class('BackupAgent', '', [
+call javaapi#class('BackupAgent', 'ContextWrapper', [
   \ javaapi#field(1,'TYPE_FILE', 'int'),
   \ javaapi#field(1,'TYPE_DIRECTORY', 'int'),
   \ javaapi#method(0,'BackupAgent(', ')', 'public'),

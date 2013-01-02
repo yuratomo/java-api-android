@@ -15,7 +15,7 @@ call javaapi#class('NdefMessage', 'Parcelable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TagLostException', '', [
+call javaapi#class('TagLostException', 'IOException', [
   \ javaapi#method(0,'TagLostException(', ')', 'public'),
   \ javaapi#method(0,'TagLostException(', 'String)', 'public'),
   \ ])
@@ -99,7 +99,7 @@ call javaapi#class('NfcEvent', '', [
   \ javaapi#field(0,'nfcAdapter', 'NfcAdapter'),
   \ ])
 
-call javaapi#class('FormatException', '', [
+call javaapi#class('FormatException', 'Exception', [
   \ javaapi#method(0,'FormatException(', ')', 'public'),
   \ javaapi#method(0,'FormatException(', 'String)', 'public'),
   \ javaapi#method(0,'FormatException(', 'String, Throwable)', 'public'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('android.inputmethodservice')
 
-call javaapi#class('KeyboardView', '', [
+call javaapi#class('KeyboardView', 'View', [
   \ javaapi#method(0,'KeyboardView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'KeyboardView(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'setOnKeyboardActionListener(', 'OnKeyboardActionListener)', 'void'),
@@ -79,7 +79,7 @@ call javaapi#class('AbstractInputMethodSessionImpl', 'InputMethodSession', [
   \ javaapi#method(0,'dispatchGenericMotionEvent(', 'int, MotionEvent, EventCallback)', 'void'),
   \ ])
 
-call javaapi#class('InputMethodSessionImpl', '', [
+call javaapi#class('InputMethodSessionImpl', 'AbstractInputMethodSessionImpl', [
   \ javaapi#method(0,'InputMethodSessionImpl(', 'InputMethodService)', 'public'),
   \ javaapi#method(0,'finishInput(', ')', 'void'),
   \ javaapi#method(0,'displayCompletions(', 'CompletionInfo[])', 'void'),
@@ -102,7 +102,7 @@ call javaapi#class('Row', '', [
   \ javaapi#method(0,'Row(', 'Resources, Keyboard, XmlResourceParser)', 'public'),
   \ ])
 
-call javaapi#class('AbstractInputMethodService', '', [
+call javaapi#class('AbstractInputMethodService', 'Service', [
   \ javaapi#method(0,'AbstractInputMethodService(', ')', 'public'),
   \ javaapi#method(0,'getKeyDispatcherState(', ')', 'DispatcherState'),
   \ javaapi#method(0,'onCreateInputMethodInterface(', ')', 'AbstractInputMethodImpl'),
@@ -112,7 +112,7 @@ call javaapi#class('AbstractInputMethodService', '', [
   \ javaapi#method(0,'onGenericMotionEvent(', 'MotionEvent)', 'boolean'),
   \ ])
 
-call javaapi#class('InputMethodService', '', [
+call javaapi#class('InputMethodService', 'AbstractInputMethodService', [
   \ javaapi#field(1,'BACK_DISPOSITION_DEFAULT', 'int'),
   \ javaapi#field(1,'BACK_DISPOSITION_WILL_NOT_DISMISS', 'int'),
   \ javaapi#field(1,'BACK_DISPOSITION_WILL_DISMISS', 'int'),
@@ -195,7 +195,7 @@ call javaapi#class('InputMethodService', '', [
   \ javaapi#method(0,'onExtractingInputChanged(', 'EditorInfo)', 'void'),
   \ ])
 
-call javaapi#class('InputMethodImpl', '', [
+call javaapi#class('InputMethodImpl', 'AbstractInputMethodImpl', [
   \ javaapi#method(0,'InputMethodImpl(', 'InputMethodService)', 'public'),
   \ javaapi#method(0,'attachToken(', 'IBinder)', 'void'),
   \ javaapi#method(0,'bindInput(', 'InputBinding)', 'void'),
@@ -207,7 +207,7 @@ call javaapi#class('InputMethodImpl', '', [
   \ javaapi#method(0,'changeInputMethodSubtype(', 'InputMethodSubtype)', 'void'),
   \ ])
 
-call javaapi#class('ExtractEditText', '', [
+call javaapi#class('ExtractEditText', 'EditText', [
   \ javaapi#method(0,'ExtractEditText(', 'Context)', 'public'),
   \ javaapi#method(0,'ExtractEditText(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ExtractEditText(', 'Context, AttributeSet, int)', 'public'),

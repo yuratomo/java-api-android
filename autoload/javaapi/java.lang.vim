@@ -1,10 +1,802 @@
 call javaapi#namespace('java.lang')
 
-call javaapi#class('ThreadDeath', '', [
+call javaapi#class('Exception', 'Throwable', [
+  \ javaapi#method(0,'Exception(', ')', 'public'),
+  \ javaapi#method(0,'Exception(', 'String)', 'public'),
+  \ javaapi#method(0,'Exception(', 'String, Throwable)', 'public'),
+  \ javaapi#method(0,'Exception(', 'Throwable)', 'public'),
+  \ ])
+
+call javaapi#class('NoSuchFieldError', 'IncompatibleClassChangeError', [
+  \ javaapi#method(0,'NoSuchFieldError(', ')', 'public'),
+  \ javaapi#method(0,'NoSuchFieldError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Runtime', '', [
+  \ javaapi#method(1,'getRuntime(', ')', 'Runtime'),
+  \ javaapi#method(0,'exit(', 'int)', 'void'),
+  \ javaapi#method(0,'addShutdownHook(', 'Thread)', 'void'),
+  \ javaapi#method(0,'removeShutdownHook(', 'Thread)', 'boolean'),
+  \ javaapi#method(0,'halt(', 'int)', 'void'),
+  \ javaapi#method(1,'runFinalizersOnExit(', 'boolean)', 'void'),
+  \ javaapi#method(0,'exec(', 'String) throws IOException', 'Process'),
+  \ javaapi#method(0,'exec(', 'String, String[]) throws IOException', 'Process'),
+  \ javaapi#method(0,'exec(', 'String, String[], File) throws IOException', 'Process'),
+  \ javaapi#method(0,'exec(', 'String[]) throws IOException', 'Process'),
+  \ javaapi#method(0,'exec(', 'String[], String[]) throws IOException', 'Process'),
+  \ javaapi#method(0,'exec(', 'String[], String[], File) throws IOException', 'Process'),
+  \ javaapi#method(0,'availableProcessors(', ')', 'int'),
+  \ javaapi#method(0,'freeMemory(', ')', 'long'),
+  \ javaapi#method(0,'totalMemory(', ')', 'long'),
+  \ javaapi#method(0,'maxMemory(', ')', 'long'),
+  \ javaapi#method(0,'gc(', ')', 'void'),
+  \ javaapi#method(0,'runFinalization(', ')', 'void'),
+  \ javaapi#method(0,'traceInstructions(', 'boolean)', 'void'),
+  \ javaapi#method(0,'traceMethodCalls(', 'boolean)', 'void'),
+  \ javaapi#method(0,'load(', 'String)', 'void'),
+  \ javaapi#method(0,'loadLibrary(', 'String)', 'void'),
+  \ javaapi#method(0,'getLocalizedInputStream(', 'InputStream)', 'InputStream'),
+  \ javaapi#method(0,'getLocalizedOutputStream(', 'OutputStream)', 'OutputStream'),
+  \ ])
+
+call javaapi#class('ClassCastException', 'RuntimeException', [
+  \ javaapi#method(0,'ClassCastException(', ')', 'public'),
+  \ javaapi#method(0,'ClassCastException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('InstantiationError', 'IncompatibleClassChangeError', [
+  \ javaapi#method(0,'InstantiationError(', ')', 'public'),
+  \ javaapi#method(0,'InstantiationError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('IndexOutOfBoundsException', 'RuntimeException', [
+  \ javaapi#method(0,'IndexOutOfBoundsException(', ')', 'public'),
+  \ javaapi#method(0,'IndexOutOfBoundsException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('OutOfMemoryError', 'VirtualMachineError', [
+  \ javaapi#method(0,'OutOfMemoryError(', ')', 'public'),
+  \ javaapi#method(0,'OutOfMemoryError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Thread', 'Runnable', [
+  \ javaapi#field(1,'MIN_PRIORITY', 'int'),
+  \ javaapi#field(1,'NORM_PRIORITY', 'int'),
+  \ javaapi#field(1,'MAX_PRIORITY', 'int'),
+  \ javaapi#method(1,'currentThread(', ')', 'Thread'),
+  \ javaapi#method(1,'yield(', ')', 'void'),
+  \ javaapi#method(1,'sleep(', 'long) throws InterruptedException', 'void'),
+  \ javaapi#method(1,'sleep(', 'long, int) throws InterruptedException', 'void'),
+  \ javaapi#method(0,'Thread(', ')', 'public'),
+  \ javaapi#method(0,'Thread(', 'Runnable)', 'public'),
+  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable)', 'public'),
+  \ javaapi#method(0,'Thread(', 'String)', 'public'),
+  \ javaapi#method(0,'Thread(', 'ThreadGroup, String)', 'public'),
+  \ javaapi#method(0,'Thread(', 'Runnable, String)', 'public'),
+  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable, String)', 'public'),
+  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable, String, long)', 'public'),
+  \ javaapi#method(0,'start(', ')', 'void'),
+  \ javaapi#method(0,'run(', ')', 'void'),
+  \ javaapi#method(0,'stop(', ')', 'void'),
+  \ javaapi#method(0,'stop(', 'Throwable)', 'void'),
+  \ javaapi#method(0,'interrupt(', ')', 'void'),
+  \ javaapi#method(1,'interrupted(', ')', 'boolean'),
+  \ javaapi#method(0,'isInterrupted(', ')', 'boolean'),
+  \ javaapi#method(0,'destroy(', ')', 'void'),
+  \ javaapi#method(0,'isAlive(', ')', 'boolean'),
+  \ javaapi#method(0,'suspend(', ')', 'void'),
+  \ javaapi#method(0,'resume(', ')', 'void'),
+  \ javaapi#method(0,'setPriority(', 'int)', 'void'),
+  \ javaapi#method(0,'getPriority(', ')', 'int'),
+  \ javaapi#method(0,'setName(', 'String)', 'void'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getThreadGroup(', ')', 'ThreadGroup'),
+  \ javaapi#method(1,'activeCount(', ')', 'int'),
+  \ javaapi#method(1,'enumerate(', 'Thread[])', 'int'),
+  \ javaapi#method(0,'countStackFrames(', ')', 'int'),
+  \ javaapi#method(0,'join(', 'long) throws InterruptedException', 'void'),
+  \ javaapi#method(0,'join(', 'long, int) throws InterruptedException', 'void'),
+  \ javaapi#method(0,'join(', ') throws InterruptedException', 'void'),
+  \ javaapi#method(1,'dumpStack(', ')', 'void'),
+  \ javaapi#method(0,'setDaemon(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isDaemon(', ')', 'boolean'),
+  \ javaapi#method(0,'checkAccess(', ')', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'getContextClassLoader(', ')', 'ClassLoader'),
+  \ javaapi#method(0,'setContextClassLoader(', 'ClassLoader)', 'void'),
+  \ javaapi#method(1,'holdsLock(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'getStackTrace(', ')', 'StackTraceElement[]'),
+  \ javaapi#method(1,'getAllStackTraces(', ')', 'StackTraceElement[]>'),
+  \ javaapi#method(0,'getId(', ')', 'long'),
+  \ javaapi#method(0,'getState(', ')', 'State'),
+  \ javaapi#method(1,'setDefaultUncaughtExceptionHandler(', 'UncaughtExceptionHandler)', 'void'),
+  \ javaapi#method(1,'getDefaultUncaughtExceptionHandler(', ')', 'UncaughtExceptionHandler'),
+  \ javaapi#method(0,'getUncaughtExceptionHandler(', ')', 'UncaughtExceptionHandler'),
+  \ javaapi#method(0,'setUncaughtExceptionHandler(', 'UncaughtExceptionHandler)', 'void'),
+  \ ])
+
+call javaapi#class('IllegalAccessError', 'IncompatibleClassChangeError', [
+  \ javaapi#method(0,'IllegalAccessError(', ')', 'public'),
+  \ javaapi#method(0,'IllegalAccessError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('SecurityManager', '', [
+  \ javaapi#method(0,'getInCheck(', ')', 'boolean'),
+  \ javaapi#method(0,'SecurityManager(', ')', 'public'),
+  \ javaapi#method(0,'getSecurityContext(', ')', 'Object'),
+  \ javaapi#method(0,'checkPermission(', 'Permission)', 'void'),
+  \ javaapi#method(0,'checkPermission(', 'Permission, Object)', 'void'),
+  \ javaapi#method(0,'checkCreateClassLoader(', ')', 'void'),
+  \ javaapi#method(0,'checkAccess(', 'Thread)', 'void'),
+  \ javaapi#method(0,'checkAccess(', 'ThreadGroup)', 'void'),
+  \ javaapi#method(0,'checkExit(', 'int)', 'void'),
+  \ javaapi#method(0,'checkExec(', 'String)', 'void'),
+  \ javaapi#method(0,'checkLink(', 'String)', 'void'),
+  \ javaapi#method(0,'checkRead(', 'FileDescriptor)', 'void'),
+  \ javaapi#method(0,'checkRead(', 'String)', 'void'),
+  \ javaapi#method(0,'checkRead(', 'String, Object)', 'void'),
+  \ javaapi#method(0,'checkWrite(', 'FileDescriptor)', 'void'),
+  \ javaapi#method(0,'checkWrite(', 'String)', 'void'),
+  \ javaapi#method(0,'checkDelete(', 'String)', 'void'),
+  \ javaapi#method(0,'checkConnect(', 'String, int)', 'void'),
+  \ javaapi#method(0,'checkConnect(', 'String, int, Object)', 'void'),
+  \ javaapi#method(0,'checkListen(', 'int)', 'void'),
+  \ javaapi#method(0,'checkAccept(', 'String, int)', 'void'),
+  \ javaapi#method(0,'checkMulticast(', 'InetAddress)', 'void'),
+  \ javaapi#method(0,'checkMulticast(', 'InetAddress, byte)', 'void'),
+  \ javaapi#method(0,'checkPropertiesAccess(', ')', 'void'),
+  \ javaapi#method(0,'checkPropertyAccess(', 'String)', 'void'),
+  \ javaapi#method(0,'checkTopLevelWindow(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'checkPrintJobAccess(', ')', 'void'),
+  \ javaapi#method(0,'checkSystemClipboardAccess(', ')', 'void'),
+  \ javaapi#method(0,'checkAwtEventQueueAccess(', ')', 'void'),
+  \ javaapi#method(0,'checkPackageAccess(', 'String)', 'void'),
+  \ javaapi#method(0,'checkPackageDefinition(', 'String)', 'void'),
+  \ javaapi#method(0,'checkSetFactory(', ')', 'void'),
+  \ javaapi#method(0,'checkMemberAccess(', 'Class<?>, int)', 'void'),
+  \ javaapi#method(0,'checkSecurityAccess(', 'String)', 'void'),
+  \ javaapi#method(0,'getThreadGroup(', ')', 'ThreadGroup'),
+  \ ])
+
+call javaapi#class('SecurityException', 'RuntimeException', [
+  \ javaapi#method(0,'SecurityException(', ')', 'public'),
+  \ javaapi#method(0,'SecurityException(', 'String)', 'public'),
+  \ javaapi#method(0,'SecurityException(', 'String, Throwable)', 'public'),
+  \ javaapi#method(0,'SecurityException(', 'Throwable)', 'public'),
+  \ ])
+
+call javaapi#class('InterruptedException', 'Exception', [
+  \ javaapi#method(0,'InterruptedException(', ')', 'public'),
+  \ javaapi#method(0,'InterruptedException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Long', 'Number', [
+  \ javaapi#field(1,'MIN_VALUE', 'long'),
+  \ javaapi#field(1,'MAX_VALUE', 'long'),
+  \ javaapi#field(1,'TYPE', 'Long>'),
+  \ javaapi#field(1,'SIZE', 'int'),
+  \ javaapi#method(1,'toString(', 'long, int)', 'String'),
+  \ javaapi#method(1,'toHexString(', 'long)', 'String'),
+  \ javaapi#method(1,'toOctalString(', 'long)', 'String'),
+  \ javaapi#method(1,'toBinaryString(', 'long)', 'String'),
+  \ javaapi#method(1,'toString(', 'long)', 'String'),
+  \ javaapi#method(1,'parseLong(', 'String, int) throws NumberFormatException', 'long'),
+  \ javaapi#method(1,'parseLong(', 'String) throws NumberFormatException', 'long'),
+  \ javaapi#method(1,'valueOf(', 'String, int) throws NumberFormatException', 'Long'),
+  \ javaapi#method(1,'valueOf(', 'String) throws NumberFormatException', 'Long'),
+  \ javaapi#method(1,'valueOf(', 'long)', 'Long'),
+  \ javaapi#method(1,'decode(', 'String) throws NumberFormatException', 'Long'),
+  \ javaapi#method(0,'Long(', 'long)', 'public'),
+  \ javaapi#method(0,'Long(', 'String) throws NumberFormatException', 'public'),
+  \ javaapi#method(0,'byteValue(', ')', 'byte'),
+  \ javaapi#method(0,'shortValue(', ')', 'short'),
+  \ javaapi#method(0,'intValue(', ')', 'int'),
+  \ javaapi#method(0,'longValue(', ')', 'long'),
+  \ javaapi#method(0,'floatValue(', ')', 'float'),
+  \ javaapi#method(0,'doubleValue(', ')', 'double'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(1,'getLong(', 'String)', 'Long'),
+  \ javaapi#method(1,'getLong(', 'String, long)', 'Long'),
+  \ javaapi#method(1,'getLong(', 'String, Long)', 'Long'),
+  \ javaapi#method(0,'compareTo(', 'Long)', 'int'),
+  \ javaapi#method(1,'compare(', 'long, long)', 'int'),
+  \ javaapi#method(1,'highestOneBit(', 'long)', 'long'),
+  \ javaapi#method(1,'lowestOneBit(', 'long)', 'long'),
+  \ javaapi#method(1,'numberOfLeadingZeros(', 'long)', 'int'),
+  \ javaapi#method(1,'numberOfTrailingZeros(', 'long)', 'int'),
+  \ javaapi#method(1,'bitCount(', 'long)', 'int'),
+  \ javaapi#method(1,'rotateLeft(', 'long, int)', 'long'),
+  \ javaapi#method(1,'rotateRight(', 'long, int)', 'long'),
+  \ javaapi#method(1,'reverse(', 'long)', 'long'),
+  \ javaapi#method(1,'signum(', 'long)', 'int'),
+  \ javaapi#method(1,'reverseBytes(', 'long)', 'long'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('ThreadLocal<T>', '', [
+  \ javaapi#method(0,'ThreadLocal(', ')', 'public'),
+  \ javaapi#method(0,'get(', ')', 'T'),
+  \ javaapi#method(0,'set(', 'T)', 'void'),
+  \ javaapi#method(0,'remove(', ')', 'void'),
+  \ ])
+
+call javaapi#class('Compiler', '', [
+  \ javaapi#method(1,'compileClass(', 'Class<?>)', 'boolean'),
+  \ javaapi#method(1,'compileClasses(', 'String)', 'boolean'),
+  \ javaapi#method(1,'command(', 'Object)', 'Object'),
+  \ javaapi#method(1,'enable(', ')', 'void'),
+  \ javaapi#method(1,'disable(', ')', 'void'),
+  \ ])
+
+call javaapi#class('String', 'CharSequence', [
+  \ javaapi#field(1,'CASE_INSENSITIVE_ORDER', 'String>'),
+  \ javaapi#method(0,'String(', ')', 'public'),
+  \ javaapi#method(0,'String(', 'String)', 'public'),
+  \ javaapi#method(0,'String(', 'char[])', 'public'),
+  \ javaapi#method(0,'String(', 'char[], int, int)', 'public'),
+  \ javaapi#method(0,'String(', 'int[], int, int)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], int, int, int)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], int)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], int, int, String) throws UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], int, int, Charset)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], String) throws UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], Charset)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[], int, int)', 'public'),
+  \ javaapi#method(0,'String(', 'byte[])', 'public'),
+  \ javaapi#method(0,'String(', 'StringBuffer)', 'public'),
+  \ javaapi#method(0,'String(', 'StringBuilder)', 'public'),
+  \ javaapi#method(0,'length(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+  \ javaapi#method(0,'codePointAt(', 'int)', 'int'),
+  \ javaapi#method(0,'codePointBefore(', 'int)', 'int'),
+  \ javaapi#method(0,'codePointCount(', 'int, int)', 'int'),
+  \ javaapi#method(0,'offsetByCodePoints(', 'int, int)', 'int'),
+  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
+  \ javaapi#method(0,'getBytes(', 'int, int, byte[], int)', 'void'),
+  \ javaapi#method(0,'getBytes(', 'String) throws UnsupportedEncodingException', 'byte[]'),
+  \ javaapi#method(0,'getBytes(', 'Charset)', 'byte[]'),
+  \ javaapi#method(0,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'contentEquals(', 'StringBuffer)', 'boolean'),
+  \ javaapi#method(0,'contentEquals(', 'CharSequence)', 'boolean'),
+  \ javaapi#method(0,'equalsIgnoreCase(', 'String)', 'boolean'),
+  \ javaapi#method(0,'compareTo(', 'String)', 'int'),
+  \ javaapi#method(0,'compareToIgnoreCase(', 'String)', 'int'),
+  \ javaapi#method(0,'regionMatches(', 'int, String, int, int)', 'boolean'),
+  \ javaapi#method(0,'regionMatches(', 'boolean, int, String, int, int)', 'boolean'),
+  \ javaapi#method(0,'startsWith(', 'String, int)', 'boolean'),
+  \ javaapi#method(0,'startsWith(', 'String)', 'boolean'),
+  \ javaapi#method(0,'endsWith(', 'String)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'indexOf(', 'int)', 'int'),
+  \ javaapi#method(0,'indexOf(', 'int, int)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'int)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'int, int)', 'int'),
+  \ javaapi#method(0,'indexOf(', 'String)', 'int'),
+  \ javaapi#method(0,'indexOf(', 'String, int)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'String)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'String, int)', 'int'),
+  \ javaapi#method(0,'substring(', 'int)', 'String'),
+  \ javaapi#method(0,'substring(', 'int, int)', 'String'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+  \ javaapi#method(0,'concat(', 'String)', 'String'),
+  \ javaapi#method(0,'replace(', 'char, char)', 'String'),
+  \ javaapi#method(0,'matches(', 'String)', 'boolean'),
+  \ javaapi#method(0,'contains(', 'CharSequence)', 'boolean'),
+  \ javaapi#method(0,'replaceFirst(', 'String, String)', 'String'),
+  \ javaapi#method(0,'replaceAll(', 'String, String)', 'String'),
+  \ javaapi#method(0,'replace(', 'CharSequence, CharSequence)', 'String'),
+  \ javaapi#method(0,'split(', 'String, int)', 'String[]'),
+  \ javaapi#method(0,'split(', 'String)', 'String[]'),
+  \ javaapi#method(0,'toLowerCase(', 'Locale)', 'String'),
+  \ javaapi#method(0,'toLowerCase(', ')', 'String'),
+  \ javaapi#method(0,'toUpperCase(', 'Locale)', 'String'),
+  \ javaapi#method(0,'toUpperCase(', ')', 'String'),
+  \ javaapi#method(0,'trim(', ')', 'String'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'toCharArray(', ')', 'char[]'),
+  \ javaapi#method(1,'format(', 'String, )', 'String'),
+  \ javaapi#method(1,'format(', 'Locale, String, )', 'String'),
+  \ javaapi#method(1,'valueOf(', 'Object)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'char[])', 'String'),
+  \ javaapi#method(1,'valueOf(', 'char[], int, int)', 'String'),
+  \ javaapi#method(1,'copyValueOf(', 'char[], int, int)', 'String'),
+  \ javaapi#method(1,'copyValueOf(', 'char[])', 'String'),
+  \ javaapi#method(1,'valueOf(', 'boolean)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'char)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'int)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'long)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'float)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'double)', 'String'),
+  \ javaapi#method(0,'intern(', ')', 'String'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('CloneNotSupportedException', 'Exception', [
+  \ javaapi#method(0,'CloneNotSupportedException(', ')', 'public'),
+  \ javaapi#method(0,'CloneNotSupportedException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('UnsupportedClassVersionError', 'ClassFormatError', [
+  \ javaapi#method(0,'UnsupportedClassVersionError(', ')', 'public'),
+  \ javaapi#method(0,'UnsupportedClassVersionError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('ThreadGroup', 'UncaughtExceptionHandler', [
+  \ javaapi#method(0,'ThreadGroup(', 'String)', 'public'),
+  \ javaapi#method(0,'ThreadGroup(', 'ThreadGroup, String)', 'public'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getParent(', ')', 'ThreadGroup'),
+  \ javaapi#method(0,'getMaxPriority(', ')', 'int'),
+  \ javaapi#method(0,'isDaemon(', ')', 'boolean'),
+  \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
+  \ javaapi#method(0,'setDaemon(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setMaxPriority(', 'int)', 'void'),
+  \ javaapi#method(0,'parentOf(', 'ThreadGroup)', 'boolean'),
+  \ javaapi#method(0,'checkAccess(', ')', 'void'),
+  \ javaapi#method(0,'activeCount(', ')', 'int'),
+  \ javaapi#method(0,'enumerate(', 'Thread[])', 'int'),
+  \ javaapi#method(0,'enumerate(', 'Thread[], boolean)', 'int'),
+  \ javaapi#method(0,'activeGroupCount(', ')', 'int'),
+  \ javaapi#method(0,'enumerate(', 'ThreadGroup[])', 'int'),
+  \ javaapi#method(0,'enumerate(', 'ThreadGroup[], boolean)', 'int'),
+  \ javaapi#method(0,'stop(', ')', 'void'),
+  \ javaapi#method(0,'interrupt(', ')', 'void'),
+  \ javaapi#method(0,'suspend(', ')', 'void'),
+  \ javaapi#method(0,'resume(', ')', 'void'),
+  \ javaapi#method(0,'destroy(', ')', 'void'),
+  \ javaapi#method(0,'list(', ')', 'void'),
+  \ javaapi#method(0,'uncaughtException(', 'Thread, Throwable)', 'void'),
+  \ javaapi#method(0,'allowThreadSuspension(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('java.lang')
+
+call javaapi#class('ClassCircularityError', 'LinkageError', [
+  \ javaapi#method(0,'ClassCircularityError(', ')', 'public'),
+  \ javaapi#method(0,'ClassCircularityError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#interface('UncaughtExceptionHandler', '', [
+  \ javaapi#method(0,'uncaughtException(', 'Thread, Throwable)', 'void'),
+  \ ])
+
+call javaapi#class('IllegalMonitorStateException', 'RuntimeException', [
+  \ javaapi#method(0,'IllegalMonitorStateException(', ')', 'public'),
+  \ javaapi#method(0,'IllegalMonitorStateException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Number', 'Serializable', [
+  \ javaapi#method(0,'Number(', ')', 'public'),
+  \ javaapi#method(0,'intValue(', ')', 'int'),
+  \ javaapi#method(0,'longValue(', ')', 'long'),
+  \ javaapi#method(0,'floatValue(', ')', 'float'),
+  \ javaapi#method(0,'doubleValue(', ')', 'double'),
+  \ javaapi#method(0,'byteValue(', ')', 'byte'),
+  \ javaapi#method(0,'shortValue(', ')', 'short'),
+  \ ])
+
+call javaapi#class('Double', 'Number', [
+  \ javaapi#field(1,'POSITIVE_INFINITY', 'double'),
+  \ javaapi#field(1,'NEGATIVE_INFINITY', 'double'),
+  \ javaapi#field(1,'NaN', 'double'),
+  \ javaapi#field(1,'MAX_VALUE', 'double'),
+  \ javaapi#field(1,'MIN_NORMAL', 'double'),
+  \ javaapi#field(1,'MIN_VALUE', 'double'),
+  \ javaapi#field(1,'MAX_EXPONENT', 'int'),
+  \ javaapi#field(1,'MIN_EXPONENT', 'int'),
+  \ javaapi#field(1,'SIZE', 'int'),
+  \ javaapi#field(1,'TYPE', 'Double>'),
+  \ javaapi#method(1,'toString(', 'double)', 'String'),
+  \ javaapi#method(1,'toHexString(', 'double)', 'String'),
+  \ javaapi#method(1,'valueOf(', 'String) throws NumberFormatException', 'Double'),
+  \ javaapi#method(1,'valueOf(', 'double)', 'Double'),
+  \ javaapi#method(1,'parseDouble(', 'String) throws NumberFormatException', 'double'),
+  \ javaapi#method(1,'isNaN(', 'double)', 'boolean'),
+  \ javaapi#method(1,'isInfinite(', 'double)', 'boolean'),
+  \ javaapi#method(0,'Double(', 'double)', 'public'),
+  \ javaapi#method(0,'Double(', 'String) throws NumberFormatException', 'public'),
+  \ javaapi#method(0,'isNaN(', ')', 'boolean'),
+  \ javaapi#method(0,'isInfinite(', ')', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'byteValue(', ')', 'byte'),
+  \ javaapi#method(0,'shortValue(', ')', 'short'),
+  \ javaapi#method(0,'intValue(', ')', 'int'),
+  \ javaapi#method(0,'longValue(', ')', 'long'),
+  \ javaapi#method(0,'floatValue(', ')', 'float'),
+  \ javaapi#method(0,'doubleValue(', ')', 'double'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(1,'doubleToLongBits(', 'double)', 'long'),
+  \ javaapi#method(1,'doubleToRawLongBits(', 'double)', 'long'),
+  \ javaapi#method(1,'longBitsToDouble(', 'long)', 'double'),
+  \ javaapi#method(0,'compareTo(', 'Double)', 'int'),
+  \ javaapi#method(1,'compare(', 'double, double)', 'int'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('IllegalStateException', 'RuntimeException', [
+  \ javaapi#method(0,'IllegalStateException(', ')', 'public'),
+  \ javaapi#method(0,'IllegalStateException(', 'String)', 'public'),
+  \ javaapi#method(0,'IllegalStateException(', 'String, Throwable)', 'public'),
+  \ javaapi#method(0,'IllegalStateException(', 'Throwable)', 'public'),
+  \ ])
+
+call javaapi#interface('SuppressWarnings', 'Annotation', [
+  \ javaapi#method(0,'value(', ')', 'String[]'),
+  \ ])
+
+call javaapi#class('System', '', [
+  \ javaapi#field(1,'in', 'InputStream'),
+  \ javaapi#field(1,'out', 'PrintStream'),
+  \ javaapi#field(1,'err', 'PrintStream'),
+  \ javaapi#method(1,'setIn(', 'InputStream)', 'void'),
+  \ javaapi#method(1,'setOut(', 'PrintStream)', 'void'),
+  \ javaapi#method(1,'setErr(', 'PrintStream)', 'void'),
+  \ javaapi#method(1,'console(', ')', 'Console'),
+  \ javaapi#method(1,'inheritedChannel(', ') throws IOException', 'Channel'),
+  \ javaapi#method(1,'setSecurityManager(', 'SecurityManager)', 'void'),
+  \ javaapi#method(1,'getSecurityManager(', ')', 'SecurityManager'),
+  \ javaapi#method(1,'currentTimeMillis(', ')', 'long'),
+  \ javaapi#method(1,'nanoTime(', ')', 'long'),
+  \ javaapi#method(1,'arraycopy(', 'Object, int, Object, int, int)', 'void'),
+  \ javaapi#method(1,'identityHashCode(', 'Object)', 'int'),
+  \ javaapi#method(1,'getProperties(', ')', 'Properties'),
+  \ javaapi#method(1,'lineSeparator(', ')', 'String'),
+  \ javaapi#method(1,'setProperties(', 'Properties)', 'void'),
+  \ javaapi#method(1,'getProperty(', 'String)', 'String'),
+  \ javaapi#method(1,'getProperty(', 'String, String)', 'String'),
+  \ javaapi#method(1,'setProperty(', 'String, String)', 'String'),
+  \ javaapi#method(1,'clearProperty(', 'String)', 'String'),
+  \ javaapi#method(1,'getenv(', 'String)', 'String'),
+  \ javaapi#method(1,'getenv(', ')', 'String>'),
+  \ javaapi#method(1,'exit(', 'int)', 'void'),
+  \ javaapi#method(1,'gc(', ')', 'void'),
+  \ javaapi#method(1,'runFinalization(', ')', 'void'),
+  \ javaapi#method(1,'runFinalizersOnExit(', 'boolean)', 'void'),
+  \ javaapi#method(1,'load(', 'String)', 'void'),
+  \ javaapi#method(1,'loadLibrary(', 'String)', 'void'),
+  \ javaapi#method(1,'mapLibraryName(', 'String)', 'String'),
+  \ ])
+
+call javaapi#class('ClassLoader', '', [
+  \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,'getResource(', 'String)', 'URL'),
+  \ javaapi#method(0,'getResources(', 'String) throws IOException', 'URL>'),
+  \ javaapi#method(1,'getSystemResource(', 'String)', 'URL'),
+  \ javaapi#method(1,'getSystemResources(', 'String) throws IOException', 'URL>'),
+  \ javaapi#method(0,'getResourceAsStream(', 'String)', 'InputStream'),
+  \ javaapi#method(1,'getSystemResourceAsStream(', 'String)', 'InputStream'),
+  \ javaapi#method(0,'getParent(', ')', 'ClassLoader'),
+  \ javaapi#method(1,'getSystemClassLoader(', ')', 'ClassLoader'),
+  \ javaapi#method(0,'setDefaultAssertionStatus(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setPackageAssertionStatus(', 'String, boolean)', 'void'),
+  \ javaapi#method(0,'setClassAssertionStatus(', 'String, boolean)', 'void'),
+  \ javaapi#method(0,'clearAssertionStatus(', ')', 'void'),
+  \ ])
+
+call javaapi#class('InternalError', 'VirtualMachineError', [
+  \ javaapi#method(0,'InternalError(', ')', 'public'),
+  \ javaapi#method(0,'InternalError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#interface('Comparable<T>', '', [
+  \ javaapi#method(0,'compareTo(', 'T)', 'int'),
+  \ ])
+
+call javaapi#class('Boolean', 'Boolean>', [
+  \ javaapi#field(1,'TRUE', 'Boolean'),
+  \ javaapi#field(1,'FALSE', 'Boolean'),
+  \ javaapi#field(1,'TYPE', 'Boolean>'),
+  \ javaapi#method(0,'Boolean(', 'boolean)', 'public'),
+  \ javaapi#method(0,'Boolean(', 'String)', 'public'),
+  \ javaapi#method(1,'parseBoolean(', 'String)', 'boolean'),
+  \ javaapi#method(0,'booleanValue(', ')', 'boolean'),
+  \ javaapi#method(1,'valueOf(', 'boolean)', 'Boolean'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Boolean'),
+  \ javaapi#method(1,'toString(', 'boolean)', 'String'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(1,'getBoolean(', 'String)', 'boolean'),
+  \ javaapi#method(0,'compareTo(', 'Boolean)', 'int'),
+  \ javaapi#method(1,'compare(', 'boolean, boolean)', 'int'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('Throwable', 'Serializable', [
+  \ javaapi#method(0,'Throwable(', ')', 'public'),
+  \ javaapi#method(0,'Throwable(', 'String)', 'public'),
+  \ javaapi#method(0,'Throwable(', 'String, Throwable)', 'public'),
+  \ javaapi#method(0,'Throwable(', 'Throwable)', 'public'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ javaapi#method(0,'getLocalizedMessage(', ')', 'String'),
+  \ javaapi#method(0,'getCause(', ')', 'Throwable'),
+  \ javaapi#method(0,'initCause(', 'Throwable)', 'Throwable'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'printStackTrace(', ')', 'void'),
+  \ javaapi#method(0,'printStackTrace(', 'PrintStream)', 'void'),
+  \ javaapi#method(0,'printStackTrace(', 'PrintWriter)', 'void'),
+  \ javaapi#method(0,'fillInStackTrace(', ')', 'Throwable'),
+  \ javaapi#method(0,'getStackTrace(', ')', 'StackTraceElement[]'),
+  \ javaapi#method(0,'setStackTrace(', 'StackTraceElement[])', 'void'),
+  \ javaapi#method(0,'addSuppressed(', 'Throwable)', 'void'),
+  \ javaapi#method(0,'getSuppressed(', ')', 'Throwable[]'),
+  \ ])
+
+call javaapi#class('Void', '', [
+  \ javaapi#field(1,'TYPE', 'Void>'),
+  \ ])
+
+call javaapi#class('RuntimePermission', 'BasicPermission', [
+  \ javaapi#method(0,'RuntimePermission(', 'String)', 'public'),
+  \ javaapi#method(0,'RuntimePermission(', 'String, String)', 'public'),
+  \ ])
+
+call javaapi#class('Enum<E', 'Enum<E>>', [
+  \ javaapi#method(0,'name(', ')', 'String'),
+  \ javaapi#method(0,'ordinal(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'compareTo(', 'E)', 'int'),
+  \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<E>'),
+  \ javaapi#method(1,'valueOf(', 'Class<T>, String)', 'T'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('VerifyError', 'LinkageError', [
+  \ javaapi#method(0,'VerifyError(', ')', 'public'),
+  \ javaapi#method(0,'VerifyError(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('StringBuffer', 'AbstractStringBuilder', [
+  \ javaapi#method(0,'StringBuffer(', ')', 'public'),
+  \ javaapi#method(0,'StringBuffer(', 'int)', 'public'),
+  \ javaapi#method(0,'StringBuffer(', 'String)', 'public'),
+  \ javaapi#method(0,'StringBuffer(', 'CharSequence)', 'public'),
+  \ javaapi#method(0,'length(', ')', 'int'),
+  \ javaapi#method(0,'capacity(', ')', 'int'),
+  \ javaapi#method(0,'ensureCapacity(', 'int)', 'void'),
+  \ javaapi#method(0,'trimToSize(', ')', 'void'),
+  \ javaapi#method(0,'setLength(', 'int)', 'void'),
+  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+  \ javaapi#method(0,'codePointAt(', 'int)', 'int'),
+  \ javaapi#method(0,'codePointBefore(', 'int)', 'int'),
+  \ javaapi#method(0,'codePointCount(', 'int, int)', 'int'),
+  \ javaapi#method(0,'offsetByCodePoints(', 'int, int)', 'int'),
+  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
+  \ javaapi#method(0,'setCharAt(', 'int, char)', 'void'),
+  \ javaapi#method(0,'append(', 'Object)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'String)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'StringBuffer)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'CharSequence)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'char[])', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'char[], int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'boolean)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'char)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'int)', 'StringBuffer'),
+  \ javaapi#method(0,'appendCodePoint(', 'int)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'long)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'float)', 'StringBuffer'),
+  \ javaapi#method(0,'append(', 'double)', 'StringBuffer'),
+  \ javaapi#method(0,'delete(', 'int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'deleteCharAt(', 'int)', 'StringBuffer'),
+  \ javaapi#method(0,'replace(', 'int, int, String)', 'StringBuffer'),
+  \ javaapi#method(0,'substring(', 'int)', 'String'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+  \ javaapi#method(0,'substring(', 'int, int)', 'String'),
+  \ javaapi#method(0,'insert(', 'int, char[], int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, Object)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, String)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, char[])', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, boolean)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, char)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, int)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, long)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, float)', 'StringBuffer'),
+  \ javaapi#method(0,'insert(', 'int, double)', 'StringBuffer'),
+  \ javaapi#method(0,'indexOf(', 'String)', 'int'),
+  \ javaapi#method(0,'indexOf(', 'String, int)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'String)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'String, int)', 'int'),
+  \ javaapi#method(0,'reverse(', ')', 'StringBuffer'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'reverse(', ')', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, double)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, float)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, long)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, char)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, boolean)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, char[])', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, String)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, Object)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, char[], int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'replace(', 'int, int, String)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'deleteCharAt(', 'int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'appendCodePoint(', 'int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'delete(', 'int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'double)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'float)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'long)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'char)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'boolean)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'char[], int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'char[])', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'CharSequence)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'StringBuffer)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'String)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'Object)', 'AbstractStringBuilder'),
+  \ javaapi#method(0,'append(', 'char) throws IOException', 'Appendable'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int) throws IOException', 'Appendable'),
+  \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
+  \ ])
+
+call javaapi#interface('Override', 'Annotation', [
+  \ ])
+
+call javaapi#class('ProcessBuilder', '', [
+  \ javaapi#method(0,'ProcessBuilder(', 'List<String>)', 'public'),
+  \ javaapi#method(0,'ProcessBuilder(', ')', 'public'),
+  \ javaapi#method(0,'command(', 'List<String>)', 'ProcessBuilder'),
+  \ javaapi#method(0,'command(', ')', 'ProcessBuilder'),
+  \ javaapi#method(0,'command(', ')', 'String>'),
+  \ javaapi#method(0,'environment(', ')', 'String>'),
+  \ javaapi#method(0,'directory(', ')', 'File'),
+  \ javaapi#method(0,'directory(', 'File)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectInput(', 'Redirect)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectOutput(', 'Redirect)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectError(', 'Redirect)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectInput(', 'File)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectOutput(', 'File)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectError(', 'File)', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectInput(', ')', 'Redirect'),
+  \ javaapi#method(0,'redirectOutput(', ')', 'Redirect'),
+  \ javaapi#method(0,'redirectError(', ')', 'Redirect'),
+  \ javaapi#method(0,'inheritIO(', ')', 'ProcessBuilder'),
+  \ javaapi#method(0,'redirectErrorStream(', ')', 'boolean'),
+  \ javaapi#method(0,'redirectErrorStream(', 'boolean)', 'ProcessBuilder'),
+  \ javaapi#method(0,'start(', ') throws IOException', 'Process'),
+  \ ])
+
+call javaapi#class('Class<T>', 'AnnotatedElement', [
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(1,'forName(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(1,'forName(', 'String, boolean, ClassLoader) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,'newInstance(', ') throws InstantiationException, IllegalAccessException', 'T'),
+  \ javaapi#method(0,'isInstance(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'isAssignableFrom(', 'Class<?>)', 'boolean'),
+  \ javaapi#method(0,'isInterface(', ')', 'boolean'),
+  \ javaapi#method(0,'isArray(', ')', 'boolean'),
+  \ javaapi#method(0,'isPrimitive(', ')', 'boolean'),
+  \ javaapi#method(0,'isAnnotation(', ')', 'boolean'),
+  \ javaapi#method(0,'isSynthetic(', ')', 'boolean'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
+  \ javaapi#method(0,'getTypeParameters(', ')', 'Class<T>>[]'),
+  \ javaapi#method(0,'getSuperclass(', ')', 'T>'),
+  \ javaapi#method(0,'getGenericSuperclass(', ')', 'Type'),
+  \ javaapi#method(0,'getPackage(', ')', 'Package'),
+  \ javaapi#method(0,'getInterfaces(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,'getGenericInterfaces(', ')', 'Type[]'),
+  \ javaapi#method(0,'getComponentType(', ')', 'Class<?>'),
+  \ javaapi#method(0,'getModifiers(', ')', 'int'),
+  \ javaapi#method(0,'getSigners(', ')', 'Object[]'),
+  \ javaapi#method(0,'getEnclosingMethod(', ')', 'Method'),
+  \ javaapi#method(0,'getEnclosingConstructor(', ')', 'Constructor<?>'),
+  \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<?>'),
+  \ javaapi#method(0,'getEnclosingClass(', ')', 'Class<?>'),
+  \ javaapi#method(0,'getSimpleName(', ')', 'String'),
+  \ javaapi#method(0,'getCanonicalName(', ')', 'String'),
+  \ javaapi#method(0,'isAnonymousClass(', ')', 'boolean'),
+  \ javaapi#method(0,'isLocalClass(', ')', 'boolean'),
+  \ javaapi#method(0,'isMemberClass(', ')', 'boolean'),
+  \ javaapi#method(0,'getClasses(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,'getFields(', ') throws SecurityException', 'Field[]'),
+  \ javaapi#method(0,'getMethods(', ') throws SecurityException', 'Method[]'),
+  \ javaapi#method(0,'getConstructors(', ') throws SecurityException', 'Constructor<?>[]'),
+  \ javaapi#method(0,'getField(', 'String) throws NoSuchFieldException, SecurityException', 'Field'),
+  \ javaapi#method(0,'getMethod(', 'String, Class<?>) throws NoSuchMethodException, SecurityException', 'Method'),
+  \ javaapi#method(0,'getConstructor(', 'Class<?>) throws NoSuchMethodException, SecurityException', 'Constructor<T>'),
+  \ javaapi#method(0,'getDeclaredClasses(', ') throws SecurityException', 'Class<?>[]'),
+  \ javaapi#method(0,'getDeclaredFields(', ') throws SecurityException', 'Field[]'),
+  \ javaapi#method(0,'getDeclaredMethods(', ') throws SecurityException', 'Method[]'),
+  \ javaapi#method(0,'getDeclaredConstructors(', ') throws SecurityException', 'Constructor<?>[]'),
+  \ javaapi#method(0,'getDeclaredField(', 'String) throws NoSuchFieldException, SecurityException', 'Field'),
+  \ javaapi#method(0,'getDeclaredMethod(', 'String, Class<?>) throws NoSuchMethodException, SecurityException', 'Method'),
+  \ javaapi#method(0,'getDeclaredConstructor(', 'Class<?>) throws NoSuchMethodException, SecurityException', 'Constructor<T>'),
+  \ javaapi#method(0,'getResourceAsStream(', 'String)', 'InputStream'),
+  \ javaapi#method(0,'getResource(', 'String)', 'URL'),
+  \ javaapi#method(0,'getProtectionDomain(', ')', 'ProtectionDomain'),
+  \ javaapi#method(0,'desiredAssertionStatus(', ')', 'boolean'),
+  \ javaapi#method(0,'isEnum(', ')', 'boolean'),
+  \ javaapi#method(0,'getEnumConstants(', ')', 'T[]'),
+  \ javaapi#method(0,'cast(', 'Object)', 'T'),
+  \ javaapi#method(0,'asSubclass(', 'Class<U>)', 'U>'),
+  \ javaapi#method(0,'getAnnotation(', 'Class<A>)', 'A'),
+  \ javaapi#method(0,'isAnnotationPresent(', 'Class<? extends Annotation>)', 'boolean'),
+  \ javaapi#method(0,'getAnnotations(', ')', 'Annotation[]'),
+  \ javaapi#method(0,'getDeclaredAnnotations(', ')', 'Annotation[]'),
+  \ ])
+
+call javaapi#class('Math', '', [
+  \ javaapi#field(1,'E', 'double'),
+  \ javaapi#field(1,'PI', 'double'),
+  \ javaapi#method(1,'sin(', 'double)', 'double'),
+  \ javaapi#method(1,'cos(', 'double)', 'double'),
+  \ javaapi#method(1,'tan(', 'double)', 'double'),
+  \ javaapi#method(1,'asin(', 'double)', 'double'),
+  \ javaapi#method(1,'acos(', 'double)', 'double'),
+  \ javaapi#method(1,'atan(', 'double)', 'double'),
+  \ javaapi#method(1,'toRadians(', 'double)', 'double'),
+  \ javaapi#method(1,'toDegrees(', 'double)', 'double'),
+  \ javaapi#method(1,'exp(', 'double)', 'double'),
+  \ javaapi#method(1,'log(', 'double)', 'double'),
+  \ javaapi#method(1,'log10(', 'double)', 'double'),
+  \ javaapi#method(1,'sqrt(', 'double)', 'double'),
+  \ javaapi#method(1,'cbrt(', 'double)', 'double'),
+  \ javaapi#method(1,'IEEEremainder(', 'double, double)', 'double'),
+  \ javaapi#method(1,'ceil(', 'double)', 'double'),
+  \ javaapi#method(1,'floor(', 'double)', 'double'),
+  \ javaapi#method(1,'rint(', 'double)', 'double'),
+  \ javaapi#method(1,'atan2(', 'double, double)', 'double'),
+  \ javaapi#method(1,'pow(', 'double, double)', 'double'),
+  \ javaapi#method(1,'round(', 'float)', 'int'),
+  \ javaapi#method(1,'round(', 'double)', 'long'),
+  \ javaapi#method(1,'random(', ')', 'double'),
+  \ javaapi#method(1,'abs(', 'int)', 'int'),
+  \ javaapi#method(1,'abs(', 'long)', 'long'),
+  \ javaapi#method(1,'abs(', 'float)', 'float'),
+  \ javaapi#method(1,'abs(', 'double)', 'double'),
+  \ javaapi#method(1,'max(', 'int, int)', 'int'),
+  \ javaapi#method(1,'max(', 'long, long)', 'long'),
+  \ javaapi#method(1,'max(', 'float, float)', 'float'),
+  \ javaapi#method(1,'max(', 'double, double)', 'double'),
+  \ javaapi#method(1,'min(', 'int, int)', 'int'),
+  \ javaapi#method(1,'min(', 'long, long)', 'long'),
+  \ javaapi#method(1,'min(', 'float, float)', 'float'),
+  \ javaapi#method(1,'min(', 'double, double)', 'double'),
+  \ javaapi#method(1,'ulp(', 'double)', 'double'),
+  \ javaapi#method(1,'ulp(', 'float)', 'float'),
+  \ javaapi#method(1,'signum(', 'double)', 'double'),
+  \ javaapi#method(1,'signum(', 'float)', 'float'),
+  \ javaapi#method(1,'sinh(', 'double)', 'double'),
+  \ javaapi#method(1,'cosh(', 'double)', 'double'),
+  \ javaapi#method(1,'tanh(', 'double)', 'double'),
+  \ javaapi#method(1,'hypot(', 'double, double)', 'double'),
+  \ javaapi#method(1,'expm1(', 'double)', 'double'),
+  \ javaapi#method(1,'log1p(', 'double)', 'double'),
+  \ javaapi#method(1,'copySign(', 'double, double)', 'double'),
+  \ javaapi#method(1,'copySign(', 'float, float)', 'float'),
+  \ javaapi#method(1,'getExponent(', 'float)', 'int'),
+  \ javaapi#method(1,'getExponent(', 'double)', 'int'),
+  \ javaapi#method(1,'nextAfter(', 'double, double)', 'double'),
+  \ javaapi#method(1,'nextAfter(', 'float, double)', 'float'),
+  \ javaapi#method(1,'nextUp(', 'double)', 'double'),
+  \ javaapi#method(1,'nextUp(', 'float)', 'float'),
+  \ javaapi#method(1,'scalb(', 'double, int)', 'double'),
+  \ javaapi#method(1,'scalb(', 'float, int)', 'float'),
+  \ ])
+
+call javaapi#namespace('java.lang')
+
+call javaapi#class('ThreadDeath', 'Error', [
   \ javaapi#method(0,'ThreadDeath(', ')', 'public'),
   \ ])
 
-call javaapi#class('ClassNotFoundException', '', [
+call javaapi#class('ClassNotFoundException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'ClassNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'ClassNotFoundException(', 'String)', 'public'),
   \ javaapi#method(0,'ClassNotFoundException(', 'String, Throwable)', 'public'),
@@ -75,7 +867,7 @@ call javaapi#class('AbstractStringBuilder', 'CharSequence', [
   \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
   \ ])
 
-call javaapi#class('AssertionError', '', [
+call javaapi#class('AssertionError', 'Error', [
   \ javaapi#method(0,'AssertionError(', ')', 'public'),
   \ javaapi#method(0,'AssertionError(', 'Object)', 'public'),
   \ javaapi#method(0,'AssertionError(', 'boolean)', 'public'),
@@ -87,17 +879,17 @@ call javaapi#class('AssertionError', '', [
   \ javaapi#method(0,'AssertionError(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('ArithmeticException', '', [
+call javaapi#class('ArithmeticException', 'RuntimeException', [
   \ javaapi#method(0,'ArithmeticException(', ')', 'public'),
   \ javaapi#method(0,'ArithmeticException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('NoSuchFieldException', '', [
+call javaapi#class('NoSuchFieldException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'NoSuchFieldException(', ')', 'public'),
   \ javaapi#method(0,'NoSuchFieldException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RuntimeException', '', [
+call javaapi#class('RuntimeException', 'Exception', [
   \ javaapi#method(0,'RuntimeException(', ')', 'public'),
   \ javaapi#method(0,'RuntimeException(', 'String)', 'public'),
   \ javaapi#method(0,'RuntimeException(', 'String, Throwable)', 'public'),
@@ -108,7 +900,7 @@ call javaapi#interface('Readable', '', [
   \ javaapi#method(0,'read(', 'CharBuffer) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('LinkageError', '', [
+call javaapi#class('LinkageError', 'Error', [
   \ javaapi#method(0,'LinkageError(', ')', 'public'),
   \ javaapi#method(0,'LinkageError(', 'String)', 'public'),
   \ javaapi#method(0,'LinkageError(', 'String, Throwable)', 'public'),
@@ -124,7 +916,7 @@ call javaapi#interface('Iterable<T>', '', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator<T>'),
   \ ])
 
-call javaapi#class('Float', '', [
+call javaapi#class('Float', 'Number', [
   \ javaapi#field(1,'POSITIVE_INFINITY', 'float'),
   \ javaapi#field(1,'NEGATIVE_INFINITY', 'float'),
   \ javaapi#field(1,'NaN', 'float'),
@@ -189,7 +981,7 @@ call javaapi#interface('Runnable', '', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('ArrayStoreException', '', [
+call javaapi#class('ArrayStoreException', 'RuntimeException', [
   \ javaapi#method(0,'ArrayStoreException(', ')', 'public'),
   \ javaapi#method(0,'ArrayStoreException(', 'String)', 'public'),
   \ ])
@@ -204,7 +996,7 @@ call javaapi#class('Process', '', [
   \ javaapi#method(0,'destroy(', ')', 'void'),
   \ ])
 
-call javaapi#class('ExceptionInInitializerError', '', [
+call javaapi#class('ExceptionInInitializerError', 'LinkageError', [
   \ javaapi#method(0,'ExceptionInInitializerError(', ')', 'public'),
   \ javaapi#method(0,'ExceptionInInitializerError(', 'Throwable)', 'public'),
   \ javaapi#method(0,'ExceptionInInitializerError(', 'String)', 'public'),
@@ -271,7 +1063,7 @@ call javaapi#class('StrictMath', '', [
   \ javaapi#method(1,'scalb(', 'float, int)', 'float'),
   \ ])
 
-call javaapi#class('UnsupportedOperationException', '', [
+call javaapi#class('UnsupportedOperationException', 'RuntimeException', [
   \ javaapi#method(0,'UnsupportedOperationException(', ')', 'public'),
   \ javaapi#method(0,'UnsupportedOperationException(', 'String)', 'public'),
   \ javaapi#method(0,'UnsupportedOperationException(', 'String, Throwable)', 'public'),
@@ -433,7 +1225,7 @@ call javaapi#class('Character', 'Character>', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('StackOverflowError', '', [
+call javaapi#class('StackOverflowError', 'VirtualMachineError', [
   \ javaapi#method(0,'StackOverflowError(', ')', 'public'),
   \ javaapi#method(0,'StackOverflowError(', 'String)', 'public'),
   \ ])
@@ -450,17 +1242,17 @@ call javaapi#class('StackTraceElement', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('IncompatibleClassChangeError', '', [
+call javaapi#class('IncompatibleClassChangeError', 'LinkageError', [
   \ javaapi#method(0,'IncompatibleClassChangeError(', ')', 'public'),
   \ javaapi#method(0,'IncompatibleClassChangeError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('TypeNotPresentException', '', [
+call javaapi#class('TypeNotPresentException', 'RuntimeException', [
   \ javaapi#method(0,'TypeNotPresentException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'typeName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Short', '', [
+call javaapi#class('Short', 'Number', [
   \ javaapi#field(1,'MIN_VALUE', 'short'),
   \ javaapi#field(1,'MAX_VALUE', 'short'),
   \ javaapi#field(1,'TYPE', 'Short>'),
@@ -492,7 +1284,7 @@ call javaapi#class('Short', '', [
 call javaapi#interface('Cloneable', '', [
   \ ])
 
-call javaapi#class('StringBuilder', '', [
+call javaapi#class('StringBuilder', 'AbstractStringBuilder', [
   \ javaapi#method(0,'StringBuilder(', ')', 'public'),
   \ javaapi#method(0,'StringBuilder(', 'int)', 'public'),
   \ javaapi#method(0,'StringBuilder(', 'String)', 'public'),
@@ -582,20 +1374,20 @@ call javaapi#class('StringBuilder', '', [
   \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
   \ ])
 
-call javaapi#interface('Deprecated', '', [
+call javaapi#interface('Deprecated', 'Annotation', [
   \ ])
 
-call javaapi#class('NegativeArraySizeException', '', [
+call javaapi#class('NegativeArraySizeException', 'RuntimeException', [
   \ javaapi#method(0,'NegativeArraySizeException(', ')', 'public'),
   \ javaapi#method(0,'NegativeArraySizeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('UnknownError', '', [
+call javaapi#class('UnknownError', 'VirtualMachineError', [
   \ javaapi#method(0,'UnknownError(', ')', 'public'),
   \ javaapi#method(0,'UnknownError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('Integer', '', [
+call javaapi#class('Integer', 'Number', [
   \ javaapi#field(1,'MIN_VALUE', 'int'),
   \ javaapi#field(1,'MAX_VALUE', 'int'),
   \ javaapi#field(1,'TYPE', 'Integer>'),
@@ -640,12 +1432,12 @@ call javaapi#class('Integer', '', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('InstantiationException', '', [
+call javaapi#class('InstantiationException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'InstantiationException(', ')', 'public'),
   \ javaapi#method(0,'InstantiationException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('UnicodeBlock', '', [
+call javaapi#class('UnicodeBlock', 'Subset', [
   \ javaapi#field(1,'BASIC_LATIN', 'UnicodeBlock'),
   \ javaapi#field(1,'LATIN_1_SUPPLEMENT', 'UnicodeBlock'),
   \ javaapi#field(1,'LATIN_EXTENDED_A', 'UnicodeBlock'),
@@ -874,44 +1666,44 @@ call javaapi#class('Object', '', [
   \ javaapi#method(0,'wait(', ') throws InterruptedException', 'void'),
   \ ])
 
-call javaapi#class('VirtualMachineError', '', [
+call javaapi#class('VirtualMachineError', 'Error', [
   \ javaapi#method(0,'VirtualMachineError(', ')', 'public'),
   \ javaapi#method(0,'VirtualMachineError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ClassFormatError', '', [
+call javaapi#class('ClassFormatError', 'LinkageError', [
   \ javaapi#method(0,'ClassFormatError(', ')', 'public'),
   \ javaapi#method(0,'ClassFormatError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('NoClassDefFoundError', '', [
+call javaapi#class('NoClassDefFoundError', 'LinkageError', [
   \ javaapi#method(0,'NoClassDefFoundError(', ')', 'public'),
   \ javaapi#method(0,'NoClassDefFoundError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ArrayIndexOutOfBoundsException', '', [
+call javaapi#class('ArrayIndexOutOfBoundsException', 'IndexOutOfBoundsException', [
   \ javaapi#method(0,'ArrayIndexOutOfBoundsException(', ')', 'public'),
   \ javaapi#method(0,'ArrayIndexOutOfBoundsException(', 'int)', 'public'),
   \ javaapi#method(0,'ArrayIndexOutOfBoundsException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('IllegalAccessException', '', [
+call javaapi#class('IllegalAccessException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'IllegalAccessException(', ')', 'public'),
   \ javaapi#method(0,'IllegalAccessException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('IllegalArgumentException', '', [
+call javaapi#class('IllegalArgumentException', 'RuntimeException', [
   \ javaapi#method(0,'IllegalArgumentException(', ')', 'public'),
   \ javaapi#method(0,'IllegalArgumentException(', 'String)', 'public'),
   \ javaapi#method(0,'IllegalArgumentException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'IllegalArgumentException(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('InheritableThreadLocal<T>', '', [
+call javaapi#class('InheritableThreadLocal<T>', 'ThreadLocal<T>', [
   \ javaapi#method(0,'InheritableThreadLocal(', ')', 'public'),
   \ ])
 
-call javaapi#class('NoSuchMethodError', '', [
+call javaapi#class('NoSuchMethodError', 'IncompatibleClassChangeError', [
   \ javaapi#method(0,'NoSuchMethodError(', ')', 'public'),
   \ javaapi#method(0,'NoSuchMethodError(', 'String)', 'public'),
   \ ])
@@ -922,12 +1714,12 @@ call javaapi#class('Subset', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AbstractMethodError', '', [
+call javaapi#class('AbstractMethodError', 'IncompatibleClassChangeError', [
   \ javaapi#method(0,'AbstractMethodError(', ')', 'public'),
   \ javaapi#method(0,'AbstractMethodError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'NEW', 'State'),
   \ javaapi#field(1,'RUNNABLE', 'State'),
   \ javaapi#field(1,'BLOCKED', 'State'),
@@ -938,35 +1730,35 @@ call javaapi#class('State', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'State'),
   \ ])
 
-call javaapi#class('UnsatisfiedLinkError', '', [
+call javaapi#class('UnsatisfiedLinkError', 'LinkageError', [
   \ javaapi#method(0,'UnsatisfiedLinkError(', ')', 'public'),
   \ javaapi#method(0,'UnsatisfiedLinkError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('Error', '', [
+call javaapi#class('Error', 'Throwable', [
   \ javaapi#method(0,'Error(', ')', 'public'),
   \ javaapi#method(0,'Error(', 'String)', 'public'),
   \ javaapi#method(0,'Error(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'Error(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('NoSuchMethodException', '', [
+call javaapi#class('NoSuchMethodException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'NoSuchMethodException(', ')', 'public'),
   \ javaapi#method(0,'NoSuchMethodException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('IllegalThreadStateException', '', [
+call javaapi#class('IllegalThreadStateException', 'IllegalArgumentException', [
   \ javaapi#method(0,'IllegalThreadStateException(', ')', 'public'),
   \ javaapi#method(0,'IllegalThreadStateException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('StringIndexOutOfBoundsException', '', [
+call javaapi#class('StringIndexOutOfBoundsException', 'IndexOutOfBoundsException', [
   \ javaapi#method(0,'StringIndexOutOfBoundsException(', ')', 'public'),
   \ javaapi#method(0,'StringIndexOutOfBoundsException(', 'String)', 'public'),
   \ javaapi#method(0,'StringIndexOutOfBoundsException(', 'int)', 'public'),
   \ ])
 
-call javaapi#class('Byte', '', [
+call javaapi#class('Byte', 'Number', [
   \ javaapi#field(1,'MIN_VALUE', 'byte'),
   \ javaapi#field(1,'MAX_VALUE', 'byte'),
   \ javaapi#field(1,'TYPE', 'Byte>'),
@@ -994,809 +1786,19 @@ call javaapi#class('Byte', '', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('NullPointerException', '', [
+call javaapi#class('NullPointerException', 'RuntimeException', [
   \ javaapi#method(0,'NullPointerException(', ')', 'public'),
   \ javaapi#method(0,'NullPointerException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('NumberFormatException', '', [
+call javaapi#class('NumberFormatException', 'IllegalArgumentException', [
   \ javaapi#method(0,'NumberFormatException(', ')', 'public'),
   \ javaapi#method(0,'NumberFormatException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('EnumConstantNotPresentException', '', [
+call javaapi#class('EnumConstantNotPresentException', 'RuntimeException', [
   \ javaapi#method(0,'EnumConstantNotPresentException(', 'Class<? extends Enum>, String)', 'public'),
   \ javaapi#method(0,'enumType(', ')', 'Enum>'),
   \ javaapi#method(0,'constantName(', ')', 'String'),
-  \ ])
-
-
-call javaapi#class('ClassCircularityError', '', [
-  \ javaapi#method(0,'ClassCircularityError(', ')', 'public'),
-  \ javaapi#method(0,'ClassCircularityError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#interface('UncaughtExceptionHandler', '', [
-  \ javaapi#method(0,'uncaughtException(', 'Thread, Throwable)', 'void'),
-  \ ])
-
-call javaapi#class('IllegalMonitorStateException', '', [
-  \ javaapi#method(0,'IllegalMonitorStateException(', ')', 'public'),
-  \ javaapi#method(0,'IllegalMonitorStateException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Number', 'Serializable', [
-  \ javaapi#method(0,'Number(', ')', 'public'),
-  \ javaapi#method(0,'intValue(', ')', 'int'),
-  \ javaapi#method(0,'longValue(', ')', 'long'),
-  \ javaapi#method(0,'floatValue(', ')', 'float'),
-  \ javaapi#method(0,'doubleValue(', ')', 'double'),
-  \ javaapi#method(0,'byteValue(', ')', 'byte'),
-  \ javaapi#method(0,'shortValue(', ')', 'short'),
-  \ ])
-
-call javaapi#class('Double', '', [
-  \ javaapi#field(1,'POSITIVE_INFINITY', 'double'),
-  \ javaapi#field(1,'NEGATIVE_INFINITY', 'double'),
-  \ javaapi#field(1,'NaN', 'double'),
-  \ javaapi#field(1,'MAX_VALUE', 'double'),
-  \ javaapi#field(1,'MIN_NORMAL', 'double'),
-  \ javaapi#field(1,'MIN_VALUE', 'double'),
-  \ javaapi#field(1,'MAX_EXPONENT', 'int'),
-  \ javaapi#field(1,'MIN_EXPONENT', 'int'),
-  \ javaapi#field(1,'SIZE', 'int'),
-  \ javaapi#field(1,'TYPE', 'Double>'),
-  \ javaapi#method(1,'toString(', 'double)', 'String'),
-  \ javaapi#method(1,'toHexString(', 'double)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'String) throws NumberFormatException', 'Double'),
-  \ javaapi#method(1,'valueOf(', 'double)', 'Double'),
-  \ javaapi#method(1,'parseDouble(', 'String) throws NumberFormatException', 'double'),
-  \ javaapi#method(1,'isNaN(', 'double)', 'boolean'),
-  \ javaapi#method(1,'isInfinite(', 'double)', 'boolean'),
-  \ javaapi#method(0,'Double(', 'double)', 'public'),
-  \ javaapi#method(0,'Double(', 'String) throws NumberFormatException', 'public'),
-  \ javaapi#method(0,'isNaN(', ')', 'boolean'),
-  \ javaapi#method(0,'isInfinite(', ')', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'byteValue(', ')', 'byte'),
-  \ javaapi#method(0,'shortValue(', ')', 'short'),
-  \ javaapi#method(0,'intValue(', ')', 'int'),
-  \ javaapi#method(0,'longValue(', ')', 'long'),
-  \ javaapi#method(0,'floatValue(', ')', 'float'),
-  \ javaapi#method(0,'doubleValue(', ')', 'double'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(1,'doubleToLongBits(', 'double)', 'long'),
-  \ javaapi#method(1,'doubleToRawLongBits(', 'double)', 'long'),
-  \ javaapi#method(1,'longBitsToDouble(', 'long)', 'double'),
-  \ javaapi#method(0,'compareTo(', 'Double)', 'int'),
-  \ javaapi#method(1,'compare(', 'double, double)', 'int'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('IllegalStateException', '', [
-  \ javaapi#method(0,'IllegalStateException(', ')', 'public'),
-  \ javaapi#method(0,'IllegalStateException(', 'String)', 'public'),
-  \ javaapi#method(0,'IllegalStateException(', 'String, Throwable)', 'public'),
-  \ javaapi#method(0,'IllegalStateException(', 'Throwable)', 'public'),
-  \ ])
-
-call javaapi#interface('SuppressWarnings', '', [
-  \ javaapi#method(0,'value(', ')', 'String[]'),
-  \ ])
-
-call javaapi#class('System', '', [
-  \ javaapi#field(1,'in', 'InputStream'),
-  \ javaapi#field(1,'out', 'PrintStream'),
-  \ javaapi#field(1,'err', 'PrintStream'),
-  \ javaapi#method(1,'setIn(', 'InputStream)', 'void'),
-  \ javaapi#method(1,'setOut(', 'PrintStream)', 'void'),
-  \ javaapi#method(1,'setErr(', 'PrintStream)', 'void'),
-  \ javaapi#method(1,'console(', ')', 'Console'),
-  \ javaapi#method(1,'inheritedChannel(', ') throws IOException', 'Channel'),
-  \ javaapi#method(1,'setSecurityManager(', 'SecurityManager)', 'void'),
-  \ javaapi#method(1,'getSecurityManager(', ')', 'SecurityManager'),
-  \ javaapi#method(1,'currentTimeMillis(', ')', 'long'),
-  \ javaapi#method(1,'nanoTime(', ')', 'long'),
-  \ javaapi#method(1,'arraycopy(', 'Object, int, Object, int, int)', 'void'),
-  \ javaapi#method(1,'identityHashCode(', 'Object)', 'int'),
-  \ javaapi#method(1,'getProperties(', ')', 'Properties'),
-  \ javaapi#method(1,'lineSeparator(', ')', 'String'),
-  \ javaapi#method(1,'setProperties(', 'Properties)', 'void'),
-  \ javaapi#method(1,'getProperty(', 'String)', 'String'),
-  \ javaapi#method(1,'getProperty(', 'String, String)', 'String'),
-  \ javaapi#method(1,'setProperty(', 'String, String)', 'String'),
-  \ javaapi#method(1,'clearProperty(', 'String)', 'String'),
-  \ javaapi#method(1,'getenv(', 'String)', 'String'),
-  \ javaapi#method(1,'getenv(', ')', 'String>'),
-  \ javaapi#method(1,'exit(', 'int)', 'void'),
-  \ javaapi#method(1,'gc(', ')', 'void'),
-  \ javaapi#method(1,'runFinalization(', ')', 'void'),
-  \ javaapi#method(1,'runFinalizersOnExit(', 'boolean)', 'void'),
-  \ javaapi#method(1,'load(', 'String)', 'void'),
-  \ javaapi#method(1,'loadLibrary(', 'String)', 'void'),
-  \ javaapi#method(1,'mapLibraryName(', 'String)', 'String'),
-  \ ])
-
-call javaapi#class('ClassLoader', '', [
-  \ javaapi#method(0,'loadClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,'getResource(', 'String)', 'URL'),
-  \ javaapi#method(0,'getResources(', 'String) throws IOException', 'URL>'),
-  \ javaapi#method(1,'getSystemResource(', 'String)', 'URL'),
-  \ javaapi#method(1,'getSystemResources(', 'String) throws IOException', 'URL>'),
-  \ javaapi#method(0,'getResourceAsStream(', 'String)', 'InputStream'),
-  \ javaapi#method(1,'getSystemResourceAsStream(', 'String)', 'InputStream'),
-  \ javaapi#method(0,'getParent(', ')', 'ClassLoader'),
-  \ javaapi#method(1,'getSystemClassLoader(', ')', 'ClassLoader'),
-  \ javaapi#method(0,'setDefaultAssertionStatus(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setPackageAssertionStatus(', 'String, boolean)', 'void'),
-  \ javaapi#method(0,'setClassAssertionStatus(', 'String, boolean)', 'void'),
-  \ javaapi#method(0,'clearAssertionStatus(', ')', 'void'),
-  \ ])
-
-call javaapi#class('InternalError', '', [
-  \ javaapi#method(0,'InternalError(', ')', 'public'),
-  \ javaapi#method(0,'InternalError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#interface('Comparable<T>', '', [
-  \ javaapi#method(0,'compareTo(', 'T)', 'int'),
-  \ ])
-
-call javaapi#class('Boolean', 'Boolean>', [
-  \ javaapi#field(1,'TRUE', 'Boolean'),
-  \ javaapi#field(1,'FALSE', 'Boolean'),
-  \ javaapi#field(1,'TYPE', 'Boolean>'),
-  \ javaapi#method(0,'Boolean(', 'boolean)', 'public'),
-  \ javaapi#method(0,'Boolean(', 'String)', 'public'),
-  \ javaapi#method(1,'parseBoolean(', 'String)', 'boolean'),
-  \ javaapi#method(0,'booleanValue(', ')', 'boolean'),
-  \ javaapi#method(1,'valueOf(', 'boolean)', 'Boolean'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Boolean'),
-  \ javaapi#method(1,'toString(', 'boolean)', 'String'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(1,'getBoolean(', 'String)', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'Boolean)', 'int'),
-  \ javaapi#method(1,'compare(', 'boolean, boolean)', 'int'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('Throwable', 'Serializable', [
-  \ javaapi#method(0,'Throwable(', ')', 'public'),
-  \ javaapi#method(0,'Throwable(', 'String)', 'public'),
-  \ javaapi#method(0,'Throwable(', 'String, Throwable)', 'public'),
-  \ javaapi#method(0,'Throwable(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ javaapi#method(0,'getLocalizedMessage(', ')', 'String'),
-  \ javaapi#method(0,'getCause(', ')', 'Throwable'),
-  \ javaapi#method(0,'initCause(', 'Throwable)', 'Throwable'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'printStackTrace(', ')', 'void'),
-  \ javaapi#method(0,'printStackTrace(', 'PrintStream)', 'void'),
-  \ javaapi#method(0,'printStackTrace(', 'PrintWriter)', 'void'),
-  \ javaapi#method(0,'fillInStackTrace(', ')', 'Throwable'),
-  \ javaapi#method(0,'getStackTrace(', ')', 'StackTraceElement[]'),
-  \ javaapi#method(0,'setStackTrace(', 'StackTraceElement[])', 'void'),
-  \ javaapi#method(0,'addSuppressed(', 'Throwable)', 'void'),
-  \ javaapi#method(0,'getSuppressed(', ')', 'Throwable[]'),
-  \ ])
-
-call javaapi#class('Void', '', [
-  \ javaapi#field(1,'TYPE', 'Void>'),
-  \ ])
-
-call javaapi#class('RuntimePermission', '', [
-  \ javaapi#method(0,'RuntimePermission(', 'String)', 'public'),
-  \ javaapi#method(0,'RuntimePermission(', 'String, String)', 'public'),
-  \ ])
-
-call javaapi#class('Enum<E', '', [
-  \ javaapi#method(0,'name(', ')', 'String'),
-  \ javaapi#method(0,'ordinal(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'compareTo(', 'E)', 'int'),
-  \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<E>'),
-  \ javaapi#method(1,'valueOf(', 'Class<T>, String)', 'T'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('VerifyError', '', [
-  \ javaapi#method(0,'VerifyError(', ')', 'public'),
-  \ javaapi#method(0,'VerifyError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('StringBuffer', '', [
-  \ javaapi#method(0,'StringBuffer(', ')', 'public'),
-  \ javaapi#method(0,'StringBuffer(', 'int)', 'public'),
-  \ javaapi#method(0,'StringBuffer(', 'String)', 'public'),
-  \ javaapi#method(0,'StringBuffer(', 'CharSequence)', 'public'),
-  \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'capacity(', ')', 'int'),
-  \ javaapi#method(0,'ensureCapacity(', 'int)', 'void'),
-  \ javaapi#method(0,'trimToSize(', ')', 'void'),
-  \ javaapi#method(0,'setLength(', 'int)', 'void'),
-  \ javaapi#method(0,'charAt(', 'int)', 'char'),
-  \ javaapi#method(0,'codePointAt(', 'int)', 'int'),
-  \ javaapi#method(0,'codePointBefore(', 'int)', 'int'),
-  \ javaapi#method(0,'codePointCount(', 'int, int)', 'int'),
-  \ javaapi#method(0,'offsetByCodePoints(', 'int, int)', 'int'),
-  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
-  \ javaapi#method(0,'setCharAt(', 'int, char)', 'void'),
-  \ javaapi#method(0,'append(', 'Object)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'String)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'StringBuffer)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'CharSequence)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'char[])', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'char[], int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'boolean)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'char)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'int)', 'StringBuffer'),
-  \ javaapi#method(0,'appendCodePoint(', 'int)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'long)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'float)', 'StringBuffer'),
-  \ javaapi#method(0,'append(', 'double)', 'StringBuffer'),
-  \ javaapi#method(0,'delete(', 'int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'deleteCharAt(', 'int)', 'StringBuffer'),
-  \ javaapi#method(0,'replace(', 'int, int, String)', 'StringBuffer'),
-  \ javaapi#method(0,'substring(', 'int)', 'String'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
-  \ javaapi#method(0,'substring(', 'int, int)', 'String'),
-  \ javaapi#method(0,'insert(', 'int, char[], int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, Object)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, String)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, char[])', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, boolean)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, char)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, int)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, long)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, float)', 'StringBuffer'),
-  \ javaapi#method(0,'insert(', 'int, double)', 'StringBuffer'),
-  \ javaapi#method(0,'indexOf(', 'String)', 'int'),
-  \ javaapi#method(0,'indexOf(', 'String, int)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'String)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'String, int)', 'int'),
-  \ javaapi#method(0,'reverse(', ')', 'StringBuffer'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'reverse(', ')', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, double)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, float)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, long)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, char)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, boolean)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, char[])', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, String)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, Object)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, char[], int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'replace(', 'int, int, String)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'deleteCharAt(', 'int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'appendCodePoint(', 'int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'delete(', 'int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'double)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'float)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'long)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'char)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'boolean)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'char[], int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'char[])', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'CharSequence)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'StringBuffer)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'String)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'Object)', 'AbstractStringBuilder'),
-  \ javaapi#method(0,'append(', 'char) throws IOException', 'Appendable'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int) throws IOException', 'Appendable'),
-  \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
-  \ ])
-
-call javaapi#interface('Override', '', [
-  \ ])
-
-call javaapi#class('ProcessBuilder', '', [
-  \ javaapi#method(0,'ProcessBuilder(', 'List<String>)', 'public'),
-  \ javaapi#method(0,'ProcessBuilder(', ')', 'public'),
-  \ javaapi#method(0,'command(', 'List<String>)', 'ProcessBuilder'),
-  \ javaapi#method(0,'command(', ')', 'ProcessBuilder'),
-  \ javaapi#method(0,'command(', ')', 'String>'),
-  \ javaapi#method(0,'environment(', ')', 'String>'),
-  \ javaapi#method(0,'directory(', ')', 'File'),
-  \ javaapi#method(0,'directory(', 'File)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectInput(', 'Redirect)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectOutput(', 'Redirect)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectError(', 'Redirect)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectInput(', 'File)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectOutput(', 'File)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectError(', 'File)', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectInput(', ')', 'Redirect'),
-  \ javaapi#method(0,'redirectOutput(', ')', 'Redirect'),
-  \ javaapi#method(0,'redirectError(', ')', 'Redirect'),
-  \ javaapi#method(0,'inheritIO(', ')', 'ProcessBuilder'),
-  \ javaapi#method(0,'redirectErrorStream(', ')', 'boolean'),
-  \ javaapi#method(0,'redirectErrorStream(', 'boolean)', 'ProcessBuilder'),
-  \ javaapi#method(0,'start(', ') throws IOException', 'Process'),
-  \ ])
-
-call javaapi#class('Class<T>', 'AnnotatedElement', [
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(1,'forName(', 'String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(1,'forName(', 'String, boolean, ClassLoader) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,'newInstance(', ') throws InstantiationException, IllegalAccessException', 'T'),
-  \ javaapi#method(0,'isInstance(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'isAssignableFrom(', 'Class<?>)', 'boolean'),
-  \ javaapi#method(0,'isInterface(', ')', 'boolean'),
-  \ javaapi#method(0,'isArray(', ')', 'boolean'),
-  \ javaapi#method(0,'isPrimitive(', ')', 'boolean'),
-  \ javaapi#method(0,'isAnnotation(', ')', 'boolean'),
-  \ javaapi#method(0,'isSynthetic(', ')', 'boolean'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
-  \ javaapi#method(0,'getTypeParameters(', ')', 'Class<T>>[]'),
-  \ javaapi#method(0,'getSuperclass(', ')', 'T>'),
-  \ javaapi#method(0,'getGenericSuperclass(', ')', 'Type'),
-  \ javaapi#method(0,'getPackage(', ')', 'Package'),
-  \ javaapi#method(0,'getInterfaces(', ')', 'Class<?>[]'),
-  \ javaapi#method(0,'getGenericInterfaces(', ')', 'Type[]'),
-  \ javaapi#method(0,'getComponentType(', ')', 'Class<?>'),
-  \ javaapi#method(0,'getModifiers(', ')', 'int'),
-  \ javaapi#method(0,'getSigners(', ')', 'Object[]'),
-  \ javaapi#method(0,'getEnclosingMethod(', ')', 'Method'),
-  \ javaapi#method(0,'getEnclosingConstructor(', ')', 'Constructor<?>'),
-  \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<?>'),
-  \ javaapi#method(0,'getEnclosingClass(', ')', 'Class<?>'),
-  \ javaapi#method(0,'getSimpleName(', ')', 'String'),
-  \ javaapi#method(0,'getCanonicalName(', ')', 'String'),
-  \ javaapi#method(0,'isAnonymousClass(', ')', 'boolean'),
-  \ javaapi#method(0,'isLocalClass(', ')', 'boolean'),
-  \ javaapi#method(0,'isMemberClass(', ')', 'boolean'),
-  \ javaapi#method(0,'getClasses(', ')', 'Class<?>[]'),
-  \ javaapi#method(0,'getFields(', ') throws SecurityException', 'Field[]'),
-  \ javaapi#method(0,'getMethods(', ') throws SecurityException', 'Method[]'),
-  \ javaapi#method(0,'getConstructors(', ') throws SecurityException', 'Constructor<?>[]'),
-  \ javaapi#method(0,'getField(', 'String) throws NoSuchFieldException, SecurityException', 'Field'),
-  \ javaapi#method(0,'getMethod(', 'String, Class<?>) throws NoSuchMethodException, SecurityException', 'Method'),
-  \ javaapi#method(0,'getConstructor(', 'Class<?>) throws NoSuchMethodException, SecurityException', 'Constructor<T>'),
-  \ javaapi#method(0,'getDeclaredClasses(', ') throws SecurityException', 'Class<?>[]'),
-  \ javaapi#method(0,'getDeclaredFields(', ') throws SecurityException', 'Field[]'),
-  \ javaapi#method(0,'getDeclaredMethods(', ') throws SecurityException', 'Method[]'),
-  \ javaapi#method(0,'getDeclaredConstructors(', ') throws SecurityException', 'Constructor<?>[]'),
-  \ javaapi#method(0,'getDeclaredField(', 'String) throws NoSuchFieldException, SecurityException', 'Field'),
-  \ javaapi#method(0,'getDeclaredMethod(', 'String, Class<?>) throws NoSuchMethodException, SecurityException', 'Method'),
-  \ javaapi#method(0,'getDeclaredConstructor(', 'Class<?>) throws NoSuchMethodException, SecurityException', 'Constructor<T>'),
-  \ javaapi#method(0,'getResourceAsStream(', 'String)', 'InputStream'),
-  \ javaapi#method(0,'getResource(', 'String)', 'URL'),
-  \ javaapi#method(0,'getProtectionDomain(', ')', 'ProtectionDomain'),
-  \ javaapi#method(0,'desiredAssertionStatus(', ')', 'boolean'),
-  \ javaapi#method(0,'isEnum(', ')', 'boolean'),
-  \ javaapi#method(0,'getEnumConstants(', ')', 'T[]'),
-  \ javaapi#method(0,'cast(', 'Object)', 'T'),
-  \ javaapi#method(0,'asSubclass(', 'Class<U>)', 'U>'),
-  \ javaapi#method(0,'getAnnotation(', 'Class<A>)', 'A'),
-  \ javaapi#method(0,'isAnnotationPresent(', 'Class<? extends Annotation>)', 'boolean'),
-  \ javaapi#method(0,'getAnnotations(', ')', 'Annotation[]'),
-  \ javaapi#method(0,'getDeclaredAnnotations(', ')', 'Annotation[]'),
-  \ ])
-
-call javaapi#class('Math', '', [
-  \ javaapi#field(1,'E', 'double'),
-  \ javaapi#field(1,'PI', 'double'),
-  \ javaapi#method(1,'sin(', 'double)', 'double'),
-  \ javaapi#method(1,'cos(', 'double)', 'double'),
-  \ javaapi#method(1,'tan(', 'double)', 'double'),
-  \ javaapi#method(1,'asin(', 'double)', 'double'),
-  \ javaapi#method(1,'acos(', 'double)', 'double'),
-  \ javaapi#method(1,'atan(', 'double)', 'double'),
-  \ javaapi#method(1,'toRadians(', 'double)', 'double'),
-  \ javaapi#method(1,'toDegrees(', 'double)', 'double'),
-  \ javaapi#method(1,'exp(', 'double)', 'double'),
-  \ javaapi#method(1,'log(', 'double)', 'double'),
-  \ javaapi#method(1,'log10(', 'double)', 'double'),
-  \ javaapi#method(1,'sqrt(', 'double)', 'double'),
-  \ javaapi#method(1,'cbrt(', 'double)', 'double'),
-  \ javaapi#method(1,'IEEEremainder(', 'double, double)', 'double'),
-  \ javaapi#method(1,'ceil(', 'double)', 'double'),
-  \ javaapi#method(1,'floor(', 'double)', 'double'),
-  \ javaapi#method(1,'rint(', 'double)', 'double'),
-  \ javaapi#method(1,'atan2(', 'double, double)', 'double'),
-  \ javaapi#method(1,'pow(', 'double, double)', 'double'),
-  \ javaapi#method(1,'round(', 'float)', 'int'),
-  \ javaapi#method(1,'round(', 'double)', 'long'),
-  \ javaapi#method(1,'random(', ')', 'double'),
-  \ javaapi#method(1,'abs(', 'int)', 'int'),
-  \ javaapi#method(1,'abs(', 'long)', 'long'),
-  \ javaapi#method(1,'abs(', 'float)', 'float'),
-  \ javaapi#method(1,'abs(', 'double)', 'double'),
-  \ javaapi#method(1,'max(', 'int, int)', 'int'),
-  \ javaapi#method(1,'max(', 'long, long)', 'long'),
-  \ javaapi#method(1,'max(', 'float, float)', 'float'),
-  \ javaapi#method(1,'max(', 'double, double)', 'double'),
-  \ javaapi#method(1,'min(', 'int, int)', 'int'),
-  \ javaapi#method(1,'min(', 'long, long)', 'long'),
-  \ javaapi#method(1,'min(', 'float, float)', 'float'),
-  \ javaapi#method(1,'min(', 'double, double)', 'double'),
-  \ javaapi#method(1,'ulp(', 'double)', 'double'),
-  \ javaapi#method(1,'ulp(', 'float)', 'float'),
-  \ javaapi#method(1,'signum(', 'double)', 'double'),
-  \ javaapi#method(1,'signum(', 'float)', 'float'),
-  \ javaapi#method(1,'sinh(', 'double)', 'double'),
-  \ javaapi#method(1,'cosh(', 'double)', 'double'),
-  \ javaapi#method(1,'tanh(', 'double)', 'double'),
-  \ javaapi#method(1,'hypot(', 'double, double)', 'double'),
-  \ javaapi#method(1,'expm1(', 'double)', 'double'),
-  \ javaapi#method(1,'log1p(', 'double)', 'double'),
-  \ javaapi#method(1,'copySign(', 'double, double)', 'double'),
-  \ javaapi#method(1,'copySign(', 'float, float)', 'float'),
-  \ javaapi#method(1,'getExponent(', 'float)', 'int'),
-  \ javaapi#method(1,'getExponent(', 'double)', 'int'),
-  \ javaapi#method(1,'nextAfter(', 'double, double)', 'double'),
-  \ javaapi#method(1,'nextAfter(', 'float, double)', 'float'),
-  \ javaapi#method(1,'nextUp(', 'double)', 'double'),
-  \ javaapi#method(1,'nextUp(', 'float)', 'float'),
-  \ javaapi#method(1,'scalb(', 'double, int)', 'double'),
-  \ javaapi#method(1,'scalb(', 'float, int)', 'float'),
-  \ ])
-
-
-call javaapi#class('Exception', '', [
-  \ javaapi#method(0,'Exception(', ')', 'public'),
-  \ javaapi#method(0,'Exception(', 'String)', 'public'),
-  \ javaapi#method(0,'Exception(', 'String, Throwable)', 'public'),
-  \ javaapi#method(0,'Exception(', 'Throwable)', 'public'),
-  \ ])
-
-call javaapi#class('NoSuchFieldError', '', [
-  \ javaapi#method(0,'NoSuchFieldError(', ')', 'public'),
-  \ javaapi#method(0,'NoSuchFieldError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Runtime', '', [
-  \ javaapi#method(1,'getRuntime(', ')', 'Runtime'),
-  \ javaapi#method(0,'exit(', 'int)', 'void'),
-  \ javaapi#method(0,'addShutdownHook(', 'Thread)', 'void'),
-  \ javaapi#method(0,'removeShutdownHook(', 'Thread)', 'boolean'),
-  \ javaapi#method(0,'halt(', 'int)', 'void'),
-  \ javaapi#method(1,'runFinalizersOnExit(', 'boolean)', 'void'),
-  \ javaapi#method(0,'exec(', 'String) throws IOException', 'Process'),
-  \ javaapi#method(0,'exec(', 'String, String[]) throws IOException', 'Process'),
-  \ javaapi#method(0,'exec(', 'String, String[], File) throws IOException', 'Process'),
-  \ javaapi#method(0,'exec(', 'String[]) throws IOException', 'Process'),
-  \ javaapi#method(0,'exec(', 'String[], String[]) throws IOException', 'Process'),
-  \ javaapi#method(0,'exec(', 'String[], String[], File) throws IOException', 'Process'),
-  \ javaapi#method(0,'availableProcessors(', ')', 'int'),
-  \ javaapi#method(0,'freeMemory(', ')', 'long'),
-  \ javaapi#method(0,'totalMemory(', ')', 'long'),
-  \ javaapi#method(0,'maxMemory(', ')', 'long'),
-  \ javaapi#method(0,'gc(', ')', 'void'),
-  \ javaapi#method(0,'runFinalization(', ')', 'void'),
-  \ javaapi#method(0,'traceInstructions(', 'boolean)', 'void'),
-  \ javaapi#method(0,'traceMethodCalls(', 'boolean)', 'void'),
-  \ javaapi#method(0,'load(', 'String)', 'void'),
-  \ javaapi#method(0,'loadLibrary(', 'String)', 'void'),
-  \ javaapi#method(0,'getLocalizedInputStream(', 'InputStream)', 'InputStream'),
-  \ javaapi#method(0,'getLocalizedOutputStream(', 'OutputStream)', 'OutputStream'),
-  \ ])
-
-call javaapi#class('ClassCastException', '', [
-  \ javaapi#method(0,'ClassCastException(', ')', 'public'),
-  \ javaapi#method(0,'ClassCastException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('InstantiationError', '', [
-  \ javaapi#method(0,'InstantiationError(', ')', 'public'),
-  \ javaapi#method(0,'InstantiationError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('IndexOutOfBoundsException', '', [
-  \ javaapi#method(0,'IndexOutOfBoundsException(', ')', 'public'),
-  \ javaapi#method(0,'IndexOutOfBoundsException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('OutOfMemoryError', '', [
-  \ javaapi#method(0,'OutOfMemoryError(', ')', 'public'),
-  \ javaapi#method(0,'OutOfMemoryError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Thread', 'Runnable', [
-  \ javaapi#field(1,'MIN_PRIORITY', 'int'),
-  \ javaapi#field(1,'NORM_PRIORITY', 'int'),
-  \ javaapi#field(1,'MAX_PRIORITY', 'int'),
-  \ javaapi#method(1,'currentThread(', ')', 'Thread'),
-  \ javaapi#method(1,'yield(', ')', 'void'),
-  \ javaapi#method(1,'sleep(', 'long) throws InterruptedException', 'void'),
-  \ javaapi#method(1,'sleep(', 'long, int) throws InterruptedException', 'void'),
-  \ javaapi#method(0,'Thread(', ')', 'public'),
-  \ javaapi#method(0,'Thread(', 'Runnable)', 'public'),
-  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable)', 'public'),
-  \ javaapi#method(0,'Thread(', 'String)', 'public'),
-  \ javaapi#method(0,'Thread(', 'ThreadGroup, String)', 'public'),
-  \ javaapi#method(0,'Thread(', 'Runnable, String)', 'public'),
-  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable, String)', 'public'),
-  \ javaapi#method(0,'Thread(', 'ThreadGroup, Runnable, String, long)', 'public'),
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'run(', ')', 'void'),
-  \ javaapi#method(0,'stop(', ')', 'void'),
-  \ javaapi#method(0,'stop(', 'Throwable)', 'void'),
-  \ javaapi#method(0,'interrupt(', ')', 'void'),
-  \ javaapi#method(1,'interrupted(', ')', 'boolean'),
-  \ javaapi#method(0,'isInterrupted(', ')', 'boolean'),
-  \ javaapi#method(0,'destroy(', ')', 'void'),
-  \ javaapi#method(0,'isAlive(', ')', 'boolean'),
-  \ javaapi#method(0,'suspend(', ')', 'void'),
-  \ javaapi#method(0,'resume(', ')', 'void'),
-  \ javaapi#method(0,'setPriority(', 'int)', 'void'),
-  \ javaapi#method(0,'getPriority(', ')', 'int'),
-  \ javaapi#method(0,'setName(', 'String)', 'void'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getThreadGroup(', ')', 'ThreadGroup'),
-  \ javaapi#method(1,'activeCount(', ')', 'int'),
-  \ javaapi#method(1,'enumerate(', 'Thread[])', 'int'),
-  \ javaapi#method(0,'countStackFrames(', ')', 'int'),
-  \ javaapi#method(0,'join(', 'long) throws InterruptedException', 'void'),
-  \ javaapi#method(0,'join(', 'long, int) throws InterruptedException', 'void'),
-  \ javaapi#method(0,'join(', ') throws InterruptedException', 'void'),
-  \ javaapi#method(1,'dumpStack(', ')', 'void'),
-  \ javaapi#method(0,'setDaemon(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isDaemon(', ')', 'boolean'),
-  \ javaapi#method(0,'checkAccess(', ')', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getContextClassLoader(', ')', 'ClassLoader'),
-  \ javaapi#method(0,'setContextClassLoader(', 'ClassLoader)', 'void'),
-  \ javaapi#method(1,'holdsLock(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'getStackTrace(', ')', 'StackTraceElement[]'),
-  \ javaapi#method(1,'getAllStackTraces(', ')', 'StackTraceElement[]>'),
-  \ javaapi#method(0,'getId(', ')', 'long'),
-  \ javaapi#method(0,'getState(', ')', 'State'),
-  \ javaapi#method(1,'setDefaultUncaughtExceptionHandler(', 'UncaughtExceptionHandler)', 'void'),
-  \ javaapi#method(1,'getDefaultUncaughtExceptionHandler(', ')', 'UncaughtExceptionHandler'),
-  \ javaapi#method(0,'getUncaughtExceptionHandler(', ')', 'UncaughtExceptionHandler'),
-  \ javaapi#method(0,'setUncaughtExceptionHandler(', 'UncaughtExceptionHandler)', 'void'),
-  \ ])
-
-call javaapi#class('IllegalAccessError', '', [
-  \ javaapi#method(0,'IllegalAccessError(', ')', 'public'),
-  \ javaapi#method(0,'IllegalAccessError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('SecurityManager', '', [
-  \ javaapi#method(0,'getInCheck(', ')', 'boolean'),
-  \ javaapi#method(0,'SecurityManager(', ')', 'public'),
-  \ javaapi#method(0,'getSecurityContext(', ')', 'Object'),
-  \ javaapi#method(0,'checkPermission(', 'Permission)', 'void'),
-  \ javaapi#method(0,'checkPermission(', 'Permission, Object)', 'void'),
-  \ javaapi#method(0,'checkCreateClassLoader(', ')', 'void'),
-  \ javaapi#method(0,'checkAccess(', 'Thread)', 'void'),
-  \ javaapi#method(0,'checkAccess(', 'ThreadGroup)', 'void'),
-  \ javaapi#method(0,'checkExit(', 'int)', 'void'),
-  \ javaapi#method(0,'checkExec(', 'String)', 'void'),
-  \ javaapi#method(0,'checkLink(', 'String)', 'void'),
-  \ javaapi#method(0,'checkRead(', 'FileDescriptor)', 'void'),
-  \ javaapi#method(0,'checkRead(', 'String)', 'void'),
-  \ javaapi#method(0,'checkRead(', 'String, Object)', 'void'),
-  \ javaapi#method(0,'checkWrite(', 'FileDescriptor)', 'void'),
-  \ javaapi#method(0,'checkWrite(', 'String)', 'void'),
-  \ javaapi#method(0,'checkDelete(', 'String)', 'void'),
-  \ javaapi#method(0,'checkConnect(', 'String, int)', 'void'),
-  \ javaapi#method(0,'checkConnect(', 'String, int, Object)', 'void'),
-  \ javaapi#method(0,'checkListen(', 'int)', 'void'),
-  \ javaapi#method(0,'checkAccept(', 'String, int)', 'void'),
-  \ javaapi#method(0,'checkMulticast(', 'InetAddress)', 'void'),
-  \ javaapi#method(0,'checkMulticast(', 'InetAddress, byte)', 'void'),
-  \ javaapi#method(0,'checkPropertiesAccess(', ')', 'void'),
-  \ javaapi#method(0,'checkPropertyAccess(', 'String)', 'void'),
-  \ javaapi#method(0,'checkTopLevelWindow(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'checkPrintJobAccess(', ')', 'void'),
-  \ javaapi#method(0,'checkSystemClipboardAccess(', ')', 'void'),
-  \ javaapi#method(0,'checkAwtEventQueueAccess(', ')', 'void'),
-  \ javaapi#method(0,'checkPackageAccess(', 'String)', 'void'),
-  \ javaapi#method(0,'checkPackageDefinition(', 'String)', 'void'),
-  \ javaapi#method(0,'checkSetFactory(', ')', 'void'),
-  \ javaapi#method(0,'checkMemberAccess(', 'Class<?>, int)', 'void'),
-  \ javaapi#method(0,'checkSecurityAccess(', 'String)', 'void'),
-  \ javaapi#method(0,'getThreadGroup(', ')', 'ThreadGroup'),
-  \ ])
-
-call javaapi#class('SecurityException', '', [
-  \ javaapi#method(0,'SecurityException(', ')', 'public'),
-  \ javaapi#method(0,'SecurityException(', 'String)', 'public'),
-  \ javaapi#method(0,'SecurityException(', 'String, Throwable)', 'public'),
-  \ javaapi#method(0,'SecurityException(', 'Throwable)', 'public'),
-  \ ])
-
-call javaapi#class('InterruptedException', '', [
-  \ javaapi#method(0,'InterruptedException(', ')', 'public'),
-  \ javaapi#method(0,'InterruptedException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Long', '', [
-  \ javaapi#field(1,'MIN_VALUE', 'long'),
-  \ javaapi#field(1,'MAX_VALUE', 'long'),
-  \ javaapi#field(1,'TYPE', 'Long>'),
-  \ javaapi#field(1,'SIZE', 'int'),
-  \ javaapi#method(1,'toString(', 'long, int)', 'String'),
-  \ javaapi#method(1,'toHexString(', 'long)', 'String'),
-  \ javaapi#method(1,'toOctalString(', 'long)', 'String'),
-  \ javaapi#method(1,'toBinaryString(', 'long)', 'String'),
-  \ javaapi#method(1,'toString(', 'long)', 'String'),
-  \ javaapi#method(1,'parseLong(', 'String, int) throws NumberFormatException', 'long'),
-  \ javaapi#method(1,'parseLong(', 'String) throws NumberFormatException', 'long'),
-  \ javaapi#method(1,'valueOf(', 'String, int) throws NumberFormatException', 'Long'),
-  \ javaapi#method(1,'valueOf(', 'String) throws NumberFormatException', 'Long'),
-  \ javaapi#method(1,'valueOf(', 'long)', 'Long'),
-  \ javaapi#method(1,'decode(', 'String) throws NumberFormatException', 'Long'),
-  \ javaapi#method(0,'Long(', 'long)', 'public'),
-  \ javaapi#method(0,'Long(', 'String) throws NumberFormatException', 'public'),
-  \ javaapi#method(0,'byteValue(', ')', 'byte'),
-  \ javaapi#method(0,'shortValue(', ')', 'short'),
-  \ javaapi#method(0,'intValue(', ')', 'int'),
-  \ javaapi#method(0,'longValue(', ')', 'long'),
-  \ javaapi#method(0,'floatValue(', ')', 'float'),
-  \ javaapi#method(0,'doubleValue(', ')', 'double'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(1,'getLong(', 'String)', 'Long'),
-  \ javaapi#method(1,'getLong(', 'String, long)', 'Long'),
-  \ javaapi#method(1,'getLong(', 'String, Long)', 'Long'),
-  \ javaapi#method(0,'compareTo(', 'Long)', 'int'),
-  \ javaapi#method(1,'compare(', 'long, long)', 'int'),
-  \ javaapi#method(1,'highestOneBit(', 'long)', 'long'),
-  \ javaapi#method(1,'lowestOneBit(', 'long)', 'long'),
-  \ javaapi#method(1,'numberOfLeadingZeros(', 'long)', 'int'),
-  \ javaapi#method(1,'numberOfTrailingZeros(', 'long)', 'int'),
-  \ javaapi#method(1,'bitCount(', 'long)', 'int'),
-  \ javaapi#method(1,'rotateLeft(', 'long, int)', 'long'),
-  \ javaapi#method(1,'rotateRight(', 'long, int)', 'long'),
-  \ javaapi#method(1,'reverse(', 'long)', 'long'),
-  \ javaapi#method(1,'signum(', 'long)', 'int'),
-  \ javaapi#method(1,'reverseBytes(', 'long)', 'long'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('ThreadLocal<T>', '', [
-  \ javaapi#method(0,'ThreadLocal(', ')', 'public'),
-  \ javaapi#method(0,'get(', ')', 'T'),
-  \ javaapi#method(0,'set(', 'T)', 'void'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ ])
-
-call javaapi#class('Compiler', '', [
-  \ javaapi#method(1,'compileClass(', 'Class<?>)', 'boolean'),
-  \ javaapi#method(1,'compileClasses(', 'String)', 'boolean'),
-  \ javaapi#method(1,'command(', 'Object)', 'Object'),
-  \ javaapi#method(1,'enable(', ')', 'void'),
-  \ javaapi#method(1,'disable(', ')', 'void'),
-  \ ])
-
-call javaapi#class('String', 'CharSequence', [
-  \ javaapi#field(1,'CASE_INSENSITIVE_ORDER', 'String>'),
-  \ javaapi#method(0,'String(', ')', 'public'),
-  \ javaapi#method(0,'String(', 'String)', 'public'),
-  \ javaapi#method(0,'String(', 'char[])', 'public'),
-  \ javaapi#method(0,'String(', 'char[], int, int)', 'public'),
-  \ javaapi#method(0,'String(', 'int[], int, int)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], int, int, int)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], int)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], int, int, String) throws UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], int, int, Charset)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], String) throws UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], Charset)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[], int, int)', 'public'),
-  \ javaapi#method(0,'String(', 'byte[])', 'public'),
-  \ javaapi#method(0,'String(', 'StringBuffer)', 'public'),
-  \ javaapi#method(0,'String(', 'StringBuilder)', 'public'),
-  \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'charAt(', 'int)', 'char'),
-  \ javaapi#method(0,'codePointAt(', 'int)', 'int'),
-  \ javaapi#method(0,'codePointBefore(', 'int)', 'int'),
-  \ javaapi#method(0,'codePointCount(', 'int, int)', 'int'),
-  \ javaapi#method(0,'offsetByCodePoints(', 'int, int)', 'int'),
-  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
-  \ javaapi#method(0,'getBytes(', 'int, int, byte[], int)', 'void'),
-  \ javaapi#method(0,'getBytes(', 'String) throws UnsupportedEncodingException', 'byte[]'),
-  \ javaapi#method(0,'getBytes(', 'Charset)', 'byte[]'),
-  \ javaapi#method(0,'getBytes(', ')', 'byte[]'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'contentEquals(', 'StringBuffer)', 'boolean'),
-  \ javaapi#method(0,'contentEquals(', 'CharSequence)', 'boolean'),
-  \ javaapi#method(0,'equalsIgnoreCase(', 'String)', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'String)', 'int'),
-  \ javaapi#method(0,'compareToIgnoreCase(', 'String)', 'int'),
-  \ javaapi#method(0,'regionMatches(', 'int, String, int, int)', 'boolean'),
-  \ javaapi#method(0,'regionMatches(', 'boolean, int, String, int, int)', 'boolean'),
-  \ javaapi#method(0,'startsWith(', 'String, int)', 'boolean'),
-  \ javaapi#method(0,'startsWith(', 'String)', 'boolean'),
-  \ javaapi#method(0,'endsWith(', 'String)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'indexOf(', 'int)', 'int'),
-  \ javaapi#method(0,'indexOf(', 'int, int)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'int)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'int, int)', 'int'),
-  \ javaapi#method(0,'indexOf(', 'String)', 'int'),
-  \ javaapi#method(0,'indexOf(', 'String, int)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'String)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'String, int)', 'int'),
-  \ javaapi#method(0,'substring(', 'int)', 'String'),
-  \ javaapi#method(0,'substring(', 'int, int)', 'String'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
-  \ javaapi#method(0,'concat(', 'String)', 'String'),
-  \ javaapi#method(0,'replace(', 'char, char)', 'String'),
-  \ javaapi#method(0,'matches(', 'String)', 'boolean'),
-  \ javaapi#method(0,'contains(', 'CharSequence)', 'boolean'),
-  \ javaapi#method(0,'replaceFirst(', 'String, String)', 'String'),
-  \ javaapi#method(0,'replaceAll(', 'String, String)', 'String'),
-  \ javaapi#method(0,'replace(', 'CharSequence, CharSequence)', 'String'),
-  \ javaapi#method(0,'split(', 'String, int)', 'String[]'),
-  \ javaapi#method(0,'split(', 'String)', 'String[]'),
-  \ javaapi#method(0,'toLowerCase(', 'Locale)', 'String'),
-  \ javaapi#method(0,'toLowerCase(', ')', 'String'),
-  \ javaapi#method(0,'toUpperCase(', 'Locale)', 'String'),
-  \ javaapi#method(0,'toUpperCase(', ')', 'String'),
-  \ javaapi#method(0,'trim(', ')', 'String'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'toCharArray(', ')', 'char[]'),
-  \ javaapi#method(1,'format(', 'String, )', 'String'),
-  \ javaapi#method(1,'format(', 'Locale, String, )', 'String'),
-  \ javaapi#method(1,'valueOf(', 'Object)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'char[])', 'String'),
-  \ javaapi#method(1,'valueOf(', 'char[], int, int)', 'String'),
-  \ javaapi#method(1,'copyValueOf(', 'char[], int, int)', 'String'),
-  \ javaapi#method(1,'copyValueOf(', 'char[])', 'String'),
-  \ javaapi#method(1,'valueOf(', 'boolean)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'char)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'int)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'long)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'float)', 'String'),
-  \ javaapi#method(1,'valueOf(', 'double)', 'String'),
-  \ javaapi#method(0,'intern(', ')', 'String'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('CloneNotSupportedException', '', [
-  \ javaapi#method(0,'CloneNotSupportedException(', ')', 'public'),
-  \ javaapi#method(0,'CloneNotSupportedException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('UnsupportedClassVersionError', '', [
-  \ javaapi#method(0,'UnsupportedClassVersionError(', ')', 'public'),
-  \ javaapi#method(0,'UnsupportedClassVersionError(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('ThreadGroup', 'UncaughtExceptionHandler', [
-  \ javaapi#method(0,'ThreadGroup(', 'String)', 'public'),
-  \ javaapi#method(0,'ThreadGroup(', 'ThreadGroup, String)', 'public'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getParent(', ')', 'ThreadGroup'),
-  \ javaapi#method(0,'getMaxPriority(', ')', 'int'),
-  \ javaapi#method(0,'isDaemon(', ')', 'boolean'),
-  \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
-  \ javaapi#method(0,'setDaemon(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setMaxPriority(', 'int)', 'void'),
-  \ javaapi#method(0,'parentOf(', 'ThreadGroup)', 'boolean'),
-  \ javaapi#method(0,'checkAccess(', ')', 'void'),
-  \ javaapi#method(0,'activeCount(', ')', 'int'),
-  \ javaapi#method(0,'enumerate(', 'Thread[])', 'int'),
-  \ javaapi#method(0,'enumerate(', 'Thread[], boolean)', 'int'),
-  \ javaapi#method(0,'activeGroupCount(', ')', 'int'),
-  \ javaapi#method(0,'enumerate(', 'ThreadGroup[])', 'int'),
-  \ javaapi#method(0,'enumerate(', 'ThreadGroup[], boolean)', 'int'),
-  \ javaapi#method(0,'stop(', ')', 'void'),
-  \ javaapi#method(0,'interrupt(', ')', 'void'),
-  \ javaapi#method(0,'suspend(', ')', 'void'),
-  \ javaapi#method(0,'resume(', ')', 'void'),
-  \ javaapi#method(0,'destroy(', ')', 'void'),
-  \ javaapi#method(0,'list(', ')', 'void'),
-  \ javaapi#method(0,'uncaughtException(', 'Thread, Throwable)', 'void'),
-  \ javaapi#method(0,'allowThreadSuspension(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 

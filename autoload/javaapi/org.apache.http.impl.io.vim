@@ -1,14 +1,14 @@
 call javaapi#namespace('org.apache.http.impl.io')
 
-call javaapi#class('HttpResponseParser', '', [
+call javaapi#class('HttpResponseParser', 'AbstractMessageParser', [
   \ javaapi#method(0,'HttpResponseParser(', 'SessionInputBuffer, LineParser, HttpResponseFactory, HttpParams)', 'public'),
   \ ])
 
-call javaapi#class('HttpRequestWriter', '', [
+call javaapi#class('HttpRequestWriter', 'AbstractMessageWriter', [
   \ javaapi#method(0,'HttpRequestWriter(', 'SessionOutputBuffer, LineFormatter, HttpParams)', 'public'),
   \ ])
 
-call javaapi#class('ChunkedInputStream', '', [
+call javaapi#class('ChunkedInputStream', 'InputStream', [
   \ javaapi#method(0,'ChunkedInputStream(', 'SessionInputBuffer)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -17,7 +17,7 @@ call javaapi#class('ChunkedInputStream', '', [
   \ javaapi#method(0,'getFooters(', ')', 'Header[]'),
   \ ])
 
-call javaapi#class('HttpResponseWriter', '', [
+call javaapi#class('HttpResponseWriter', 'AbstractMessageWriter', [
   \ javaapi#method(0,'HttpResponseWriter(', 'SessionOutputBuffer, LineFormatter, HttpParams)', 'public'),
   \ ])
 
@@ -29,12 +29,12 @@ call javaapi#class('HttpTransportMetricsImpl', 'HttpTransportMetrics', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('SocketInputBuffer', '', [
+call javaapi#class('SocketInputBuffer', 'AbstractSessionInputBuffer', [
   \ javaapi#method(0,'SocketInputBuffer(', 'Socket, int, HttpParams) throws IOException', 'public'),
   \ javaapi#method(0,'isDataAvailable(', 'int) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('HttpRequestParser', '', [
+call javaapi#class('HttpRequestParser', 'AbstractMessageParser', [
   \ javaapi#method(0,'HttpRequestParser(', 'SessionInputBuffer, LineParser, HttpRequestFactory, HttpParams)', 'public'),
   \ ])
 
@@ -49,11 +49,11 @@ call javaapi#class('AbstractSessionOutputBuffer', 'SessionOutputBuffer', [
   \ javaapi#method(0,'getMetrics(', ')', 'HttpTransportMetrics'),
   \ ])
 
-call javaapi#class('SocketOutputBuffer', '', [
+call javaapi#class('SocketOutputBuffer', 'AbstractSessionOutputBuffer', [
   \ javaapi#method(0,'SocketOutputBuffer(', 'Socket, int, HttpParams) throws IOException', 'public'),
   \ ])
 
-call javaapi#class('ContentLengthOutputStream', '', [
+call javaapi#class('ContentLengthOutputStream', 'OutputStream', [
   \ javaapi#method(0,'ContentLengthOutputStream(', 'SessionOutputBuffer, long)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
@@ -62,7 +62,7 @@ call javaapi#class('ContentLengthOutputStream', '', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IdentityOutputStream', '', [
+call javaapi#class('IdentityOutputStream', 'OutputStream', [
   \ javaapi#method(0,'IdentityOutputStream(', 'SessionOutputBuffer)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
@@ -82,7 +82,7 @@ call javaapi#class('AbstractMessageWriter', 'HttpMessageWriter', [
   \ javaapi#method(0,'write(', 'HttpMessage) throws IOException, HttpException', 'void'),
   \ ])
 
-call javaapi#class('IdentityInputStream', '', [
+call javaapi#class('IdentityInputStream', 'InputStream', [
   \ javaapi#method(0,'IdentityInputStream(', 'SessionInputBuffer)', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
@@ -90,7 +90,7 @@ call javaapi#class('IdentityInputStream', '', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('ContentLengthInputStream', '', [
+call javaapi#class('ContentLengthInputStream', 'InputStream', [
   \ javaapi#method(0,'ContentLengthInputStream(', 'SessionInputBuffer, long)', 'public'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -109,7 +109,7 @@ call javaapi#class('AbstractSessionInputBuffer', 'SessionInputBuffer', [
   \ javaapi#method(0,'getMetrics(', ')', 'HttpTransportMetrics'),
   \ ])
 
-call javaapi#class('ChunkedOutputStream', '', [
+call javaapi#class('ChunkedOutputStream', 'OutputStream', [
   \ javaapi#method(0,'ChunkedOutputStream(', 'SessionOutputBuffer, int) throws IOException', 'public'),
   \ javaapi#method(0,'ChunkedOutputStream(', 'SessionOutputBuffer) throws IOException', 'public'),
   \ javaapi#method(0,'finish(', ') throws IOException', 'void'),

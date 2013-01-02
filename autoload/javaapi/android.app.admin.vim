@@ -1,6 +1,6 @@
 call javaapi#namespace('android.app.admin')
 
-call javaapi#class('DeviceAdminReceiver', '', [
+call javaapi#class('DeviceAdminReceiver', 'BroadcastReceiver', [
   \ javaapi#field(1,'ACTION_DEVICE_ADMIN_ENABLED', 'String'),
   \ javaapi#field(1,'ACTION_DEVICE_ADMIN_DISABLE_REQUESTED', 'String'),
   \ javaapi#field(1,'EXTRA_DISABLE_WARNING', 'String'),

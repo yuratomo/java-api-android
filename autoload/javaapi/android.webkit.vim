@@ -22,7 +22,7 @@ call javaapi#class('WebSyncManager', 'Runnable', [
   \ javaapi#method(0,'stopSync(', ')', 'void'),
   \ ])
 
-call javaapi#class('WebView', '', [
+call javaapi#class('WebView', 'AbsoluteLayout', [
   \ javaapi#field(1,'SCHEME_TEL', 'String'),
   \ javaapi#field(1,'SCHEME_MAILTO', 'String'),
   \ javaapi#field(1,'SCHEME_GEO', 'String'),
@@ -134,7 +134,7 @@ call javaapi#class('WebView', '', [
   \ javaapi#method(0,'setLayerType(', 'int, Paint)', 'void'),
   \ ])
 
-call javaapi#class('ZoomDensity', '', [
+call javaapi#class('ZoomDensity', 'ZoomDensity>', [
   \ javaapi#field(1,'CLOSE', 'ZoomDensity'),
   \ javaapi#field(1,'FAR', 'ZoomDensity'),
   \ javaapi#field(1,'MEDIUM', 'ZoomDensity'),
@@ -142,7 +142,7 @@ call javaapi#class('ZoomDensity', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'ZoomDensity'),
   \ ])
 
-call javaapi#class('MessageLevel', '', [
+call javaapi#class('MessageLevel', 'MessageLevel>', [
   \ javaapi#field(1,'DEBUG', 'MessageLevel'),
   \ javaapi#field(1,'ERROR', 'MessageLevel'),
   \ javaapi#field(1,'LOG', 'MessageLevel'),
@@ -162,7 +162,7 @@ call javaapi#class('WebIconDatabase', '', [
   \ javaapi#method(1,'getInstance(', ')', 'WebIconDatabase'),
   \ ])
 
-call javaapi#class('CookieSyncManager', '', [
+call javaapi#class('CookieSyncManager', 'WebSyncManager', [
   \ javaapi#method(1,'getInstance(', ')', 'CookieSyncManager'),
   \ javaapi#method(1,'createInstance(', 'Context)', 'CookieSyncManager'),
   \ javaapi#method(0,'stopSync(', ')', 'void'),
@@ -191,7 +191,7 @@ call javaapi#interface('CustomViewCallback', '', [
   \ javaapi#method(0,'onCustomViewHidden(', ')', 'void'),
   \ ])
 
-call javaapi#class('SslErrorHandler', '', [
+call javaapi#class('SslErrorHandler', 'Handler', [
   \ javaapi#method(0,'proceed(', ')', 'void'),
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])
@@ -278,7 +278,7 @@ call javaapi#class('MimeTypeMap', '', [
   \ javaapi#method(1,'getSingleton(', ')', 'MimeTypeMap'),
   \ ])
 
-call javaapi#class('WebViewFragment', '', [
+call javaapi#class('WebViewFragment', 'Fragment', [
   \ javaapi#method(0,'WebViewFragment(', ')', 'public'),
   \ javaapi#method(0,'onCreateView(', 'LayoutInflater, ViewGroup, Bundle)', 'View'),
   \ javaapi#method(0,'onPause(', ')', 'void'),
@@ -300,7 +300,7 @@ call javaapi#interface('QuotaUpdater', '', [
   \ javaapi#method(0,'updateQuota(', 'long)', 'void'),
   \ ])
 
-call javaapi#class('TextSize', '', [
+call javaapi#class('TextSize', 'TextSize>', [
   \ javaapi#field(1,'LARGER', 'TextSize'),
   \ javaapi#field(1,'LARGEST', 'TextSize'),
   \ javaapi#field(1,'NORMAL', 'TextSize'),
@@ -345,7 +345,7 @@ call javaapi#class('GeolocationPermissions', '', [
   \ javaapi#method(0,'clearAll(', ')', 'void'),
   \ ])
 
-call javaapi#class('RenderPriority', '', [
+call javaapi#class('RenderPriority', 'RenderPriority>', [
   \ javaapi#field(1,'HIGH', 'RenderPriority'),
   \ javaapi#field(1,'LOW', 'RenderPriority'),
   \ javaapi#field(1,'NORMAL', 'RenderPriority'),
@@ -353,10 +353,10 @@ call javaapi#class('RenderPriority', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'RenderPriority'),
   \ ])
 
-call javaapi#interface('JavascriptInterface', '', [
+call javaapi#interface('JavascriptInterface', 'Annotation', [
   \ ])
 
-call javaapi#class('LayoutAlgorithm', '', [
+call javaapi#class('LayoutAlgorithm', 'LayoutAlgorithm>', [
   \ javaapi#field(1,'NARROW_COLUMNS', 'LayoutAlgorithm'),
   \ javaapi#field(1,'NORMAL', 'LayoutAlgorithm'),
   \ javaapi#field(1,'SINGLE_COLUMN', 'LayoutAlgorithm'),
@@ -364,11 +364,11 @@ call javaapi#class('LayoutAlgorithm', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'LayoutAlgorithm'),
   \ ])
 
-call javaapi#class('JsPromptResult', '', [
+call javaapi#class('JsPromptResult', 'JsResult', [
   \ javaapi#method(0,'confirm(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('HttpAuthHandler', '', [
+call javaapi#class('HttpAuthHandler', 'Handler', [
   \ javaapi#method(0,'useHttpAuthUsernamePassword(', ')', 'boolean'),
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ javaapi#method(0,'proceed(', 'String, String)', 'void'),
@@ -535,7 +535,7 @@ call javaapi#interface('Callback', '', [
   \ javaapi#method(0,'invoke(', 'String, boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('PluginState', '', [
+call javaapi#class('PluginState', 'PluginState>', [
   \ javaapi#field(1,'OFF', 'PluginState'),
   \ javaapi#field(1,'ON', 'PluginState'),
   \ javaapi#field(1,'ON_DEMAND', 'PluginState'),

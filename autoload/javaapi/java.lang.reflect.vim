@@ -34,7 +34,7 @@ call javaapi#class('Modifier', '', [
   \ javaapi#method(1,'fieldModifiers(', ')', 'int'),
   \ ])
 
-call javaapi#class('InvocationTargetException', '', [
+call javaapi#class('InvocationTargetException', 'ReflectiveOperationException', [
   \ javaapi#method(0,'InvocationTargetException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'InvocationTargetException(', 'Throwable, String)', 'public'),
   \ javaapi#method(0,'getTargetException(', ')', 'Throwable'),
@@ -65,7 +65,7 @@ call javaapi#class('Array', '', [
   \ javaapi#method(1,'setDouble(', 'Object, int, double) throws IllegalArgumentException, ArrayIndexOutOfBoundsException', 'void'),
   \ ])
 
-call javaapi#class('GenericSignatureFormatError', '', [
+call javaapi#class('GenericSignatureFormatError', 'ClassFormatError', [
   \ javaapi#method(0,'GenericSignatureFormatError(', ')', 'public'),
   \ ])
 
@@ -79,27 +79,27 @@ call javaapi#class('AccessibleObject', 'AnnotatedElement', [
   \ javaapi#method(0,'getDeclaredAnnotations(', ')', 'Annotation[]'),
   \ ])
 
-call javaapi#class('ReflectPermission', '', [
+call javaapi#class('ReflectPermission', 'BasicPermission', [
   \ javaapi#method(0,'ReflectPermission(', 'String)', 'public'),
   \ javaapi#method(0,'ReflectPermission(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('MalformedParameterizedTypeException', '', [
+call javaapi#class('MalformedParameterizedTypeException', 'RuntimeException', [
   \ javaapi#method(0,'MalformedParameterizedTypeException(', ')', 'public'),
   \ ])
 
-call javaapi#interface('TypeVariable<D', '', [
+call javaapi#interface('TypeVariable<D', 'GenericDeclaration>', [
   \ javaapi#method(0,'getBounds(', ')', 'Type[]'),
   \ javaapi#method(0,'getGenericDeclaration(', ')', 'D'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WildcardType', '', [
+call javaapi#interface('WildcardType', 'Type', [
   \ javaapi#method(0,'getUpperBounds(', ')', 'Type[]'),
   \ javaapi#method(0,'getLowerBounds(', ')', 'Type[]'),
   \ ])
 
-call javaapi#class('Constructor<T>', '', [
+call javaapi#class('Constructor<T>', 'AccessibleObject', [
   \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<T>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getModifiers(', ')', 'int'),
@@ -129,14 +129,14 @@ call javaapi#interface('Member', '', [
   \ javaapi#method(0,'isSynthetic(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('UndeclaredThrowableException', '', [
+call javaapi#class('UndeclaredThrowableException', 'RuntimeException', [
   \ javaapi#method(0,'UndeclaredThrowableException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'UndeclaredThrowableException(', 'Throwable, String)', 'public'),
   \ javaapi#method(0,'getUndeclaredThrowable(', ')', 'Throwable'),
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'AccessibleObject', [
   \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<?>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getModifiers(', ')', 'int'),
@@ -178,14 +178,14 @@ call javaapi#interface('GenericDeclaration', '', [
   \ javaapi#method(0,'getTypeParameters(', ')', 'TypeVariable<?>[]'),
   \ ])
 
-call javaapi#interface('GenericArrayType', '', [
+call javaapi#interface('GenericArrayType', 'Type', [
   \ javaapi#method(0,'getGenericComponentType(', ')', 'Type'),
   \ ])
 
 call javaapi#interface('Type', '', [
   \ ])
 
-call javaapi#class('Method', '', [
+call javaapi#class('Method', 'AccessibleObject', [
   \ javaapi#method(0,'getDeclaringClass(', ')', 'Class<?>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getModifiers(', ')', 'int'),
@@ -210,7 +210,7 @@ call javaapi#class('Method', '', [
   \ javaapi#method(0,'getParameterAnnotations(', ')', 'Annotation[][]'),
   \ ])
 
-call javaapi#interface('ParameterizedType', '', [
+call javaapi#interface('ParameterizedType', 'Type', [
   \ javaapi#method(0,'getActualTypeArguments(', ')', 'Type[]'),
   \ javaapi#method(0,'getRawType(', ')', 'Type'),
   \ javaapi#method(0,'getOwnerType(', ')', 'Type'),

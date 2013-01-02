@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.cookie.params')
 
-call javaapi#class('CookieSpecParamBean', '', [
+call javaapi#class('CookieSpecParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'CookieSpecParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setDatePatterns(', 'Collection<String>)', 'void'),
   \ javaapi#method(0,'setSingleHeader(', 'boolean)', 'void'),

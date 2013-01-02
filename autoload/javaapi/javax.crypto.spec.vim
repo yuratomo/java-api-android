@@ -12,7 +12,7 @@ call javaapi#class('DHGenParameterSpec', 'AlgorithmParameterSpec', [
   \ javaapi#method(0,'getExponentSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('PSpecified', '', [
+call javaapi#class('PSpecified', 'PSource', [
   \ javaapi#field(1,'DEFAULT', 'PSpecified'),
   \ javaapi#method(0,'PSpecified(', 'byte[])', 'public'),
   \ javaapi#method(0,'getValue(', ')', 'byte[]'),

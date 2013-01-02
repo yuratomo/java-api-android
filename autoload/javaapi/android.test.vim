@@ -1,6 +1,140 @@
 call javaapi#namespace('android.test')
 
-call javaapi#class('IsolatedContext', '', [
+call javaapi#class('ProviderTestCase2<T', 'ContentProvider>', [
+  \ javaapi#method(0,'ProviderTestCase2(', 'Class<T>, String)', 'public'),
+  \ javaapi#method(0,'getProvider(', ')', 'T'),
+  \ javaapi#method(0,'getMockContentResolver(', ')', 'MockContentResolver'),
+  \ javaapi#method(0,'getMockContext(', ')', 'IsolatedContext'),
+  \ javaapi#method(1,'newResolverWithContentProviderFromSql(', 'Context, String, Class<T>, String, String, int, String) throws IllegalAccessException, InstantiationException', 'ContentResolver'),
+  \ ])
+
+call javaapi#class('ComparisonFailure', 'AssertionFailedError', [
+  \ javaapi#method(0,'ComparisonFailure(', 'String, String, String)', 'public'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#class('RenamingDelegatingContext', 'ContextWrapper', [
+  \ javaapi#method(0,'RenamingDelegatingContext(', 'Context, String)', 'public'),
+  \ javaapi#method(0,'RenamingDelegatingContext(', 'Context, Context, String)', 'public'),
+  \ javaapi#method(1,'providerWithRenamedContext(', 'Class<T>, Context, String) throws IllegalAccessException, InstantiationException', 'T'),
+  \ javaapi#method(1,'providerWithRenamedContext(', 'Class<T>, Context, String, boolean) throws IllegalAccessException, InstantiationException', 'T'),
+  \ javaapi#method(0,'makeExistingFilesAndDbsAccessible(', ')', 'void'),
+  \ javaapi#method(0,'getDatabasePrefix(', ')', 'String'),
+  \ javaapi#method(0,'openOrCreateDatabase(', 'String, int, CursorFactory)', 'SQLiteDatabase'),
+  \ javaapi#method(0,'openOrCreateDatabase(', 'String, int, CursorFactory, DatabaseErrorHandler)', 'SQLiteDatabase'),
+  \ javaapi#method(0,'deleteDatabase(', 'String)', 'boolean'),
+  \ javaapi#method(0,'getDatabasePath(', 'String)', 'File'),
+  \ javaapi#method(0,'databaseList(', ')', 'String[]'),
+  \ javaapi#method(0,'openFileInput(', 'String) throws FileNotFoundException', 'FileInputStream'),
+  \ javaapi#method(0,'openFileOutput(', 'String, int) throws FileNotFoundException', 'FileOutputStream'),
+  \ javaapi#method(0,'getFileStreamPath(', 'String)', 'File'),
+  \ javaapi#method(0,'deleteFile(', 'String)', 'boolean'),
+  \ javaapi#method(0,'fileList(', ')', 'String[]'),
+  \ javaapi#method(0,'getCacheDir(', ')', 'File'),
+  \ ])
+
+call javaapi#class('ActivityUnitTestCase<T', 'Activity>', [
+  \ javaapi#method(0,'ActivityUnitTestCase(', 'Class<T>)', 'public'),
+  \ javaapi#method(0,'getActivity(', ')', 'T'),
+  \ javaapi#method(0,'setApplication(', 'Application)', 'void'),
+  \ javaapi#method(0,'setActivityContext(', 'Context)', 'void'),
+  \ javaapi#method(0,'getRequestedOrientation(', ')', 'int'),
+  \ javaapi#method(0,'getStartedActivityIntent(', ')', 'Intent'),
+  \ javaapi#method(0,'getStartedActivityRequest(', ')', 'int'),
+  \ javaapi#method(0,'isFinishCalled(', ')', 'boolean'),
+  \ javaapi#method(0,'getFinishedActivityRequest(', ')', 'int'),
+  \ ])
+
+call javaapi#class('ActivityInstrumentationTestCase<T', 'Activity>', [
+  \ javaapi#method(0,'ActivityInstrumentationTestCase(', 'String, Class<T>)', 'public'),
+  \ javaapi#method(0,'ActivityInstrumentationTestCase(', 'String, Class<T>, boolean)', 'public'),
+  \ javaapi#method(0,'getActivity(', ')', 'T'),
+  \ javaapi#method(0,'testActivityTestCaseSetUpProperly(', ') throws Exception', 'void'),
+  \ ])
+
+call javaapi#class('InstrumentationTestRunner', 'Instrumentation', [
+  \ javaapi#field(1,'REPORT_VALUE_ID', 'String'),
+  \ javaapi#field(1,'REPORT_KEY_NUM_TOTAL', 'String'),
+  \ javaapi#field(1,'REPORT_KEY_NUM_CURRENT', 'String'),
+  \ javaapi#field(1,'REPORT_KEY_NAME_CLASS', 'String'),
+  \ javaapi#field(1,'REPORT_KEY_NAME_TEST', 'String'),
+  \ javaapi#field(1,'REPORT_VALUE_RESULT_START', 'int'),
+  \ javaapi#field(1,'REPORT_VALUE_RESULT_OK', 'int'),
+  \ javaapi#field(1,'REPORT_VALUE_RESULT_ERROR', 'int'),
+  \ javaapi#field(1,'REPORT_VALUE_RESULT_FAILURE', 'int'),
+  \ javaapi#field(1,'REPORT_KEY_STACK', 'String'),
+  \ javaapi#method(0,'InstrumentationTestRunner(', ')', 'public'),
+  \ javaapi#method(0,'onCreate(', 'Bundle)', 'void'),
+  \ javaapi#method(0,'onStart(', ')', 'void'),
+  \ javaapi#method(0,'getTestSuite(', ')', 'TestSuite'),
+  \ javaapi#method(0,'getAllTests(', ')', 'TestSuite'),
+  \ javaapi#method(0,'getLoader(', ')', 'ClassLoader'),
+  \ ])
+
+call javaapi#class('LoaderTestCase', 'AndroidTestCase', [
+  \ javaapi#method(0,'LoaderTestCase(', ')', 'public'),
+  \ javaapi#method(0,'getLoaderResultSynchronously(', 'Loader<T>)', 'T'),
+  \ ])
+
+call javaapi#class('TouchUtils', '', [
+  \ javaapi#method(0,'TouchUtils(', ')', 'public'),
+  \ javaapi#method(1,'dragQuarterScreenDown(', 'ActivityInstrumentationTestCase)', 'void'),
+  \ javaapi#method(1,'dragQuarterScreenDown(', 'InstrumentationTestCase, Activity)', 'void'),
+  \ javaapi#method(1,'dragQuarterScreenUp(', 'ActivityInstrumentationTestCase)', 'void'),
+  \ javaapi#method(1,'dragQuarterScreenUp(', 'InstrumentationTestCase, Activity)', 'void'),
+  \ javaapi#method(1,'scrollToBottom(', 'ActivityInstrumentationTestCase, ViewGroup)', 'void'),
+  \ javaapi#method(1,'scrollToBottom(', 'InstrumentationTestCase, Activity, ViewGroup)', 'void'),
+  \ javaapi#method(1,'scrollToTop(', 'ActivityInstrumentationTestCase, ViewGroup)', 'void'),
+  \ javaapi#method(1,'scrollToTop(', 'InstrumentationTestCase, Activity, ViewGroup)', 'void'),
+  \ javaapi#method(1,'dragViewToBottom(', 'ActivityInstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'dragViewToBottom(', 'InstrumentationTestCase, Activity, View)', 'void'),
+  \ javaapi#method(1,'dragViewToBottom(', 'ActivityInstrumentationTestCase, View, int)', 'void'),
+  \ javaapi#method(1,'dragViewToBottom(', 'InstrumentationTestCase, Activity, View, int)', 'void'),
+  \ javaapi#method(1,'tapView(', 'InstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'touchAndCancelView(', 'InstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'clickView(', 'InstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'longClickView(', 'ActivityInstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'longClickView(', 'InstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'dragViewToTop(', 'ActivityInstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'dragViewToTop(', 'ActivityInstrumentationTestCase, View, int)', 'void'),
+  \ javaapi#method(1,'dragViewToTop(', 'InstrumentationTestCase, View)', 'void'),
+  \ javaapi#method(1,'dragViewToTop(', 'InstrumentationTestCase, View, int)', 'void'),
+  \ javaapi#method(1,'dragViewBy(', 'ActivityInstrumentationTestCase, View, int, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewBy(', 'InstrumentationTestCase, View, int, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewTo(', 'ActivityInstrumentationTestCase, View, int, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewTo(', 'InstrumentationTestCase, View, int, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewToX(', 'ActivityInstrumentationTestCase, View, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewToX(', 'InstrumentationTestCase, View, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewToY(', 'ActivityInstrumentationTestCase, View, int, int)', 'int'),
+  \ javaapi#method(1,'dragViewToY(', 'InstrumentationTestCase, View, int, int)', 'int'),
+  \ javaapi#method(1,'drag(', 'ActivityInstrumentationTestCase, float, float, float, float, int)', 'void'),
+  \ javaapi#method(1,'drag(', 'InstrumentationTestCase, float, float, float, float, int)', 'void'),
+  \ ])
+
+call javaapi#class('ApplicationTestCase<T', 'Application>', [
+  \ javaapi#method(0,'ApplicationTestCase(', 'Class<T>)', 'public'),
+  \ javaapi#method(0,'getApplication(', ')', 'T'),
+  \ javaapi#method(0,'getSystemContext(', ')', 'Context'),
+  \ javaapi#method(0,'testApplicationTestCaseSetUpProperly(', ') throws Exception', 'void'),
+  \ ])
+
+call javaapi#interface('FlakyTest', 'Annotation', [
+  \ javaapi#method(0,'tolerance(', ')', 'int'),
+  \ ])
+
+call javaapi#class('AndroidTestCase', 'TestCase', [
+  \ javaapi#method(0,'AndroidTestCase(', ')', 'public'),
+  \ javaapi#method(0,'testAndroidTestCaseSetupProperly(', ')', 'void'),
+  \ javaapi#method(0,'setContext(', 'Context)', 'void'),
+  \ javaapi#method(0,'getContext(', ')', 'Context'),
+  \ javaapi#method(0,'assertActivityRequiresPermission(', 'String, String, String)', 'void'),
+  \ javaapi#method(0,'assertReadingContentUriRequiresPermission(', 'Uri, String)', 'void'),
+  \ javaapi#method(0,'assertWritingContentUriRequiresPermission(', 'Uri, String)', 'void'),
+  \ ])
+
+call javaapi#namespace('android.test')
+
+call javaapi#class('IsolatedContext', 'ContextWrapper', [
   \ javaapi#method(0,'IsolatedContext(', 'ContentResolver, Context)', 'public'),
   \ javaapi#method(0,'getAndClearBroadcastIntents(', ')', 'Intent>'),
   \ javaapi#method(0,'getContentResolver(', ')', 'ContentResolver'),
@@ -15,7 +149,7 @@ call javaapi#class('IsolatedContext', '', [
   \ javaapi#method(0,'getFilesDir(', ')', 'File'),
   \ ])
 
-call javaapi#class('AndroidTestRunner', '', [
+call javaapi#class('AndroidTestRunner', 'BaseTestRunner', [
   \ javaapi#method(0,'AndroidTestRunner(', ')', 'public'),
   \ javaapi#method(0,'setTestClassName(', 'String, String)', 'void'),
   \ javaapi#method(0,'setTest(', 'Test)', 'void'),
@@ -73,11 +207,11 @@ call javaapi#class('MoreAsserts', '', [
   \ javaapi#method(1,'checkEqualsAndHashCodeMethods(', 'Object, Object, boolean)', 'void'),
   \ ])
 
-call javaapi#class('SyncBaseInstrumentation', '', [
+call javaapi#class('SyncBaseInstrumentation', 'InstrumentationTestCase', [
   \ javaapi#method(0,'SyncBaseInstrumentation(', ')', 'public'),
   \ ])
 
-call javaapi#class('ServiceTestCase<T', '', [
+call javaapi#class('ServiceTestCase<T', 'Service>', [
   \ javaapi#method(0,'ServiceTestCase(', 'Class<T>)', 'public'),
   \ javaapi#method(0,'getService(', ')', 'T'),
   \ javaapi#method(0,'setApplication(', 'Application)', 'void'),
@@ -95,17 +229,17 @@ call javaapi#interface('TestSuiteProvider', '', [
   \ javaapi#method(0,'getTestSuite(', ')', 'TestSuite'),
   \ ])
 
-call javaapi#class('ActivityTestCase', '', [
+call javaapi#class('ActivityTestCase', 'InstrumentationTestCase', [
   \ javaapi#method(0,'ActivityTestCase(', ')', 'public'),
   \ ])
 
-call javaapi#class('SingleLaunchActivityTestCase<T', '', [
+call javaapi#class('SingleLaunchActivityTestCase<T', 'Activity>', [
   \ javaapi#method(0,'SingleLaunchActivityTestCase(', 'String, Class<T>)', 'public'),
   \ javaapi#method(0,'getActivity(', ')', 'T'),
   \ javaapi#method(0,'testActivityTestCaseSetUpProperly(', ') throws Exception', 'void'),
   \ ])
 
-call javaapi#class('InstrumentationTestSuite', '', [
+call javaapi#class('InstrumentationTestSuite', 'TestSuite', [
   \ javaapi#method(0,'InstrumentationTestSuite(', 'Instrumentation)', 'public'),
   \ javaapi#method(0,'InstrumentationTestSuite(', 'String, Instrumentation)', 'public'),
   \ javaapi#method(0,'InstrumentationTestSuite(', 'Class, Instrumentation)', 'public'),
@@ -113,7 +247,7 @@ call javaapi#class('InstrumentationTestSuite', '', [
   \ javaapi#method(0,'runTest(', 'Test, TestResult)', 'void'),
   \ ])
 
-call javaapi#class('ProviderTestCase<T', '', [
+call javaapi#class('ProviderTestCase<T', 'ContentProvider>', [
   \ javaapi#method(0,'ProviderTestCase(', 'Class<T>, String)', 'public'),
   \ javaapi#method(0,'getProvider(', ')', 'T'),
   \ javaapi#method(0,'getMockContentResolver(', ')', 'MockContentResolver'),
@@ -142,15 +276,15 @@ call javaapi#class('ViewAsserts', '', [
   \ javaapi#method(1,'assertGroupNotContains(', 'ViewGroup, View)', 'void'),
   \ ])
 
-call javaapi#interface('UiThreadTest', '', [
+call javaapi#interface('UiThreadTest', 'Annotation', [
   \ ])
 
-call javaapi#class('AssertionFailedError', '', [
+call javaapi#class('AssertionFailedError', 'Error', [
   \ javaapi#method(0,'AssertionFailedError(', ')', 'public'),
   \ javaapi#method(0,'AssertionFailedError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ActivityInstrumentationTestCase2<T', '', [
+call javaapi#class('ActivityInstrumentationTestCase2<T', 'Activity>', [
   \ javaapi#method(0,'ActivityInstrumentationTestCase2(', 'String, Class<T>)', 'public'),
   \ javaapi#method(0,'ActivityInstrumentationTestCase2(', 'Class<T>)', 'public'),
   \ javaapi#method(0,'getActivity(', ')', 'T'),
@@ -166,7 +300,7 @@ call javaapi#interface('Intermediates', '', [
   \ javaapi#method(0,'finishTiming(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('InstrumentationTestCase', '', [
+call javaapi#class('InstrumentationTestCase', 'TestCase', [
   \ javaapi#method(0,'InstrumentationTestCase(', ')', 'public'),
   \ javaapi#method(0,'injectInstrumentation(', 'Instrumentation)', 'void'),
   \ javaapi#method(0,'injectInsrumentation(', 'Instrumentation)', 'void'),
@@ -177,138 +311,5 @@ call javaapi#class('InstrumentationTestCase', '', [
   \ javaapi#method(0,'sendKeys(', 'String)', 'void'),
   \ javaapi#method(0,'sendKeys(', ')', 'void'),
   \ javaapi#method(0,'sendRepeatedKeys(', ')', 'void'),
-  \ ])
-
-
-call javaapi#class('ProviderTestCase2<T', '', [
-  \ javaapi#method(0,'ProviderTestCase2(', 'Class<T>, String)', 'public'),
-  \ javaapi#method(0,'getProvider(', ')', 'T'),
-  \ javaapi#method(0,'getMockContentResolver(', ')', 'MockContentResolver'),
-  \ javaapi#method(0,'getMockContext(', ')', 'IsolatedContext'),
-  \ javaapi#method(1,'newResolverWithContentProviderFromSql(', 'Context, String, Class<T>, String, String, int, String) throws IllegalAccessException, InstantiationException', 'ContentResolver'),
-  \ ])
-
-call javaapi#class('ComparisonFailure', '', [
-  \ javaapi#method(0,'ComparisonFailure(', 'String, String, String)', 'public'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#class('RenamingDelegatingContext', '', [
-  \ javaapi#method(0,'RenamingDelegatingContext(', 'Context, String)', 'public'),
-  \ javaapi#method(0,'RenamingDelegatingContext(', 'Context, Context, String)', 'public'),
-  \ javaapi#method(1,'providerWithRenamedContext(', 'Class<T>, Context, String) throws IllegalAccessException, InstantiationException', 'T'),
-  \ javaapi#method(1,'providerWithRenamedContext(', 'Class<T>, Context, String, boolean) throws IllegalAccessException, InstantiationException', 'T'),
-  \ javaapi#method(0,'makeExistingFilesAndDbsAccessible(', ')', 'void'),
-  \ javaapi#method(0,'getDatabasePrefix(', ')', 'String'),
-  \ javaapi#method(0,'openOrCreateDatabase(', 'String, int, CursorFactory)', 'SQLiteDatabase'),
-  \ javaapi#method(0,'openOrCreateDatabase(', 'String, int, CursorFactory, DatabaseErrorHandler)', 'SQLiteDatabase'),
-  \ javaapi#method(0,'deleteDatabase(', 'String)', 'boolean'),
-  \ javaapi#method(0,'getDatabasePath(', 'String)', 'File'),
-  \ javaapi#method(0,'databaseList(', ')', 'String[]'),
-  \ javaapi#method(0,'openFileInput(', 'String) throws FileNotFoundException', 'FileInputStream'),
-  \ javaapi#method(0,'openFileOutput(', 'String, int) throws FileNotFoundException', 'FileOutputStream'),
-  \ javaapi#method(0,'getFileStreamPath(', 'String)', 'File'),
-  \ javaapi#method(0,'deleteFile(', 'String)', 'boolean'),
-  \ javaapi#method(0,'fileList(', ')', 'String[]'),
-  \ javaapi#method(0,'getCacheDir(', ')', 'File'),
-  \ ])
-
-call javaapi#class('ActivityUnitTestCase<T', '', [
-  \ javaapi#method(0,'ActivityUnitTestCase(', 'Class<T>)', 'public'),
-  \ javaapi#method(0,'getActivity(', ')', 'T'),
-  \ javaapi#method(0,'setApplication(', 'Application)', 'void'),
-  \ javaapi#method(0,'setActivityContext(', 'Context)', 'void'),
-  \ javaapi#method(0,'getRequestedOrientation(', ')', 'int'),
-  \ javaapi#method(0,'getStartedActivityIntent(', ')', 'Intent'),
-  \ javaapi#method(0,'getStartedActivityRequest(', ')', 'int'),
-  \ javaapi#method(0,'isFinishCalled(', ')', 'boolean'),
-  \ javaapi#method(0,'getFinishedActivityRequest(', ')', 'int'),
-  \ ])
-
-call javaapi#class('ActivityInstrumentationTestCase<T', '', [
-  \ javaapi#method(0,'ActivityInstrumentationTestCase(', 'String, Class<T>)', 'public'),
-  \ javaapi#method(0,'ActivityInstrumentationTestCase(', 'String, Class<T>, boolean)', 'public'),
-  \ javaapi#method(0,'getActivity(', ')', 'T'),
-  \ javaapi#method(0,'testActivityTestCaseSetUpProperly(', ') throws Exception', 'void'),
-  \ ])
-
-call javaapi#class('InstrumentationTestRunner', '', [
-  \ javaapi#field(1,'REPORT_VALUE_ID', 'String'),
-  \ javaapi#field(1,'REPORT_KEY_NUM_TOTAL', 'String'),
-  \ javaapi#field(1,'REPORT_KEY_NUM_CURRENT', 'String'),
-  \ javaapi#field(1,'REPORT_KEY_NAME_CLASS', 'String'),
-  \ javaapi#field(1,'REPORT_KEY_NAME_TEST', 'String'),
-  \ javaapi#field(1,'REPORT_VALUE_RESULT_START', 'int'),
-  \ javaapi#field(1,'REPORT_VALUE_RESULT_OK', 'int'),
-  \ javaapi#field(1,'REPORT_VALUE_RESULT_ERROR', 'int'),
-  \ javaapi#field(1,'REPORT_VALUE_RESULT_FAILURE', 'int'),
-  \ javaapi#field(1,'REPORT_KEY_STACK', 'String'),
-  \ javaapi#method(0,'InstrumentationTestRunner(', ')', 'public'),
-  \ javaapi#method(0,'onCreate(', 'Bundle)', 'void'),
-  \ javaapi#method(0,'onStart(', ')', 'void'),
-  \ javaapi#method(0,'getTestSuite(', ')', 'TestSuite'),
-  \ javaapi#method(0,'getAllTests(', ')', 'TestSuite'),
-  \ javaapi#method(0,'getLoader(', ')', 'ClassLoader'),
-  \ ])
-
-call javaapi#class('LoaderTestCase', '', [
-  \ javaapi#method(0,'LoaderTestCase(', ')', 'public'),
-  \ javaapi#method(0,'getLoaderResultSynchronously(', 'Loader<T>)', 'T'),
-  \ ])
-
-call javaapi#class('TouchUtils', '', [
-  \ javaapi#method(0,'TouchUtils(', ')', 'public'),
-  \ javaapi#method(1,'dragQuarterScreenDown(', 'ActivityInstrumentationTestCase)', 'void'),
-  \ javaapi#method(1,'dragQuarterScreenDown(', 'InstrumentationTestCase, Activity)', 'void'),
-  \ javaapi#method(1,'dragQuarterScreenUp(', 'ActivityInstrumentationTestCase)', 'void'),
-  \ javaapi#method(1,'dragQuarterScreenUp(', 'InstrumentationTestCase, Activity)', 'void'),
-  \ javaapi#method(1,'scrollToBottom(', 'ActivityInstrumentationTestCase, ViewGroup)', 'void'),
-  \ javaapi#method(1,'scrollToBottom(', 'InstrumentationTestCase, Activity, ViewGroup)', 'void'),
-  \ javaapi#method(1,'scrollToTop(', 'ActivityInstrumentationTestCase, ViewGroup)', 'void'),
-  \ javaapi#method(1,'scrollToTop(', 'InstrumentationTestCase, Activity, ViewGroup)', 'void'),
-  \ javaapi#method(1,'dragViewToBottom(', 'ActivityInstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'dragViewToBottom(', 'InstrumentationTestCase, Activity, View)', 'void'),
-  \ javaapi#method(1,'dragViewToBottom(', 'ActivityInstrumentationTestCase, View, int)', 'void'),
-  \ javaapi#method(1,'dragViewToBottom(', 'InstrumentationTestCase, Activity, View, int)', 'void'),
-  \ javaapi#method(1,'tapView(', 'InstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'touchAndCancelView(', 'InstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'clickView(', 'InstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'longClickView(', 'ActivityInstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'longClickView(', 'InstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'dragViewToTop(', 'ActivityInstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'dragViewToTop(', 'ActivityInstrumentationTestCase, View, int)', 'void'),
-  \ javaapi#method(1,'dragViewToTop(', 'InstrumentationTestCase, View)', 'void'),
-  \ javaapi#method(1,'dragViewToTop(', 'InstrumentationTestCase, View, int)', 'void'),
-  \ javaapi#method(1,'dragViewBy(', 'ActivityInstrumentationTestCase, View, int, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewBy(', 'InstrumentationTestCase, View, int, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewTo(', 'ActivityInstrumentationTestCase, View, int, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewTo(', 'InstrumentationTestCase, View, int, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewToX(', 'ActivityInstrumentationTestCase, View, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewToX(', 'InstrumentationTestCase, View, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewToY(', 'ActivityInstrumentationTestCase, View, int, int)', 'int'),
-  \ javaapi#method(1,'dragViewToY(', 'InstrumentationTestCase, View, int, int)', 'int'),
-  \ javaapi#method(1,'drag(', 'ActivityInstrumentationTestCase, float, float, float, float, int)', 'void'),
-  \ javaapi#method(1,'drag(', 'InstrumentationTestCase, float, float, float, float, int)', 'void'),
-  \ ])
-
-call javaapi#class('ApplicationTestCase<T', '', [
-  \ javaapi#method(0,'ApplicationTestCase(', 'Class<T>)', 'public'),
-  \ javaapi#method(0,'getApplication(', ')', 'T'),
-  \ javaapi#method(0,'getSystemContext(', ')', 'Context'),
-  \ javaapi#method(0,'testApplicationTestCaseSetUpProperly(', ') throws Exception', 'void'),
-  \ ])
-
-call javaapi#interface('FlakyTest', '', [
-  \ javaapi#method(0,'tolerance(', ')', 'int'),
-  \ ])
-
-call javaapi#class('AndroidTestCase', '', [
-  \ javaapi#method(0,'AndroidTestCase(', ')', 'public'),
-  \ javaapi#method(0,'testAndroidTestCaseSetupProperly(', ')', 'void'),
-  \ javaapi#method(0,'setContext(', 'Context)', 'void'),
-  \ javaapi#method(0,'getContext(', ')', 'Context'),
-  \ javaapi#method(0,'assertActivityRequiresPermission(', 'String, String, String)', 'void'),
-  \ javaapi#method(0,'assertReadingContentUriRequiresPermission(', 'Uri, String)', 'void'),
-  \ javaapi#method(0,'assertWritingContentUriRequiresPermission(', 'Uri, String)', 'void'),
   \ ])
 

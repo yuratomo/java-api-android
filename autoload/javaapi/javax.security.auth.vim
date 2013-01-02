@@ -1,17 +1,30 @@
 call javaapi#namespace('javax.security.auth')
 
-call javaapi#class('DestroyFailedException', '', [
-  \ javaapi#method(0,'DestroyFailedException(', ')', 'public'),
-  \ javaapi#method(0,'DestroyFailedException(', 'String)', 'public'),
+call javaapi#class('PrivateCredentialPermission', 'Permission', [
+  \ javaapi#method(0,'PrivateCredentialPermission(', 'String, String)', 'public'),
+  \ javaapi#method(0,'getCredentialClass(', ')', 'String'),
+  \ javaapi#method(0,'getPrincipals(', ')', 'String[][]'),
+  \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'getActions(', ')', 'String'),
+  \ javaapi#method(0,'newPermissionCollection(', ')', 'PermissionCollection'),
   \ ])
 
+call javaapi#class('SubjectDomainCombiner', 'DomainCombiner', [
+  \ javaapi#method(0,'SubjectDomainCombiner(', 'Subject)', 'public'),
+  \ javaapi#method(0,'getSubject(', ')', 'Subject'),
+  \ javaapi#method(0,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
+  \ ])
+
+call javaapi#namespace('javax.security.auth')
 
 call javaapi#interface('Destroyable', '', [
   \ javaapi#method(0,'destroy(', ') throws DestroyFailedException', 'void'),
   \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('AuthPermission', '', [
+call javaapi#class('AuthPermission', 'BasicPermission', [
   \ javaapi#method(0,'AuthPermission(', 'String)', 'public'),
   \ javaapi#method(0,'AuthPermission(', 'String, String)', 'public'),
   \ ])
@@ -37,21 +50,10 @@ call javaapi#class('Subject', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
+call javaapi#namespace('javax.security.auth')
 
-call javaapi#class('PrivateCredentialPermission', '', [
-  \ javaapi#method(0,'PrivateCredentialPermission(', 'String, String)', 'public'),
-  \ javaapi#method(0,'getCredentialClass(', ')', 'String'),
-  \ javaapi#method(0,'getPrincipals(', ')', 'String[][]'),
-  \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'getActions(', ')', 'String'),
-  \ javaapi#method(0,'newPermissionCollection(', ')', 'PermissionCollection'),
-  \ ])
-
-call javaapi#class('SubjectDomainCombiner', 'DomainCombiner', [
-  \ javaapi#method(0,'SubjectDomainCombiner(', 'Subject)', 'public'),
-  \ javaapi#method(0,'getSubject(', ')', 'Subject'),
-  \ javaapi#method(0,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
+call javaapi#class('DestroyFailedException', 'Exception', [
+  \ javaapi#method(0,'DestroyFailedException(', ')', 'public'),
+  \ javaapi#method(0,'DestroyFailedException(', 'String)', 'public'),
   \ ])
 

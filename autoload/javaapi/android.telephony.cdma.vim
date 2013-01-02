@@ -1,6 +1,6 @@
 call javaapi#namespace('android.telephony.cdma')
 
-call javaapi#class('CdmaCellLocation', '', [
+call javaapi#class('CdmaCellLocation', 'CellLocation', [
   \ javaapi#method(0,'CdmaCellLocation(', ')', 'public'),
   \ javaapi#method(0,'CdmaCellLocation(', 'Bundle)', 'public'),
   \ javaapi#method(0,'getBaseStationId(', ')', 'int'),

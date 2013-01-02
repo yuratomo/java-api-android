@@ -23,14 +23,14 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'ProgramVertexFixedFunction'),
   \ ])
 
-call javaapi#class('TextureType', '', [
+call javaapi#class('TextureType', 'TextureType>', [
   \ javaapi#field(1,'TEXTURE_2D', 'TextureType'),
   \ javaapi#field(1,'TEXTURE_CUBE', 'TextureType'),
   \ javaapi#method(1,'values(', ')', 'TextureType[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'TextureType'),
   \ ])
 
-call javaapi#class('RSTextureView', '', [
+call javaapi#class('RSTextureView', 'TextureView', [
   \ javaapi#method(0,'RSTextureView(', 'Context)', 'public'),
   \ javaapi#method(0,'RSTextureView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'onSurfaceTextureAvailable(', 'SurfaceTexture, int, int)', 'void'),
@@ -45,7 +45,7 @@ call javaapi#class('RSTextureView', '', [
   \ javaapi#method(0,'getRenderScriptGL(', ')', 'RenderScriptGL'),
   \ ])
 
-call javaapi#class('KernelID', '', [
+call javaapi#class('KernelID', 'BaseObj', [
   \ ])
 
 call javaapi#class('Builder', '', [
@@ -58,7 +58,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'Sampler'),
   \ ])
 
-call javaapi#class('DataKind', '', [
+call javaapi#class('DataKind', 'DataKind>', [
   \ javaapi#field(1,'PIXEL_A', 'DataKind'),
   \ javaapi#field(1,'PIXEL_DEPTH', 'DataKind'),
   \ javaapi#field(1,'PIXEL_L', 'DataKind'),
@@ -70,7 +70,7 @@ call javaapi#class('DataKind', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'DataKind'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicLUT', '', [
+call javaapi#class('ScriptIntrinsicLUT', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicLUT'),
   \ javaapi#method(0,'setRed(', 'int, int)', 'void'),
   \ javaapi#method(0,'setGreen(', 'int, int)', 'void'),
@@ -80,7 +80,7 @@ call javaapi#class('ScriptIntrinsicLUT', '', [
   \ javaapi#method(0,'getKernelID(', ')', 'KernelID'),
   \ ])
 
-call javaapi#class('BlendSrcFunc', '', [
+call javaapi#class('BlendSrcFunc', 'BlendSrcFunc>', [
   \ javaapi#field(1,'DST_ALPHA', 'BlendSrcFunc'),
   \ javaapi#field(1,'DST_COLOR', 'BlendSrcFunc'),
   \ javaapi#field(1,'ONE', 'BlendSrcFunc'),
@@ -110,7 +110,7 @@ call javaapi#class('Long4', '', [
   \ javaapi#method(0,'Long4(', 'long, long, long, long)', 'public'),
   \ ])
 
-call javaapi#class('Value', '', [
+call javaapi#class('Value', 'Value>', [
   \ javaapi#field(1,'CLAMP', 'Value'),
   \ javaapi#field(1,'LINEAR', 'Value'),
   \ javaapi#field(1,'LINEAR_MIP_LINEAR', 'Value'),
@@ -128,7 +128,7 @@ call javaapi#class('FieldBase', '', [
   \ javaapi#method(0,'updateAllocation(', ')', 'void'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicConvolve3x3', '', [
+call javaapi#class('ScriptIntrinsicConvolve3x3', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicConvolve3x3'),
   \ javaapi#method(0,'setInput(', 'Allocation)', 'void'),
   \ javaapi#method(0,'setCoefficients(', 'float[])', 'void'),
@@ -137,7 +137,7 @@ call javaapi#class('ScriptIntrinsicConvolve3x3', '', [
   \ javaapi#method(0,'getFieldID_Input(', ')', 'FieldID'),
   \ ])
 
-call javaapi#class('ProgramFragment', '', [
+call javaapi#class('ProgramFragment', 'Program', [
   \ ])
 
 call javaapi#class('AllocationBuilder', '', [
@@ -150,7 +150,7 @@ call javaapi#class('AllocationBuilder', '', [
   \ javaapi#method(0,'create(', ')', 'Mesh'),
   \ ])
 
-call javaapi#class('CubemapFace', '', [
+call javaapi#class('CubemapFace', 'CubemapFace>', [
   \ javaapi#field(1,'NEGATIVE_X', 'CubemapFace'),
   \ javaapi#field(1,'NEGATIVE_Y', 'CubemapFace'),
   \ javaapi#field(1,'NEGATIVE_Z', 'CubemapFace'),
@@ -173,10 +173,10 @@ call javaapi#class('Int4', '', [
   \ javaapi#method(0,'Int4(', 'int, int, int, int)', 'public'),
   \ ])
 
-call javaapi#class('FieldID', '', [
+call javaapi#class('FieldID', 'BaseObj', [
   \ ])
 
-call javaapi#class('Sampler', '', [
+call javaapi#class('Sampler', 'BaseObj', [
   \ javaapi#method(0,'getMinification(', ')', 'Value'),
   \ javaapi#method(0,'getMagnification(', ')', 'Value'),
   \ javaapi#method(0,'getWrapS(', ')', 'Value'),
@@ -229,7 +229,7 @@ call javaapi#class('Byte3', '', [
   \ javaapi#method(0,'Byte3(', 'byte, byte, byte)', 'public'),
   \ ])
 
-call javaapi#class('Primitive', '', [
+call javaapi#class('Primitive', 'Primitive>', [
   \ javaapi#field(1,'LINE', 'Primitive'),
   \ javaapi#field(1,'LINE_STRIP', 'Primitive'),
   \ javaapi#field(1,'POINT', 'Primitive'),
@@ -240,7 +240,7 @@ call javaapi#class('Primitive', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Primitive'),
   \ ])
 
-call javaapi#class('Format', '', [
+call javaapi#class('Format', 'Format>', [
   \ javaapi#field(1,'ALPHA', 'Format'),
   \ javaapi#field(1,'LUMINANCE_ALPHA', 'Format'),
   \ javaapi#field(1,'RGB', 'Format'),
@@ -258,7 +258,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'ProgramFragmentFixedFunction'),
   \ ])
 
-call javaapi#class('CullMode', '', [
+call javaapi#class('CullMode', 'CullMode>', [
   \ javaapi#field(1,'BACK', 'CullMode'),
   \ javaapi#field(1,'FRONT', 'CullMode'),
   \ javaapi#field(1,'NONE', 'CullMode'),
@@ -266,13 +266,13 @@ call javaapi#class('CullMode', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'CullMode'),
   \ ])
 
-call javaapi#class('Builder', '', [
+call javaapi#class('Builder', 'BaseProgramBuilder', [
   \ javaapi#method(0,'Builder(', 'RenderScript)', 'public'),
   \ javaapi#method(0,'addInput(', 'Element) throws IllegalStateException', 'Builder'),
   \ javaapi#method(0,'create(', ')', 'ProgramVertex'),
   \ ])
 
-call javaapi#class('RSRuntimeException', '', [
+call javaapi#class('RSRuntimeException', 'RuntimeException', [
   \ javaapi#method(0,'RSRuntimeException(', 'String)', 'public'),
   \ ])
 
@@ -284,7 +284,7 @@ call javaapi#class('Constants', '', [
   \ javaapi#method(0,'setTexture(', 'Matrix4f)', 'void'),
   \ ])
 
-call javaapi#class('Allocation', '', [
+call javaapi#class('Allocation', 'BaseObj', [
   \ javaapi#field(1,'USAGE_SCRIPT', 'int'),
   \ javaapi#field(1,'USAGE_GRAPHICS_TEXTURE', 'int'),
   \ javaapi#field(1,'USAGE_GRAPHICS_VERTEX', 'int'),
@@ -360,7 +360,7 @@ call javaapi#class('SurfaceConfig', '', [
   \ javaapi#method(0,'setSamples(', 'int, int, float)', 'void'),
   \ ])
 
-call javaapi#class('DepthFunc', '', [
+call javaapi#class('DepthFunc', 'DepthFunc>', [
   \ javaapi#field(1,'ALWAYS', 'DepthFunc'),
   \ javaapi#field(1,'EQUAL', 'DepthFunc'),
   \ javaapi#field(1,'GREATER', 'DepthFunc'),
@@ -382,7 +382,7 @@ call javaapi#class('BaseProgramBuilder', '', [
   \ javaapi#method(0,'addTexture(', 'TextureType, String) throws IllegalArgumentException', 'BaseProgramBuilder'),
   \ ])
 
-call javaapi#class('MipmapControl', '', [
+call javaapi#class('MipmapControl', 'MipmapControl>', [
   \ javaapi#field(1,'MIPMAP_FULL', 'MipmapControl'),
   \ javaapi#field(1,'MIPMAP_NONE', 'MipmapControl'),
   \ javaapi#field(1,'MIPMAP_ON_SYNC_TO_TEXTURE', 'MipmapControl'),
@@ -398,14 +398,14 @@ call javaapi#class('Short3', '', [
   \ javaapi#method(0,'Short3(', 'short, short, short)', 'public'),
   \ ])
 
-call javaapi#class('EntryType', '', [
+call javaapi#class('EntryType', 'EntryType>', [
   \ javaapi#field(1,'MESH', 'EntryType'),
   \ javaapi#field(1,'UNKNOWN', 'EntryType'),
   \ javaapi#method(1,'values(', ')', 'EntryType[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'EntryType'),
   \ ])
 
-call javaapi#class('ProgramVertexFixedFunction', '', [
+call javaapi#class('ProgramVertexFixedFunction', 'ProgramVertex', [
   \ javaapi#method(0,'bindConstants(', 'Constants)', 'void'),
   \ ])
 
@@ -421,7 +421,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'Mesh'),
   \ ])
 
-call javaapi#class('ProgramVertex', '', [
+call javaapi#class('ProgramVertex', 'Program', [
   \ javaapi#method(0,'getInputCount(', ')', 'int'),
   \ javaapi#method(0,'getInput(', 'int)', 'Element'),
   \ ])
@@ -441,7 +441,7 @@ call javaapi#class('Byte2', '', [
   \ javaapi#method(0,'Byte2(', 'byte, byte)', 'public'),
   \ ])
 
-call javaapi#class('EnvMode', '', [
+call javaapi#class('EnvMode', 'EnvMode>', [
   \ javaapi#field(1,'DECAL', 'EnvMode'),
   \ javaapi#field(1,'MODULATE', 'EnvMode'),
   \ javaapi#field(1,'REPLACE', 'EnvMode'),
@@ -466,7 +466,7 @@ call javaapi#class('Matrix2f', '', [
   \ javaapi#method(0,'transpose(', ')', 'void'),
   \ ])
 
-call javaapi#class('Mesh', '', [
+call javaapi#class('Mesh', 'BaseObj', [
   \ javaapi#method(0,'getVertexAllocationCount(', ')', 'int'),
   \ javaapi#method(0,'getVertexAllocation(', 'int)', 'Allocation'),
   \ javaapi#method(0,'getPrimitiveCount(', ')', 'int'),
@@ -477,7 +477,7 @@ call javaapi#class('Mesh', '', [
 call javaapi#class('Builder', '', [
   \ ])
 
-call javaapi#class('ScriptIntrinsicConvolve5x5', '', [
+call javaapi#class('ScriptIntrinsicConvolve5x5', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicConvolve5x5'),
   \ javaapi#method(0,'setInput(', 'Allocation)', 'void'),
   \ javaapi#method(0,'setCoefficients(', 'float[])', 'void'),
@@ -486,11 +486,11 @@ call javaapi#class('ScriptIntrinsicConvolve5x5', '', [
   \ javaapi#method(0,'getFieldID_Input(', ')', 'FieldID'),
   \ ])
 
-call javaapi#class('RSDriverException', '', [
+call javaapi#class('RSDriverException', 'RSRuntimeException', [
   \ javaapi#method(0,'RSDriverException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicBlur', '', [
+call javaapi#class('ScriptIntrinsicBlur', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicBlur'),
   \ javaapi#method(0,'setInput(', 'Allocation)', 'void'),
   \ javaapi#method(0,'setRadius(', 'float)', 'void'),
@@ -560,7 +560,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'Element'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicBlend', '', [
+call javaapi#class('ScriptIntrinsicBlend', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicBlend'),
   \ javaapi#method(0,'forEachClear(', 'Allocation, Allocation)', 'void'),
   \ javaapi#method(0,'getKernelIDClear(', ')', 'KernelID'),
@@ -599,7 +599,7 @@ call javaapi#class('RSMessageHandler', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'BaseObj', [
   \ javaapi#method(0,'getElement(', ')', 'Element'),
   \ javaapi#method(0,'getX(', ')', 'int'),
   \ javaapi#method(0,'getY(', ')', 'int'),
@@ -632,7 +632,7 @@ call javaapi#class('Matrix3f', '', [
   \ javaapi#method(0,'transpose(', ')', 'void'),
   \ ])
 
-call javaapi#class('Style', '', [
+call javaapi#class('Style', 'Style>', [
   \ javaapi#field(1,'BOLD', 'Style'),
   \ javaapi#field(1,'BOLD_ITALIC', 'Style'),
   \ javaapi#field(1,'ITALIC', 'Style'),
@@ -641,7 +641,7 @@ call javaapi#class('Style', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Style'),
   \ ])
 
-call javaapi#class('DataType', '', [
+call javaapi#class('DataType', 'DataType>', [
   \ javaapi#field(1,'BOOLEAN', 'DataType'),
   \ javaapi#field(1,'FLOAT_32', 'DataType'),
   \ javaapi#field(1,'FLOAT_64', 'DataType'),
@@ -675,11 +675,11 @@ call javaapi#class('DataType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'DataType'),
   \ ])
 
-call javaapi#class('RSInvalidStateException', '', [
+call javaapi#class('RSInvalidStateException', 'RSRuntimeException', [
   \ javaapi#method(0,'RSInvalidStateException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ProgramRaster', '', [
+call javaapi#class('ProgramRaster', 'BaseObj', [
   \ javaapi#method(0,'isPointSpriteEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'getCullMode(', ')', 'CullMode'),
   \ javaapi#method(1,'CULL_BACK(', 'RenderScript)', 'ProgramRaster'),
@@ -687,7 +687,7 @@ call javaapi#class('ProgramRaster', '', [
   \ javaapi#method(1,'CULL_NONE(', 'RenderScript)', 'ProgramRaster'),
   \ ])
 
-call javaapi#class('Program', '', [
+call javaapi#class('Program', 'BaseObj', [
   \ javaapi#method(0,'getConstantCount(', ')', 'int'),
   \ javaapi#method(0,'getConstant(', 'int)', 'Type'),
   \ javaapi#method(0,'getTextureCount(', ')', 'int'),
@@ -698,7 +698,7 @@ call javaapi#class('Program', '', [
   \ javaapi#method(0,'bindSampler(', 'Sampler, int) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#class('BlendDstFunc', '', [
+call javaapi#class('BlendDstFunc', 'BlendDstFunc>', [
   \ javaapi#field(1,'DST_ALPHA', 'BlendDstFunc'),
   \ javaapi#field(1,'ONE', 'BlendDstFunc'),
   \ javaapi#field(1,'ONE_MINUS_DST_ALPHA', 'BlendDstFunc'),
@@ -746,7 +746,7 @@ call javaapi#class('Matrix4f', '', [
   \ javaapi#method(0,'transpose(', ')', 'void'),
   \ ])
 
-call javaapi#class('Builder', '', [
+call javaapi#class('Builder', 'BaseProgramBuilder', [
   \ javaapi#method(0,'Builder(', 'RenderScript)', 'public'),
   \ javaapi#method(0,'create(', ')', 'ProgramFragment'),
   \ ])
@@ -798,7 +798,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'ProgramStore'),
   \ ])
 
-call javaapi#class('FileA3D', '', [
+call javaapi#class('FileA3D', 'BaseObj', [
   \ javaapi#method(0,'getIndexEntryCount(', ')', 'int'),
   \ javaapi#method(0,'getIndexEntry(', 'int)', 'IndexEntry'),
   \ javaapi#method(1,'createFromAsset(', 'RenderScript, AssetManager, String)', 'FileA3D'),
@@ -807,10 +807,10 @@ call javaapi#class('FileA3D', '', [
   \ javaapi#method(1,'createFromResource(', 'RenderScript, Resources, int)', 'FileA3D'),
   \ ])
 
-call javaapi#class('ScriptC', '', [
+call javaapi#class('ScriptC', 'Script', [
   \ ])
 
-call javaapi#class('RSSurfaceView', '', [
+call javaapi#class('RSSurfaceView', 'SurfaceView', [
   \ javaapi#method(0,'RSSurfaceView(', 'Context)', 'public'),
   \ javaapi#method(0,'RSSurfaceView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'surfaceCreated(', 'SurfaceHolder)', 'void'),
@@ -837,7 +837,7 @@ call javaapi#class('Double3', '', [
   \ javaapi#method(0,'Double3(', 'double, double, double)', 'public'),
   \ ])
 
-call javaapi#class('Font', '', [
+call javaapi#class('Font', 'BaseObj', [
   \ javaapi#method(1,'createFromFile(', 'RenderScript, Resources, String, float)', 'Font'),
   \ javaapi#method(1,'createFromFile(', 'RenderScript, Resources, File, float)', 'Font'),
   \ javaapi#method(1,'createFromAsset(', 'RenderScript, Resources, String, float)', 'Font'),
@@ -845,7 +845,7 @@ call javaapi#class('Font', '', [
   \ javaapi#method(1,'create(', 'RenderScript, Resources, String, Style, float)', 'Font'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicYuvToRGB', '', [
+call javaapi#class('ScriptIntrinsicYuvToRGB', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicYuvToRGB'),
   \ javaapi#method(0,'setInput(', 'Allocation)', 'void'),
   \ javaapi#method(0,'forEach(', 'Allocation)', 'void'),
@@ -853,10 +853,10 @@ call javaapi#class('ScriptIntrinsicYuvToRGB', '', [
   \ javaapi#method(0,'getFieldID_Input(', ')', 'FieldID'),
   \ ])
 
-call javaapi#class('ScriptIntrinsic', '', [
+call javaapi#class('ScriptIntrinsic', 'Script', [
   \ ])
 
-call javaapi#class('ProgramFragmentFixedFunction', '', [
+call javaapi#class('ProgramFragmentFixedFunction', 'ProgramFragment', [
   \ ])
 
 call javaapi#class('Long2', '', [
@@ -866,7 +866,7 @@ call javaapi#class('Long2', '', [
   \ javaapi#method(0,'Long2(', 'long, long)', 'public'),
   \ ])
 
-call javaapi#class('RenderScriptGL', '', [
+call javaapi#class('RenderScriptGL', 'RenderScript', [
   \ javaapi#method(0,'RenderScriptGL(', 'Context, SurfaceConfig)', 'public'),
   \ javaapi#method(0,'setSurface(', 'SurfaceHolder, int, int)', 'void'),
   \ javaapi#method(0,'setSurfaceTexture(', 'SurfaceTexture, int, int)', 'void'),
@@ -881,7 +881,7 @@ call javaapi#class('RenderScriptGL', '', [
   \ javaapi#method(0,'bindProgramVertex(', 'ProgramVertex)', 'void'),
   \ ])
 
-call javaapi#class('ProgramStore', '', [
+call javaapi#class('ProgramStore', 'BaseObj', [
   \ javaapi#method(0,'getDepthFunc(', ')', 'DepthFunc'),
   \ javaapi#method(0,'isDepthMaskEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'isColorMaskRedEnabled(', ')', 'boolean'),
@@ -920,7 +920,7 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'Type'),
   \ ])
 
-call javaapi#class('AllocationAdapter', '', [
+call javaapi#class('AllocationAdapter', 'Allocation', [
   \ javaapi#method(0,'setLOD(', 'int)', 'void'),
   \ javaapi#method(0,'setFace(', 'CubemapFace)', 'void'),
   \ javaapi#method(0,'setY(', 'int)', 'void'),
@@ -930,7 +930,7 @@ call javaapi#class('AllocationAdapter', '', [
   \ javaapi#method(0,'resize(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('Priority', '', [
+call javaapi#class('Priority', 'Priority>', [
   \ javaapi#field(1,'LOW', 'Priority'),
   \ javaapi#field(1,'NORMAL', 'Priority'),
   \ javaapi#method(1,'values(', ')', 'Priority[]'),
@@ -944,13 +944,13 @@ call javaapi#class('Builder', '', [
   \ javaapi#method(0,'create(', ')', 'ProgramRaster'),
   \ ])
 
-call javaapi#class('ScriptGroup', '', [
+call javaapi#class('ScriptGroup', 'BaseObj', [
   \ javaapi#method(0,'setInput(', 'KernelID, Allocation)', 'void'),
   \ javaapi#method(0,'setOutput(', 'KernelID, Allocation)', 'void'),
   \ javaapi#method(0,'execute(', ')', 'void'),
   \ ])
 
-call javaapi#class('Element', '', [
+call javaapi#class('Element', 'BaseObj', [
   \ javaapi#method(0,'getBytesSize(', ')', 'int'),
   \ javaapi#method(0,'getVectorSize(', ')', 'int'),
   \ javaapi#method(0,'isComplex(', ')', 'boolean'),
@@ -1035,11 +1035,11 @@ call javaapi#class('Int2', '', [
   \ javaapi#method(0,'Int2(', 'int, int)', 'public'),
   \ ])
 
-call javaapi#class('RSIllegalArgumentException', '', [
+call javaapi#class('RSIllegalArgumentException', 'RSRuntimeException', [
   \ javaapi#method(0,'RSIllegalArgumentException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ScriptIntrinsicColorMatrix', '', [
+call javaapi#class('ScriptIntrinsicColorMatrix', 'ScriptIntrinsic', [
   \ javaapi#method(1,'create(', 'RenderScript, Element)', 'ScriptIntrinsicColorMatrix'),
   \ javaapi#method(0,'setColorMatrix(', 'Matrix4f)', 'void'),
   \ javaapi#method(0,'setColorMatrix(', 'Matrix3f)', 'void'),
@@ -1050,7 +1050,7 @@ call javaapi#class('ScriptIntrinsicColorMatrix', '', [
   \ javaapi#method(0,'getKernelID(', ')', 'KernelID'),
   \ ])
 
-call javaapi#class('Script', '', [
+call javaapi#class('Script', 'BaseObj', [
   \ javaapi#method(0,'bindAllocation(', 'Allocation, int)', 'void'),
   \ javaapi#method(0,'setVar(', 'int, float)', 'void'),
   \ javaapi#method(0,'setVar(', 'int, double)', 'void'),

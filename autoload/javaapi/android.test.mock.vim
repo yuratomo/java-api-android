@@ -1,6 +1,6 @@
 call javaapi#namespace('android.test.mock')
 
-call javaapi#class('MockApplication', '', [
+call javaapi#class('MockApplication', 'Application', [
   \ javaapi#method(0,'MockApplication(', ')', 'public'),
   \ javaapi#method(0,'onCreate(', ')', 'void'),
   \ javaapi#method(0,'onTerminate(', ')', 'void'),
@@ -56,7 +56,7 @@ call javaapi#class('MockDialogInterface', 'DialogInterface', [
   \ javaapi#method(0,'dismiss(', ')', 'void'),
   \ ])
 
-call javaapi#class('MockPackageManager', '', [
+call javaapi#class('MockPackageManager', 'PackageManager', [
   \ javaapi#method(0,'MockPackageManager(', ')', 'public'),
   \ javaapi#method(0,'getPackageInfo(', 'String, int) throws NameNotFoundException', 'PackageInfo'),
   \ javaapi#method(0,'currentToCanonicalPackageNames(', 'String[])', 'String[]'),
@@ -129,13 +129,13 @@ call javaapi#class('MockPackageManager', '', [
   \ javaapi#method(0,'extendVerificationTimeout(', 'int, int, long)', 'void'),
   \ ])
 
-call javaapi#class('MockContentResolver', '', [
+call javaapi#class('MockContentResolver', 'ContentResolver', [
   \ javaapi#method(0,'MockContentResolver(', ')', 'public'),
   \ javaapi#method(0,'addProvider(', 'String, ContentProvider)', 'void'),
   \ javaapi#method(0,'notifyChange(', 'Uri, ContentObserver, boolean)', 'void'),
   \ ])
 
-call javaapi#class('MockContext', '', [
+call javaapi#class('MockContext', 'Context', [
   \ javaapi#method(0,'MockContext(', ')', 'public'),
   \ javaapi#method(0,'getAssets(', ')', 'AssetManager'),
   \ javaapi#method(0,'getResources(', ')', 'Resources'),
@@ -224,7 +224,7 @@ call javaapi#class('MockContext', '', [
   \ javaapi#method(0,'isRestricted(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MockContentProvider', '', [
+call javaapi#class('MockContentProvider', 'ContentProvider', [
   \ javaapi#method(0,'MockContentProvider(', 'Context)', 'public'),
   \ javaapi#method(0,'MockContentProvider(', 'Context, String, String, PathPermission[])', 'public'),
   \ javaapi#method(0,'delete(', 'Uri, String, String[])', 'int'),
@@ -240,7 +240,7 @@ call javaapi#class('MockContentProvider', '', [
   \ javaapi#method(0,'openTypedAssetFile(', 'Uri, String, Bundle)', 'AssetFileDescriptor'),
   \ ])
 
-call javaapi#class('MockResources', '', [
+call javaapi#class('MockResources', 'Resources', [
   \ javaapi#method(0,'MockResources(', ')', 'public'),
   \ javaapi#method(0,'updateConfiguration(', 'Configuration, DisplayMetrics)', 'void'),
   \ javaapi#method(0,'getText(', 'int) throws NotFoundException', 'CharSequence'),

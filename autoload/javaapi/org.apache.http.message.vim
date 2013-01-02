@@ -75,7 +75,7 @@ call javaapi#class('AbstractHttpMessage', 'HttpMessage', [
   \ javaapi#method(0,'setParams(', 'HttpParams)', 'void'),
   \ ])
 
-call javaapi#class('BasicHttpRequest', '', [
+call javaapi#class('BasicHttpRequest', 'AbstractHttpMessage', [
   \ javaapi#method(0,'BasicHttpRequest(', 'String, String)', 'public'),
   \ javaapi#method(0,'BasicHttpRequest(', 'String, String, ProtocolVersion)', 'public'),
   \ javaapi#method(0,'BasicHttpRequest(', 'RequestLine)', 'public'),
@@ -133,7 +133,7 @@ call javaapi#class('BasicLineFormatter', 'LineFormatter', [
   \ javaapi#method(0,'formatHeader(', 'CharArrayBuffer, Header)', 'CharArrayBuffer'),
   \ ])
 
-call javaapi#class('BasicHttpResponse', '', [
+call javaapi#class('BasicHttpResponse', 'AbstractHttpMessage', [
   \ javaapi#method(0,'BasicHttpResponse(', 'StatusLine, ReasonPhraseCatalog, Locale)', 'public'),
   \ javaapi#method(0,'BasicHttpResponse(', 'StatusLine)', 'public'),
   \ javaapi#method(0,'BasicHttpResponse(', 'ProtocolVersion, int, String)', 'public'),
@@ -239,7 +239,7 @@ call javaapi#class('BasicHeader', 'Cloneable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('BasicHttpEntityEnclosingRequest', '', [
+call javaapi#class('BasicHttpEntityEnclosingRequest', 'BasicHttpRequest', [
   \ javaapi#method(0,'BasicHttpEntityEnclosingRequest(', 'String, String)', 'public'),
   \ javaapi#method(0,'BasicHttpEntityEnclosingRequest(', 'String, String, ProtocolVersion)', 'public'),
   \ javaapi#method(0,'BasicHttpEntityEnclosingRequest(', 'RequestLine)', 'public'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('java.nio.channels.spi')
 
-call javaapi#class('AbstractSelectableChannel', '', [
+call javaapi#class('AbstractSelectableChannel', 'SelectableChannel', [
   \ javaapi#method(0,'provider(', ')', 'SelectorProvider'),
   \ javaapi#method(0,'isRegistered(', ')', 'boolean'),
   \ javaapi#method(0,'keyFor(', 'Selector)', 'SelectionKey'),
@@ -10,7 +10,7 @@ call javaapi#class('AbstractSelectableChannel', '', [
   \ javaapi#method(0,'configureBlocking(', 'boolean) throws IOException', 'SelectableChannel'),
   \ ])
 
-call javaapi#class('AbstractSelector', '', [
+call javaapi#class('AbstractSelector', 'Selector', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'isOpen(', ')', 'boolean'),
   \ javaapi#method(0,'provider(', ')', 'SelectorProvider'),
@@ -27,7 +27,7 @@ call javaapi#class('SelectorProvider', '', [
   \ javaapi#method(0,'inheritedChannel(', ') throws IOException', 'Channel'),
   \ ])
 
-call javaapi#class('AbstractSelectionKey', '', [
+call javaapi#class('AbstractSelectionKey', 'SelectionKey', [
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
   \ javaapi#method(0,'cancel(', ')', 'void'),
   \ ])

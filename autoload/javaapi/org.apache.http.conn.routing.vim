@@ -17,7 +17,7 @@ call javaapi#interface('RouteInfo', '', [
   \ javaapi#method(0,'isSecure(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('LayerType', '', [
+call javaapi#class('LayerType', 'LayerType>', [
   \ javaapi#field(1,'LAYERED', 'LayerType'),
   \ javaapi#field(1,'PLAIN', 'LayerType'),
   \ javaapi#method(1,'values(', ')', 'LayerType[]'),
@@ -46,7 +46,7 @@ call javaapi#class('HttpRoute', 'Cloneable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('TunnelType', '', [
+call javaapi#class('TunnelType', 'TunnelType>', [
   \ javaapi#field(1,'PLAIN', 'TunnelType'),
   \ javaapi#field(1,'TUNNELLED', 'TunnelType'),
   \ javaapi#method(1,'values(', ')', 'TunnelType[]'),

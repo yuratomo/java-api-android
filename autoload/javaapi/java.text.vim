@@ -1,6 +1,6 @@
 call javaapi#namespace('java.text')
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'Field', [
   \ javaapi#field(1,'INTEGER', 'Field'),
   \ javaapi#field(1,'FRACTION', 'Field'),
   \ javaapi#field(1,'EXPONENT', 'Field'),
@@ -58,7 +58,7 @@ call javaapi#class('StringCharacterIterator', 'CharacterIterator', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SimpleDateFormat', '', [
+call javaapi#class('SimpleDateFormat', 'DateFormat', [
   \ javaapi#method(0,'SimpleDateFormat(', ')', 'public'),
   \ javaapi#method(0,'SimpleDateFormat(', 'String)', 'public'),
   \ javaapi#method(0,'SimpleDateFormat(', 'String, Locale)', 'public'),
@@ -79,7 +79,7 @@ call javaapi#class('SimpleDateFormat', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#interface('CharacterIterator', '', [
+call javaapi#interface('CharacterIterator', 'Cloneable', [
   \ javaapi#field(1,'DONE', 'char'),
   \ javaapi#method(0,'first(', ')', 'char'),
   \ javaapi#method(0,'last(', ')', 'char'),
@@ -93,7 +93,7 @@ call javaapi#interface('CharacterIterator', '', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('Form', '', [
+call javaapi#class('Form', 'Form>', [
   \ javaapi#field(1,'NFD', 'Form'),
   \ javaapi#field(1,'NFC', 'Form'),
   \ javaapi#field(1,'NFKD', 'Form'),
@@ -102,7 +102,7 @@ call javaapi#class('Form', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Form'),
   \ ])
 
-call javaapi#class('MessageFormat', '', [
+call javaapi#class('MessageFormat', 'Format', [
   \ javaapi#method(0,'MessageFormat(', 'String)', 'public'),
   \ javaapi#method(0,'MessageFormat(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'setLocale(', 'Locale)', 'void'),
@@ -136,7 +136,7 @@ call javaapi#class('Attribute', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DateFormat', '', [
+call javaapi#class('DateFormat', 'Format', [
   \ javaapi#field(1,'ERA_FIELD', 'int'),
   \ javaapi#field(1,'YEAR_FIELD', 'int'),
   \ javaapi#field(1,'MONTH_FIELD', 'int'),
@@ -252,7 +252,7 @@ call javaapi#class('Normalizer', '', [
   \ javaapi#method(1,'isNormalized(', 'CharSequence, Form)', 'boolean'),
   \ ])
 
-call javaapi#class('NumberFormat', '', [
+call javaapi#class('NumberFormat', 'Format', [
   \ javaapi#field(1,'INTEGER_FIELD', 'int'),
   \ javaapi#field(1,'FRACTION_FIELD', 'int'),
   \ javaapi#method(0,'format(', 'Object, StringBuffer, FieldPosition)', 'StringBuffer'),
@@ -295,7 +295,7 @@ call javaapi#class('NumberFormat', '', [
   \ javaapi#method(0,'setRoundingMode(', 'RoundingMode)', 'void'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'Attribute', [
   \ ])
 
 call javaapi#class('DecimalFormatSymbols', 'Serializable', [
@@ -353,7 +353,7 @@ call javaapi#class('AttributedString', '', [
   \ javaapi#method(0,'getIterator(', 'Attribute[], int, int)', 'AttributedCharacterIterator'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'Field', [
   \ javaapi#field(1,'ERA', 'Field'),
   \ javaapi#field(1,'YEAR', 'Field'),
   \ javaapi#field(1,'MONTH', 'Field'),
@@ -376,11 +376,11 @@ call javaapi#class('Field', '', [
   \ javaapi#method(0,'getCalendarField(', ')', 'int'),
   \ ])
 
-call javaapi#class('Field', '', [
+call javaapi#class('Field', 'Field', [
   \ javaapi#field(1,'ARGUMENT', 'Field'),
   \ ])
 
-call javaapi#class('ChoiceFormat', '', [
+call javaapi#class('ChoiceFormat', 'NumberFormat', [
   \ javaapi#method(0,'applyPattern(', 'String)', 'void'),
   \ javaapi#method(0,'toPattern(', ')', 'String'),
   \ javaapi#method(0,'ChoiceFormat(', 'String)', 'public'),
@@ -405,7 +405,7 @@ call javaapi#class('Annotation', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RuleBasedCollator', '', [
+call javaapi#class('RuleBasedCollator', 'Collator', [
   \ javaapi#method(0,'RuleBasedCollator(', 'String) throws ParseException', 'public'),
   \ javaapi#method(0,'getRules(', ')', 'String'),
   \ javaapi#method(0,'getCollationElementIterator(', 'String)', 'CollationElementIterator'),
@@ -424,7 +424,7 @@ call javaapi#class('CollationKey', 'CollationKey>', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'Exception', [
   \ javaapi#method(0,'ParseException(', 'String, int)', 'public'),
   \ javaapi#method(0,'getErrorOffset(', ')', 'int'),
   \ ])
@@ -455,7 +455,7 @@ call javaapi#class('BreakIterator', 'Cloneable', [
   \ javaapi#method(1,'getAvailableLocales(', ')', 'Locale[]'),
   \ ])
 
-call javaapi#class('DecimalFormat', '', [
+call javaapi#class('DecimalFormat', 'NumberFormat', [
   \ javaapi#method(0,'DecimalFormat(', ')', 'public'),
   \ javaapi#method(0,'DecimalFormat(', 'String)', 'public'),
   \ javaapi#method(0,'DecimalFormat(', 'String, DecimalFormatSymbols)', 'public'),
@@ -538,7 +538,7 @@ call javaapi#class('Collator', 'Cloneable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('AttributedCharacterIterator', '', [
+call javaapi#interface('AttributedCharacterIterator', 'CharacterIterator', [
   \ javaapi#method(0,'getRunStart(', ')', 'int'),
   \ javaapi#method(0,'getRunStart(', 'Attribute)', 'int'),
   \ javaapi#method(0,'getRunStart(', 'Set<? extends Attribute>)', 'int'),

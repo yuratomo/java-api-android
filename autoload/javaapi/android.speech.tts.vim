@@ -1,6 +1,6 @@
 call javaapi#namespace('android.speech.tts')
 
-call javaapi#class('TextToSpeechService', '', [
+call javaapi#class('TextToSpeechService', 'Service', [
   \ javaapi#method(0,'TextToSpeechService(', ')', 'public'),
   \ javaapi#method(0,'onCreate(', ')', 'void'),
   \ javaapi#method(0,'onDestroy(', ')', 'void'),

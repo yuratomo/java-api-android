@@ -1,6 +1,6 @@
 call javaapi#namespace('android.widget')
 
-call javaapi#class('AdapterView<T', '', [
+call javaapi#class('AdapterView<T', 'Adapter>', [
   \ javaapi#field(1,'ITEM_VIEW_TYPE_IGNORE', 'int'),
   \ javaapi#field(1,'ITEM_VIEW_TYPE_HEADER_OR_FOOTER', 'int'),
   \ javaapi#field(1,'INVALID_POSITION', 'int'),
@@ -100,7 +100,7 @@ call javaapi#interface('OnQueryTextListener', '', [
   \ javaapi#method(0,'onQueryTextChange(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('ZoomButton', '', [
+call javaapi#class('ZoomButton', 'ImageButton', [
   \ javaapi#method(0,'ZoomButton(', 'Context)', 'public'),
   \ javaapi#method(0,'ZoomButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ZoomButton(', 'Context, AttributeSet, int)', 'public'),
@@ -118,14 +118,14 @@ call javaapi#interface('OnChildClickListener', '', [
   \ javaapi#method(0,'onChildClick(', 'ExpandableListView, View, int, int, long)', 'boolean'),
   \ ])
 
-call javaapi#class('DigitalClock', '', [
+call javaapi#class('DigitalClock', 'TextView', [
   \ javaapi#method(0,'DigitalClock(', 'Context)', 'public'),
   \ javaapi#method(0,'DigitalClock(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'onInitializeAccessibilityEvent(', 'AccessibilityEvent)', 'void'),
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('GridLayout', '', [
+call javaapi#class('GridLayout', 'ViewGroup', [
   \ javaapi#field(1,'HORIZONTAL', 'int'),
   \ javaapi#field(1,'VERTICAL', 'int'),
   \ javaapi#field(1,'UNDEFINED', 'int'),
@@ -172,7 +172,7 @@ call javaapi#interface('OnTabChangeListener', '', [
   \ javaapi#method(0,'onTabChanged(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('LinearLayout', '', [
+call javaapi#class('LinearLayout', 'ViewGroup', [
   \ javaapi#field(1,'HORIZONTAL', 'int'),
   \ javaapi#field(1,'VERTICAL', 'int'),
   \ javaapi#field(1,'SHOW_DIVIDER_NONE', 'int'),
@@ -209,7 +209,7 @@ call javaapi#class('LinearLayout', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('CheckedTextView', '', [
+call javaapi#class('CheckedTextView', 'TextView', [
   \ javaapi#method(0,'CheckedTextView(', 'Context)', 'public'),
   \ javaapi#method(0,'CheckedTextView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'CheckedTextView(', 'Context, AttributeSet, int)', 'public'),
@@ -234,7 +234,7 @@ call javaapi#interface('TabContentFactory', '', [
   \ javaapi#method(0,'createTabContent(', 'String)', 'View'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'MarginLayoutParams', [
   \ javaapi#field(0,'gravity', 'int'),
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
@@ -243,7 +243,7 @@ call javaapi#class('LayoutParams', '', [
   \ javaapi#method(0,'LayoutParams(', 'MarginLayoutParams)', 'public'),
   \ ])
 
-call javaapi#class('AbsSeekBar', '', [
+call javaapi#class('AbsSeekBar', 'ProgressBar', [
   \ javaapi#method(0,'AbsSeekBar(', 'Context)', 'public'),
   \ javaapi#method(0,'AbsSeekBar(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AbsSeekBar(', 'Context, AttributeSet, int)', 'public'),
@@ -290,7 +290,7 @@ call javaapi#class('OverScroller', '', [
   \ javaapi#method(0,'abortAnimation(', ')', 'void'),
   \ ])
 
-call javaapi#class('SavedState', '', [
+call javaapi#class('SavedState', 'BaseSavedState', [
   \ javaapi#field(1,'CREATOR', 'SavedState>'),
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
@@ -355,7 +355,7 @@ call javaapi#class('ListPopupWindow', '', [
   \ javaapi#method(0,'onKeyPreIme(', 'int, KeyEvent)', 'boolean'),
   \ ])
 
-call javaapi#class('AbsoluteLayout', '', [
+call javaapi#class('AbsoluteLayout', 'ViewGroup', [
   \ javaapi#method(0,'AbsoluteLayout(', 'Context)', 'public'),
   \ javaapi#method(0,'AbsoluteLayout(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AbsoluteLayout(', 'Context, AttributeSet, int)', 'public'),
@@ -390,7 +390,7 @@ call javaapi#interface('Tokenizer', '', [
   \ javaapi#method(0,'terminateToken(', 'CharSequence)', 'CharSequence'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#field(0,'column', 'int'),
   \ javaapi#field(0,'span', 'int'),
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
@@ -410,7 +410,7 @@ call javaapi#interface('OnItemClickListener', '', [
   \ javaapi#method(0,'onItemClick(', 'AdapterView<?>, View, int, long)', 'void'),
   \ ])
 
-call javaapi#class('RadioButton', '', [
+call javaapi#class('RadioButton', 'CompoundButton', [
   \ javaapi#method(0,'RadioButton(', 'Context)', 'public'),
   \ javaapi#method(0,'RadioButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'RadioButton(', 'Context, AttributeSet, int)', 'public'),
@@ -419,7 +419,7 @@ call javaapi#class('RadioButton', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#interface('WrapperListAdapter', '', [
+call javaapi#interface('WrapperListAdapter', 'ListAdapter', [
   \ javaapi#method(0,'getWrappedAdapter(', ')', 'ListAdapter'),
   \ ])
 
@@ -428,7 +428,7 @@ call javaapi#interface('OnDrawerScrollListener', '', [
   \ javaapi#method(0,'onScrollEnded(', ')', 'void'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'MarginLayoutParams', [
   \ javaapi#field(0,'rowSpec', 'Spec'),
   \ javaapi#field(0,'columnSpec', 'Spec'),
   \ javaapi#method(0,'LayoutParams(', 'Spec, Spec)', 'public'),
@@ -442,7 +442,7 @@ call javaapi#class('LayoutParams', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('RemoteView', '', [
+call javaapi#interface('RemoteView', 'Annotation', [
   \ ])
 
 call javaapi#interface('Checkable', '', [
@@ -451,7 +451,7 @@ call javaapi#interface('Checkable', '', [
   \ javaapi#method(0,'toggle(', ')', 'void'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#field(0,'x', 'int'),
   \ javaapi#field(0,'y', 'int'),
   \ javaapi#method(0,'LayoutParams(', 'int, int, int, int)', 'public'),
@@ -469,7 +469,7 @@ call javaapi#interface('OnDrawerCloseListener', '', [
   \ javaapi#method(0,'onDrawerClosed(', ')', 'void'),
   \ ])
 
-call javaapi#class('Chronometer', '', [
+call javaapi#class('Chronometer', 'TextView', [
   \ javaapi#method(0,'Chronometer(', 'Context)', 'public'),
   \ javaapi#method(0,'Chronometer(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'Chronometer(', 'Context, AttributeSet, int)', 'public'),
@@ -485,7 +485,7 @@ call javaapi#class('Chronometer', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('NumberPicker', '', [
+call javaapi#class('NumberPicker', 'LinearLayout', [
   \ javaapi#method(0,'NumberPicker(', 'Context)', 'public'),
   \ javaapi#method(0,'NumberPicker(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'NumberPicker(', 'Context, AttributeSet, int)', 'public'),
@@ -516,7 +516,7 @@ call javaapi#class('NumberPicker', '', [
   \ javaapi#method(0,'getAccessibilityNodeProvider(', ')', 'AccessibilityNodeProvider'),
   \ ])
 
-call javaapi#interface('MultiChoiceModeListener', '', [
+call javaapi#interface('MultiChoiceModeListener', 'Callback', [
   \ javaapi#method(0,'onItemCheckedStateChanged(', 'ActionMode, int, long, boolean)', 'void'),
   \ ])
 
@@ -524,7 +524,7 @@ call javaapi#interface('Filterable', '', [
   \ javaapi#method(0,'getFilter(', ')', 'Filter'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int, float)', 'public'),
@@ -544,13 +544,13 @@ call javaapi#interface('RemoteViewsFactory', '', [
   \ javaapi#method(0,'hasStableIds(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'LayoutParams)', 'public'),
   \ ])
 
-call javaapi#class('HorizontalScrollView', '', [
+call javaapi#class('HorizontalScrollView', 'FrameLayout', [
   \ javaapi#method(0,'HorizontalScrollView(', 'Context)', 'public'),
   \ javaapi#method(0,'HorizontalScrollView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'HorizontalScrollView(', 'Context, AttributeSet, int)', 'public'),
@@ -588,7 +588,7 @@ call javaapi#class('HorizontalScrollView', '', [
   \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'MarginLayoutParams', [
   \ javaapi#field(0,'weight', 'float'),
   \ javaapi#field(0,'gravity', 'int'),
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
@@ -599,7 +599,7 @@ call javaapi#class('LayoutParams', '', [
   \ javaapi#method(0,'debug(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('TextView', '', [
+call javaapi#class('TextView', 'View', [
   \ javaapi#method(0,'TextView(', 'Context)', 'public'),
   \ javaapi#method(0,'TextView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TextView(', 'Context, AttributeSet, int)', 'public'),
@@ -832,7 +832,7 @@ call javaapi#interface('HeterogeneousExpandableList', '', [
   \ javaapi#method(0,'getChildTypeCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('TextSwitcher', '', [
+call javaapi#class('TextSwitcher', 'ViewSwitcher', [
   \ javaapi#method(0,'TextSwitcher(', 'Context)', 'public'),
   \ javaapi#method(0,'TextSwitcher(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'addView(', 'View, int, LayoutParams)', 'void'),
@@ -842,7 +842,7 @@ call javaapi#class('TextSwitcher', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('AdapterViewFlipper', '', [
+call javaapi#class('AdapterViewFlipper', 'AdapterViewAnimator', [
   \ javaapi#method(0,'AdapterViewFlipper(', 'Context)', 'public'),
   \ javaapi#method(0,'AdapterViewFlipper(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setAdapter(', 'Adapter)', 'void'),
@@ -860,7 +860,7 @@ call javaapi#class('AdapterViewFlipper', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('SimpleAdapter', '', [
+call javaapi#class('SimpleAdapter', 'BaseAdapter', [
   \ javaapi#method(0,'SimpleAdapter(', 'Context, List<? extends Map<String, ?>>, int, String[], int[])', 'public'),
   \ javaapi#method(0,'getCount(', ')', 'int'),
   \ javaapi#method(0,'getItem(', 'int)', 'Object'),
@@ -876,7 +876,7 @@ call javaapi#class('SimpleAdapter', '', [
   \ javaapi#method(0,'getFilter(', ')', 'Filter'),
   \ ])
 
-call javaapi#class('TimePicker', '', [
+call javaapi#class('TimePicker', 'FrameLayout', [
   \ javaapi#method(0,'TimePicker(', 'Context)', 'public'),
   \ javaapi#method(0,'TimePicker(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TimePicker(', 'Context, AttributeSet, int)', 'public'),
@@ -900,7 +900,7 @@ call javaapi#interface('OnItemLongClickListener', '', [
   \ javaapi#method(0,'onItemLongClick(', 'AdapterView<?>, View, int, long)', 'boolean'),
   \ ])
 
-call javaapi#class('CompoundButton', '', [
+call javaapi#class('CompoundButton', 'Button', [
   \ javaapi#method(0,'CompoundButton(', 'Context)', 'public'),
   \ javaapi#method(0,'CompoundButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'CompoundButton(', 'Context, AttributeSet, int)', 'public'),
@@ -920,12 +920,12 @@ call javaapi#class('CompoundButton', '', [
   \ javaapi#method(0,'onRestoreInstanceState(', 'Parcelable)', 'void'),
   \ ])
 
-call javaapi#class('ActionException', '', [
+call javaapi#class('ActionException', 'RuntimeException', [
   \ javaapi#method(0,'ActionException(', 'Exception)', 'public'),
   \ javaapi#method(0,'ActionException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('BufferType', '', [
+call javaapi#class('BufferType', 'BufferType>', [
   \ javaapi#field(1,'EDITABLE', 'BufferType'),
   \ javaapi#field(1,'NORMAL', 'BufferType'),
   \ javaapi#field(1,'SPANNABLE', 'BufferType'),
@@ -945,7 +945,7 @@ call javaapi#interface('OnShareTargetSelectedListener', '', [
   \ javaapi#method(0,'onShareTargetSelected(', 'ShareActionProvider, Intent)', 'boolean'),
   \ ])
 
-call javaapi#class('ScrollView', '', [
+call javaapi#class('ScrollView', 'FrameLayout', [
   \ javaapi#method(0,'ScrollView(', 'Context)', 'public'),
   \ javaapi#method(0,'ScrollView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ScrollView(', 'Context, AttributeSet, int)', 'public'),
@@ -983,7 +983,7 @@ call javaapi#class('ScrollView', '', [
   \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
   \ ])
 
-call javaapi#class('CursorTreeAdapter', '', [
+call javaapi#class('CursorTreeAdapter', 'BaseExpandableListAdapter', [
   \ javaapi#method(0,'CursorTreeAdapter(', 'Cursor, Context)', 'public'),
   \ javaapi#method(0,'CursorTreeAdapter(', 'Cursor, Context, boolean)', 'public'),
   \ javaapi#method(0,'setGroupCursor(', 'Cursor)', 'void'),
@@ -1037,7 +1037,7 @@ call javaapi#interface('CursorToStringConverter', '', [
   \ javaapi#method(0,'convertToString(', 'Cursor)', 'CharSequence'),
   \ ])
 
-call javaapi#class('RelativeLayout', '', [
+call javaapi#class('RelativeLayout', 'ViewGroup', [
   \ javaapi#field(1,'TRUE', 'int'),
   \ javaapi#field(1,'LEFT_OF', 'int'),
   \ javaapi#field(1,'RIGHT_OF', 'int'),
@@ -1079,7 +1079,7 @@ call javaapi#class('RelativeLayout', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('ScaleType', '', [
+call javaapi#class('ScaleType', 'ScaleType>', [
   \ javaapi#field(1,'CENTER', 'ScaleType'),
   \ javaapi#field(1,'CENTER_CROP', 'ScaleType'),
   \ javaapi#field(1,'CENTER_INSIDE', 'ScaleType'),
@@ -1092,7 +1092,7 @@ call javaapi#class('ScaleType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'ScaleType'),
   \ ])
 
-call javaapi#class('SimpleCursorTreeAdapter', '', [
+call javaapi#class('SimpleCursorTreeAdapter', 'ResourceCursorTreeAdapter', [
   \ javaapi#method(0,'SimpleCursorTreeAdapter(', 'Context, Cursor, int, int, String[], int[], int, int, String[], int[])', 'public'),
   \ javaapi#method(0,'SimpleCursorTreeAdapter(', 'Context, Cursor, int, int, String[], int[], int, String[], int[])', 'public'),
   \ javaapi#method(0,'SimpleCursorTreeAdapter(', 'Context, Cursor, int, String[], int[], int, String[], int[])', 'public'),
@@ -1162,7 +1162,7 @@ call javaapi#interface('ViewFactory', '', [
   \ javaapi#method(0,'makeView(', ')', 'View'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'MarginLayoutParams', [
   \ javaapi#field(0,'alignWithParent', 'boolean'),
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
@@ -1176,7 +1176,7 @@ call javaapi#class('LayoutParams', '', [
   \ javaapi#method(0,'resolveLayoutDirection(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('ExpandableListView', '', [
+call javaapi#class('ExpandableListView', 'ListView', [
   \ javaapi#field(1,'PACKED_POSITION_TYPE_GROUP', 'int'),
   \ javaapi#field(1,'PACKED_POSITION_TYPE_CHILD', 'int'),
   \ javaapi#field(1,'PACKED_POSITION_TYPE_NULL', 'int'),
@@ -1223,7 +1223,7 @@ call javaapi#class('ExpandableListView', '', [
   \ javaapi#method(0,'getAdapter(', ')', 'Adapter'),
   \ ])
 
-call javaapi#class('ToggleButton', '', [
+call javaapi#class('ToggleButton', 'CompoundButton', [
   \ javaapi#method(0,'ToggleButton(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'ToggleButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ToggleButton(', 'Context)', 'public'),
@@ -1245,7 +1245,7 @@ call javaapi#interface('FilterQueryProvider', '', [
   \ javaapi#method(0,'runQuery(', 'CharSequence)', 'Cursor'),
   \ ])
 
-call javaapi#class('ImageView', '', [
+call javaapi#class('ImageView', 'View', [
   \ javaapi#method(0,'ImageView(', 'Context)', 'public'),
   \ javaapi#method(0,'ImageView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ImageView(', 'Context, AttributeSet, int)', 'public'),
@@ -1308,7 +1308,7 @@ call javaapi#interface('OnZoomListener', '', [
   \ javaapi#method(0,'onZoom(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('TabHost', '', [
+call javaapi#class('TabHost', 'FrameLayout', [
   \ javaapi#method(0,'TabHost(', 'Context)', 'public'),
   \ javaapi#method(0,'TabHost(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'newTabSpec(', 'String)', 'TabSpec'),
@@ -1367,7 +1367,7 @@ call javaapi#class('Scroller', '', [
   \ javaapi#method(0,'setFinalY(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('ImageSwitcher', '', [
+call javaapi#class('ImageSwitcher', 'ViewSwitcher', [
   \ javaapi#method(0,'ImageSwitcher(', 'Context)', 'public'),
   \ javaapi#method(0,'ImageSwitcher(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setImageResource(', 'int)', 'void'),
@@ -1377,7 +1377,7 @@ call javaapi#class('ImageSwitcher', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('SeekBar', '', [
+call javaapi#class('SeekBar', 'AbsSeekBar', [
   \ javaapi#method(0,'SeekBar(', 'Context)', 'public'),
   \ javaapi#method(0,'SeekBar(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'SeekBar(', 'Context, AttributeSet, int)', 'public'),
@@ -1458,7 +1458,7 @@ call javaapi#class('FixedViewInfo', '', [
   \ javaapi#method(0,'FixedViewInfo(', 'ListView)', 'public'),
   \ ])
 
-call javaapi#class('Switch', '', [
+call javaapi#class('Switch', 'CompoundButton', [
   \ javaapi#method(0,'Switch(', 'Context)', 'public'),
   \ javaapi#method(0,'Switch(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'Switch(', 'Context, AttributeSet, int)', 'public'),
@@ -1516,7 +1516,7 @@ call javaapi#interface('OnDateChangedListener', '', [
   \ javaapi#method(0,'onDateChanged(', 'DatePicker, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('DatePicker', '', [
+call javaapi#class('DatePicker', 'FrameLayout', [
   \ javaapi#method(0,'DatePicker(', 'Context)', 'public'),
   \ javaapi#method(0,'DatePicker(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'DatePicker(', 'Context, AttributeSet, int)', 'public'),
@@ -1548,7 +1548,7 @@ call javaapi#interface('SectionIndexer', '', [
   \ javaapi#method(0,'getSectionForPosition(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int, int)', 'public'),
@@ -1570,7 +1570,7 @@ call javaapi#class('BaseAdapter', 'SpinnerAdapter', [
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('VideoView', '', [
+call javaapi#class('VideoView', 'SurfaceView', [
   \ javaapi#method(0,'VideoView(', 'Context)', 'public'),
   \ javaapi#method(0,'VideoView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'VideoView(', 'Context, AttributeSet, int)', 'public'),
@@ -1606,7 +1606,7 @@ call javaapi#interface('OnGroupCollapseListener', '', [
   \ javaapi#method(0,'onGroupCollapse(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('Spinner', '', [
+call javaapi#class('Spinner', 'AbsSpinner', [
   \ javaapi#field(1,'MODE_DIALOG', 'int'),
   \ javaapi#field(1,'MODE_DROPDOWN', 'int'),
   \ javaapi#method(0,'Spinner(', 'Context)', 'public'),
@@ -1696,7 +1696,7 @@ call javaapi#class('PopupWindow', '', [
   \ javaapi#method(0,'update(', 'View, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('ImageButton', '', [
+call javaapi#class('ImageButton', 'ImageView', [
   \ javaapi#method(0,'ImageButton(', 'Context)', 'public'),
   \ javaapi#method(0,'ImageButton(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ImageButton(', 'Context, AttributeSet, int)', 'public'),
@@ -1704,7 +1704,7 @@ call javaapi#class('ImageButton', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('ZoomControls', '', [
+call javaapi#class('ZoomControls', 'LinearLayout', [
   \ javaapi#method(0,'ZoomControls(', 'Context)', 'public'),
   \ javaapi#method(0,'ZoomControls(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setOnZoomInClickListener(', 'OnClickListener)', 'void'),
@@ -1720,7 +1720,7 @@ call javaapi#class('ZoomControls', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('ListView', '', [
+call javaapi#class('ListView', 'AbsListView', [
   \ javaapi#method(0,'ListView(', 'Context)', 'public'),
   \ javaapi#method(0,'ListView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ListView(', 'Context, AttributeSet, int)', 'public'),
@@ -1767,7 +1767,7 @@ call javaapi#class('ListView', '', [
   \ javaapi#method(0,'getAdapter(', ')', 'Adapter'),
   \ ])
 
-call javaapi#class('AbsSpinner', '', [
+call javaapi#class('AbsSpinner', 'SpinnerAdapter>', [
   \ javaapi#method(0,'AbsSpinner(', 'Context)', 'public'),
   \ javaapi#method(0,'AbsSpinner(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AbsSpinner(', 'Context, AttributeSet, int)', 'public'),
@@ -1793,7 +1793,7 @@ call javaapi#class('FilterResults', '', [
   \ javaapi#method(0,'FilterResults(', ')', 'public'),
   \ ])
 
-call javaapi#class('MultiAutoCompleteTextView', '', [
+call javaapi#class('MultiAutoCompleteTextView', 'AutoCompleteTextView', [
   \ javaapi#method(0,'MultiAutoCompleteTextView(', 'Context)', 'public'),
   \ javaapi#method(0,'MultiAutoCompleteTextView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'MultiAutoCompleteTextView(', 'Context, AttributeSet, int)', 'public'),
@@ -1811,13 +1811,13 @@ call javaapi#class('Filter', '', [
   \ javaapi#method(0,'convertResultToString(', 'Object)', 'CharSequence'),
   \ ])
 
-call javaapi#class('RemoteViewsService', '', [
+call javaapi#class('RemoteViewsService', 'Service', [
   \ javaapi#method(0,'RemoteViewsService(', ')', 'public'),
   \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),
   \ javaapi#method(0,'onGetViewFactory(', 'Intent)', 'RemoteViewsFactory'),
   \ ])
 
-call javaapi#class('RatingBar', '', [
+call javaapi#class('RatingBar', 'AbsSeekBar', [
   \ javaapi#method(0,'RatingBar(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'RatingBar(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'RatingBar(', 'Context)', 'public'),
@@ -1836,7 +1836,7 @@ call javaapi#class('RatingBar', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('RadioGroup', '', [
+call javaapi#class('RadioGroup', 'LinearLayout', [
   \ javaapi#method(0,'RadioGroup(', 'Context)', 'public'),
   \ javaapi#method(0,'RadioGroup(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setOnHierarchyChangeListener(', 'OnHierarchyChangeListener)', 'void'),
@@ -1852,7 +1852,7 @@ call javaapi#class('RadioGroup', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('ArrayAdapter<T>', '', [
+call javaapi#class('ArrayAdapter<T>', 'BaseAdapter', [
   \ javaapi#method(0,'ArrayAdapter(', 'Context, int)', 'public'),
   \ javaapi#method(0,'ArrayAdapter(', 'Context, int, int)', 'public'),
   \ javaapi#method(0,'ArrayAdapter(', 'Context, int, T[])', 'public'),
@@ -1888,7 +1888,7 @@ call javaapi#interface('OnDrawerOpenListener', '', [
   \ javaapi#method(0,'onDrawerOpened(', ')', 'void'),
   \ ])
 
-call javaapi#class('SimpleExpandableListAdapter', '', [
+call javaapi#class('SimpleExpandableListAdapter', 'BaseExpandableListAdapter', [
   \ javaapi#method(0,'SimpleExpandableListAdapter(', 'Context, List<? extends Map<String, ?>>, int, String[], int[], List<? extends List<? extends Map<String, ?>>>, int, String[], int[])', 'public'),
   \ javaapi#method(0,'SimpleExpandableListAdapter(', 'Context, List<? extends Map<String, ?>>, int, int, String[], int[], List<? extends List<? extends Map<String, ?>>>, int, String[], int[])', 'public'),
   \ javaapi#method(0,'SimpleExpandableListAdapter(', 'Context, List<? extends Map<String, ?>>, int, int, String[], int[], List<? extends List<? extends Map<String, ?>>>, int, int, String[], int[])', 'public'),
@@ -1906,7 +1906,7 @@ call javaapi#class('SimpleExpandableListAdapter', '', [
   \ javaapi#method(0,'hasStableIds(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Gallery', '', [
+call javaapi#class('Gallery', 'AbsSpinner', [
   \ javaapi#method(0,'Gallery(', 'Context)', 'public'),
   \ javaapi#method(0,'Gallery(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'Gallery(', 'Context, AttributeSet, int)', 'public'),
@@ -1934,7 +1934,7 @@ call javaapi#class('Gallery', '', [
   \ javaapi#method(0,'performAccessibilityAction(', 'int, Bundle)', 'boolean'),
   \ ])
 
-call javaapi#class('AbsListView', '', [
+call javaapi#class('AbsListView', 'ListAdapter>', [
   \ javaapi#field(1,'TRANSCRIPT_MODE_DISABLED', 'int'),
   \ javaapi#field(1,'TRANSCRIPT_MODE_NORMAL', 'int'),
   \ javaapi#field(1,'TRANSCRIPT_MODE_ALWAYS_SCROLL', 'int'),
@@ -2041,7 +2041,7 @@ call javaapi#class('AbsListView', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('ViewFlipper', '', [
+call javaapi#class('ViewFlipper', 'ViewAnimator', [
   \ javaapi#method(0,'ViewFlipper(', 'Context)', 'public'),
   \ javaapi#method(0,'ViewFlipper(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setFlipInterval(', 'int)', 'void'),
@@ -2054,7 +2054,7 @@ call javaapi#class('ViewFlipper', '', [
   \ javaapi#method(0,'isAutoStart(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('AutoCompleteTextView', '', [
+call javaapi#class('AutoCompleteTextView', 'EditText', [
   \ javaapi#method(0,'AutoCompleteTextView(', 'Context)', 'public'),
   \ javaapi#method(0,'AutoCompleteTextView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AutoCompleteTextView(', 'Context, AttributeSet, int)', 'public'),
@@ -2106,7 +2106,7 @@ call javaapi#class('AutoCompleteTextView', '', [
   \ javaapi#method(0,'performValidation(', ')', 'void'),
   \ ])
 
-call javaapi#class('ShareActionProvider', '', [
+call javaapi#class('ShareActionProvider', 'ActionProvider', [
   \ javaapi#field(1,'DEFAULT_SHARE_HISTORY_FILE_NAME', 'String'),
   \ javaapi#method(0,'ShareActionProvider(', 'Context)', 'public'),
   \ javaapi#method(0,'setOnShareTargetSelectedListener(', 'OnShareTargetSelectedListener)', 'void'),
@@ -2126,7 +2126,7 @@ call javaapi#interface('OnItemSelectedListener', '', [
   \ javaapi#method(0,'onNothingSelected(', 'AdapterView<?>)', 'void'),
   \ ])
 
-call javaapi#class('LayoutParams', '', [
+call javaapi#class('LayoutParams', 'LayoutParams', [
   \ javaapi#method(0,'LayoutParams(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int)', 'public'),
   \ javaapi#method(0,'LayoutParams(', 'int, int, float)', 'public'),
@@ -2139,7 +2139,7 @@ call javaapi#interface('OnEditorActionListener', '', [
   \ javaapi#method(0,'onEditorAction(', 'TextView, int, KeyEvent)', 'boolean'),
   \ ])
 
-call javaapi#class('GridView', '', [
+call javaapi#class('GridView', 'AbsListView', [
   \ javaapi#field(1,'NO_STRETCH', 'int'),
   \ javaapi#field(1,'STRETCH_SPACING', 'int'),
   \ javaapi#field(1,'STRETCH_COLUMN_WIDTH', 'int'),
@@ -2181,7 +2181,7 @@ call javaapi#interface('RecyclerListener', '', [
   \ javaapi#method(0,'onMovedToScrapHeap(', 'View)', 'void'),
   \ ])
 
-call javaapi#class('FrameLayout', '', [
+call javaapi#class('FrameLayout', 'ViewGroup', [
   \ javaapi#method(0,'FrameLayout(', 'Context)', 'public'),
   \ javaapi#method(0,'FrameLayout(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'FrameLayout(', 'Context, AttributeSet, int)', 'public'),
@@ -2206,7 +2206,7 @@ call javaapi#interface('OnDismissListener', '', [
   \ javaapi#method(0,'onDismiss(', 'PopupMenu)', 'void'),
   \ ])
 
-call javaapi#class('ViewSwitcher', '', [
+call javaapi#class('ViewSwitcher', 'ViewAnimator', [
   \ javaapi#method(0,'ViewSwitcher(', 'Context)', 'public'),
   \ javaapi#method(0,'ViewSwitcher(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'addView(', 'View, int, LayoutParams)', 'void'),
@@ -2217,7 +2217,7 @@ call javaapi#class('ViewSwitcher', '', [
   \ javaapi#method(0,'reset(', ')', 'void'),
   \ ])
 
-call javaapi#class('ResourceCursorTreeAdapter', '', [
+call javaapi#class('ResourceCursorTreeAdapter', 'CursorTreeAdapter', [
   \ javaapi#method(0,'ResourceCursorTreeAdapter(', 'Context, Cursor, int, int, int, int)', 'public'),
   \ javaapi#method(0,'ResourceCursorTreeAdapter(', 'Context, Cursor, int, int, int)', 'public'),
   \ javaapi#method(0,'ResourceCursorTreeAdapter(', 'Context, Cursor, int, int)', 'public'),
@@ -2225,12 +2225,12 @@ call javaapi#class('ResourceCursorTreeAdapter', '', [
   \ javaapi#method(0,'newGroupView(', 'Context, Cursor, boolean, ViewGroup)', 'View'),
   \ ])
 
-call javaapi#interface('ListAdapter', '', [
+call javaapi#interface('ListAdapter', 'Adapter', [
   \ javaapi#method(0,'areAllItemsEnabled(', ')', 'boolean'),
   \ javaapi#method(0,'isEnabled(', 'int)', 'boolean'),
   \ ])
 
-call javaapi#class('TwoLineListItem', '', [
+call javaapi#class('TwoLineListItem', 'RelativeLayout', [
   \ javaapi#method(0,'TwoLineListItem(', 'Context)', 'public'),
   \ javaapi#method(0,'TwoLineListItem(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TwoLineListItem(', 'Context, AttributeSet, int)', 'public'),
@@ -2240,7 +2240,7 @@ call javaapi#class('TwoLineListItem', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('AlphabetIndexer', '', [
+call javaapi#class('AlphabetIndexer', 'DataSetObserver', [
   \ javaapi#method(0,'AlphabetIndexer(', 'Cursor, int, CharSequence)', 'public'),
   \ javaapi#method(0,'getSections(', ')', 'Object[]'),
   \ javaapi#method(0,'setCursor(', 'Cursor)', 'void'),
@@ -2250,7 +2250,7 @@ call javaapi#class('AlphabetIndexer', '', [
   \ javaapi#method(0,'onInvalidated(', ')', 'void'),
   \ ])
 
-call javaapi#class('AdapterViewAnimator', '', [
+call javaapi#class('AdapterViewAnimator', 'Adapter>', [
   \ javaapi#method(0,'AdapterViewAnimator(', 'Context)', 'public'),
   \ javaapi#method(0,'AdapterViewAnimator(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AdapterViewAnimator(', 'Context, AttributeSet, int)', 'public'),
@@ -2284,7 +2284,7 @@ call javaapi#class('AdapterViewAnimator', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('SimpleCursorAdapter', '', [
+call javaapi#class('SimpleCursorAdapter', 'ResourceCursorAdapter', [
   \ javaapi#method(0,'SimpleCursorAdapter(', 'Context, int, Cursor, String[], int[])', 'public'),
   \ javaapi#method(0,'SimpleCursorAdapter(', 'Context, int, Cursor, String[], int[], int)', 'public'),
   \ javaapi#method(0,'bindView(', 'View, Context, Cursor)', 'void'),
@@ -2301,7 +2301,7 @@ call javaapi#class('SimpleCursorAdapter', '', [
   \ javaapi#method(0,'changeCursorAndColumns(', 'Cursor, String[], int[])', 'void'),
   \ ])
 
-call javaapi#class('ResourceCursorAdapter', '', [
+call javaapi#class('ResourceCursorAdapter', 'CursorAdapter', [
   \ javaapi#method(0,'ResourceCursorAdapter(', 'Context, int, Cursor)', 'public'),
   \ javaapi#method(0,'ResourceCursorAdapter(', 'Context, int, Cursor, boolean)', 'public'),
   \ javaapi#method(0,'ResourceCursorAdapter(', 'Context, int, Cursor, int)', 'public'),
@@ -2341,7 +2341,7 @@ call javaapi#class('Toast', '', [
   \ javaapi#method(0,'setText(', 'CharSequence)', 'void'),
   \ ])
 
-call javaapi#class('CheckBox', '', [
+call javaapi#class('CheckBox', 'CompoundButton', [
   \ javaapi#method(0,'CheckBox(', 'Context)', 'public'),
   \ javaapi#method(0,'CheckBox(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'CheckBox(', 'Context, AttributeSet, int)', 'public'),
@@ -2349,7 +2349,7 @@ call javaapi#class('CheckBox', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('TableLayout', '', [
+call javaapi#class('TableLayout', 'LinearLayout', [
   \ javaapi#method(0,'TableLayout(', 'Context)', 'public'),
   \ javaapi#method(0,'TableLayout(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setOnHierarchyChangeListener(', 'OnHierarchyChangeListener)', 'void'),
@@ -2375,14 +2375,14 @@ call javaapi#class('TableLayout', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('Space', '', [
+call javaapi#class('Space', 'View', [
   \ javaapi#method(0,'Space(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'Space(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'Space(', 'Context)', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
   \ ])
 
-call javaapi#class('CursorAdapter', '', [
+call javaapi#class('CursorAdapter', 'BaseAdapter', [
   \ javaapi#field(1,'FLAG_AUTO_REQUERY', 'int'),
   \ javaapi#field(1,'FLAG_REGISTER_CONTENT_OBSERVER', 'int'),
   \ javaapi#method(0,'CursorAdapter(', 'Context, Cursor)', 'public'),
@@ -2421,7 +2421,7 @@ call javaapi#interface('ViewBinder', '', [
   \ javaapi#method(0,'setViewValue(', 'View, Cursor, int)', 'boolean'),
   \ ])
 
-call javaapi#class('EditText', '', [
+call javaapi#class('EditText', 'TextView', [
   \ javaapi#method(0,'EditText(', 'Context)', 'public'),
   \ javaapi#method(0,'EditText(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'EditText(', 'Context, AttributeSet, int)', 'public'),
@@ -2441,7 +2441,7 @@ call javaapi#interface('OnRatingBarChangeListener', '', [
   \ javaapi#method(0,'onRatingChanged(', 'RatingBar, float, boolean)', 'void'),
   \ ])
 
-call javaapi#class('TableRow', '', [
+call javaapi#class('TableRow', 'LinearLayout', [
   \ javaapi#method(0,'TableRow(', 'Context)', 'public'),
   \ javaapi#method(0,'TableRow(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setOnHierarchyChangeListener(', 'OnHierarchyChangeListener)', 'void'),
@@ -2454,7 +2454,7 @@ call javaapi#class('TableRow', '', [
   \ javaapi#method(0,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('SearchView', '', [
+call javaapi#class('SearchView', 'LinearLayout', [
   \ javaapi#method(0,'SearchView(', 'Context)', 'public'),
   \ javaapi#method(0,'SearchView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setSearchableInfo(', 'SearchableInfo)', 'void'),
@@ -2492,7 +2492,7 @@ call javaapi#class('SearchView', '', [
   \ javaapi#method(0,'onRtlPropertiesChanged(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('CalendarView', '', [
+call javaapi#class('CalendarView', 'FrameLayout', [
   \ javaapi#method(0,'CalendarView(', 'Context)', 'public'),
   \ javaapi#method(0,'CalendarView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'CalendarView(', 'Context, AttributeSet, int)', 'public'),
@@ -2533,7 +2533,7 @@ call javaapi#class('CalendarView', '', [
   \ javaapi#method(0,'setDate(', 'long, boolean, boolean)', 'void'),
   \ ])
 
-call javaapi#class('ProgressBar', '', [
+call javaapi#class('ProgressBar', 'View', [
   \ javaapi#method(0,'ProgressBar(', 'Context)', 'public'),
   \ javaapi#method(0,'ProgressBar(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ProgressBar(', 'Context, AttributeSet, int)', 'public'),
@@ -2564,7 +2564,7 @@ call javaapi#class('ProgressBar', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('DialerFilter', '', [
+call javaapi#class('DialerFilter', 'RelativeLayout', [
   \ javaapi#field(1,'DIGITS_AND_LETTERS', 'int'),
   \ javaapi#field(1,'DIGITS_AND_LETTERS_NO_DIGITS', 'int'),
   \ javaapi#field(1,'DIGITS_AND_LETTERS_NO_LETTERS', 'int'),
@@ -2592,11 +2592,11 @@ call javaapi#interface('OnChronometerTickListener', '', [
   \ javaapi#method(0,'onChronometerTick(', 'Chronometer)', 'void'),
   \ ])
 
-call javaapi#interface('SpinnerAdapter', '', [
+call javaapi#interface('SpinnerAdapter', 'Adapter', [
   \ javaapi#method(0,'getDropDownView(', 'int, View, ViewGroup)', 'View'),
   \ ])
 
-call javaapi#class('StackView', '', [
+call javaapi#class('StackView', 'AdapterViewAnimator', [
   \ javaapi#method(0,'StackView(', 'Context)', 'public'),
   \ javaapi#method(0,'StackView(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'StackView(', 'Context, AttributeSet, int)', 'public'),
@@ -2611,7 +2611,7 @@ call javaapi#class('StackView', '', [
   \ javaapi#method(0,'performAccessibilityAction(', 'int, Bundle)', 'boolean'),
   \ ])
 
-call javaapi#class('ViewAnimator', '', [
+call javaapi#class('ViewAnimator', 'FrameLayout', [
   \ javaapi#method(0,'ViewAnimator(', 'Context)', 'public'),
   \ javaapi#method(0,'ViewAnimator(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setDisplayedChild(', 'int)', 'void'),
@@ -2639,7 +2639,7 @@ call javaapi#class('ViewAnimator', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('SlidingDrawer', '', [
+call javaapi#class('SlidingDrawer', 'ViewGroup', [
   \ javaapi#field(1,'ORIENTATION_HORIZONTAL', 'int'),
   \ javaapi#field(1,'ORIENTATION_VERTICAL', 'int'),
   \ javaapi#method(0,'SlidingDrawer(', 'Context, AttributeSet)', 'public'),
@@ -2665,7 +2665,7 @@ call javaapi#class('SlidingDrawer', '', [
   \ javaapi#method(0,'isMoving(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('QuickContactBadge', '', [
+call javaapi#class('QuickContactBadge', 'ImageView', [
   \ javaapi#method(0,'QuickContactBadge(', 'Context)', 'public'),
   \ javaapi#method(0,'QuickContactBadge(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'QuickContactBadge(', 'Context, AttributeSet, int)', 'public'),
@@ -2680,7 +2680,7 @@ call javaapi#class('QuickContactBadge', '', [
   \ javaapi#method(0,'setExcludeMimes(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('TextClock', '', [
+call javaapi#class('TextClock', 'TextView', [
   \ javaapi#field(1,'DEFAULT_FORMAT_12_HOUR', 'CharSequence'),
   \ javaapi#field(1,'DEFAULT_FORMAT_24_HOUR', 'CharSequence'),
   \ javaapi#method(0,'TextClock(', 'Context)', 'public'),
@@ -2699,7 +2699,7 @@ call javaapi#interface('OnGroupClickListener', '', [
   \ javaapi#method(0,'onGroupClick(', 'ExpandableListView, View, int, long)', 'boolean'),
   \ ])
 
-call javaapi#class('Button', '', [
+call javaapi#class('Button', 'TextView', [
   \ javaapi#method(0,'Button(', 'Context)', 'public'),
   \ javaapi#method(0,'Button(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'Button(', 'Context, AttributeSet, int)', 'public'),
@@ -2707,7 +2707,7 @@ call javaapi#class('Button', '', [
   \ javaapi#method(0,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ ])
 
-call javaapi#class('MediaController', '', [
+call javaapi#class('MediaController', 'FrameLayout', [
   \ javaapi#method(0,'MediaController(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'MediaController(', 'Context, boolean)', 'public'),
   \ javaapi#method(0,'MediaController(', 'Context)', 'public'),
@@ -2727,7 +2727,7 @@ call javaapi#class('MediaController', '', [
   \ javaapi#method(0,'setPrevNextListeners(', 'OnClickListener, OnClickListener)', 'void'),
   \ ])
 
-call javaapi#class('TabWidget', '', [
+call javaapi#class('TabWidget', 'LinearLayout', [
   \ javaapi#method(0,'TabWidget(', 'Context)', 'public'),
   \ javaapi#method(0,'TabWidget(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TabWidget(', 'Context, AttributeSet, int)', 'public'),
@@ -2755,7 +2755,7 @@ call javaapi#class('TabWidget', '', [
   \ javaapi#method(0,'onFocusChange(', 'View, boolean)', 'void'),
   \ ])
 
-call javaapi#class('AnalogClock', '', [
+call javaapi#class('AnalogClock', 'View', [
   \ javaapi#method(0,'AnalogClock(', 'Context)', 'public'),
   \ javaapi#method(0,'AnalogClock(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AnalogClock(', 'Context, AttributeSet, int)', 'public'),

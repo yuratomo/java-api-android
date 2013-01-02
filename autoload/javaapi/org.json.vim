@@ -19,7 +19,7 @@ call javaapi#class('JSONTokener', '', [
   \ javaapi#method(1,'dehexchar(', 'char)', 'int'),
   \ ])
 
-call javaapi#class('JSONException', '', [
+call javaapi#class('JSONException', 'Exception', [
   \ javaapi#method(0,'JSONException(', 'String)', 'public'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('android.service.textservice')
 
-call javaapi#class('SpellCheckerService', '', [
+call javaapi#class('SpellCheckerService', 'Service', [
   \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
   \ javaapi#method(0,'SpellCheckerService(', ')', 'public'),
   \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),

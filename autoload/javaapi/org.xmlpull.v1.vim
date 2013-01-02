@@ -99,7 +99,7 @@ call javaapi#class('XmlPullParserFactory', '', [
   \ javaapi#method(1,'newInstance(', 'String, Class) throws XmlPullParserException', 'XmlPullParserFactory'),
   \ ])
 
-call javaapi#class('XmlPullParserException', '', [
+call javaapi#class('XmlPullParserException', 'Exception', [
   \ javaapi#method(0,'XmlPullParserException(', 'String)', 'public'),
   \ javaapi#method(0,'XmlPullParserException(', 'String, XmlPullParser, Throwable)', 'public'),
   \ javaapi#method(0,'getDetail(', ')', 'Throwable'),

@@ -18,7 +18,7 @@ call javaapi#class('Scheme', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('LayeredSocketFactory', '', [
+call javaapi#interface('LayeredSocketFactory', 'SocketFactory', [
   \ javaapi#method(0,'createSocket(', 'Socket, String, int, boolean) throws IOException, UnknownHostException', 'Socket'),
   \ ])
 

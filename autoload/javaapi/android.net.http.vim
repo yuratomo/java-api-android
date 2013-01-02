@@ -72,7 +72,7 @@ call javaapi#class('SslCertificate', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpResponseCache', '', [
+call javaapi#class('HttpResponseCache', 'ResponseCache', [
   \ javaapi#method(1,'getInstalled(', ')', 'HttpResponseCache'),
   \ javaapi#method(1,'install(', 'File, long) throws IOException', 'HttpResponseCache'),
   \ javaapi#method(0,'get(', 'URI, String, Map<String, List<String>>) throws IOException', 'CacheResponse'),

@@ -46,7 +46,7 @@ call javaapi#class('DrmUtils', '', [
   \ javaapi#method(1,'getExtendedMetadataParser(', 'byte[])', 'ExtendedMetadataParser'),
   \ ])
 
-call javaapi#class('DrmInfoEvent', '', [
+call javaapi#class('DrmInfoEvent', 'DrmEvent', [
   \ javaapi#field(1,'TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT', 'int'),
   \ javaapi#field(1,'TYPE_REMOVE_RIGHTS', 'int'),
   \ javaapi#field(1,'TYPE_RIGHTS_INSTALLED', 'int'),
@@ -124,7 +124,7 @@ call javaapi#class('RightsStatus', '', [
   \ javaapi#method(0,'RightsStatus(', ')', 'public'),
   \ ])
 
-call javaapi#class('DrmErrorEvent', '', [
+call javaapi#class('DrmErrorEvent', 'DrmEvent', [
   \ javaapi#field(1,'TYPE_RIGHTS_NOT_INSTALLED', 'int'),
   \ javaapi#field(1,'TYPE_RIGHTS_RENEWAL_NOT_ALLOWED', 'int'),
   \ javaapi#field(1,'TYPE_NOT_SUPPORTED', 'int'),

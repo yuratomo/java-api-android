@@ -9,7 +9,7 @@ call javaapi#class('Settings', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PresetReverb', '', [
+call javaapi#class('PresetReverb', 'AudioEffect', [
   \ javaapi#field(1,'PARAM_PRESET', 'int'),
   \ javaapi#field(1,'PRESET_NONE', 'short'),
   \ javaapi#field(1,'PRESET_SMALLROOM', 'short'),
@@ -43,7 +43,7 @@ call javaapi#class('Settings', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Equalizer', '', [
+call javaapi#class('Equalizer', 'AudioEffect', [
   \ javaapi#field(1,'PARAM_NUM_BANDS', 'int'),
   \ javaapi#field(1,'PARAM_LEVEL_RANGE', 'int'),
   \ javaapi#field(1,'PARAM_BAND_LEVEL', 'int'),
@@ -112,7 +112,7 @@ call javaapi#class('Visualizer', '', [
   \ javaapi#method(0,'setDataCaptureListener(', 'OnDataCaptureListener, int, boolean, boolean)', 'int'),
   \ ])
 
-call javaapi#class('BassBoost', '', [
+call javaapi#class('BassBoost', 'AudioEffect', [
   \ javaapi#field(1,'PARAM_STRENGTH_SUPPORTED', 'int'),
   \ javaapi#field(1,'PARAM_STRENGTH', 'int'),
   \ javaapi#method(0,'BassBoost(', 'int, int) throws IllegalStateException, IllegalArgumentException, UnsupportedOperationException, RuntimeException', 'public'),
@@ -160,7 +160,7 @@ call javaapi#interface('OnParameterChangeListener', '', [
   \ javaapi#method(0,'onParameterChange(', 'PresetReverb, int, int, short)', 'void'),
   \ ])
 
-call javaapi#class('AcousticEchoCanceler', '', [
+call javaapi#class('AcousticEchoCanceler', 'AudioEffect', [
   \ javaapi#method(1,'isAvailable(', ')', 'boolean'),
   \ javaapi#method(1,'create(', 'int)', 'AcousticEchoCanceler'),
   \ ])
@@ -200,7 +200,7 @@ call javaapi#class('Settings', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Virtualizer', '', [
+call javaapi#class('Virtualizer', 'AudioEffect', [
   \ javaapi#field(1,'PARAM_STRENGTH_SUPPORTED', 'int'),
   \ javaapi#field(1,'PARAM_STRENGTH', 'int'),
   \ javaapi#method(0,'Virtualizer(', 'int, int) throws IllegalStateException, IllegalArgumentException, UnsupportedOperationException, RuntimeException', 'public'),
@@ -216,7 +216,7 @@ call javaapi#interface('OnEnableStatusChangeListener', '', [
   \ javaapi#method(0,'onEnableStatusChange(', 'AudioEffect, boolean)', 'void'),
   \ ])
 
-call javaapi#class('EnvironmentalReverb', '', [
+call javaapi#class('EnvironmentalReverb', 'AudioEffect', [
   \ javaapi#field(1,'PARAM_ROOM_LEVEL', 'int'),
   \ javaapi#field(1,'PARAM_ROOM_HF_LEVEL', 'int'),
   \ javaapi#field(1,'PARAM_DECAY_TIME', 'int'),
@@ -262,12 +262,12 @@ call javaapi#interface('OnDataCaptureListener', '', [
   \ javaapi#method(0,'onFftDataCapture(', 'Visualizer, byte[], int)', 'void'),
   \ ])
 
-call javaapi#class('NoiseSuppressor', '', [
+call javaapi#class('NoiseSuppressor', 'AudioEffect', [
   \ javaapi#method(1,'isAvailable(', ')', 'boolean'),
   \ javaapi#method(1,'create(', 'int)', 'NoiseSuppressor'),
   \ ])
 
-call javaapi#class('AutomaticGainControl', '', [
+call javaapi#class('AutomaticGainControl', 'AudioEffect', [
   \ javaapi#method(1,'isAvailable(', ')', 'boolean'),
   \ javaapi#method(1,'create(', 'int)', 'AutomaticGainControl'),
   \ ])

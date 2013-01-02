@@ -1,6 +1,6 @@
 call javaapi#namespace('java.util.logging')
 
-call javaapi#class('ConsoleHandler', '', [
+call javaapi#class('ConsoleHandler', 'StreamHandler', [
   \ javaapi#method(0,'ConsoleHandler(', ')', 'public'),
   \ javaapi#method(0,'publish(', 'LogRecord)', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
@@ -68,11 +68,11 @@ call javaapi#class('ErrorManager', '', [
   \ javaapi#method(0,'error(', 'String, Exception, int)', 'void'),
   \ ])
 
-call javaapi#class('LoggingPermission', '', [
+call javaapi#class('LoggingPermission', 'BasicPermission', [
   \ javaapi#method(0,'LoggingPermission(', 'String, String) throws IllegalArgumentException', 'public'),
   \ ])
 
-call javaapi#class('MemoryHandler', '', [
+call javaapi#class('MemoryHandler', 'Handler', [
   \ javaapi#method(0,'MemoryHandler(', ')', 'public'),
   \ javaapi#method(0,'MemoryHandler(', 'Handler, int, Level)', 'public'),
   \ javaapi#method(0,'publish(', 'LogRecord)', 'void'),
@@ -84,21 +84,21 @@ call javaapi#class('MemoryHandler', '', [
   \ javaapi#method(0,'isLoggable(', 'LogRecord)', 'boolean'),
   \ ])
 
-call javaapi#class('XMLFormatter', '', [
+call javaapi#class('XMLFormatter', 'Formatter', [
   \ javaapi#method(0,'XMLFormatter(', ')', 'public'),
   \ javaapi#method(0,'format(', 'LogRecord)', 'String'),
   \ javaapi#method(0,'getHead(', 'Handler)', 'String'),
   \ javaapi#method(0,'getTail(', 'Handler)', 'String'),
   \ ])
 
-call javaapi#class('SocketHandler', '', [
+call javaapi#class('SocketHandler', 'StreamHandler', [
   \ javaapi#method(0,'SocketHandler(', ') throws IOException', 'public'),
   \ javaapi#method(0,'SocketHandler(', 'String, int) throws IOException', 'public'),
   \ javaapi#method(0,'close(', ') throws SecurityException', 'void'),
   \ javaapi#method(0,'publish(', 'LogRecord)', 'void'),
   \ ])
 
-call javaapi#class('StreamHandler', '', [
+call javaapi#class('StreamHandler', 'Handler', [
   \ javaapi#method(0,'StreamHandler(', ')', 'public'),
   \ javaapi#method(0,'StreamHandler(', 'OutputStream, Formatter)', 'public'),
   \ javaapi#method(0,'setEncoding(', 'String) throws SecurityException, UnsupportedEncodingException', 'void'),
@@ -190,7 +190,7 @@ call javaapi#class('Formatter', '', [
   \ javaapi#method(0,'formatMessage(', 'LogRecord)', 'String'),
   \ ])
 
-call javaapi#class('FileHandler', '', [
+call javaapi#class('FileHandler', 'StreamHandler', [
   \ javaapi#method(0,'FileHandler(', ') throws IOException, SecurityException', 'public'),
   \ javaapi#method(0,'FileHandler(', 'String) throws IOException, SecurityException', 'public'),
   \ javaapi#method(0,'FileHandler(', 'String, boolean) throws IOException, SecurityException', 'public'),
@@ -200,7 +200,7 @@ call javaapi#class('FileHandler', '', [
   \ javaapi#method(0,'close(', ') throws SecurityException', 'void'),
   \ ])
 
-call javaapi#class('SimpleFormatter', '', [
+call javaapi#class('SimpleFormatter', 'Formatter', [
   \ javaapi#method(0,'SimpleFormatter(', ')', 'public'),
   \ javaapi#method(0,'format(', 'LogRecord)', 'String'),
   \ ])

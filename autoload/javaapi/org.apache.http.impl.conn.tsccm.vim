@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.impl.conn.tsccm')
 
-call javaapi#class('BasicPoolEntryRef', '', [
+call javaapi#class('BasicPoolEntryRef', 'BasicPoolEntry>', [
   \ javaapi#method(0,'BasicPoolEntryRef(', 'BasicPoolEntry, ReferenceQueue<Object>)', 'public'),
   \ javaapi#method(0,'getRoute(', ')', 'HttpRoute'),
   \ ])
@@ -40,7 +40,7 @@ call javaapi#class('WaitingThreadAborter', '', [
   \ javaapi#method(0,'setWaitingThread(', 'WaitingThread)', 'void'),
   \ ])
 
-call javaapi#class('ConnPoolByRoute', '', [
+call javaapi#class('ConnPoolByRoute', 'AbstractConnPool', [
   \ javaapi#method(0,'ConnPoolByRoute(', 'ClientConnectionOperator, HttpParams)', 'public'),
   \ javaapi#method(0,'getConnectionsInPool(', 'HttpRoute)', 'int'),
   \ javaapi#method(0,'requestPoolEntry(', 'HttpRoute, Object)', 'PoolEntryRequest'),
@@ -49,7 +49,7 @@ call javaapi#class('ConnPoolByRoute', '', [
   \ javaapi#method(0,'shutdown(', ')', 'void'),
   \ ])
 
-call javaapi#class('BasicPoolEntry', '', [
+call javaapi#class('BasicPoolEntry', 'AbstractPoolEntry', [
   \ javaapi#method(0,'BasicPoolEntry(', 'ClientConnectionOperator, HttpRoute, ReferenceQueue<Object>)', 'public'),
   \ ])
 
@@ -92,6 +92,6 @@ call javaapi#interface('RefQueueHandler', '', [
   \ javaapi#method(0,'handleReference(', 'Reference<?>)', 'void'),
   \ ])
 
-call javaapi#class('BasicPooledConnAdapter', '', [
+call javaapi#class('BasicPooledConnAdapter', 'AbstractPooledConnAdapter', [
   \ ])
 

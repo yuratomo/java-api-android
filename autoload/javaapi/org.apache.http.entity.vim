@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.entity')
 
-call javaapi#class('StringEntity', '', [
+call javaapi#class('StringEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'StringEntity(', 'String, String) throws UnsupportedEncodingException', 'public'),
   \ javaapi#method(0,'StringEntity(', 'String) throws UnsupportedEncodingException', 'public'),
   \ javaapi#method(0,'isRepeatable(', ')', 'boolean'),
@@ -11,7 +11,7 @@ call javaapi#class('StringEntity', '', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('BufferedHttpEntity', '', [
+call javaapi#class('BufferedHttpEntity', 'HttpEntityWrapper', [
   \ javaapi#method(0,'BufferedHttpEntity(', 'HttpEntity) throws IOException', 'public'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
   \ javaapi#method(0,'getContent(', ') throws IOException', 'InputStream'),
@@ -21,7 +21,7 @@ call javaapi#class('BufferedHttpEntity', '', [
   \ javaapi#method(0,'isStreaming(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('EntityTemplate', '', [
+call javaapi#class('EntityTemplate', 'AbstractHttpEntity', [
   \ javaapi#method(0,'EntityTemplate(', 'ContentProducer)', 'public'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
   \ javaapi#method(0,'getContent(', ')', 'InputStream'),
@@ -44,7 +44,7 @@ call javaapi#class('HttpEntityWrapper', 'HttpEntity', [
   \ javaapi#method(0,'consumeContent(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FileEntity', '', [
+call javaapi#class('FileEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'FileEntity(', 'File, String)', 'public'),
   \ javaapi#method(0,'isRepeatable(', ')', 'boolean'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
@@ -54,7 +54,7 @@ call javaapi#class('FileEntity', '', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('InputStreamEntity', '', [
+call javaapi#class('InputStreamEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'InputStreamEntity(', 'InputStream, long)', 'public'),
   \ javaapi#method(0,'isRepeatable(', ')', 'boolean'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
@@ -76,7 +76,7 @@ call javaapi#class('AbstractHttpEntity', 'HttpEntity', [
   \ javaapi#method(0,'consumeContent(', ') throws IOException, UnsupportedOperationException', 'void'),
   \ ])
 
-call javaapi#class('SerializableEntity', '', [
+call javaapi#class('SerializableEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'SerializableEntity(', 'Serializable, boolean) throws IOException', 'public'),
   \ javaapi#method(0,'getContent(', ') throws IOException, IllegalStateException', 'InputStream'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
@@ -85,7 +85,7 @@ call javaapi#class('SerializableEntity', '', [
   \ javaapi#method(0,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('BasicHttpEntity', '', [
+call javaapi#class('BasicHttpEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'BasicHttpEntity(', ')', 'public'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),
   \ javaapi#method(0,'getContent(', ') throws IllegalStateException', 'InputStream'),
@@ -107,7 +107,7 @@ call javaapi#interface('ContentLengthStrategy', '', [
   \ javaapi#method(0,'determineLength(', 'HttpMessage) throws HttpException', 'long'),
   \ ])
 
-call javaapi#class('ByteArrayEntity', '', [
+call javaapi#class('ByteArrayEntity', 'AbstractHttpEntity', [
   \ javaapi#method(0,'ByteArrayEntity(', 'byte[])', 'public'),
   \ javaapi#method(0,'isRepeatable(', ')', 'boolean'),
   \ javaapi#method(0,'getContentLength(', ')', 'long'),

@@ -60,7 +60,7 @@ call javaapi#class('AccountManager', '', [
   \ javaapi#method(0,'removeOnAccountsUpdatedListener(', 'OnAccountsUpdateListener)', 'void'),
   \ ])
 
-call javaapi#class('NetworkErrorException', '', [
+call javaapi#class('NetworkErrorException', 'AccountsException', [
   \ javaapi#method(0,'NetworkErrorException(', ')', 'public'),
   \ javaapi#method(0,'NetworkErrorException(', 'String)', 'public'),
   \ javaapi#method(0,'NetworkErrorException(', 'String, Throwable)', 'public'),
@@ -86,7 +86,7 @@ call javaapi#class('AuthenticatorDescription', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('AccountAuthenticatorActivity', '', [
+call javaapi#class('AccountAuthenticatorActivity', 'Activity', [
   \ javaapi#method(0,'AccountAuthenticatorActivity(', ')', 'public'),
   \ javaapi#method(0,'setAccountAuthenticatorResult(', 'Bundle)', 'void'),
   \ javaapi#method(0,'finish(', ')', 'void'),
@@ -105,14 +105,14 @@ call javaapi#class('Account', 'Parcelable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AccountsException', '', [
+call javaapi#class('AccountsException', 'Exception', [
   \ javaapi#method(0,'AccountsException(', ')', 'public'),
   \ javaapi#method(0,'AccountsException(', 'String)', 'public'),
   \ javaapi#method(0,'AccountsException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'AccountsException(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('OperationCanceledException', '', [
+call javaapi#class('OperationCanceledException', 'AccountsException', [
   \ javaapi#method(0,'OperationCanceledException(', ')', 'public'),
   \ javaapi#method(0,'OperationCanceledException(', 'String)', 'public'),
   \ javaapi#method(0,'OperationCanceledException(', 'String, Throwable)', 'public'),
@@ -154,7 +154,7 @@ call javaapi#class('AbstractAccountAuthenticator', '', [
   \ javaapi#method(0,'getAccountRemovalAllowed(', 'AccountAuthenticatorResponse, Account) throws NetworkErrorException', 'Bundle'),
   \ ])
 
-call javaapi#class('AuthenticatorException', '', [
+call javaapi#class('AuthenticatorException', 'AccountsException', [
   \ javaapi#method(0,'AuthenticatorException(', ')', 'public'),
   \ javaapi#method(0,'AuthenticatorException(', 'String)', 'public'),
   \ javaapi#method(0,'AuthenticatorException(', 'String, Throwable)', 'public'),

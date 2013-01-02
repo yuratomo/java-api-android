@@ -19,7 +19,7 @@ call javaapi#class('TestResult', '', [
   \ javaapi#method(0,'wasSuccessful(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ComparisonFailure', '', [
+call javaapi#class('ComparisonFailure', 'AssertionFailedError', [
   \ javaapi#method(0,'ComparisonFailure(', 'String, String, String)', 'public'),
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ javaapi#method(0,'getActual(', ')', 'String'),
@@ -49,7 +49,7 @@ call javaapi#class('TestSuite', 'Test', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TestCase', '', [
+call javaapi#class('TestCase', 'Assert', [
   \ javaapi#method(0,'TestCase(', ')', 'public'),
   \ javaapi#method(0,'TestCase(', 'String)', 'public'),
   \ javaapi#method(0,'countTestCases(', ')', 'int'),
@@ -128,7 +128,7 @@ call javaapi#interface('Protectable', '', [
   \ javaapi#method(0,'protect(', ') throws Throwable', 'void'),
   \ ])
 
-call javaapi#class('AssertionFailedError', '', [
+call javaapi#class('AssertionFailedError', 'AssertionError', [
   \ javaapi#method(0,'AssertionFailedError(', ')', 'public'),
   \ javaapi#method(0,'AssertionFailedError(', 'String)', 'public'),
   \ ])

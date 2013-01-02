@@ -1,6 +1,6 @@
 call javaapi#namespace('android.appwidget')
 
-call javaapi#class('AppWidgetHostView', '', [
+call javaapi#class('AppWidgetHostView', 'FrameLayout', [
   \ javaapi#method(0,'AppWidgetHostView(', 'Context)', 'public'),
   \ javaapi#method(0,'AppWidgetHostView(', 'Context, int, int)', 'public'),
   \ javaapi#method(0,'setAppWidget(', 'int, AppWidgetProviderInfo)', 'void'),
@@ -97,7 +97,7 @@ call javaapi#class('AppWidgetProviderInfo', 'Parcelable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('AppWidgetProvider', '', [
+call javaapi#class('AppWidgetProvider', 'BroadcastReceiver', [
   \ javaapi#method(0,'AppWidgetProvider(', ')', 'public'),
   \ javaapi#method(0,'onReceive(', 'Context, Intent)', 'void'),
   \ javaapi#method(0,'onUpdate(', 'Context, AppWidgetManager, int[])', 'void'),

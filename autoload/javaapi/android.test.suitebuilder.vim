@@ -14,7 +14,7 @@ call javaapi#class('TestMethod', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('FailedToCreateTests', '', [
+call javaapi#class('FailedToCreateTests', 'TestCase', [
   \ javaapi#method(0,'FailedToCreateTests(', 'Exception)', 'public'),
   \ javaapi#method(0,'testSuiteConstructionFailed(', ')', 'void'),
   \ ])

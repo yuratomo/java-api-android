@@ -1,31 +1,31 @@
 call javaapi#namespace('android.database.sqlite')
 
-call javaapi#class('SQLiteCantOpenDatabaseException', '', [
+call javaapi#class('SQLiteCantOpenDatabaseException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteCantOpenDatabaseException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteCantOpenDatabaseException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteDiskIOException', '', [
+call javaapi#class('SQLiteDiskIOException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteDiskIOException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteDiskIOException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteAbortException', '', [
+call javaapi#class('SQLiteAbortException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteAbortException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteAbortException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteDatabaseCorruptException', '', [
+call javaapi#class('SQLiteDatabaseCorruptException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteDatabaseCorruptException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteDatabaseCorruptException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteTableLockedException', '', [
+call javaapi#class('SQLiteTableLockedException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteTableLockedException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteTableLockedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteBlobTooBigException', '', [
+call javaapi#class('SQLiteBlobTooBigException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteBlobTooBigException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteBlobTooBigException(', 'String)', 'public'),
   \ ])
@@ -60,7 +60,7 @@ call javaapi#class('SQLiteQueryBuilder', '', [
   \ javaapi#method(0,'buildUnionQuery(', 'String[], String, String)', 'String'),
   \ ])
 
-call javaapi#class('SQLiteOutOfMemoryException', '', [
+call javaapi#class('SQLiteOutOfMemoryException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteOutOfMemoryException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteOutOfMemoryException(', 'String)', 'public'),
   \ ])
@@ -73,7 +73,7 @@ call javaapi#interface('SQLiteCursorDriver', '', [
   \ javaapi#method(0,'setBindArguments(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('SQLiteProgram', '', [
+call javaapi#class('SQLiteProgram', 'SQLiteClosable', [
   \ javaapi#method(0,'getUniqueId(', ')', 'int'),
   \ javaapi#method(0,'bindNull(', 'int)', 'void'),
   \ javaapi#method(0,'bindLong(', 'int, long)', 'void'),
@@ -84,27 +84,27 @@ call javaapi#class('SQLiteProgram', '', [
   \ javaapi#method(0,'bindAllArgsAsStrings(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('SQLiteDoneException', '', [
+call javaapi#class('SQLiteDoneException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteDoneException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteDoneException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteBindOrColumnIndexOutOfRangeException', '', [
+call javaapi#class('SQLiteBindOrColumnIndexOutOfRangeException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteBindOrColumnIndexOutOfRangeException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteBindOrColumnIndexOutOfRangeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteFullException', '', [
+call javaapi#class('SQLiteFullException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteFullException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteFullException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteDatatypeMismatchException', '', [
+call javaapi#class('SQLiteDatatypeMismatchException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteDatatypeMismatchException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteDatatypeMismatchException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteStatement', '', [
+call javaapi#class('SQLiteStatement', 'SQLiteProgram', [
   \ javaapi#method(0,'execute(', ')', 'void'),
   \ javaapi#method(0,'executeUpdateDelete(', ')', 'int'),
   \ javaapi#method(0,'executeInsert(', ')', 'long'),
@@ -124,12 +124,12 @@ call javaapi#interface('SQLiteTransactionListener', '', [
   \ javaapi#method(0,'onRollback(', ')', 'void'),
   \ ])
 
-call javaapi#class('SQLiteAccessPermException', '', [
+call javaapi#class('SQLiteAccessPermException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteAccessPermException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteAccessPermException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteException', '', [
+call javaapi#class('SQLiteException', 'SQLException', [
   \ javaapi#method(0,'SQLiteException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteException(', 'String)', 'public'),
   \ javaapi#method(0,'SQLiteException(', 'String, Throwable)', 'public'),
@@ -150,16 +150,16 @@ call javaapi#class('SQLiteOpenHelper', '', [
   \ javaapi#method(0,'onOpen(', 'SQLiteDatabase)', 'void'),
   \ ])
 
-call javaapi#class('SQLiteQuery', '', [
+call javaapi#class('SQLiteQuery', 'SQLiteProgram', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SQLiteMisuseException', '', [
+call javaapi#class('SQLiteMisuseException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteMisuseException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteMisuseException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteDatabase', '', [
+call javaapi#class('SQLiteDatabase', 'SQLiteClosable', [
   \ javaapi#field(1,'CONFLICT_ROLLBACK', 'int'),
   \ javaapi#field(1,'CONFLICT_ABORT', 'int'),
   \ javaapi#field(1,'CONFLICT_FAIL', 'int'),
@@ -240,12 +240,12 @@ call javaapi#class('SQLiteDatabase', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SQLiteDatabaseLockedException', '', [
+call javaapi#class('SQLiteDatabaseLockedException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteDatabaseLockedException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteDatabaseLockedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteCursor', '', [
+call javaapi#class('SQLiteCursor', 'AbstractWindowedCursor', [
   \ javaapi#method(0,'SQLiteCursor(', 'SQLiteDatabase, SQLiteCursorDriver, String, SQLiteQuery)', 'public'),
   \ javaapi#method(0,'SQLiteCursor(', 'SQLiteCursorDriver, String, SQLiteQuery)', 'public'),
   \ javaapi#method(0,'getDatabase(', ')', 'SQLiteDatabase'),
@@ -260,12 +260,12 @@ call javaapi#class('SQLiteCursor', '', [
   \ javaapi#method(0,'setSelectionArguments(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('SQLiteConstraintException', '', [
+call javaapi#class('SQLiteConstraintException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteConstraintException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteConstraintException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLiteReadOnlyDatabaseException', '', [
+call javaapi#class('SQLiteReadOnlyDatabaseException', 'SQLiteException', [
   \ javaapi#method(0,'SQLiteReadOnlyDatabaseException(', ')', 'public'),
   \ javaapi#method(0,'SQLiteReadOnlyDatabaseException(', 'String)', 'public'),
   \ ])

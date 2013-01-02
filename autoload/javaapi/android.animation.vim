@@ -10,7 +10,7 @@ call javaapi#interface('TimeInterpolator', '', [
   \ javaapi#method(0,'getInterpolation(', 'float)', 'float'),
   \ ])
 
-call javaapi#class('TimeAnimator', '', [
+call javaapi#class('TimeAnimator', 'ValueAnimator', [
   \ javaapi#method(0,'TimeAnimator(', ')', 'public'),
   \ javaapi#method(0,'start(', ')', 'void'),
   \ javaapi#method(0,'setTimeListener(', 'TimeListener)', 'void'),
@@ -110,7 +110,7 @@ call javaapi#interface('AnimatorUpdateListener', '', [
   \ javaapi#method(0,'onAnimationUpdate(', 'ValueAnimator)', 'void'),
   \ ])
 
-call javaapi#class('ValueAnimator', '', [
+call javaapi#class('ValueAnimator', 'Animator', [
   \ javaapi#field(1,'RESTART', 'int'),
   \ javaapi#field(1,'REVERSE', 'int'),
   \ javaapi#field(1,'INFINITE', 'int'),
@@ -187,7 +187,7 @@ call javaapi#interface('AnimatorListener', '', [
   \ javaapi#method(0,'onAnimationRepeat(', 'Animator)', 'void'),
   \ ])
 
-call javaapi#class('ObjectAnimator', '', [
+call javaapi#class('ObjectAnimator', 'ValueAnimator', [
   \ javaapi#method(0,'ObjectAnimator(', ')', 'public'),
   \ javaapi#method(0,'setPropertyName(', 'String)', 'void'),
   \ javaapi#method(0,'setProperty(', 'Property)', 'void'),
@@ -249,7 +249,7 @@ call javaapi#class('AnimatorInflater', '', [
   \ javaapi#method(1,'loadAnimator(', 'Context, int) throws NotFoundException', 'Animator'),
   \ ])
 
-call javaapi#class('AnimatorSet', '', [
+call javaapi#class('AnimatorSet', 'Animator', [
   \ javaapi#method(0,'AnimatorSet(', ')', 'public'),
   \ javaapi#method(0,'playTogether(', ')', 'void'),
   \ javaapi#method(0,'playTogether(', 'Collection<Animator>)', 'void'),

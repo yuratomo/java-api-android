@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.client.methods')
 
-call javaapi#class('HttpEntityEnclosingRequestBase', '', [
+call javaapi#class('HttpEntityEnclosingRequestBase', 'HttpRequestBase', [
   \ javaapi#method(0,'HttpEntityEnclosingRequestBase(', ')', 'public'),
   \ javaapi#method(0,'getEntity(', ')', 'HttpEntity'),
   \ javaapi#method(0,'setEntity(', 'HttpEntity)', 'void'),
@@ -14,7 +14,7 @@ call javaapi#interface('AbortableHttpRequest', '', [
   \ javaapi#method(0,'abort(', ')', 'void'),
   \ ])
 
-call javaapi#class('HttpPost', '', [
+call javaapi#class('HttpPost', 'HttpEntityEnclosingRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpPost(', ')', 'public'),
   \ javaapi#method(0,'HttpPost(', 'URI)', 'public'),
@@ -22,7 +22,7 @@ call javaapi#class('HttpPost', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpHead', '', [
+call javaapi#class('HttpHead', 'HttpRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpHead(', ')', 'public'),
   \ javaapi#method(0,'HttpHead(', 'URI)', 'public'),
@@ -30,7 +30,7 @@ call javaapi#class('HttpHead', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpTrace', '', [
+call javaapi#class('HttpTrace', 'HttpRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpTrace(', ')', 'public'),
   \ javaapi#method(0,'HttpTrace(', 'URI)', 'public'),
@@ -38,7 +38,7 @@ call javaapi#class('HttpTrace', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpGet', '', [
+call javaapi#class('HttpGet', 'HttpRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpGet(', ')', 'public'),
   \ javaapi#method(0,'HttpGet(', 'URI)', 'public'),
@@ -46,14 +46,14 @@ call javaapi#class('HttpGet', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#interface('HttpUriRequest', '', [
+call javaapi#interface('HttpUriRequest', 'HttpRequest', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ javaapi#method(0,'getURI(', ')', 'URI'),
   \ javaapi#method(0,'abort(', ') throws UnsupportedOperationException', 'void'),
   \ javaapi#method(0,'isAborted(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HttpPut', '', [
+call javaapi#class('HttpPut', 'HttpEntityEnclosingRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpPut(', ')', 'public'),
   \ javaapi#method(0,'HttpPut(', 'URI)', 'public'),
@@ -61,7 +61,7 @@ call javaapi#class('HttpPut', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpDelete', '', [
+call javaapi#class('HttpDelete', 'HttpRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpDelete(', ')', 'public'),
   \ javaapi#method(0,'HttpDelete(', 'URI)', 'public'),
@@ -69,7 +69,7 @@ call javaapi#class('HttpDelete', '', [
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ ])
 
-call javaapi#class('HttpOptions', '', [
+call javaapi#class('HttpOptions', 'HttpRequestBase', [
   \ javaapi#field(1,'METHOD_NAME', 'String'),
   \ javaapi#method(0,'HttpOptions(', ')', 'public'),
   \ javaapi#method(0,'HttpOptions(', 'URI)', 'public'),
@@ -78,7 +78,7 @@ call javaapi#class('HttpOptions', '', [
   \ javaapi#method(0,'getAllowedMethods(', 'HttpResponse)', 'String>'),
   \ ])
 
-call javaapi#class('HttpRequestBase', '', [
+call javaapi#class('HttpRequestBase', 'AbstractHttpMessage', [
   \ javaapi#method(0,'HttpRequestBase(', ')', 'public'),
   \ javaapi#method(0,'getMethod(', ')', 'String'),
   \ javaapi#method(0,'getProtocolVersion(', ')', 'ProtocolVersion'),

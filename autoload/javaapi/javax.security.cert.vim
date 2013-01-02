@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.security.cert')
 
-call javaapi#class('X509Certificate', '', [
+call javaapi#class('X509Certificate', 'Certificate', [
   \ javaapi#method(0,'X509Certificate(', ')', 'public'),
   \ javaapi#method(1,'getInstance(', 'InputStream) throws CertificateException', 'X509Certificate'),
   \ javaapi#method(1,'getInstance(', 'byte[]) throws CertificateException', 'X509Certificate'),
@@ -17,17 +17,17 @@ call javaapi#class('X509Certificate', '', [
   \ javaapi#method(0,'getSigAlgParams(', ')', 'byte[]'),
   \ ])
 
-call javaapi#class('CertificateNotYetValidException', '', [
+call javaapi#class('CertificateNotYetValidException', 'CertificateException', [
   \ javaapi#method(0,'CertificateNotYetValidException(', ')', 'public'),
   \ javaapi#method(0,'CertificateNotYetValidException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CertificateException', '', [
+call javaapi#class('CertificateException', 'Exception', [
   \ javaapi#method(0,'CertificateException(', ')', 'public'),
   \ javaapi#method(0,'CertificateException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CertificateEncodingException', '', [
+call javaapi#class('CertificateEncodingException', 'CertificateException', [
   \ javaapi#method(0,'CertificateEncodingException(', ')', 'public'),
   \ javaapi#method(0,'CertificateEncodingException(', 'String)', 'public'),
   \ ])
@@ -43,12 +43,12 @@ call javaapi#class('Certificate', '', [
   \ javaapi#method(0,'getPublicKey(', ')', 'PublicKey'),
   \ ])
 
-call javaapi#class('CertificateParsingException', '', [
+call javaapi#class('CertificateParsingException', 'CertificateException', [
   \ javaapi#method(0,'CertificateParsingException(', ')', 'public'),
   \ javaapi#method(0,'CertificateParsingException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CertificateExpiredException', '', [
+call javaapi#class('CertificateExpiredException', 'CertificateException', [
   \ javaapi#method(0,'CertificateExpiredException(', ')', 'public'),
   \ javaapi#method(0,'CertificateExpiredException(', 'String)', 'public'),
   \ ])

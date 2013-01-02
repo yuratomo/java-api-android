@@ -1,6 +1,6 @@
 call javaapi#namespace('android.preference')
 
-call javaapi#class('DialogPreference', '', [
+call javaapi#class('DialogPreference', 'Preference', [
   \ javaapi#method(0,'DialogPreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'DialogPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setDialogTitle(', 'CharSequence)', 'void'),
@@ -26,13 +26,13 @@ call javaapi#class('DialogPreference', '', [
   \ javaapi#method(0,'onActivityDestroy(', ')', 'void'),
   \ ])
 
-call javaapi#class('CheckBoxPreference', '', [
+call javaapi#class('CheckBoxPreference', 'TwoStatePreference', [
   \ javaapi#method(0,'CheckBoxPreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'CheckBoxPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'CheckBoxPreference(', 'Context)', 'public'),
   \ ])
 
-call javaapi#class('BaseSavedState', '', [
+call javaapi#class('BaseSavedState', 'AbsSavedState', [
   \ javaapi#field(1,'CREATOR', 'BaseSavedState>'),
   \ javaapi#method(0,'BaseSavedState(', 'Parcel)', 'public'),
   \ javaapi#method(0,'BaseSavedState(', 'Parcelable)', 'public'),
@@ -99,7 +99,7 @@ call javaapi#class('Preference', 'Preference>', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('EditTextPreference', '', [
+call javaapi#class('EditTextPreference', 'DialogPreference', [
   \ javaapi#method(0,'EditTextPreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'EditTextPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'EditTextPreference(', 'Context)', 'public'),
@@ -109,7 +109,7 @@ call javaapi#class('EditTextPreference', '', [
   \ javaapi#method(0,'getEditText(', ')', 'EditText'),
   \ ])
 
-call javaapi#class('PreferenceFragment', '', [
+call javaapi#class('PreferenceFragment', 'Fragment', [
   \ javaapi#method(0,'PreferenceFragment(', ')', 'public'),
   \ javaapi#method(0,'onCreate(', 'Bundle)', 'void'),
   \ javaapi#method(0,'onCreateView(', 'LayoutInflater, ViewGroup, Bundle)', 'View'),
@@ -133,7 +133,7 @@ call javaapi#interface('OnActivityResultListener', '', [
   \ javaapi#method(0,'onActivityResult(', 'int, int, Intent)', 'boolean'),
   \ ])
 
-call javaapi#class('SwitchPreference', '', [
+call javaapi#class('SwitchPreference', 'TwoStatePreference', [
   \ javaapi#method(0,'SwitchPreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'SwitchPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'SwitchPreference(', 'Context)', 'public'),
@@ -145,7 +145,7 @@ call javaapi#class('SwitchPreference', '', [
   \ javaapi#method(0,'getSwitchTextOff(', ')', 'CharSequence'),
   \ ])
 
-call javaapi#class('PreferenceActivity', '', [
+call javaapi#class('PreferenceActivity', 'ListActivity', [
   \ javaapi#field(1,'EXTRA_SHOW_FRAGMENT', 'String'),
   \ javaapi#field(1,'EXTRA_SHOW_FRAGMENT_ARGUMENTS', 'String'),
   \ javaapi#field(1,'EXTRA_SHOW_FRAGMENT_TITLE', 'String'),
@@ -185,14 +185,14 @@ call javaapi#class('PreferenceActivity', '', [
   \ javaapi#method(0,'findPreference(', 'CharSequence)', 'Preference'),
   \ ])
 
-call javaapi#class('PreferenceCategory', '', [
+call javaapi#class('PreferenceCategory', 'PreferenceGroup', [
   \ javaapi#method(0,'PreferenceCategory(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'PreferenceCategory(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'PreferenceCategory(', 'Context)', 'public'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('TwoStatePreference', '', [
+call javaapi#class('TwoStatePreference', 'Preference', [
   \ javaapi#method(0,'TwoStatePreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'TwoStatePreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TwoStatePreference(', 'Context)', 'public'),
@@ -209,7 +209,7 @@ call javaapi#class('TwoStatePreference', '', [
   \ javaapi#method(0,'setDisableDependentsState(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('PreferenceScreen', '', [
+call javaapi#class('PreferenceScreen', 'PreferenceGroup', [
   \ javaapi#method(0,'getRootAdapter(', ')', 'ListAdapter'),
   \ javaapi#method(0,'bind(', 'ListView)', 'void'),
   \ javaapi#method(0,'onDismiss(', 'DialogInterface)', 'void'),
@@ -236,7 +236,7 @@ call javaapi#class('PreferenceManager', '', [
   \ javaapi#method(1,'setDefaultValues(', 'Context, String, int, int, boolean)', 'void'),
   \ ])
 
-call javaapi#class('RingtonePreference', '', [
+call javaapi#class('RingtonePreference', 'Preference', [
   \ javaapi#method(0,'RingtonePreference(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'RingtonePreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'RingtonePreference(', 'Context)', 'public'),
@@ -283,7 +283,7 @@ call javaapi#interface('OnPreferenceStartFragmentCallback', '', [
   \ javaapi#method(0,'onPreferenceStartFragment(', 'PreferenceFragment, Preference)', 'boolean'),
   \ ])
 
-call javaapi#class('MultiSelectListPreference', '', [
+call javaapi#class('MultiSelectListPreference', 'DialogPreference', [
   \ javaapi#method(0,'MultiSelectListPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'MultiSelectListPreference(', 'Context)', 'public'),
   \ javaapi#method(0,'setEntries(', 'CharSequence[])', 'void'),
@@ -305,7 +305,7 @@ call javaapi#interface('OnActivityStopListener', '', [
   \ javaapi#method(0,'onActivityStop(', ')', 'void'),
   \ ])
 
-call javaapi#class('PreferenceGroup', '', [
+call javaapi#class('PreferenceGroup', 'Preference', [
   \ javaapi#method(0,'PreferenceGroup(', 'Context, AttributeSet, int)', 'public'),
   \ javaapi#method(0,'PreferenceGroup(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'setOrderingAsAdded(', 'boolean)', 'void'),
@@ -320,7 +320,7 @@ call javaapi#class('PreferenceGroup', '', [
   \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('ListPreference', '', [
+call javaapi#class('ListPreference', 'DialogPreference', [
   \ javaapi#method(0,'ListPreference(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ListPreference(', 'Context)', 'public'),
   \ javaapi#method(0,'setEntries(', 'CharSequence[])', 'void'),

@@ -1,541 +1,23 @@
 call javaapi#namespace('android.graphics')
 
-call javaapi#class('Color', '', [
-  \ javaapi#field(1,'BLACK', 'int'),
-  \ javaapi#field(1,'DKGRAY', 'int'),
-  \ javaapi#field(1,'GRAY', 'int'),
-  \ javaapi#field(1,'LTGRAY', 'int'),
-  \ javaapi#field(1,'WHITE', 'int'),
-  \ javaapi#field(1,'RED', 'int'),
-  \ javaapi#field(1,'GREEN', 'int'),
-  \ javaapi#field(1,'BLUE', 'int'),
-  \ javaapi#field(1,'YELLOW', 'int'),
-  \ javaapi#field(1,'CYAN', 'int'),
-  \ javaapi#field(1,'MAGENTA', 'int'),
-  \ javaapi#field(1,'TRANSPARENT', 'int'),
-  \ javaapi#method(0,'Color(', ')', 'public'),
-  \ javaapi#method(1,'alpha(', 'int)', 'int'),
-  \ javaapi#method(1,'red(', 'int)', 'int'),
-  \ javaapi#method(1,'green(', 'int)', 'int'),
-  \ javaapi#method(1,'blue(', 'int)', 'int'),
-  \ javaapi#method(1,'rgb(', 'int, int, int)', 'int'),
-  \ javaapi#method(1,'argb(', 'int, int, int, int)', 'int'),
-  \ javaapi#method(1,'parseColor(', 'String)', 'int'),
-  \ javaapi#method(1,'RGBToHSV(', 'int, int, int, float[])', 'void'),
-  \ javaapi#method(1,'colorToHSV(', 'int, float[])', 'void'),
-  \ javaapi#method(1,'HSVToColor(', 'float[])', 'int'),
-  \ javaapi#method(1,'HSVToColor(', 'int, float[])', 'int'),
-  \ ])
-
-call javaapi#class('PathDashPathEffect', '', [
-  \ javaapi#method(0,'PathDashPathEffect(', 'Path, float, float, Style)', 'public'),
-  \ ])
-
-call javaapi#class('BitmapFactory', '', [
-  \ javaapi#method(0,'BitmapFactory(', ')', 'public'),
-  \ javaapi#method(1,'decodeFile(', 'String, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeFile(', 'String)', 'Bitmap'),
-  \ javaapi#method(1,'decodeResourceStream(', 'Resources, TypedValue, InputStream, Rect, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeResource(', 'Resources, int, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeResource(', 'Resources, int)', 'Bitmap'),
-  \ javaapi#method(1,'decodeByteArray(', 'byte[], int, int, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeByteArray(', 'byte[], int, int)', 'Bitmap'),
-  \ javaapi#method(1,'decodeStream(', 'InputStream, Rect, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeStream(', 'InputStream)', 'Bitmap'),
-  \ javaapi#method(1,'decodeFileDescriptor(', 'FileDescriptor, Rect, Options)', 'Bitmap'),
-  \ javaapi#method(1,'decodeFileDescriptor(', 'FileDescriptor)', 'Bitmap'),
-  \ ])
-
-call javaapi#class('LinearGradient', '', [
-  \ javaapi#method(0,'LinearGradient(', 'float, float, float, float, int[], float[], TileMode)', 'public'),
-  \ javaapi#method(0,'LinearGradient(', 'float, float, float, float, int, int, TileMode)', 'public'),
-  \ ])
-
-call javaapi#class('RadialGradient', '', [
-  \ javaapi#method(0,'RadialGradient(', 'float, float, float, int[], float[], TileMode)', 'public'),
-  \ javaapi#method(0,'RadialGradient(', 'float, float, float, int, int, TileMode)', 'public'),
-  \ ])
-
-call javaapi#class('LayerRasterizer', '', [
-  \ javaapi#method(0,'LayerRasterizer(', ')', 'public'),
-  \ javaapi#method(0,'addLayer(', 'Paint, float, float)', 'void'),
-  \ javaapi#method(0,'addLayer(', 'Paint)', 'void'),
-  \ ])
-
-call javaapi#class('BlurMaskFilter', '', [
-  \ javaapi#method(0,'BlurMaskFilter(', 'float, Blur)', 'public'),
-  \ ])
-
-call javaapi#class('PorterDuffColorFilter', '', [
-  \ javaapi#method(0,'PorterDuffColorFilter(', 'int, Mode)', 'public'),
-  \ ])
-
-call javaapi#class('Mode', '', [
-  \ javaapi#field(1,'ADD', 'Mode'),
-  \ javaapi#field(1,'CLEAR', 'Mode'),
-  \ javaapi#field(1,'DARKEN', 'Mode'),
-  \ javaapi#field(1,'DST', 'Mode'),
-  \ javaapi#field(1,'DST_ATOP', 'Mode'),
-  \ javaapi#field(1,'DST_IN', 'Mode'),
-  \ javaapi#field(1,'DST_OUT', 'Mode'),
-  \ javaapi#field(1,'DST_OVER', 'Mode'),
-  \ javaapi#field(1,'LIGHTEN', 'Mode'),
-  \ javaapi#field(1,'MULTIPLY', 'Mode'),
-  \ javaapi#field(1,'OVERLAY', 'Mode'),
-  \ javaapi#field(1,'SCREEN', 'Mode'),
-  \ javaapi#field(1,'SRC', 'Mode'),
-  \ javaapi#field(1,'SRC_ATOP', 'Mode'),
-  \ javaapi#field(1,'SRC_IN', 'Mode'),
-  \ javaapi#field(1,'SRC_OUT', 'Mode'),
-  \ javaapi#field(1,'SRC_OVER', 'Mode'),
-  \ javaapi#field(1,'XOR', 'Mode'),
-  \ javaapi#method(1,'values(', ')', 'Mode[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Mode'),
-  \ ])
-
-call javaapi#class('OutOfResourcesException', '', [
-  \ javaapi#method(0,'OutOfResourcesException(', ')', 'public'),
-  \ javaapi#method(0,'OutOfResourcesException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Xfermode', '', [
-  \ javaapi#method(0,'Xfermode(', ')', 'public'),
-  \ ])
-
-call javaapi#class('PixelXorXfermode', '', [
-  \ javaapi#method(0,'PixelXorXfermode(', 'int)', 'public'),
-  \ ])
-
-call javaapi#class('Picture', '', [
-  \ javaapi#method(0,'Picture(', ')', 'public'),
-  \ javaapi#method(0,'Picture(', 'Picture)', 'public'),
-  \ javaapi#method(0,'beginRecording(', 'int, int)', 'Canvas'),
-  \ javaapi#method(0,'endRecording(', ')', 'void'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
-  \ javaapi#method(1,'createFromStream(', 'InputStream)', 'Picture'),
-  \ javaapi#method(0,'writeToStream(', 'OutputStream)', 'void'),
-  \ ])
-
-call javaapi#class('SweepGradient', '', [
-  \ javaapi#method(0,'SweepGradient(', 'float, float, int[], float[])', 'public'),
-  \ javaapi#method(0,'SweepGradient(', 'float, float, int, int)', 'public'),
-  \ ])
-
-call javaapi#interface('OnFrameAvailableListener', '', [
-  \ javaapi#method(0,'onFrameAvailable(', 'SurfaceTexture)', 'void'),
-  \ ])
-
-call javaapi#class('BitmapShader', '', [
-  \ javaapi#method(0,'BitmapShader(', 'Bitmap, TileMode, TileMode)', 'public'),
-  \ ])
-
-call javaapi#class('CornerPathEffect', '', [
-  \ javaapi#method(0,'CornerPathEffect(', 'float)', 'public'),
-  \ ])
-
-call javaapi#class('ImageFormat', '', [
-  \ javaapi#field(1,'UNKNOWN', 'int'),
-  \ javaapi#field(1,'RGB_565', 'int'),
-  \ javaapi#field(1,'YV12', 'int'),
-  \ javaapi#field(1,'NV16', 'int'),
-  \ javaapi#field(1,'NV21', 'int'),
-  \ javaapi#field(1,'YUY2', 'int'),
-  \ javaapi#field(1,'JPEG', 'int'),
-  \ javaapi#method(0,'ImageFormat(', ')', 'public'),
-  \ javaapi#method(1,'getBitsPerPixel(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('FontMetricsInt', '', [
-  \ javaapi#field(0,'top', 'int'),
-  \ javaapi#field(0,'ascent', 'int'),
-  \ javaapi#field(0,'descent', 'int'),
-  \ javaapi#field(0,'bottom', 'int'),
-  \ javaapi#field(0,'leading', 'int'),
-  \ javaapi#method(0,'FontMetricsInt(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Mode', '', [
-  \ javaapi#field(1,'AVOID', 'Mode'),
-  \ javaapi#field(1,'TARGET', 'Mode'),
-  \ javaapi#method(1,'values(', ')', 'Mode[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Mode'),
-  \ ])
-
-call javaapi#class('TileMode', '', [
-  \ javaapi#field(1,'CLAMP', 'TileMode'),
-  \ javaapi#field(1,'MIRROR', 'TileMode'),
-  \ javaapi#field(1,'REPEAT', 'TileMode'),
-  \ javaapi#method(1,'values(', ')', 'TileMode[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'TileMode'),
-  \ ])
-
-call javaapi#class('PathEffect', '', [
-  \ javaapi#method(0,'PathEffect(', ')', 'public'),
-  \ ])
-
-call javaapi#class('MaskFilter', '', [
-  \ javaapi#method(0,'MaskFilter(', ')', 'public'),
-  \ ])
-
-call javaapi#class('LightingColorFilter', '', [
-  \ javaapi#method(0,'LightingColorFilter(', 'int, int)', 'public'),
-  \ ])
-
-call javaapi#class('Point', 'Parcelable', [
-  \ javaapi#field(0,'x', 'int'),
-  \ javaapi#field(0,'y', 'int'),
-  \ javaapi#field(1,'CREATOR', 'Point>'),
-  \ javaapi#method(0,'Point(', ')', 'public'),
-  \ javaapi#method(0,'Point(', 'int, int)', 'public'),
-  \ javaapi#method(0,'Point(', 'Point)', 'public'),
-  \ javaapi#method(0,'set(', 'int, int)', 'void'),
-  \ javaapi#method(0,'negate(', ')', 'void'),
-  \ javaapi#method(0,'offset(', 'int, int)', 'void'),
-  \ javaapi#method(0,'equals(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('Shader', '', [
-  \ javaapi#method(0,'Shader(', ')', 'public'),
-  \ javaapi#method(0,'getLocalMatrix(', 'Matrix)', 'boolean'),
-  \ javaapi#method(0,'setLocalMatrix(', 'Matrix)', 'void'),
-  \ ])
-
-call javaapi#class('VertexMode', '', [
-  \ javaapi#field(1,'TRIANGLES', 'VertexMode'),
-  \ javaapi#field(1,'TRIANGLE_FAN', 'VertexMode'),
-  \ javaapi#field(1,'TRIANGLE_STRIP', 'VertexMode'),
-  \ javaapi#method(1,'values(', ')', 'VertexMode[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'VertexMode'),
-  \ ])
-
-call javaapi#class('CompressFormat', '', [
-  \ javaapi#field(1,'JPEG', 'CompressFormat'),
-  \ javaapi#field(1,'PNG', 'CompressFormat'),
-  \ javaapi#field(1,'WEBP', 'CompressFormat'),
-  \ javaapi#method(1,'values(', ')', 'CompressFormat[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'CompressFormat'),
-  \ ])
-
-call javaapi#class('BitmapRegionDecoder', '', [
-  \ javaapi#method(1,'newInstance(', 'byte[], int, int, boolean) throws IOException', 'BitmapRegionDecoder'),
-  \ javaapi#method(1,'newInstance(', 'FileDescriptor, boolean) throws IOException', 'BitmapRegionDecoder'),
-  \ javaapi#method(1,'newInstance(', 'InputStream, boolean) throws IOException', 'BitmapRegionDecoder'),
-  \ javaapi#method(1,'newInstance(', 'String, boolean) throws IOException', 'BitmapRegionDecoder'),
-  \ javaapi#method(0,'decodeRegion(', 'Rect, Options)', 'Bitmap'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'recycle(', ')', 'void'),
-  \ javaapi#method(0,'isRecycled(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('NinePatch', '', [
-  \ javaapi#method(0,'NinePatch(', 'Bitmap, byte[], String)', 'public'),
-  \ javaapi#method(0,'setPaint(', 'Paint)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas, RectF)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas, Rect)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas, Rect, Paint)', 'void'),
-  \ javaapi#method(0,'getDensity(', ')', 'int'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'hasAlpha(', ')', 'boolean'),
-  \ javaapi#method(0,'getTransparentRegion(', 'Rect)', 'Region'),
-  \ javaapi#method(1,'isNinePatchChunk(', 'byte[])', 'boolean'),
-  \ ])
-
-call javaapi#class('Result', '', [
-  \ javaapi#field(1,'FREEZE_END', 'Result'),
-  \ javaapi#field(1,'FREEZE_START', 'Result'),
-  \ javaapi#field(1,'NORMAL', 'Result'),
-  \ javaapi#method(1,'values(', ')', 'Result[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Result'),
-  \ ])
-
-call javaapi#class('Op', '', [
-  \ javaapi#field(1,'DIFFERENCE', 'Op'),
-  \ javaapi#field(1,'INTERSECT', 'Op'),
-  \ javaapi#field(1,'REPLACE', 'Op'),
-  \ javaapi#field(1,'REVERSE_DIFFERENCE', 'Op'),
-  \ javaapi#field(1,'UNION', 'Op'),
-  \ javaapi#field(1,'XOR', 'Op'),
-  \ javaapi#method(1,'values(', ')', 'Op[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Op'),
-  \ ])
-
-call javaapi#class('ColorFilter', '', [
-  \ javaapi#method(0,'ColorFilter(', ')', 'public'),
-  \ ])
-
-call javaapi#class('Canvas', '', [
-  \ javaapi#field(1,'MATRIX_SAVE_FLAG', 'int'),
-  \ javaapi#field(1,'CLIP_SAVE_FLAG', 'int'),
-  \ javaapi#field(1,'HAS_ALPHA_LAYER_SAVE_FLAG', 'int'),
-  \ javaapi#field(1,'FULL_COLOR_LAYER_SAVE_FLAG', 'int'),
-  \ javaapi#field(1,'CLIP_TO_LAYER_SAVE_FLAG', 'int'),
-  \ javaapi#field(1,'ALL_SAVE_FLAG', 'int'),
-  \ javaapi#method(0,'Canvas(', ')', 'public'),
-  \ javaapi#method(0,'Canvas(', 'Bitmap)', 'public'),
-  \ javaapi#method(0,'isHardwareAccelerated(', ')', 'boolean'),
-  \ javaapi#method(0,'setBitmap(', 'Bitmap)', 'void'),
-  \ javaapi#method(0,'isOpaque(', ')', 'boolean'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'getDensity(', ')', 'int'),
-  \ javaapi#method(0,'setDensity(', 'int)', 'void'),
-  \ javaapi#method(0,'getMaximumBitmapWidth(', ')', 'int'),
-  \ javaapi#method(0,'getMaximumBitmapHeight(', ')', 'int'),
-  \ javaapi#method(0,'save(', ')', 'int'),
-  \ javaapi#method(0,'save(', 'int)', 'int'),
-  \ javaapi#method(0,'saveLayer(', 'RectF, Paint, int)', 'int'),
-  \ javaapi#method(0,'saveLayer(', 'float, float, float, float, Paint, int)', 'int'),
-  \ javaapi#method(0,'saveLayerAlpha(', 'RectF, int, int)', 'int'),
-  \ javaapi#method(0,'saveLayerAlpha(', 'float, float, float, float, int, int)', 'int'),
-  \ javaapi#method(0,'restore(', ')', 'void'),
-  \ javaapi#method(0,'getSaveCount(', ')', 'int'),
-  \ javaapi#method(0,'restoreToCount(', 'int)', 'void'),
-  \ javaapi#method(0,'translate(', 'float, float)', 'void'),
-  \ javaapi#method(0,'scale(', 'float, float)', 'void'),
-  \ javaapi#method(0,'scale(', 'float, float, float, float)', 'void'),
-  \ javaapi#method(0,'rotate(', 'float)', 'void'),
-  \ javaapi#method(0,'rotate(', 'float, float, float)', 'void'),
-  \ javaapi#method(0,'skew(', 'float, float)', 'void'),
-  \ javaapi#method(0,'concat(', 'Matrix)', 'void'),
-  \ javaapi#method(0,'setMatrix(', 'Matrix)', 'void'),
-  \ javaapi#method(0,'getMatrix(', 'Matrix)', 'void'),
-  \ javaapi#method(0,'getMatrix(', ')', 'Matrix'),
-  \ javaapi#method(0,'clipRect(', 'RectF, Op)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'Rect, Op)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'RectF)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'Rect)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'float, float, float, float, Op)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'float, float, float, float)', 'boolean'),
-  \ javaapi#method(0,'clipRect(', 'int, int, int, int)', 'boolean'),
-  \ javaapi#method(0,'clipPath(', 'Path, Op)', 'boolean'),
-  \ javaapi#method(0,'clipPath(', 'Path)', 'boolean'),
-  \ javaapi#method(0,'clipRegion(', 'Region, Op)', 'boolean'),
-  \ javaapi#method(0,'clipRegion(', 'Region)', 'boolean'),
-  \ javaapi#method(0,'getDrawFilter(', ')', 'DrawFilter'),
-  \ javaapi#method(0,'setDrawFilter(', 'DrawFilter)', 'void'),
-  \ javaapi#method(0,'quickReject(', 'RectF, EdgeType)', 'boolean'),
-  \ javaapi#method(0,'quickReject(', 'Path, EdgeType)', 'boolean'),
-  \ javaapi#method(0,'quickReject(', 'float, float, float, float, EdgeType)', 'boolean'),
-  \ javaapi#method(0,'getClipBounds(', 'Rect)', 'boolean'),
-  \ javaapi#method(0,'getClipBounds(', ')', 'Rect'),
-  \ javaapi#method(0,'drawRGB(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'drawARGB(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'drawColor(', 'int)', 'void'),
-  \ javaapi#method(0,'drawColor(', 'int, Mode)', 'void'),
-  \ javaapi#method(0,'drawPaint(', 'Paint)', 'void'),
-  \ javaapi#method(0,'drawPoints(', 'float[], int, int, Paint)', 'void'),
-  \ javaapi#method(0,'drawPoints(', 'float[], Paint)', 'void'),
-  \ javaapi#method(0,'drawPoint(', 'float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawLine(', 'float, float, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawLines(', 'float[], int, int, Paint)', 'void'),
-  \ javaapi#method(0,'drawLines(', 'float[], Paint)', 'void'),
-  \ javaapi#method(0,'drawRect(', 'RectF, Paint)', 'void'),
-  \ javaapi#method(0,'drawRect(', 'Rect, Paint)', 'void'),
-  \ javaapi#method(0,'drawRect(', 'float, float, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawOval(', 'RectF, Paint)', 'void'),
-  \ javaapi#method(0,'drawCircle(', 'float, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawArc(', 'RectF, float, float, boolean, Paint)', 'void'),
-  \ javaapi#method(0,'drawRoundRect(', 'RectF, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawPath(', 'Path, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'Bitmap, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Rect, RectF, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Rect, Rect, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'int[], int, int, float, float, int, int, boolean, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'int[], int, int, int, int, int, int, boolean, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Matrix, Paint)', 'void'),
-  \ javaapi#method(0,'drawBitmapMesh(', 'Bitmap, int, int, float[], int, int[], int, Paint)', 'void'),
-  \ javaapi#method(0,'drawVertices(', 'VertexMode, int, float[], int, float[], int, int[], int, short[], int, int, Paint)', 'void'),
-  \ javaapi#method(0,'drawText(', 'char[], int, int, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawText(', 'String, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawText(', 'String, int, int, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawText(', 'CharSequence, int, int, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawPosText(', 'char[], int, int, float[], Paint)', 'void'),
-  \ javaapi#method(0,'drawPosText(', 'String, float[], Paint)', 'void'),
-  \ javaapi#method(0,'drawTextOnPath(', 'char[], int, int, Path, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawTextOnPath(', 'String, Path, float, float, Paint)', 'void'),
-  \ javaapi#method(0,'drawPicture(', 'Picture)', 'void'),
-  \ javaapi#method(0,'drawPicture(', 'Picture, RectF)', 'void'),
-  \ javaapi#method(0,'drawPicture(', 'Picture, Rect)', 'void'),
-  \ ])
-
-call javaapi#class('Blur', '', [
-  \ javaapi#field(1,'INNER', 'Blur'),
-  \ javaapi#field(1,'NORMAL', 'Blur'),
-  \ javaapi#field(1,'OUTER', 'Blur'),
-  \ javaapi#field(1,'SOLID', 'Blur'),
-  \ javaapi#method(1,'values(', ')', 'Blur[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Blur'),
-  \ ])
-
-call javaapi#class('Rect', 'Parcelable', [
-  \ javaapi#field(0,'left', 'int'),
-  \ javaapi#field(0,'top', 'int'),
-  \ javaapi#field(0,'right', 'int'),
-  \ javaapi#field(0,'bottom', 'int'),
-  \ javaapi#field(1,'CREATOR', 'Rect>'),
-  \ javaapi#method(0,'Rect(', ')', 'public'),
-  \ javaapi#method(0,'Rect(', 'int, int, int, int)', 'public'),
-  \ javaapi#method(0,'Rect(', 'Rect)', 'public'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'toShortString(', ')', 'String'),
-  \ javaapi#method(0,'flattenToString(', ')', 'String'),
-  \ javaapi#method(1,'unflattenFromString(', 'String)', 'Rect'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'width(', ')', 'int'),
-  \ javaapi#method(0,'height(', ')', 'int'),
-  \ javaapi#method(0,'centerX(', ')', 'int'),
-  \ javaapi#method(0,'centerY(', ')', 'int'),
-  \ javaapi#method(0,'exactCenterX(', ')', 'float'),
-  \ javaapi#method(0,'exactCenterY(', ')', 'float'),
-  \ javaapi#method(0,'setEmpty(', ')', 'void'),
-  \ javaapi#method(0,'set(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'set(', 'Rect)', 'void'),
-  \ javaapi#method(0,'offset(', 'int, int)', 'void'),
-  \ javaapi#method(0,'offsetTo(', 'int, int)', 'void'),
-  \ javaapi#method(0,'inset(', 'int, int)', 'void'),
-  \ javaapi#method(0,'contains(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'contains(', 'int, int, int, int)', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Rect)', 'boolean'),
-  \ javaapi#method(0,'intersect(', 'int, int, int, int)', 'boolean'),
-  \ javaapi#method(0,'intersect(', 'Rect)', 'boolean'),
-  \ javaapi#method(0,'setIntersect(', 'Rect, Rect)', 'boolean'),
-  \ javaapi#method(0,'intersects(', 'int, int, int, int)', 'boolean'),
-  \ javaapi#method(1,'intersects(', 'Rect, Rect)', 'boolean'),
-  \ javaapi#method(0,'union(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'union(', 'Rect)', 'void'),
-  \ javaapi#method(0,'union(', 'int, int)', 'void'),
-  \ javaapi#method(0,'sort(', ')', 'void'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('PointF', 'Parcelable', [
-  \ javaapi#field(0,'x', 'float'),
-  \ javaapi#field(0,'y', 'float'),
-  \ javaapi#field(1,'CREATOR', 'PointF>'),
-  \ javaapi#method(0,'PointF(', ')', 'public'),
-  \ javaapi#method(0,'PointF(', 'float, float)', 'public'),
-  \ javaapi#method(0,'PointF(', 'Point)', 'public'),
-  \ javaapi#method(0,'set(', 'float, float)', 'void'),
-  \ javaapi#method(0,'set(', 'PointF)', 'void'),
-  \ javaapi#method(0,'negate(', ')', 'void'),
-  \ javaapi#method(0,'offset(', 'float, float)', 'void'),
-  \ javaapi#method(0,'equals(', 'float, float)', 'boolean'),
-  \ javaapi#method(0,'length(', ')', 'float'),
-  \ javaapi#method(1,'length(', 'float, float)', 'float'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
-  \ ])
-
-call javaapi#class('Style', '', [
-  \ javaapi#field(1,'MORPH', 'Style'),
-  \ javaapi#field(1,'ROTATE', 'Style'),
-  \ javaapi#field(1,'TRANSLATE', 'Style'),
-  \ javaapi#method(1,'values(', ')', 'Style[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Style'),
-  \ ])
-
-call javaapi#class('Config', '', [
-  \ javaapi#field(1,'ALPHA_8', 'Config'),
-  \ javaapi#field(1,'ARGB_4444', 'Config'),
-  \ javaapi#field(1,'ARGB_8888', 'Config'),
-  \ javaapi#field(1,'RGB_565', 'Config'),
-  \ javaapi#method(1,'values(', ')', 'Config[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Config'),
-  \ ])
-
-call javaapi#class('DrawFilter', '', [
-  \ javaapi#method(0,'DrawFilter(', ')', 'public'),
-  \ ])
-
-call javaapi#class('ScaleToFit', '', [
-  \ javaapi#field(1,'CENTER', 'ScaleToFit'),
-  \ javaapi#field(1,'END', 'ScaleToFit'),
-  \ javaapi#field(1,'FILL', 'ScaleToFit'),
-  \ javaapi#field(1,'START', 'ScaleToFit'),
-  \ javaapi#method(1,'values(', ')', 'ScaleToFit[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'ScaleToFit'),
-  \ ])
-
-call javaapi#class('PathMeasure', '', [
-  \ javaapi#field(1,'POSITION_MATRIX_FLAG', 'int'),
-  \ javaapi#field(1,'TANGENT_MATRIX_FLAG', 'int'),
-  \ javaapi#method(0,'PathMeasure(', ')', 'public'),
-  \ javaapi#method(0,'PathMeasure(', 'Path, boolean)', 'public'),
-  \ javaapi#method(0,'setPath(', 'Path, boolean)', 'void'),
-  \ javaapi#method(0,'getLength(', ')', 'float'),
-  \ javaapi#method(0,'getPosTan(', 'float, float[], float[])', 'boolean'),
-  \ javaapi#method(0,'getMatrix(', 'float, Matrix, int)', 'boolean'),
-  \ javaapi#method(0,'getSegment(', 'float, float, Path, boolean)', 'boolean'),
-  \ javaapi#method(0,'isClosed(', ')', 'boolean'),
-  \ javaapi#method(0,'nextContour(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('Align', '', [
-  \ javaapi#field(1,'CENTER', 'Align'),
-  \ javaapi#field(1,'LEFT', 'Align'),
-  \ javaapi#field(1,'RIGHT', 'Align'),
-  \ javaapi#method(1,'values(', ')', 'Align[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Align'),
-  \ ])
-
-call javaapi#class('SumPathEffect', '', [
-  \ javaapi#method(0,'SumPathEffect(', 'PathEffect, PathEffect)', 'public'),
-  \ ])
-
-call javaapi#class('PaintFlagsDrawFilter', '', [
-  \ javaapi#method(0,'PaintFlagsDrawFilter(', 'int, int)', 'public'),
-  \ ])
-
-call javaapi#class('Join', '', [
-  \ javaapi#field(1,'BEVEL', 'Join'),
-  \ javaapi#field(1,'MITER', 'Join'),
-  \ javaapi#field(1,'ROUND', 'Join'),
-  \ javaapi#method(1,'values(', ')', 'Join[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Join'),
-  \ ])
-
-call javaapi#class('Direction', '', [
-  \ javaapi#field(1,'CCW', 'Direction'),
-  \ javaapi#field(1,'CW', 'Direction'),
-  \ javaapi#method(1,'values(', ')', 'Direction[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Direction'),
-  \ ])
-
-
 call javaapi#class('PorterDuff', '', [
   \ javaapi#method(0,'PorterDuff(', ')', 'public'),
   \ ])
 
-call javaapi#class('ComposeShader', '', [
+call javaapi#class('ComposeShader', 'Shader', [
   \ javaapi#method(0,'ComposeShader(', 'Shader, Shader, Xfermode)', 'public'),
   \ javaapi#method(0,'ComposeShader(', 'Shader, Shader, Mode)', 'public'),
   \ ])
 
-call javaapi#class('PorterDuffXfermode', '', [
+call javaapi#class('PorterDuffXfermode', 'Xfermode', [
   \ javaapi#method(0,'PorterDuffXfermode(', 'Mode)', 'public'),
   \ ])
 
-call javaapi#class('DashPathEffect', '', [
+call javaapi#class('DashPathEffect', 'PathEffect', [
   \ javaapi#method(0,'DashPathEffect(', 'float[], float)', 'public'),
   \ ])
 
-call javaapi#class('EdgeType', '', [
+call javaapi#class('EdgeType', 'EdgeType>', [
   \ javaapi#field(1,'AA', 'EdgeType'),
   \ javaapi#field(1,'BW', 'EdgeType'),
   \ javaapi#method(1,'values(', ')', 'EdgeType[]'),
@@ -839,7 +321,7 @@ call javaapi#class('Paint', '', [
   \ javaapi#method(0,'getTextBounds(', 'char[], int, int, Rect)', 'void'),
   \ ])
 
-call javaapi#class('Cap', '', [
+call javaapi#class('Cap', 'Cap>', [
   \ javaapi#field(1,'BUTT', 'Cap'),
   \ javaapi#field(1,'ROUND', 'Cap'),
   \ javaapi#field(1,'SQUARE', 'Cap'),
@@ -1014,7 +496,7 @@ call javaapi#class('FontMetrics', '', [
   \ javaapi#method(0,'FontMetrics(', ')', 'public'),
   \ ])
 
-call javaapi#class('ColorMatrixColorFilter', '', [
+call javaapi#class('ColorMatrixColorFilter', 'ColorFilter', [
   \ javaapi#method(0,'ColorMatrixColorFilter(', 'ColorMatrix)', 'public'),
   \ javaapi#method(0,'ColorMatrixColorFilter(', 'float[])', 'public'),
   \ ])
@@ -1072,11 +554,11 @@ call javaapi#class('Interpolator', '', [
   \ javaapi#method(0,'timeToValues(', 'int, float[])', 'Result'),
   \ ])
 
-call javaapi#class('DiscretePathEffect', '', [
+call javaapi#class('DiscretePathEffect', 'PathEffect', [
   \ javaapi#method(0,'DiscretePathEffect(', 'float, float)', 'public'),
   \ ])
 
-call javaapi#class('FillType', '', [
+call javaapi#class('FillType', 'FillType>', [
   \ javaapi#field(1,'EVEN_ODD', 'FillType'),
   \ javaapi#field(1,'INVERSE_EVEN_ODD', 'FillType'),
   \ javaapi#field(1,'INVERSE_WINDING', 'FillType'),
@@ -1085,23 +567,542 @@ call javaapi#class('FillType', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'FillType'),
   \ ])
 
-call javaapi#class('EmbossMaskFilter', '', [
+call javaapi#class('EmbossMaskFilter', 'MaskFilter', [
   \ javaapi#method(0,'EmbossMaskFilter(', 'float[], float, float, float)', 'public'),
   \ ])
 
-call javaapi#class('ComposePathEffect', '', [
+call javaapi#class('ComposePathEffect', 'PathEffect', [
   \ javaapi#method(0,'ComposePathEffect(', 'PathEffect, PathEffect)', 'public'),
   \ ])
 
-call javaapi#class('AvoidXfermode', '', [
+call javaapi#class('AvoidXfermode', 'Xfermode', [
   \ javaapi#method(0,'AvoidXfermode(', 'int, int, Mode)', 'public'),
   \ ])
 
-call javaapi#class('Style', '', [
+call javaapi#class('Style', 'Style>', [
   \ javaapi#field(1,'FILL', 'Style'),
   \ javaapi#field(1,'FILL_AND_STROKE', 'Style'),
   \ javaapi#field(1,'STROKE', 'Style'),
   \ javaapi#method(1,'values(', ')', 'Style[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Style'),
+  \ ])
+
+call javaapi#namespace('android.graphics')
+
+call javaapi#class('Color', '', [
+  \ javaapi#field(1,'BLACK', 'int'),
+  \ javaapi#field(1,'DKGRAY', 'int'),
+  \ javaapi#field(1,'GRAY', 'int'),
+  \ javaapi#field(1,'LTGRAY', 'int'),
+  \ javaapi#field(1,'WHITE', 'int'),
+  \ javaapi#field(1,'RED', 'int'),
+  \ javaapi#field(1,'GREEN', 'int'),
+  \ javaapi#field(1,'BLUE', 'int'),
+  \ javaapi#field(1,'YELLOW', 'int'),
+  \ javaapi#field(1,'CYAN', 'int'),
+  \ javaapi#field(1,'MAGENTA', 'int'),
+  \ javaapi#field(1,'TRANSPARENT', 'int'),
+  \ javaapi#method(0,'Color(', ')', 'public'),
+  \ javaapi#method(1,'alpha(', 'int)', 'int'),
+  \ javaapi#method(1,'red(', 'int)', 'int'),
+  \ javaapi#method(1,'green(', 'int)', 'int'),
+  \ javaapi#method(1,'blue(', 'int)', 'int'),
+  \ javaapi#method(1,'rgb(', 'int, int, int)', 'int'),
+  \ javaapi#method(1,'argb(', 'int, int, int, int)', 'int'),
+  \ javaapi#method(1,'parseColor(', 'String)', 'int'),
+  \ javaapi#method(1,'RGBToHSV(', 'int, int, int, float[])', 'void'),
+  \ javaapi#method(1,'colorToHSV(', 'int, float[])', 'void'),
+  \ javaapi#method(1,'HSVToColor(', 'float[])', 'int'),
+  \ javaapi#method(1,'HSVToColor(', 'int, float[])', 'int'),
+  \ ])
+
+call javaapi#class('PathDashPathEffect', 'PathEffect', [
+  \ javaapi#method(0,'PathDashPathEffect(', 'Path, float, float, Style)', 'public'),
+  \ ])
+
+call javaapi#class('BitmapFactory', '', [
+  \ javaapi#method(0,'BitmapFactory(', ')', 'public'),
+  \ javaapi#method(1,'decodeFile(', 'String, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeFile(', 'String)', 'Bitmap'),
+  \ javaapi#method(1,'decodeResourceStream(', 'Resources, TypedValue, InputStream, Rect, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeResource(', 'Resources, int, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeResource(', 'Resources, int)', 'Bitmap'),
+  \ javaapi#method(1,'decodeByteArray(', 'byte[], int, int, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeByteArray(', 'byte[], int, int)', 'Bitmap'),
+  \ javaapi#method(1,'decodeStream(', 'InputStream, Rect, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeStream(', 'InputStream)', 'Bitmap'),
+  \ javaapi#method(1,'decodeFileDescriptor(', 'FileDescriptor, Rect, Options)', 'Bitmap'),
+  \ javaapi#method(1,'decodeFileDescriptor(', 'FileDescriptor)', 'Bitmap'),
+  \ ])
+
+call javaapi#class('LinearGradient', 'Shader', [
+  \ javaapi#method(0,'LinearGradient(', 'float, float, float, float, int[], float[], TileMode)', 'public'),
+  \ javaapi#method(0,'LinearGradient(', 'float, float, float, float, int, int, TileMode)', 'public'),
+  \ ])
+
+call javaapi#class('RadialGradient', 'Shader', [
+  \ javaapi#method(0,'RadialGradient(', 'float, float, float, int[], float[], TileMode)', 'public'),
+  \ javaapi#method(0,'RadialGradient(', 'float, float, float, int, int, TileMode)', 'public'),
+  \ ])
+
+call javaapi#class('LayerRasterizer', 'Rasterizer', [
+  \ javaapi#method(0,'LayerRasterizer(', ')', 'public'),
+  \ javaapi#method(0,'addLayer(', 'Paint, float, float)', 'void'),
+  \ javaapi#method(0,'addLayer(', 'Paint)', 'void'),
+  \ ])
+
+call javaapi#class('BlurMaskFilter', 'MaskFilter', [
+  \ javaapi#method(0,'BlurMaskFilter(', 'float, Blur)', 'public'),
+  \ ])
+
+call javaapi#class('PorterDuffColorFilter', 'ColorFilter', [
+  \ javaapi#method(0,'PorterDuffColorFilter(', 'int, Mode)', 'public'),
+  \ ])
+
+call javaapi#class('Mode', 'Mode>', [
+  \ javaapi#field(1,'ADD', 'Mode'),
+  \ javaapi#field(1,'CLEAR', 'Mode'),
+  \ javaapi#field(1,'DARKEN', 'Mode'),
+  \ javaapi#field(1,'DST', 'Mode'),
+  \ javaapi#field(1,'DST_ATOP', 'Mode'),
+  \ javaapi#field(1,'DST_IN', 'Mode'),
+  \ javaapi#field(1,'DST_OUT', 'Mode'),
+  \ javaapi#field(1,'DST_OVER', 'Mode'),
+  \ javaapi#field(1,'LIGHTEN', 'Mode'),
+  \ javaapi#field(1,'MULTIPLY', 'Mode'),
+  \ javaapi#field(1,'OVERLAY', 'Mode'),
+  \ javaapi#field(1,'SCREEN', 'Mode'),
+  \ javaapi#field(1,'SRC', 'Mode'),
+  \ javaapi#field(1,'SRC_ATOP', 'Mode'),
+  \ javaapi#field(1,'SRC_IN', 'Mode'),
+  \ javaapi#field(1,'SRC_OUT', 'Mode'),
+  \ javaapi#field(1,'SRC_OVER', 'Mode'),
+  \ javaapi#field(1,'XOR', 'Mode'),
+  \ javaapi#method(1,'values(', ')', 'Mode[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Mode'),
+  \ ])
+
+call javaapi#class('OutOfResourcesException', 'Exception', [
+  \ javaapi#method(0,'OutOfResourcesException(', ')', 'public'),
+  \ javaapi#method(0,'OutOfResourcesException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Xfermode', '', [
+  \ javaapi#method(0,'Xfermode(', ')', 'public'),
+  \ ])
+
+call javaapi#class('PixelXorXfermode', 'Xfermode', [
+  \ javaapi#method(0,'PixelXorXfermode(', 'int)', 'public'),
+  \ ])
+
+call javaapi#class('Picture', '', [
+  \ javaapi#method(0,'Picture(', ')', 'public'),
+  \ javaapi#method(0,'Picture(', 'Picture)', 'public'),
+  \ javaapi#method(0,'beginRecording(', 'int, int)', 'Canvas'),
+  \ javaapi#method(0,'endRecording(', ')', 'void'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
+  \ javaapi#method(1,'createFromStream(', 'InputStream)', 'Picture'),
+  \ javaapi#method(0,'writeToStream(', 'OutputStream)', 'void'),
+  \ ])
+
+call javaapi#class('SweepGradient', 'Shader', [
+  \ javaapi#method(0,'SweepGradient(', 'float, float, int[], float[])', 'public'),
+  \ javaapi#method(0,'SweepGradient(', 'float, float, int, int)', 'public'),
+  \ ])
+
+call javaapi#interface('OnFrameAvailableListener', '', [
+  \ javaapi#method(0,'onFrameAvailable(', 'SurfaceTexture)', 'void'),
+  \ ])
+
+call javaapi#class('BitmapShader', 'Shader', [
+  \ javaapi#method(0,'BitmapShader(', 'Bitmap, TileMode, TileMode)', 'public'),
+  \ ])
+
+call javaapi#class('CornerPathEffect', 'PathEffect', [
+  \ javaapi#method(0,'CornerPathEffect(', 'float)', 'public'),
+  \ ])
+
+call javaapi#class('ImageFormat', '', [
+  \ javaapi#field(1,'UNKNOWN', 'int'),
+  \ javaapi#field(1,'RGB_565', 'int'),
+  \ javaapi#field(1,'YV12', 'int'),
+  \ javaapi#field(1,'NV16', 'int'),
+  \ javaapi#field(1,'NV21', 'int'),
+  \ javaapi#field(1,'YUY2', 'int'),
+  \ javaapi#field(1,'JPEG', 'int'),
+  \ javaapi#method(0,'ImageFormat(', ')', 'public'),
+  \ javaapi#method(1,'getBitsPerPixel(', 'int)', 'int'),
+  \ ])
+
+call javaapi#class('FontMetricsInt', '', [
+  \ javaapi#field(0,'top', 'int'),
+  \ javaapi#field(0,'ascent', 'int'),
+  \ javaapi#field(0,'descent', 'int'),
+  \ javaapi#field(0,'bottom', 'int'),
+  \ javaapi#field(0,'leading', 'int'),
+  \ javaapi#method(0,'FontMetricsInt(', ')', 'public'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('Mode', 'Mode>', [
+  \ javaapi#field(1,'AVOID', 'Mode'),
+  \ javaapi#field(1,'TARGET', 'Mode'),
+  \ javaapi#method(1,'values(', ')', 'Mode[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Mode'),
+  \ ])
+
+call javaapi#class('TileMode', 'TileMode>', [
+  \ javaapi#field(1,'CLAMP', 'TileMode'),
+  \ javaapi#field(1,'MIRROR', 'TileMode'),
+  \ javaapi#field(1,'REPEAT', 'TileMode'),
+  \ javaapi#method(1,'values(', ')', 'TileMode[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'TileMode'),
+  \ ])
+
+call javaapi#class('PathEffect', '', [
+  \ javaapi#method(0,'PathEffect(', ')', 'public'),
+  \ ])
+
+call javaapi#class('MaskFilter', '', [
+  \ javaapi#method(0,'MaskFilter(', ')', 'public'),
+  \ ])
+
+call javaapi#class('LightingColorFilter', 'ColorFilter', [
+  \ javaapi#method(0,'LightingColorFilter(', 'int, int)', 'public'),
+  \ ])
+
+call javaapi#class('Point', 'Parcelable', [
+  \ javaapi#field(0,'x', 'int'),
+  \ javaapi#field(0,'y', 'int'),
+  \ javaapi#field(1,'CREATOR', 'Point>'),
+  \ javaapi#method(0,'Point(', ')', 'public'),
+  \ javaapi#method(0,'Point(', 'int, int)', 'public'),
+  \ javaapi#method(0,'Point(', 'Point)', 'public'),
+  \ javaapi#method(0,'set(', 'int, int)', 'void'),
+  \ javaapi#method(0,'negate(', ')', 'void'),
+  \ javaapi#method(0,'offset(', 'int, int)', 'void'),
+  \ javaapi#method(0,'equals(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('Shader', '', [
+  \ javaapi#method(0,'Shader(', ')', 'public'),
+  \ javaapi#method(0,'getLocalMatrix(', 'Matrix)', 'boolean'),
+  \ javaapi#method(0,'setLocalMatrix(', 'Matrix)', 'void'),
+  \ ])
+
+call javaapi#class('VertexMode', 'VertexMode>', [
+  \ javaapi#field(1,'TRIANGLES', 'VertexMode'),
+  \ javaapi#field(1,'TRIANGLE_FAN', 'VertexMode'),
+  \ javaapi#field(1,'TRIANGLE_STRIP', 'VertexMode'),
+  \ javaapi#method(1,'values(', ')', 'VertexMode[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'VertexMode'),
+  \ ])
+
+call javaapi#class('CompressFormat', 'CompressFormat>', [
+  \ javaapi#field(1,'JPEG', 'CompressFormat'),
+  \ javaapi#field(1,'PNG', 'CompressFormat'),
+  \ javaapi#field(1,'WEBP', 'CompressFormat'),
+  \ javaapi#method(1,'values(', ')', 'CompressFormat[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'CompressFormat'),
+  \ ])
+
+call javaapi#class('BitmapRegionDecoder', '', [
+  \ javaapi#method(1,'newInstance(', 'byte[], int, int, boolean) throws IOException', 'BitmapRegionDecoder'),
+  \ javaapi#method(1,'newInstance(', 'FileDescriptor, boolean) throws IOException', 'BitmapRegionDecoder'),
+  \ javaapi#method(1,'newInstance(', 'InputStream, boolean) throws IOException', 'BitmapRegionDecoder'),
+  \ javaapi#method(1,'newInstance(', 'String, boolean) throws IOException', 'BitmapRegionDecoder'),
+  \ javaapi#method(0,'decodeRegion(', 'Rect, Options)', 'Bitmap'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'recycle(', ')', 'void'),
+  \ javaapi#method(0,'isRecycled(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('NinePatch', '', [
+  \ javaapi#method(0,'NinePatch(', 'Bitmap, byte[], String)', 'public'),
+  \ javaapi#method(0,'setPaint(', 'Paint)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas, RectF)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas, Rect)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas, Rect, Paint)', 'void'),
+  \ javaapi#method(0,'getDensity(', ')', 'int'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'hasAlpha(', ')', 'boolean'),
+  \ javaapi#method(0,'getTransparentRegion(', 'Rect)', 'Region'),
+  \ javaapi#method(1,'isNinePatchChunk(', 'byte[])', 'boolean'),
+  \ ])
+
+call javaapi#class('Result', 'Result>', [
+  \ javaapi#field(1,'FREEZE_END', 'Result'),
+  \ javaapi#field(1,'FREEZE_START', 'Result'),
+  \ javaapi#field(1,'NORMAL', 'Result'),
+  \ javaapi#method(1,'values(', ')', 'Result[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Result'),
+  \ ])
+
+call javaapi#class('Op', 'Op>', [
+  \ javaapi#field(1,'DIFFERENCE', 'Op'),
+  \ javaapi#field(1,'INTERSECT', 'Op'),
+  \ javaapi#field(1,'REPLACE', 'Op'),
+  \ javaapi#field(1,'REVERSE_DIFFERENCE', 'Op'),
+  \ javaapi#field(1,'UNION', 'Op'),
+  \ javaapi#field(1,'XOR', 'Op'),
+  \ javaapi#method(1,'values(', ')', 'Op[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Op'),
+  \ ])
+
+call javaapi#class('ColorFilter', '', [
+  \ javaapi#method(0,'ColorFilter(', ')', 'public'),
+  \ ])
+
+call javaapi#class('Canvas', '', [
+  \ javaapi#field(1,'MATRIX_SAVE_FLAG', 'int'),
+  \ javaapi#field(1,'CLIP_SAVE_FLAG', 'int'),
+  \ javaapi#field(1,'HAS_ALPHA_LAYER_SAVE_FLAG', 'int'),
+  \ javaapi#field(1,'FULL_COLOR_LAYER_SAVE_FLAG', 'int'),
+  \ javaapi#field(1,'CLIP_TO_LAYER_SAVE_FLAG', 'int'),
+  \ javaapi#field(1,'ALL_SAVE_FLAG', 'int'),
+  \ javaapi#method(0,'Canvas(', ')', 'public'),
+  \ javaapi#method(0,'Canvas(', 'Bitmap)', 'public'),
+  \ javaapi#method(0,'isHardwareAccelerated(', ')', 'boolean'),
+  \ javaapi#method(0,'setBitmap(', 'Bitmap)', 'void'),
+  \ javaapi#method(0,'isOpaque(', ')', 'boolean'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'getDensity(', ')', 'int'),
+  \ javaapi#method(0,'setDensity(', 'int)', 'void'),
+  \ javaapi#method(0,'getMaximumBitmapWidth(', ')', 'int'),
+  \ javaapi#method(0,'getMaximumBitmapHeight(', ')', 'int'),
+  \ javaapi#method(0,'save(', ')', 'int'),
+  \ javaapi#method(0,'save(', 'int)', 'int'),
+  \ javaapi#method(0,'saveLayer(', 'RectF, Paint, int)', 'int'),
+  \ javaapi#method(0,'saveLayer(', 'float, float, float, float, Paint, int)', 'int'),
+  \ javaapi#method(0,'saveLayerAlpha(', 'RectF, int, int)', 'int'),
+  \ javaapi#method(0,'saveLayerAlpha(', 'float, float, float, float, int, int)', 'int'),
+  \ javaapi#method(0,'restore(', ')', 'void'),
+  \ javaapi#method(0,'getSaveCount(', ')', 'int'),
+  \ javaapi#method(0,'restoreToCount(', 'int)', 'void'),
+  \ javaapi#method(0,'translate(', 'float, float)', 'void'),
+  \ javaapi#method(0,'scale(', 'float, float)', 'void'),
+  \ javaapi#method(0,'scale(', 'float, float, float, float)', 'void'),
+  \ javaapi#method(0,'rotate(', 'float)', 'void'),
+  \ javaapi#method(0,'rotate(', 'float, float, float)', 'void'),
+  \ javaapi#method(0,'skew(', 'float, float)', 'void'),
+  \ javaapi#method(0,'concat(', 'Matrix)', 'void'),
+  \ javaapi#method(0,'setMatrix(', 'Matrix)', 'void'),
+  \ javaapi#method(0,'getMatrix(', 'Matrix)', 'void'),
+  \ javaapi#method(0,'getMatrix(', ')', 'Matrix'),
+  \ javaapi#method(0,'clipRect(', 'RectF, Op)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'Rect, Op)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'RectF)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'Rect)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'float, float, float, float, Op)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'float, float, float, float)', 'boolean'),
+  \ javaapi#method(0,'clipRect(', 'int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,'clipPath(', 'Path, Op)', 'boolean'),
+  \ javaapi#method(0,'clipPath(', 'Path)', 'boolean'),
+  \ javaapi#method(0,'clipRegion(', 'Region, Op)', 'boolean'),
+  \ javaapi#method(0,'clipRegion(', 'Region)', 'boolean'),
+  \ javaapi#method(0,'getDrawFilter(', ')', 'DrawFilter'),
+  \ javaapi#method(0,'setDrawFilter(', 'DrawFilter)', 'void'),
+  \ javaapi#method(0,'quickReject(', 'RectF, EdgeType)', 'boolean'),
+  \ javaapi#method(0,'quickReject(', 'Path, EdgeType)', 'boolean'),
+  \ javaapi#method(0,'quickReject(', 'float, float, float, float, EdgeType)', 'boolean'),
+  \ javaapi#method(0,'getClipBounds(', 'Rect)', 'boolean'),
+  \ javaapi#method(0,'getClipBounds(', ')', 'Rect'),
+  \ javaapi#method(0,'drawRGB(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'drawARGB(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,'drawColor(', 'int)', 'void'),
+  \ javaapi#method(0,'drawColor(', 'int, Mode)', 'void'),
+  \ javaapi#method(0,'drawPaint(', 'Paint)', 'void'),
+  \ javaapi#method(0,'drawPoints(', 'float[], int, int, Paint)', 'void'),
+  \ javaapi#method(0,'drawPoints(', 'float[], Paint)', 'void'),
+  \ javaapi#method(0,'drawPoint(', 'float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawLine(', 'float, float, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawLines(', 'float[], int, int, Paint)', 'void'),
+  \ javaapi#method(0,'drawLines(', 'float[], Paint)', 'void'),
+  \ javaapi#method(0,'drawRect(', 'RectF, Paint)', 'void'),
+  \ javaapi#method(0,'drawRect(', 'Rect, Paint)', 'void'),
+  \ javaapi#method(0,'drawRect(', 'float, float, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawOval(', 'RectF, Paint)', 'void'),
+  \ javaapi#method(0,'drawCircle(', 'float, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawArc(', 'RectF, float, float, boolean, Paint)', 'void'),
+  \ javaapi#method(0,'drawRoundRect(', 'RectF, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawPath(', 'Path, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'Bitmap, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Rect, RectF, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Rect, Rect, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'int[], int, int, float, float, int, int, boolean, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'int[], int, int, int, int, int, int, boolean, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmap(', 'Bitmap, Matrix, Paint)', 'void'),
+  \ javaapi#method(0,'drawBitmapMesh(', 'Bitmap, int, int, float[], int, int[], int, Paint)', 'void'),
+  \ javaapi#method(0,'drawVertices(', 'VertexMode, int, float[], int, float[], int, int[], int, short[], int, int, Paint)', 'void'),
+  \ javaapi#method(0,'drawText(', 'char[], int, int, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawText(', 'String, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawText(', 'String, int, int, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawText(', 'CharSequence, int, int, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawPosText(', 'char[], int, int, float[], Paint)', 'void'),
+  \ javaapi#method(0,'drawPosText(', 'String, float[], Paint)', 'void'),
+  \ javaapi#method(0,'drawTextOnPath(', 'char[], int, int, Path, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawTextOnPath(', 'String, Path, float, float, Paint)', 'void'),
+  \ javaapi#method(0,'drawPicture(', 'Picture)', 'void'),
+  \ javaapi#method(0,'drawPicture(', 'Picture, RectF)', 'void'),
+  \ javaapi#method(0,'drawPicture(', 'Picture, Rect)', 'void'),
+  \ ])
+
+call javaapi#class('Blur', 'Blur>', [
+  \ javaapi#field(1,'INNER', 'Blur'),
+  \ javaapi#field(1,'NORMAL', 'Blur'),
+  \ javaapi#field(1,'OUTER', 'Blur'),
+  \ javaapi#field(1,'SOLID', 'Blur'),
+  \ javaapi#method(1,'values(', ')', 'Blur[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Blur'),
+  \ ])
+
+call javaapi#class('Rect', 'Parcelable', [
+  \ javaapi#field(0,'left', 'int'),
+  \ javaapi#field(0,'top', 'int'),
+  \ javaapi#field(0,'right', 'int'),
+  \ javaapi#field(0,'bottom', 'int'),
+  \ javaapi#field(1,'CREATOR', 'Rect>'),
+  \ javaapi#method(0,'Rect(', ')', 'public'),
+  \ javaapi#method(0,'Rect(', 'int, int, int, int)', 'public'),
+  \ javaapi#method(0,'Rect(', 'Rect)', 'public'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'toShortString(', ')', 'String'),
+  \ javaapi#method(0,'flattenToString(', ')', 'String'),
+  \ javaapi#method(1,'unflattenFromString(', 'String)', 'Rect'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'width(', ')', 'int'),
+  \ javaapi#method(0,'height(', ')', 'int'),
+  \ javaapi#method(0,'centerX(', ')', 'int'),
+  \ javaapi#method(0,'centerY(', ')', 'int'),
+  \ javaapi#method(0,'exactCenterX(', ')', 'float'),
+  \ javaapi#method(0,'exactCenterY(', ')', 'float'),
+  \ javaapi#method(0,'setEmpty(', ')', 'void'),
+  \ javaapi#method(0,'set(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,'set(', 'Rect)', 'void'),
+  \ javaapi#method(0,'offset(', 'int, int)', 'void'),
+  \ javaapi#method(0,'offsetTo(', 'int, int)', 'void'),
+  \ javaapi#method(0,'inset(', 'int, int)', 'void'),
+  \ javaapi#method(0,'contains(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'contains(', 'int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Rect)', 'boolean'),
+  \ javaapi#method(0,'intersect(', 'int, int, int, int)', 'boolean'),
+  \ javaapi#method(0,'intersect(', 'Rect)', 'boolean'),
+  \ javaapi#method(0,'setIntersect(', 'Rect, Rect)', 'boolean'),
+  \ javaapi#method(0,'intersects(', 'int, int, int, int)', 'boolean'),
+  \ javaapi#method(1,'intersects(', 'Rect, Rect)', 'boolean'),
+  \ javaapi#method(0,'union(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,'union(', 'Rect)', 'void'),
+  \ javaapi#method(0,'union(', 'int, int)', 'void'),
+  \ javaapi#method(0,'sort(', ')', 'void'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('PointF', 'Parcelable', [
+  \ javaapi#field(0,'x', 'float'),
+  \ javaapi#field(0,'y', 'float'),
+  \ javaapi#field(1,'CREATOR', 'PointF>'),
+  \ javaapi#method(0,'PointF(', ')', 'public'),
+  \ javaapi#method(0,'PointF(', 'float, float)', 'public'),
+  \ javaapi#method(0,'PointF(', 'Point)', 'public'),
+  \ javaapi#method(0,'set(', 'float, float)', 'void'),
+  \ javaapi#method(0,'set(', 'PointF)', 'void'),
+  \ javaapi#method(0,'negate(', ')', 'void'),
+  \ javaapi#method(0,'offset(', 'float, float)', 'void'),
+  \ javaapi#method(0,'equals(', 'float, float)', 'boolean'),
+  \ javaapi#method(0,'length(', ')', 'float'),
+  \ javaapi#method(1,'length(', 'float, float)', 'float'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
+  \ ])
+
+call javaapi#class('Style', 'Style>', [
+  \ javaapi#field(1,'MORPH', 'Style'),
+  \ javaapi#field(1,'ROTATE', 'Style'),
+  \ javaapi#field(1,'TRANSLATE', 'Style'),
+  \ javaapi#method(1,'values(', ')', 'Style[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Style'),
+  \ ])
+
+call javaapi#class('Config', 'Config>', [
+  \ javaapi#field(1,'ALPHA_8', 'Config'),
+  \ javaapi#field(1,'ARGB_4444', 'Config'),
+  \ javaapi#field(1,'ARGB_8888', 'Config'),
+  \ javaapi#field(1,'RGB_565', 'Config'),
+  \ javaapi#method(1,'values(', ')', 'Config[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Config'),
+  \ ])
+
+call javaapi#class('DrawFilter', '', [
+  \ javaapi#method(0,'DrawFilter(', ')', 'public'),
+  \ ])
+
+call javaapi#class('ScaleToFit', 'ScaleToFit>', [
+  \ javaapi#field(1,'CENTER', 'ScaleToFit'),
+  \ javaapi#field(1,'END', 'ScaleToFit'),
+  \ javaapi#field(1,'FILL', 'ScaleToFit'),
+  \ javaapi#field(1,'START', 'ScaleToFit'),
+  \ javaapi#method(1,'values(', ')', 'ScaleToFit[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'ScaleToFit'),
+  \ ])
+
+call javaapi#class('PathMeasure', '', [
+  \ javaapi#field(1,'POSITION_MATRIX_FLAG', 'int'),
+  \ javaapi#field(1,'TANGENT_MATRIX_FLAG', 'int'),
+  \ javaapi#method(0,'PathMeasure(', ')', 'public'),
+  \ javaapi#method(0,'PathMeasure(', 'Path, boolean)', 'public'),
+  \ javaapi#method(0,'setPath(', 'Path, boolean)', 'void'),
+  \ javaapi#method(0,'getLength(', ')', 'float'),
+  \ javaapi#method(0,'getPosTan(', 'float, float[], float[])', 'boolean'),
+  \ javaapi#method(0,'getMatrix(', 'float, Matrix, int)', 'boolean'),
+  \ javaapi#method(0,'getSegment(', 'float, float, Path, boolean)', 'boolean'),
+  \ javaapi#method(0,'isClosed(', ')', 'boolean'),
+  \ javaapi#method(0,'nextContour(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('Align', 'Align>', [
+  \ javaapi#field(1,'CENTER', 'Align'),
+  \ javaapi#field(1,'LEFT', 'Align'),
+  \ javaapi#field(1,'RIGHT', 'Align'),
+  \ javaapi#method(1,'values(', ')', 'Align[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Align'),
+  \ ])
+
+call javaapi#class('SumPathEffect', 'PathEffect', [
+  \ javaapi#method(0,'SumPathEffect(', 'PathEffect, PathEffect)', 'public'),
+  \ ])
+
+call javaapi#class('PaintFlagsDrawFilter', 'DrawFilter', [
+  \ javaapi#method(0,'PaintFlagsDrawFilter(', 'int, int)', 'public'),
+  \ ])
+
+call javaapi#class('Join', 'Join>', [
+  \ javaapi#field(1,'BEVEL', 'Join'),
+  \ javaapi#field(1,'MITER', 'Join'),
+  \ javaapi#field(1,'ROUND', 'Join'),
+  \ javaapi#method(1,'values(', ')', 'Join[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Join'),
+  \ ])
+
+call javaapi#class('Direction', 'Direction>', [
+  \ javaapi#field(1,'CCW', 'Direction'),
+  \ javaapi#field(1,'CW', 'Direction'),
+  \ javaapi#method(1,'values(', ')', 'Direction[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Direction'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('android.speech')
 
-call javaapi#class('RecognitionService', '', [
+call javaapi#class('RecognitionService', 'Service', [
   \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
   \ javaapi#field(1,'SERVICE_META_DATA', 'String'),
   \ javaapi#method(0,'RecognitionService(', ')', 'public'),

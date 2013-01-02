@@ -1,6 +1,6 @@
 call javaapi#namespace('java.beans')
 
-call javaapi#class('PropertyChangeEvent', '', [
+call javaapi#class('PropertyChangeEvent', 'EventObject', [
   \ javaapi#method(0,'PropertyChangeEvent(', 'Object, String, Object, Object)', 'public'),
   \ javaapi#method(0,'getPropertyName(', ')', 'String'),
   \ javaapi#method(0,'getNewValue(', ')', 'Object'),
@@ -10,11 +10,11 @@ call javaapi#class('PropertyChangeEvent', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('PropertyChangeListener', '', [
+call javaapi#interface('PropertyChangeListener', 'EventListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('PropertyChangeListenerProxy', '', [
+call javaapi#class('PropertyChangeListenerProxy', 'PropertyChangeListener>', [
   \ javaapi#method(0,'PropertyChangeListenerProxy(', 'String, PropertyChangeListener)', 'public'),
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'getPropertyName(', ')', 'String'),
@@ -38,7 +38,7 @@ call javaapi#class('PropertyChangeSupport', 'Serializable', [
   \ javaapi#method(0,'hasListeners(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('IndexedPropertyChangeEvent', '', [
+call javaapi#class('IndexedPropertyChangeEvent', 'PropertyChangeEvent', [
   \ javaapi#method(0,'IndexedPropertyChangeEvent(', 'Object, String, Object, Object, int)', 'public'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
   \ ])

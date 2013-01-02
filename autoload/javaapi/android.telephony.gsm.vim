@@ -41,7 +41,7 @@ call javaapi#class('SmsMessage', '', [
   \ javaapi#method(0,'isReplyPathPresent(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('GsmCellLocation', '', [
+call javaapi#class('GsmCellLocation', 'CellLocation', [
   \ javaapi#method(0,'GsmCellLocation(', ')', 'public'),
   \ javaapi#method(0,'GsmCellLocation(', 'Bundle)', 'public'),
   \ javaapi#method(0,'getLac(', ')', 'int'),
@@ -62,7 +62,7 @@ call javaapi#class('SubmitPdu', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MessageClass', '', [
+call javaapi#class('MessageClass', 'MessageClass>', [
   \ javaapi#field(1,'CLASS_0', 'MessageClass'),
   \ javaapi#field(1,'CLASS_1', 'MessageClass'),
   \ javaapi#field(1,'CLASS_2', 'MessageClass'),

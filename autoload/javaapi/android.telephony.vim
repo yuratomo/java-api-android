@@ -1,108 +1,14 @@
 call javaapi#namespace('android.telephony')
 
-call javaapi#class('CellSignalStrengthGsm', '', [
-  \ javaapi#field(1,'CREATOR', 'CellSignalStrengthGsm>'),
-  \ javaapi#method(0,'getLevel(', ')', 'int'),
-  \ javaapi#method(0,'getDbm(', ')', 'int'),
-  \ javaapi#method(0,'getAsuLevel(', ')', 'int'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ ])
-
-call javaapi#class('CellSignalStrengthCdma', '', [
-  \ javaapi#field(1,'CREATOR', 'CellSignalStrengthCdma>'),
+call javaapi#class('CellSignalStrength', '', [
   \ javaapi#method(0,'getLevel(', ')', 'int'),
   \ javaapi#method(0,'getAsuLevel(', ')', 'int'),
-  \ javaapi#method(0,'getCdmaLevel(', ')', 'int'),
-  \ javaapi#method(0,'getEvdoLevel(', ')', 'int'),
   \ javaapi#method(0,'getDbm(', ')', 'int'),
-  \ javaapi#method(0,'getCdmaDbm(', ')', 'int'),
-  \ javaapi#method(0,'getCdmaEcio(', ')', 'int'),
-  \ javaapi#method(0,'getEvdoDbm(', ')', 'int'),
-  \ javaapi#method(0,'getEvdoEcio(', ')', 'int'),
-  \ javaapi#method(0,'getEvdoSnr(', ')', 'int'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
   \ ])
 
-call javaapi#class('TelephonyManager', '', [
-  \ javaapi#field(1,'ACTION_PHONE_STATE_CHANGED', 'String'),
-  \ javaapi#field(1,'EXTRA_STATE', 'String'),
-  \ javaapi#field(1,'EXTRA_STATE_IDLE', 'String'),
-  \ javaapi#field(1,'EXTRA_STATE_RINGING', 'String'),
-  \ javaapi#field(1,'EXTRA_STATE_OFFHOOK', 'String'),
-  \ javaapi#field(1,'EXTRA_INCOMING_NUMBER', 'String'),
-  \ javaapi#field(1,'PHONE_TYPE_NONE', 'int'),
-  \ javaapi#field(1,'PHONE_TYPE_GSM', 'int'),
-  \ javaapi#field(1,'PHONE_TYPE_CDMA', 'int'),
-  \ javaapi#field(1,'PHONE_TYPE_SIP', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_UNKNOWN', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_GPRS', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_EDGE', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_UMTS', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_CDMA', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_EVDO_0', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_EVDO_A', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_1xRTT', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_HSDPA', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_HSUPA', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_HSPA', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_IDEN', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_EVDO_B', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_LTE', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_EHRPD', 'int'),
-  \ javaapi#field(1,'NETWORK_TYPE_HSPAP', 'int'),
-  \ javaapi#field(1,'SIM_STATE_UNKNOWN', 'int'),
-  \ javaapi#field(1,'SIM_STATE_ABSENT', 'int'),
-  \ javaapi#field(1,'SIM_STATE_PIN_REQUIRED', 'int'),
-  \ javaapi#field(1,'SIM_STATE_PUK_REQUIRED', 'int'),
-  \ javaapi#field(1,'SIM_STATE_NETWORK_LOCKED', 'int'),
-  \ javaapi#field(1,'SIM_STATE_READY', 'int'),
-  \ javaapi#field(1,'CALL_STATE_IDLE', 'int'),
-  \ javaapi#field(1,'CALL_STATE_RINGING', 'int'),
-  \ javaapi#field(1,'CALL_STATE_OFFHOOK', 'int'),
-  \ javaapi#field(1,'DATA_ACTIVITY_NONE', 'int'),
-  \ javaapi#field(1,'DATA_ACTIVITY_IN', 'int'),
-  \ javaapi#field(1,'DATA_ACTIVITY_OUT', 'int'),
-  \ javaapi#field(1,'DATA_ACTIVITY_INOUT', 'int'),
-  \ javaapi#field(1,'DATA_ACTIVITY_DORMANT', 'int'),
-  \ javaapi#field(1,'DATA_DISCONNECTED', 'int'),
-  \ javaapi#field(1,'DATA_CONNECTING', 'int'),
-  \ javaapi#field(1,'DATA_CONNECTED', 'int'),
-  \ javaapi#field(1,'DATA_SUSPENDED', 'int'),
-  \ javaapi#method(0,'getDeviceSoftwareVersion(', ')', 'String'),
-  \ javaapi#method(0,'getDeviceId(', ')', 'String'),
-  \ javaapi#method(0,'getCellLocation(', ')', 'CellLocation'),
-  \ javaapi#method(0,'getNeighboringCellInfo(', ')', 'NeighboringCellInfo>'),
-  \ javaapi#method(0,'getPhoneType(', ')', 'int'),
-  \ javaapi#method(0,'getNetworkOperatorName(', ')', 'String'),
-  \ javaapi#method(0,'getNetworkOperator(', ')', 'String'),
-  \ javaapi#method(0,'isNetworkRoaming(', ')', 'boolean'),
-  \ javaapi#method(0,'getNetworkCountryIso(', ')', 'String'),
-  \ javaapi#method(0,'getNetworkType(', ')', 'int'),
-  \ javaapi#method(0,'hasIccCard(', ')', 'boolean'),
-  \ javaapi#method(0,'getSimState(', ')', 'int'),
-  \ javaapi#method(0,'getSimOperator(', ')', 'String'),
-  \ javaapi#method(0,'getSimOperatorName(', ')', 'String'),
-  \ javaapi#method(0,'getSimCountryIso(', ')', 'String'),
-  \ javaapi#method(0,'getSimSerialNumber(', ')', 'String'),
-  \ javaapi#method(0,'getSubscriberId(', ')', 'String'),
-  \ javaapi#method(0,'getLine1Number(', ')', 'String'),
-  \ javaapi#method(0,'getVoiceMailNumber(', ')', 'String'),
-  \ javaapi#method(0,'getVoiceMailAlphaTag(', ')', 'String'),
-  \ javaapi#method(0,'getCallState(', ')', 'int'),
-  \ javaapi#method(0,'getDataActivity(', ')', 'int'),
-  \ javaapi#method(0,'getDataState(', ')', 'int'),
-  \ javaapi#method(0,'listen(', 'PhoneStateListener, int)', 'void'),
-  \ javaapi#method(0,'getAllCellInfo(', ')', 'CellInfo>'),
-  \ ])
-
+call javaapi#namespace('android.telephony')
 
 call javaapi#class('PhoneNumberFormattingTextWatcher', 'TextWatcher', [
   \ javaapi#method(0,'PhoneNumberFormattingTextWatcher(', ')', 'public'),
@@ -153,7 +59,7 @@ call javaapi#class('CellIdentityGsm', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('CellSignalStrengthLte', '', [
+call javaapi#class('CellSignalStrengthLte', 'CellSignalStrength', [
   \ javaapi#field(1,'CREATOR', 'CellSignalStrengthLte>'),
   \ javaapi#method(0,'getLevel(', ')', 'int'),
   \ javaapi#method(0,'getDbm(', ')', 'int'),
@@ -208,7 +114,7 @@ call javaapi#class('PhoneNumberUtils', '', [
   \ javaapi#method(1,'convertKeypadLettersToDigits(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('CellInfoGsm', '', [
+call javaapi#class('CellInfoGsm', 'CellInfo', [
   \ javaapi#field(1,'CREATOR', 'CellInfoGsm>'),
   \ javaapi#method(0,'getCellIdentity(', ')', 'CellIdentityGsm'),
   \ javaapi#method(0,'getCellSignalStrength(', ')', 'CellSignalStrengthGsm'),
@@ -263,7 +169,7 @@ call javaapi#class('SignalStrength', 'Parcelable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CellInfoCdma', '', [
+call javaapi#class('CellInfoCdma', 'CellInfo', [
   \ javaapi#field(1,'CREATOR', 'CellInfoCdma>'),
   \ javaapi#method(0,'getCellIdentity(', ')', 'CellIdentityCdma'),
   \ javaapi#method(0,'getCellSignalStrength(', ')', 'CellSignalStrengthCdma'),
@@ -360,7 +266,7 @@ call javaapi#class('SubmitPdu', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MessageClass', '', [
+call javaapi#class('MessageClass', 'MessageClass>', [
   \ javaapi#field(1,'CLASS_0', 'MessageClass'),
   \ javaapi#field(1,'CLASS_1', 'MessageClass'),
   \ javaapi#field(1,'CLASS_2', 'MessageClass'),
@@ -370,7 +276,7 @@ call javaapi#class('MessageClass', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'MessageClass'),
   \ ])
 
-call javaapi#class('CellInfoLte', '', [
+call javaapi#class('CellInfoLte', 'CellInfo', [
   \ javaapi#field(1,'CREATOR', 'CellInfoLte>'),
   \ javaapi#method(0,'getCellIdentity(', ')', 'CellIdentityLte'),
   \ javaapi#method(0,'getCellSignalStrength(', ')', 'CellSignalStrengthLte'),
@@ -424,12 +330,108 @@ call javaapi#class('PhoneStateListener', '', [
   \ javaapi#method(0,'onCellInfoChanged(', 'List<CellInfo>)', 'void'),
   \ ])
 
+call javaapi#namespace('android.telephony')
 
-call javaapi#class('CellSignalStrength', '', [
+call javaapi#class('CellSignalStrengthGsm', 'CellSignalStrength', [
+  \ javaapi#field(1,'CREATOR', 'CellSignalStrengthGsm>'),
   \ javaapi#method(0,'getLevel(', ')', 'int'),
-  \ javaapi#method(0,'getAsuLevel(', ')', 'int'),
   \ javaapi#method(0,'getDbm(', ')', 'int'),
+  \ javaapi#method(0,'getAsuLevel(', ')', 'int'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ ])
+
+call javaapi#class('CellSignalStrengthCdma', 'CellSignalStrength', [
+  \ javaapi#field(1,'CREATOR', 'CellSignalStrengthCdma>'),
+  \ javaapi#method(0,'getLevel(', ')', 'int'),
+  \ javaapi#method(0,'getAsuLevel(', ')', 'int'),
+  \ javaapi#method(0,'getCdmaLevel(', ')', 'int'),
+  \ javaapi#method(0,'getEvdoLevel(', ')', 'int'),
+  \ javaapi#method(0,'getDbm(', ')', 'int'),
+  \ javaapi#method(0,'getCdmaDbm(', ')', 'int'),
+  \ javaapi#method(0,'getCdmaEcio(', ')', 'int'),
+  \ javaapi#method(0,'getEvdoDbm(', ')', 'int'),
+  \ javaapi#method(0,'getEvdoEcio(', ')', 'int'),
+  \ javaapi#method(0,'getEvdoSnr(', ')', 'int'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ ])
+
+call javaapi#class('TelephonyManager', '', [
+  \ javaapi#field(1,'ACTION_PHONE_STATE_CHANGED', 'String'),
+  \ javaapi#field(1,'EXTRA_STATE', 'String'),
+  \ javaapi#field(1,'EXTRA_STATE_IDLE', 'String'),
+  \ javaapi#field(1,'EXTRA_STATE_RINGING', 'String'),
+  \ javaapi#field(1,'EXTRA_STATE_OFFHOOK', 'String'),
+  \ javaapi#field(1,'EXTRA_INCOMING_NUMBER', 'String'),
+  \ javaapi#field(1,'PHONE_TYPE_NONE', 'int'),
+  \ javaapi#field(1,'PHONE_TYPE_GSM', 'int'),
+  \ javaapi#field(1,'PHONE_TYPE_CDMA', 'int'),
+  \ javaapi#field(1,'PHONE_TYPE_SIP', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_UNKNOWN', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_GPRS', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_EDGE', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_UMTS', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_CDMA', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_EVDO_0', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_EVDO_A', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_1xRTT', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_HSDPA', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_HSUPA', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_HSPA', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_IDEN', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_EVDO_B', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_LTE', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_EHRPD', 'int'),
+  \ javaapi#field(1,'NETWORK_TYPE_HSPAP', 'int'),
+  \ javaapi#field(1,'SIM_STATE_UNKNOWN', 'int'),
+  \ javaapi#field(1,'SIM_STATE_ABSENT', 'int'),
+  \ javaapi#field(1,'SIM_STATE_PIN_REQUIRED', 'int'),
+  \ javaapi#field(1,'SIM_STATE_PUK_REQUIRED', 'int'),
+  \ javaapi#field(1,'SIM_STATE_NETWORK_LOCKED', 'int'),
+  \ javaapi#field(1,'SIM_STATE_READY', 'int'),
+  \ javaapi#field(1,'CALL_STATE_IDLE', 'int'),
+  \ javaapi#field(1,'CALL_STATE_RINGING', 'int'),
+  \ javaapi#field(1,'CALL_STATE_OFFHOOK', 'int'),
+  \ javaapi#field(1,'DATA_ACTIVITY_NONE', 'int'),
+  \ javaapi#field(1,'DATA_ACTIVITY_IN', 'int'),
+  \ javaapi#field(1,'DATA_ACTIVITY_OUT', 'int'),
+  \ javaapi#field(1,'DATA_ACTIVITY_INOUT', 'int'),
+  \ javaapi#field(1,'DATA_ACTIVITY_DORMANT', 'int'),
+  \ javaapi#field(1,'DATA_DISCONNECTED', 'int'),
+  \ javaapi#field(1,'DATA_CONNECTING', 'int'),
+  \ javaapi#field(1,'DATA_CONNECTED', 'int'),
+  \ javaapi#field(1,'DATA_SUSPENDED', 'int'),
+  \ javaapi#method(0,'getDeviceSoftwareVersion(', ')', 'String'),
+  \ javaapi#method(0,'getDeviceId(', ')', 'String'),
+  \ javaapi#method(0,'getCellLocation(', ')', 'CellLocation'),
+  \ javaapi#method(0,'getNeighboringCellInfo(', ')', 'NeighboringCellInfo>'),
+  \ javaapi#method(0,'getPhoneType(', ')', 'int'),
+  \ javaapi#method(0,'getNetworkOperatorName(', ')', 'String'),
+  \ javaapi#method(0,'getNetworkOperator(', ')', 'String'),
+  \ javaapi#method(0,'isNetworkRoaming(', ')', 'boolean'),
+  \ javaapi#method(0,'getNetworkCountryIso(', ')', 'String'),
+  \ javaapi#method(0,'getNetworkType(', ')', 'int'),
+  \ javaapi#method(0,'hasIccCard(', ')', 'boolean'),
+  \ javaapi#method(0,'getSimState(', ')', 'int'),
+  \ javaapi#method(0,'getSimOperator(', ')', 'String'),
+  \ javaapi#method(0,'getSimOperatorName(', ')', 'String'),
+  \ javaapi#method(0,'getSimCountryIso(', ')', 'String'),
+  \ javaapi#method(0,'getSimSerialNumber(', ')', 'String'),
+  \ javaapi#method(0,'getSubscriberId(', ')', 'String'),
+  \ javaapi#method(0,'getLine1Number(', ')', 'String'),
+  \ javaapi#method(0,'getVoiceMailNumber(', ')', 'String'),
+  \ javaapi#method(0,'getVoiceMailAlphaTag(', ')', 'String'),
+  \ javaapi#method(0,'getCallState(', ')', 'int'),
+  \ javaapi#method(0,'getDataActivity(', ')', 'int'),
+  \ javaapi#method(0,'getDataState(', ')', 'int'),
+  \ javaapi#method(0,'listen(', 'PhoneStateListener, int)', 'void'),
+  \ javaapi#method(0,'getAllCellInfo(', ')', 'CellInfo>'),
   \ ])
 

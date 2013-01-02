@@ -1,6 +1,6 @@
 call javaapi#namespace('android.nfc.tech')
 
-call javaapi#class('NfcV', '', [
+call javaapi#class('NfcV', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'NfcV'),
   \ javaapi#method(0,'getResponseFlags(', ')', 'byte'),
   \ javaapi#method(0,'getDsfId(', ')', 'byte'),
@@ -12,7 +12,7 @@ call javaapi#class('NfcV', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('NfcA', '', [
+call javaapi#class('NfcA', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'NfcA'),
   \ javaapi#method(0,'getAtqa(', ')', 'byte[]'),
   \ javaapi#method(0,'getSak(', ')', 'short'),
@@ -26,7 +26,7 @@ call javaapi#class('NfcA', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('Ndef', '', [
+call javaapi#class('Ndef', 'BasicTagTechnology', [
   \ javaapi#field(1,'NFC_FORUM_TYPE_1', 'String'),
   \ javaapi#field(1,'NFC_FORUM_TYPE_2', 'String'),
   \ javaapi#field(1,'NFC_FORUM_TYPE_3', 'String'),
@@ -47,7 +47,7 @@ call javaapi#class('Ndef', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('NfcB', '', [
+call javaapi#class('NfcB', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'NfcB'),
   \ javaapi#method(0,'getApplicationData(', ')', 'byte[]'),
   \ javaapi#method(0,'getProtocolInfo(', ')', 'byte[]'),
@@ -66,7 +66,7 @@ call javaapi#class('BasicTagTechnology', 'TagTechnology', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('IsoDep', '', [
+call javaapi#class('IsoDep', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'IsoDep'),
   \ javaapi#method(0,'setTimeout(', 'int)', 'void'),
   \ javaapi#method(0,'getTimeout(', ')', 'int'),
@@ -81,14 +81,14 @@ call javaapi#class('IsoDep', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#interface('TagTechnology', '', [
+call javaapi#interface('TagTechnology', 'Closeable', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ javaapi#method(0,'connect(', ') throws IOException', 'void'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'isConnected(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MifareUltralight', '', [
+call javaapi#class('MifareUltralight', 'BasicTagTechnology', [
   \ javaapi#field(1,'TYPE_UNKNOWN', 'int'),
   \ javaapi#field(1,'TYPE_ULTRALIGHT', 'int'),
   \ javaapi#field(1,'TYPE_ULTRALIGHT_C', 'int'),
@@ -107,7 +107,7 @@ call javaapi#class('MifareUltralight', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('NdefFormatable', '', [
+call javaapi#class('NdefFormatable', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'NdefFormatable'),
   \ javaapi#method(0,'format(', 'NdefMessage) throws IOException, FormatException', 'void'),
   \ javaapi#method(0,'formatReadOnly(', 'NdefMessage) throws IOException, FormatException', 'void'),
@@ -117,7 +117,7 @@ call javaapi#class('NdefFormatable', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('NfcBarcode', '', [
+call javaapi#class('NfcBarcode', 'BasicTagTechnology', [
   \ javaapi#field(1,'TYPE_KOVIO', 'int'),
   \ javaapi#field(1,'TYPE_UNKNOWN', 'int'),
   \ javaapi#method(1,'get(', 'Tag)', 'NfcBarcode'),
@@ -129,7 +129,7 @@ call javaapi#class('NfcBarcode', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('NfcF', '', [
+call javaapi#class('NfcF', 'BasicTagTechnology', [
   \ javaapi#method(1,'get(', 'Tag)', 'NfcF'),
   \ javaapi#method(0,'getSystemCode(', ')', 'byte[]'),
   \ javaapi#method(0,'getManufacturer(', ')', 'byte[]'),
@@ -143,7 +143,7 @@ call javaapi#class('NfcF', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('MifareClassic', '', [
+call javaapi#class('MifareClassic', 'BasicTagTechnology', [
   \ javaapi#field(1,'KEY_DEFAULT', 'byte[]'),
   \ javaapi#field(1,'KEY_MIFARE_APPLICATION_DIRECTORY', 'byte[]'),
   \ javaapi#field(1,'KEY_NFC_FORUM', 'byte[]'),

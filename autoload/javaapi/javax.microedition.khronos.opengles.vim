@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.microedition.khronos.opengles')
 
-call javaapi#interface('GL11Ext', '', [
+call javaapi#interface('GL11Ext', 'GL', [
   \ javaapi#field(1,'GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES', 'int'),
   \ javaapi#field(1,'GL_MATRIX_INDEX_ARRAY_OES', 'int'),
   \ javaapi#field(1,'GL_MATRIX_INDEX_ARRAY_POINTER_OES', 'int'),
@@ -40,7 +40,7 @@ call javaapi#interface('GL11Ext', '', [
   \ javaapi#method(0,'glWeightPointerOES(', 'int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#interface('GL10', '', [
+call javaapi#interface('GL10', 'GL', [
   \ javaapi#field(1,'GL_ADD', 'int'),
   \ javaapi#field(1,'GL_ALIASED_LINE_WIDTH_RANGE', 'int'),
   \ javaapi#field(1,'GL_ALIASED_POINT_SIZE_RANGE', 'int'),
@@ -403,7 +403,7 @@ call javaapi#interface('GL10', '', [
   \ javaapi#method(0,'glViewport(', 'int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#interface('GL11', '', [
+call javaapi#interface('GL11', 'GL10', [
   \ javaapi#field(1,'GL_ACTIVE_TEXTURE', 'int'),
   \ javaapi#field(1,'GL_ADD_SIGNED', 'int'),
   \ javaapi#field(1,'GL_ALPHA_SCALE', 'int'),
@@ -596,12 +596,12 @@ call javaapi#interface('GL11', '', [
   \ javaapi#method(0,'glVertexPointer(', 'int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#interface('GL10Ext', '', [
+call javaapi#interface('GL10Ext', 'GL', [
   \ javaapi#method(0,'glQueryMatrixxOES(', 'int[], int, int[], int)', 'int'),
   \ javaapi#method(0,'glQueryMatrixxOES(', 'IntBuffer, IntBuffer)', 'int'),
   \ ])
 
-call javaapi#interface('GL11ExtensionPack', '', [
+call javaapi#interface('GL11ExtensionPack', 'GL', [
   \ javaapi#field(1,'GL_BLEND_DST_ALPHA', 'int'),
   \ javaapi#field(1,'GL_BLEND_DST_RGB', 'int'),
   \ javaapi#field(1,'GL_BLEND_EQUATION', 'int'),

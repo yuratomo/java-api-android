@@ -62,7 +62,7 @@ call javaapi#interface('LSSerializer', '', [
   \ javaapi#method(0,'writeToString(', 'Node) throws DOMException, LSException', 'String'),
   \ ])
 
-call javaapi#class('LSException', '', [
+call javaapi#class('LSException', 'RuntimeException', [
   \ javaapi#field(0,'code', 'short'),
   \ javaapi#field(1,'PARSE_ERR', 'short'),
   \ javaapi#field(1,'SERIALIZE_ERR', 'short'),

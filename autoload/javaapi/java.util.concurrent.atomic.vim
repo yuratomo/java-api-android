@@ -42,7 +42,7 @@ call javaapi#class('AtomicLongArray', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AtomicInteger', '', [
+call javaapi#class('AtomicInteger', 'Number', [
   \ javaapi#method(0,'AtomicInteger(', 'int)', 'public'),
   \ javaapi#method(0,'AtomicInteger(', ')', 'public'),
   \ javaapi#method(0,'get(', ')', 'int'),
@@ -133,7 +133,7 @@ call javaapi#class('AtomicIntegerFieldUpdater<T>', '', [
   \ javaapi#method(0,'addAndGet(', 'T, int)', 'int'),
   \ ])
 
-call javaapi#class('AtomicLong', '', [
+call javaapi#class('AtomicLong', 'Number', [
   \ javaapi#method(0,'AtomicLong(', 'long)', 'public'),
   \ javaapi#method(0,'AtomicLong(', ')', 'public'),
   \ javaapi#method(0,'get(', ')', 'long'),

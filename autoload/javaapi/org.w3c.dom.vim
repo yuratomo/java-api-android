@@ -1,43 +1,5 @@
 call javaapi#namespace('org.w3c.dom')
 
-call javaapi#interface('DocumentType', '', [
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getEntities(', ')', 'NamedNodeMap'),
-  \ javaapi#method(0,'getNotations(', ')', 'NamedNodeMap'),
-  \ javaapi#method(0,'getPublicId(', ')', 'String'),
-  \ javaapi#method(0,'getSystemId(', ')', 'String'),
-  \ javaapi#method(0,'getInternalSubset(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('DOMImplementationSource', '', [
-  \ javaapi#method(0,'getDOMImplementation(', 'String)', 'DOMImplementation'),
-  \ javaapi#method(0,'getDOMImplementationList(', 'String)', 'DOMImplementationList'),
-  \ ])
-
-call javaapi#interface('Element', '', [
-  \ javaapi#method(0,'getTagName(', ')', 'String'),
-  \ javaapi#method(0,'getAttribute(', 'String)', 'String'),
-  \ javaapi#method(0,'setAttribute(', 'String, String) throws DOMException', 'void'),
-  \ javaapi#method(0,'removeAttribute(', 'String) throws DOMException', 'void'),
-  \ javaapi#method(0,'getAttributeNode(', 'String)', 'Attr'),
-  \ javaapi#method(0,'setAttributeNode(', 'Attr) throws DOMException', 'Attr'),
-  \ javaapi#method(0,'removeAttributeNode(', 'Attr) throws DOMException', 'Attr'),
-  \ javaapi#method(0,'getElementsByTagName(', 'String)', 'NodeList'),
-  \ javaapi#method(0,'getAttributeNS(', 'String, String) throws DOMException', 'String'),
-  \ javaapi#method(0,'setAttributeNS(', 'String, String, String) throws DOMException', 'void'),
-  \ javaapi#method(0,'removeAttributeNS(', 'String, String) throws DOMException', 'void'),
-  \ javaapi#method(0,'getAttributeNodeNS(', 'String, String) throws DOMException', 'Attr'),
-  \ javaapi#method(0,'setAttributeNodeNS(', 'Attr) throws DOMException', 'Attr'),
-  \ javaapi#method(0,'getElementsByTagNameNS(', 'String, String) throws DOMException', 'NodeList'),
-  \ javaapi#method(0,'hasAttribute(', 'String)', 'boolean'),
-  \ javaapi#method(0,'hasAttributeNS(', 'String, String) throws DOMException', 'boolean'),
-  \ javaapi#method(0,'getSchemaTypeInfo(', ')', 'TypeInfo'),
-  \ javaapi#method(0,'setIdAttribute(', 'String, boolean) throws DOMException', 'void'),
-  \ javaapi#method(0,'setIdAttributeNS(', 'String, String, boolean) throws DOMException', 'void'),
-  \ javaapi#method(0,'setIdAttributeNode(', 'Attr, boolean) throws DOMException', 'void'),
-  \ ])
-
-
 call javaapi#interface('DOMError', '', [
   \ javaapi#field(1,'SEVERITY_WARNING', 'short'),
   \ javaapi#field(1,'SEVERITY_ERROR', 'short'),
@@ -50,7 +12,7 @@ call javaapi#interface('DOMError', '', [
   \ javaapi#method(0,'getLocation(', ')', 'DOMLocator'),
   \ ])
 
-call javaapi#class('DOMException', '', [
+call javaapi#class('DOMException', 'RuntimeException', [
   \ javaapi#field(0,'code', 'short'),
   \ javaapi#field(1,'INDEX_SIZE_ERR', 'short'),
   \ javaapi#field(1,'DOMSTRING_SIZE_ERR', 'short'),
@@ -79,13 +41,13 @@ call javaapi#interface('DOMConfiguration', '', [
   \ javaapi#method(0,'getParameterNames(', ')', 'DOMStringList'),
   \ ])
 
-call javaapi#interface('ProcessingInstruction', '', [
+call javaapi#interface('ProcessingInstruction', 'Node', [
   \ javaapi#method(0,'getTarget(', ')', 'String'),
   \ javaapi#method(0,'getData(', ')', 'String'),
   \ javaapi#method(0,'setData(', 'String) throws DOMException', 'void'),
   \ ])
 
-call javaapi#interface('Document', '', [
+call javaapi#interface('Document', 'Node', [
   \ javaapi#method(0,'getDoctype(', ')', 'DocumentType'),
   \ javaapi#method(0,'getImplementation(', ')', 'DOMImplementation'),
   \ javaapi#method(0,'getDocumentElement(', ')', 'Element'),
@@ -119,7 +81,7 @@ call javaapi#interface('Document', '', [
   \ javaapi#method(0,'renameNode(', 'Node, String, String) throws DOMException', 'Node'),
   \ ])
 
-call javaapi#interface('CDATASection', '', [
+call javaapi#interface('CDATASection', 'Text', [
   \ ])
 
 call javaapi#interface('DOMErrorHandler', '', [
@@ -144,7 +106,7 @@ call javaapi#interface('DOMLocator', '', [
   \ javaapi#method(0,'getUri(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Comment', '', [
+call javaapi#interface('Comment', 'CharacterData', [
   \ ])
 
 call javaapi#interface('TypeInfo', '', [
@@ -157,10 +119,10 @@ call javaapi#interface('TypeInfo', '', [
   \ javaapi#method(0,'isDerivedFrom(', 'String, String, int)', 'boolean'),
   \ ])
 
-call javaapi#interface('DocumentFragment', '', [
+call javaapi#interface('DocumentFragment', 'Node', [
   \ ])
 
-call javaapi#interface('Attr', '', [
+call javaapi#interface('Attr', 'Node', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getSpecified(', ')', 'boolean'),
   \ javaapi#method(0,'getValue(', ')', 'String'),
@@ -239,7 +201,7 @@ call javaapi#interface('Node', '', [
   \ javaapi#method(0,'getUserData(', 'String)', 'Object'),
   \ ])
 
-call javaapi#interface('Entity', '', [
+call javaapi#interface('Entity', 'Node', [
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ javaapi#method(0,'getNotationName(', ')', 'String'),
@@ -253,10 +215,10 @@ call javaapi#interface('NodeList', '', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ ])
 
-call javaapi#interface('EntityReference', '', [
+call javaapi#interface('EntityReference', 'Node', [
   \ ])
 
-call javaapi#interface('Text', '', [
+call javaapi#interface('Text', 'CharacterData', [
   \ javaapi#method(0,'splitText(', 'int) throws DOMException', 'Text'),
   \ javaapi#method(0,'isElementContentWhitespace(', ')', 'boolean'),
   \ javaapi#method(0,'getWholeText(', ')', 'String'),
@@ -274,12 +236,12 @@ call javaapi#interface('NamedNodeMap', '', [
   \ javaapi#method(0,'removeNamedItemNS(', 'String, String) throws DOMException', 'Node'),
   \ ])
 
-call javaapi#interface('Notation', '', [
+call javaapi#interface('Notation', 'Node', [
   \ javaapi#method(0,'getPublicId(', ')', 'String'),
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ ])
 
-call javaapi#interface('CharacterData', '', [
+call javaapi#interface('CharacterData', 'Node', [
   \ javaapi#method(0,'getData(', ') throws DOMException', 'String'),
   \ javaapi#method(0,'setData(', 'String) throws DOMException', 'void'),
   \ javaapi#method(0,'getLength(', ')', 'int'),
@@ -303,5 +265,44 @@ call javaapi#interface('NameList', '', [
   \ javaapi#method(0,'getLength(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'String)', 'boolean'),
   \ javaapi#method(0,'containsNS(', 'String, String)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('org.w3c.dom')
+
+call javaapi#interface('DocumentType', 'Node', [
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getEntities(', ')', 'NamedNodeMap'),
+  \ javaapi#method(0,'getNotations(', ')', 'NamedNodeMap'),
+  \ javaapi#method(0,'getPublicId(', ')', 'String'),
+  \ javaapi#method(0,'getSystemId(', ')', 'String'),
+  \ javaapi#method(0,'getInternalSubset(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('DOMImplementationSource', '', [
+  \ javaapi#method(0,'getDOMImplementation(', 'String)', 'DOMImplementation'),
+  \ javaapi#method(0,'getDOMImplementationList(', 'String)', 'DOMImplementationList'),
+  \ ])
+
+call javaapi#interface('Element', 'Node', [
+  \ javaapi#method(0,'getTagName(', ')', 'String'),
+  \ javaapi#method(0,'getAttribute(', 'String)', 'String'),
+  \ javaapi#method(0,'setAttribute(', 'String, String) throws DOMException', 'void'),
+  \ javaapi#method(0,'removeAttribute(', 'String) throws DOMException', 'void'),
+  \ javaapi#method(0,'getAttributeNode(', 'String)', 'Attr'),
+  \ javaapi#method(0,'setAttributeNode(', 'Attr) throws DOMException', 'Attr'),
+  \ javaapi#method(0,'removeAttributeNode(', 'Attr) throws DOMException', 'Attr'),
+  \ javaapi#method(0,'getElementsByTagName(', 'String)', 'NodeList'),
+  \ javaapi#method(0,'getAttributeNS(', 'String, String) throws DOMException', 'String'),
+  \ javaapi#method(0,'setAttributeNS(', 'String, String, String) throws DOMException', 'void'),
+  \ javaapi#method(0,'removeAttributeNS(', 'String, String) throws DOMException', 'void'),
+  \ javaapi#method(0,'getAttributeNodeNS(', 'String, String) throws DOMException', 'Attr'),
+  \ javaapi#method(0,'setAttributeNodeNS(', 'Attr) throws DOMException', 'Attr'),
+  \ javaapi#method(0,'getElementsByTagNameNS(', 'String, String) throws DOMException', 'NodeList'),
+  \ javaapi#method(0,'hasAttribute(', 'String)', 'boolean'),
+  \ javaapi#method(0,'hasAttributeNS(', 'String, String) throws DOMException', 'boolean'),
+  \ javaapi#method(0,'getSchemaTypeInfo(', ')', 'TypeInfo'),
+  \ javaapi#method(0,'setIdAttribute(', 'String, boolean) throws DOMException', 'void'),
+  \ javaapi#method(0,'setIdAttributeNS(', 'String, String, boolean) throws DOMException', 'void'),
+  \ javaapi#method(0,'setIdAttributeNode(', 'Attr, boolean) throws DOMException', 'void'),
   \ ])
 

@@ -1,5 +1,211 @@
 call javaapi#namespace('android.net')
 
+call javaapi#class('State', 'State>', [
+  \ javaapi#field(1,'CONNECTED', 'State'),
+  \ javaapi#field(1,'CONNECTING', 'State'),
+  \ javaapi#field(1,'DISCONNECTED', 'State'),
+  \ javaapi#field(1,'DISCONNECTING', 'State'),
+  \ javaapi#field(1,'SUSPENDED', 'State'),
+  \ javaapi#field(1,'UNKNOWN', 'State'),
+  \ javaapi#method(1,'values(', ')', 'State[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'State'),
+  \ ])
+
+call javaapi#class('ParameterValuePair', '', [
+  \ javaapi#field(0,'mParameter', 'String'),
+  \ javaapi#field(0,'mValue', 'String'),
+  \ javaapi#method(0,'ParameterValuePair(', 'UrlQuerySanitizer, String, String)', 'public'),
+  \ ])
+
+call javaapi#class('Builder', '', [
+  \ javaapi#method(0,'Builder(', ')', 'public'),
+  \ javaapi#method(0,'scheme(', 'String)', 'Builder'),
+  \ javaapi#method(0,'opaquePart(', 'String)', 'Builder'),
+  \ javaapi#method(0,'encodedOpaquePart(', 'String)', 'Builder'),
+  \ javaapi#method(0,'authority(', 'String)', 'Builder'),
+  \ javaapi#method(0,'encodedAuthority(', 'String)', 'Builder'),
+  \ javaapi#method(0,'path(', 'String)', 'Builder'),
+  \ javaapi#method(0,'encodedPath(', 'String)', 'Builder'),
+  \ javaapi#method(0,'appendPath(', 'String)', 'Builder'),
+  \ javaapi#method(0,'appendEncodedPath(', 'String)', 'Builder'),
+  \ javaapi#method(0,'query(', 'String)', 'Builder'),
+  \ javaapi#method(0,'encodedQuery(', 'String)', 'Builder'),
+  \ javaapi#method(0,'fragment(', 'String)', 'Builder'),
+  \ javaapi#method(0,'encodedFragment(', 'String)', 'Builder'),
+  \ javaapi#method(0,'appendQueryParameter(', 'String, String)', 'Builder'),
+  \ javaapi#method(0,'clearQuery(', ')', 'Builder'),
+  \ javaapi#method(0,'build(', ')', 'Uri'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('ConnectivityManager', '', [
+  \ javaapi#field(1,'CONNECTIVITY_ACTION', 'String'),
+  \ javaapi#field(1,'EXTRA_NETWORK_INFO', 'String'),
+  \ javaapi#field(1,'EXTRA_NETWORK_TYPE', 'String'),
+  \ javaapi#field(1,'EXTRA_IS_FAILOVER', 'String'),
+  \ javaapi#field(1,'EXTRA_OTHER_NETWORK_INFO', 'String'),
+  \ javaapi#field(1,'EXTRA_NO_CONNECTIVITY', 'String'),
+  \ javaapi#field(1,'EXTRA_REASON', 'String'),
+  \ javaapi#field(1,'EXTRA_EXTRA_INFO', 'String'),
+  \ javaapi#field(1,'ACTION_BACKGROUND_DATA_SETTING_CHANGED', 'String'),
+  \ javaapi#field(1,'TYPE_MOBILE', 'int'),
+  \ javaapi#field(1,'TYPE_WIFI', 'int'),
+  \ javaapi#field(1,'TYPE_MOBILE_MMS', 'int'),
+  \ javaapi#field(1,'TYPE_MOBILE_SUPL', 'int'),
+  \ javaapi#field(1,'TYPE_MOBILE_DUN', 'int'),
+  \ javaapi#field(1,'TYPE_MOBILE_HIPRI', 'int'),
+  \ javaapi#field(1,'TYPE_WIMAX', 'int'),
+  \ javaapi#field(1,'TYPE_BLUETOOTH', 'int'),
+  \ javaapi#field(1,'TYPE_DUMMY', 'int'),
+  \ javaapi#field(1,'TYPE_ETHERNET', 'int'),
+  \ javaapi#field(1,'DEFAULT_NETWORK_PREFERENCE', 'int'),
+  \ javaapi#method(1,'isNetworkTypeValid(', 'int)', 'boolean'),
+  \ javaapi#method(0,'setNetworkPreference(', 'int)', 'void'),
+  \ javaapi#method(0,'getNetworkPreference(', ')', 'int'),
+  \ javaapi#method(0,'getActiveNetworkInfo(', ')', 'NetworkInfo'),
+  \ javaapi#method(0,'getNetworkInfo(', 'int)', 'NetworkInfo'),
+  \ javaapi#method(0,'getAllNetworkInfo(', ')', 'NetworkInfo[]'),
+  \ javaapi#method(0,'startUsingNetworkFeature(', 'int, String)', 'int'),
+  \ javaapi#method(0,'stopUsingNetworkFeature(', 'int, String)', 'int'),
+  \ javaapi#method(0,'requestRouteToHost(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'getBackgroundDataSetting(', ')', 'boolean'),
+  \ javaapi#method(0,'isActiveNetworkMetered(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('LocalServerSocket', '', [
+  \ javaapi#method(0,'LocalServerSocket(', 'String) throws IOException', 'public'),
+  \ javaapi#method(0,'LocalServerSocket(', 'FileDescriptor) throws IOException', 'public'),
+  \ javaapi#method(0,'getLocalSocketAddress(', ')', 'LocalSocketAddress'),
+  \ javaapi#method(0,'accept(', ') throws IOException', 'LocalSocket'),
+  \ javaapi#method(0,'getFileDescriptor(', ')', 'FileDescriptor'),
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ ])
+
+call javaapi#class('DhcpInfo', 'Parcelable', [
+  \ javaapi#field(0,'ipAddress', 'int'),
+  \ javaapi#field(0,'gateway', 'int'),
+  \ javaapi#field(0,'netmask', 'int'),
+  \ javaapi#field(0,'dns1', 'int'),
+  \ javaapi#field(0,'dns2', 'int'),
+  \ javaapi#field(0,'serverAddress', 'int'),
+  \ javaapi#field(0,'leaseDuration', 'int'),
+  \ javaapi#method(0,'DhcpInfo(', ')', 'public'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#class('Namespace', 'Namespace>', [
+  \ javaapi#field(1,'ABSTRACT', 'Namespace'),
+  \ javaapi#field(1,'FILESYSTEM', 'Namespace'),
+  \ javaapi#field(1,'RESERVED', 'Namespace'),
+  \ javaapi#method(1,'values(', ')', 'Namespace[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'Namespace'),
+  \ ])
+
+call javaapi#class('DetailedState', 'DetailedState>', [
+  \ javaapi#field(1,'AUTHENTICATING', 'DetailedState'),
+  \ javaapi#field(1,'BLOCKED', 'DetailedState'),
+  \ javaapi#field(1,'CAPTIVE_PORTAL_CHECK', 'DetailedState'),
+  \ javaapi#field(1,'CONNECTED', 'DetailedState'),
+  \ javaapi#field(1,'CONNECTING', 'DetailedState'),
+  \ javaapi#field(1,'DISCONNECTED', 'DetailedState'),
+  \ javaapi#field(1,'DISCONNECTING', 'DetailedState'),
+  \ javaapi#field(1,'FAILED', 'DetailedState'),
+  \ javaapi#field(1,'IDLE', 'DetailedState'),
+  \ javaapi#field(1,'OBTAINING_IPADDR', 'DetailedState'),
+  \ javaapi#field(1,'SCANNING', 'DetailedState'),
+  \ javaapi#field(1,'SUSPENDED', 'DetailedState'),
+  \ javaapi#field(1,'VERIFYING_POOR_LINK', 'DetailedState'),
+  \ javaapi#method(1,'values(', ')', 'DetailedState[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'DetailedState'),
+  \ ])
+
+call javaapi#class('IllegalCharacterValueSanitizer', 'ValueSanitizer', [
+  \ javaapi#field(1,'SPACE_OK', 'int'),
+  \ javaapi#field(1,'OTHER_WHITESPACE_OK', 'int'),
+  \ javaapi#field(1,'NON_7_BIT_ASCII_OK', 'int'),
+  \ javaapi#field(1,'DQUOTE_OK', 'int'),
+  \ javaapi#field(1,'SQUOTE_OK', 'int'),
+  \ javaapi#field(1,'LT_OK', 'int'),
+  \ javaapi#field(1,'GT_OK', 'int'),
+  \ javaapi#field(1,'AMP_OK', 'int'),
+  \ javaapi#field(1,'PCT_OK', 'int'),
+  \ javaapi#field(1,'NUL_OK', 'int'),
+  \ javaapi#field(1,'SCRIPT_URL_OK', 'int'),
+  \ javaapi#field(1,'ALL_OK', 'int'),
+  \ javaapi#field(1,'ALL_WHITESPACE_OK', 'int'),
+  \ javaapi#field(1,'ALL_ILLEGAL', 'int'),
+  \ javaapi#field(1,'ALL_BUT_NUL_LEGAL', 'int'),
+  \ javaapi#field(1,'ALL_BUT_WHITESPACE_LEGAL', 'int'),
+  \ javaapi#field(1,'URL_LEGAL', 'int'),
+  \ javaapi#field(1,'URL_AND_SPACE_LEGAL', 'int'),
+  \ javaapi#field(1,'AMP_LEGAL', 'int'),
+  \ javaapi#field(1,'AMP_AND_SPACE_LEGAL', 'int'),
+  \ javaapi#field(1,'SPACE_LEGAL', 'int'),
+  \ javaapi#field(1,'ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL', 'int'),
+  \ javaapi#method(0,'IllegalCharacterValueSanitizer(', 'int)', 'public'),
+  \ javaapi#method(0,'sanitize(', 'String)', 'String'),
+  \ ])
+
+call javaapi#namespace('android.net')
+
+call javaapi#class('VpnService', 'Service', [
+  \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
+  \ javaapi#method(0,'VpnService(', ')', 'public'),
+  \ javaapi#method(1,'prepare(', 'Context)', 'Intent'),
+  \ javaapi#method(0,'protect(', 'int)', 'boolean'),
+  \ javaapi#method(0,'protect(', 'Socket)', 'boolean'),
+  \ javaapi#method(0,'protect(', 'DatagramSocket)', 'boolean'),
+  \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),
+  \ javaapi#method(0,'onRevoke(', ')', 'void'),
+  \ ])
+
+call javaapi#interface('ValueSanitizer', '', [
+  \ javaapi#method(0,'sanitize(', 'String)', 'String'),
+  \ ])
+
+call javaapi#class('LocalSocket', 'Closeable', [
+  \ javaapi#method(0,'LocalSocket(', ')', 'public'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'connect(', 'LocalSocketAddress) throws IOException', 'void'),
+  \ javaapi#method(0,'bind(', 'LocalSocketAddress) throws IOException', 'void'),
+  \ javaapi#method(0,'getLocalSocketAddress(', ')', 'LocalSocketAddress'),
+  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
+  \ javaapi#method(0,'getOutputStream(', ') throws IOException', 'OutputStream'),
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'shutdownInput(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'shutdownOutput(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'setReceiveBufferSize(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'getReceiveBufferSize(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'setSoTimeout(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'getSoTimeout(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'setSendBufferSize(', 'int) throws IOException', 'void'),
+  \ javaapi#method(0,'getSendBufferSize(', ') throws IOException', 'int'),
+  \ javaapi#method(0,'getRemoteSocketAddress(', ')', 'LocalSocketAddress'),
+  \ javaapi#method(0,'isConnected(', ')', 'boolean'),
+  \ javaapi#method(0,'isClosed(', ')', 'boolean'),
+  \ javaapi#method(0,'isBound(', ')', 'boolean'),
+  \ javaapi#method(0,'isOutputShutdown(', ')', 'boolean'),
+  \ javaapi#method(0,'isInputShutdown(', ')', 'boolean'),
+  \ javaapi#method(0,'connect(', 'LocalSocketAddress, int) throws IOException', 'void'),
+  \ javaapi#method(0,'setFileDescriptorsForSend(', 'FileDescriptor[])', 'void'),
+  \ javaapi#method(0,'getAncillaryFileDescriptors(', ') throws IOException', 'FileDescriptor[]'),
+  \ javaapi#method(0,'getPeerCredentials(', ') throws IOException', 'Credentials'),
+  \ javaapi#method(0,'getFileDescriptor(', ')', 'FileDescriptor'),
+  \ ])
+
+call javaapi#namespace('android.net')
+
+call javaapi#class('LocalSocketAddress', '', [
+  \ javaapi#method(0,'LocalSocketAddress(', 'String, Namespace)', 'public'),
+  \ javaapi#method(0,'LocalSocketAddress(', 'String)', 'public'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getNamespace(', ')', 'Namespace'),
+  \ ])
+
+call javaapi#namespace('android.net')
+
 call javaapi#class('NetworkInfo', 'Parcelable', [
   \ javaapi#method(0,'getType(', ')', 'int'),
   \ javaapi#method(0,'getSubtype(', ')', 'int'),
@@ -123,7 +329,7 @@ call javaapi#class('MailTo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SSLCertificateSocketFactory', '', [
+call javaapi#class('SSLCertificateSocketFactory', 'SSLSocketFactory', [
   \ javaapi#method(0,'SSLCertificateSocketFactory(', 'int)', 'public'),
   \ javaapi#method(1,'getDefault(', 'int)', 'SocketFactory'),
   \ javaapi#method(1,'getDefault(', 'int, SSLSessionCache)', 'SSLSocketFactory'),
@@ -159,7 +365,7 @@ call javaapi#class('SSLSessionCache', '', [
   \ javaapi#method(0,'SSLSessionCache(', 'Context)', 'public'),
   \ ])
 
-call javaapi#class('ParseException', '', [
+call javaapi#class('ParseException', 'RuntimeException', [
   \ javaapi#field(0,'response', 'String'),
   \ ])
 
@@ -199,208 +405,5 @@ call javaapi#class('UrlQuerySanitizer', '', [
   \ javaapi#method(0,'getValueSanitizer(', 'String)', 'ValueSanitizer'),
   \ javaapi#method(0,'getEffectiveValueSanitizer(', 'String)', 'ValueSanitizer'),
   \ javaapi#method(0,'unescape(', 'String)', 'String'),
-  \ ])
-
-
-call javaapi#class('LocalSocketAddress', '', [
-  \ javaapi#method(0,'LocalSocketAddress(', 'String, Namespace)', 'public'),
-  \ javaapi#method(0,'LocalSocketAddress(', 'String)', 'public'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getNamespace(', ')', 'Namespace'),
-  \ ])
-
-
-call javaapi#class('VpnService', '', [
-  \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
-  \ javaapi#method(0,'VpnService(', ')', 'public'),
-  \ javaapi#method(1,'prepare(', 'Context)', 'Intent'),
-  \ javaapi#method(0,'protect(', 'int)', 'boolean'),
-  \ javaapi#method(0,'protect(', 'Socket)', 'boolean'),
-  \ javaapi#method(0,'protect(', 'DatagramSocket)', 'boolean'),
-  \ javaapi#method(0,'onBind(', 'Intent)', 'IBinder'),
-  \ javaapi#method(0,'onRevoke(', ')', 'void'),
-  \ ])
-
-call javaapi#interface('ValueSanitizer', '', [
-  \ javaapi#method(0,'sanitize(', 'String)', 'String'),
-  \ ])
-
-call javaapi#class('LocalSocket', 'Closeable', [
-  \ javaapi#method(0,'LocalSocket(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'connect(', 'LocalSocketAddress) throws IOException', 'void'),
-  \ javaapi#method(0,'bind(', 'LocalSocketAddress) throws IOException', 'void'),
-  \ javaapi#method(0,'getLocalSocketAddress(', ')', 'LocalSocketAddress'),
-  \ javaapi#method(0,'getInputStream(', ') throws IOException', 'InputStream'),
-  \ javaapi#method(0,'getOutputStream(', ') throws IOException', 'OutputStream'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'shutdownInput(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'shutdownOutput(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'setReceiveBufferSize(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'getReceiveBufferSize(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'setSoTimeout(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'getSoTimeout(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'setSendBufferSize(', 'int) throws IOException', 'void'),
-  \ javaapi#method(0,'getSendBufferSize(', ') throws IOException', 'int'),
-  \ javaapi#method(0,'getRemoteSocketAddress(', ')', 'LocalSocketAddress'),
-  \ javaapi#method(0,'isConnected(', ')', 'boolean'),
-  \ javaapi#method(0,'isClosed(', ')', 'boolean'),
-  \ javaapi#method(0,'isBound(', ')', 'boolean'),
-  \ javaapi#method(0,'isOutputShutdown(', ')', 'boolean'),
-  \ javaapi#method(0,'isInputShutdown(', ')', 'boolean'),
-  \ javaapi#method(0,'connect(', 'LocalSocketAddress, int) throws IOException', 'void'),
-  \ javaapi#method(0,'setFileDescriptorsForSend(', 'FileDescriptor[])', 'void'),
-  \ javaapi#method(0,'getAncillaryFileDescriptors(', ') throws IOException', 'FileDescriptor[]'),
-  \ javaapi#method(0,'getPeerCredentials(', ') throws IOException', 'Credentials'),
-  \ javaapi#method(0,'getFileDescriptor(', ')', 'FileDescriptor'),
-  \ ])
-
-
-call javaapi#class('State', '', [
-  \ javaapi#field(1,'CONNECTED', 'State'),
-  \ javaapi#field(1,'CONNECTING', 'State'),
-  \ javaapi#field(1,'DISCONNECTED', 'State'),
-  \ javaapi#field(1,'DISCONNECTING', 'State'),
-  \ javaapi#field(1,'SUSPENDED', 'State'),
-  \ javaapi#field(1,'UNKNOWN', 'State'),
-  \ javaapi#method(1,'values(', ')', 'State[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'State'),
-  \ ])
-
-call javaapi#class('ParameterValuePair', '', [
-  \ javaapi#field(0,'mParameter', 'String'),
-  \ javaapi#field(0,'mValue', 'String'),
-  \ javaapi#method(0,'ParameterValuePair(', 'UrlQuerySanitizer, String, String)', 'public'),
-  \ ])
-
-call javaapi#class('Builder', '', [
-  \ javaapi#method(0,'Builder(', ')', 'public'),
-  \ javaapi#method(0,'scheme(', 'String)', 'Builder'),
-  \ javaapi#method(0,'opaquePart(', 'String)', 'Builder'),
-  \ javaapi#method(0,'encodedOpaquePart(', 'String)', 'Builder'),
-  \ javaapi#method(0,'authority(', 'String)', 'Builder'),
-  \ javaapi#method(0,'encodedAuthority(', 'String)', 'Builder'),
-  \ javaapi#method(0,'path(', 'String)', 'Builder'),
-  \ javaapi#method(0,'encodedPath(', 'String)', 'Builder'),
-  \ javaapi#method(0,'appendPath(', 'String)', 'Builder'),
-  \ javaapi#method(0,'appendEncodedPath(', 'String)', 'Builder'),
-  \ javaapi#method(0,'query(', 'String)', 'Builder'),
-  \ javaapi#method(0,'encodedQuery(', 'String)', 'Builder'),
-  \ javaapi#method(0,'fragment(', 'String)', 'Builder'),
-  \ javaapi#method(0,'encodedFragment(', 'String)', 'Builder'),
-  \ javaapi#method(0,'appendQueryParameter(', 'String, String)', 'Builder'),
-  \ javaapi#method(0,'clearQuery(', ')', 'Builder'),
-  \ javaapi#method(0,'build(', ')', 'Uri'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('ConnectivityManager', '', [
-  \ javaapi#field(1,'CONNECTIVITY_ACTION', 'String'),
-  \ javaapi#field(1,'EXTRA_NETWORK_INFO', 'String'),
-  \ javaapi#field(1,'EXTRA_NETWORK_TYPE', 'String'),
-  \ javaapi#field(1,'EXTRA_IS_FAILOVER', 'String'),
-  \ javaapi#field(1,'EXTRA_OTHER_NETWORK_INFO', 'String'),
-  \ javaapi#field(1,'EXTRA_NO_CONNECTIVITY', 'String'),
-  \ javaapi#field(1,'EXTRA_REASON', 'String'),
-  \ javaapi#field(1,'EXTRA_EXTRA_INFO', 'String'),
-  \ javaapi#field(1,'ACTION_BACKGROUND_DATA_SETTING_CHANGED', 'String'),
-  \ javaapi#field(1,'TYPE_MOBILE', 'int'),
-  \ javaapi#field(1,'TYPE_WIFI', 'int'),
-  \ javaapi#field(1,'TYPE_MOBILE_MMS', 'int'),
-  \ javaapi#field(1,'TYPE_MOBILE_SUPL', 'int'),
-  \ javaapi#field(1,'TYPE_MOBILE_DUN', 'int'),
-  \ javaapi#field(1,'TYPE_MOBILE_HIPRI', 'int'),
-  \ javaapi#field(1,'TYPE_WIMAX', 'int'),
-  \ javaapi#field(1,'TYPE_BLUETOOTH', 'int'),
-  \ javaapi#field(1,'TYPE_DUMMY', 'int'),
-  \ javaapi#field(1,'TYPE_ETHERNET', 'int'),
-  \ javaapi#field(1,'DEFAULT_NETWORK_PREFERENCE', 'int'),
-  \ javaapi#method(1,'isNetworkTypeValid(', 'int)', 'boolean'),
-  \ javaapi#method(0,'setNetworkPreference(', 'int)', 'void'),
-  \ javaapi#method(0,'getNetworkPreference(', ')', 'int'),
-  \ javaapi#method(0,'getActiveNetworkInfo(', ')', 'NetworkInfo'),
-  \ javaapi#method(0,'getNetworkInfo(', 'int)', 'NetworkInfo'),
-  \ javaapi#method(0,'getAllNetworkInfo(', ')', 'NetworkInfo[]'),
-  \ javaapi#method(0,'startUsingNetworkFeature(', 'int, String)', 'int'),
-  \ javaapi#method(0,'stopUsingNetworkFeature(', 'int, String)', 'int'),
-  \ javaapi#method(0,'requestRouteToHost(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'getBackgroundDataSetting(', ')', 'boolean'),
-  \ javaapi#method(0,'isActiveNetworkMetered(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('LocalServerSocket', '', [
-  \ javaapi#method(0,'LocalServerSocket(', 'String) throws IOException', 'public'),
-  \ javaapi#method(0,'LocalServerSocket(', 'FileDescriptor) throws IOException', 'public'),
-  \ javaapi#method(0,'getLocalSocketAddress(', ')', 'LocalSocketAddress'),
-  \ javaapi#method(0,'accept(', ') throws IOException', 'LocalSocket'),
-  \ javaapi#method(0,'getFileDescriptor(', ')', 'FileDescriptor'),
-  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
-  \ ])
-
-call javaapi#class('DhcpInfo', 'Parcelable', [
-  \ javaapi#field(0,'ipAddress', 'int'),
-  \ javaapi#field(0,'gateway', 'int'),
-  \ javaapi#field(0,'netmask', 'int'),
-  \ javaapi#field(0,'dns1', 'int'),
-  \ javaapi#field(0,'dns2', 'int'),
-  \ javaapi#field(0,'serverAddress', 'int'),
-  \ javaapi#field(0,'leaseDuration', 'int'),
-  \ javaapi#method(0,'DhcpInfo(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#class('Namespace', '', [
-  \ javaapi#field(1,'ABSTRACT', 'Namespace'),
-  \ javaapi#field(1,'FILESYSTEM', 'Namespace'),
-  \ javaapi#field(1,'RESERVED', 'Namespace'),
-  \ javaapi#method(1,'values(', ')', 'Namespace[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'Namespace'),
-  \ ])
-
-call javaapi#class('DetailedState', '', [
-  \ javaapi#field(1,'AUTHENTICATING', 'DetailedState'),
-  \ javaapi#field(1,'BLOCKED', 'DetailedState'),
-  \ javaapi#field(1,'CAPTIVE_PORTAL_CHECK', 'DetailedState'),
-  \ javaapi#field(1,'CONNECTED', 'DetailedState'),
-  \ javaapi#field(1,'CONNECTING', 'DetailedState'),
-  \ javaapi#field(1,'DISCONNECTED', 'DetailedState'),
-  \ javaapi#field(1,'DISCONNECTING', 'DetailedState'),
-  \ javaapi#field(1,'FAILED', 'DetailedState'),
-  \ javaapi#field(1,'IDLE', 'DetailedState'),
-  \ javaapi#field(1,'OBTAINING_IPADDR', 'DetailedState'),
-  \ javaapi#field(1,'SCANNING', 'DetailedState'),
-  \ javaapi#field(1,'SUSPENDED', 'DetailedState'),
-  \ javaapi#field(1,'VERIFYING_POOR_LINK', 'DetailedState'),
-  \ javaapi#method(1,'values(', ')', 'DetailedState[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'DetailedState'),
-  \ ])
-
-call javaapi#class('IllegalCharacterValueSanitizer', 'ValueSanitizer', [
-  \ javaapi#field(1,'SPACE_OK', 'int'),
-  \ javaapi#field(1,'OTHER_WHITESPACE_OK', 'int'),
-  \ javaapi#field(1,'NON_7_BIT_ASCII_OK', 'int'),
-  \ javaapi#field(1,'DQUOTE_OK', 'int'),
-  \ javaapi#field(1,'SQUOTE_OK', 'int'),
-  \ javaapi#field(1,'LT_OK', 'int'),
-  \ javaapi#field(1,'GT_OK', 'int'),
-  \ javaapi#field(1,'AMP_OK', 'int'),
-  \ javaapi#field(1,'PCT_OK', 'int'),
-  \ javaapi#field(1,'NUL_OK', 'int'),
-  \ javaapi#field(1,'SCRIPT_URL_OK', 'int'),
-  \ javaapi#field(1,'ALL_OK', 'int'),
-  \ javaapi#field(1,'ALL_WHITESPACE_OK', 'int'),
-  \ javaapi#field(1,'ALL_ILLEGAL', 'int'),
-  \ javaapi#field(1,'ALL_BUT_NUL_LEGAL', 'int'),
-  \ javaapi#field(1,'ALL_BUT_WHITESPACE_LEGAL', 'int'),
-  \ javaapi#field(1,'URL_LEGAL', 'int'),
-  \ javaapi#field(1,'URL_AND_SPACE_LEGAL', 'int'),
-  \ javaapi#field(1,'AMP_LEGAL', 'int'),
-  \ javaapi#field(1,'AMP_AND_SPACE_LEGAL', 'int'),
-  \ javaapi#field(1,'SPACE_LEGAL', 'int'),
-  \ javaapi#field(1,'ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL', 'int'),
-  \ javaapi#method(0,'IllegalCharacterValueSanitizer(', 'int)', 'public'),
-  \ javaapi#method(0,'sanitize(', 'String)', 'String'),
   \ ])
 

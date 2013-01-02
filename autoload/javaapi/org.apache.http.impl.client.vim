@@ -56,7 +56,7 @@ call javaapi#class('AbstractHttpClient', 'HttpClient', [
   \ javaapi#method(0,'execute(', 'HttpHost, HttpRequest, ResponseHandler<? extends T>, HttpContext) throws IOException, ClientProtocolException', 'T'),
   \ ])
 
-call javaapi#class('EntityEnclosingRequestWrapper', '', [
+call javaapi#class('EntityEnclosingRequestWrapper', 'RequestWrapper', [
   \ javaapi#method(0,'EntityEnclosingRequestWrapper(', 'HttpEntityEnclosingRequest) throws ProtocolException', 'public'),
   \ javaapi#method(0,'getEntity(', ')', 'HttpEntity'),
   \ javaapi#method(0,'setEntity(', 'HttpEntity)', 'void'),
@@ -72,7 +72,7 @@ call javaapi#class('DefaultHttpRequestRetryHandler', 'HttpRequestRetryHandler', 
   \ javaapi#method(0,'getRetryCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('DefaultTargetAuthenticationHandler', '', [
+call javaapi#class('DefaultTargetAuthenticationHandler', 'AbstractAuthenticationHandler', [
   \ javaapi#method(0,'DefaultTargetAuthenticationHandler(', ')', 'public'),
   \ javaapi#method(0,'isAuthenticationRequested(', 'HttpResponse, HttpContext)', 'boolean'),
   \ javaapi#method(0,'getChallenges(', 'HttpResponse, HttpContext) throws MalformedChallengeException', 'Header>'),
@@ -89,12 +89,12 @@ call javaapi#class('BasicResponseHandler', 'String>', [
   \ javaapi#method(0,'handleResponse(', 'HttpResponse) throws ClientProtocolException, IOException', 'Object'),
   \ ])
 
-call javaapi#class('TunnelRefusedException', '', [
+call javaapi#class('TunnelRefusedException', 'HttpException', [
   \ javaapi#method(0,'TunnelRefusedException(', 'String, HttpResponse)', 'public'),
   \ javaapi#method(0,'getResponse(', ')', 'HttpResponse'),
   \ ])
 
-call javaapi#class('RequestWrapper', '', [
+call javaapi#class('RequestWrapper', 'AbstractHttpMessage', [
   \ javaapi#method(0,'RequestWrapper(', 'HttpRequest) throws ProtocolException', 'public'),
   \ javaapi#method(0,'resetHeaders(', ')', 'void'),
   \ javaapi#method(0,'getMethod(', ')', 'String'),
@@ -142,7 +142,7 @@ call javaapi#class('BasicCookieStore', 'CookieStore', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('ClientParamsStack', '', [
+call javaapi#class('ClientParamsStack', 'AbstractHttpParams', [
   \ javaapi#method(0,'ClientParamsStack(', 'HttpParams, HttpParams, HttpParams, HttpParams)', 'public'),
   \ javaapi#method(0,'ClientParamsStack(', 'ClientParamsStack)', 'public'),
   \ javaapi#method(0,'ClientParamsStack(', 'ClientParamsStack, HttpParams, HttpParams, HttpParams, HttpParams)', 'public'),
@@ -156,7 +156,7 @@ call javaapi#class('ClientParamsStack', '', [
   \ javaapi#method(0,'copy(', ')', 'HttpParams'),
   \ ])
 
-call javaapi#class('DefaultHttpClient', '', [
+call javaapi#class('DefaultHttpClient', 'AbstractHttpClient', [
   \ javaapi#method(0,'DefaultHttpClient(', 'ClientConnectionManager, HttpParams)', 'public'),
   \ javaapi#method(0,'DefaultHttpClient(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'DefaultHttpClient(', ')', 'public'),
@@ -179,7 +179,7 @@ call javaapi#class('DefaultRequestDirector', 'RequestDirector', [
   \ javaapi#method(0,'execute(', 'HttpHost, HttpRequest, HttpContext) throws HttpException, IOException', 'HttpResponse'),
   \ ])
 
-call javaapi#class('DefaultProxyAuthenticationHandler', '', [
+call javaapi#class('DefaultProxyAuthenticationHandler', 'AbstractAuthenticationHandler', [
   \ javaapi#method(0,'DefaultProxyAuthenticationHandler(', ')', 'public'),
   \ javaapi#method(0,'isAuthenticationRequested(', 'HttpResponse, HttpContext)', 'boolean'),
   \ javaapi#method(0,'getChallenges(', 'HttpResponse, HttpContext) throws MalformedChallengeException', 'Header>'),

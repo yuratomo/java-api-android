@@ -1,6 +1,6 @@
 call javaapi#namespace('android.content.res')
 
-call javaapi#interface('XmlResourceParser', '', [
+call javaapi#interface('XmlResourceParser', 'AttributeSet', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
@@ -133,7 +133,7 @@ call javaapi#class('TypedArray', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('NotFoundException', '', [
+call javaapi#class('NotFoundException', 'RuntimeException', [
   \ javaapi#method(0,'NotFoundException(', ')', 'public'),
   \ javaapi#method(0,'NotFoundException(', 'String)', 'public'),
   \ ])
@@ -189,7 +189,7 @@ call javaapi#class('Resources', '', [
   \ javaapi#method(0,'finishPreloading(', ')', 'void'),
   \ ])
 
-call javaapi#class('AutoCloseInputStream', '', [
+call javaapi#class('AutoCloseInputStream', 'AutoCloseInputStream', [
   \ javaapi#method(0,'AutoCloseInputStream(', 'AssetFileDescriptor) throws IOException', 'public'),
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -251,7 +251,7 @@ call javaapi#class('ObbInfo', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('AssetInputStream', '', [
+call javaapi#class('AssetInputStream', 'InputStream', [
   \ javaapi#method(0,'getAssetInt(', ')', 'int'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
@@ -288,7 +288,7 @@ call javaapi#class('Theme', '', [
   \ javaapi#method(0,'dump(', 'int, String, String)', 'void'),
   \ ])
 
-call javaapi#class('AutoCloseOutputStream', '', [
+call javaapi#class('AutoCloseOutputStream', 'AutoCloseOutputStream', [
   \ javaapi#method(0,'AutoCloseOutputStream(', 'AssetFileDescriptor) throws IOException', 'public'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),

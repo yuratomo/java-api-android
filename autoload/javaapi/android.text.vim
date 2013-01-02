@@ -1,52 +1,318 @@
 call javaapi#namespace('android.text')
 
-call javaapi#class('SpannableStringInternal', '', [
-  \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+call javaapi#interface('TagHandler', '', [
+  \ javaapi#method(0,'handleTag(', 'boolean, String, Editable, XMLReader)', 'void'),
+  \ ])
+
+call javaapi#class('Factory', '', [
+  \ javaapi#method(0,'Factory(', ')', 'public'),
+  \ javaapi#method(1,'getInstance(', ')', 'Factory'),
+  \ javaapi#method(0,'newEditable(', 'CharSequence)', 'Editable'),
+  \ ])
+
+call javaapi#interface('InputFilter', '', [
+  \ javaapi#method(0,'filter(', 'CharSequence, int, int, Spanned, int, int)', 'CharSequence'),
+  \ ])
+
+call javaapi#class('SimpleStringSplitter', 'String>', [
+  \ javaapi#method(0,'SimpleStringSplitter(', 'char)', 'public'),
+  \ javaapi#method(0,'setString(', 'String)', 'void'),
+  \ javaapi#method(0,'iterator(', ')', 'String>'),
+  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
+  \ javaapi#method(0,'next(', ')', 'String'),
+  \ javaapi#method(0,'remove(', ')', 'void'),
+  \ javaapi#method(0,'next(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('Concrete', 'NoCopySpan', [
+  \ javaapi#method(0,'Concrete(', ')', 'public'),
+  \ ])
+
+call javaapi#class('AutoText', '', [
+  \ javaapi#method(1,'get(', 'CharSequence, int, int, View)', 'String'),
+  \ javaapi#method(1,'getSize(', 'View)', 'int'),
+  \ ])
+
+call javaapi#class('Metrics', 'FontMetricsInt', [
+  \ javaapi#field(0,'width', 'int'),
+  \ javaapi#method(0,'Metrics(', ')', 'public'),
   \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
+  \ ])
+
+call javaapi#interface('EllipsizeCallback', '', [
+  \ javaapi#method(0,'ellipsized(', 'int, int)', 'void'),
+  \ ])
+
+call javaapi#class('BoringLayout', 'Layout', [
+  \ javaapi#method(0,'BoringLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'public'),
+  \ javaapi#method(0,'BoringLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'public'),
+  \ javaapi#method(1,'make(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'BoringLayout'),
+  \ javaapi#method(1,'make(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'BoringLayout'),
+  \ javaapi#method(0,'replaceOrMake(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'BoringLayout'),
+  \ javaapi#method(0,'replaceOrMake(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'BoringLayout'),
+  \ javaapi#method(1,'isBoring(', 'CharSequence, TextPaint)', 'Metrics'),
+  \ javaapi#method(1,'isBoring(', 'CharSequence, TextPaint, Metrics)', 'Metrics'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'getLineCount(', ')', 'int'),
+  \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getLineMax(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
+  \ javaapi#method(0,'getTopPadding(', ')', 'int'),
+  \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
+  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
+  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
+  \ javaapi#method(0,'draw(', 'Canvas, Path, Paint, int)', 'void'),
+  \ javaapi#method(0,'ellipsized(', 'int, int)', 'void'),
+  \ ])
+
+call javaapi#namespace('android.text')
+
+call javaapi#interface('ImageGetter', '', [
+  \ javaapi#method(0,'getDrawable(', 'String)', 'Drawable'),
+  \ ])
+
+call javaapi#interface('StringSplitter', 'String>', [
+  \ javaapi#method(0,'setString(', 'String)', 'void'),
+  \ ])
+
+call javaapi#interface('TextWatcher', 'NoCopySpan', [
+  \ javaapi#method(0,'beforeTextChanged(', 'CharSequence, int, int, int)', 'void'),
+  \ javaapi#method(0,'onTextChanged(', 'CharSequence, int, int, int)', 'void'),
+  \ javaapi#method(0,'afterTextChanged(', 'Editable)', 'void'),
+  \ ])
+
+call javaapi#interface('ParcelableSpan', 'Parcelable', [
+  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
+  \ ])
+
+call javaapi#class('PasswordFilterGMail', 'LoginFilter', [
+  \ javaapi#method(0,'PasswordFilterGMail(', ')', 'public'),
+  \ javaapi#method(0,'PasswordFilterGMail(', 'boolean)', 'public'),
+  \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
+  \ ])
+
+call javaapi#class('UsernameFilterGeneric', 'LoginFilter', [
+  \ javaapi#method(0,'UsernameFilterGeneric(', ')', 'public'),
+  \ javaapi#method(0,'UsernameFilterGeneric(', 'boolean)', 'public'),
+  \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
+  \ ])
+
+call javaapi#class('AndroidCharacter', '', [
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_NEUTRAL', 'int'),
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_AMBIGUOUS', 'int'),
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_HALF_WIDTH', 'int'),
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_FULL_WIDTH', 'int'),
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_NARROW', 'int'),
+  \ javaapi#field(1,'EAST_ASIAN_WIDTH_WIDE', 'int'),
+  \ javaapi#method(0,'AndroidCharacter(', ')', 'public'),
+  \ javaapi#method(1,'getDirectionalities(', 'char[], byte[], int)', 'void'),
+  \ javaapi#method(1,'getEastAsianWidth(', 'char)', 'int'),
+  \ javaapi#method(1,'getEastAsianWidths(', 'char[], int, int, byte[])', 'void'),
+  \ javaapi#method(1,'mirror(', 'char[], int, int)', 'boolean'),
+  \ javaapi#method(1,'getMirror(', 'char)', 'char'),
+  \ ])
+
+call javaapi#class('Factory', '', [
+  \ javaapi#method(0,'Factory(', ')', 'public'),
+  \ javaapi#method(1,'getInstance(', ')', 'Factory'),
+  \ javaapi#method(0,'newSpannable(', 'CharSequence)', 'Spannable'),
+  \ ])
+
+call javaapi#class('TruncateAt', 'TruncateAt>', [
+  \ javaapi#field(1,'END', 'TruncateAt'),
+  \ javaapi#field(1,'MARQUEE', 'TruncateAt'),
+  \ javaapi#field(1,'MIDDLE', 'TruncateAt'),
+  \ javaapi#field(1,'START', 'TruncateAt'),
+  \ javaapi#method(1,'values(', ')', 'TruncateAt[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'TruncateAt'),
+  \ ])
+
+call javaapi#class('SpannableString', 'SpannableStringInternal', [
+  \ javaapi#method(0,'SpannableString(', 'CharSequence)', 'public'),
+  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannableString'),
+  \ javaapi#method(0,'setSpan(', 'Object, int, int, int)', 'void'),
+  \ javaapi#method(0,'removeSpan(', 'Object)', 'void'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+  \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
+  \ javaapi#method(0,'getSpans(', 'int, int, Class)', 'Object[]'),
+  \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
+  \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
+  \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('SpannedString', 'SpannableStringInternal', [
+  \ javaapi#method(0,'SpannedString(', 'CharSequence)', 'public'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannedString'),
+  \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
+  \ javaapi#method(0,'getSpans(', 'int, int, Class)', 'Object[]'),
+  \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
+  \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
+  \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('SpannableStringBuilder', 'Appendable', [
+  \ javaapi#method(0,'SpannableStringBuilder(', ')', 'public'),
+  \ javaapi#method(0,'SpannableStringBuilder(', 'CharSequence)', 'public'),
+  \ javaapi#method(0,'SpannableStringBuilder(', 'CharSequence, int, int)', 'public'),
+  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+  \ javaapi#method(0,'length(', ')', 'int'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'delete(', 'int, int)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'clearSpans(', ')', 'void'),
+  \ javaapi#method(0,'append(', 'CharSequence)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'append(', 'char)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'replace(', 'int, int, CharSequence)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'replace(', 'int, int, CharSequence, int, int)', 'SpannableStringBuilder'),
+  \ javaapi#method(0,'setSpan(', 'Object, int, int, int)', 'void'),
+  \ javaapi#method(0,'removeSpan(', 'Object)', 'void'),
   \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpans(', 'int, int, Class<T>)', 'T[]'),
   \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'getTextRunCursor(', 'int, int, int, int, int, Paint)', 'int'),
+  \ javaapi#method(0,'setFilters(', 'InputFilter[])', 'void'),
+  \ javaapi#method(0,'getFilters(', ')', 'InputFilter[]'),
+  \ javaapi#method(0,'append(', 'char)', 'Editable'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'Editable'),
+  \ javaapi#method(0,'append(', 'CharSequence)', 'Editable'),
+  \ javaapi#method(0,'delete(', 'int, int)', 'Editable'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'Editable'),
+  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'Editable'),
+  \ javaapi#method(0,'replace(', 'int, int, CharSequence)', 'Editable'),
+  \ javaapi#method(0,'replace(', 'int, int, CharSequence, int, int)', 'Editable'),
+  \ javaapi#method(0,'append(', 'CharSequence, int, int) throws IOException', 'Appendable'),
+  \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
+  \ javaapi#method(0,'append(', 'char) throws IOException', 'Appendable'),
   \ ])
 
-call javaapi#interface('NoCopySpan', '', [
-  \ ])
-
-call javaapi#class('Directions', '', [
-  \ ])
-
-call javaapi#class('AllCaps', 'InputFilter', [
-  \ javaapi#method(0,'AllCaps(', ')', 'public'),
+call javaapi#class('LengthFilter', 'InputFilter', [
+  \ javaapi#method(0,'LengthFilter(', 'int)', 'public'),
   \ javaapi#method(0,'filter(', 'CharSequence, int, int, Spanned, int, int)', 'CharSequence'),
   \ ])
 
-call javaapi#interface('GetChars', '', [
+call javaapi#class('AlteredCharSequence', 'GetChars', [
+  \ javaapi#method(1,'make(', 'CharSequence, char[], int, int)', 'AlteredCharSequence'),
+  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+  \ javaapi#method(0,'length(', ')', 'int'),
+  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
   \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DynamicLayout', '', [
-  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
-  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
-  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, CharSequence, TextPaint, int, Alignment, float, float, boolean, TruncateAt, int)', 'public'),
+call javaapi#namespace('android.text')
+
+call javaapi#class('Layout', '', [
+  \ javaapi#field(1,'DIR_LEFT_TO_RIGHT', 'int'),
+  \ javaapi#field(1,'DIR_RIGHT_TO_LEFT', 'int'),
+  \ javaapi#method(1,'getDesiredWidth(', 'CharSequence, TextPaint)', 'float'),
+  \ javaapi#method(1,'getDesiredWidth(', 'CharSequence, int, int, TextPaint)', 'float'),
+  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas, Path, Paint, int)', 'void'),
+  \ javaapi#method(0,'getText(', ')', 'CharSequence'),
+  \ javaapi#method(0,'getPaint(', ')', 'TextPaint'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
+  \ javaapi#method(0,'increaseWidthTo(', 'int)', 'void'),
+  \ javaapi#method(0,'getHeight(', ')', 'int'),
+  \ javaapi#method(0,'getAlignment(', ')', 'Alignment'),
+  \ javaapi#method(0,'getSpacingMultiplier(', ')', 'float'),
+  \ javaapi#method(0,'getSpacingAdd(', ')', 'float'),
   \ javaapi#method(0,'getLineCount(', ')', 'int'),
+  \ javaapi#method(0,'getLineBounds(', 'int, Rect)', 'int'),
   \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
   \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
   \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
   \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
   \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
   \ javaapi#method(0,'getTopPadding(', ')', 'int'),
   \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
-  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
+  \ javaapi#method(0,'isRtlCharAt(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getPrimaryHorizontal(', 'int)', 'float'),
+  \ javaapi#method(0,'getSecondaryHorizontal(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineLeft(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineRight(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineMax(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineWidth(', 'int)', 'float'),
+  \ javaapi#method(0,'getLineForVertical(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineForOffset(', 'int)', 'int'),
+  \ javaapi#method(0,'getOffsetForHorizontal(', 'int, float)', 'int'),
+  \ javaapi#method(0,'getLineEnd(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineVisibleEnd(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineBottom(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineBaseline(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineAscent(', 'int)', 'int'),
+  \ javaapi#method(0,'getOffsetToLeftOf(', 'int)', 'int'),
+  \ javaapi#method(0,'getOffsetToRightOf(', 'int)', 'int'),
+  \ javaapi#method(0,'getCursorPath(', 'int, Path, CharSequence)', 'void'),
+  \ javaapi#method(0,'getSelectionPath(', 'int, int, Path)', 'void'),
+  \ javaapi#method(0,'getParagraphAlignment(', 'int)', 'Alignment'),
+  \ javaapi#method(0,'getParagraphLeft(', 'int)', 'int'),
+  \ javaapi#method(0,'getParagraphRight(', 'int)', 'int'),
   \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
   \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
   \ ])
 
+call javaapi#class('StaticLayout', 'Layout', [
+  \ javaapi#method(0,'StaticLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
+  \ javaapi#method(0,'StaticLayout(', 'CharSequence, int, int, TextPaint, int, Alignment, float, float, boolean)', 'public'),
+  \ javaapi#method(0,'StaticLayout(', 'CharSequence, int, int, TextPaint, int, Alignment, float, float, boolean, TruncateAt, int)', 'public'),
+  \ javaapi#method(0,'getLineForVertical(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineCount(', ')', 'int'),
+  \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
+  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
+  \ javaapi#method(0,'getTopPadding(', ')', 'int'),
+  \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
+  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
+  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
+  \ ])
 
-call javaapi#interface('Spanned', '', [
+call javaapi#class('Selection', '', [
+  \ javaapi#field(1,'SELECTION_START', 'Object'),
+  \ javaapi#field(1,'SELECTION_END', 'Object'),
+  \ javaapi#method(1,'getSelectionStart(', 'CharSequence)', 'int'),
+  \ javaapi#method(1,'getSelectionEnd(', 'CharSequence)', 'int'),
+  \ javaapi#method(1,'setSelection(', 'Spannable, int, int)', 'void'),
+  \ javaapi#method(1,'setSelection(', 'Spannable, int)', 'void'),
+  \ javaapi#method(1,'selectAll(', 'Spannable)', 'void'),
+  \ javaapi#method(1,'extendSelection(', 'Spannable, int)', 'void'),
+  \ javaapi#method(1,'removeSelection(', 'Spannable)', 'void'),
+  \ javaapi#method(1,'moveUp(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'moveDown(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'moveLeft(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'moveRight(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendUp(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendDown(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendLeft(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendRight(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendToLeftEdge(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'extendToRightEdge(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'moveToLeftEdge(', 'Spannable, Layout)', 'boolean'),
+  \ javaapi#method(1,'moveToRightEdge(', 'Spannable, Layout)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('android.text')
+
+call javaapi#interface('Spanned', 'CharSequence', [
   \ javaapi#field(1,'SPAN_POINT_MARK_MASK', 'int'),
   \ javaapi#field(1,'SPAN_MARK_MARK', 'int'),
   \ javaapi#field(1,'SPAN_MARK_POINT', 'int'),
@@ -77,7 +343,7 @@ call javaapi#class('ClipboardManager', '', [
   \ javaapi#method(0,'hasText(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('TextPaint', '', [
+call javaapi#class('TextPaint', 'Paint', [
   \ javaapi#field(0,'bgColor', 'int'),
   \ javaapi#field(0,'baselineShift', 'int'),
   \ javaapi#field(0,'linkColor', 'int'),
@@ -89,13 +355,13 @@ call javaapi#class('TextPaint', '', [
   \ javaapi#method(0,'set(', 'TextPaint)', 'void'),
   \ ])
 
-call javaapi#interface('SpanWatcher', '', [
+call javaapi#interface('SpanWatcher', 'NoCopySpan', [
   \ javaapi#method(0,'onSpanAdded(', 'Spannable, Object, int, int)', 'void'),
   \ javaapi#method(0,'onSpanRemoved(', 'Spannable, Object, int, int)', 'void'),
   \ javaapi#method(0,'onSpanChanged(', 'Spannable, Object, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('Alignment', '', [
+call javaapi#class('Alignment', 'Alignment>', [
   \ javaapi#field(1,'ALIGN_CENTER', 'Alignment'),
   \ javaapi#field(1,'ALIGN_NORMAL', 'Alignment'),
   \ javaapi#field(1,'ALIGN_OPPOSITE', 'Alignment'),
@@ -206,7 +472,7 @@ call javaapi#class('Html', '', [
   \ javaapi#method(1,'escapeHtml(', 'CharSequence)', 'String'),
   \ ])
 
-call javaapi#class('UsernameFilterGMail', '', [
+call javaapi#class('UsernameFilterGMail', 'LoginFilter', [
   \ javaapi#method(0,'UsernameFilterGMail(', ')', 'public'),
   \ javaapi#method(0,'UsernameFilterGMail(', 'boolean)', 'public'),
   \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
@@ -220,12 +486,12 @@ call javaapi#class('LoginFilter', 'InputFilter', [
   \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
   \ ])
 
-call javaapi#interface('Spannable', '', [
+call javaapi#interface('Spannable', 'Spanned', [
   \ javaapi#method(0,'setSpan(', 'Object, int, int, int)', 'void'),
   \ javaapi#method(0,'removeSpan(', 'Object)', 'void'),
   \ ])
 
-call javaapi#interface('Editable', '', [
+call javaapi#interface('Editable', 'Appendable', [
   \ javaapi#method(0,'replace(', 'int, int, CharSequence, int, int)', 'Editable'),
   \ javaapi#method(0,'replace(', 'int, int, CharSequence)', 'Editable'),
   \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'Editable'),
@@ -240,312 +506,50 @@ call javaapi#interface('Editable', '', [
   \ javaapi#method(0,'getFilters(', ')', 'InputFilter[]'),
   \ ])
 
+call javaapi#namespace('android.text')
 
-call javaapi#class('Layout', '', [
-  \ javaapi#field(1,'DIR_LEFT_TO_RIGHT', 'int'),
-  \ javaapi#field(1,'DIR_RIGHT_TO_LEFT', 'int'),
-  \ javaapi#method(1,'getDesiredWidth(', 'CharSequence, TextPaint)', 'float'),
-  \ javaapi#method(1,'getDesiredWidth(', 'CharSequence, int, int, TextPaint)', 'float'),
-  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas, Path, Paint, int)', 'void'),
-  \ javaapi#method(0,'getText(', ')', 'CharSequence'),
-  \ javaapi#method(0,'getPaint(', ')', 'TextPaint'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
-  \ javaapi#method(0,'increaseWidthTo(', 'int)', 'void'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
-  \ javaapi#method(0,'getAlignment(', ')', 'Alignment'),
-  \ javaapi#method(0,'getSpacingMultiplier(', ')', 'float'),
-  \ javaapi#method(0,'getSpacingAdd(', ')', 'float'),
-  \ javaapi#method(0,'getLineCount(', ')', 'int'),
-  \ javaapi#method(0,'getLineBounds(', 'int, Rect)', 'int'),
-  \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
-  \ javaapi#method(0,'getTopPadding(', ')', 'int'),
-  \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
-  \ javaapi#method(0,'isRtlCharAt(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getPrimaryHorizontal(', 'int)', 'float'),
-  \ javaapi#method(0,'getSecondaryHorizontal(', 'int)', 'float'),
-  \ javaapi#method(0,'getLineLeft(', 'int)', 'float'),
-  \ javaapi#method(0,'getLineRight(', 'int)', 'float'),
-  \ javaapi#method(0,'getLineMax(', 'int)', 'float'),
-  \ javaapi#method(0,'getLineWidth(', 'int)', 'float'),
-  \ javaapi#method(0,'getLineForVertical(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineForOffset(', 'int)', 'int'),
-  \ javaapi#method(0,'getOffsetForHorizontal(', 'int, float)', 'int'),
-  \ javaapi#method(0,'getLineEnd(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineVisibleEnd(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineBottom(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineBaseline(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineAscent(', 'int)', 'int'),
-  \ javaapi#method(0,'getOffsetToLeftOf(', 'int)', 'int'),
-  \ javaapi#method(0,'getOffsetToRightOf(', 'int)', 'int'),
-  \ javaapi#method(0,'getCursorPath(', 'int, Path, CharSequence)', 'void'),
-  \ javaapi#method(0,'getSelectionPath(', 'int, int, Path)', 'void'),
-  \ javaapi#method(0,'getParagraphAlignment(', 'int)', 'Alignment'),
-  \ javaapi#method(0,'getParagraphLeft(', 'int)', 'int'),
-  \ javaapi#method(0,'getParagraphRight(', 'int)', 'int'),
-  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
-  \ ])
-
-call javaapi#class('StaticLayout', '', [
-  \ javaapi#method(0,'StaticLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
-  \ javaapi#method(0,'StaticLayout(', 'CharSequence, int, int, TextPaint, int, Alignment, float, float, boolean)', 'public'),
-  \ javaapi#method(0,'StaticLayout(', 'CharSequence, int, int, TextPaint, int, Alignment, float, float, boolean, TruncateAt, int)', 'public'),
-  \ javaapi#method(0,'getLineForVertical(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineCount(', ')', 'int'),
-  \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
-  \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
-  \ javaapi#method(0,'getTopPadding(', ')', 'int'),
-  \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
-  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
-  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
-  \ ])
-
-call javaapi#class('Selection', '', [
-  \ javaapi#field(1,'SELECTION_START', 'Object'),
-  \ javaapi#field(1,'SELECTION_END', 'Object'),
-  \ javaapi#method(1,'getSelectionStart(', 'CharSequence)', 'int'),
-  \ javaapi#method(1,'getSelectionEnd(', 'CharSequence)', 'int'),
-  \ javaapi#method(1,'setSelection(', 'Spannable, int, int)', 'void'),
-  \ javaapi#method(1,'setSelection(', 'Spannable, int)', 'void'),
-  \ javaapi#method(1,'selectAll(', 'Spannable)', 'void'),
-  \ javaapi#method(1,'extendSelection(', 'Spannable, int)', 'void'),
-  \ javaapi#method(1,'removeSelection(', 'Spannable)', 'void'),
-  \ javaapi#method(1,'moveUp(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'moveDown(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'moveLeft(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'moveRight(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendUp(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendDown(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendLeft(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendRight(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendToLeftEdge(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'extendToRightEdge(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'moveToLeftEdge(', 'Spannable, Layout)', 'boolean'),
-  \ javaapi#method(1,'moveToRightEdge(', 'Spannable, Layout)', 'boolean'),
-  \ ])
-
-
-call javaapi#interface('ImageGetter', '', [
-  \ javaapi#method(0,'getDrawable(', 'String)', 'Drawable'),
-  \ ])
-
-call javaapi#interface('StringSplitter', '', [
-  \ javaapi#method(0,'setString(', 'String)', 'void'),
-  \ ])
-
-call javaapi#interface('TextWatcher', '', [
-  \ javaapi#method(0,'beforeTextChanged(', 'CharSequence, int, int, int)', 'void'),
-  \ javaapi#method(0,'onTextChanged(', 'CharSequence, int, int, int)', 'void'),
-  \ javaapi#method(0,'afterTextChanged(', 'Editable)', 'void'),
-  \ ])
-
-call javaapi#interface('ParcelableSpan', '', [
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ ])
-
-call javaapi#class('PasswordFilterGMail', '', [
-  \ javaapi#method(0,'PasswordFilterGMail(', ')', 'public'),
-  \ javaapi#method(0,'PasswordFilterGMail(', 'boolean)', 'public'),
-  \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
-  \ ])
-
-call javaapi#class('UsernameFilterGeneric', '', [
-  \ javaapi#method(0,'UsernameFilterGeneric(', ')', 'public'),
-  \ javaapi#method(0,'UsernameFilterGeneric(', 'boolean)', 'public'),
-  \ javaapi#method(0,'isAllowed(', 'char)', 'boolean'),
-  \ ])
-
-call javaapi#class('AndroidCharacter', '', [
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_NEUTRAL', 'int'),
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_AMBIGUOUS', 'int'),
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_HALF_WIDTH', 'int'),
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_FULL_WIDTH', 'int'),
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_NARROW', 'int'),
-  \ javaapi#field(1,'EAST_ASIAN_WIDTH_WIDE', 'int'),
-  \ javaapi#method(0,'AndroidCharacter(', ')', 'public'),
-  \ javaapi#method(1,'getDirectionalities(', 'char[], byte[], int)', 'void'),
-  \ javaapi#method(1,'getEastAsianWidth(', 'char)', 'int'),
-  \ javaapi#method(1,'getEastAsianWidths(', 'char[], int, int, byte[])', 'void'),
-  \ javaapi#method(1,'mirror(', 'char[], int, int)', 'boolean'),
-  \ javaapi#method(1,'getMirror(', 'char)', 'char'),
-  \ ])
-
-call javaapi#class('Factory', '', [
-  \ javaapi#method(0,'Factory(', ')', 'public'),
-  \ javaapi#method(1,'getInstance(', ')', 'Factory'),
-  \ javaapi#method(0,'newSpannable(', 'CharSequence)', 'Spannable'),
-  \ ])
-
-call javaapi#class('TruncateAt', '', [
-  \ javaapi#field(1,'END', 'TruncateAt'),
-  \ javaapi#field(1,'MARQUEE', 'TruncateAt'),
-  \ javaapi#field(1,'MIDDLE', 'TruncateAt'),
-  \ javaapi#field(1,'START', 'TruncateAt'),
-  \ javaapi#method(1,'values(', ')', 'TruncateAt[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'TruncateAt'),
-  \ ])
-
-call javaapi#class('SpannableString', '', [
-  \ javaapi#method(0,'SpannableString(', 'CharSequence)', 'public'),
-  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannableString'),
-  \ javaapi#method(0,'setSpan(', 'Object, int, int, int)', 'void'),
-  \ javaapi#method(0,'removeSpan(', 'Object)', 'void'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
-  \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
-  \ javaapi#method(0,'getSpans(', 'int, int, Class)', 'Object[]'),
-  \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
-  \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
-  \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('SpannedString', '', [
-  \ javaapi#method(0,'SpannedString(', 'CharSequence)', 'public'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
-  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannedString'),
-  \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
-  \ javaapi#method(0,'getSpans(', 'int, int, Class)', 'Object[]'),
-  \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
-  \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
-  \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('SpannableStringBuilder', 'Appendable', [
-  \ javaapi#method(0,'SpannableStringBuilder(', ')', 'public'),
-  \ javaapi#method(0,'SpannableStringBuilder(', 'CharSequence)', 'public'),
-  \ javaapi#method(0,'SpannableStringBuilder(', 'CharSequence, int, int)', 'public'),
-  \ javaapi#method(1,'valueOf(', 'CharSequence)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+call javaapi#class('SpannableStringInternal', '', [
   \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'delete(', 'int, int)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'clearSpans(', ')', 'void'),
-  \ javaapi#method(0,'append(', 'CharSequence)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'append(', 'char)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'replace(', 'int, int, CharSequence)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'replace(', 'int, int, CharSequence, int, int)', 'SpannableStringBuilder'),
-  \ javaapi#method(0,'setSpan(', 'Object, int, int, int)', 'void'),
-  \ javaapi#method(0,'removeSpan(', 'Object)', 'void'),
+  \ javaapi#method(0,'charAt(', 'int)', 'char'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
   \ javaapi#method(0,'getSpanStart(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpanEnd(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpanFlags(', 'Object)', 'int'),
   \ javaapi#method(0,'getSpans(', 'int, int, Class<T>)', 'T[]'),
   \ javaapi#method(0,'nextSpanTransition(', 'int, int, Class)', 'int'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
-  \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'getTextRunCursor(', 'int, int, int, int, int, Paint)', 'int'),
-  \ javaapi#method(0,'setFilters(', 'InputFilter[])', 'void'),
-  \ javaapi#method(0,'getFilters(', ')', 'InputFilter[]'),
-  \ javaapi#method(0,'append(', 'char)', 'Editable'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int)', 'Editable'),
-  \ javaapi#method(0,'append(', 'CharSequence)', 'Editable'),
-  \ javaapi#method(0,'delete(', 'int, int)', 'Editable'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence)', 'Editable'),
-  \ javaapi#method(0,'insert(', 'int, CharSequence, int, int)', 'Editable'),
-  \ javaapi#method(0,'replace(', 'int, int, CharSequence)', 'Editable'),
-  \ javaapi#method(0,'replace(', 'int, int, CharSequence, int, int)', 'Editable'),
-  \ javaapi#method(0,'append(', 'CharSequence, int, int) throws IOException', 'Appendable'),
-  \ javaapi#method(0,'append(', 'CharSequence) throws IOException', 'Appendable'),
-  \ javaapi#method(0,'append(', 'char) throws IOException', 'Appendable'),
   \ ])
 
-call javaapi#class('LengthFilter', 'InputFilter', [
-  \ javaapi#method(0,'LengthFilter(', 'int)', 'public'),
+call javaapi#interface('NoCopySpan', '', [
+  \ ])
+
+call javaapi#class('Directions', '', [
+  \ ])
+
+call javaapi#class('AllCaps', 'InputFilter', [
+  \ javaapi#method(0,'AllCaps(', ')', 'public'),
   \ javaapi#method(0,'filter(', 'CharSequence, int, int, Spanned, int, int)', 'CharSequence'),
   \ ])
 
-call javaapi#class('AlteredCharSequence', 'GetChars', [
-  \ javaapi#method(1,'make(', 'CharSequence, char[], int, int)', 'AlteredCharSequence'),
-  \ javaapi#method(0,'charAt(', 'int)', 'char'),
-  \ javaapi#method(0,'length(', ')', 'int'),
-  \ javaapi#method(0,'subSequence(', 'int, int)', 'CharSequence'),
+call javaapi#interface('GetChars', 'CharSequence', [
   \ javaapi#method(0,'getChars(', 'int, int, char[], int)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-
-call javaapi#interface('TagHandler', '', [
-  \ javaapi#method(0,'handleTag(', 'boolean, String, Editable, XMLReader)', 'void'),
-  \ ])
-
-call javaapi#class('Factory', '', [
-  \ javaapi#method(0,'Factory(', ')', 'public'),
-  \ javaapi#method(1,'getInstance(', ')', 'Factory'),
-  \ javaapi#method(0,'newEditable(', 'CharSequence)', 'Editable'),
-  \ ])
-
-call javaapi#interface('InputFilter', '', [
-  \ javaapi#method(0,'filter(', 'CharSequence, int, int, Spanned, int, int)', 'CharSequence'),
-  \ ])
-
-call javaapi#class('SimpleStringSplitter', 'String>', [
-  \ javaapi#method(0,'SimpleStringSplitter(', 'char)', 'public'),
-  \ javaapi#method(0,'setString(', 'String)', 'void'),
-  \ javaapi#method(0,'iterator(', ')', 'String>'),
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'String'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ javaapi#method(0,'next(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('Concrete', 'NoCopySpan', [
-  \ javaapi#method(0,'Concrete(', ')', 'public'),
-  \ ])
-
-call javaapi#class('AutoText', '', [
-  \ javaapi#method(1,'get(', 'CharSequence, int, int, View)', 'String'),
-  \ javaapi#method(1,'getSize(', 'View)', 'int'),
-  \ ])
-
-call javaapi#class('Metrics', '', [
-  \ javaapi#field(0,'width', 'int'),
-  \ javaapi#method(0,'Metrics(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('EllipsizeCallback', '', [
-  \ javaapi#method(0,'ellipsized(', 'int, int)', 'void'),
-  \ ])
-
-call javaapi#class('BoringLayout', '', [
-  \ javaapi#method(0,'BoringLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'public'),
-  \ javaapi#method(0,'BoringLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'public'),
-  \ javaapi#method(1,'make(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'BoringLayout'),
-  \ javaapi#method(1,'make(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'BoringLayout'),
-  \ javaapi#method(0,'replaceOrMake(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean)', 'BoringLayout'),
-  \ javaapi#method(0,'replaceOrMake(', 'CharSequence, TextPaint, int, Alignment, float, float, Metrics, boolean, TruncateAt, int)', 'BoringLayout'),
-  \ javaapi#method(1,'isBoring(', 'CharSequence, TextPaint)', 'Metrics'),
-  \ javaapi#method(1,'isBoring(', 'CharSequence, TextPaint, Metrics)', 'Metrics'),
-  \ javaapi#method(0,'getHeight(', ')', 'int'),
+call javaapi#class('DynamicLayout', 'Layout', [
+  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
+  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, CharSequence, TextPaint, int, Alignment, float, float, boolean)', 'public'),
+  \ javaapi#method(0,'DynamicLayout(', 'CharSequence, CharSequence, TextPaint, int, Alignment, float, float, boolean, TruncateAt, int)', 'public'),
   \ javaapi#method(0,'getLineCount(', ')', 'int'),
   \ javaapi#method(0,'getLineTop(', 'int)', 'int'),
   \ javaapi#method(0,'getLineDescent(', 'int)', 'int'),
   \ javaapi#method(0,'getLineStart(', 'int)', 'int'),
-  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
   \ javaapi#method(0,'getLineContainsTab(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getLineMax(', 'int)', 'float'),
+  \ javaapi#method(0,'getParagraphDirection(', 'int)', 'int'),
   \ javaapi#method(0,'getLineDirections(', 'int)', 'Directions'),
   \ javaapi#method(0,'getTopPadding(', ')', 'int'),
   \ javaapi#method(0,'getBottomPadding(', ')', 'int'),
-  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
-  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
   \ javaapi#method(0,'getEllipsizedWidth(', ')', 'int'),
-  \ javaapi#method(0,'draw(', 'Canvas, Path, Paint, int)', 'void'),
-  \ javaapi#method(0,'ellipsized(', 'int, int)', 'void'),
+  \ javaapi#method(0,'getEllipsisStart(', 'int)', 'int'),
+  \ javaapi#method(0,'getEllipsisCount(', 'int)', 'int'),
   \ ])
 

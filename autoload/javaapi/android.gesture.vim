@@ -108,7 +108,7 @@ call javaapi#class('Prediction', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('GestureOverlayView', '', [
+call javaapi#class('GestureOverlayView', 'FrameLayout', [
   \ javaapi#field(1,'GESTURE_STROKE_TYPE_SINGLE', 'int'),
   \ javaapi#field(1,'GESTURE_STROKE_TYPE_MULTIPLE', 'int'),
   \ javaapi#field(1,'ORIENTATION_HORIZONTAL', 'int'),

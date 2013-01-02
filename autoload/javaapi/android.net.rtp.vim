@@ -41,7 +41,7 @@ call javaapi#class('AudioCodec', '', [
   \ javaapi#method(1,'getCodec(', 'int, String, String)', 'AudioCodec'),
   \ ])
 
-call javaapi#class('AudioStream', '', [
+call javaapi#class('AudioStream', 'RtpStream', [
   \ javaapi#method(0,'AudioStream(', 'InetAddress) throws SocketException', 'public'),
   \ javaapi#method(0,'isBusy(', ')', 'boolean'),
   \ javaapi#method(0,'getGroup(', ')', 'AudioGroup'),

@@ -6,7 +6,7 @@ call javaapi#class('AccelerateDecelerateInterpolator', 'Interpolator', [
   \ javaapi#method(0,'getInterpolation(', 'float)', 'float'),
   \ ])
 
-call javaapi#class('AlphaAnimation', '', [
+call javaapi#class('AlphaAnimation', 'Animation', [
   \ javaapi#method(0,'AlphaAnimation(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AlphaAnimation(', 'float, float)', 'public'),
   \ javaapi#method(0,'willChangeTransformationMatrix(', ')', 'boolean'),
@@ -20,7 +20,7 @@ call javaapi#class('DecelerateInterpolator', 'Interpolator', [
   \ javaapi#method(0,'getInterpolation(', 'float)', 'float'),
   \ ])
 
-call javaapi#interface('Interpolator', '', [
+call javaapi#interface('Interpolator', 'TimeInterpolator', [
   \ ])
 
 call javaapi#class('LinearInterpolator', 'Interpolator', [
@@ -40,7 +40,7 @@ call javaapi#class('AnimationUtils', '', [
   \ javaapi#method(1,'loadInterpolator(', 'Context, int) throws NotFoundException', 'Interpolator'),
   \ ])
 
-call javaapi#class('GridLayoutAnimationController', '', [
+call javaapi#class('GridLayoutAnimationController', 'LayoutAnimationController', [
   \ javaapi#field(1,'DIRECTION_LEFT_TO_RIGHT', 'int'),
   \ javaapi#field(1,'DIRECTION_RIGHT_TO_LEFT', 'int'),
   \ javaapi#field(1,'DIRECTION_TOP_TO_BOTTOM', 'int'),
@@ -64,7 +64,7 @@ call javaapi#class('GridLayoutAnimationController', '', [
   \ javaapi#method(0,'willOverlap(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ScaleAnimation', '', [
+call javaapi#class('ScaleAnimation', 'Animation', [
   \ javaapi#method(0,'ScaleAnimation(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'ScaleAnimation(', 'float, float, float, float)', 'public'),
   \ javaapi#method(0,'ScaleAnimation(', 'float, float, float, float, float, float)', 'public'),
@@ -128,7 +128,7 @@ call javaapi#class('Animation', 'Cloneable', [
   \ javaapi#method(0,'hasEnded(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('RotateAnimation', '', [
+call javaapi#class('RotateAnimation', 'Animation', [
   \ javaapi#method(0,'RotateAnimation(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'RotateAnimation(', 'float, float)', 'public'),
   \ javaapi#method(0,'RotateAnimation(', 'float, float, float, float)', 'public'),
@@ -141,7 +141,7 @@ call javaapi#class('Description', '', [
   \ javaapi#field(0,'value', 'float'),
   \ ])
 
-call javaapi#class('AnimationSet', '', [
+call javaapi#class('AnimationSet', 'Animation', [
   \ javaapi#method(0,'AnimationSet(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'AnimationSet(', 'boolean)', 'public'),
   \ javaapi#method(0,'setFillAfter(', 'boolean)', 'void'),
@@ -184,7 +184,7 @@ call javaapi#class('AccelerateInterpolator', 'Interpolator', [
   \ javaapi#method(0,'getInterpolation(', 'float)', 'float'),
   \ ])
 
-call javaapi#class('AnimationParameters', '', [
+call javaapi#class('AnimationParameters', 'AnimationParameters', [
   \ javaapi#field(0,'column', 'int'),
   \ javaapi#field(0,'row', 'int'),
   \ javaapi#field(0,'columnsCount', 'int'),
@@ -192,7 +192,7 @@ call javaapi#class('AnimationParameters', '', [
   \ javaapi#method(0,'AnimationParameters(', ')', 'public'),
   \ ])
 
-call javaapi#class('TranslateAnimation', '', [
+call javaapi#class('TranslateAnimation', 'Animation', [
   \ javaapi#method(0,'TranslateAnimation(', 'Context, AttributeSet)', 'public'),
   \ javaapi#method(0,'TranslateAnimation(', 'float, float, float, float)', 'public'),
   \ javaapi#method(0,'TranslateAnimation(', 'int, float, int, float, int, float, int, float)', 'public'),

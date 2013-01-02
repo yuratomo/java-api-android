@@ -1,5 +1,40 @@
 call javaapi#namespace('android.net.wifi')
 
+call javaapi#class('ScanResult', 'Parcelable', [
+  \ javaapi#field(0,'SSID', 'String'),
+  \ javaapi#field(0,'BSSID', 'String'),
+  \ javaapi#field(0,'capabilities', 'String'),
+  \ javaapi#field(0,'level', 'int'),
+  \ javaapi#field(0,'frequency', 'int'),
+  \ javaapi#field(0,'timestamp', 'long'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#class('WifiConfiguration', 'Parcelable', [
+  \ javaapi#field(0,'networkId', 'int'),
+  \ javaapi#field(0,'status', 'int'),
+  \ javaapi#field(0,'SSID', 'String'),
+  \ javaapi#field(0,'BSSID', 'String'),
+  \ javaapi#field(0,'preSharedKey', 'String'),
+  \ javaapi#field(0,'wepKeys', 'String[]'),
+  \ javaapi#field(0,'wepTxKeyIndex', 'int'),
+  \ javaapi#field(0,'priority', 'int'),
+  \ javaapi#field(0,'hiddenSSID', 'boolean'),
+  \ javaapi#field(0,'allowedKeyManagement', 'BitSet'),
+  \ javaapi#field(0,'allowedProtocols', 'BitSet'),
+  \ javaapi#field(0,'allowedAuthAlgorithms', 'BitSet'),
+  \ javaapi#field(0,'allowedPairwiseCiphers', 'BitSet'),
+  \ javaapi#field(0,'allowedGroupCiphers', 'BitSet'),
+  \ javaapi#method(0,'WifiConfiguration(', ')', 'public'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#namespace('android.net.wifi')
+
 call javaapi#class('Protocol', '', [
   \ javaapi#field(1,'WPA', 'int'),
   \ javaapi#field(1,'RSN', 'int'),
@@ -100,7 +135,7 @@ call javaapi#class('KeyMgmt', '', [
   \ javaapi#field(1,'strings', 'String[]'),
   \ ])
 
-call javaapi#class('SupplicantState', '', [
+call javaapi#class('SupplicantState', 'SupplicantState>', [
   \ javaapi#field(1,'ASSOCIATED', 'SupplicantState'),
   \ javaapi#field(1,'ASSOCIATING', 'SupplicantState'),
   \ javaapi#field(1,'AUTHENTICATING', 'SupplicantState'),
@@ -169,39 +204,5 @@ call javaapi#class('WifiLock', '', [
   \ javaapi#method(0,'isHeld(', ')', 'boolean'),
   \ javaapi#method(0,'setWorkSource(', 'WorkSource)', 'void'),
   \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-
-call javaapi#class('ScanResult', 'Parcelable', [
-  \ javaapi#field(0,'SSID', 'String'),
-  \ javaapi#field(0,'BSSID', 'String'),
-  \ javaapi#field(0,'capabilities', 'String'),
-  \ javaapi#field(0,'level', 'int'),
-  \ javaapi#field(0,'frequency', 'int'),
-  \ javaapi#field(0,'timestamp', 'long'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#class('WifiConfiguration', 'Parcelable', [
-  \ javaapi#field(0,'networkId', 'int'),
-  \ javaapi#field(0,'status', 'int'),
-  \ javaapi#field(0,'SSID', 'String'),
-  \ javaapi#field(0,'BSSID', 'String'),
-  \ javaapi#field(0,'preSharedKey', 'String'),
-  \ javaapi#field(0,'wepKeys', 'String[]'),
-  \ javaapi#field(0,'wepTxKeyIndex', 'int'),
-  \ javaapi#field(0,'priority', 'int'),
-  \ javaapi#field(0,'hiddenSSID', 'boolean'),
-  \ javaapi#field(0,'allowedKeyManagement', 'BitSet'),
-  \ javaapi#field(0,'allowedProtocols', 'BitSet'),
-  \ javaapi#field(0,'allowedAuthAlgorithms', 'BitSet'),
-  \ javaapi#field(0,'allowedPairwiseCiphers', 'BitSet'),
-  \ javaapi#field(0,'allowedGroupCiphers', 'BitSet'),
-  \ javaapi#method(0,'WifiConfiguration(', ')', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 

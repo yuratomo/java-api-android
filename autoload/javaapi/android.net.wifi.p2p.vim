@@ -1,5 +1,65 @@
 call javaapi#namespace('android.net.wifi.p2p')
 
+call javaapi#interface('ServiceResponseListener', '', [
+  \ javaapi#method(0,'onServiceAvailable(', 'int, byte[], WifiP2pDevice)', 'void'),
+  \ ])
+
+call javaapi#interface('ConnectionInfoListener', '', [
+  \ javaapi#method(0,'onConnectionInfoAvailable(', 'WifiP2pInfo)', 'void'),
+  \ ])
+
+call javaapi#interface('PeerListListener', '', [
+  \ javaapi#method(0,'onPeersAvailable(', 'WifiP2pDeviceList)', 'void'),
+  \ ])
+
+call javaapi#class('Channel', '', [
+  \ ])
+
+call javaapi#class('WifiP2pInfo', 'Parcelable', [
+  \ javaapi#field(0,'groupFormed', 'boolean'),
+  \ javaapi#field(0,'isGroupOwner', 'boolean'),
+  \ javaapi#field(0,'groupOwnerAddress', 'InetAddress'),
+  \ javaapi#field(1,'CREATOR', 'WifiP2pInfo>'),
+  \ javaapi#method(0,'WifiP2pInfo(', ')', 'public'),
+  \ javaapi#method(0,'WifiP2pInfo(', 'WifiP2pInfo)', 'public'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#interface('DnsSdServiceResponseListener', '', [
+  \ javaapi#method(0,'onDnsSdServiceAvailable(', 'String, String, WifiP2pDevice)', 'void'),
+  \ ])
+
+call javaapi#class('WifiP2pDeviceList', 'Parcelable', [
+  \ javaapi#field(1,'CREATOR', 'WifiP2pDeviceList>'),
+  \ javaapi#method(0,'WifiP2pDeviceList(', ')', 'public'),
+  \ javaapi#method(0,'WifiP2pDeviceList(', 'WifiP2pDeviceList)', 'public'),
+  \ javaapi#method(0,'getDeviceList(', ')', 'WifiP2pDevice>'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ ])
+
+call javaapi#interface('UpnpServiceResponseListener', '', [
+  \ javaapi#method(0,'onUpnpServiceAvailable(', 'List<String>, WifiP2pDevice)', 'void'),
+  \ ])
+
+call javaapi#interface('DnsSdTxtRecordListener', '', [
+  \ javaapi#method(0,'onDnsSdTxtRecordAvailable(', 'String, Map<String, String>, WifiP2pDevice)', 'void'),
+  \ ])
+
+call javaapi#interface('ActionListener', '', [
+  \ javaapi#method(0,'onSuccess(', ')', 'void'),
+  \ javaapi#method(0,'onFailure(', 'int)', 'void'),
+  \ ])
+
+call javaapi#interface('ChannelListener', '', [
+  \ javaapi#method(0,'onChannelDisconnected(', ')', 'void'),
+  \ ])
+
+call javaapi#namespace('android.net.wifi.p2p')
+
 call javaapi#class('WifiP2pGroup', 'Parcelable', [
   \ javaapi#field(1,'CREATOR', 'WifiP2pGroup>'),
   \ javaapi#method(0,'WifiP2pGroup(', ')', 'public'),
@@ -95,64 +155,5 @@ call javaapi#class('WifiP2pDevice', 'Parcelable', [
 
 call javaapi#interface('GroupInfoListener', '', [
   \ javaapi#method(0,'onGroupInfoAvailable(', 'WifiP2pGroup)', 'void'),
-  \ ])
-
-
-call javaapi#interface('ServiceResponseListener', '', [
-  \ javaapi#method(0,'onServiceAvailable(', 'int, byte[], WifiP2pDevice)', 'void'),
-  \ ])
-
-call javaapi#interface('ConnectionInfoListener', '', [
-  \ javaapi#method(0,'onConnectionInfoAvailable(', 'WifiP2pInfo)', 'void'),
-  \ ])
-
-call javaapi#interface('PeerListListener', '', [
-  \ javaapi#method(0,'onPeersAvailable(', 'WifiP2pDeviceList)', 'void'),
-  \ ])
-
-call javaapi#class('Channel', '', [
-  \ ])
-
-call javaapi#class('WifiP2pInfo', 'Parcelable', [
-  \ javaapi#field(0,'groupFormed', 'boolean'),
-  \ javaapi#field(0,'isGroupOwner', 'boolean'),
-  \ javaapi#field(0,'groupOwnerAddress', 'InetAddress'),
-  \ javaapi#field(1,'CREATOR', 'WifiP2pInfo>'),
-  \ javaapi#method(0,'WifiP2pInfo(', ')', 'public'),
-  \ javaapi#method(0,'WifiP2pInfo(', 'WifiP2pInfo)', 'public'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#interface('DnsSdServiceResponseListener', '', [
-  \ javaapi#method(0,'onDnsSdServiceAvailable(', 'String, String, WifiP2pDevice)', 'void'),
-  \ ])
-
-call javaapi#class('WifiP2pDeviceList', 'Parcelable', [
-  \ javaapi#field(1,'CREATOR', 'WifiP2pDeviceList>'),
-  \ javaapi#method(0,'WifiP2pDeviceList(', ')', 'public'),
-  \ javaapi#method(0,'WifiP2pDeviceList(', 'WifiP2pDeviceList)', 'public'),
-  \ javaapi#method(0,'getDeviceList(', ')', 'WifiP2pDevice>'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ ])
-
-call javaapi#interface('UpnpServiceResponseListener', '', [
-  \ javaapi#method(0,'onUpnpServiceAvailable(', 'List<String>, WifiP2pDevice)', 'void'),
-  \ ])
-
-call javaapi#interface('DnsSdTxtRecordListener', '', [
-  \ javaapi#method(0,'onDnsSdTxtRecordAvailable(', 'String, Map<String, String>, WifiP2pDevice)', 'void'),
-  \ ])
-
-call javaapi#interface('ActionListener', '', [
-  \ javaapi#method(0,'onSuccess(', ')', 'void'),
-  \ javaapi#method(0,'onFailure(', 'int)', 'void'),
-  \ ])
-
-call javaapi#interface('ChannelListener', '', [
-  \ javaapi#method(0,'onChannelDisconnected(', ')', 'void'),
   \ ])
 

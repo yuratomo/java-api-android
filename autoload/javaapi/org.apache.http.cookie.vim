@@ -1,6 +1,44 @@
 call javaapi#namespace('org.apache.http.cookie')
 
-call javaapi#interface('ClientCookie', '', [
+call javaapi#class('CookieOrigin', '', [
+  \ javaapi#method(0,'CookieOrigin(', 'String, int, String, boolean)', 'public'),
+  \ javaapi#method(0,'getHost(', ')', 'String'),
+  \ javaapi#method(0,'getPath(', ')', 'String'),
+  \ javaapi#method(0,'getPort(', ')', 'int'),
+  \ javaapi#method(0,'isSecure(', ')', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('Cookie', '', [
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getValue(', ')', 'String'),
+  \ javaapi#method(0,'getComment(', ')', 'String'),
+  \ javaapi#method(0,'getCommentURL(', ')', 'String'),
+  \ javaapi#method(0,'getExpiryDate(', ')', 'Date'),
+  \ javaapi#method(0,'isPersistent(', ')', 'boolean'),
+  \ javaapi#method(0,'getDomain(', ')', 'String'),
+  \ javaapi#method(0,'getPath(', ')', 'String'),
+  \ javaapi#method(0,'getPorts(', ')', 'int[]'),
+  \ javaapi#method(0,'isSecure(', ')', 'boolean'),
+  \ javaapi#method(0,'getVersion(', ')', 'int'),
+  \ javaapi#method(0,'isExpired(', 'Date)', 'boolean'),
+  \ ])
+
+call javaapi#interface('SetCookie2', 'SetCookie', [
+  \ javaapi#method(0,'setCommentURL(', 'String)', 'void'),
+  \ javaapi#method(0,'setPorts(', 'int[])', 'void'),
+  \ javaapi#method(0,'setDiscard(', 'boolean)', 'void'),
+  \ ])
+
+call javaapi#class('MalformedCookieException', 'ProtocolException', [
+  \ javaapi#method(0,'MalformedCookieException(', ')', 'public'),
+  \ javaapi#method(0,'MalformedCookieException(', 'String)', 'public'),
+  \ javaapi#method(0,'MalformedCookieException(', 'String, Throwable)', 'public'),
+  \ ])
+
+call javaapi#namespace('org.apache.http.cookie')
+
+call javaapi#interface('ClientCookie', 'Cookie', [
   \ javaapi#field(1,'VERSION_ATTR', 'String'),
   \ javaapi#field(1,'PATH_ATTR', 'String'),
   \ javaapi#field(1,'DOMAIN_ATTR', 'String'),
@@ -25,7 +63,7 @@ call javaapi#interface('CookieSpecFactory', '', [
   \ javaapi#method(0,'newInstance(', 'HttpParams)', 'CookieSpec'),
   \ ])
 
-call javaapi#interface('SetCookie', '', [
+call javaapi#interface('SetCookie', 'Cookie', [
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
   \ javaapi#method(0,'setComment(', 'String)', 'void'),
   \ javaapi#method(0,'setExpiryDate(', 'Date)', 'void'),
@@ -71,42 +109,5 @@ call javaapi#class('CookieIdentityComparator', 'Cookie>', [
   \ javaapi#method(0,'CookieIdentityComparator(', ')', 'public'),
   \ javaapi#method(0,'compare(', 'Cookie, Cookie)', 'int'),
   \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-
-call javaapi#class('CookieOrigin', '', [
-  \ javaapi#method(0,'CookieOrigin(', 'String, int, String, boolean)', 'public'),
-  \ javaapi#method(0,'getHost(', ')', 'String'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getPort(', ')', 'int'),
-  \ javaapi#method(0,'isSecure(', ')', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('Cookie', '', [
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getValue(', ')', 'String'),
-  \ javaapi#method(0,'getComment(', ')', 'String'),
-  \ javaapi#method(0,'getCommentURL(', ')', 'String'),
-  \ javaapi#method(0,'getExpiryDate(', ')', 'Date'),
-  \ javaapi#method(0,'isPersistent(', ')', 'boolean'),
-  \ javaapi#method(0,'getDomain(', ')', 'String'),
-  \ javaapi#method(0,'getPath(', ')', 'String'),
-  \ javaapi#method(0,'getPorts(', ')', 'int[]'),
-  \ javaapi#method(0,'isSecure(', ')', 'boolean'),
-  \ javaapi#method(0,'getVersion(', ')', 'int'),
-  \ javaapi#method(0,'isExpired(', 'Date)', 'boolean'),
-  \ ])
-
-call javaapi#interface('SetCookie2', '', [
-  \ javaapi#method(0,'setCommentURL(', 'String)', 'void'),
-  \ javaapi#method(0,'setPorts(', 'int[])', 'void'),
-  \ javaapi#method(0,'setDiscard(', 'boolean)', 'void'),
-  \ ])
-
-call javaapi#class('MalformedCookieException', '', [
-  \ javaapi#method(0,'MalformedCookieException(', ')', 'public'),
-  \ javaapi#method(0,'MalformedCookieException(', 'String)', 'public'),
-  \ javaapi#method(0,'MalformedCookieException(', 'String, Throwable)', 'public'),
   \ ])
 

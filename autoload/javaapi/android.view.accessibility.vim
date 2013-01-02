@@ -176,7 +176,7 @@ call javaapi#class('AccessibilityRecord', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AccessibilityEvent', '', [
+call javaapi#class('AccessibilityEvent', 'AccessibilityRecord', [
   \ javaapi#field(1,'INVALID_POSITION', 'int'),
   \ javaapi#field(1,'MAX_TEXT_LENGTH', 'int'),
   \ javaapi#field(1,'TYPE_VIEW_CLICKED', 'int'),

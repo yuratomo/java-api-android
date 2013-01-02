@@ -27,7 +27,7 @@ call javaapi#class('BestMatchSpecFactory', 'CookieSpecFactory', [
   \ javaapi#method(0,'newInstance(', 'HttpParams)', 'CookieSpec'),
   \ ])
 
-call javaapi#class('BasicExpiresHandler', '', [
+call javaapi#class('BasicExpiresHandler', 'AbstractCookieAttributeHandler', [
   \ javaapi#method(0,'BasicExpiresHandler(', 'String[])', 'public'),
   \ javaapi#method(0,'parse(', 'SetCookie, String) throws MalformedCookieException', 'void'),
   \ ])
@@ -40,7 +40,7 @@ call javaapi#class('RFC2965DomainAttributeHandler', 'CookieAttributeHandler', [
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('BrowserCompatSpec', '', [
+call javaapi#class('BrowserCompatSpec', 'CookieSpecBase', [
   \ javaapi#method(0,'BrowserCompatSpec(', 'String[])', 'public'),
   \ javaapi#method(0,'BrowserCompatSpec(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
@@ -49,7 +49,7 @@ call javaapi#class('BrowserCompatSpec', '', [
   \ javaapi#method(0,'getVersionHeader(', ')', 'Header'),
   \ ])
 
-call javaapi#class('RFC2109Spec', '', [
+call javaapi#class('RFC2109Spec', 'CookieSpecBase', [
   \ javaapi#method(0,'RFC2109Spec(', 'String[], boolean)', 'public'),
   \ javaapi#method(0,'RFC2109Spec(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
@@ -59,7 +59,7 @@ call javaapi#class('RFC2109Spec', '', [
   \ javaapi#method(0,'getVersionHeader(', ')', 'Header'),
   \ ])
 
-call javaapi#class('NetscapeDraftSpec', '', [
+call javaapi#class('NetscapeDraftSpec', 'CookieSpecBase', [
   \ javaapi#method(0,'NetscapeDraftSpec(', 'String[])', 'public'),
   \ javaapi#method(0,'NetscapeDraftSpec(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
@@ -79,7 +79,7 @@ call javaapi#class('BestMatchSpec', 'CookieSpec', [
   \ javaapi#method(0,'getVersionHeader(', ')', 'Header'),
   \ ])
 
-call javaapi#class('DateParseException', '', [
+call javaapi#class('DateParseException', 'Exception', [
   \ javaapi#method(0,'DateParseException(', ')', 'public'),
   \ javaapi#method(0,'DateParseException(', 'String)', 'public'),
   \ ])
@@ -98,13 +98,13 @@ call javaapi#class('RFC2109DomainHandler', 'CookieAttributeHandler', [
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicSecureHandler', '', [
+call javaapi#class('BasicSecureHandler', 'AbstractCookieAttributeHandler', [
   \ javaapi#method(0,'BasicSecureHandler(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'SetCookie, String) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('NetscapeDomainHandler', '', [
+call javaapi#class('NetscapeDomainHandler', 'BasicDomainHandler', [
   \ javaapi#method(0,'NetscapeDomainHandler(', ')', 'public'),
   \ javaapi#method(0,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
@@ -157,7 +157,7 @@ call javaapi#class('BasicDomainHandler', 'CookieAttributeHandler', [
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('CookieSpecBase', '', [
+call javaapi#class('CookieSpecBase', 'AbstractCookieSpec', [
   \ javaapi#method(0,'CookieSpecBase(', ')', 'public'),
   \ javaapi#method(0,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
@@ -170,7 +170,7 @@ call javaapi#class('RFC2965CommentUrlAttributeHandler', 'CookieAttributeHandler'
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicClientCookie2', '', [
+call javaapi#class('BasicClientCookie2', 'BasicClientCookie', [
   \ javaapi#method(0,'BasicClientCookie2(', 'String, String)', 'public'),
   \ javaapi#method(0,'getPorts(', ')', 'int[]'),
   \ javaapi#method(0,'setPorts(', 'int[])', 'void'),
@@ -182,12 +182,12 @@ call javaapi#class('BasicClientCookie2', '', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('BasicMaxAgeHandler', '', [
+call javaapi#class('BasicMaxAgeHandler', 'AbstractCookieAttributeHandler', [
   \ javaapi#method(0,'BasicMaxAgeHandler(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'SetCookie, String) throws MalformedCookieException', 'void'),
   \ ])
 
-call javaapi#class('RFC2109VersionHandler', '', [
+call javaapi#class('RFC2109VersionHandler', 'AbstractCookieAttributeHandler', [
   \ javaapi#method(0,'RFC2109VersionHandler(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'SetCookie, String) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
@@ -212,7 +212,7 @@ call javaapi#class('AbstractCookieAttributeHandler', 'CookieAttributeHandler', [
   \ javaapi#method(0,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
 
-call javaapi#class('RFC2965Spec', '', [
+call javaapi#class('RFC2965Spec', 'RFC2109Spec', [
   \ javaapi#method(0,'RFC2965Spec(', ')', 'public'),
   \ javaapi#method(0,'RFC2965Spec(', 'String[], boolean)', 'public'),
   \ javaapi#method(0,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
@@ -227,7 +227,7 @@ call javaapi#class('RFC2109SpecFactory', 'CookieSpecFactory', [
   \ javaapi#method(0,'newInstance(', 'HttpParams)', 'CookieSpec'),
   \ ])
 
-call javaapi#class('BasicCommentHandler', '', [
+call javaapi#class('BasicCommentHandler', 'AbstractCookieAttributeHandler', [
   \ javaapi#method(0,'BasicCommentHandler(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'SetCookie, String) throws MalformedCookieException', 'void'),
   \ ])

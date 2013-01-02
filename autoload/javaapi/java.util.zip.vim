@@ -1,6 +1,6 @@
 call javaapi#namespace('java.util.zip')
 
-call javaapi#class('CheckedInputStream', '', [
+call javaapi#class('CheckedInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'CheckedInputStream(', 'InputStream, Checksum)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -30,7 +30,7 @@ call javaapi#class('Inflater', '', [
   \ javaapi#method(0,'end(', ')', 'void'),
   \ ])
 
-call javaapi#class('DeflaterOutputStream', '', [
+call javaapi#class('DeflaterOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'DeflaterOutputStream(', 'OutputStream, Deflater, int, boolean)', 'public'),
   \ javaapi#method(0,'DeflaterOutputStream(', 'OutputStream, Deflater, int)', 'public'),
   \ javaapi#method(0,'DeflaterOutputStream(', 'OutputStream, Deflater, boolean)', 'public'),
@@ -44,7 +44,7 @@ call javaapi#class('DeflaterOutputStream', '', [
   \ javaapi#method(0,'flush(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('InflaterInputStream', '', [
+call javaapi#class('InflaterInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'InflaterInputStream(', 'InputStream, Inflater, int)', 'public'),
   \ javaapi#method(0,'InflaterInputStream(', 'InputStream, Inflater)', 'public'),
   \ javaapi#method(0,'InflaterInputStream(', 'InputStream)', 'public'),
@@ -58,12 +58,12 @@ call javaapi#class('InflaterInputStream', '', [
   \ javaapi#method(0,'reset(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('DataFormatException', '', [
+call javaapi#class('DataFormatException', 'Exception', [
   \ javaapi#method(0,'DataFormatException(', ')', 'public'),
   \ javaapi#method(0,'DataFormatException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InflaterOutputStream', '', [
+call javaapi#class('InflaterOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'InflaterOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'InflaterOutputStream(', 'OutputStream, Inflater)', 'public'),
   \ javaapi#method(0,'InflaterOutputStream(', 'OutputStream, Inflater, int)', 'public'),
@@ -74,7 +74,7 @@ call javaapi#class('InflaterOutputStream', '', [
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('GZIPOutputStream', '', [
+call javaapi#class('GZIPOutputStream', 'DeflaterOutputStream', [
   \ javaapi#method(0,'GZIPOutputStream(', 'OutputStream, int) throws IOException', 'public'),
   \ javaapi#method(0,'GZIPOutputStream(', 'OutputStream, int, boolean) throws IOException', 'public'),
   \ javaapi#method(0,'GZIPOutputStream(', 'OutputStream) throws IOException', 'public'),
@@ -92,7 +92,7 @@ call javaapi#class('CRC32', 'Checksum', [
   \ javaapi#method(0,'getValue(', ')', 'long'),
   \ ])
 
-call javaapi#class('DeflaterInputStream', '', [
+call javaapi#class('DeflaterInputStream', 'FilterInputStream', [
   \ javaapi#method(0,'DeflaterInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'DeflaterInputStream(', 'InputStream, Deflater)', 'public'),
   \ javaapi#method(0,'DeflaterInputStream(', 'InputStream, Deflater, int)', 'public'),
@@ -124,7 +124,7 @@ call javaapi#class('ZipFile', 'Closeable', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('CheckedOutputStream', '', [
+call javaapi#class('CheckedOutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'CheckedOutputStream(', 'OutputStream, Checksum)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -183,7 +183,7 @@ call javaapi#class('Deflater', '', [
   \ javaapi#method(0,'end(', ')', 'void'),
   \ ])
 
-call javaapi#class('GZIPInputStream', '', [
+call javaapi#class('GZIPInputStream', 'InflaterInputStream', [
   \ javaapi#field(1,'GZIP_MAGIC', 'int'),
   \ javaapi#method(0,'GZIPInputStream(', 'InputStream, int) throws IOException', 'public'),
   \ javaapi#method(0,'GZIPInputStream(', 'InputStream) throws IOException', 'public'),
@@ -191,11 +191,11 @@ call javaapi#class('GZIPInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ZipError', '', [
+call javaapi#class('ZipError', 'InternalError', [
   \ javaapi#method(0,'ZipError(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('ZipOutputStream', '', [
+call javaapi#class('ZipOutputStream', 'DeflaterOutputStream', [
   \ javaapi#field(1,'STORED', 'int'),
   \ javaapi#field(1,'DEFLATED', 'int'),
   \ javaapi#method(0,'ZipOutputStream(', 'OutputStream)', 'public'),
@@ -210,7 +210,7 @@ call javaapi#class('ZipOutputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ZipInputStream', '', [
+call javaapi#class('ZipInputStream', 'InflaterInputStream', [
   \ javaapi#method(0,'ZipInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'ZipInputStream(', 'InputStream, Charset)', 'public'),
   \ javaapi#method(0,'getNextEntry(', ') throws IOException', 'ZipEntry'),
@@ -221,7 +221,7 @@ call javaapi#class('ZipInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ZipException', '', [
+call javaapi#class('ZipException', 'IOException', [
   \ javaapi#method(0,'ZipException(', ')', 'public'),
   \ javaapi#method(0,'ZipException(', 'String)', 'public'),
   \ ])

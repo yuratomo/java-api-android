@@ -1,6 +1,6 @@
 call javaapi#namespace('org.apache.http.impl.auth')
 
-call javaapi#class('DigestScheme', '', [
+call javaapi#class('DigestScheme', 'RFC2617Scheme', [
   \ javaapi#method(0,'DigestScheme(', ')', 'public'),
   \ javaapi#method(0,'processChallenge(', 'Header) throws MalformedChallengeException', 'void'),
   \ javaapi#method(0,'isComplete(', ')', 'boolean'),
@@ -11,13 +11,13 @@ call javaapi#class('DigestScheme', '', [
   \ javaapi#method(1,'createCnonce(', ')', 'String'),
   \ ])
 
-call javaapi#class('NTLMEngineException', '', [
+call javaapi#class('NTLMEngineException', 'AuthenticationException', [
   \ javaapi#method(0,'NTLMEngineException(', ')', 'public'),
   \ javaapi#method(0,'NTLMEngineException(', 'String)', 'public'),
   \ javaapi#method(0,'NTLMEngineException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('NTLMScheme', '', [
+call javaapi#class('NTLMScheme', 'AuthSchemeBase', [
   \ javaapi#method(0,'NTLMScheme(', 'NTLMEngine)', 'public'),
   \ javaapi#method(0,'getSchemeName(', ')', 'String'),
   \ javaapi#method(0,'getParameter(', 'String)', 'String'),
@@ -43,7 +43,7 @@ call javaapi#class('AuthSchemeBase', 'AuthScheme', [
   \ javaapi#method(0,'isProxy(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('UnsupportedDigestAlgorithmException', '', [
+call javaapi#class('UnsupportedDigestAlgorithmException', 'RuntimeException', [
   \ javaapi#method(0,'UnsupportedDigestAlgorithmException(', ')', 'public'),
   \ javaapi#method(0,'UnsupportedDigestAlgorithmException(', 'String)', 'public'),
   \ javaapi#method(0,'UnsupportedDigestAlgorithmException(', 'String, Throwable)', 'public'),
@@ -54,7 +54,7 @@ call javaapi#class('BasicSchemeFactory', 'AuthSchemeFactory', [
   \ javaapi#method(0,'newInstance(', 'HttpParams)', 'AuthScheme'),
   \ ])
 
-call javaapi#class('BasicScheme', '', [
+call javaapi#class('BasicScheme', 'RFC2617Scheme', [
   \ javaapi#method(0,'BasicScheme(', ')', 'public'),
   \ javaapi#method(0,'getSchemeName(', ')', 'String'),
   \ javaapi#method(0,'processChallenge(', 'Header) throws MalformedChallengeException', 'void'),
@@ -64,7 +64,7 @@ call javaapi#class('BasicScheme', '', [
   \ javaapi#method(1,'authenticate(', 'Credentials, String, boolean)', 'Header'),
   \ ])
 
-call javaapi#class('RFC2617Scheme', '', [
+call javaapi#class('RFC2617Scheme', 'AuthSchemeBase', [
   \ javaapi#method(0,'RFC2617Scheme(', ')', 'public'),
   \ javaapi#method(0,'getParameter(', 'String)', 'String'),
   \ javaapi#method(0,'getRealm(', ')', 'String'),

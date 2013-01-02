@@ -21,7 +21,7 @@ call javaapi#interface('RowSetReader', '', [
   \ javaapi#method(0,'readData(', 'RowSetInternal) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('RowSetMetaData', '', [
+call javaapi#interface('RowSetMetaData', 'ResultSetMetaData', [
   \ javaapi#method(0,'setColumnCount(', 'int) throws SQLException', 'void'),
   \ javaapi#method(0,'setAutoIncrement(', 'int, boolean) throws SQLException', 'void'),
   \ javaapi#method(0,'setCaseSensitive(', 'int, boolean) throws SQLException', 'void'),
@@ -41,23 +41,23 @@ call javaapi#interface('RowSetMetaData', '', [
   \ javaapi#method(0,'setColumnTypeName(', 'int, String) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('RowSetListener', '', [
+call javaapi#interface('RowSetListener', 'EventListener', [
   \ javaapi#method(0,'rowSetChanged(', 'RowSetEvent)', 'void'),
   \ javaapi#method(0,'rowChanged(', 'RowSetEvent)', 'void'),
   \ javaapi#method(0,'cursorMoved(', 'RowSetEvent)', 'void'),
   \ ])
 
-call javaapi#interface('DataSource', '', [
+call javaapi#interface('DataSource', 'Wrapper', [
   \ javaapi#method(0,'getConnection(', ') throws SQLException', 'Connection'),
   \ javaapi#method(0,'getConnection(', 'String, String) throws SQLException', 'Connection'),
   \ ])
 
-call javaapi#interface('StatementEventListener', '', [
+call javaapi#interface('StatementEventListener', 'EventListener', [
   \ javaapi#method(0,'statementClosed(', 'StatementEvent)', 'void'),
   \ javaapi#method(0,'statementErrorOccurred(', 'StatementEvent)', 'void'),
   \ ])
 
-call javaapi#class('StatementEvent', '', [
+call javaapi#class('StatementEvent', 'EventObject', [
   \ javaapi#method(0,'StatementEvent(', 'PooledConnection, PreparedStatement)', 'public'),
   \ javaapi#method(0,'StatementEvent(', 'PooledConnection, PreparedStatement, SQLException)', 'public'),
   \ javaapi#method(0,'getStatement(', ')', 'PreparedStatement'),
@@ -68,7 +68,7 @@ call javaapi#interface('RowSetWriter', '', [
   \ javaapi#method(0,'writeData(', 'RowSetInternal) throws SQLException', 'boolean'),
   \ ])
 
-call javaapi#interface('ConnectionEventListener', '', [
+call javaapi#interface('ConnectionEventListener', 'EventListener', [
   \ javaapi#method(0,'connectionClosed(', 'ConnectionEvent)', 'void'),
   \ javaapi#method(0,'connectionErrorOccurred(', 'ConnectionEvent)', 'void'),
   \ ])
@@ -81,13 +81,13 @@ call javaapi#interface('RowSetInternal', '', [
   \ javaapi#method(0,'getOriginalRow(', ') throws SQLException', 'ResultSet'),
   \ ])
 
-call javaapi#class('ConnectionEvent', '', [
+call javaapi#class('ConnectionEvent', 'EventObject', [
   \ javaapi#method(0,'ConnectionEvent(', 'PooledConnection)', 'public'),
   \ javaapi#method(0,'ConnectionEvent(', 'PooledConnection, SQLException)', 'public'),
   \ javaapi#method(0,'getSQLException(', ')', 'SQLException'),
   \ ])
 
-call javaapi#interface('RowSet', '', [
+call javaapi#interface('RowSet', 'ResultSet', [
   \ javaapi#method(0,'getUrl(', ') throws SQLException', 'String'),
   \ javaapi#method(0,'setUrl(', 'String) throws SQLException', 'void'),
   \ javaapi#method(0,'getDataSourceName(', ')', 'String'),
@@ -205,12 +205,12 @@ call javaapi#interface('RowSet', '', [
   \ javaapi#method(0,'setURL(', 'int, URL) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('ConnectionPoolDataSource', '', [
+call javaapi#interface('ConnectionPoolDataSource', 'CommonDataSource', [
   \ javaapi#method(0,'getPooledConnection(', ') throws SQLException', 'PooledConnection'),
   \ javaapi#method(0,'getPooledConnection(', 'String, String) throws SQLException', 'PooledConnection'),
   \ ])
 
-call javaapi#class('RowSetEvent', '', [
+call javaapi#class('RowSetEvent', 'EventObject', [
   \ javaapi#method(0,'RowSetEvent(', 'RowSet)', 'public'),
   \ ])
 

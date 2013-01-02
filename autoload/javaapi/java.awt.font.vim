@@ -1,6 +1,6 @@
 call javaapi#namespace('java.awt.font')
 
-call javaapi#class('TextAttribute', '', [
+call javaapi#class('TextAttribute', 'Attribute', [
   \ javaapi#field(1,'FAMILY', 'TextAttribute'),
   \ javaapi#field(1,'WEIGHT', 'TextAttribute'),
   \ javaapi#field(1,'WEIGHT_EXTRA_LIGHT', 'Float'),

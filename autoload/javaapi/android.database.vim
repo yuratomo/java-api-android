@@ -1,138 +1,5 @@
 call javaapi#namespace('android.database')
 
-call javaapi#class('MatrixCursor', '', [
-  \ javaapi#method(0,'MatrixCursor(', 'String[], int)', 'public'),
-  \ javaapi#method(0,'MatrixCursor(', 'String[])', 'public'),
-  \ javaapi#method(0,'newRow(', ')', 'RowBuilder'),
-  \ javaapi#method(0,'addRow(', 'Object[])', 'void'),
-  \ javaapi#method(0,'addRow(', 'Iterable<?>)', 'void'),
-  \ javaapi#method(0,'getCount(', ')', 'int'),
-  \ javaapi#method(0,'getColumnNames(', ')', 'String[]'),
-  \ javaapi#method(0,'getString(', 'int)', 'String'),
-  \ javaapi#method(0,'getShort(', 'int)', 'short'),
-  \ javaapi#method(0,'getInt(', 'int)', 'int'),
-  \ javaapi#method(0,'getLong(', 'int)', 'long'),
-  \ javaapi#method(0,'getFloat(', 'int)', 'float'),
-  \ javaapi#method(0,'getDouble(', 'int)', 'double'),
-  \ javaapi#method(0,'getBlob(', 'int)', 'byte[]'),
-  \ javaapi#method(0,'getType(', 'int)', 'int'),
-  \ javaapi#method(0,'isNull(', 'int)', 'boolean'),
-  \ ])
-
-call javaapi#class('CursorJoiner', 'Result>', [
-  \ javaapi#method(0,'CursorJoiner(', 'Cursor, String[], Cursor, String[])', 'public'),
-  \ javaapi#method(0,'iterator(', ')', 'Result>'),
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'Result'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ javaapi#method(0,'next(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('MergeCursor', '', [
-  \ javaapi#method(0,'MergeCursor(', 'Cursor[])', 'public'),
-  \ javaapi#method(0,'getCount(', ')', 'int'),
-  \ javaapi#method(0,'onMove(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'getString(', 'int)', 'String'),
-  \ javaapi#method(0,'getShort(', 'int)', 'short'),
-  \ javaapi#method(0,'getInt(', 'int)', 'int'),
-  \ javaapi#method(0,'getLong(', 'int)', 'long'),
-  \ javaapi#method(0,'getFloat(', 'int)', 'float'),
-  \ javaapi#method(0,'getDouble(', 'int)', 'double'),
-  \ javaapi#method(0,'getType(', 'int)', 'int'),
-  \ javaapi#method(0,'isNull(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getBlob(', 'int)', 'byte[]'),
-  \ javaapi#method(0,'getColumnNames(', ')', 'String[]'),
-  \ javaapi#method(0,'deactivate(', ')', 'void'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'registerContentObserver(', 'ContentObserver)', 'void'),
-  \ javaapi#method(0,'unregisterContentObserver(', 'ContentObserver)', 'void'),
-  \ javaapi#method(0,'registerDataSetObserver(', 'DataSetObserver)', 'void'),
-  \ javaapi#method(0,'unregisterDataSetObserver(', 'DataSetObserver)', 'void'),
-  \ javaapi#method(0,'requery(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('ContentObservable', '', [
-  \ javaapi#method(0,'ContentObservable(', ')', 'public'),
-  \ javaapi#method(0,'registerObserver(', 'ContentObserver)', 'void'),
-  \ javaapi#method(0,'dispatchChange(', 'boolean)', 'void'),
-  \ javaapi#method(0,'dispatchChange(', 'boolean, Uri)', 'void'),
-  \ javaapi#method(0,'notifyChange(', 'boolean)', 'void'),
-  \ javaapi#method(0,'registerObserver(', 'Object)', 'void'),
-  \ ])
-
-call javaapi#interface('DatabaseErrorHandler', '', [
-  \ javaapi#method(0,'onCorruption(', 'SQLiteDatabase)', 'void'),
-  \ ])
-
-call javaapi#class('Observable<T>', '', [
-  \ javaapi#method(0,'Observable(', ')', 'public'),
-  \ javaapi#method(0,'registerObserver(', 'T)', 'void'),
-  \ javaapi#method(0,'unregisterObserver(', 'T)', 'void'),
-  \ javaapi#method(0,'unregisterAll(', ')', 'void'),
-  \ ])
-
-call javaapi#class('CharArrayBuffer', '', [
-  \ javaapi#field(0,'data', 'char[]'),
-  \ javaapi#field(0,'sizeCopied', 'int'),
-  \ javaapi#method(0,'CharArrayBuffer(', 'int)', 'public'),
-  \ javaapi#method(0,'CharArrayBuffer(', 'char[])', 'public'),
-  \ ])
-
-call javaapi#class('CursorWindow', '', [
-  \ javaapi#field(1,'CREATOR', 'CursorWindow>'),
-  \ javaapi#method(0,'CursorWindow(', 'String)', 'public'),
-  \ javaapi#method(0,'CursorWindow(', 'boolean)', 'public'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'getStartPosition(', ')', 'int'),
-  \ javaapi#method(0,'setStartPosition(', 'int)', 'void'),
-  \ javaapi#method(0,'getNumRows(', ')', 'int'),
-  \ javaapi#method(0,'setNumColumns(', 'int)', 'boolean'),
-  \ javaapi#method(0,'allocRow(', ')', 'boolean'),
-  \ javaapi#method(0,'freeLastRow(', ')', 'void'),
-  \ javaapi#method(0,'isNull(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'isBlob(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'isLong(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'isFloat(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'isString(', 'int, int)', 'boolean'),
-  \ javaapi#method(0,'getType(', 'int, int)', 'int'),
-  \ javaapi#method(0,'getBlob(', 'int, int)', 'byte[]'),
-  \ javaapi#method(0,'getString(', 'int, int)', 'String'),
-  \ javaapi#method(0,'copyStringToBuffer(', 'int, int, CharArrayBuffer)', 'void'),
-  \ javaapi#method(0,'getLong(', 'int, int)', 'long'),
-  \ javaapi#method(0,'getDouble(', 'int, int)', 'double'),
-  \ javaapi#method(0,'getShort(', 'int, int)', 'short'),
-  \ javaapi#method(0,'getInt(', 'int, int)', 'int'),
-  \ javaapi#method(0,'getFloat(', 'int, int)', 'float'),
-  \ javaapi#method(0,'putBlob(', 'byte[], int, int)', 'boolean'),
-  \ javaapi#method(0,'putString(', 'String, int, int)', 'boolean'),
-  \ javaapi#method(0,'putLong(', 'long, int, int)', 'boolean'),
-  \ javaapi#method(0,'putDouble(', 'double, int, int)', 'boolean'),
-  \ javaapi#method(0,'putNull(', 'int, int)', 'boolean'),
-  \ javaapi#method(1,'newFromParcel(', 'Parcel)', 'CursorWindow'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('CrossProcessCursor', '', [
-  \ javaapi#method(0,'getWindow(', ')', 'CursorWindow'),
-  \ javaapi#method(0,'fillWindow(', 'int, CursorWindow)', 'void'),
-  \ javaapi#method(0,'onMove(', 'int, int)', 'boolean'),
-  \ ])
-
-call javaapi#class('DataSetObserver', '', [
-  \ javaapi#method(0,'DataSetObserver(', ')', 'public'),
-  \ javaapi#method(0,'onChanged(', ')', 'void'),
-  \ javaapi#method(0,'onInvalidated(', ')', 'void'),
-  \ ])
-
-call javaapi#class('DataSetObservable', '', [
-  \ javaapi#method(0,'DataSetObservable(', ')', 'public'),
-  \ javaapi#method(0,'notifyChanged(', ')', 'void'),
-  \ javaapi#method(0,'notifyInvalidated(', ')', 'void'),
-  \ ])
-
-
 call javaapi#class('CursorWrapper', 'Cursor', [
   \ javaapi#method(0,'CursorWrapper(', 'Cursor)', 'public'),
   \ javaapi#method(0,'getWrappedCursor(', ')', 'Cursor'),
@@ -205,7 +72,7 @@ call javaapi#class('ContentObserver', '', [
   \ javaapi#method(0,'dispatchChange(', 'boolean, Uri)', 'void'),
   \ ])
 
-call javaapi#class('AbstractWindowedCursor', '', [
+call javaapi#class('AbstractWindowedCursor', 'AbstractCursor', [
   \ javaapi#method(0,'AbstractWindowedCursor(', ')', 'public'),
   \ javaapi#method(0,'getBlob(', 'int)', 'byte[]'),
   \ javaapi#method(0,'getString(', 'int)', 'String'),
@@ -292,7 +159,7 @@ call javaapi#class('DatabaseUtils', '', [
   \ javaapi#method(1,'appendSelectionArgs(', 'String[], String[])', 'String[]'),
   \ ])
 
-call javaapi#interface('Cursor', '', [
+call javaapi#interface('Cursor', 'Closeable', [
   \ javaapi#field(1,'FIELD_TYPE_NULL', 'int'),
   \ javaapi#field(1,'FIELD_TYPE_INTEGER', 'int'),
   \ javaapi#field(1,'FIELD_TYPE_FLOAT', 'int'),
@@ -390,31 +257,31 @@ call javaapi#class('AbstractCursor', 'CrossProcessCursor', [
   \ javaapi#method(0,'respond(', 'Bundle)', 'Bundle'),
   \ ])
 
-call javaapi#class('SelfContentObserver', '', [
+call javaapi#class('SelfContentObserver', 'ContentObserver', [
   \ javaapi#method(0,'SelfContentObserver(', 'AbstractCursor)', 'public'),
   \ javaapi#method(0,'deliverSelfNotifications(', ')', 'boolean'),
   \ javaapi#method(0,'onChange(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('CrossProcessCursorWrapper', '', [
+call javaapi#class('CrossProcessCursorWrapper', 'CursorWrapper', [
   \ javaapi#method(0,'CrossProcessCursorWrapper(', 'Cursor)', 'public'),
   \ javaapi#method(0,'fillWindow(', 'int, CursorWindow)', 'void'),
   \ javaapi#method(0,'getWindow(', ')', 'CursorWindow'),
   \ javaapi#method(0,'onMove(', 'int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('StaleDataException', '', [
+call javaapi#class('StaleDataException', 'RuntimeException', [
   \ javaapi#method(0,'StaleDataException(', ')', 'public'),
   \ javaapi#method(0,'StaleDataException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SQLException', '', [
+call javaapi#class('SQLException', 'RuntimeException', [
   \ javaapi#method(0,'SQLException(', ')', 'public'),
   \ javaapi#method(0,'SQLException(', 'String)', 'public'),
   \ javaapi#method(0,'SQLException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('Result', '', [
+call javaapi#class('Result', 'Result>', [
   \ javaapi#field(1,'BOTH', 'Result'),
   \ javaapi#field(1,'LEFT', 'Result'),
   \ javaapi#field(1,'RIGHT', 'Result'),
@@ -422,8 +289,142 @@ call javaapi#class('Result', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Result'),
   \ ])
 
-call javaapi#class('CursorIndexOutOfBoundsException', '', [
+call javaapi#class('CursorIndexOutOfBoundsException', 'IndexOutOfBoundsException', [
   \ javaapi#method(0,'CursorIndexOutOfBoundsException(', 'int, int)', 'public'),
   \ javaapi#method(0,'CursorIndexOutOfBoundsException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#namespace('android.database')
+
+call javaapi#class('MatrixCursor', 'AbstractCursor', [
+  \ javaapi#method(0,'MatrixCursor(', 'String[], int)', 'public'),
+  \ javaapi#method(0,'MatrixCursor(', 'String[])', 'public'),
+  \ javaapi#method(0,'newRow(', ')', 'RowBuilder'),
+  \ javaapi#method(0,'addRow(', 'Object[])', 'void'),
+  \ javaapi#method(0,'addRow(', 'Iterable<?>)', 'void'),
+  \ javaapi#method(0,'getCount(', ')', 'int'),
+  \ javaapi#method(0,'getColumnNames(', ')', 'String[]'),
+  \ javaapi#method(0,'getString(', 'int)', 'String'),
+  \ javaapi#method(0,'getShort(', 'int)', 'short'),
+  \ javaapi#method(0,'getInt(', 'int)', 'int'),
+  \ javaapi#method(0,'getLong(', 'int)', 'long'),
+  \ javaapi#method(0,'getFloat(', 'int)', 'float'),
+  \ javaapi#method(0,'getDouble(', 'int)', 'double'),
+  \ javaapi#method(0,'getBlob(', 'int)', 'byte[]'),
+  \ javaapi#method(0,'getType(', 'int)', 'int'),
+  \ javaapi#method(0,'isNull(', 'int)', 'boolean'),
+  \ ])
+
+call javaapi#class('CursorJoiner', 'Result>', [
+  \ javaapi#method(0,'CursorJoiner(', 'Cursor, String[], Cursor, String[])', 'public'),
+  \ javaapi#method(0,'iterator(', ')', 'Result>'),
+  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
+  \ javaapi#method(0,'next(', ')', 'Result'),
+  \ javaapi#method(0,'remove(', ')', 'void'),
+  \ javaapi#method(0,'next(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('MergeCursor', 'AbstractCursor', [
+  \ javaapi#method(0,'MergeCursor(', 'Cursor[])', 'public'),
+  \ javaapi#method(0,'getCount(', ')', 'int'),
+  \ javaapi#method(0,'onMove(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'getString(', 'int)', 'String'),
+  \ javaapi#method(0,'getShort(', 'int)', 'short'),
+  \ javaapi#method(0,'getInt(', 'int)', 'int'),
+  \ javaapi#method(0,'getLong(', 'int)', 'long'),
+  \ javaapi#method(0,'getFloat(', 'int)', 'float'),
+  \ javaapi#method(0,'getDouble(', 'int)', 'double'),
+  \ javaapi#method(0,'getType(', 'int)', 'int'),
+  \ javaapi#method(0,'isNull(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getBlob(', 'int)', 'byte[]'),
+  \ javaapi#method(0,'getColumnNames(', ')', 'String[]'),
+  \ javaapi#method(0,'deactivate(', ')', 'void'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'registerContentObserver(', 'ContentObserver)', 'void'),
+  \ javaapi#method(0,'unregisterContentObserver(', 'ContentObserver)', 'void'),
+  \ javaapi#method(0,'registerDataSetObserver(', 'DataSetObserver)', 'void'),
+  \ javaapi#method(0,'unregisterDataSetObserver(', 'DataSetObserver)', 'void'),
+  \ javaapi#method(0,'requery(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('ContentObservable', 'ContentObserver>', [
+  \ javaapi#method(0,'ContentObservable(', ')', 'public'),
+  \ javaapi#method(0,'registerObserver(', 'ContentObserver)', 'void'),
+  \ javaapi#method(0,'dispatchChange(', 'boolean)', 'void'),
+  \ javaapi#method(0,'dispatchChange(', 'boolean, Uri)', 'void'),
+  \ javaapi#method(0,'notifyChange(', 'boolean)', 'void'),
+  \ javaapi#method(0,'registerObserver(', 'Object)', 'void'),
+  \ ])
+
+call javaapi#interface('DatabaseErrorHandler', '', [
+  \ javaapi#method(0,'onCorruption(', 'SQLiteDatabase)', 'void'),
+  \ ])
+
+call javaapi#class('Observable<T>', '', [
+  \ javaapi#method(0,'Observable(', ')', 'public'),
+  \ javaapi#method(0,'registerObserver(', 'T)', 'void'),
+  \ javaapi#method(0,'unregisterObserver(', 'T)', 'void'),
+  \ javaapi#method(0,'unregisterAll(', ')', 'void'),
+  \ ])
+
+call javaapi#class('CharArrayBuffer', '', [
+  \ javaapi#field(0,'data', 'char[]'),
+  \ javaapi#field(0,'sizeCopied', 'int'),
+  \ javaapi#method(0,'CharArrayBuffer(', 'int)', 'public'),
+  \ javaapi#method(0,'CharArrayBuffer(', 'char[])', 'public'),
+  \ ])
+
+call javaapi#class('CursorWindow', 'SQLiteClosable', [
+  \ javaapi#field(1,'CREATOR', 'CursorWindow>'),
+  \ javaapi#method(0,'CursorWindow(', 'String)', 'public'),
+  \ javaapi#method(0,'CursorWindow(', 'boolean)', 'public'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'getStartPosition(', ')', 'int'),
+  \ javaapi#method(0,'setStartPosition(', 'int)', 'void'),
+  \ javaapi#method(0,'getNumRows(', ')', 'int'),
+  \ javaapi#method(0,'setNumColumns(', 'int)', 'boolean'),
+  \ javaapi#method(0,'allocRow(', ')', 'boolean'),
+  \ javaapi#method(0,'freeLastRow(', ')', 'void'),
+  \ javaapi#method(0,'isNull(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'isBlob(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'isLong(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'isFloat(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'isString(', 'int, int)', 'boolean'),
+  \ javaapi#method(0,'getType(', 'int, int)', 'int'),
+  \ javaapi#method(0,'getBlob(', 'int, int)', 'byte[]'),
+  \ javaapi#method(0,'getString(', 'int, int)', 'String'),
+  \ javaapi#method(0,'copyStringToBuffer(', 'int, int, CharArrayBuffer)', 'void'),
+  \ javaapi#method(0,'getLong(', 'int, int)', 'long'),
+  \ javaapi#method(0,'getDouble(', 'int, int)', 'double'),
+  \ javaapi#method(0,'getShort(', 'int, int)', 'short'),
+  \ javaapi#method(0,'getInt(', 'int, int)', 'int'),
+  \ javaapi#method(0,'getFloat(', 'int, int)', 'float'),
+  \ javaapi#method(0,'putBlob(', 'byte[], int, int)', 'boolean'),
+  \ javaapi#method(0,'putString(', 'String, int, int)', 'boolean'),
+  \ javaapi#method(0,'putLong(', 'long, int, int)', 'boolean'),
+  \ javaapi#method(0,'putDouble(', 'double, int, int)', 'boolean'),
+  \ javaapi#method(0,'putNull(', 'int, int)', 'boolean'),
+  \ javaapi#method(1,'newFromParcel(', 'Parcel)', 'CursorWindow'),
+  \ javaapi#method(0,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('CrossProcessCursor', 'Cursor', [
+  \ javaapi#method(0,'getWindow(', ')', 'CursorWindow'),
+  \ javaapi#method(0,'fillWindow(', 'int, CursorWindow)', 'void'),
+  \ javaapi#method(0,'onMove(', 'int, int)', 'boolean'),
+  \ ])
+
+call javaapi#class('DataSetObserver', '', [
+  \ javaapi#method(0,'DataSetObserver(', ')', 'public'),
+  \ javaapi#method(0,'onChanged(', ')', 'void'),
+  \ javaapi#method(0,'onInvalidated(', ')', 'void'),
+  \ ])
+
+call javaapi#class('DataSetObservable', 'DataSetObserver>', [
+  \ javaapi#method(0,'DataSetObservable(', ')', 'public'),
+  \ javaapi#method(0,'notifyChanged(', ')', 'void'),
+  \ javaapi#method(0,'notifyInvalidated(', ')', 'void'),
   \ ])
 

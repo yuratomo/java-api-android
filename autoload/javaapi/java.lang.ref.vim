@@ -14,18 +14,18 @@ call javaapi#class('Reference<T>', '', [
   \ javaapi#method(0,'enqueue(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SoftReference<T>', '', [
+call javaapi#class('SoftReference<T>', 'Reference<T>', [
   \ javaapi#method(0,'SoftReference(', 'T)', 'public'),
   \ javaapi#method(0,'SoftReference(', 'T, ReferenceQueue<? super T>)', 'public'),
   \ javaapi#method(0,'get(', ')', 'T'),
   \ ])
 
-call javaapi#class('PhantomReference<T>', '', [
+call javaapi#class('PhantomReference<T>', 'Reference<T>', [
   \ javaapi#method(0,'get(', ')', 'T'),
   \ javaapi#method(0,'PhantomReference(', 'T, ReferenceQueue<? super T>)', 'public'),
   \ ])
 
-call javaapi#class('WeakReference<T>', '', [
+call javaapi#class('WeakReference<T>', 'Reference<T>', [
   \ javaapi#method(0,'WeakReference(', 'T)', 'public'),
   \ javaapi#method(0,'WeakReference(', 'T, ReferenceQueue<? super T>)', 'public'),
   \ ])

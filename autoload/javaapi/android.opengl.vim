@@ -930,7 +930,7 @@ call javaapi#class('GLES20', '', [
   \ javaapi#method(1,'glViewport(', 'int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('EGLConfig', '', [
+call javaapi#class('EGLConfig', 'EGLObjectHandle', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
@@ -1183,7 +1183,7 @@ call javaapi#class('EGLObjectHandle', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('GLException', '', [
+call javaapi#class('GLException', 'RuntimeException', [
   \ javaapi#method(0,'GLException(', 'int)', 'public'),
   \ javaapi#method(0,'GLException(', 'int, String)', 'public'),
   \ ])
@@ -1198,7 +1198,7 @@ call javaapi#interface('EGLWindowSurfaceFactory', '', [
   \ javaapi#method(0,'destroySurface(', 'EGL10, EGLDisplay, EGLSurface)', 'void'),
   \ ])
 
-call javaapi#class('GLES11', '', [
+call javaapi#class('GLES11', 'GLES10', [
   \ javaapi#field(1,'GL_ACTIVE_TEXTURE', 'int'),
   \ javaapi#field(1,'GL_ADD_SIGNED', 'int'),
   \ javaapi#field(1,'GL_ALPHA_SCALE', 'int'),
@@ -1400,7 +1400,7 @@ call javaapi#class('Visibility', '', [
   \ javaapi#method(1,'computeBoundingSphere(', 'float[], int, int, float[], int)', 'void'),
   \ ])
 
-call javaapi#class('EGLContext', '', [
+call javaapi#class('EGLContext', 'EGLObjectHandle', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
@@ -1414,7 +1414,7 @@ call javaapi#interface('GLWrapper', '', [
   \ javaapi#method(0,'wrap(', 'GL)', 'GL'),
   \ ])
 
-call javaapi#class('GLSurfaceView', '', [
+call javaapi#class('GLSurfaceView', 'SurfaceView', [
   \ javaapi#field(1,'RENDERMODE_WHEN_DIRTY', 'int'),
   \ javaapi#field(1,'RENDERMODE_CONTINUOUSLY', 'int'),
   \ javaapi#field(1,'DEBUG_CHECK_GL_ERROR', 'int'),
@@ -1444,11 +1444,11 @@ call javaapi#class('GLSurfaceView', '', [
   \ javaapi#method(0,'queueEvent(', 'Runnable)', 'void'),
   \ ])
 
-call javaapi#class('EGLDisplay', '', [
+call javaapi#class('EGLDisplay', 'EGLObjectHandle', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('EGLSurface', '', [
+call javaapi#class('EGLSurface', 'EGLObjectHandle', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 

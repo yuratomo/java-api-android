@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.microedition.khronos.egl')
 
-call javaapi#interface('EGL10', '', [
+call javaapi#interface('EGL10', 'EGL', [
   \ javaapi#field(1,'EGL_SUCCESS', 'int'),
   \ javaapi#field(1,'EGL_NOT_INITIALIZED', 'int'),
   \ javaapi#field(1,'EGL_BAD_ACCESS', 'int'),
@@ -111,7 +111,7 @@ call javaapi#class('EGLContext', '', [
   \ javaapi#method(0,'getGL(', ')', 'GL'),
   \ ])
 
-call javaapi#interface('EGL11', '', [
+call javaapi#interface('EGL11', 'EGL10', [
   \ javaapi#field(1,'EGL_CONTEXT_LOST', 'int'),
   \ ])
 

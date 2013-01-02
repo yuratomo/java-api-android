@@ -153,7 +153,7 @@ call javaapi#interface('SipRegistrationListener', '', [
   \ javaapi#method(0,'onRegistrationFailed(', 'String, int, String)', 'void'),
   \ ])
 
-call javaapi#class('SipException', '', [
+call javaapi#class('SipException', 'Exception', [
   \ javaapi#method(0,'SipException(', ')', 'public'),
   \ javaapi#method(0,'SipException(', 'String)', 'public'),
   \ javaapi#method(0,'SipException(', 'String, Throwable)', 'public'),

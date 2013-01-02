@@ -31,7 +31,7 @@ call javaapi#class('Insert', '', [
   \ javaapi#method(0,'Insert(', ')', 'public'),
   \ ])
 
-call javaapi#interface('SyncColumns', '', [
+call javaapi#interface('SyncColumns', 'BaseSyncColumns', [
   \ javaapi#field(1,'ACCOUNT_NAME', 'String'),
   \ javaapi#field(1,'ACCOUNT_TYPE', 'String'),
   \ javaapi#field(1,'SOURCE_ID', 'String'),
@@ -92,7 +92,7 @@ call javaapi#interface('PhoneticNameStyle', '', [
   \ javaapi#field(1,'KOREAN', 'int'),
   \ ])
 
-call javaapi#interface('FileColumns', '', [
+call javaapi#interface('FileColumns', 'MediaColumns', [
   \ javaapi#field(1,'PARENT', 'String'),
   \ javaapi#field(1,'MIME_TYPE', 'String'),
   \ javaapi#field(1,'TITLE', 'String'),
@@ -360,7 +360,7 @@ call javaapi#interface('BaseTypes', '', [
   \ javaapi#field(1,'TYPE_CUSTOM', 'int'),
   \ ])
 
-call javaapi#interface('AudioColumns', '', [
+call javaapi#interface('AudioColumns', 'MediaColumns', [
   \ javaapi#field(1,'TITLE_KEY', 'String'),
   \ javaapi#field(1,'DURATION', 'String'),
   \ javaapi#field(1,'BOOKMARK', 'String'),
@@ -380,7 +380,7 @@ call javaapi#interface('AudioColumns', '', [
   \ javaapi#field(1,'IS_NOTIFICATION', 'String'),
   \ ])
 
-call javaapi#class('SettingNotFoundException', '', [
+call javaapi#class('SettingNotFoundException', 'AndroidException', [
   \ javaapi#method(0,'SettingNotFoundException(', 'String)', 'public'),
   \ ])
 
@@ -464,7 +464,7 @@ call javaapi#class('Settings', '', [
   \ javaapi#method(0,'Settings(', ')', 'public'),
   \ ])
 
-call javaapi#interface('Columns', '', [
+call javaapi#interface('Columns', 'BaseColumns', [
   \ javaapi#field(1,'ACCOUNT_NAME', 'String'),
   \ javaapi#field(1,'ACCOUNT_TYPE', 'String'),
   \ javaapi#field(1,'DATA', 'String'),
@@ -580,7 +580,7 @@ call javaapi#interface('ContactMethodsColumns', '', [
   \ javaapi#field(1,'ISPRIMARY', 'String'),
   \ ])
 
-call javaapi#interface('DataColumnsWithJoins', '', [
+call javaapi#interface('DataColumnsWithJoins', 'ContactStatusColumns', [
   \ ])
 
 call javaapi#class('Website', 'CommonColumns', [
@@ -673,7 +673,7 @@ call javaapi#class('DataUsageFeedback', '', [
   \ javaapi#method(0,'DataUsageFeedback(', ')', 'public'),
   \ ])
 
-call javaapi#interface('ColorsColumns', '', [
+call javaapi#interface('ColorsColumns', 'Columns', [
   \ javaapi#field(1,'COLOR_TYPE', 'String'),
   \ javaapi#field(1,'TYPE_CALENDAR', 'int'),
   \ javaapi#field(1,'TYPE_EVENT', 'int'),
@@ -730,7 +730,7 @@ call javaapi#class('VoicemailContract', '', [
   \ javaapi#field(1,'EXTRA_SELF_CHANGE', 'String'),
   \ ])
 
-call javaapi#interface('CommonColumns', '', [
+call javaapi#interface('CommonColumns', 'BaseTypes', [
   \ javaapi#field(1,'DATA', 'String'),
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#field(1,'LABEL', 'String'),
@@ -781,11 +781,11 @@ call javaapi#class('Extensions', 'ExtensionsColumns', [
   \ javaapi#field(1,'PERSON_ID', 'String'),
   \ ])
 
-call javaapi#class('Presence', '', [
+call javaapi#class('Presence', 'StatusUpdates', [
   \ javaapi#method(0,'Presence(', ')', 'public'),
   \ ])
 
-call javaapi#interface('ImageColumns', '', [
+call javaapi#interface('ImageColumns', 'MediaColumns', [
   \ javaapi#field(1,'DESCRIPTION', 'String'),
   \ javaapi#field(1,'PICASA_ID', 'String'),
   \ javaapi#field(1,'IS_PRIVATE', 'String'),
@@ -802,7 +802,7 @@ call javaapi#class('Data', 'DataColumns', [
   \ javaapi#field(1,'CONTENT_DIRECTORY', 'String'),
   \ ])
 
-call javaapi#class('System', '', [
+call javaapi#class('System', 'NameValueTable', [
   \ javaapi#field(1,'SYS_PROP_SETTING_VERSION', 'String'),
   \ javaapi#field(1,'CONTENT_URI', 'Uri'),
   \ javaapi#field(1,'STAY_ON_WHILE_PLUGGED_IN', 'String'),
@@ -1197,7 +1197,7 @@ call javaapi#class('MediaStore', '', [
   \ javaapi#method(1,'getVersion(', 'Context)', 'String'),
   \ ])
 
-call javaapi#class('Secure', '', [
+call javaapi#class('Secure', 'NameValueTable', [
   \ javaapi#field(1,'SYS_PROP_SETTING_VERSION', 'String'),
   \ javaapi#field(1,'CONTENT_URI', 'Uri'),
   \ javaapi#field(1,'DEVELOPMENT_SETTINGS_ENABLED', 'String'),
@@ -1363,7 +1363,7 @@ call javaapi#class('Im', 'CommonColumns', [
   \ javaapi#method(1,'getProtocolLabel(', 'Resources, int, CharSequence)', 'CharSequence'),
   \ ])
 
-call javaapi#interface('VideoColumns', '', [
+call javaapi#interface('VideoColumns', 'MediaColumns', [
   \ javaapi#field(1,'DURATION', 'String'),
   \ javaapi#field(1,'ARTIST', 'String'),
   \ javaapi#field(1,'ALBUM', 'String'),
@@ -1655,7 +1655,7 @@ call javaapi#class('Browser', '', [
   \ javaapi#method(1,'requestAllIcons(', 'ContentResolver, String, IconListener)', 'void'),
   \ ])
 
-call javaapi#interface('SyncColumns', '', [
+call javaapi#interface('SyncColumns', 'CalendarSyncColumns', [
   \ javaapi#field(1,'ACCOUNT_NAME', 'String'),
   \ javaapi#field(1,'ACCOUNT_TYPE', 'String'),
   \ javaapi#field(1,'_SYNC_ID', 'String'),
@@ -1711,7 +1711,7 @@ call javaapi#class('PhoneLookup', 'ContactOptionsColumns', [
   \ javaapi#field(1,'CONTENT_FILTER_URI', 'Uri'),
   \ ])
 
-call javaapi#interface('MediaColumns', '', [
+call javaapi#interface('MediaColumns', 'BaseColumns', [
   \ javaapi#field(1,'DATA', 'String'),
   \ javaapi#field(1,'SIZE', 'String'),
   \ javaapi#field(1,'DISPLAY_NAME', 'String'),
@@ -1988,7 +1988,7 @@ call javaapi#class('Directory', 'BaseColumns', [
   \ javaapi#method(1,'notifyDirectoryChange(', 'ContentResolver)', 'void'),
   \ ])
 
-call javaapi#class('Global', '', [
+call javaapi#class('Global', 'NameValueTable', [
   \ javaapi#field(1,'SYS_PROP_SETTING_VERSION', 'String'),
   \ javaapi#field(1,'CONTENT_URI', 'Uri'),
   \ javaapi#field(1,'AIRPLANE_MODE_ON', 'String'),

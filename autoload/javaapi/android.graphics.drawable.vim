@@ -1,6 +1,82 @@
 call javaapi#namespace('android.graphics.drawable')
 
-call javaapi#class('ColorDrawable', '', [
+call javaapi#class('ScaleDrawable', 'Drawable', [
+  \ javaapi#method(0,'ScaleDrawable(', 'Drawable, int, float, float)', 'public'),
+  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
+  \ javaapi#method(0,'invalidateDrawable(', 'Drawable)', 'void'),
+  \ javaapi#method(0,'scheduleDrawable(', 'Drawable, Runnable, long)', 'void'),
+  \ javaapi#method(0,'unscheduleDrawable(', 'Drawable, Runnable)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
+  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
+  \ javaapi#method(0,'getPadding(', 'Rect)', 'boolean'),
+  \ javaapi#method(0,'setVisible(', 'boolean, boolean)', 'boolean'),
+  \ javaapi#method(0,'setAlpha(', 'int)', 'void'),
+  \ javaapi#method(0,'setColorFilter(', 'ColorFilter)', 'void'),
+  \ javaapi#method(0,'getOpacity(', ')', 'int'),
+  \ javaapi#method(0,'isStateful(', ')', 'boolean'),
+  \ javaapi#method(0,'getIntrinsicWidth(', ')', 'int'),
+  \ javaapi#method(0,'getIntrinsicHeight(', ')', 'int'),
+  \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
+  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
+  \ ])
+
+call javaapi#class('LevelListDrawable', 'DrawableContainer', [
+  \ javaapi#method(0,'LevelListDrawable(', ')', 'public'),
+  \ javaapi#method(0,'addLevel(', 'int, int, Drawable)', 'void'),
+  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
+  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
+  \ ])
+
+call javaapi#class('TransitionDrawable', 'LayerDrawable', [
+  \ javaapi#method(0,'TransitionDrawable(', 'Drawable[])', 'public'),
+  \ javaapi#method(0,'startTransition(', 'int)', 'void'),
+  \ javaapi#method(0,'resetTransition(', ')', 'void'),
+  \ javaapi#method(0,'reverseTransition(', 'int)', 'void'),
+  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
+  \ javaapi#method(0,'setCrossFadeEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isCrossFadeEnabled(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('BitmapDrawable', 'Drawable', [
+  \ javaapi#method(0,'BitmapDrawable(', ')', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'Resources)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'Bitmap)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'Resources, Bitmap)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'String)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'Resources, String)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'InputStream)', 'public'),
+  \ javaapi#method(0,'BitmapDrawable(', 'Resources, InputStream)', 'public'),
+  \ javaapi#method(0,'getPaint(', ')', 'Paint'),
+  \ javaapi#method(0,'getBitmap(', ')', 'Bitmap'),
+  \ javaapi#method(0,'setTargetDensity(', 'Canvas)', 'void'),
+  \ javaapi#method(0,'setTargetDensity(', 'DisplayMetrics)', 'void'),
+  \ javaapi#method(0,'setTargetDensity(', 'int)', 'void'),
+  \ javaapi#method(0,'getGravity(', ')', 'int'),
+  \ javaapi#method(0,'setGravity(', 'int)', 'void'),
+  \ javaapi#method(0,'setAntiAlias(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setFilterBitmap(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setDither(', 'boolean)', 'void'),
+  \ javaapi#method(0,'getTileModeX(', ')', 'TileMode'),
+  \ javaapi#method(0,'getTileModeY(', ')', 'TileMode'),
+  \ javaapi#method(0,'setTileModeX(', 'TileMode)', 'void'),
+  \ javaapi#method(0,'setTileModeY(', 'TileMode)', 'void'),
+  \ javaapi#method(0,'setTileModeXY(', 'TileMode, TileMode)', 'void'),
+  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
+  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
+  \ javaapi#method(0,'setAlpha(', 'int)', 'void'),
+  \ javaapi#method(0,'setColorFilter(', 'ColorFilter)', 'void'),
+  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
+  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
+  \ javaapi#method(0,'getIntrinsicWidth(', ')', 'int'),
+  \ javaapi#method(0,'getIntrinsicHeight(', ')', 'int'),
+  \ javaapi#method(0,'getOpacity(', ')', 'int'),
+  \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
+  \ ])
+
+call javaapi#namespace('android.graphics.drawable')
+
+call javaapi#class('ColorDrawable', 'Drawable', [
   \ javaapi#method(0,'ColorDrawable(', ')', 'public'),
   \ javaapi#method(0,'ColorDrawable(', 'int)', 'public'),
   \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
@@ -22,7 +98,7 @@ call javaapi#interface('Animatable', '', [
   \ javaapi#method(0,'isRunning(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Orientation', '', [
+call javaapi#class('Orientation', 'Orientation>', [
   \ javaapi#field(1,'BL_TR', 'Orientation'),
   \ javaapi#field(1,'BOTTOM_TOP', 'Orientation'),
   \ javaapi#field(1,'BR_TL', 'Orientation'),
@@ -35,7 +111,7 @@ call javaapi#class('Orientation', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Orientation'),
   \ ])
 
-call javaapi#class('NinePatchDrawable', '', [
+call javaapi#class('NinePatchDrawable', 'Drawable', [
   \ javaapi#method(0,'NinePatchDrawable(', 'Bitmap, byte[], Rect, String)', 'public'),
   \ javaapi#method(0,'NinePatchDrawable(', 'Resources, Bitmap, byte[], Rect, String)', 'public'),
   \ javaapi#method(0,'NinePatchDrawable(', 'NinePatch)', 'public'),
@@ -68,7 +144,7 @@ call javaapi#interface('Callback', '', [
   \ javaapi#method(0,'unscheduleDrawable(', 'Drawable, Runnable)', 'void'),
   \ ])
 
-call javaapi#class('AnimationDrawable', '', [
+call javaapi#class('AnimationDrawable', 'DrawableContainer', [
   \ javaapi#method(0,'AnimationDrawable(', ')', 'public'),
   \ javaapi#method(0,'setVisible(', 'boolean, boolean)', 'boolean'),
   \ javaapi#method(0,'start(', ')', 'void'),
@@ -86,7 +162,7 @@ call javaapi#class('AnimationDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('DrawableContainer', '', [
+call javaapi#class('DrawableContainer', 'Drawable', [
   \ javaapi#method(0,'DrawableContainer(', ')', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
   \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
@@ -120,7 +196,7 @@ call javaapi#class('ConstantState', '', [
   \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
   \ ])
 
-call javaapi#class('RotateDrawable', '', [
+call javaapi#class('RotateDrawable', 'Drawable', [
   \ javaapi#method(0,'RotateDrawable(', ')', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
   \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
@@ -141,7 +217,7 @@ call javaapi#class('RotateDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('DrawableContainerState', '', [
+call javaapi#class('DrawableContainerState', 'ConstantState', [
   \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
   \ javaapi#method(0,'addChild(', 'Drawable)', 'int'),
   \ javaapi#method(0,'getChildCount(', ')', 'int'),
@@ -164,7 +240,7 @@ call javaapi#class('DrawableContainerState', '', [
   \ javaapi#method(0,'canConstantState(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ShapeDrawable', '', [
+call javaapi#class('ShapeDrawable', 'Drawable', [
   \ javaapi#method(0,'ShapeDrawable(', ')', 'public'),
   \ javaapi#method(0,'ShapeDrawable(', 'Shape)', 'public'),
   \ javaapi#method(0,'getShape(', ')', 'Shape'),
@@ -190,7 +266,7 @@ call javaapi#class('ShapeDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('PictureDrawable', '', [
+call javaapi#class('PictureDrawable', 'Drawable', [
   \ javaapi#method(0,'PictureDrawable(', 'Picture)', 'public'),
   \ javaapi#method(0,'getPicture(', ')', 'Picture'),
   \ javaapi#method(0,'setPicture(', 'Picture)', 'void'),
@@ -253,7 +329,7 @@ call javaapi#class('Drawable', '', [
   \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
   \ ])
 
-call javaapi#class('ClipDrawable', '', [
+call javaapi#class('ClipDrawable', 'Drawable', [
   \ javaapi#field(1,'HORIZONTAL', 'int'),
   \ javaapi#field(1,'VERTICAL', 'int'),
   \ javaapi#method(0,'ClipDrawable(', 'Drawable, int, int)', 'public'),
@@ -274,7 +350,7 @@ call javaapi#class('ClipDrawable', '', [
   \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
   \ ])
 
-call javaapi#class('GradientDrawable', '', [
+call javaapi#class('GradientDrawable', 'Drawable', [
   \ javaapi#field(1,'RECTANGLE', 'int'),
   \ javaapi#field(1,'OVAL', 'int'),
   \ javaapi#field(1,'LINE', 'int'),
@@ -312,7 +388,7 @@ call javaapi#class('GradientDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('StateListDrawable', '', [
+call javaapi#class('StateListDrawable', 'DrawableContainer', [
   \ javaapi#method(0,'StateListDrawable(', ')', 'public'),
   \ javaapi#method(0,'addState(', 'int[], Drawable)', 'void'),
   \ javaapi#method(0,'isStateful(', ')', 'boolean'),
@@ -320,14 +396,14 @@ call javaapi#class('StateListDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('PaintDrawable', '', [
+call javaapi#class('PaintDrawable', 'ShapeDrawable', [
   \ javaapi#method(0,'PaintDrawable(', ')', 'public'),
   \ javaapi#method(0,'PaintDrawable(', 'int)', 'public'),
   \ javaapi#method(0,'setCornerRadius(', 'float)', 'void'),
   \ javaapi#method(0,'setCornerRadii(', 'float[])', 'void'),
   \ ])
 
-call javaapi#class('InsetDrawable', '', [
+call javaapi#class('InsetDrawable', 'Drawable', [
   \ javaapi#method(0,'InsetDrawable(', 'Drawable, int)', 'public'),
   \ javaapi#method(0,'InsetDrawable(', 'Drawable, int, int, int, int)', 'public'),
   \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
@@ -348,7 +424,7 @@ call javaapi#class('InsetDrawable', '', [
   \ javaapi#method(0,'mutate(', ')', 'Drawable'),
   \ ])
 
-call javaapi#class('LayerDrawable', '', [
+call javaapi#class('LayerDrawable', 'Drawable', [
   \ javaapi#method(0,'LayerDrawable(', 'Drawable[])', 'public'),
   \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
   \ javaapi#method(0,'findDrawableByLayerId(', 'int)', 'Drawable'),
@@ -380,80 +456,5 @@ call javaapi#class('LayerDrawable', '', [
 call javaapi#class('ShaderFactory', '', [
   \ javaapi#method(0,'ShaderFactory(', ')', 'public'),
   \ javaapi#method(0,'resize(', 'int, int)', 'Shader'),
-  \ ])
-
-
-call javaapi#class('ScaleDrawable', '', [
-  \ javaapi#method(0,'ScaleDrawable(', 'Drawable, int, float, float)', 'public'),
-  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
-  \ javaapi#method(0,'invalidateDrawable(', 'Drawable)', 'void'),
-  \ javaapi#method(0,'scheduleDrawable(', 'Drawable, Runnable, long)', 'void'),
-  \ javaapi#method(0,'unscheduleDrawable(', 'Drawable, Runnable)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
-  \ javaapi#method(0,'getPadding(', 'Rect)', 'boolean'),
-  \ javaapi#method(0,'setVisible(', 'boolean, boolean)', 'boolean'),
-  \ javaapi#method(0,'setAlpha(', 'int)', 'void'),
-  \ javaapi#method(0,'setColorFilter(', 'ColorFilter)', 'void'),
-  \ javaapi#method(0,'getOpacity(', ')', 'int'),
-  \ javaapi#method(0,'isStateful(', ')', 'boolean'),
-  \ javaapi#method(0,'getIntrinsicWidth(', ')', 'int'),
-  \ javaapi#method(0,'getIntrinsicHeight(', ')', 'int'),
-  \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
-  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
-  \ ])
-
-call javaapi#class('LevelListDrawable', '', [
-  \ javaapi#method(0,'LevelListDrawable(', ')', 'public'),
-  \ javaapi#method(0,'addLevel(', 'int, int, Drawable)', 'void'),
-  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
-  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
-  \ ])
-
-call javaapi#class('TransitionDrawable', '', [
-  \ javaapi#method(0,'TransitionDrawable(', 'Drawable[])', 'public'),
-  \ javaapi#method(0,'startTransition(', 'int)', 'void'),
-  \ javaapi#method(0,'resetTransition(', ')', 'void'),
-  \ javaapi#method(0,'reverseTransition(', 'int)', 'void'),
-  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,'setCrossFadeEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isCrossFadeEnabled(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('BitmapDrawable', '', [
-  \ javaapi#method(0,'BitmapDrawable(', ')', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'Resources)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'Bitmap)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'Resources, Bitmap)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'String)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'Resources, String)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'InputStream)', 'public'),
-  \ javaapi#method(0,'BitmapDrawable(', 'Resources, InputStream)', 'public'),
-  \ javaapi#method(0,'getPaint(', ')', 'Paint'),
-  \ javaapi#method(0,'getBitmap(', ')', 'Bitmap'),
-  \ javaapi#method(0,'setTargetDensity(', 'Canvas)', 'void'),
-  \ javaapi#method(0,'setTargetDensity(', 'DisplayMetrics)', 'void'),
-  \ javaapi#method(0,'setTargetDensity(', 'int)', 'void'),
-  \ javaapi#method(0,'getGravity(', ')', 'int'),
-  \ javaapi#method(0,'setGravity(', 'int)', 'void'),
-  \ javaapi#method(0,'setAntiAlias(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setFilterBitmap(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setDither(', 'boolean)', 'void'),
-  \ javaapi#method(0,'getTileModeX(', ')', 'TileMode'),
-  \ javaapi#method(0,'getTileModeY(', ')', 'TileMode'),
-  \ javaapi#method(0,'setTileModeX(', 'TileMode)', 'void'),
-  \ javaapi#method(0,'setTileModeY(', 'TileMode)', 'void'),
-  \ javaapi#method(0,'setTileModeXY(', 'TileMode, TileMode)', 'void'),
-  \ javaapi#method(0,'getChangingConfigurations(', ')', 'int'),
-  \ javaapi#method(0,'draw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,'setAlpha(', 'int)', 'void'),
-  \ javaapi#method(0,'setColorFilter(', 'ColorFilter)', 'void'),
-  \ javaapi#method(0,'mutate(', ')', 'Drawable'),
-  \ javaapi#method(0,'inflate(', 'Resources, XmlPullParser, AttributeSet) throws XmlPullParserException, IOException', 'void'),
-  \ javaapi#method(0,'getIntrinsicWidth(', ')', 'int'),
-  \ javaapi#method(0,'getIntrinsicHeight(', ')', 'int'),
-  \ javaapi#method(0,'getOpacity(', ')', 'int'),
-  \ javaapi#method(0,'getConstantState(', ')', 'ConstantState'),
   \ ])
 

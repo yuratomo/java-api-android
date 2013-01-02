@@ -64,7 +64,7 @@ call javaapi#class('StateSet', '', [
   \ javaapi#method(1,'dump(', 'int[])', 'String'),
   \ ])
 
-call javaapi#class('JsonToken', '', [
+call javaapi#class('JsonToken', 'JsonToken>', [
   \ javaapi#field(1,'BEGIN_ARRAY', 'JsonToken'),
   \ javaapi#field(1,'BEGIN_OBJECT', 'JsonToken'),
   \ javaapi#field(1,'BOOLEAN', 'JsonToken'),
@@ -132,7 +132,7 @@ call javaapi#class('StringBuilderPrinter', 'Printer', [
   \ javaapi#method(0,'println(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('Base64InputStream', '', [
+call javaapi#class('Base64InputStream', 'FilterInputStream', [
   \ javaapi#method(0,'Base64InputStream(', 'InputStream, int)', 'public'),
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
   \ javaapi#method(0,'mark(', 'int)', 'void'),
@@ -144,7 +144,7 @@ call javaapi#class('Base64InputStream', '', [
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('NoSuchPropertyException', '', [
+call javaapi#class('NoSuchPropertyException', 'RuntimeException', [
   \ javaapi#method(0,'NoSuchPropertyException(', 'String)', 'public'),
   \ ])
 
@@ -239,7 +239,7 @@ call javaapi#class('SparseIntArray', 'Cloneable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('AndroidException', '', [
+call javaapi#class('AndroidException', 'Exception', [
   \ javaapi#method(0,'AndroidException(', ')', 'public'),
   \ javaapi#method(0,'AndroidException(', 'String)', 'public'),
   \ javaapi#method(0,'AndroidException(', 'String, Throwable)', 'public'),
@@ -272,11 +272,11 @@ call javaapi#class('Log', '', [
   \ javaapi#method(1,'println(', 'int, String, String)', 'int'),
   \ ])
 
-call javaapi#class('MalformedJsonException', '', [
+call javaapi#class('MalformedJsonException', 'IOException', [
   \ javaapi#method(0,'MalformedJsonException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('Base64DataException', '', [
+call javaapi#class('Base64DataException', 'IOException', [
   \ javaapi#method(0,'Base64DataException(', 'String)', 'public'),
   \ ])
 
@@ -285,7 +285,7 @@ call javaapi#class('PrintWriterPrinter', 'Printer', [
   \ javaapi#method(0,'println(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('Base64OutputStream', '', [
+call javaapi#class('Base64OutputStream', 'FilterOutputStream', [
   \ javaapi#method(0,'Base64OutputStream(', 'OutputStream, int)', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -355,7 +355,7 @@ call javaapi#class('TypedValue', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TimeFormatException', '', [
+call javaapi#class('TimeFormatException', 'RuntimeException', [
   \ ])
 
 call javaapi#class('EventLog', '', [
@@ -411,7 +411,7 @@ call javaapi#class('SparseArray<E>', 'Cloneable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('Encoding', '', [
+call javaapi#class('Encoding', 'Encoding>', [
   \ javaapi#field(1,'ISO_8859_1', 'Encoding'),
   \ javaapi#field(1,'US_ASCII', 'Encoding'),
   \ javaapi#field(1,'UTF_16', 'Encoding'),
@@ -497,7 +497,7 @@ call javaapi#class('Event', '', [
   \ javaapi#method(0,'getData(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AndroidRuntimeException', '', [
+call javaapi#class('AndroidRuntimeException', 'RuntimeException', [
   \ javaapi#method(0,'AndroidRuntimeException(', ')', 'public'),
   \ javaapi#method(0,'AndroidRuntimeException(', 'String)', 'public'),
   \ javaapi#method(0,'AndroidRuntimeException(', 'String, Throwable)', 'public'),

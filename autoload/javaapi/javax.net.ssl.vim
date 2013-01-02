@@ -12,17 +12,17 @@ call javaapi#class('KeyManagerFactory', '', [
   \ javaapi#method(0,'getKeyManagers(', ')', 'KeyManager[]'),
   \ ])
 
-call javaapi#class('SSLPeerUnverifiedException', '', [
+call javaapi#class('SSLPeerUnverifiedException', 'SSLException', [
   \ javaapi#method(0,'SSLPeerUnverifiedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#interface('X509TrustManager', '', [
+call javaapi#interface('X509TrustManager', 'TrustManager', [
   \ javaapi#method(0,'checkClientTrusted(', 'X509Certificate[], String) throws CertificateException', 'void'),
   \ javaapi#method(0,'checkServerTrusted(', 'X509Certificate[], String) throws CertificateException', 'void'),
   \ javaapi#method(0,'getAcceptedIssuers(', ')', 'X509Certificate[]'),
   \ ])
 
-call javaapi#class('SSLSocketFactory', '', [
+call javaapi#class('SSLSocketFactory', 'SocketFactory', [
   \ javaapi#method(0,'SSLSocketFactory(', ')', 'public'),
   \ javaapi#method(1,'getDefault(', ')', 'SocketFactory'),
   \ javaapi#method(0,'getDefaultCipherSuites(', ')', 'String[]'),
@@ -38,16 +38,16 @@ call javaapi#interface('HostnameVerifier', '', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ ])
 
-call javaapi#interface('SSLSessionBindingListener', '', [
+call javaapi#interface('SSLSessionBindingListener', 'EventListener', [
   \ javaapi#method(0,'valueBound(', 'SSLSessionBindingEvent)', 'void'),
   \ javaapi#method(0,'valueUnbound(', 'SSLSessionBindingEvent)', 'void'),
   \ ])
 
-call javaapi#interface('HandshakeCompletedListener', '', [
+call javaapi#interface('HandshakeCompletedListener', 'EventListener', [
   \ javaapi#method(0,'handshakeCompleted(', 'HandshakeCompletedEvent)', 'void'),
   \ ])
 
-call javaapi#class('Status', '', [
+call javaapi#class('Status', 'Status>', [
   \ javaapi#field(1,'BUFFER_UNDERFLOW', 'Status'),
   \ javaapi#field(1,'BUFFER_OVERFLOW', 'Status'),
   \ javaapi#field(1,'OK', 'Status'),
@@ -56,7 +56,7 @@ call javaapi#class('Status', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Status'),
   \ ])
 
-call javaapi#class('HandshakeStatus', '', [
+call javaapi#class('HandshakeStatus', 'HandshakeStatus>', [
   \ javaapi#field(1,'NOT_HANDSHAKING', 'HandshakeStatus'),
   \ javaapi#field(1,'FINISHED', 'HandshakeStatus'),
   \ javaapi#field(1,'NEED_TASK', 'HandshakeStatus'),
@@ -66,7 +66,7 @@ call javaapi#class('HandshakeStatus', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'HandshakeStatus'),
   \ ])
 
-call javaapi#interface('X509KeyManager', '', [
+call javaapi#interface('X509KeyManager', 'KeyManager', [
   \ javaapi#method(0,'getClientAliases(', 'String, Principal[])', 'String[]'),
   \ javaapi#method(0,'chooseClientAlias(', 'String[], Principal[], Socket)', 'String'),
   \ javaapi#method(0,'getServerAliases(', 'String, Principal[])', 'String[]'),
@@ -105,7 +105,7 @@ call javaapi#class('SSLParameters', '', [
   \ javaapi#method(0,'setEndpointIdentificationAlgorithm(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('HandshakeCompletedEvent', '', [
+call javaapi#class('HandshakeCompletedEvent', 'EventObject', [
   \ javaapi#method(0,'HandshakeCompletedEvent(', 'SSLSocket, SSLSession)', 'public'),
   \ javaapi#method(0,'getSession(', ')', 'SSLSession'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
@@ -117,7 +117,7 @@ call javaapi#class('HandshakeCompletedEvent', '', [
   \ javaapi#method(0,'getSocket(', ')', 'SSLSocket'),
   \ ])
 
-call javaapi#class('SSLSocket', '', [
+call javaapi#class('SSLSocket', 'Socket', [
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'getEnabledCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'setEnabledCipherSuites(', 'String[])', 'void'),
@@ -141,7 +141,7 @@ call javaapi#class('SSLSocket', '', [
   \ javaapi#method(0,'setSSLParameters(', 'SSLParameters)', 'void'),
   \ ])
 
-call javaapi#class('SSLProtocolException', '', [
+call javaapi#class('SSLProtocolException', 'SSLException', [
   \ javaapi#method(0,'SSLProtocolException(', 'String)', 'public'),
   \ ])
 
@@ -149,13 +149,13 @@ call javaapi#class('TrustManagerFactorySpi', '', [
   \ javaapi#method(0,'TrustManagerFactorySpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('SSLSessionBindingEvent', '', [
+call javaapi#class('SSLSessionBindingEvent', 'EventObject', [
   \ javaapi#method(0,'SSLSessionBindingEvent(', 'SSLSession, String)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getSession(', ')', 'SSLSession'),
   \ ])
 
-call javaapi#class('SSLPermission', '', [
+call javaapi#class('SSLPermission', 'BasicPermission', [
   \ javaapi#method(0,'SSLPermission(', 'String)', 'public'),
   \ javaapi#method(0,'SSLPermission(', 'String, String)', 'public'),
   \ ])
@@ -181,7 +181,7 @@ call javaapi#class('KeyManagerFactorySpi', '', [
   \ javaapi#method(0,'KeyManagerFactorySpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('SSLServerSocket', '', [
+call javaapi#class('SSLServerSocket', 'ServerSocket', [
   \ javaapi#method(0,'getEnabledCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'setEnabledCipherSuites(', 'String[])', 'void'),
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
@@ -200,13 +200,13 @@ call javaapi#class('SSLServerSocket', '', [
   \ javaapi#method(0,'setSSLParameters(', 'SSLParameters)', 'void'),
   \ ])
 
-call javaapi#class('SSLServerSocketFactory', '', [
+call javaapi#class('SSLServerSocketFactory', 'ServerSocketFactory', [
   \ javaapi#method(1,'getDefault(', ')', 'ServerSocketFactory'),
   \ javaapi#method(0,'getDefaultCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('SSLException', '', [
+call javaapi#class('SSLException', 'IOException', [
   \ javaapi#method(0,'SSLException(', 'String)', 'public'),
   \ javaapi#method(0,'SSLException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'SSLException(', 'Throwable)', 'public'),
@@ -224,7 +224,7 @@ call javaapi#class('TrustManagerFactory', '', [
   \ javaapi#method(0,'getTrustManagers(', ')', 'TrustManager[]'),
   \ ])
 
-call javaapi#class('HttpsURLConnection', '', [
+call javaapi#class('HttpsURLConnection', 'HttpURLConnection', [
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getLocalCertificates(', ')', 'Certificate[]'),
   \ javaapi#method(0,'getServerCertificates(', ') throws SSLPeerUnverifiedException', 'Certificate[]'),
@@ -243,11 +243,11 @@ call javaapi#class('HttpsURLConnection', '', [
 call javaapi#interface('ManagerFactoryParameters', '', [
   \ ])
 
-call javaapi#class('SSLHandshakeException', '', [
+call javaapi#class('SSLHandshakeException', 'SSLException', [
   \ javaapi#method(0,'SSLHandshakeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SSLKeyException', '', [
+call javaapi#class('SSLKeyException', 'SSLException', [
   \ javaapi#method(0,'SSLKeyException(', 'String)', 'public'),
   \ ])
 

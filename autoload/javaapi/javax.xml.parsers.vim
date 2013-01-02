@@ -42,7 +42,7 @@ call javaapi#class('DocumentBuilderFactory', '', [
   \ javaapi#method(0,'isXIncludeAware(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ParserConfigurationException', '', [
+call javaapi#class('ParserConfigurationException', 'Exception', [
   \ javaapi#method(0,'ParserConfigurationException(', ')', 'public'),
   \ javaapi#method(0,'ParserConfigurationException(', 'String)', 'public'),
   \ ])
@@ -86,7 +86,7 @@ call javaapi#class('SAXParser', '', [
   \ javaapi#method(0,'isXIncludeAware(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('FactoryConfigurationError', '', [
+call javaapi#class('FactoryConfigurationError', 'Error', [
   \ javaapi#method(0,'FactoryConfigurationError(', ')', 'public'),
   \ javaapi#method(0,'FactoryConfigurationError(', 'String)', 'public'),
   \ javaapi#method(0,'FactoryConfigurationError(', 'Exception)', 'public'),

@@ -23,7 +23,7 @@ call javaapi#interface('ClientPNames', '', [
   \ javaapi#field(1,'DEFAULT_HOST', 'String'),
   \ ])
 
-call javaapi#interface('AllClientPNames', '', [
+call javaapi#interface('AllClientPNames', 'ConnRoutePNames', [
   \ ])
 
 call javaapi#class('CookiePolicy', '', [
@@ -34,7 +34,7 @@ call javaapi#class('CookiePolicy', '', [
   \ javaapi#field(1,'BEST_MATCH', 'String'),
   \ ])
 
-call javaapi#class('ClientParamBean', '', [
+call javaapi#class('ClientParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'ClientParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setConnectionManagerFactoryClassName(', 'String)', 'void'),
   \ javaapi#method(0,'setConnectionManagerFactory(', 'ClientConnectionManagerFactory)', 'void'),

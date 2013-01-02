@@ -1,65 +1,11 @@
 call javaapi#namespace('org.xml.sax')
 
-call javaapi#interface('Locator', '', [
-  \ javaapi#method(0,'getPublicId(', ')', 'String'),
-  \ javaapi#method(0,'getSystemId(', ')', 'String'),
-  \ javaapi#method(0,'getLineNumber(', ')', 'int'),
-  \ javaapi#method(0,'getColumnNumber(', ')', 'int'),
+call javaapi#interface('XMLFilter', 'XMLReader', [
+  \ javaapi#method(0,'setParent(', 'XMLReader)', 'void'),
+  \ javaapi#method(0,'getParent(', ')', 'XMLReader'),
   \ ])
 
-call javaapi#class('SAXNotSupportedException', '', [
-  \ javaapi#method(0,'SAXNotSupportedException(', ')', 'public'),
-  \ javaapi#method(0,'SAXNotSupportedException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#interface('DocumentHandler', '', [
-  \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
-  \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
-  \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
-  \ javaapi#method(0,'startElement(', 'String, AttributeList) throws SAXException', 'void'),
-  \ javaapi#method(0,'endElement(', 'String) throws SAXException', 'void'),
-  \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
-  \ javaapi#method(0,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
-  \ javaapi#method(0,'processingInstruction(', 'String, String) throws SAXException', 'void'),
-  \ ])
-
-call javaapi#class('HandlerBase', 'ErrorHandler', [
-  \ javaapi#method(0,'HandlerBase(', ')', 'public'),
-  \ javaapi#method(0,'resolveEntity(', 'String, String) throws SAXException', 'InputSource'),
-  \ javaapi#method(0,'notationDecl(', 'String, String, String)', 'void'),
-  \ javaapi#method(0,'unparsedEntityDecl(', 'String, String, String, String)', 'void'),
-  \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
-  \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
-  \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
-  \ javaapi#method(0,'startElement(', 'String, AttributeList) throws SAXException', 'void'),
-  \ javaapi#method(0,'endElement(', 'String) throws SAXException', 'void'),
-  \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
-  \ javaapi#method(0,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
-  \ javaapi#method(0,'processingInstruction(', 'String, String) throws SAXException', 'void'),
-  \ javaapi#method(0,'warning(', 'SAXParseException) throws SAXException', 'void'),
-  \ javaapi#method(0,'error(', 'SAXParseException) throws SAXException', 'void'),
-  \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
-  \ ])
-
-call javaapi#interface('Parser', '', [
-  \ javaapi#method(0,'setLocale(', 'Locale) throws SAXException', 'void'),
-  \ javaapi#method(0,'setEntityResolver(', 'EntityResolver)', 'void'),
-  \ javaapi#method(0,'setDTDHandler(', 'DTDHandler)', 'void'),
-  \ javaapi#method(0,'setDocumentHandler(', 'DocumentHandler)', 'void'),
-  \ javaapi#method(0,'setErrorHandler(', 'ErrorHandler)', 'void'),
-  \ javaapi#method(0,'parse(', 'InputSource) throws SAXException, IOException', 'void'),
-  \ javaapi#method(0,'parse(', 'String) throws SAXException, IOException', 'void'),
-  \ ])
-
-call javaapi#interface('AttributeList', '', [
-  \ javaapi#method(0,'getLength(', ')', 'int'),
-  \ javaapi#method(0,'getName(', 'int)', 'String'),
-  \ javaapi#method(0,'getType(', 'int)', 'String'),
-  \ javaapi#method(0,'getValue(', 'int)', 'String'),
-  \ javaapi#method(0,'getType(', 'String)', 'String'),
-  \ javaapi#method(0,'getValue(', 'String)', 'String'),
-  \ ])
-
+call javaapi#namespace('org.xml.sax')
 
 call javaapi#interface('EntityResolver', '', [
   \ javaapi#method(0,'resolveEntity(', 'String, String) throws SAXException, IOException', 'InputSource'),
@@ -114,7 +60,7 @@ call javaapi#class('InputSource', '', [
   \ javaapi#method(0,'getCharacterStream(', ')', 'Reader'),
   \ ])
 
-call javaapi#class('SAXParseException', '', [
+call javaapi#class('SAXParseException', 'SAXException', [
   \ javaapi#method(0,'SAXParseException(', 'String, Locator)', 'public'),
   \ javaapi#method(0,'SAXParseException(', 'String, Locator, Exception)', 'public'),
   \ javaapi#method(0,'SAXParseException(', 'String, String, String, int, int)', 'public'),
@@ -126,7 +72,7 @@ call javaapi#class('SAXParseException', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SAXException', '', [
+call javaapi#class('SAXException', 'Exception', [
   \ javaapi#method(0,'SAXException(', ')', 'public'),
   \ javaapi#method(0,'SAXException(', 'String)', 'public'),
   \ javaapi#method(0,'SAXException(', 'Exception)', 'public'),
@@ -137,7 +83,7 @@ call javaapi#class('SAXException', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SAXNotRecognizedException', '', [
+call javaapi#class('SAXNotRecognizedException', 'SAXException', [
   \ javaapi#method(0,'SAXNotRecognizedException(', ')', 'public'),
   \ javaapi#method(0,'SAXNotRecognizedException(', 'String)', 'public'),
   \ ])
@@ -167,9 +113,65 @@ call javaapi#interface('ErrorHandler', '', [
   \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
+call javaapi#namespace('org.xml.sax')
 
-call javaapi#interface('XMLFilter', '', [
-  \ javaapi#method(0,'setParent(', 'XMLReader)', 'void'),
-  \ javaapi#method(0,'getParent(', ')', 'XMLReader'),
+call javaapi#interface('Locator', '', [
+  \ javaapi#method(0,'getPublicId(', ')', 'String'),
+  \ javaapi#method(0,'getSystemId(', ')', 'String'),
+  \ javaapi#method(0,'getLineNumber(', ')', 'int'),
+  \ javaapi#method(0,'getColumnNumber(', ')', 'int'),
+  \ ])
+
+call javaapi#class('SAXNotSupportedException', 'SAXException', [
+  \ javaapi#method(0,'SAXNotSupportedException(', ')', 'public'),
+  \ javaapi#method(0,'SAXNotSupportedException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#interface('DocumentHandler', '', [
+  \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
+  \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
+  \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
+  \ javaapi#method(0,'startElement(', 'String, AttributeList) throws SAXException', 'void'),
+  \ javaapi#method(0,'endElement(', 'String) throws SAXException', 'void'),
+  \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
+  \ javaapi#method(0,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
+  \ javaapi#method(0,'processingInstruction(', 'String, String) throws SAXException', 'void'),
+  \ ])
+
+call javaapi#class('HandlerBase', 'ErrorHandler', [
+  \ javaapi#method(0,'HandlerBase(', ')', 'public'),
+  \ javaapi#method(0,'resolveEntity(', 'String, String) throws SAXException', 'InputSource'),
+  \ javaapi#method(0,'notationDecl(', 'String, String, String)', 'void'),
+  \ javaapi#method(0,'unparsedEntityDecl(', 'String, String, String, String)', 'void'),
+  \ javaapi#method(0,'setDocumentLocator(', 'Locator)', 'void'),
+  \ javaapi#method(0,'startDocument(', ') throws SAXException', 'void'),
+  \ javaapi#method(0,'endDocument(', ') throws SAXException', 'void'),
+  \ javaapi#method(0,'startElement(', 'String, AttributeList) throws SAXException', 'void'),
+  \ javaapi#method(0,'endElement(', 'String) throws SAXException', 'void'),
+  \ javaapi#method(0,'characters(', 'char[], int, int) throws SAXException', 'void'),
+  \ javaapi#method(0,'ignorableWhitespace(', 'char[], int, int) throws SAXException', 'void'),
+  \ javaapi#method(0,'processingInstruction(', 'String, String) throws SAXException', 'void'),
+  \ javaapi#method(0,'warning(', 'SAXParseException) throws SAXException', 'void'),
+  \ javaapi#method(0,'error(', 'SAXParseException) throws SAXException', 'void'),
+  \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
+  \ ])
+
+call javaapi#interface('Parser', '', [
+  \ javaapi#method(0,'setLocale(', 'Locale) throws SAXException', 'void'),
+  \ javaapi#method(0,'setEntityResolver(', 'EntityResolver)', 'void'),
+  \ javaapi#method(0,'setDTDHandler(', 'DTDHandler)', 'void'),
+  \ javaapi#method(0,'setDocumentHandler(', 'DocumentHandler)', 'void'),
+  \ javaapi#method(0,'setErrorHandler(', 'ErrorHandler)', 'void'),
+  \ javaapi#method(0,'parse(', 'InputSource) throws SAXException, IOException', 'void'),
+  \ javaapi#method(0,'parse(', 'String) throws SAXException, IOException', 'void'),
+  \ ])
+
+call javaapi#interface('AttributeList', '', [
+  \ javaapi#method(0,'getLength(', ')', 'int'),
+  \ javaapi#method(0,'getName(', 'int)', 'String'),
+  \ javaapi#method(0,'getType(', 'int)', 'String'),
+  \ javaapi#method(0,'getValue(', 'int)', 'String'),
+  \ javaapi#method(0,'getType(', 'String)', 'String'),
+  \ javaapi#method(0,'getValue(', 'String)', 'String'),
   \ ])
 

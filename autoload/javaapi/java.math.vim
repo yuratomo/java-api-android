@@ -1,6 +1,6 @@
 call javaapi#namespace('java.math')
 
-call javaapi#class('BigDecimal', '', [
+call javaapi#class('BigDecimal', 'Number', [
   \ javaapi#field(1,'ZERO', 'BigDecimal'),
   \ javaapi#field(1,'ONE', 'BigDecimal'),
   \ javaapi#field(1,'TEN', 'BigDecimal'),
@@ -91,7 +91,7 @@ call javaapi#class('BigDecimal', '', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('RoundingMode', '', [
+call javaapi#class('RoundingMode', 'RoundingMode>', [
   \ javaapi#field(1,'UP', 'RoundingMode'),
   \ javaapi#field(1,'DOWN', 'RoundingMode'),
   \ javaapi#field(1,'CEILING', 'RoundingMode'),
@@ -105,7 +105,7 @@ call javaapi#class('RoundingMode', '', [
   \ javaapi#method(1,'valueOf(', 'int)', 'RoundingMode'),
   \ ])
 
-call javaapi#class('BigInteger', '', [
+call javaapi#class('BigInteger', 'Number', [
   \ javaapi#field(1,'ZERO', 'BigInteger'),
   \ javaapi#field(1,'ONE', 'BigInteger'),
   \ javaapi#field(1,'TEN', 'BigInteger'),

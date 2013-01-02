@@ -1,6 +1,6 @@
 call javaapi#namespace('java.security.acl')
 
-call javaapi#interface('Acl', '', [
+call javaapi#interface('Acl', 'Owner', [
   \ javaapi#method(0,'setName(', 'Principal, String) throws NotOwnerException', 'void'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'addEntry(', 'Principal, AclEntry) throws NotOwnerException', 'boolean'),
@@ -11,7 +11,7 @@ call javaapi#interface('Acl', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AclNotFoundException', '', [
+call javaapi#class('AclNotFoundException', 'Exception', [
   \ javaapi#method(0,'AclNotFoundException(', ')', 'public'),
   \ ])
 
@@ -21,15 +21,15 @@ call javaapi#interface('Owner', '', [
   \ javaapi#method(0,'isOwner(', 'Principal)', 'boolean'),
   \ ])
 
-call javaapi#class('NotOwnerException', '', [
+call javaapi#class('NotOwnerException', 'Exception', [
   \ javaapi#method(0,'NotOwnerException(', ')', 'public'),
   \ ])
 
-call javaapi#class('LastOwnerException', '', [
+call javaapi#class('LastOwnerException', 'Exception', [
   \ javaapi#method(0,'LastOwnerException(', ')', 'public'),
   \ ])
 
-call javaapi#interface('AclEntry', '', [
+call javaapi#interface('AclEntry', 'Cloneable', [
   \ javaapi#method(0,'setPrincipal(', 'Principal)', 'boolean'),
   \ javaapi#method(0,'getPrincipal(', ')', 'Principal'),
   \ javaapi#method(0,'setNegativePermissions(', ')', 'void'),
@@ -47,7 +47,7 @@ call javaapi#interface('Permission', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Group', '', [
+call javaapi#interface('Group', 'Principal', [
   \ javaapi#method(0,'addMember(', 'Principal)', 'boolean'),
   \ javaapi#method(0,'removeMember(', 'Principal)', 'boolean'),
   \ javaapi#method(0,'isMember(', 'Principal)', 'boolean'),

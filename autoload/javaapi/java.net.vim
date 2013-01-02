@@ -1,11 +1,11 @@
 call javaapi#namespace('java.net')
 
-call javaapi#class('ConnectException', '', [
+call javaapi#class('ConnectException', 'SocketException', [
   \ javaapi#method(0,'ConnectException(', 'String)', 'public'),
   \ javaapi#method(0,'ConnectException(', ')', 'public'),
   \ ])
 
-call javaapi#class('URISyntaxException', '', [
+call javaapi#class('URISyntaxException', 'Exception', [
   \ javaapi#method(0,'URISyntaxException(', 'String, String, int)', 'public'),
   \ javaapi#method(0,'URISyntaxException(', 'String, String)', 'public'),
   \ javaapi#method(0,'getInput(', ')', 'String'),
@@ -23,7 +23,7 @@ call javaapi#interface('CookieStore', '', [
   \ javaapi#method(0,'removeAll(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('InetSocketAddress', '', [
+call javaapi#class('InetSocketAddress', 'SocketAddress', [
   \ javaapi#method(0,'InetSocketAddress(', 'int)', 'public'),
   \ javaapi#method(0,'InetSocketAddress(', 'InetAddress, int)', 'public'),
   \ javaapi#method(0,'InetSocketAddress(', 'String, int)', 'public'),
@@ -68,7 +68,7 @@ call javaapi#class('SocketAddress', 'Serializable', [
   \ javaapi#method(0,'SocketAddress(', ')', 'public'),
   \ ])
 
-call javaapi#class('SecureCacheResponse', '', [
+call javaapi#class('SecureCacheResponse', 'CacheResponse', [
   \ javaapi#method(0,'SecureCacheResponse(', ')', 'public'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getLocalCertificateChain(', ')', 'Certificate>'),
@@ -135,7 +135,7 @@ call javaapi#class('HttpCookie', 'Cloneable', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('JarURLConnection', '', [
+call javaapi#class('JarURLConnection', 'URLConnection', [
   \ javaapi#method(0,'getJarFileURL(', ')', 'URL'),
   \ javaapi#method(0,'getEntryName(', ')', 'String'),
   \ javaapi#method(0,'getJarFile(', ') throws IOException', 'JarFile'),
@@ -155,7 +155,7 @@ call javaapi#class('InterfaceAddress', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnknownServiceException', '', [
+call javaapi#class('UnknownServiceException', 'IOException', [
   \ javaapi#method(0,'UnknownServiceException(', ')', 'public'),
   \ javaapi#method(0,'UnknownServiceException(', 'String)', 'public'),
   \ ])
@@ -241,7 +241,7 @@ call javaapi#class('IDN', '', [
   \ javaapi#method(1,'toUnicode(', 'String)', 'String'),
   \ ])
 
-call javaapi#class('SocketException', '', [
+call javaapi#class('SocketException', 'IOException', [
   \ javaapi#method(0,'SocketException(', 'String)', 'public'),
   \ javaapi#method(0,'SocketException(', ')', 'public'),
   \ ])
@@ -252,7 +252,7 @@ call javaapi#class('CacheResponse', '', [
   \ javaapi#method(0,'getBody(', ') throws IOException', 'InputStream'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type>', [
   \ javaapi#field(1,'DIRECT', 'Type'),
   \ javaapi#field(1,'HTTP', 'Type'),
   \ javaapi#field(1,'SOCKS', 'Type'),
@@ -282,7 +282,7 @@ call javaapi#class('CacheRequest', '', [
   \ javaapi#method(0,'abort(', ')', 'void'),
   \ ])
 
-call javaapi#class('NetPermission', '', [
+call javaapi#class('NetPermission', 'BasicPermission', [
   \ javaapi#method(0,'NetPermission(', 'String)', 'public'),
   \ javaapi#method(0,'NetPermission(', 'String, String)', 'public'),
   \ ])
@@ -368,7 +368,7 @@ call javaapi#class('URI', 'Serializable', [
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('UnknownHostException', '', [
+call javaapi#class('UnknownHostException', 'IOException', [
   \ javaapi#method(0,'UnknownHostException(', 'String)', 'public'),
   \ javaapi#method(0,'UnknownHostException(', ')', 'public'),
   \ ])
@@ -378,7 +378,7 @@ call javaapi#class('SocketImpl', 'SocketOptions', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Inet4Address', '', [
+call javaapi#class('Inet4Address', 'InetAddress', [
   \ javaapi#method(0,'isMulticastAddress(', ')', 'boolean'),
   \ javaapi#method(0,'isAnyLocalAddress(', ')', 'boolean'),
   \ javaapi#method(0,'isLoopbackAddress(', ')', 'boolean'),
@@ -401,7 +401,7 @@ call javaapi#class('ContentHandler', '', [
   \ javaapi#method(0,'getContent(', 'URLConnection, Class[]) throws IOException', 'Object'),
   \ ])
 
-call javaapi#class('URLClassLoader', '', [
+call javaapi#class('URLClassLoader', 'SecureClassLoader', [
   \ javaapi#method(0,'URLClassLoader(', 'URL[], ClassLoader)', 'public'),
   \ javaapi#method(0,'URLClassLoader(', 'URL[])', 'public'),
   \ javaapi#method(0,'URLClassLoader(', 'URL[], ClassLoader, URLStreamHandlerFactory)', 'public'),
@@ -414,7 +414,7 @@ call javaapi#class('URLClassLoader', '', [
   \ javaapi#method(1,'newInstance(', 'URL[])', 'URLClassLoader'),
   \ ])
 
-call javaapi#class('PortUnreachableException', '', [
+call javaapi#class('PortUnreachableException', 'SocketException', [
   \ javaapi#method(0,'PortUnreachableException(', 'String)', 'public'),
   \ javaapi#method(0,'PortUnreachableException(', ')', 'public'),
   \ ])
@@ -431,12 +431,12 @@ call javaapi#class('DatagramSocketImpl', 'SocketOptions', [
   \ javaapi#method(0,'DatagramSocketImpl(', ')', 'public'),
   \ ])
 
-call javaapi#class('BindException', '', [
+call javaapi#class('BindException', 'SocketException', [
   \ javaapi#method(0,'BindException(', 'String)', 'public'),
   \ javaapi#method(0,'BindException(', ')', 'public'),
   \ ])
 
-call javaapi#class('MulticastSocket', '', [
+call javaapi#class('MulticastSocket', 'DatagramSocket', [
   \ javaapi#method(0,'MulticastSocket(', ') throws IOException', 'public'),
   \ javaapi#method(0,'MulticastSocket(', 'int) throws IOException', 'public'),
   \ javaapi#method(0,'MulticastSocket(', 'SocketAddress) throws IOException', 'public'),
@@ -457,12 +457,12 @@ call javaapi#class('MulticastSocket', '', [
   \ javaapi#method(0,'send(', 'DatagramPacket, byte) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('NoRouteToHostException', '', [
+call javaapi#class('NoRouteToHostException', 'SocketException', [
   \ javaapi#method(0,'NoRouteToHostException(', 'String)', 'public'),
   \ javaapi#method(0,'NoRouteToHostException(', ')', 'public'),
   \ ])
 
-call javaapi#class('SocketPermission', '', [
+call javaapi#class('SocketPermission', 'Permission', [
   \ javaapi#method(0,'SocketPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -487,7 +487,7 @@ call javaapi#class('URLDecoder', '', [
   \ javaapi#method(1,'decode(', 'String, String) throws UnsupportedEncodingException', 'String'),
   \ ])
 
-call javaapi#class('HttpRetryException', '', [
+call javaapi#class('HttpRetryException', 'IOException', [
   \ javaapi#method(0,'HttpRetryException(', 'String, int)', 'public'),
   \ javaapi#method(0,'HttpRetryException(', 'String, int, String)', 'public'),
   \ javaapi#method(0,'responseCode(', ')', 'int'),
@@ -537,7 +537,7 @@ call javaapi#class('Proxy', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('RequestorType', '', [
+call javaapi#class('RequestorType', 'RequestorType>', [
   \ javaapi#field(1,'PROXY', 'RequestorType'),
   \ javaapi#field(1,'SERVER', 'RequestorType'),
   \ javaapi#method(1,'values(', ')', 'RequestorType[]'),
@@ -598,7 +598,7 @@ call javaapi#class('URLConnection', '', [
   \ javaapi#method(1,'guessContentTypeFromStream(', 'InputStream) throws IOException', 'String'),
   \ ])
 
-call javaapi#class('HttpURLConnection', '', [
+call javaapi#class('HttpURLConnection', 'URLConnection', [
   \ javaapi#field(1,'HTTP_OK', 'int'),
   \ javaapi#field(1,'HTTP_CREATED', 'int'),
   \ javaapi#field(1,'HTTP_ACCEPTED', 'int'),
@@ -733,7 +733,7 @@ call javaapi#class('DatagramPacket', '', [
   \ javaapi#method(0,'setLength(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('Inet6Address', '', [
+call javaapi#class('Inet6Address', 'InetAddress', [
   \ javaapi#method(1,'getByAddress(', 'String, byte[], NetworkInterface) throws UnknownHostException', 'Inet6Address'),
   \ javaapi#method(1,'getByAddress(', 'String, byte[], int) throws UnknownHostException', 'Inet6Address'),
   \ javaapi#method(0,'isMulticastAddress(', ')', 'boolean'),
@@ -755,22 +755,22 @@ call javaapi#class('Inet6Address', '', [
   \ javaapi#method(0,'isIPv4CompatibleAddress(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ProtocolException', '', [
+call javaapi#class('ProtocolException', 'IOException', [
   \ javaapi#method(0,'ProtocolException(', 'String)', 'public'),
   \ javaapi#method(0,'ProtocolException(', ')', 'public'),
   \ ])
 
-call javaapi#class('SocketTimeoutException', '', [
+call javaapi#class('SocketTimeoutException', 'InterruptedIOException', [
   \ javaapi#method(0,'SocketTimeoutException(', 'String)', 'public'),
   \ javaapi#method(0,'SocketTimeoutException(', ')', 'public'),
   \ ])
 
-call javaapi#class('MalformedURLException', '', [
+call javaapi#class('MalformedURLException', 'IOException', [
   \ javaapi#method(0,'MalformedURLException(', ')', 'public'),
   \ javaapi#method(0,'MalformedURLException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CookieManager', '', [
+call javaapi#class('CookieManager', 'CookieHandler', [
   \ javaapi#method(0,'CookieManager(', ')', 'public'),
   \ javaapi#method(0,'CookieManager(', 'CookieStore, CookiePolicy)', 'public'),
   \ javaapi#method(0,'setCookiePolicy(', 'CookiePolicy)', 'void'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('android.service.wallpaper')
 
-call javaapi#class('WallpaperService', '', [
+call javaapi#class('WallpaperService', 'Service', [
   \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
   \ javaapi#field(1,'SERVICE_META_DATA', 'String'),
   \ javaapi#method(0,'WallpaperService(', ')', 'public'),

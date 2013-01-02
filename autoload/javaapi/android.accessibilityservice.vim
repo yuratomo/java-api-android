@@ -1,6 +1,6 @@
 call javaapi#namespace('android.accessibilityservice')
 
-call javaapi#class('AccessibilityService', '', [
+call javaapi#class('AccessibilityService', 'Service', [
   \ javaapi#field(1,'GESTURE_SWIPE_UP', 'int'),
   \ javaapi#field(1,'GESTURE_SWIPE_DOWN', 'int'),
   \ javaapi#field(1,'GESTURE_SWIPE_LEFT', 'int'),

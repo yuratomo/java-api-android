@@ -1,6 +1,6 @@
 call javaapi#namespace('android.service.dreams')
 
-call javaapi#class('DreamService', '', [
+call javaapi#class('DreamService', 'Service', [
   \ javaapi#field(1,'SERVICE_INTERFACE', 'String'),
   \ javaapi#field(1,'DREAM_META_DATA', 'String'),
   \ javaapi#method(0,'DreamService(', ')', 'public'),

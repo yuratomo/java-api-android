@@ -1,849 +1,75 @@
 call javaapi#namespace('java.util')
 
-call javaapi#interface('ListIterator<E>', '', [
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'E'),
-  \ javaapi#method(0,'hasPrevious(', ')', 'boolean'),
-  \ javaapi#method(0,'previous(', ')', 'E'),
-  \ javaapi#method(0,'nextIndex(', ')', 'int'),
-  \ javaapi#method(0,'previousIndex(', ')', 'int'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ javaapi#method(0,'set(', 'E)', 'void'),
-  \ javaapi#method(0,'add(', 'E)', 'void'),
+call javaapi#class('IllegalFormatFlagsException', 'IllegalFormatException', [
+  \ javaapi#method(0,'IllegalFormatFlagsException(', 'String)', 'public'),
+  \ javaapi#method(0,'getFlags(', ')', 'String'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('EmptyStackException', '', [
-  \ javaapi#method(0,'EmptyStackException(', ')', 'public'),
-  \ ])
-
-call javaapi#class('EventListenerProxy<T', '', [
-  \ javaapi#method(0,'EventListenerProxy(', 'T)', 'public'),
-  \ javaapi#method(0,'getListener(', ')', 'T'),
-  \ ])
-
-call javaapi#interface('NavigableMap<K,V>', '', [
-  \ javaapi#method(0,'lowerEntry(', 'K)', 'V>'),
-  \ javaapi#method(0,'lowerKey(', 'K)', 'K'),
-  \ javaapi#method(0,'floorEntry(', 'K)', 'V>'),
-  \ javaapi#method(0,'floorKey(', 'K)', 'K'),
-  \ javaapi#method(0,'ceilingEntry(', 'K)', 'V>'),
-  \ javaapi#method(0,'ceilingKey(', 'K)', 'K'),
-  \ javaapi#method(0,'higherEntry(', 'K)', 'V>'),
-  \ javaapi#method(0,'higherKey(', 'K)', 'K'),
-  \ javaapi#method(0,'firstEntry(', ')', 'V>'),
-  \ javaapi#method(0,'lastEntry(', ')', 'V>'),
-  \ javaapi#method(0,'pollFirstEntry(', ')', 'V>'),
-  \ javaapi#method(0,'pollLastEntry(', ')', 'V>'),
-  \ javaapi#method(0,'descendingMap(', ')', 'V>'),
-  \ javaapi#method(0,'navigableKeySet(', ')', 'NavigableSet<K>'),
-  \ javaapi#method(0,'descendingKeySet(', ')', 'NavigableSet<K>'),
-  \ javaapi#method(0,'subMap(', 'K, boolean, K, boolean)', 'V>'),
-  \ javaapi#method(0,'headMap(', 'K, boolean)', 'V>'),
-  \ javaapi#method(0,'tailMap(', 'K, boolean)', 'V>'),
+call javaapi#interface('SortedMap<K,V>', 'Map<K,V>', [
+  \ javaapi#method(0,'comparator(', ')', 'K>'),
   \ javaapi#method(0,'subMap(', 'K, K)', 'V>'),
   \ javaapi#method(0,'headMap(', 'K)', 'V>'),
   \ javaapi#method(0,'tailMap(', 'K)', 'V>'),
-  \ ])
-
-call javaapi#interface('SortedSet<E>', '', [
-  \ javaapi#method(0,'comparator(', ')', 'E>'),
-  \ javaapi#method(0,'subSet(', 'E, E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'headSet(', 'E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'tailSet(', 'E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'first(', ')', 'E'),
-  \ javaapi#method(0,'last(', ')', 'E'),
-  \ ])
-
-call javaapi#interface('Enumeration<E>', '', [
-  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
-  \ javaapi#method(0,'nextElement(', ')', 'E'),
-  \ ])
-
-
-call javaapi#class('HashSet<E>', '', [
-  \ javaapi#method(0,'HashSet(', ')', 'public'),
-  \ javaapi#method(0,'HashSet(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'HashSet(', 'int, float)', 'public'),
-  \ javaapi#method(0,'HashSet(', 'int)', 'public'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('SimpleEntry<K,V>', 'Serializable', [
-  \ javaapi#method(0,'SimpleEntry(', 'K, V)', 'public'),
-  \ javaapi#method(0,'SimpleEntry(', 'Entry<? extends K, ? extends V>)', 'public'),
-  \ javaapi#method(0,'getKey(', ')', 'K'),
-  \ javaapi#method(0,'getValue(', ')', 'V'),
-  \ javaapi#method(0,'setValue(', 'V)', 'V'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('AbstractMap<K,V>', 'Map<K,V>', [
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'get(', 'Object)', 'V'),
-  \ javaapi#method(0,'put(', 'K, V)', 'V'),
-  \ javaapi#method(0,'remove(', 'Object)', 'V'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
-  \ javaapi#method(0,'values(', ')', 'Collection<V>'),
-  \ javaapi#method(0,'entrySet(', ')', 'V>>'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('UUID', 'UUID>', [
-  \ javaapi#method(0,'UUID(', 'long, long)', 'public'),
-  \ javaapi#method(1,'randomUUID(', ')', 'UUID'),
-  \ javaapi#method(1,'nameUUIDFromBytes(', 'byte[])', 'UUID'),
-  \ javaapi#method(1,'fromString(', 'String)', 'UUID'),
-  \ javaapi#method(0,'getLeastSignificantBits(', ')', 'long'),
-  \ javaapi#method(0,'getMostSignificantBits(', ')', 'long'),
-  \ javaapi#method(0,'version(', ')', 'int'),
-  \ javaapi#method(0,'variant(', ')', 'int'),
-  \ javaapi#method(0,'timestamp(', ')', 'long'),
-  \ javaapi#method(0,'clockSequence(', ')', 'int'),
-  \ javaapi#method(0,'node(', ')', 'long'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'UUID)', 'int'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('Formatter', 'Flushable', [
-  \ javaapi#method(0,'Formatter(', ')', 'public'),
-  \ javaapi#method(0,'Formatter(', 'Appendable)', 'public'),
-  \ javaapi#method(0,'Formatter(', 'Locale)', 'public'),
-  \ javaapi#method(0,'Formatter(', 'Appendable, Locale)', 'public'),
-  \ javaapi#method(0,'Formatter(', 'String) throws FileNotFoundException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'String, String) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'String, String, Locale) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'File) throws FileNotFoundException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'File, String) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'File, String, Locale) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'PrintStream)', 'public'),
-  \ javaapi#method(0,'Formatter(', 'OutputStream)', 'public'),
-  \ javaapi#method(0,'Formatter(', 'OutputStream, String) throws UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'Formatter(', 'OutputStream, String, Locale) throws UnsupportedEncodingException', 'public'),
-  \ javaapi#method(0,'locale(', ')', 'Locale'),
-  \ javaapi#method(0,'out(', ')', 'Appendable'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'ioException(', ')', 'IOException'),
-  \ javaapi#method(0,'format(', 'String, )', 'Formatter'),
-  \ javaapi#method(0,'format(', 'Locale, String, )', 'Formatter'),
-  \ ])
-
-call javaapi#class('ServiceConfigurationError', '', [
-  \ javaapi#method(0,'ServiceConfigurationError(', 'String)', 'public'),
-  \ javaapi#method(0,'ServiceConfigurationError(', 'String, Throwable)', 'public'),
-  \ ])
-
-call javaapi#interface('Iterator<E>', '', [
-  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
-  \ javaapi#method(0,'next(', ')', 'E'),
-  \ javaapi#method(0,'remove(', ')', 'void'),
-  \ ])
-
-call javaapi#class('FormatterClosedException', '', [
-  \ javaapi#method(0,'FormatterClosedException(', ')', 'public'),
-  \ ])
-
-call javaapi#class('IllegalFormatPrecisionException', '', [
-  \ javaapi#method(0,'IllegalFormatPrecisionException(', 'int)', 'public'),
-  \ javaapi#method(0,'getPrecision(', ')', 'int'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#class('UnknownFormatFlagsException', '', [
-  \ javaapi#method(0,'UnknownFormatFlagsException(', 'String)', 'public'),
-  \ javaapi#method(0,'getFlags(', ')', 'String'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#class('IllegalFormatException', '', [
-  \ ])
-
-call javaapi#class('Observable', '', [
-  \ javaapi#method(0,'Observable(', ')', 'public'),
-  \ javaapi#method(0,'addObserver(', 'Observer)', 'void'),
-  \ javaapi#method(0,'deleteObserver(', 'Observer)', 'void'),
-  \ javaapi#method(0,'notifyObservers(', ')', 'void'),
-  \ javaapi#method(0,'notifyObservers(', 'Object)', 'void'),
-  \ javaapi#method(0,'deleteObservers(', ')', 'void'),
-  \ javaapi#method(0,'hasChanged(', ')', 'boolean'),
-  \ javaapi#method(0,'countObservers(', ')', 'int'),
-  \ ])
-
-call javaapi#interface('Deque<E>', '', [
-  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
-  \ javaapi#method(0,'addLast(', 'E)', 'void'),
-  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
-  \ javaapi#method(0,'removeFirst(', ')', 'E'),
-  \ javaapi#method(0,'removeLast(', ')', 'E'),
-  \ javaapi#method(0,'pollFirst(', ')', 'E'),
-  \ javaapi#method(0,'pollLast(', ')', 'E'),
-  \ javaapi#method(0,'getFirst(', ')', 'E'),
-  \ javaapi#method(0,'getLast(', ')', 'E'),
-  \ javaapi#method(0,'peekFirst(', ')', 'E'),
-  \ javaapi#method(0,'peekLast(', ')', 'E'),
-  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', ')', 'E'),
-  \ javaapi#method(0,'poll(', ')', 'E'),
-  \ javaapi#method(0,'element(', ')', 'E'),
-  \ javaapi#method(0,'peek(', ')', 'E'),
-  \ javaapi#method(0,'push(', 'E)', 'void'),
-  \ javaapi#method(0,'pop(', ')', 'E'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
-  \ ])
-
-call javaapi#interface('Collection<E>', '', [
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'retainAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('TreeSet<E>', '', [
-  \ javaapi#method(0,'TreeSet(', ')', 'public'),
-  \ javaapi#method(0,'TreeSet(', 'Comparator<? super E>)', 'public'),
-  \ javaapi#method(0,'TreeSet(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'TreeSet(', 'SortedSet<E>)', 'public'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'descendingSet(', ')', 'NavigableSet<E>'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'subSet(', 'E, boolean, E, boolean)', 'NavigableSet<E>'),
-  \ javaapi#method(0,'headSet(', 'E, boolean)', 'NavigableSet<E>'),
-  \ javaapi#method(0,'tailSet(', 'E, boolean)', 'NavigableSet<E>'),
-  \ javaapi#method(0,'subSet(', 'E, E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'headSet(', 'E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'tailSet(', 'E)', 'SortedSet<E>'),
-  \ javaapi#method(0,'comparator(', ')', 'E>'),
-  \ javaapi#method(0,'first(', ')', 'E'),
-  \ javaapi#method(0,'last(', ')', 'E'),
-  \ javaapi#method(0,'lower(', 'E)', 'E'),
-  \ javaapi#method(0,'floor(', 'E)', 'E'),
-  \ javaapi#method(0,'ceiling(', 'E)', 'E'),
-  \ javaapi#method(0,'higher(', 'E)', 'E'),
-  \ javaapi#method(0,'pollFirst(', ')', 'E'),
-  \ javaapi#method(0,'pollLast(', ')', 'E'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ ])
-
-call javaapi#class('ArrayDeque<E>', '', [
-  \ javaapi#method(0,'ArrayDeque(', ')', 'public'),
-  \ javaapi#method(0,'ArrayDeque(', 'int)', 'public'),
-  \ javaapi#method(0,'ArrayDeque(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
-  \ javaapi#method(0,'addLast(', 'E)', 'void'),
-  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
-  \ javaapi#method(0,'removeFirst(', ')', 'E'),
-  \ javaapi#method(0,'removeLast(', ')', 'E'),
-  \ javaapi#method(0,'pollFirst(', ')', 'E'),
-  \ javaapi#method(0,'pollLast(', ')', 'E'),
-  \ javaapi#method(0,'getFirst(', ')', 'E'),
-  \ javaapi#method(0,'getLast(', ')', 'E'),
-  \ javaapi#method(0,'peekFirst(', ')', 'E'),
-  \ javaapi#method(0,'peekLast(', ')', 'E'),
-  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', ')', 'E'),
-  \ javaapi#method(0,'poll(', ')', 'E'),
-  \ javaapi#method(0,'element(', ')', 'E'),
-  \ javaapi#method(0,'peek(', ')', 'E'),
-  \ javaapi#method(0,'push(', 'E)', 'void'),
-  \ javaapi#method(0,'pop(', ')', 'E'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
-  \ javaapi#method(0,'clone(', ')', 'ArrayDeque<E>'),
-  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
-  \ ])
-
-call javaapi#class('UnknownFormatConversionException', '', [
-  \ javaapi#method(0,'UnknownFormatConversionException(', 'String)', 'public'),
-  \ javaapi#method(0,'getConversion(', ')', 'String'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-
-call javaapi#class('InvalidPropertiesFormatException', '', [
-  \ javaapi#method(0,'InvalidPropertiesFormatException(', 'Throwable)', 'public'),
-  \ javaapi#method(0,'InvalidPropertiesFormatException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('FormatFlagsConversionMismatchException', '', [
-  \ javaapi#method(0,'FormatFlagsConversionMismatchException(', 'String, char)', 'public'),
-  \ javaapi#method(0,'getFlags(', ')', 'String'),
-  \ javaapi#method(0,'getConversion(', ')', 'char'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#class('MissingResourceException', '', [
-  \ javaapi#method(0,'MissingResourceException(', 'String, String, String)', 'public'),
-  \ javaapi#method(0,'getClassName(', ')', 'String'),
-  \ javaapi#method(0,'getKey(', ')', 'String'),
-  \ ])
-
-call javaapi#class('LinkedList<E>', '', [
-  \ javaapi#method(0,'LinkedList(', ')', 'public'),
-  \ javaapi#method(0,'LinkedList(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'getFirst(', ')', 'E'),
-  \ javaapi#method(0,'getLast(', ')', 'E'),
-  \ javaapi#method(0,'removeFirst(', ')', 'E'),
-  \ javaapi#method(0,'removeLast(', ')', 'E'),
-  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
-  \ javaapi#method(0,'addLast(', 'E)', 'void'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'get(', 'int)', 'E'),
-  \ javaapi#method(0,'set(', 'int, E)', 'E'),
-  \ javaapi#method(0,'add(', 'int, E)', 'void'),
-  \ javaapi#method(0,'remove(', 'int)', 'E'),
-  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'peek(', ')', 'E'),
-  \ javaapi#method(0,'element(', ')', 'E'),
-  \ javaapi#method(0,'poll(', ')', 'E'),
-  \ javaapi#method(0,'remove(', ')', 'E'),
-  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
-  \ javaapi#method(0,'peekFirst(', ')', 'E'),
-  \ javaapi#method(0,'peekLast(', ')', 'E'),
-  \ javaapi#method(0,'pollFirst(', ')', 'E'),
-  \ javaapi#method(0,'pollLast(', ')', 'E'),
-  \ javaapi#method(0,'push(', 'E)', 'void'),
-  \ javaapi#method(0,'pop(', ')', 'E'),
-  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
-  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
-  \ ])
-
-call javaapi#class('StringTokenizer', 'Object>', [
-  \ javaapi#method(0,'StringTokenizer(', 'String, String, boolean)', 'public'),
-  \ javaapi#method(0,'StringTokenizer(', 'String, String)', 'public'),
-  \ javaapi#method(0,'StringTokenizer(', 'String)', 'public'),
-  \ javaapi#method(0,'hasMoreTokens(', ')', 'boolean'),
-  \ javaapi#method(0,'nextToken(', ')', 'String'),
-  \ javaapi#method(0,'nextToken(', 'String)', 'String'),
-  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
-  \ javaapi#method(0,'nextElement(', ')', 'Object'),
-  \ javaapi#method(0,'countTokens(', ')', 'int'),
-  \ ])
-
-call javaapi#interface('RandomAccess', '', [
-  \ ])
-
-call javaapi#class('Vector<E>', '', [
-  \ javaapi#method(0,'Vector(', 'int, int)', 'public'),
-  \ javaapi#method(0,'Vector(', 'int)', 'public'),
-  \ javaapi#method(0,'Vector(', ')', 'public'),
-  \ javaapi#method(0,'Vector(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'copyInto(', 'Object[])', 'void'),
-  \ javaapi#method(0,'trimToSize(', ')', 'void'),
-  \ javaapi#method(0,'ensureCapacity(', 'int)', 'void'),
-  \ javaapi#method(0,'setSize(', 'int)', 'void'),
-  \ javaapi#method(0,'capacity(', ')', 'int'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'elements(', ')', 'Enumeration<E>'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'indexOf(', 'Object, int)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'Object, int)', 'int'),
-  \ javaapi#method(0,'elementAt(', 'int)', 'E'),
-  \ javaapi#method(0,'firstElement(', ')', 'E'),
-  \ javaapi#method(0,'lastElement(', ')', 'E'),
-  \ javaapi#method(0,'setElementAt(', 'E, int)', 'void'),
-  \ javaapi#method(0,'removeElementAt(', 'int)', 'void'),
-  \ javaapi#method(0,'insertElementAt(', 'E, int)', 'void'),
-  \ javaapi#method(0,'addElement(', 'E)', 'void'),
-  \ javaapi#method(0,'removeElement(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'removeAllElements(', ')', 'void'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
-  \ javaapi#method(0,'get(', 'int)', 'E'),
-  \ javaapi#method(0,'set(', 'int, E)', 'E'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'add(', 'int, E)', 'void'),
-  \ javaapi#method(0,'remove(', 'int)', 'E'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'containsAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'retainAll(', 'Collection<?>)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'subList(', 'int, int)', 'List<E>'),
-  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
-  \ javaapi#method(0,'listIterator(', ')', 'ListIterator<E>'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ ])
-
-
-call javaapi#class('ServiceLoader<S>', 'Iterable<S>', [
-  \ javaapi#method(0,'reload(', ')', 'void'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<S>'),
-  \ javaapi#method(1,'load(', 'Class<S>, ClassLoader)', 'ServiceLoader<S>'),
-  \ javaapi#method(1,'load(', 'Class<S>)', 'ServiceLoader<S>'),
-  \ javaapi#method(1,'loadInstalled(', 'Class<S>)', 'ServiceLoader<S>'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Collections', '', [
-  \ javaapi#field(1,'EMPTY_SET', 'Set'),
-  \ javaapi#field(1,'EMPTY_LIST', 'List'),
-  \ javaapi#field(1,'EMPTY_MAP', 'Map'),
-  \ javaapi#method(1,'sort(', 'List<T>)', 'void'),
-  \ javaapi#method(1,'sort(', 'List<T>, Comparator<? super T>)', 'void'),
-  \ javaapi#method(1,'binarySearch(', 'List<? extends Comparable<? super T>>, T)', 'int'),
-  \ javaapi#method(1,'binarySearch(', 'List<? extends T>, T, Comparator<? super T>)', 'int'),
-  \ javaapi#method(1,'reverse(', 'List<?>)', 'void'),
-  \ javaapi#method(1,'shuffle(', 'List<?>)', 'void'),
-  \ javaapi#method(1,'shuffle(', 'List<?>, Random)', 'void'),
-  \ javaapi#method(1,'swap(', 'List<?>, int, int)', 'void'),
-  \ javaapi#method(1,'fill(', 'List<? super T>, T)', 'void'),
-  \ javaapi#method(1,'copy(', 'List<? super T>, List<? extends T>)', 'void'),
-  \ javaapi#method(1,'min(', 'Collection<? extends T>)', 'T'),
-  \ javaapi#method(1,'min(', 'Collection<? extends T>, Comparator<? super T>)', 'T'),
-  \ javaapi#method(1,'max(', 'Collection<? extends T>)', 'T'),
-  \ javaapi#method(1,'max(', 'Collection<? extends T>, Comparator<? super T>)', 'T'),
-  \ javaapi#method(1,'rotate(', 'List<?>, int)', 'void'),
-  \ javaapi#method(1,'replaceAll(', 'List<T>, T, T)', 'boolean'),
-  \ javaapi#method(1,'indexOfSubList(', 'List<?>, List<?>)', 'int'),
-  \ javaapi#method(1,'lastIndexOfSubList(', 'List<?>, List<?>)', 'int'),
-  \ javaapi#method(1,'unmodifiableCollection(', 'Collection<? extends T>)', 'Collection<T>'),
-  \ javaapi#method(1,'unmodifiableSet(', 'Set<? extends T>)', 'Set<T>'),
-  \ javaapi#method(1,'unmodifiableSortedSet(', 'SortedSet<T>)', 'SortedSet<T>'),
-  \ javaapi#method(1,'unmodifiableList(', 'List<? extends T>)', 'List<T>'),
-  \ javaapi#method(1,'unmodifiableMap(', 'Map<? extends K, ? extends V>)', 'V>'),
-  \ javaapi#method(1,'unmodifiableSortedMap(', 'SortedMap<K, ? extends V>)', 'V>'),
-  \ javaapi#method(1,'synchronizedCollection(', 'Collection<T>)', 'Collection<T>'),
-  \ javaapi#method(1,'synchronizedSet(', 'Set<T>)', 'Set<T>'),
-  \ javaapi#method(1,'synchronizedSortedSet(', 'SortedSet<T>)', 'SortedSet<T>'),
-  \ javaapi#method(1,'synchronizedList(', 'List<T>)', 'List<T>'),
-  \ javaapi#method(1,'synchronizedMap(', 'Map<K, V>)', 'V>'),
-  \ javaapi#method(1,'synchronizedSortedMap(', 'SortedMap<K, V>)', 'V>'),
-  \ javaapi#method(1,'checkedCollection(', 'Collection<E>, Class<E>)', 'Collection<E>'),
-  \ javaapi#method(1,'checkedSet(', 'Set<E>, Class<E>)', 'Set<E>'),
-  \ javaapi#method(1,'checkedSortedSet(', 'SortedSet<E>, Class<E>)', 'SortedSet<E>'),
-  \ javaapi#method(1,'checkedList(', 'List<E>, Class<E>)', 'List<E>'),
-  \ javaapi#method(1,'checkedMap(', 'Map<K, V>, Class<K>, Class<V>)', 'V>'),
-  \ javaapi#method(1,'checkedSortedMap(', 'SortedMap<K, V>, Class<K>, Class<V>)', 'V>'),
-  \ javaapi#method(1,'emptyIterator(', ')', 'Iterator<T>'),
-  \ javaapi#method(1,'emptyListIterator(', ')', 'ListIterator<T>'),
-  \ javaapi#method(1,'emptyEnumeration(', ')', 'Enumeration<T>'),
-  \ javaapi#method(1,'emptySet(', ')', 'Set<T>'),
-  \ javaapi#method(1,'emptyList(', ')', 'List<T>'),
-  \ javaapi#method(1,'emptyMap(', ')', 'V>'),
-  \ javaapi#method(1,'singleton(', 'T)', 'Set<T>'),
-  \ javaapi#method(1,'singletonList(', 'T)', 'List<T>'),
-  \ javaapi#method(1,'singletonMap(', 'K, V)', 'V>'),
-  \ javaapi#method(1,'nCopies(', 'int, T)', 'List<T>'),
-  \ javaapi#method(1,'reverseOrder(', ')', 'Comparator<T>'),
-  \ javaapi#method(1,'reverseOrder(', 'Comparator<T>)', 'Comparator<T>'),
-  \ javaapi#method(1,'enumeration(', 'Collection<T>)', 'Enumeration<T>'),
-  \ javaapi#method(1,'list(', 'Enumeration<T>)', 'ArrayList<T>'),
-  \ javaapi#method(1,'frequency(', 'Collection<?>, Object)', 'int'),
-  \ javaapi#method(1,'disjoint(', 'Collection<?>, Collection<?>)', 'boolean'),
-  \ javaapi#method(1,'addAll(', 'Collection<? super T>, )', 'boolean'),
-  \ javaapi#method(1,'newSetFromMap(', 'Map<E, Boolean>)', 'Set<E>'),
-  \ javaapi#method(1,'asLifoQueue(', 'Deque<T>)', 'Queue<T>'),
-  \ ])
-
-call javaapi#class('PropertyResourceBundle', '', [
-  \ javaapi#method(0,'PropertyResourceBundle(', 'InputStream) throws IOException', 'public'),
-  \ javaapi#method(0,'PropertyResourceBundle(', 'Reader) throws IOException', 'public'),
-  \ javaapi#method(0,'handleGetObject(', 'String)', 'Object'),
-  \ javaapi#method(0,'getKeys(', ')', 'String>'),
-  \ ])
-
-call javaapi#class('ResourceBundle', '', [
-  \ javaapi#method(0,'ResourceBundle(', ')', 'public'),
-  \ javaapi#method(0,'getString(', 'String)', 'String'),
-  \ javaapi#method(0,'getStringArray(', 'String)', 'String[]'),
-  \ javaapi#method(0,'getObject(', 'String)', 'Object'),
-  \ javaapi#method(0,'getLocale(', ')', 'Locale'),
-  \ javaapi#method(1,'getBundle(', 'String)', 'ResourceBundle'),
-  \ javaapi#method(1,'getBundle(', 'String, Control)', 'ResourceBundle'),
-  \ javaapi#method(1,'getBundle(', 'String, Locale)', 'ResourceBundle'),
-  \ javaapi#method(1,'getBundle(', 'String, Locale, Control)', 'ResourceBundle'),
-  \ javaapi#method(1,'getBundle(', 'String, Locale, ClassLoader)', 'ResourceBundle'),
-  \ javaapi#method(1,'getBundle(', 'String, Locale, ClassLoader, Control)', 'ResourceBundle'),
-  \ javaapi#method(1,'clearCache(', ')', 'void'),
-  \ javaapi#method(1,'clearCache(', 'ClassLoader)', 'void'),
-  \ javaapi#method(0,'getKeys(', ')', 'String>'),
-  \ javaapi#method(0,'containsKey(', 'String)', 'boolean'),
-  \ javaapi#method(0,'keySet(', ')', 'String>'),
-  \ ])
-
-call javaapi#class('Calendar', 'Calendar>', [
-  \ javaapi#field(1,'ERA', 'int'),
-  \ javaapi#field(1,'YEAR', 'int'),
-  \ javaapi#field(1,'MONTH', 'int'),
-  \ javaapi#field(1,'WEEK_OF_YEAR', 'int'),
-  \ javaapi#field(1,'WEEK_OF_MONTH', 'int'),
-  \ javaapi#field(1,'DATE', 'int'),
-  \ javaapi#field(1,'DAY_OF_MONTH', 'int'),
-  \ javaapi#field(1,'DAY_OF_YEAR', 'int'),
-  \ javaapi#field(1,'DAY_OF_WEEK', 'int'),
-  \ javaapi#field(1,'DAY_OF_WEEK_IN_MONTH', 'int'),
-  \ javaapi#field(1,'AM_PM', 'int'),
-  \ javaapi#field(1,'HOUR', 'int'),
-  \ javaapi#field(1,'HOUR_OF_DAY', 'int'),
-  \ javaapi#field(1,'MINUTE', 'int'),
-  \ javaapi#field(1,'SECOND', 'int'),
-  \ javaapi#field(1,'MILLISECOND', 'int'),
-  \ javaapi#field(1,'ZONE_OFFSET', 'int'),
-  \ javaapi#field(1,'DST_OFFSET', 'int'),
-  \ javaapi#field(1,'FIELD_COUNT', 'int'),
-  \ javaapi#field(1,'SUNDAY', 'int'),
-  \ javaapi#field(1,'MONDAY', 'int'),
-  \ javaapi#field(1,'TUESDAY', 'int'),
-  \ javaapi#field(1,'WEDNESDAY', 'int'),
-  \ javaapi#field(1,'THURSDAY', 'int'),
-  \ javaapi#field(1,'FRIDAY', 'int'),
-  \ javaapi#field(1,'SATURDAY', 'int'),
-  \ javaapi#field(1,'JANUARY', 'int'),
-  \ javaapi#field(1,'FEBRUARY', 'int'),
-  \ javaapi#field(1,'MARCH', 'int'),
-  \ javaapi#field(1,'APRIL', 'int'),
-  \ javaapi#field(1,'MAY', 'int'),
-  \ javaapi#field(1,'JUNE', 'int'),
-  \ javaapi#field(1,'JULY', 'int'),
-  \ javaapi#field(1,'AUGUST', 'int'),
-  \ javaapi#field(1,'SEPTEMBER', 'int'),
-  \ javaapi#field(1,'OCTOBER', 'int'),
-  \ javaapi#field(1,'NOVEMBER', 'int'),
-  \ javaapi#field(1,'DECEMBER', 'int'),
-  \ javaapi#field(1,'UNDECIMBER', 'int'),
-  \ javaapi#field(1,'AM', 'int'),
-  \ javaapi#field(1,'PM', 'int'),
-  \ javaapi#field(1,'ALL_STYLES', 'int'),
-  \ javaapi#field(1,'SHORT', 'int'),
-  \ javaapi#field(1,'LONG', 'int'),
-  \ javaapi#method(1,'getInstance(', ')', 'Calendar'),
-  \ javaapi#method(1,'getInstance(', 'TimeZone)', 'Calendar'),
-  \ javaapi#method(1,'getInstance(', 'Locale)', 'Calendar'),
-  \ javaapi#method(1,'getInstance(', 'TimeZone, Locale)', 'Calendar'),
-  \ javaapi#method(1,'getAvailableLocales(', ')', 'Locale[]'),
-  \ javaapi#method(0,'getTime(', ')', 'Date'),
-  \ javaapi#method(0,'setTime(', 'Date)', 'void'),
-  \ javaapi#method(0,'getTimeInMillis(', ')', 'long'),
-  \ javaapi#method(0,'setTimeInMillis(', 'long)', 'void'),
-  \ javaapi#method(0,'get(', 'int)', 'int'),
-  \ javaapi#method(0,'set(', 'int, int)', 'void'),
-  \ javaapi#method(0,'set(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'set(', 'int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'set(', 'int, int, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'clear(', 'int)', 'void'),
-  \ javaapi#method(0,'isSet(', 'int)', 'boolean'),
-  \ javaapi#method(0,'getDisplayName(', 'int, int, Locale)', 'String'),
-  \ javaapi#method(0,'getDisplayNames(', 'int, int, Locale)', 'Integer>'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'before(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'after(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'Calendar)', 'int'),
-  \ javaapi#method(0,'add(', 'int, int)', 'void'),
-  \ javaapi#method(0,'roll(', 'int, boolean)', 'void'),
-  \ javaapi#method(0,'roll(', 'int, int)', 'void'),
-  \ javaapi#method(0,'setTimeZone(', 'TimeZone)', 'void'),
-  \ javaapi#method(0,'getTimeZone(', ')', 'TimeZone'),
-  \ javaapi#method(0,'setLenient(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isLenient(', ')', 'boolean'),
-  \ javaapi#method(0,'setFirstDayOfWeek(', 'int)', 'void'),
-  \ javaapi#method(0,'getFirstDayOfWeek(', ')', 'int'),
-  \ javaapi#method(0,'setMinimalDaysInFirstWeek(', 'int)', 'void'),
-  \ javaapi#method(0,'getMinimalDaysInFirstWeek(', ')', 'int'),
-  \ javaapi#method(0,'isWeekDateSupported(', ')', 'boolean'),
-  \ javaapi#method(0,'getWeekYear(', ')', 'int'),
-  \ javaapi#method(0,'setWeekDate(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'getWeeksInWeekYear(', ')', 'int'),
-  \ javaapi#method(0,'getMinimum(', 'int)', 'int'),
-  \ javaapi#method(0,'getMaximum(', 'int)', 'int'),
-  \ javaapi#method(0,'getGreatestMinimum(', 'int)', 'int'),
-  \ javaapi#method(0,'getLeastMaximum(', 'int)', 'int'),
-  \ javaapi#method(0,'getActualMinimum(', 'int)', 'int'),
-  \ javaapi#method(0,'getActualMaximum(', 'int)', 'int'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('WeakHashMap<K,V>', '', [
-  \ javaapi#method(0,'WeakHashMap(', 'int, float)', 'public'),
-  \ javaapi#method(0,'WeakHashMap(', 'int)', 'public'),
-  \ javaapi#method(0,'WeakHashMap(', ')', 'public'),
-  \ javaapi#method(0,'WeakHashMap(', 'Map<? extends K, ? extends V>)', 'public'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'get(', 'Object)', 'V'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'put(', 'K, V)', 'V'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
-  \ javaapi#method(0,'remove(', 'Object)', 'V'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'firstKey(', ')', 'K'),
+  \ javaapi#method(0,'lastKey(', ')', 'K'),
   \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
   \ javaapi#method(0,'values(', ')', 'Collection<V>'),
   \ javaapi#method(0,'entrySet(', ')', 'V>>'),
   \ ])
 
-call javaapi#class('LinkedHashSet<E>', '', [
-  \ javaapi#method(0,'LinkedHashSet(', 'int, float)', 'public'),
-  \ javaapi#method(0,'LinkedHashSet(', 'int)', 'public'),
-  \ javaapi#method(0,'LinkedHashSet(', ')', 'public'),
-  \ javaapi#method(0,'LinkedHashSet(', 'Collection<? extends E>)', 'public'),
+call javaapi#interface('EventListener', '', [
   \ ])
 
-call javaapi#class('AbstractQueue<E>', '', [
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'remove(', ')', 'E'),
-  \ javaapi#method(0,'element(', ')', 'E'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
+call javaapi#class('Timer', '', [
+  \ javaapi#method(0,'Timer(', ')', 'public'),
+  \ javaapi#method(0,'Timer(', 'boolean)', 'public'),
+  \ javaapi#method(0,'Timer(', 'String)', 'public'),
+  \ javaapi#method(0,'Timer(', 'String, boolean)', 'public'),
+  \ javaapi#method(0,'schedule(', 'TimerTask, long)', 'void'),
+  \ javaapi#method(0,'schedule(', 'TimerTask, Date)', 'void'),
+  \ javaapi#method(0,'schedule(', 'TimerTask, long, long)', 'void'),
+  \ javaapi#method(0,'schedule(', 'TimerTask, Date, long)', 'void'),
+  \ javaapi#method(0,'scheduleAtFixedRate(', 'TimerTask, long, long)', 'void'),
+  \ javaapi#method(0,'scheduleAtFixedRate(', 'TimerTask, Date, long)', 'void'),
+  \ javaapi#method(0,'cancel(', ')', 'void'),
+  \ javaapi#method(0,'purge(', ')', 'int'),
   \ ])
 
-call javaapi#class('IllegalFormatWidthException', '', [
-  \ javaapi#method(0,'IllegalFormatWidthException(', 'int)', 'public'),
-  \ javaapi#method(0,'getWidth(', ')', 'int'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('Entry<K,V>', '', [
-  \ javaapi#method(0,'getKey(', ')', 'K'),
-  \ javaapi#method(0,'getValue(', ')', 'V'),
-  \ javaapi#method(0,'setValue(', 'V)', 'V'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('PriorityQueue<E>', '', [
-  \ javaapi#method(0,'PriorityQueue(', ')', 'public'),
-  \ javaapi#method(0,'PriorityQueue(', 'int)', 'public'),
-  \ javaapi#method(0,'PriorityQueue(', 'int, Comparator<? super E>)', 'public'),
-  \ javaapi#method(0,'PriorityQueue(', 'Collection<? extends E>)', 'public'),
-  \ javaapi#method(0,'PriorityQueue(', 'PriorityQueue<? extends E>)', 'public'),
-  \ javaapi#method(0,'PriorityQueue(', 'SortedSet<? extends E>)', 'public'),
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
-  \ javaapi#method(0,'peek(', ')', 'E'),
-  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
-  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'poll(', ')', 'E'),
-  \ javaapi#method(0,'comparator(', ')', 'E>'),
-  \ ])
-
-call javaapi#class('IllegalFormatCodePointException', '', [
-  \ javaapi#method(0,'IllegalFormatCodePointException(', 'int)', 'public'),
-  \ javaapi#method(0,'getCodePoint(', ')', 'int'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
-  \ ])
-
-call javaapi#class('AbstractList<E>', '', [
-  \ javaapi#method(0,'add(', 'E)', 'boolean'),
-  \ javaapi#method(0,'get(', 'int)', 'E'),
-  \ javaapi#method(0,'set(', 'int, E)', 'E'),
-  \ javaapi#method(0,'add(', 'int, E)', 'void'),
-  \ javaapi#method(0,'remove(', 'int)', 'E'),
-  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
-  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
-  \ javaapi#method(0,'listIterator(', ')', 'ListIterator<E>'),
-  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
-  \ javaapi#method(0,'subList(', 'int, int)', 'List<E>'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('ListResourceBundle', '', [
-  \ javaapi#method(0,'ListResourceBundle(', ')', 'public'),
-  \ javaapi#method(0,'handleGetObject(', 'String)', 'Object'),
-  \ javaapi#method(0,'getKeys(', ')', 'String>'),
-  \ ])
-
-call javaapi#class('Date', 'Date>', [
-  \ javaapi#method(0,'Date(', ')', 'public'),
-  \ javaapi#method(0,'Date(', 'long)', 'public'),
-  \ javaapi#method(0,'Date(', 'int, int, int)', 'public'),
-  \ javaapi#method(0,'Date(', 'int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'Date(', 'int, int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'Date(', 'String)', 'public'),
+call javaapi#class('SimpleTimeZone', 'TimeZone', [
+  \ javaapi#field(1,'WALL_TIME', 'int'),
+  \ javaapi#field(1,'STANDARD_TIME', 'int'),
+  \ javaapi#field(1,'UTC_TIME', 'int'),
+  \ javaapi#method(0,'SimpleTimeZone(', 'int, String)', 'public'),
+  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int)', 'public'),
+  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int, int)', 'public'),
+  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int, int, int, int)', 'public'),
+  \ javaapi#method(0,'setStartYear(', 'int)', 'void'),
+  \ javaapi#method(0,'setStartRule(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,'setStartRule(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'setStartRule(', 'int, int, int, int, boolean)', 'void'),
+  \ javaapi#method(0,'setEndRule(', 'int, int, int, int)', 'void'),
+  \ javaapi#method(0,'setEndRule(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'setEndRule(', 'int, int, int, int, boolean)', 'void'),
+  \ javaapi#method(0,'getOffset(', 'long)', 'int'),
+  \ javaapi#method(0,'getOffset(', 'int, int, int, int, int, int)', 'int'),
+  \ javaapi#method(0,'getRawOffset(', ')', 'int'),
+  \ javaapi#method(0,'setRawOffset(', 'int)', 'void'),
+  \ javaapi#method(0,'setDSTSavings(', 'int)', 'void'),
+  \ javaapi#method(0,'getDSTSavings(', ')', 'int'),
+  \ javaapi#method(0,'useDaylightTime(', ')', 'boolean'),
+  \ javaapi#method(0,'observesDaylightTime(', ')', 'boolean'),
+  \ javaapi#method(0,'inDaylightTime(', 'Date)', 'boolean'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(1,'UTC(', 'int, int, int, int, int, int)', 'long'),
-  \ javaapi#method(1,'parse(', 'String)', 'long'),
-  \ javaapi#method(0,'getYear(', ')', 'int'),
-  \ javaapi#method(0,'setYear(', 'int)', 'void'),
-  \ javaapi#method(0,'getMonth(', ')', 'int'),
-  \ javaapi#method(0,'setMonth(', 'int)', 'void'),
-  \ javaapi#method(0,'getDate(', ')', 'int'),
-  \ javaapi#method(0,'setDate(', 'int)', 'void'),
-  \ javaapi#method(0,'getDay(', ')', 'int'),
-  \ javaapi#method(0,'getHours(', ')', 'int'),
-  \ javaapi#method(0,'setHours(', 'int)', 'void'),
-  \ javaapi#method(0,'getMinutes(', ')', 'int'),
-  \ javaapi#method(0,'setMinutes(', 'int)', 'void'),
-  \ javaapi#method(0,'getSeconds(', ')', 'int'),
-  \ javaapi#method(0,'setSeconds(', 'int)', 'void'),
-  \ javaapi#method(0,'getTime(', ')', 'long'),
-  \ javaapi#method(0,'setTime(', 'long)', 'void'),
-  \ javaapi#method(0,'before(', 'Date)', 'boolean'),
-  \ javaapi#method(0,'after(', 'Date)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'compareTo(', 'Date)', 'int'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hasSameRules(', 'TimeZone)', 'boolean'),
   \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'toLocaleString(', ')', 'String'),
-  \ javaapi#method(0,'toGMTString(', ')', 'String'),
-  \ javaapi#method(0,'getTimezoneOffset(', ')', 'int'),
-  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
   \ ])
 
-call javaapi#class('AbstractSet<E>', '', [
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
-  \ ])
+call javaapi#namespace('java.util')
 
-call javaapi#class('EnumSet<E', '', [
-  \ javaapi#method(1,'noneOf(', 'Class<E>)', 'EnumSet<E>'),
-  \ javaapi#method(1,'allOf(', 'Class<E>)', 'EnumSet<E>'),
-  \ javaapi#method(1,'copyOf(', 'EnumSet<E>)', 'EnumSet<E>'),
-  \ javaapi#method(1,'copyOf(', 'Collection<E>)', 'EnumSet<E>'),
-  \ javaapi#method(1,'complementOf(', 'EnumSet<E>)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E, E)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E, E, E)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E, E, E, E)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E, E, E, E, E)', 'EnumSet<E>'),
-  \ javaapi#method(1,'of(', 'E, )', 'EnumSet<E>'),
-  \ javaapi#method(1,'range(', 'E, E)', 'EnumSet<E>'),
-  \ javaapi#method(0,'clone(', ')', 'EnumSet<E>'),
-  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
-  \ ])
-
-call javaapi#class('Hashtable<K,V>', '', [
-  \ javaapi#method(0,'Hashtable(', 'int, float)', 'public'),
-  \ javaapi#method(0,'Hashtable(', 'int)', 'public'),
-  \ javaapi#method(0,'Hashtable(', ')', 'public'),
-  \ javaapi#method(0,'Hashtable(', 'Map<? extends K, ? extends V>)', 'public'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,'keys(', ')', 'Enumeration<K>'),
-  \ javaapi#method(0,'elements(', ')', 'Enumeration<V>'),
-  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'get(', 'Object)', 'V'),
-  \ javaapi#method(0,'put(', 'K, V)', 'V'),
-  \ javaapi#method(0,'remove(', 'Object)', 'V'),
-  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'clone(', ')', 'Object'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
-  \ javaapi#method(0,'entrySet(', ')', 'V>>'),
-  \ javaapi#method(0,'values(', ')', 'Collection<V>'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-call javaapi#class('Stack<E>', '', [
-  \ javaapi#method(0,'Stack(', ')', 'public'),
-  \ javaapi#method(0,'push(', 'E)', 'E'),
-  \ javaapi#method(0,'pop(', ')', 'E'),
-  \ javaapi#method(0,'peek(', ')', 'E'),
-  \ javaapi#method(0,'empty(', ')', 'boolean'),
-  \ javaapi#method(0,'search(', 'Object)', 'int'),
-  \ ])
-
-call javaapi#class('BigDecimalLayoutForm', '', [
-  \ javaapi#field(1,'SCIENTIFIC', 'BigDecimalLayoutForm'),
-  \ javaapi#field(1,'DECIMAL_FLOAT', 'BigDecimalLayoutForm'),
-  \ javaapi#method(1,'values(', ')', 'BigDecimalLayoutForm[]'),
-  \ javaapi#method(1,'valueOf(', 'String)', 'BigDecimalLayoutForm'),
-  \ ])
-
-call javaapi#interface('Comparator<T>', '', [
-  \ javaapi#method(0,'compare(', 'T, T)', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('ConcurrentModificationException', '', [
+call javaapi#class('ConcurrentModificationException', 'RuntimeException', [
   \ javaapi#method(0,'ConcurrentModificationException(', ')', 'public'),
   \ javaapi#method(0,'ConcurrentModificationException(', 'String)', 'public'),
   \ javaapi#method(0,'ConcurrentModificationException(', 'Throwable)', 'public'),
@@ -867,7 +93,7 @@ call javaapi#class('AbstractCollection<E>', 'Collection<E>', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ArrayList<E>', '', [
+call javaapi#class('ArrayList<E>', 'AbstractList<E>', [
   \ javaapi#method(0,'ArrayList(', 'int)', 'public'),
   \ javaapi#method(0,'ArrayList(', ')', 'public'),
   \ javaapi#method(0,'ArrayList(', 'Collection<? extends E>)', 'public'),
@@ -913,7 +139,7 @@ call javaapi#interface('Observer', '', [
   \ javaapi#method(0,'update(', 'Observable, Object)', 'void'),
   \ ])
 
-call javaapi#interface('Queue<E>', '', [
+call javaapi#interface('Queue<E>', 'Collection<E>', [
   \ javaapi#method(0,'add(', 'E)', 'boolean'),
   \ javaapi#method(0,'offer(', 'E)', 'boolean'),
   \ javaapi#method(0,'remove(', ')', 'E'),
@@ -922,7 +148,7 @@ call javaapi#interface('Queue<E>', '', [
   \ javaapi#method(0,'peek(', ')', 'E'),
   \ ])
 
-call javaapi#class('NoSuchElementException', '', [
+call javaapi#class('NoSuchElementException', 'RuntimeException', [
   \ javaapi#method(0,'NoSuchElementException(', ')', 'public'),
   \ javaapi#method(0,'NoSuchElementException(', 'String)', 'public'),
   \ ])
@@ -960,7 +186,7 @@ call javaapi#class('FormattableFlags', '', [
   \ javaapi#field(1,'ALTERNATE', 'int'),
   \ ])
 
-call javaapi#class('MissingFormatArgumentException', '', [
+call javaapi#class('MissingFormatArgumentException', 'IllegalFormatException', [
   \ javaapi#method(0,'MissingFormatArgumentException(', 'String)', 'public'),
   \ javaapi#method(0,'getFormatSpecifier(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'String'),
@@ -977,7 +203,7 @@ call javaapi#class('Dictionary<K,V>', '', [
   \ javaapi#method(0,'remove(', 'Object)', 'V'),
   \ ])
 
-call javaapi#interface('List<E>', '', [
+call javaapi#interface('List<E>', 'Collection<E>', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
@@ -1005,7 +231,7 @@ call javaapi#interface('List<E>', '', [
   \ javaapi#method(0,'subList(', 'int, int)', 'List<E>'),
   \ ])
 
-call javaapi#class('TreeMap<K,V>', '', [
+call javaapi#class('TreeMap<K,V>', 'AbstractMap<K,V>', [
   \ javaapi#method(0,'TreeMap(', ')', 'public'),
   \ javaapi#method(0,'TreeMap(', 'Comparator<? super K>)', 'public'),
   \ javaapi#method(0,'TreeMap(', 'Map<? extends K, ? extends V>)', 'public'),
@@ -1048,7 +274,7 @@ call javaapi#class('TreeMap<K,V>', '', [
   \ javaapi#method(0,'tailMap(', 'K)', 'V>'),
   \ ])
 
-call javaapi#class('PropertyPermission', '', [
+call javaapi#class('PropertyPermission', 'BasicPermission', [
   \ javaapi#method(0,'PropertyPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -1063,7 +289,7 @@ call javaapi#class('TimerTask', 'Runnable', [
   \ javaapi#method(0,'scheduledExecutionTime(', ')', 'long'),
   \ ])
 
-call javaapi#class('Properties', '', [
+call javaapi#class('Properties', 'Object>', [
   \ javaapi#method(0,'Properties(', ')', 'public'),
   \ javaapi#method(0,'Properties(', 'Properties)', 'public'),
   \ javaapi#method(0,'setProperty(', 'String, String)', 'Object'),
@@ -1083,7 +309,7 @@ call javaapi#class('Properties', '', [
   \ javaapi#method(0,'list(', 'PrintWriter)', 'void'),
   \ ])
 
-call javaapi#class('AbstractSequentialList<E>', '', [
+call javaapi#class('AbstractSequentialList<E>', 'AbstractList<E>', [
   \ javaapi#method(0,'get(', 'int)', 'E'),
   \ javaapi#method(0,'set(', 'int, E)', 'E'),
   \ javaapi#method(0,'add(', 'int, E)', 'void'),
@@ -1093,7 +319,7 @@ call javaapi#class('AbstractSequentialList<E>', '', [
   \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
   \ ])
 
-call javaapi#class('EnumMap<K', '', [
+call javaapi#class('EnumMap<K', 'Enum<K>,V>', [
   \ javaapi#method(0,'EnumMap(', 'Class<K>)', 'public'),
   \ javaapi#method(0,'EnumMap(', 'EnumMap<K, ? extends V>)', 'public'),
   \ javaapi#method(0,'EnumMap(', 'Map<K, ? extends V>)', 'public'),
@@ -1115,7 +341,7 @@ call javaapi#class('EnumMap<K', '', [
   \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#interface('Set<E>', '', [
+call javaapi#interface('Set<E>', 'Collection<E>', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
@@ -1133,12 +359,12 @@ call javaapi#interface('Set<E>', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('TooManyListenersException', '', [
+call javaapi#class('TooManyListenersException', 'Exception', [
   \ javaapi#method(0,'TooManyListenersException(', ')', 'public'),
   \ javaapi#method(0,'TooManyListenersException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('DuplicateFormatFlagsException', '', [
+call javaapi#class('DuplicateFormatFlagsException', 'IllegalFormatException', [
   \ javaapi#method(0,'DuplicateFormatFlagsException(', 'String)', 'public'),
   \ javaapi#method(0,'getFlags(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'String'),
@@ -1162,7 +388,7 @@ call javaapi#class('Control', '', [
   \ javaapi#method(0,'toResourceName(', 'String, String)', 'String'),
   \ ])
 
-call javaapi#interface('NavigableSet<E>', '', [
+call javaapi#interface('NavigableSet<E>', 'SortedSet<E>', [
   \ javaapi#method(0,'lower(', 'E)', 'E'),
   \ javaapi#method(0,'floor(', 'E)', 'E'),
   \ javaapi#method(0,'ceiling(', 'E)', 'E'),
@@ -1180,7 +406,7 @@ call javaapi#interface('NavigableSet<E>', '', [
   \ javaapi#method(0,'tailSet(', 'E)', 'SortedSet<E>'),
   \ ])
 
-call javaapi#class('MissingFormatWidthException', '', [
+call javaapi#class('MissingFormatWidthException', 'IllegalFormatException', [
   \ javaapi#method(0,'MissingFormatWidthException(', 'String)', 'public'),
   \ javaapi#method(0,'getFormatSpecifier(', ')', 'String'),
   \ javaapi#method(0,'getMessage(', ')', 'String'),
@@ -1192,7 +418,7 @@ call javaapi#class('EventObject', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('IdentityHashMap<K,V>', '', [
+call javaapi#class('IdentityHashMap<K,V>', 'AbstractMap<K,V>', [
   \ javaapi#method(0,'IdentityHashMap(', ')', 'public'),
   \ javaapi#method(0,'IdentityHashMap(', 'int)', 'public'),
   \ javaapi#method(0,'IdentityHashMap(', 'Map<? extends K, ? extends V>)', 'public'),
@@ -1227,7 +453,7 @@ call javaapi#class('Currency', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('GregorianCalendar', '', [
+call javaapi#class('GregorianCalendar', 'Calendar', [
   \ javaapi#field(1,'BC', 'int'),
   \ javaapi#field(1,'AD', 'int'),
   \ javaapi#method(0,'GregorianCalendar(', ')', 'public'),
@@ -1303,7 +529,7 @@ call javaapi#class('BitSet', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('HashMap<K,V>', '', [
+call javaapi#class('HashMap<K,V>', 'AbstractMap<K,V>', [
   \ javaapi#method(0,'HashMap(', 'int, float)', 'public'),
   \ javaapi#method(0,'HashMap(', 'int)', 'public'),
   \ javaapi#method(0,'HashMap(', ')', 'public'),
@@ -1406,12 +632,12 @@ call javaapi#class('Random', 'Serializable', [
   \ javaapi#method(0,'nextGaussian(', ')', 'double'),
   \ ])
 
-call javaapi#class('InputMismatchException', '', [
+call javaapi#class('InputMismatchException', 'NoSuchElementException', [
   \ javaapi#method(0,'InputMismatchException(', ')', 'public'),
   \ javaapi#method(0,'InputMismatchException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('LinkedHashMap<K,V>', '', [
+call javaapi#class('LinkedHashMap<K,V>', 'HashMap<K,V>', [
   \ javaapi#method(0,'LinkedHashMap(', 'int, float)', 'public'),
   \ javaapi#method(0,'LinkedHashMap(', 'int)', 'public'),
   \ javaapi#method(0,'LinkedHashMap(', ')', 'public'),
@@ -1422,7 +648,7 @@ call javaapi#class('LinkedHashMap<K,V>', '', [
   \ javaapi#method(0,'clear(', ')', 'void'),
   \ ])
 
-call javaapi#class('IllegalFormatConversionException', '', [
+call javaapi#class('IllegalFormatConversionException', 'IllegalFormatException', [
   \ javaapi#method(0,'IllegalFormatConversionException(', 'char, Class<?>)', 'public'),
   \ javaapi#method(0,'getConversion(', ')', 'char'),
   \ javaapi#method(0,'getArgumentClass(', ')', 'Class<?>'),
@@ -1618,71 +844,850 @@ call javaapi#class('Locale', 'Serializable', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
+call javaapi#namespace('java.util')
 
-call javaapi#class('IllegalFormatFlagsException', '', [
-  \ javaapi#method(0,'IllegalFormatFlagsException(', 'String)', 'public'),
-  \ javaapi#method(0,'getFlags(', ')', 'String'),
-  \ javaapi#method(0,'getMessage(', ')', 'String'),
+call javaapi#class('ServiceLoader<S>', 'Iterable<S>', [
+  \ javaapi#method(0,'reload(', ')', 'void'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<S>'),
+  \ javaapi#method(1,'load(', 'Class<S>, ClassLoader)', 'ServiceLoader<S>'),
+  \ javaapi#method(1,'load(', 'Class<S>)', 'ServiceLoader<S>'),
+  \ javaapi#method(1,'loadInstalled(', 'Class<S>)', 'ServiceLoader<S>'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('SortedMap<K,V>', '', [
-  \ javaapi#method(0,'comparator(', ')', 'K>'),
-  \ javaapi#method(0,'subMap(', 'K, K)', 'V>'),
-  \ javaapi#method(0,'headMap(', 'K)', 'V>'),
-  \ javaapi#method(0,'tailMap(', 'K)', 'V>'),
-  \ javaapi#method(0,'firstKey(', ')', 'K'),
-  \ javaapi#method(0,'lastKey(', ')', 'K'),
+call javaapi#class('Collections', '', [
+  \ javaapi#field(1,'EMPTY_SET', 'Set'),
+  \ javaapi#field(1,'EMPTY_LIST', 'List'),
+  \ javaapi#field(1,'EMPTY_MAP', 'Map'),
+  \ javaapi#method(1,'sort(', 'List<T>)', 'void'),
+  \ javaapi#method(1,'sort(', 'List<T>, Comparator<? super T>)', 'void'),
+  \ javaapi#method(1,'binarySearch(', 'List<? extends Comparable<? super T>>, T)', 'int'),
+  \ javaapi#method(1,'binarySearch(', 'List<? extends T>, T, Comparator<? super T>)', 'int'),
+  \ javaapi#method(1,'reverse(', 'List<?>)', 'void'),
+  \ javaapi#method(1,'shuffle(', 'List<?>)', 'void'),
+  \ javaapi#method(1,'shuffle(', 'List<?>, Random)', 'void'),
+  \ javaapi#method(1,'swap(', 'List<?>, int, int)', 'void'),
+  \ javaapi#method(1,'fill(', 'List<? super T>, T)', 'void'),
+  \ javaapi#method(1,'copy(', 'List<? super T>, List<? extends T>)', 'void'),
+  \ javaapi#method(1,'min(', 'Collection<? extends T>)', 'T'),
+  \ javaapi#method(1,'min(', 'Collection<? extends T>, Comparator<? super T>)', 'T'),
+  \ javaapi#method(1,'max(', 'Collection<? extends T>)', 'T'),
+  \ javaapi#method(1,'max(', 'Collection<? extends T>, Comparator<? super T>)', 'T'),
+  \ javaapi#method(1,'rotate(', 'List<?>, int)', 'void'),
+  \ javaapi#method(1,'replaceAll(', 'List<T>, T, T)', 'boolean'),
+  \ javaapi#method(1,'indexOfSubList(', 'List<?>, List<?>)', 'int'),
+  \ javaapi#method(1,'lastIndexOfSubList(', 'List<?>, List<?>)', 'int'),
+  \ javaapi#method(1,'unmodifiableCollection(', 'Collection<? extends T>)', 'Collection<T>'),
+  \ javaapi#method(1,'unmodifiableSet(', 'Set<? extends T>)', 'Set<T>'),
+  \ javaapi#method(1,'unmodifiableSortedSet(', 'SortedSet<T>)', 'SortedSet<T>'),
+  \ javaapi#method(1,'unmodifiableList(', 'List<? extends T>)', 'List<T>'),
+  \ javaapi#method(1,'unmodifiableMap(', 'Map<? extends K, ? extends V>)', 'V>'),
+  \ javaapi#method(1,'unmodifiableSortedMap(', 'SortedMap<K, ? extends V>)', 'V>'),
+  \ javaapi#method(1,'synchronizedCollection(', 'Collection<T>)', 'Collection<T>'),
+  \ javaapi#method(1,'synchronizedSet(', 'Set<T>)', 'Set<T>'),
+  \ javaapi#method(1,'synchronizedSortedSet(', 'SortedSet<T>)', 'SortedSet<T>'),
+  \ javaapi#method(1,'synchronizedList(', 'List<T>)', 'List<T>'),
+  \ javaapi#method(1,'synchronizedMap(', 'Map<K, V>)', 'V>'),
+  \ javaapi#method(1,'synchronizedSortedMap(', 'SortedMap<K, V>)', 'V>'),
+  \ javaapi#method(1,'checkedCollection(', 'Collection<E>, Class<E>)', 'Collection<E>'),
+  \ javaapi#method(1,'checkedSet(', 'Set<E>, Class<E>)', 'Set<E>'),
+  \ javaapi#method(1,'checkedSortedSet(', 'SortedSet<E>, Class<E>)', 'SortedSet<E>'),
+  \ javaapi#method(1,'checkedList(', 'List<E>, Class<E>)', 'List<E>'),
+  \ javaapi#method(1,'checkedMap(', 'Map<K, V>, Class<K>, Class<V>)', 'V>'),
+  \ javaapi#method(1,'checkedSortedMap(', 'SortedMap<K, V>, Class<K>, Class<V>)', 'V>'),
+  \ javaapi#method(1,'emptyIterator(', ')', 'Iterator<T>'),
+  \ javaapi#method(1,'emptyListIterator(', ')', 'ListIterator<T>'),
+  \ javaapi#method(1,'emptyEnumeration(', ')', 'Enumeration<T>'),
+  \ javaapi#method(1,'emptySet(', ')', 'Set<T>'),
+  \ javaapi#method(1,'emptyList(', ')', 'List<T>'),
+  \ javaapi#method(1,'emptyMap(', ')', 'V>'),
+  \ javaapi#method(1,'singleton(', 'T)', 'Set<T>'),
+  \ javaapi#method(1,'singletonList(', 'T)', 'List<T>'),
+  \ javaapi#method(1,'singletonMap(', 'K, V)', 'V>'),
+  \ javaapi#method(1,'nCopies(', 'int, T)', 'List<T>'),
+  \ javaapi#method(1,'reverseOrder(', ')', 'Comparator<T>'),
+  \ javaapi#method(1,'reverseOrder(', 'Comparator<T>)', 'Comparator<T>'),
+  \ javaapi#method(1,'enumeration(', 'Collection<T>)', 'Enumeration<T>'),
+  \ javaapi#method(1,'list(', 'Enumeration<T>)', 'ArrayList<T>'),
+  \ javaapi#method(1,'frequency(', 'Collection<?>, Object)', 'int'),
+  \ javaapi#method(1,'disjoint(', 'Collection<?>, Collection<?>)', 'boolean'),
+  \ javaapi#method(1,'addAll(', 'Collection<? super T>, )', 'boolean'),
+  \ javaapi#method(1,'newSetFromMap(', 'Map<E, Boolean>)', 'Set<E>'),
+  \ javaapi#method(1,'asLifoQueue(', 'Deque<T>)', 'Queue<T>'),
+  \ ])
+
+call javaapi#class('PropertyResourceBundle', 'ResourceBundle', [
+  \ javaapi#method(0,'PropertyResourceBundle(', 'InputStream) throws IOException', 'public'),
+  \ javaapi#method(0,'PropertyResourceBundle(', 'Reader) throws IOException', 'public'),
+  \ javaapi#method(0,'handleGetObject(', 'String)', 'Object'),
+  \ javaapi#method(0,'getKeys(', ')', 'String>'),
+  \ ])
+
+call javaapi#class('ResourceBundle', '', [
+  \ javaapi#method(0,'ResourceBundle(', ')', 'public'),
+  \ javaapi#method(0,'getString(', 'String)', 'String'),
+  \ javaapi#method(0,'getStringArray(', 'String)', 'String[]'),
+  \ javaapi#method(0,'getObject(', 'String)', 'Object'),
+  \ javaapi#method(0,'getLocale(', ')', 'Locale'),
+  \ javaapi#method(1,'getBundle(', 'String)', 'ResourceBundle'),
+  \ javaapi#method(1,'getBundle(', 'String, Control)', 'ResourceBundle'),
+  \ javaapi#method(1,'getBundle(', 'String, Locale)', 'ResourceBundle'),
+  \ javaapi#method(1,'getBundle(', 'String, Locale, Control)', 'ResourceBundle'),
+  \ javaapi#method(1,'getBundle(', 'String, Locale, ClassLoader)', 'ResourceBundle'),
+  \ javaapi#method(1,'getBundle(', 'String, Locale, ClassLoader, Control)', 'ResourceBundle'),
+  \ javaapi#method(1,'clearCache(', ')', 'void'),
+  \ javaapi#method(1,'clearCache(', 'ClassLoader)', 'void'),
+  \ javaapi#method(0,'getKeys(', ')', 'String>'),
+  \ javaapi#method(0,'containsKey(', 'String)', 'boolean'),
+  \ javaapi#method(0,'keySet(', ')', 'String>'),
+  \ ])
+
+call javaapi#class('Calendar', 'Calendar>', [
+  \ javaapi#field(1,'ERA', 'int'),
+  \ javaapi#field(1,'YEAR', 'int'),
+  \ javaapi#field(1,'MONTH', 'int'),
+  \ javaapi#field(1,'WEEK_OF_YEAR', 'int'),
+  \ javaapi#field(1,'WEEK_OF_MONTH', 'int'),
+  \ javaapi#field(1,'DATE', 'int'),
+  \ javaapi#field(1,'DAY_OF_MONTH', 'int'),
+  \ javaapi#field(1,'DAY_OF_YEAR', 'int'),
+  \ javaapi#field(1,'DAY_OF_WEEK', 'int'),
+  \ javaapi#field(1,'DAY_OF_WEEK_IN_MONTH', 'int'),
+  \ javaapi#field(1,'AM_PM', 'int'),
+  \ javaapi#field(1,'HOUR', 'int'),
+  \ javaapi#field(1,'HOUR_OF_DAY', 'int'),
+  \ javaapi#field(1,'MINUTE', 'int'),
+  \ javaapi#field(1,'SECOND', 'int'),
+  \ javaapi#field(1,'MILLISECOND', 'int'),
+  \ javaapi#field(1,'ZONE_OFFSET', 'int'),
+  \ javaapi#field(1,'DST_OFFSET', 'int'),
+  \ javaapi#field(1,'FIELD_COUNT', 'int'),
+  \ javaapi#field(1,'SUNDAY', 'int'),
+  \ javaapi#field(1,'MONDAY', 'int'),
+  \ javaapi#field(1,'TUESDAY', 'int'),
+  \ javaapi#field(1,'WEDNESDAY', 'int'),
+  \ javaapi#field(1,'THURSDAY', 'int'),
+  \ javaapi#field(1,'FRIDAY', 'int'),
+  \ javaapi#field(1,'SATURDAY', 'int'),
+  \ javaapi#field(1,'JANUARY', 'int'),
+  \ javaapi#field(1,'FEBRUARY', 'int'),
+  \ javaapi#field(1,'MARCH', 'int'),
+  \ javaapi#field(1,'APRIL', 'int'),
+  \ javaapi#field(1,'MAY', 'int'),
+  \ javaapi#field(1,'JUNE', 'int'),
+  \ javaapi#field(1,'JULY', 'int'),
+  \ javaapi#field(1,'AUGUST', 'int'),
+  \ javaapi#field(1,'SEPTEMBER', 'int'),
+  \ javaapi#field(1,'OCTOBER', 'int'),
+  \ javaapi#field(1,'NOVEMBER', 'int'),
+  \ javaapi#field(1,'DECEMBER', 'int'),
+  \ javaapi#field(1,'UNDECIMBER', 'int'),
+  \ javaapi#field(1,'AM', 'int'),
+  \ javaapi#field(1,'PM', 'int'),
+  \ javaapi#field(1,'ALL_STYLES', 'int'),
+  \ javaapi#field(1,'SHORT', 'int'),
+  \ javaapi#field(1,'LONG', 'int'),
+  \ javaapi#method(1,'getInstance(', ')', 'Calendar'),
+  \ javaapi#method(1,'getInstance(', 'TimeZone)', 'Calendar'),
+  \ javaapi#method(1,'getInstance(', 'Locale)', 'Calendar'),
+  \ javaapi#method(1,'getInstance(', 'TimeZone, Locale)', 'Calendar'),
+  \ javaapi#method(1,'getAvailableLocales(', ')', 'Locale[]'),
+  \ javaapi#method(0,'getTime(', ')', 'Date'),
+  \ javaapi#method(0,'setTime(', 'Date)', 'void'),
+  \ javaapi#method(0,'getTimeInMillis(', ')', 'long'),
+  \ javaapi#method(0,'setTimeInMillis(', 'long)', 'void'),
+  \ javaapi#method(0,'get(', 'int)', 'int'),
+  \ javaapi#method(0,'set(', 'int, int)', 'void'),
+  \ javaapi#method(0,'set(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'set(', 'int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'set(', 'int, int, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'clear(', 'int)', 'void'),
+  \ javaapi#method(0,'isSet(', 'int)', 'boolean'),
+  \ javaapi#method(0,'getDisplayName(', 'int, int, Locale)', 'String'),
+  \ javaapi#method(0,'getDisplayNames(', 'int, int, Locale)', 'Integer>'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'before(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'after(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'compareTo(', 'Calendar)', 'int'),
+  \ javaapi#method(0,'add(', 'int, int)', 'void'),
+  \ javaapi#method(0,'roll(', 'int, boolean)', 'void'),
+  \ javaapi#method(0,'roll(', 'int, int)', 'void'),
+  \ javaapi#method(0,'setTimeZone(', 'TimeZone)', 'void'),
+  \ javaapi#method(0,'getTimeZone(', ')', 'TimeZone'),
+  \ javaapi#method(0,'setLenient(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isLenient(', ')', 'boolean'),
+  \ javaapi#method(0,'setFirstDayOfWeek(', 'int)', 'void'),
+  \ javaapi#method(0,'getFirstDayOfWeek(', ')', 'int'),
+  \ javaapi#method(0,'setMinimalDaysInFirstWeek(', 'int)', 'void'),
+  \ javaapi#method(0,'getMinimalDaysInFirstWeek(', ')', 'int'),
+  \ javaapi#method(0,'isWeekDateSupported(', ')', 'boolean'),
+  \ javaapi#method(0,'getWeekYear(', ')', 'int'),
+  \ javaapi#method(0,'setWeekDate(', 'int, int, int)', 'void'),
+  \ javaapi#method(0,'getWeeksInWeekYear(', ')', 'int'),
+  \ javaapi#method(0,'getMinimum(', 'int)', 'int'),
+  \ javaapi#method(0,'getMaximum(', 'int)', 'int'),
+  \ javaapi#method(0,'getGreatestMinimum(', 'int)', 'int'),
+  \ javaapi#method(0,'getLeastMaximum(', 'int)', 'int'),
+  \ javaapi#method(0,'getActualMinimum(', 'int)', 'int'),
+  \ javaapi#method(0,'getActualMaximum(', 'int)', 'int'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('WeakHashMap<K,V>', 'AbstractMap<K,V>', [
+  \ javaapi#method(0,'WeakHashMap(', 'int, float)', 'public'),
+  \ javaapi#method(0,'WeakHashMap(', 'int)', 'public'),
+  \ javaapi#method(0,'WeakHashMap(', ')', 'public'),
+  \ javaapi#method(0,'WeakHashMap(', 'Map<? extends K, ? extends V>)', 'public'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'get(', 'Object)', 'V'),
+  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'put(', 'K, V)', 'V'),
+  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
+  \ javaapi#method(0,'remove(', 'Object)', 'V'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
   \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
   \ javaapi#method(0,'values(', ')', 'Collection<V>'),
   \ javaapi#method(0,'entrySet(', ')', 'V>>'),
   \ ])
 
-call javaapi#interface('EventListener', '', [
+call javaapi#class('LinkedHashSet<E>', 'HashSet<E>', [
+  \ javaapi#method(0,'LinkedHashSet(', 'int, float)', 'public'),
+  \ javaapi#method(0,'LinkedHashSet(', 'int)', 'public'),
+  \ javaapi#method(0,'LinkedHashSet(', ')', 'public'),
+  \ javaapi#method(0,'LinkedHashSet(', 'Collection<? extends E>)', 'public'),
   \ ])
 
-call javaapi#class('Timer', '', [
-  \ javaapi#method(0,'Timer(', ')', 'public'),
-  \ javaapi#method(0,'Timer(', 'boolean)', 'public'),
-  \ javaapi#method(0,'Timer(', 'String)', 'public'),
-  \ javaapi#method(0,'Timer(', 'String, boolean)', 'public'),
-  \ javaapi#method(0,'schedule(', 'TimerTask, long)', 'void'),
-  \ javaapi#method(0,'schedule(', 'TimerTask, Date)', 'void'),
-  \ javaapi#method(0,'schedule(', 'TimerTask, long, long)', 'void'),
-  \ javaapi#method(0,'schedule(', 'TimerTask, Date, long)', 'void'),
-  \ javaapi#method(0,'scheduleAtFixedRate(', 'TimerTask, long, long)', 'void'),
-  \ javaapi#method(0,'scheduleAtFixedRate(', 'TimerTask, Date, long)', 'void'),
-  \ javaapi#method(0,'cancel(', ')', 'void'),
-  \ javaapi#method(0,'purge(', ')', 'int'),
+call javaapi#class('AbstractQueue<E>', 'AbstractCollection<E>', [
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', ')', 'E'),
+  \ javaapi#method(0,'element(', ')', 'E'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
   \ ])
 
-call javaapi#class('SimpleTimeZone', '', [
-  \ javaapi#field(1,'WALL_TIME', 'int'),
-  \ javaapi#field(1,'STANDARD_TIME', 'int'),
-  \ javaapi#field(1,'UTC_TIME', 'int'),
-  \ javaapi#method(0,'SimpleTimeZone(', 'int, String)', 'public'),
-  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'SimpleTimeZone(', 'int, String, int, int, int, int, int, int, int, int, int, int, int)', 'public'),
-  \ javaapi#method(0,'setStartYear(', 'int)', 'void'),
-  \ javaapi#method(0,'setStartRule(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'setStartRule(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'setStartRule(', 'int, int, int, int, boolean)', 'void'),
-  \ javaapi#method(0,'setEndRule(', 'int, int, int, int)', 'void'),
-  \ javaapi#method(0,'setEndRule(', 'int, int, int)', 'void'),
-  \ javaapi#method(0,'setEndRule(', 'int, int, int, int, boolean)', 'void'),
-  \ javaapi#method(0,'getOffset(', 'long)', 'int'),
-  \ javaapi#method(0,'getOffset(', 'int, int, int, int, int, int)', 'int'),
-  \ javaapi#method(0,'getRawOffset(', ')', 'int'),
-  \ javaapi#method(0,'setRawOffset(', 'int)', 'void'),
-  \ javaapi#method(0,'setDSTSavings(', 'int)', 'void'),
-  \ javaapi#method(0,'getDSTSavings(', ')', 'int'),
-  \ javaapi#method(0,'useDaylightTime(', ')', 'boolean'),
-  \ javaapi#method(0,'observesDaylightTime(', ')', 'boolean'),
-  \ javaapi#method(0,'inDaylightTime(', 'Date)', 'boolean'),
+call javaapi#class('IllegalFormatWidthException', 'IllegalFormatException', [
+  \ javaapi#method(0,'IllegalFormatWidthException(', 'int)', 'public'),
+  \ javaapi#method(0,'getWidth(', ')', 'int'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('Entry<K,V>', '', [
+  \ javaapi#method(0,'getKey(', ')', 'K'),
+  \ javaapi#method(0,'getValue(', ')', 'V'),
+  \ javaapi#method(0,'setValue(', 'V)', 'V'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('PriorityQueue<E>', 'AbstractQueue<E>', [
+  \ javaapi#method(0,'PriorityQueue(', ')', 'public'),
+  \ javaapi#method(0,'PriorityQueue(', 'int)', 'public'),
+  \ javaapi#method(0,'PriorityQueue(', 'int, Comparator<? super E>)', 'public'),
+  \ javaapi#method(0,'PriorityQueue(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'PriorityQueue(', 'PriorityQueue<? extends E>)', 'public'),
+  \ javaapi#method(0,'PriorityQueue(', 'SortedSet<? extends E>)', 'public'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
+  \ javaapi#method(0,'peek(', ')', 'E'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'poll(', ')', 'E'),
+  \ javaapi#method(0,'comparator(', ')', 'E>'),
+  \ ])
+
+call javaapi#class('IllegalFormatCodePointException', 'IllegalFormatException', [
+  \ javaapi#method(0,'IllegalFormatCodePointException(', 'int)', 'public'),
+  \ javaapi#method(0,'getCodePoint(', ')', 'int'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#class('AbstractList<E>', 'AbstractCollection<E>', [
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'get(', 'int)', 'E'),
+  \ javaapi#method(0,'set(', 'int, E)', 'E'),
+  \ javaapi#method(0,'add(', 'int, E)', 'void'),
+  \ javaapi#method(0,'remove(', 'int)', 'E'),
+  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'listIterator(', ')', 'ListIterator<E>'),
+  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
+  \ javaapi#method(0,'subList(', 'int, int)', 'List<E>'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('ListResourceBundle', 'ResourceBundle', [
+  \ javaapi#method(0,'ListResourceBundle(', ')', 'public'),
+  \ javaapi#method(0,'handleGetObject(', 'String)', 'Object'),
+  \ javaapi#method(0,'getKeys(', ')', 'String>'),
+  \ ])
+
+call javaapi#class('Date', 'Date>', [
+  \ javaapi#method(0,'Date(', ')', 'public'),
+  \ javaapi#method(0,'Date(', 'long)', 'public'),
+  \ javaapi#method(0,'Date(', 'int, int, int)', 'public'),
+  \ javaapi#method(0,'Date(', 'int, int, int, int, int)', 'public'),
+  \ javaapi#method(0,'Date(', 'int, int, int, int, int, int)', 'public'),
+  \ javaapi#method(0,'Date(', 'String)', 'public'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(1,'UTC(', 'int, int, int, int, int, int)', 'long'),
+  \ javaapi#method(1,'parse(', 'String)', 'long'),
+  \ javaapi#method(0,'getYear(', ')', 'int'),
+  \ javaapi#method(0,'setYear(', 'int)', 'void'),
+  \ javaapi#method(0,'getMonth(', ')', 'int'),
+  \ javaapi#method(0,'setMonth(', 'int)', 'void'),
+  \ javaapi#method(0,'getDate(', ')', 'int'),
+  \ javaapi#method(0,'setDate(', 'int)', 'void'),
+  \ javaapi#method(0,'getDay(', ')', 'int'),
+  \ javaapi#method(0,'getHours(', ')', 'int'),
+  \ javaapi#method(0,'setHours(', 'int)', 'void'),
+  \ javaapi#method(0,'getMinutes(', ')', 'int'),
+  \ javaapi#method(0,'setMinutes(', 'int)', 'void'),
+  \ javaapi#method(0,'getSeconds(', ')', 'int'),
+  \ javaapi#method(0,'setSeconds(', 'int)', 'void'),
+  \ javaapi#method(0,'getTime(', ')', 'long'),
+  \ javaapi#method(0,'setTime(', 'long)', 'void'),
+  \ javaapi#method(0,'before(', 'Date)', 'boolean'),
+  \ javaapi#method(0,'after(', 'Date)', 'boolean'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'compareTo(', 'Date)', 'int'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'toLocaleString(', ')', 'String'),
+  \ javaapi#method(0,'toGMTString(', ')', 'String'),
+  \ javaapi#method(0,'getTimezoneOffset(', ')', 'int'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('AbstractSet<E>', 'AbstractCollection<E>', [
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
+  \ ])
+
+call javaapi#class('EnumSet<E', 'Enum<E>>', [
+  \ javaapi#method(1,'noneOf(', 'Class<E>)', 'EnumSet<E>'),
+  \ javaapi#method(1,'allOf(', 'Class<E>)', 'EnumSet<E>'),
+  \ javaapi#method(1,'copyOf(', 'EnumSet<E>)', 'EnumSet<E>'),
+  \ javaapi#method(1,'copyOf(', 'Collection<E>)', 'EnumSet<E>'),
+  \ javaapi#method(1,'complementOf(', 'EnumSet<E>)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E, E)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E, E, E)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E, E, E, E)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E, E, E, E, E)', 'EnumSet<E>'),
+  \ javaapi#method(1,'of(', 'E, )', 'EnumSet<E>'),
+  \ javaapi#method(1,'range(', 'E, E)', 'EnumSet<E>'),
+  \ javaapi#method(0,'clone(', ')', 'EnumSet<E>'),
+  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
+  \ ])
+
+call javaapi#class('Hashtable<K,V>', 'Dictionary<K,V>', [
+  \ javaapi#method(0,'Hashtable(', 'int, float)', 'public'),
+  \ javaapi#method(0,'Hashtable(', 'int)', 'public'),
+  \ javaapi#method(0,'Hashtable(', ')', 'public'),
+  \ javaapi#method(0,'Hashtable(', 'Map<? extends K, ? extends V>)', 'public'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'keys(', ')', 'Enumeration<K>'),
+  \ javaapi#method(0,'elements(', ')', 'Enumeration<V>'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'get(', 'Object)', 'V'),
+  \ javaapi#method(0,'put(', 'K, V)', 'V'),
+  \ javaapi#method(0,'remove(', 'Object)', 'V'),
+  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
+  \ javaapi#method(0,'entrySet(', ')', 'V>>'),
+  \ javaapi#method(0,'values(', ')', 'Collection<V>'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('Stack<E>', 'Vector<E>', [
+  \ javaapi#method(0,'Stack(', ')', 'public'),
+  \ javaapi#method(0,'push(', 'E)', 'E'),
+  \ javaapi#method(0,'pop(', ')', 'E'),
+  \ javaapi#method(0,'peek(', ')', 'E'),
+  \ javaapi#method(0,'empty(', ')', 'boolean'),
+  \ javaapi#method(0,'search(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('BigDecimalLayoutForm', 'BigDecimalLayoutForm>', [
+  \ javaapi#field(1,'SCIENTIFIC', 'BigDecimalLayoutForm'),
+  \ javaapi#field(1,'DECIMAL_FLOAT', 'BigDecimalLayoutForm'),
+  \ javaapi#method(1,'values(', ')', 'BigDecimalLayoutForm[]'),
+  \ javaapi#method(1,'valueOf(', 'String)', 'BigDecimalLayoutForm'),
+  \ ])
+
+call javaapi#interface('Comparator<T>', '', [
+  \ javaapi#method(0,'compare(', 'T, T)', 'int'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('java.util')
+
+call javaapi#class('InvalidPropertiesFormatException', 'IOException', [
+  \ javaapi#method(0,'InvalidPropertiesFormatException(', 'Throwable)', 'public'),
+  \ javaapi#method(0,'InvalidPropertiesFormatException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('FormatFlagsConversionMismatchException', 'IllegalFormatException', [
+  \ javaapi#method(0,'FormatFlagsConversionMismatchException(', 'String, char)', 'public'),
+  \ javaapi#method(0,'getFlags(', ')', 'String'),
+  \ javaapi#method(0,'getConversion(', ')', 'char'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#class('MissingResourceException', 'RuntimeException', [
+  \ javaapi#method(0,'MissingResourceException(', 'String, String, String)', 'public'),
+  \ javaapi#method(0,'getClassName(', ')', 'String'),
+  \ javaapi#method(0,'getKey(', ')', 'String'),
+  \ ])
+
+call javaapi#class('LinkedList<E>', 'AbstractSequentialList<E>', [
+  \ javaapi#method(0,'LinkedList(', ')', 'public'),
+  \ javaapi#method(0,'LinkedList(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'getFirst(', ')', 'E'),
+  \ javaapi#method(0,'getLast(', ')', 'E'),
+  \ javaapi#method(0,'removeFirst(', ')', 'E'),
+  \ javaapi#method(0,'removeLast(', ')', 'E'),
+  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
+  \ javaapi#method(0,'addLast(', 'E)', 'void'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'get(', 'int)', 'E'),
+  \ javaapi#method(0,'set(', 'int, E)', 'E'),
+  \ javaapi#method(0,'add(', 'int, E)', 'void'),
+  \ javaapi#method(0,'remove(', 'int)', 'E'),
+  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'peek(', ')', 'E'),
+  \ javaapi#method(0,'element(', ')', 'E'),
+  \ javaapi#method(0,'poll(', ')', 'E'),
+  \ javaapi#method(0,'remove(', ')', 'E'),
+  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
+  \ javaapi#method(0,'peekFirst(', ')', 'E'),
+  \ javaapi#method(0,'peekLast(', ')', 'E'),
+  \ javaapi#method(0,'pollFirst(', ')', 'E'),
+  \ javaapi#method(0,'pollLast(', ')', 'E'),
+  \ javaapi#method(0,'push(', 'E)', 'void'),
+  \ javaapi#method(0,'pop(', ')', 'E'),
+  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
+  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
+  \ ])
+
+call javaapi#class('StringTokenizer', 'Object>', [
+  \ javaapi#method(0,'StringTokenizer(', 'String, String, boolean)', 'public'),
+  \ javaapi#method(0,'StringTokenizer(', 'String, String)', 'public'),
+  \ javaapi#method(0,'StringTokenizer(', 'String)', 'public'),
+  \ javaapi#method(0,'hasMoreTokens(', ')', 'boolean'),
+  \ javaapi#method(0,'nextToken(', ')', 'String'),
+  \ javaapi#method(0,'nextToken(', 'String)', 'String'),
+  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
+  \ javaapi#method(0,'nextElement(', ')', 'Object'),
+  \ javaapi#method(0,'countTokens(', ')', 'int'),
+  \ ])
+
+call javaapi#interface('RandomAccess', '', [
+  \ ])
+
+call javaapi#class('Vector<E>', 'AbstractList<E>', [
+  \ javaapi#method(0,'Vector(', 'int, int)', 'public'),
+  \ javaapi#method(0,'Vector(', 'int)', 'public'),
+  \ javaapi#method(0,'Vector(', ')', 'public'),
+  \ javaapi#method(0,'Vector(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'copyInto(', 'Object[])', 'void'),
+  \ javaapi#method(0,'trimToSize(', ')', 'void'),
+  \ javaapi#method(0,'ensureCapacity(', 'int)', 'void'),
+  \ javaapi#method(0,'setSize(', 'int)', 'void'),
+  \ javaapi#method(0,'capacity(', ')', 'int'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'elements(', ')', 'Enumeration<E>'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'indexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'indexOf(', 'Object, int)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'Object)', 'int'),
+  \ javaapi#method(0,'lastIndexOf(', 'Object, int)', 'int'),
+  \ javaapi#method(0,'elementAt(', 'int)', 'E'),
+  \ javaapi#method(0,'firstElement(', ')', 'E'),
+  \ javaapi#method(0,'lastElement(', ')', 'E'),
+  \ javaapi#method(0,'setElementAt(', 'E, int)', 'void'),
+  \ javaapi#method(0,'removeElementAt(', 'int)', 'void'),
+  \ javaapi#method(0,'insertElementAt(', 'E, int)', 'void'),
+  \ javaapi#method(0,'addElement(', 'E)', 'void'),
+  \ javaapi#method(0,'removeElement(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'removeAllElements(', ')', 'void'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,'get(', 'int)', 'E'),
+  \ javaapi#method(0,'set(', 'int, E)', 'E'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'add(', 'int, E)', 'void'),
+  \ javaapi#method(0,'remove(', 'int)', 'E'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'containsAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'retainAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'int, Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'subList(', 'int, int)', 'List<E>'),
+  \ javaapi#method(0,'listIterator(', 'int)', 'ListIterator<E>'),
+  \ javaapi#method(0,'listIterator(', ')', 'ListIterator<E>'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ ])
+
+call javaapi#namespace('java.util')
+
+call javaapi#class('HashSet<E>', 'AbstractSet<E>', [
+  \ javaapi#method(0,'HashSet(', ')', 'public'),
+  \ javaapi#method(0,'HashSet(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'HashSet(', 'int, float)', 'public'),
+  \ javaapi#method(0,'HashSet(', 'int)', 'public'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('SimpleEntry<K,V>', 'Serializable', [
+  \ javaapi#method(0,'SimpleEntry(', 'K, V)', 'public'),
+  \ javaapi#method(0,'SimpleEntry(', 'Entry<? extends K, ? extends V>)', 'public'),
+  \ javaapi#method(0,'getKey(', ')', 'K'),
+  \ javaapi#method(0,'getValue(', ')', 'V'),
+  \ javaapi#method(0,'setValue(', 'V)', 'V'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('AbstractMap<K,V>', 'Map<K,V>', [
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'containsValue(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'get(', 'Object)', 'V'),
+  \ javaapi#method(0,'put(', 'K, V)', 'V'),
+  \ javaapi#method(0,'remove(', 'Object)', 'V'),
+  \ javaapi#method(0,'putAll(', 'Map<? extends K, ? extends V>)', 'void'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'keySet(', ')', 'Set<K>'),
+  \ javaapi#method(0,'values(', ')', 'Collection<V>'),
+  \ javaapi#method(0,'entrySet(', ')', 'V>>'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('UUID', 'UUID>', [
+  \ javaapi#method(0,'UUID(', 'long, long)', 'public'),
+  \ javaapi#method(1,'randomUUID(', ')', 'UUID'),
+  \ javaapi#method(1,'nameUUIDFromBytes(', 'byte[])', 'UUID'),
+  \ javaapi#method(1,'fromString(', 'String)', 'UUID'),
+  \ javaapi#method(0,'getLeastSignificantBits(', ')', 'long'),
+  \ javaapi#method(0,'getMostSignificantBits(', ')', 'long'),
+  \ javaapi#method(0,'version(', ')', 'int'),
+  \ javaapi#method(0,'variant(', ')', 'int'),
+  \ javaapi#method(0,'timestamp(', ')', 'long'),
+  \ javaapi#method(0,'clockSequence(', ')', 'int'),
+  \ javaapi#method(0,'node(', ')', 'long'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hasSameRules(', 'TimeZone)', 'boolean'),
+  \ javaapi#method(0,'compareTo(', 'UUID)', 'int'),
+  \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
+  \ ])
+
+call javaapi#class('Formatter', 'Flushable', [
+  \ javaapi#method(0,'Formatter(', ')', 'public'),
+  \ javaapi#method(0,'Formatter(', 'Appendable)', 'public'),
+  \ javaapi#method(0,'Formatter(', 'Locale)', 'public'),
+  \ javaapi#method(0,'Formatter(', 'Appendable, Locale)', 'public'),
+  \ javaapi#method(0,'Formatter(', 'String) throws FileNotFoundException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'String, String) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'String, String, Locale) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'File) throws FileNotFoundException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'File, String) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'File, String, Locale) throws FileNotFoundException, UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'PrintStream)', 'public'),
+  \ javaapi#method(0,'Formatter(', 'OutputStream)', 'public'),
+  \ javaapi#method(0,'Formatter(', 'OutputStream, String) throws UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'Formatter(', 'OutputStream, String, Locale) throws UnsupportedEncodingException', 'public'),
+  \ javaapi#method(0,'locale(', ')', 'Locale'),
+  \ javaapi#method(0,'out(', ')', 'Appendable'),
   \ javaapi#method(0,'toString(', ')', 'String'),
+  \ javaapi#method(0,'flush(', ')', 'void'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'ioException(', ')', 'IOException'),
+  \ javaapi#method(0,'format(', 'String, )', 'Formatter'),
+  \ javaapi#method(0,'format(', 'Locale, String, )', 'Formatter'),
+  \ ])
+
+call javaapi#class('ServiceConfigurationError', 'Error', [
+  \ javaapi#method(0,'ServiceConfigurationError(', 'String)', 'public'),
+  \ javaapi#method(0,'ServiceConfigurationError(', 'String, Throwable)', 'public'),
+  \ ])
+
+call javaapi#interface('Iterator<E>', '', [
+  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
+  \ javaapi#method(0,'next(', ')', 'E'),
+  \ javaapi#method(0,'remove(', ')', 'void'),
+  \ ])
+
+call javaapi#class('FormatterClosedException', 'IllegalStateException', [
+  \ javaapi#method(0,'FormatterClosedException(', ')', 'public'),
+  \ ])
+
+call javaapi#class('IllegalFormatPrecisionException', 'IllegalFormatException', [
+  \ javaapi#method(0,'IllegalFormatPrecisionException(', 'int)', 'public'),
+  \ javaapi#method(0,'getPrecision(', ')', 'int'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#class('UnknownFormatFlagsException', 'IllegalFormatException', [
+  \ javaapi#method(0,'UnknownFormatFlagsException(', 'String)', 'public'),
+  \ javaapi#method(0,'getFlags(', ')', 'String'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#class('IllegalFormatException', 'IllegalArgumentException', [
+  \ ])
+
+call javaapi#class('Observable', '', [
+  \ javaapi#method(0,'Observable(', ')', 'public'),
+  \ javaapi#method(0,'addObserver(', 'Observer)', 'void'),
+  \ javaapi#method(0,'deleteObserver(', 'Observer)', 'void'),
+  \ javaapi#method(0,'notifyObservers(', ')', 'void'),
+  \ javaapi#method(0,'notifyObservers(', 'Object)', 'void'),
+  \ javaapi#method(0,'deleteObservers(', ')', 'void'),
+  \ javaapi#method(0,'hasChanged(', ')', 'boolean'),
+  \ javaapi#method(0,'countObservers(', ')', 'int'),
+  \ ])
+
+call javaapi#interface('Deque<E>', 'Queue<E>', [
+  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
+  \ javaapi#method(0,'addLast(', 'E)', 'void'),
+  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
+  \ javaapi#method(0,'removeFirst(', ')', 'E'),
+  \ javaapi#method(0,'removeLast(', ')', 'E'),
+  \ javaapi#method(0,'pollFirst(', ')', 'E'),
+  \ javaapi#method(0,'pollLast(', ')', 'E'),
+  \ javaapi#method(0,'getFirst(', ')', 'E'),
+  \ javaapi#method(0,'getLast(', ')', 'E'),
+  \ javaapi#method(0,'peekFirst(', ')', 'E'),
+  \ javaapi#method(0,'peekLast(', ')', 'E'),
+  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', ')', 'E'),
+  \ javaapi#method(0,'poll(', ')', 'E'),
+  \ javaapi#method(0,'element(', ')', 'E'),
+  \ javaapi#method(0,'peek(', ')', 'E'),
+  \ javaapi#method(0,'push(', 'E)', 'void'),
+  \ javaapi#method(0,'pop(', ')', 'E'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
+  \ ])
+
+call javaapi#interface('Collection<E>', 'Iterable<E>', [
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'containsAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'removeAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'retainAll(', 'Collection<?>)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ ])
+
+call javaapi#class('TreeSet<E>', 'AbstractSet<E>', [
+  \ javaapi#method(0,'TreeSet(', ')', 'public'),
+  \ javaapi#method(0,'TreeSet(', 'Comparator<? super E>)', 'public'),
+  \ javaapi#method(0,'TreeSet(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'TreeSet(', 'SortedSet<E>)', 'public'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'descendingSet(', ')', 'NavigableSet<E>'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'addAll(', 'Collection<? extends E>)', 'boolean'),
+  \ javaapi#method(0,'subSet(', 'E, boolean, E, boolean)', 'NavigableSet<E>'),
+  \ javaapi#method(0,'headSet(', 'E, boolean)', 'NavigableSet<E>'),
+  \ javaapi#method(0,'tailSet(', 'E, boolean)', 'NavigableSet<E>'),
+  \ javaapi#method(0,'subSet(', 'E, E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'headSet(', 'E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'tailSet(', 'E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'comparator(', ')', 'E>'),
+  \ javaapi#method(0,'first(', ')', 'E'),
+  \ javaapi#method(0,'last(', ')', 'E'),
+  \ javaapi#method(0,'lower(', 'E)', 'E'),
+  \ javaapi#method(0,'floor(', 'E)', 'E'),
+  \ javaapi#method(0,'ceiling(', 'E)', 'E'),
+  \ javaapi#method(0,'higher(', 'E)', 'E'),
+  \ javaapi#method(0,'pollFirst(', ')', 'E'),
+  \ javaapi#method(0,'pollLast(', ')', 'E'),
+  \ javaapi#method(0,'clone(', ')', 'Object'),
+  \ ])
+
+call javaapi#class('ArrayDeque<E>', 'AbstractCollection<E>', [
+  \ javaapi#method(0,'ArrayDeque(', ')', 'public'),
+  \ javaapi#method(0,'ArrayDeque(', 'int)', 'public'),
+  \ javaapi#method(0,'ArrayDeque(', 'Collection<? extends E>)', 'public'),
+  \ javaapi#method(0,'addFirst(', 'E)', 'void'),
+  \ javaapi#method(0,'addLast(', 'E)', 'void'),
+  \ javaapi#method(0,'offerFirst(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offerLast(', 'E)', 'boolean'),
+  \ javaapi#method(0,'removeFirst(', ')', 'E'),
+  \ javaapi#method(0,'removeLast(', ')', 'E'),
+  \ javaapi#method(0,'pollFirst(', ')', 'E'),
+  \ javaapi#method(0,'pollLast(', ')', 'E'),
+  \ javaapi#method(0,'getFirst(', ')', 'E'),
+  \ javaapi#method(0,'getLast(', ')', 'E'),
+  \ javaapi#method(0,'peekFirst(', ')', 'E'),
+  \ javaapi#method(0,'peekLast(', ')', 'E'),
+  \ javaapi#method(0,'removeFirstOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'removeLastOccurrence(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'add(', 'E)', 'boolean'),
+  \ javaapi#method(0,'offer(', 'E)', 'boolean'),
+  \ javaapi#method(0,'remove(', ')', 'E'),
+  \ javaapi#method(0,'poll(', ')', 'E'),
+  \ javaapi#method(0,'element(', ')', 'E'),
+  \ javaapi#method(0,'peek(', ')', 'E'),
+  \ javaapi#method(0,'push(', 'E)', 'void'),
+  \ javaapi#method(0,'pop(', ')', 'E'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+  \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'descendingIterator(', ')', 'Iterator<E>'),
+  \ javaapi#method(0,'contains(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'remove(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,'toArray(', 'T[])', 'T[]'),
+  \ javaapi#method(0,'clone(', ')', 'ArrayDeque<E>'),
+  \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
+  \ ])
+
+call javaapi#class('UnknownFormatConversionException', 'IllegalFormatException', [
+  \ javaapi#method(0,'UnknownFormatConversionException(', 'String)', 'public'),
+  \ javaapi#method(0,'getConversion(', ')', 'String'),
+  \ javaapi#method(0,'getMessage(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('java.util')
+
+call javaapi#interface('ListIterator<E>', 'Iterator<E>', [
+  \ javaapi#method(0,'hasNext(', ')', 'boolean'),
+  \ javaapi#method(0,'next(', ')', 'E'),
+  \ javaapi#method(0,'hasPrevious(', ')', 'boolean'),
+  \ javaapi#method(0,'previous(', ')', 'E'),
+  \ javaapi#method(0,'nextIndex(', ')', 'int'),
+  \ javaapi#method(0,'previousIndex(', ')', 'int'),
+  \ javaapi#method(0,'remove(', ')', 'void'),
+  \ javaapi#method(0,'set(', 'E)', 'void'),
+  \ javaapi#method(0,'add(', 'E)', 'void'),
+  \ ])
+
+call javaapi#class('EmptyStackException', 'RuntimeException', [
+  \ javaapi#method(0,'EmptyStackException(', ')', 'public'),
+  \ ])
+
+call javaapi#class('EventListenerProxy<T', 'EventListener>', [
+  \ javaapi#method(0,'EventListenerProxy(', 'T)', 'public'),
+  \ javaapi#method(0,'getListener(', ')', 'T'),
+  \ ])
+
+call javaapi#interface('NavigableMap<K,V>', 'SortedMap<K,V>', [
+  \ javaapi#method(0,'lowerEntry(', 'K)', 'V>'),
+  \ javaapi#method(0,'lowerKey(', 'K)', 'K'),
+  \ javaapi#method(0,'floorEntry(', 'K)', 'V>'),
+  \ javaapi#method(0,'floorKey(', 'K)', 'K'),
+  \ javaapi#method(0,'ceilingEntry(', 'K)', 'V>'),
+  \ javaapi#method(0,'ceilingKey(', 'K)', 'K'),
+  \ javaapi#method(0,'higherEntry(', 'K)', 'V>'),
+  \ javaapi#method(0,'higherKey(', 'K)', 'K'),
+  \ javaapi#method(0,'firstEntry(', ')', 'V>'),
+  \ javaapi#method(0,'lastEntry(', ')', 'V>'),
+  \ javaapi#method(0,'pollFirstEntry(', ')', 'V>'),
+  \ javaapi#method(0,'pollLastEntry(', ')', 'V>'),
+  \ javaapi#method(0,'descendingMap(', ')', 'V>'),
+  \ javaapi#method(0,'navigableKeySet(', ')', 'NavigableSet<K>'),
+  \ javaapi#method(0,'descendingKeySet(', ')', 'NavigableSet<K>'),
+  \ javaapi#method(0,'subMap(', 'K, boolean, K, boolean)', 'V>'),
+  \ javaapi#method(0,'headMap(', 'K, boolean)', 'V>'),
+  \ javaapi#method(0,'tailMap(', 'K, boolean)', 'V>'),
+  \ javaapi#method(0,'subMap(', 'K, K)', 'V>'),
+  \ javaapi#method(0,'headMap(', 'K)', 'V>'),
+  \ javaapi#method(0,'tailMap(', 'K)', 'V>'),
+  \ ])
+
+call javaapi#interface('SortedSet<E>', 'Set<E>', [
+  \ javaapi#method(0,'comparator(', ')', 'E>'),
+  \ javaapi#method(0,'subSet(', 'E, E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'headSet(', 'E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'tailSet(', 'E)', 'SortedSet<E>'),
+  \ javaapi#method(0,'first(', ')', 'E'),
+  \ javaapi#method(0,'last(', ')', 'E'),
+  \ ])
+
+call javaapi#interface('Enumeration<E>', '', [
+  \ javaapi#method(0,'hasMoreElements(', ')', 'boolean'),
+  \ javaapi#method(0,'nextElement(', ')', 'E'),
   \ ])
 

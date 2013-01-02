@@ -1,5 +1,104 @@
 call javaapi#namespace('android.hardware')
 
+call javaapi#interface('FaceDetectionListener', '', [
+  \ javaapi#method(0,'onFaceDetection(', 'Face[], Camera)', 'void'),
+  \ ])
+
+call javaapi#class('Sensor', '', [
+  \ javaapi#field(1,'TYPE_ACCELEROMETER', 'int'),
+  \ javaapi#field(1,'TYPE_MAGNETIC_FIELD', 'int'),
+  \ javaapi#field(1,'TYPE_ORIENTATION', 'int'),
+  \ javaapi#field(1,'TYPE_GYROSCOPE', 'int'),
+  \ javaapi#field(1,'TYPE_LIGHT', 'int'),
+  \ javaapi#field(1,'TYPE_PRESSURE', 'int'),
+  \ javaapi#field(1,'TYPE_TEMPERATURE', 'int'),
+  \ javaapi#field(1,'TYPE_PROXIMITY', 'int'),
+  \ javaapi#field(1,'TYPE_GRAVITY', 'int'),
+  \ javaapi#field(1,'TYPE_LINEAR_ACCELERATION', 'int'),
+  \ javaapi#field(1,'TYPE_ROTATION_VECTOR', 'int'),
+  \ javaapi#field(1,'TYPE_RELATIVE_HUMIDITY', 'int'),
+  \ javaapi#field(1,'TYPE_AMBIENT_TEMPERATURE', 'int'),
+  \ javaapi#field(1,'TYPE_ALL', 'int'),
+  \ javaapi#method(0,'getName(', ')', 'String'),
+  \ javaapi#method(0,'getVendor(', ')', 'String'),
+  \ javaapi#method(0,'getType(', ')', 'int'),
+  \ javaapi#method(0,'getVersion(', ')', 'int'),
+  \ javaapi#method(0,'getMaximumRange(', ')', 'float'),
+  \ javaapi#method(0,'getResolution(', ')', 'float'),
+  \ javaapi#method(0,'getPower(', ')', 'float'),
+  \ javaapi#method(0,'getMinDelay(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('Camera', '', [
+  \ javaapi#field(1,'ACTION_NEW_PICTURE', 'String'),
+  \ javaapi#field(1,'ACTION_NEW_VIDEO', 'String'),
+  \ javaapi#field(1,'CAMERA_ERROR_UNKNOWN', 'int'),
+  \ javaapi#field(1,'CAMERA_ERROR_SERVER_DIED', 'int'),
+  \ javaapi#method(1,'getNumberOfCameras(', ')', 'int'),
+  \ javaapi#method(1,'getCameraInfo(', 'int, CameraInfo)', 'void'),
+  \ javaapi#method(1,'open(', 'int)', 'Camera'),
+  \ javaapi#method(1,'open(', ')', 'Camera'),
+  \ javaapi#method(0,'release(', ')', 'void'),
+  \ javaapi#method(0,'unlock(', ')', 'void'),
+  \ javaapi#method(0,'lock(', ')', 'void'),
+  \ javaapi#method(0,'reconnect(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'setPreviewDisplay(', 'SurfaceHolder) throws IOException', 'void'),
+  \ javaapi#method(0,'setPreviewTexture(', 'SurfaceTexture) throws IOException', 'void'),
+  \ javaapi#method(0,'startPreview(', ')', 'void'),
+  \ javaapi#method(0,'stopPreview(', ')', 'void'),
+  \ javaapi#method(0,'setPreviewCallback(', 'PreviewCallback)', 'void'),
+  \ javaapi#method(0,'setOneShotPreviewCallback(', 'PreviewCallback)', 'void'),
+  \ javaapi#method(0,'setPreviewCallbackWithBuffer(', 'PreviewCallback)', 'void'),
+  \ javaapi#method(0,'addCallbackBuffer(', 'byte[])', 'void'),
+  \ javaapi#method(0,'autoFocus(', 'AutoFocusCallback)', 'void'),
+  \ javaapi#method(0,'cancelAutoFocus(', ')', 'void'),
+  \ javaapi#method(0,'setAutoFocusMoveCallback(', 'AutoFocusMoveCallback)', 'void'),
+  \ javaapi#method(0,'takePicture(', 'ShutterCallback, PictureCallback, PictureCallback)', 'void'),
+  \ javaapi#method(0,'takePicture(', 'ShutterCallback, PictureCallback, PictureCallback, PictureCallback)', 'void'),
+  \ javaapi#method(0,'startSmoothZoom(', 'int)', 'void'),
+  \ javaapi#method(0,'stopSmoothZoom(', ')', 'void'),
+  \ javaapi#method(0,'setDisplayOrientation(', 'int)', 'void'),
+  \ javaapi#method(0,'enableShutterSound(', 'boolean)', 'boolean'),
+  \ javaapi#method(0,'setZoomChangeListener(', 'OnZoomChangeListener)', 'void'),
+  \ javaapi#method(0,'setFaceDetectionListener(', 'FaceDetectionListener)', 'void'),
+  \ javaapi#method(0,'startFaceDetection(', ')', 'void'),
+  \ javaapi#method(0,'stopFaceDetection(', ')', 'void'),
+  \ javaapi#method(0,'setErrorCallback(', 'ErrorCallback)', 'void'),
+  \ javaapi#method(0,'setParameters(', 'Parameters)', 'void'),
+  \ javaapi#method(0,'getParameters(', ')', 'Parameters'),
+  \ ])
+
+call javaapi#interface('SensorEventListener', '', [
+  \ javaapi#method(0,'onSensorChanged(', 'SensorEvent)', 'void'),
+  \ javaapi#method(0,'onAccuracyChanged(', 'Sensor, int)', 'void'),
+  \ ])
+
+call javaapi#class('SensorEvent', '', [
+  \ javaapi#field(0,'values', 'float[]'),
+  \ javaapi#field(0,'sensor', 'Sensor'),
+  \ javaapi#field(0,'accuracy', 'int'),
+  \ javaapi#field(0,'timestamp', 'long'),
+  \ ])
+
+call javaapi#namespace('android.hardware')
+
+call javaapi#interface('SensorListener', '', [
+  \ javaapi#method(0,'onSensorChanged(', 'int, float[])', 'void'),
+  \ javaapi#method(0,'onAccuracyChanged(', 'int, int)', 'void'),
+  \ ])
+
+call javaapi#class('CameraInfo', '', [
+  \ javaapi#field(1,'CAMERA_FACING_BACK', 'int'),
+  \ javaapi#field(1,'CAMERA_FACING_FRONT', 'int'),
+  \ javaapi#field(0,'facing', 'int'),
+  \ javaapi#field(0,'orientation', 'int'),
+  \ javaapi#field(0,'canDisableShutterSound', 'boolean'),
+  \ javaapi#method(0,'CameraInfo(', ')', 'public'),
+  \ ])
+
+call javaapi#namespace('android.hardware')
+
 call javaapi#interface('PictureCallback', '', [
   \ javaapi#method(0,'onPictureTaken(', 'byte[], Camera)', 'void'),
   \ ])
@@ -291,102 +390,5 @@ call javaapi#class('Size', '', [
   \ javaapi#method(0,'Size(', 'Camera, int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ ])
-
-
-call javaapi#interface('SensorListener', '', [
-  \ javaapi#method(0,'onSensorChanged(', 'int, float[])', 'void'),
-  \ javaapi#method(0,'onAccuracyChanged(', 'int, int)', 'void'),
-  \ ])
-
-call javaapi#class('CameraInfo', '', [
-  \ javaapi#field(1,'CAMERA_FACING_BACK', 'int'),
-  \ javaapi#field(1,'CAMERA_FACING_FRONT', 'int'),
-  \ javaapi#field(0,'facing', 'int'),
-  \ javaapi#field(0,'orientation', 'int'),
-  \ javaapi#field(0,'canDisableShutterSound', 'boolean'),
-  \ javaapi#method(0,'CameraInfo(', ')', 'public'),
-  \ ])
-
-
-call javaapi#interface('FaceDetectionListener', '', [
-  \ javaapi#method(0,'onFaceDetection(', 'Face[], Camera)', 'void'),
-  \ ])
-
-call javaapi#class('Sensor', '', [
-  \ javaapi#field(1,'TYPE_ACCELEROMETER', 'int'),
-  \ javaapi#field(1,'TYPE_MAGNETIC_FIELD', 'int'),
-  \ javaapi#field(1,'TYPE_ORIENTATION', 'int'),
-  \ javaapi#field(1,'TYPE_GYROSCOPE', 'int'),
-  \ javaapi#field(1,'TYPE_LIGHT', 'int'),
-  \ javaapi#field(1,'TYPE_PRESSURE', 'int'),
-  \ javaapi#field(1,'TYPE_TEMPERATURE', 'int'),
-  \ javaapi#field(1,'TYPE_PROXIMITY', 'int'),
-  \ javaapi#field(1,'TYPE_GRAVITY', 'int'),
-  \ javaapi#field(1,'TYPE_LINEAR_ACCELERATION', 'int'),
-  \ javaapi#field(1,'TYPE_ROTATION_VECTOR', 'int'),
-  \ javaapi#field(1,'TYPE_RELATIVE_HUMIDITY', 'int'),
-  \ javaapi#field(1,'TYPE_AMBIENT_TEMPERATURE', 'int'),
-  \ javaapi#field(1,'TYPE_ALL', 'int'),
-  \ javaapi#method(0,'getName(', ')', 'String'),
-  \ javaapi#method(0,'getVendor(', ')', 'String'),
-  \ javaapi#method(0,'getType(', ')', 'int'),
-  \ javaapi#method(0,'getVersion(', ')', 'int'),
-  \ javaapi#method(0,'getMaximumRange(', ')', 'float'),
-  \ javaapi#method(0,'getResolution(', ')', 'float'),
-  \ javaapi#method(0,'getPower(', ')', 'float'),
-  \ javaapi#method(0,'getMinDelay(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Camera', '', [
-  \ javaapi#field(1,'ACTION_NEW_PICTURE', 'String'),
-  \ javaapi#field(1,'ACTION_NEW_VIDEO', 'String'),
-  \ javaapi#field(1,'CAMERA_ERROR_UNKNOWN', 'int'),
-  \ javaapi#field(1,'CAMERA_ERROR_SERVER_DIED', 'int'),
-  \ javaapi#method(1,'getNumberOfCameras(', ')', 'int'),
-  \ javaapi#method(1,'getCameraInfo(', 'int, CameraInfo)', 'void'),
-  \ javaapi#method(1,'open(', 'int)', 'Camera'),
-  \ javaapi#method(1,'open(', ')', 'Camera'),
-  \ javaapi#method(0,'release(', ')', 'void'),
-  \ javaapi#method(0,'unlock(', ')', 'void'),
-  \ javaapi#method(0,'lock(', ')', 'void'),
-  \ javaapi#method(0,'reconnect(', ') throws IOException', 'void'),
-  \ javaapi#method(0,'setPreviewDisplay(', 'SurfaceHolder) throws IOException', 'void'),
-  \ javaapi#method(0,'setPreviewTexture(', 'SurfaceTexture) throws IOException', 'void'),
-  \ javaapi#method(0,'startPreview(', ')', 'void'),
-  \ javaapi#method(0,'stopPreview(', ')', 'void'),
-  \ javaapi#method(0,'setPreviewCallback(', 'PreviewCallback)', 'void'),
-  \ javaapi#method(0,'setOneShotPreviewCallback(', 'PreviewCallback)', 'void'),
-  \ javaapi#method(0,'setPreviewCallbackWithBuffer(', 'PreviewCallback)', 'void'),
-  \ javaapi#method(0,'addCallbackBuffer(', 'byte[])', 'void'),
-  \ javaapi#method(0,'autoFocus(', 'AutoFocusCallback)', 'void'),
-  \ javaapi#method(0,'cancelAutoFocus(', ')', 'void'),
-  \ javaapi#method(0,'setAutoFocusMoveCallback(', 'AutoFocusMoveCallback)', 'void'),
-  \ javaapi#method(0,'takePicture(', 'ShutterCallback, PictureCallback, PictureCallback)', 'void'),
-  \ javaapi#method(0,'takePicture(', 'ShutterCallback, PictureCallback, PictureCallback, PictureCallback)', 'void'),
-  \ javaapi#method(0,'startSmoothZoom(', 'int)', 'void'),
-  \ javaapi#method(0,'stopSmoothZoom(', ')', 'void'),
-  \ javaapi#method(0,'setDisplayOrientation(', 'int)', 'void'),
-  \ javaapi#method(0,'enableShutterSound(', 'boolean)', 'boolean'),
-  \ javaapi#method(0,'setZoomChangeListener(', 'OnZoomChangeListener)', 'void'),
-  \ javaapi#method(0,'setFaceDetectionListener(', 'FaceDetectionListener)', 'void'),
-  \ javaapi#method(0,'startFaceDetection(', ')', 'void'),
-  \ javaapi#method(0,'stopFaceDetection(', ')', 'void'),
-  \ javaapi#method(0,'setErrorCallback(', 'ErrorCallback)', 'void'),
-  \ javaapi#method(0,'setParameters(', 'Parameters)', 'void'),
-  \ javaapi#method(0,'getParameters(', ')', 'Parameters'),
-  \ ])
-
-call javaapi#interface('SensorEventListener', '', [
-  \ javaapi#method(0,'onSensorChanged(', 'SensorEvent)', 'void'),
-  \ javaapi#method(0,'onAccuracyChanged(', 'Sensor, int)', 'void'),
-  \ ])
-
-call javaapi#class('SensorEvent', '', [
-  \ javaapi#field(0,'values', 'float[]'),
-  \ javaapi#field(0,'sensor', 'Sensor'),
-  \ javaapi#field(0,'accuracy', 'int'),
-  \ javaapi#field(0,'timestamp', 'long'),
   \ ])
 

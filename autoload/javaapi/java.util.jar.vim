@@ -28,7 +28,7 @@ call javaapi#interface('Unpacker', '', [
   \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ ])
 
-call javaapi#class('JarOutputStream', '', [
+call javaapi#class('JarOutputStream', 'ZipOutputStream', [
   \ javaapi#method(0,'JarOutputStream(', 'OutputStream, Manifest) throws IOException', 'public'),
   \ javaapi#method(0,'JarOutputStream(', 'OutputStream) throws IOException', 'public'),
   \ javaapi#method(0,'putNextEntry(', 'ZipEntry) throws IOException', 'void'),
@@ -58,12 +58,12 @@ call javaapi#class('Attributes', 'Cloneable', [
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ ])
 
-call javaapi#class('JarException', '', [
+call javaapi#class('JarException', 'ZipException', [
   \ javaapi#method(0,'JarException(', ')', 'public'),
   \ javaapi#method(0,'JarException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('JarFile', '', [
+call javaapi#class('JarFile', 'ZipFile', [
   \ javaapi#field(1,'MANIFEST_NAME', 'String'),
   \ javaapi#method(0,'JarFile(', 'String) throws IOException', 'public'),
   \ javaapi#method(0,'JarFile(', 'String, boolean) throws IOException', 'public'),
@@ -106,7 +106,7 @@ call javaapi#class('Name', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('JarEntry', '', [
+call javaapi#class('JarEntry', 'ZipEntry', [
   \ javaapi#method(0,'JarEntry(', 'String)', 'public'),
   \ javaapi#method(0,'JarEntry(', 'ZipEntry)', 'public'),
   \ javaapi#method(0,'JarEntry(', 'JarEntry)', 'public'),
@@ -115,7 +115,7 @@ call javaapi#class('JarEntry', '', [
   \ javaapi#method(0,'getCodeSigners(', ')', 'CodeSigner[]'),
   \ ])
 
-call javaapi#class('JarInputStream', '', [
+call javaapi#class('JarInputStream', 'ZipInputStream', [
   \ javaapi#method(0,'JarInputStream(', 'InputStream) throws IOException', 'public'),
   \ javaapi#method(0,'JarInputStream(', 'InputStream, boolean) throws IOException', 'public'),
   \ javaapi#method(0,'getManifest(', ')', 'Manifest'),

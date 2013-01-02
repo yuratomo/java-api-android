@@ -1,6 +1,6 @@
 call javaapi#namespace('android.graphics.drawable.shapes')
 
-call javaapi#class('PathShape', '', [
+call javaapi#class('PathShape', 'Shape', [
   \ javaapi#method(0,'PathShape(', 'Path, float, float)', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas, Paint)', 'void'),
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'PathShape'),
@@ -19,12 +19,12 @@ call javaapi#class('Shape', 'Cloneable', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('ArcShape', '', [
+call javaapi#class('ArcShape', 'RectShape', [
   \ javaapi#method(0,'ArcShape(', 'float, float)', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas, Paint)', 'void'),
   \ ])
 
-call javaapi#class('RoundRectShape', '', [
+call javaapi#class('RoundRectShape', 'RectShape', [
   \ javaapi#method(0,'RoundRectShape(', 'float[], RectF, float[])', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas, Paint)', 'void'),
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'RoundRectShape'),
@@ -33,12 +33,12 @@ call javaapi#class('RoundRectShape', '', [
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('OvalShape', '', [
+call javaapi#class('OvalShape', 'RectShape', [
   \ javaapi#method(0,'OvalShape(', ')', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas, Paint)', 'void'),
   \ ])
 
-call javaapi#class('RectShape', '', [
+call javaapi#class('RectShape', 'Shape', [
   \ javaapi#method(0,'RectShape(', ')', 'public'),
   \ javaapi#method(0,'draw(', 'Canvas, Paint)', 'void'),
   \ javaapi#method(0,'clone(', ') throws CloneNotSupportedException', 'RectShape'),

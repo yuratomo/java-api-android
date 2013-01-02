@@ -20,7 +20,7 @@ call javaapi#interface('ConnPerRoute', '', [
   \ javaapi#method(0,'getMaxForRoute(', 'HttpRoute)', 'int'),
   \ ])
 
-call javaapi#class('ConnRouteParamBean', '', [
+call javaapi#class('ConnRouteParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'ConnRouteParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setDefaultProxy(', 'HttpHost)', 'void'),
   \ javaapi#method(0,'setLocalAddress(', 'InetAddress)', 'void'),
@@ -38,7 +38,7 @@ call javaapi#class('ConnRouteParams', 'ConnRoutePNames', [
   \ javaapi#method(1,'setLocalAddress(', 'HttpParams, InetAddress)', 'void'),
   \ ])
 
-call javaapi#class('ConnConnectionParamBean', '', [
+call javaapi#class('ConnConnectionParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'ConnConnectionParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setMaxStatusLineGarbage(', 'int)', 'void'),
   \ ])
@@ -65,7 +65,7 @@ call javaapi#class('ConnManagerParams', 'ConnManagerPNames', [
   \ javaapi#method(1,'getMaxTotalConnections(', 'HttpParams)', 'int'),
   \ ])
 
-call javaapi#class('ConnManagerParamBean', '', [
+call javaapi#class('ConnManagerParamBean', 'HttpAbstractParamBean', [
   \ javaapi#method(0,'ConnManagerParamBean(', 'HttpParams)', 'public'),
   \ javaapi#method(0,'setTimeout(', 'long)', 'void'),
   \ javaapi#method(0,'setMaxTotalConnections(', 'int)', 'void'),

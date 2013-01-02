@@ -11,16 +11,16 @@ call javaapi#class('DexFile', '', [
   \ javaapi#method(1,'isDexOptNeeded(', 'String) throws FileNotFoundException, IOException', 'boolean'),
   \ ])
 
-call javaapi#class('DexClassLoader', '', [
+call javaapi#class('DexClassLoader', 'BaseDexClassLoader', [
   \ javaapi#method(0,'DexClassLoader(', 'String, String, String, ClassLoader)', 'public'),
   \ ])
 
-call javaapi#class('PathClassLoader', '', [
+call javaapi#class('PathClassLoader', 'BaseDexClassLoader', [
   \ javaapi#method(0,'PathClassLoader(', 'String, ClassLoader)', 'public'),
   \ javaapi#method(0,'PathClassLoader(', 'String, String, ClassLoader)', 'public'),
   \ ])
 
-call javaapi#class('BaseDexClassLoader', '', [
+call javaapi#class('BaseDexClassLoader', 'ClassLoader', [
   \ javaapi#method(0,'BaseDexClassLoader(', 'String, File, String, ClassLoader)', 'public'),
   \ javaapi#method(0,'findLibrary(', 'String)', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),

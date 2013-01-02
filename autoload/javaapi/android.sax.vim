@@ -4,17 +4,17 @@ call javaapi#interface('EndTextElementListener', '', [
   \ javaapi#method(0,'end(', 'String)', 'void'),
   \ ])
 
-call javaapi#interface('ElementListener', '', [
+call javaapi#interface('ElementListener', 'EndElementListener', [
   \ ])
 
-call javaapi#interface('TextElementListener', '', [
+call javaapi#interface('TextElementListener', 'EndTextElementListener', [
   \ ])
 
 call javaapi#interface('EndElementListener', '', [
   \ javaapi#method(0,'end(', ')', 'void'),
   \ ])
 
-call javaapi#class('RootElement', '', [
+call javaapi#class('RootElement', 'Element', [
   \ javaapi#method(0,'RootElement(', 'String, String)', 'public'),
   \ javaapi#method(0,'RootElement(', 'String)', 'public'),
   \ javaapi#method(0,'getContentHandler(', ')', 'ContentHandler'),

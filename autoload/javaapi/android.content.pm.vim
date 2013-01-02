@@ -1,11 +1,11 @@
 call javaapi#namespace('android.content.pm')
 
-call javaapi#class('NameNotFoundException', '', [
+call javaapi#class('NameNotFoundException', 'AndroidException', [
   \ javaapi#method(0,'NameNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'NameNotFoundException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('LabeledIntent', '', [
+call javaapi#class('LabeledIntent', 'Intent', [
   \ javaapi#field(1,'CREATOR', 'LabeledIntent>'),
   \ javaapi#method(0,'LabeledIntent(', 'Intent, String, int, int)', 'public'),
   \ javaapi#method(0,'LabeledIntent(', 'Intent, String, CharSequence, int)', 'public'),
@@ -21,7 +21,7 @@ call javaapi#class('LabeledIntent', '', [
   \ javaapi#method(0,'readFromParcel(', 'Parcel)', 'void'),
   \ ])
 
-call javaapi#class('ServiceInfo', '', [
+call javaapi#class('ServiceInfo', 'ComponentInfo', [
   \ javaapi#field(0,'permission', 'String'),
   \ javaapi#field(1,'FLAG_STOP_WITH_TASK', 'int'),
   \ javaapi#field(1,'FLAG_ISOLATED_PROCESS', 'int'),
@@ -36,7 +36,7 @@ call javaapi#class('ServiceInfo', '', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('ComponentInfo', '', [
+call javaapi#class('ComponentInfo', 'PackageItemInfo', [
   \ javaapi#field(0,'applicationInfo', 'ApplicationInfo'),
   \ javaapi#field(0,'processName', 'String'),
   \ javaapi#field(0,'descriptionRes', 'int'),
@@ -50,7 +50,7 @@ call javaapi#class('ComponentInfo', '', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('ActivityInfo', '', [
+call javaapi#class('ActivityInfo', 'ComponentInfo', [
   \ javaapi#field(0,'theme', 'int'),
   \ javaapi#field(1,'LAUNCH_MULTIPLE', 'int'),
   \ javaapi#field(1,'LAUNCH_SINGLE_TOP', 'int'),
@@ -136,7 +136,7 @@ call javaapi#class('FeatureInfo', 'Parcelable', [
   \ javaapi#method(0,'getGlEsVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('PermissionInfo', '', [
+call javaapi#class('PermissionInfo', 'PackageItemInfo', [
   \ javaapi#field(1,'PROTECTION_NORMAL', 'int'),
   \ javaapi#field(1,'PROTECTION_DANGEROUS', 'int'),
   \ javaapi#field(1,'PROTECTION_SIGNATURE', 'int'),
@@ -160,7 +160,7 @@ call javaapi#class('PermissionInfo', '', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('ApplicationInfo', '', [
+call javaapi#class('ApplicationInfo', 'PackageItemInfo', [
   \ javaapi#field(0,'taskAffinity', 'String'),
   \ javaapi#field(0,'permission', 'String'),
   \ javaapi#field(0,'processName', 'String'),
@@ -414,7 +414,7 @@ call javaapi#class('ConfigurationInfo', 'Parcelable', [
   \ javaapi#method(0,'getGlEsVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('PathPermission', '', [
+call javaapi#class('PathPermission', 'PatternMatcher', [
   \ javaapi#field(1,'CREATOR', 'PathPermission>'),
   \ javaapi#method(0,'PathPermission(', 'String, int, String, String)', 'public'),
   \ javaapi#method(0,'PathPermission(', 'Parcel)', 'public'),
@@ -471,7 +471,7 @@ call javaapi#class('ResolveInfo', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('InstrumentationInfo', '', [
+call javaapi#class('InstrumentationInfo', 'PackageItemInfo', [
   \ javaapi#field(0,'targetPackage', 'String'),
   \ javaapi#field(0,'sourceDir', 'String'),
   \ javaapi#field(0,'publicSourceDir', 'String'),
@@ -516,7 +516,7 @@ call javaapi#class('PackageInfo', 'Parcelable', [
   \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
-call javaapi#class('ProviderInfo', '', [
+call javaapi#class('ProviderInfo', 'ComponentInfo', [
   \ javaapi#field(0,'authority', 'String'),
   \ javaapi#field(0,'readPermission', 'String'),
   \ javaapi#field(0,'writePermission', 'String'),
@@ -536,7 +536,7 @@ call javaapi#class('ProviderInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PermissionGroupInfo', '', [
+call javaapi#class('PermissionGroupInfo', 'PackageItemInfo', [
   \ javaapi#field(0,'descriptionRes', 'int'),
   \ javaapi#field(0,'nonLocalizedDescription', 'CharSequence'),
   \ javaapi#field(1,'FLAG_PERSONAL_INFO', 'int'),

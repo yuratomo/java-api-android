@@ -35,7 +35,7 @@ call javaapi#class('Matcher', 'MatchResult', [
   \ javaapi#method(0,'requireEnd(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('PatternSyntaxException', '', [
+call javaapi#class('PatternSyntaxException', 'IllegalArgumentException', [
   \ javaapi#method(0,'PatternSyntaxException(', 'String, String, int)', 'public'),
   \ javaapi#method(0,'getIndex(', ')', 'int'),
   \ javaapi#method(0,'getDescription(', ')', 'String'),
