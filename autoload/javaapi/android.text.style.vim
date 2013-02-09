@@ -4,359 +4,328 @@ call javaapi#interface('WrapTogetherSpan', 'ParagraphStyle', [
   \ ])
 
 call javaapi#interface('LeadingMarginSpan', 'ParagraphStyle', [
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#method(0,1,'getLeadingMargin(', 'boolean)', 'int'),
+  \ javaapi#method(0,1,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
   \ ])
 
 call javaapi#class('IconMarginSpan', 'LineHeightSpan', [
-  \ javaapi#method(0,'IconMarginSpan(', 'Bitmap)', 'public'),
-  \ javaapi#method(0,'IconMarginSpan(', 'Bitmap, int)', 'public'),
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
-  \ javaapi#method(0,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
+  \ javaapi#method(0,1,'IconMarginSpan(', 'Bitmap)', ''),
+  \ javaapi#method(0,1,'IconMarginSpan(', 'Bitmap, int)', ''),
+  \ javaapi#method(0,1,'getLeadingMargin(', 'boolean)', 'int'),
+  \ javaapi#method(0,1,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#method(0,1,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
   \ ])
 
 call javaapi#class('MetricAffectingSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'MetricAffectingSpan(', ')', 'public'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'getUnderlying(', ')', 'MetricAffectingSpan'),
-  \ javaapi#method(0,'getUnderlying(', ')', 'CharacterStyle'),
+  \ javaapi#method(0,1,'MetricAffectingSpan(', ')', ''),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'getUnderlying(', ')', 'MetricAffectingSpan'),
+  \ javaapi#method(0,1,'getUnderlying(', ')', 'CharacterStyle'),
   \ ])
 
 call javaapi#class('SuperscriptSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'SuperscriptSpan(', ')', 'public'),
-  \ javaapi#method(0,'SuperscriptSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
-  \ ])
-
-call javaapi#class('Standard', 'ParcelableSpan', [
-  \ javaapi#method(0,'Standard(', 'int, int)', 'public'),
-  \ javaapi#method(0,'Standard(', 'int)', 'public'),
-  \ javaapi#method(0,'Standard(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#method(0,1,'SuperscriptSpan(', ')', ''),
+  \ javaapi#method(0,1,'SuperscriptSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#interface('UpdateLayout', 'UpdateAppearance', [
   \ ])
 
 call javaapi#class('EasyEditSpan', 'ParcelableSpan', [
-  \ javaapi#method(0,'EasyEditSpan(', ')', 'public'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'EasyEditSpan(', ')', ''),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
   \ ])
 
 call javaapi#class('QuoteSpan', 'ParcelableSpan', [
-  \ javaapi#method(0,'QuoteSpan(', ')', 'public'),
-  \ javaapi#method(0,'QuoteSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'QuoteSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getColor(', ')', 'int'),
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#method(0,1,'QuoteSpan(', ')', ''),
+  \ javaapi#method(0,1,'QuoteSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'QuoteSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getColor(', ')', 'int'),
+  \ javaapi#method(0,1,'getLeadingMargin(', 'boolean)', 'int'),
+  \ javaapi#method(0,1,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
   \ ])
 
 call javaapi#class('RasterizerSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'RasterizerSpan(', 'Rasterizer)', 'public'),
-  \ javaapi#method(0,'getRasterizer(', ')', 'Rasterizer'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'RasterizerSpan(', 'Rasterizer)', ''),
+  \ javaapi#method(0,1,'getRasterizer(', ')', 'Rasterizer'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('DrawableMarginSpan', 'LineHeightSpan', [
-  \ javaapi#method(0,'DrawableMarginSpan(', 'Drawable)', 'public'),
-  \ javaapi#method(0,'DrawableMarginSpan(', 'Drawable, int)', 'public'),
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
-  \ javaapi#method(0,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
+  \ javaapi#method(0,1,'DrawableMarginSpan(', 'Drawable)', ''),
+  \ javaapi#method(0,1,'DrawableMarginSpan(', 'Drawable, int)', ''),
+  \ javaapi#method(0,1,'getLeadingMargin(', 'boolean)', 'int'),
+  \ javaapi#method(0,1,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#method(0,1,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
   \ ])
 
 call javaapi#interface('ParagraphStyle', '', [
   \ ])
 
 call javaapi#class('ScaleXSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'ScaleXSpan(', 'float)', 'public'),
-  \ javaapi#method(0,'ScaleXSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getScaleX(', ')', 'float'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'ScaleXSpan(', 'float)', ''),
+  \ javaapi#method(0,1,'ScaleXSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getScaleX(', ')', 'float'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('StyleSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'StyleSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'StyleSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getStyle(', ')', 'int'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'StyleSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'StyleSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getStyle(', ')', 'int'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('UnderlineSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'UnderlineSpan(', ')', 'public'),
-  \ javaapi#method(0,'UnderlineSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'UnderlineSpan(', ')', ''),
+  \ javaapi#method(0,1,'UnderlineSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('LocaleSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'LocaleSpan(', 'Locale)', 'public'),
-  \ javaapi#method(0,'LocaleSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getLocale(', ')', 'Locale'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'LocaleSpan(', 'Locale)', ''),
+  \ javaapi#method(0,1,'LocaleSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getLocale(', ')', 'Locale'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#interface('UpdateAppearance', '', [
   \ ])
 
-call javaapi#class('Standard', 'ParcelableSpan', [
-  \ javaapi#method(0,'Standard(', 'Alignment)', 'public'),
-  \ javaapi#method(0,'Standard(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getAlignment(', ')', 'Alignment'),
-  \ ])
-
 call javaapi#class('MaskFilterSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'MaskFilterSpan(', 'MaskFilter)', 'public'),
-  \ javaapi#method(0,'getMaskFilter(', ')', 'MaskFilter'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'MaskFilterSpan(', 'MaskFilter)', ''),
+  \ javaapi#method(0,1,'getMaskFilter(', ')', 'MaskFilter'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#interface('LineBackgroundSpan', 'ParagraphStyle', [
-  \ javaapi#method(0,'drawBackground(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, int)', 'void'),
-  \ ])
-
-call javaapi#interface('WithDensity', 'LineHeightSpan', [
-  \ javaapi#method(0,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt, TextPaint)', 'void'),
+  \ javaapi#method(0,1,'drawBackground(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, int)', 'void'),
   \ ])
 
 call javaapi#class('StrikethroughSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'StrikethroughSpan(', ')', 'public'),
-  \ javaapi#method(0,'StrikethroughSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'StrikethroughSpan(', ')', ''),
+  \ javaapi#method(0,1,'StrikethroughSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('BulletSpan', 'ParcelableSpan', [
-  \ javaapi#field(1,'STANDARD_GAP_WIDTH', 'int'),
-  \ javaapi#method(0,'BulletSpan(', ')', 'public'),
-  \ javaapi#method(0,'BulletSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'BulletSpan(', 'int, int)', 'public'),
-  \ javaapi#method(0,'BulletSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getLeadingMargin(', 'boolean)', 'int'),
-  \ javaapi#method(0,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
+  \ javaapi#field(1,1,'STANDARD_GAP_WIDTH', 'int'),
+  \ javaapi#method(0,1,'BulletSpan(', ')', ''),
+  \ javaapi#method(0,1,'BulletSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'BulletSpan(', 'int, int)', ''),
+  \ javaapi#method(0,1,'BulletSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getLeadingMargin(', 'boolean)', 'int'),
+  \ javaapi#method(0,1,'drawLeadingMargin(', 'Canvas, Paint, int, int, int, int, int, CharSequence, int, int, boolean, Layout)', 'void'),
   \ ])
 
 call javaapi#interface('TabStopSpan', 'ParagraphStyle', [
-  \ javaapi#method(0,'getTabStop(', ')', 'int'),
+  \ javaapi#method(0,1,'getTabStop(', ')', 'int'),
   \ ])
 
 call javaapi#class('ClickableSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'ClickableSpan(', ')', 'public'),
-  \ javaapi#method(0,'onClick(', 'View)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'ClickableSpan(', ')', ''),
+  \ javaapi#method(0,1,'onClick(', 'View)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('URLSpan', 'ClickableSpan', [
-  \ javaapi#method(0,'URLSpan(', 'String)', 'public'),
-  \ javaapi#method(0,'URLSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getURL(', ')', 'String'),
-  \ javaapi#method(0,'onClick(', 'View)', 'void'),
+  \ javaapi#method(0,1,'URLSpan(', 'String)', ''),
+  \ javaapi#method(0,1,'URLSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getURL(', ')', 'String'),
+  \ javaapi#method(0,1,'onClick(', 'View)', 'void'),
   \ ])
 
 call javaapi#class('DynamicDrawableSpan', 'ReplacementSpan', [
-  \ javaapi#field(1,'ALIGN_BOTTOM', 'int'),
-  \ javaapi#field(1,'ALIGN_BASELINE', 'int'),
-  \ javaapi#method(0,'DynamicDrawableSpan(', ')', 'public'),
-  \ javaapi#method(0,'getVerticalAlignment(', ')', 'int'),
-  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'getSize(', 'Paint, CharSequence, int, int, FontMetricsInt)', 'int'),
-  \ javaapi#method(0,'draw(', 'Canvas, CharSequence, int, int, float, int, int, int, Paint)', 'void'),
+  \ javaapi#field(1,1,'ALIGN_BOTTOM', 'int'),
+  \ javaapi#field(1,1,'ALIGN_BASELINE', 'int'),
+  \ javaapi#field(0,0,'mVerticalAlignment', 'int'),
+  \ javaapi#method(0,1,'DynamicDrawableSpan(', ')', ''),
+  \ javaapi#method(0,0,'DynamicDrawableSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'getVerticalAlignment(', ')', 'int'),
+  \ javaapi#method(0,1,'getDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,1,'getSize(', 'Paint, CharSequence, int, int, FontMetricsInt)', 'int'),
+  \ javaapi#method(0,1,'draw(', 'Canvas, CharSequence, int, int, float, int, int, int, Paint)', 'void'),
   \ ])
 
 call javaapi#class('CharacterStyle', '', [
-  \ javaapi#method(0,'CharacterStyle(', ')', 'public'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(1,'wrap(', 'CharacterStyle)', 'CharacterStyle'),
-  \ javaapi#method(0,'getUnderlying(', ')', 'CharacterStyle'),
+  \ javaapi#method(0,1,'CharacterStyle(', ')', ''),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(1,1,'wrap(', 'CharacterStyle)', 'CharacterStyle'),
+  \ javaapi#method(0,1,'getUnderlying(', ')', 'CharacterStyle'),
   \ ])
 
 call javaapi#interface('AlignmentSpan', 'ParagraphStyle', [
-  \ javaapi#method(0,'getAlignment(', ')', 'Alignment'),
+  \ javaapi#method(0,1,'getAlignment(', ')', 'Alignment'),
   \ ])
 
 call javaapi#class('SuggestionSpan', 'CharacterStyle', [
-  \ javaapi#field(1,'FLAG_EASY_CORRECT', 'int'),
-  \ javaapi#field(1,'FLAG_MISSPELLED', 'int'),
-  \ javaapi#field(1,'FLAG_AUTO_CORRECTION', 'int'),
-  \ javaapi#field(1,'ACTION_SUGGESTION_PICKED', 'String'),
-  \ javaapi#field(1,'SUGGESTION_SPAN_PICKED_AFTER', 'String'),
-  \ javaapi#field(1,'SUGGESTION_SPAN_PICKED_BEFORE', 'String'),
-  \ javaapi#field(1,'SUGGESTION_SPAN_PICKED_HASHCODE', 'String'),
-  \ javaapi#field(1,'SUGGESTIONS_MAX_SIZE', 'int'),
-  \ javaapi#field(1,'CREATOR', 'SuggestionSpan>'),
-  \ javaapi#method(0,'SuggestionSpan(', 'Context, String[], int)', 'public'),
-  \ javaapi#method(0,'SuggestionSpan(', 'Locale, String[], int)', 'public'),
-  \ javaapi#method(0,'SuggestionSpan(', 'Context, Locale, String[], int, Class<?>)', 'public'),
-  \ javaapi#method(0,'SuggestionSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSuggestions(', ')', 'String[]'),
-  \ javaapi#method(0,'getLocale(', ')', 'String'),
-  \ javaapi#method(0,'getFlags(', ')', 'int'),
-  \ javaapi#method(0,'setFlags(', 'int)', 'void'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#field(1,1,'FLAG_EASY_CORRECT', 'int'),
+  \ javaapi#field(1,1,'FLAG_MISSPELLED', 'int'),
+  \ javaapi#field(1,1,'FLAG_AUTO_CORRECTION', 'int'),
+  \ javaapi#field(1,1,'ACTION_SUGGESTION_PICKED', 'String'),
+  \ javaapi#field(1,1,'SUGGESTION_SPAN_PICKED_AFTER', 'String'),
+  \ javaapi#field(1,1,'SUGGESTION_SPAN_PICKED_BEFORE', 'String'),
+  \ javaapi#field(1,1,'SUGGESTION_SPAN_PICKED_HASHCODE', 'String'),
+  \ javaapi#field(1,1,'SUGGESTIONS_MAX_SIZE', 'int'),
+  \ javaapi#field(1,1,'CREATOR', 'SuggestionSpan>'),
+  \ javaapi#method(0,1,'SuggestionSpan(', 'Context, String[], int)', ''),
+  \ javaapi#method(0,1,'SuggestionSpan(', 'Locale, String[], int)', ''),
+  \ javaapi#method(0,1,'SuggestionSpan(', 'Context, Locale, String[], int, Class<?>)', ''),
+  \ javaapi#method(0,1,'SuggestionSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSuggestions(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getLocale(', ')', 'String'),
+  \ javaapi#method(0,1,'getFlags(', ')', 'int'),
+  \ javaapi#method(0,1,'setFlags(', 'int)', 'void'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#interface('LineHeightSpan', 'WrapTogetherSpan', [
-  \ javaapi#method(0,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
+  \ javaapi#method(0,1,'chooseHeight(', 'CharSequence, int, int, int, int, FontMetricsInt)', 'void'),
   \ ])
 
 call javaapi#class('BackgroundColorSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'BackgroundColorSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'BackgroundColorSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getBackgroundColor(', ')', 'int'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ ])
-
-call javaapi#interface('LeadingMarginSpan2', 'WrapTogetherSpan', [
-  \ javaapi#method(0,'getLeadingMarginLineCount(', ')', 'int'),
+  \ javaapi#method(0,1,'BackgroundColorSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'BackgroundColorSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getBackgroundColor(', ')', 'int'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('TypefaceSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'TypefaceSpan(', 'String)', 'public'),
-  \ javaapi#method(0,'TypefaceSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getFamily(', ')', 'String'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'TypefaceSpan(', 'String)', ''),
+  \ javaapi#method(0,1,'TypefaceSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getFamily(', ')', 'String'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('RelativeSizeSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'RelativeSizeSpan(', 'float)', 'public'),
-  \ javaapi#method(0,'RelativeSizeSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getSizeChange(', ')', 'float'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'RelativeSizeSpan(', 'float)', ''),
+  \ javaapi#method(0,1,'RelativeSizeSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getSizeChange(', ')', 'float'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('SubscriptSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'SubscriptSpan(', ')', 'public'),
-  \ javaapi#method(0,'SubscriptSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'SubscriptSpan(', ')', ''),
+  \ javaapi#method(0,1,'SubscriptSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('ForegroundColorSpan', 'CharacterStyle', [
-  \ javaapi#method(0,'ForegroundColorSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'ForegroundColorSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getForegroundColor(', ')', 'int'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'ForegroundColorSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'ForegroundColorSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getForegroundColor(', ')', 'int'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('ImageSpan', 'DynamicDrawableSpan', [
-  \ javaapi#method(0,'ImageSpan(', 'Bitmap)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Bitmap, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, Bitmap)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, Bitmap, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Drawable)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Drawable, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Drawable, String)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Drawable, String, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, Uri)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, Uri, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, int)', 'public'),
-  \ javaapi#method(0,'ImageSpan(', 'Context, int, int)', 'public'),
-  \ javaapi#method(0,'getDrawable(', ')', 'Drawable'),
-  \ javaapi#method(0,'getSource(', ')', 'String'),
+  \ javaapi#method(0,1,'ImageSpan(', 'Bitmap)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Bitmap, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, Bitmap)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, Bitmap, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Drawable)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Drawable, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Drawable, String)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Drawable, String, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, Uri)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, Uri, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, int)', ''),
+  \ javaapi#method(0,1,'ImageSpan(', 'Context, int, int)', ''),
+  \ javaapi#method(0,1,'getDrawable(', ')', 'Drawable'),
+  \ javaapi#method(0,1,'getSource(', ')', 'String'),
   \ ])
 
 call javaapi#class('AbsoluteSizeSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'AbsoluteSizeSpan(', 'int)', 'public'),
-  \ javaapi#method(0,'AbsoluteSizeSpan(', 'int, boolean)', 'public'),
-  \ javaapi#method(0,'AbsoluteSizeSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getSize(', ')', 'int'),
-  \ javaapi#method(0,'getDip(', ')', 'boolean'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'AbsoluteSizeSpan(', 'int)', ''),
+  \ javaapi#method(0,1,'AbsoluteSizeSpan(', 'int, boolean)', ''),
+  \ javaapi#method(0,1,'AbsoluteSizeSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getSize(', ')', 'int'),
+  \ javaapi#method(0,1,'getDip(', ')', 'boolean'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('TextAppearanceSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'TextAppearanceSpan(', 'Context, int)', 'public'),
-  \ javaapi#method(0,'TextAppearanceSpan(', 'Context, int, int)', 'public'),
-  \ javaapi#method(0,'TextAppearanceSpan(', 'String, int, int, ColorStateList, ColorStateList)', 'public'),
-  \ javaapi#method(0,'TextAppearanceSpan(', 'Parcel)', 'public'),
-  \ javaapi#method(0,'getSpanTypeId(', ')', 'int'),
-  \ javaapi#method(0,'describeContents(', ')', 'int'),
-  \ javaapi#method(0,'writeToParcel(', 'Parcel, int)', 'void'),
-  \ javaapi#method(0,'getFamily(', ')', 'String'),
-  \ javaapi#method(0,'getTextColor(', ')', 'ColorStateList'),
-  \ javaapi#method(0,'getLinkTextColor(', ')', 'ColorStateList'),
-  \ javaapi#method(0,'getTextSize(', ')', 'int'),
-  \ javaapi#method(0,'getTextStyle(', ')', 'int'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
-  \ ])
-
-call javaapi#class('Standard', 'TabStopSpan', [
-  \ javaapi#method(0,'Standard(', 'int)', 'public'),
-  \ javaapi#method(0,'getTabStop(', ')', 'int'),
+  \ javaapi#method(0,1,'TextAppearanceSpan(', 'Context, int)', ''),
+  \ javaapi#method(0,1,'TextAppearanceSpan(', 'Context, int, int)', ''),
+  \ javaapi#method(0,1,'TextAppearanceSpan(', 'String, int, int, ColorStateList, ColorStateList)', ''),
+  \ javaapi#method(0,1,'TextAppearanceSpan(', 'Parcel)', ''),
+  \ javaapi#method(0,1,'getSpanTypeId(', ')', 'int'),
+  \ javaapi#method(0,1,'describeContents(', ')', 'int'),
+  \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
+  \ javaapi#method(0,1,'getFamily(', ')', 'String'),
+  \ javaapi#method(0,1,'getTextColor(', ')', 'ColorStateList'),
+  \ javaapi#method(0,1,'getLinkTextColor(', ')', 'ColorStateList'),
+  \ javaapi#method(0,1,'getTextSize(', ')', 'int'),
+  \ javaapi#method(0,1,'getTextStyle(', ')', 'int'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
   \ ])
 
 call javaapi#class('ReplacementSpan', 'MetricAffectingSpan', [
-  \ javaapi#method(0,'ReplacementSpan(', ')', 'public'),
-  \ javaapi#method(0,'getSize(', 'Paint, CharSequence, int, int, FontMetricsInt)', 'int'),
-  \ javaapi#method(0,'draw(', 'Canvas, CharSequence, int, int, float, int, int, int, Paint)', 'void'),
-  \ javaapi#method(0,'updateMeasureState(', 'TextPaint)', 'void'),
-  \ javaapi#method(0,'updateDrawState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'ReplacementSpan(', ')', ''),
+  \ javaapi#method(0,1,'getSize(', 'Paint, CharSequence, int, int, FontMetricsInt)', 'int'),
+  \ javaapi#method(0,1,'draw(', 'Canvas, CharSequence, int, int, float, int, int, int, Paint)', 'void'),
+  \ javaapi#method(0,1,'updateMeasureState(', 'TextPaint)', 'void'),
+  \ javaapi#method(0,1,'updateDrawState(', 'TextPaint)', 'void'),
   \ ])
 

@@ -1,59 +1,59 @@
 call javaapi#namespace('javax.security.auth')
 
 call javaapi#class('PrivateCredentialPermission', 'Permission', [
-  \ javaapi#method(0,'PrivateCredentialPermission(', 'String, String)', 'public'),
-  \ javaapi#method(0,'getCredentialClass(', ')', 'String'),
-  \ javaapi#method(0,'getPrincipals(', ')', 'String[][]'),
-  \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'getActions(', ')', 'String'),
-  \ javaapi#method(0,'newPermissionCollection(', ')', 'PermissionCollection'),
+  \ javaapi#method(0,1,'PrivateCredentialPermission(', 'String, String)', ''),
+  \ javaapi#method(0,1,'getCredentialClass(', ')', 'String'),
+  \ javaapi#method(0,1,'getPrincipals(', ')', 'String[][]'),
+  \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'getActions(', ')', 'String'),
+  \ javaapi#method(0,1,'newPermissionCollection(', ')', 'PermissionCollection'),
   \ ])
 
 call javaapi#class('SubjectDomainCombiner', 'DomainCombiner', [
-  \ javaapi#method(0,'SubjectDomainCombiner(', 'Subject)', 'public'),
-  \ javaapi#method(0,'getSubject(', ')', 'Subject'),
-  \ javaapi#method(0,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
+  \ javaapi#method(0,1,'SubjectDomainCombiner(', 'Subject)', ''),
+  \ javaapi#method(0,1,'getSubject(', ')', 'Subject'),
+  \ javaapi#method(0,1,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
   \ ])
 
 call javaapi#namespace('javax.security.auth')
 
 call javaapi#interface('Destroyable', '', [
-  \ javaapi#method(0,'destroy(', ') throws DestroyFailedException', 'void'),
-  \ javaapi#method(0,'isDestroyed(', ')', 'boolean'),
+  \ javaapi#method(0,1,'destroy(', ') throws DestroyFailedException', 'void'),
+  \ javaapi#method(0,1,'isDestroyed(', ')', 'boolean'),
   \ ])
 
 call javaapi#class('AuthPermission', 'BasicPermission', [
-  \ javaapi#method(0,'AuthPermission(', 'String)', 'public'),
-  \ javaapi#method(0,'AuthPermission(', 'String, String)', 'public'),
+  \ javaapi#method(0,1,'AuthPermission(', 'String)', ''),
+  \ javaapi#method(0,1,'AuthPermission(', 'String, String)', ''),
   \ ])
 
 call javaapi#class('Subject', 'Serializable', [
-  \ javaapi#method(0,'Subject(', ')', 'public'),
-  \ javaapi#method(0,'Subject(', 'boolean, Set<? extends Principal>, Set<?>, Set<?>)', 'public'),
-  \ javaapi#method(0,'setReadOnly(', ')', 'void'),
-  \ javaapi#method(0,'isReadOnly(', ')', 'boolean'),
-  \ javaapi#method(1,'getSubject(', 'AccessControlContext)', 'Subject'),
-  \ javaapi#method(1,'doAs(', 'Subject, PrivilegedAction<T>)', 'T'),
-  \ javaapi#method(1,'doAs(', 'Subject, PrivilegedExceptionAction<T>) throws PrivilegedActionException', 'T'),
-  \ javaapi#method(1,'doAsPrivileged(', 'Subject, PrivilegedAction<T>, AccessControlContext)', 'T'),
-  \ javaapi#method(1,'doAsPrivileged(', 'Subject, PrivilegedExceptionAction<T>, AccessControlContext) throws PrivilegedActionException', 'T'),
-  \ javaapi#method(0,'getPrincipals(', ')', 'Principal>'),
-  \ javaapi#method(0,'getPrincipals(', 'Class<T>)', 'Set<T>'),
-  \ javaapi#method(0,'getPublicCredentials(', ')', 'Object>'),
-  \ javaapi#method(0,'getPrivateCredentials(', ')', 'Object>'),
-  \ javaapi#method(0,'getPublicCredentials(', 'Class<T>)', 'Set<T>'),
-  \ javaapi#method(0,'getPrivateCredentials(', 'Class<T>)', 'Set<T>'),
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,1,'Subject(', ')', ''),
+  \ javaapi#method(0,1,'Subject(', 'boolean, Set<? extends Principal>, Set<?>, Set<?>)', ''),
+  \ javaapi#method(0,1,'setReadOnly(', ')', 'void'),
+  \ javaapi#method(0,1,'isReadOnly(', ')', 'boolean'),
+  \ javaapi#method(1,1,'getSubject(', 'AccessControlContext)', 'Subject'),
+  \ javaapi#method(1,1,'doAs(', 'Subject, PrivilegedAction<T>)', 'T'),
+  \ javaapi#method(1,1,'doAs(', 'Subject, PrivilegedExceptionAction<T>) throws PrivilegedActionException', 'T'),
+  \ javaapi#method(1,1,'doAsPrivileged(', 'Subject, PrivilegedAction<T>, AccessControlContext)', 'T'),
+  \ javaapi#method(1,1,'doAsPrivileged(', 'Subject, PrivilegedExceptionAction<T>, AccessControlContext) throws PrivilegedActionException', 'T'),
+  \ javaapi#method(0,1,'getPrincipals(', ')', 'Principal>'),
+  \ javaapi#method(0,1,'getPrincipals(', 'Class<T>)', 'Set<T>'),
+  \ javaapi#method(0,1,'getPublicCredentials(', ')', 'Object>'),
+  \ javaapi#method(0,1,'getPrivateCredentials(', ')', 'Object>'),
+  \ javaapi#method(0,1,'getPublicCredentials(', 'Class<T>)', 'Set<T>'),
+  \ javaapi#method(0,1,'getPrivateCredentials(', 'Class<T>)', 'Set<T>'),
+  \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,1,'toString(', ')', 'String'),
+  \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
 
 call javaapi#namespace('javax.security.auth')
 
 call javaapi#class('DestroyFailedException', 'Exception', [
-  \ javaapi#method(0,'DestroyFailedException(', ')', 'public'),
-  \ javaapi#method(0,'DestroyFailedException(', 'String)', 'public'),
+  \ javaapi#method(0,1,'DestroyFailedException(', ')', ''),
+  \ javaapi#method(0,1,'DestroyFailedException(', 'String)', ''),
   \ ])
 
