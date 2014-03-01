@@ -2,7 +2,7 @@ call javaapi#namespace('org.apache.http.client')
 
 call javaapi#interface('CookieStore', '', [
   \ javaapi#method(0,1,'addCookie(', 'Cookie)', 'void'),
-  \ javaapi#method(0,1,'getCookies(', ')', 'Cookie>'),
+  \ javaapi#method(0,1,'getCookies(', ')', 'List'),
   \ javaapi#method(0,1,'clearExpired(', 'Date)', 'boolean'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ ])
@@ -18,7 +18,7 @@ call javaapi#interface('RedirectHandler', '', [
   \ javaapi#method(0,1,'getLocationURI(', 'HttpResponse, HttpContext) throws ProtocolException', 'URI'),
   \ ])
 
-call javaapi#interface('ResponseHandler<T>', '', [
+call javaapi#interface('ResponseHandler', '', [
   \ javaapi#method(0,1,'handleResponse(', 'HttpResponse) throws ClientProtocolException, IOException', 'T'),
   \ ])
 

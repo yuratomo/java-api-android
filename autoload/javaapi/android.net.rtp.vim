@@ -22,7 +22,7 @@ call javaapi#class('AudioGroup', '', [
   \ javaapi#field(1,1,'MODE_NORMAL', 'int'),
   \ javaapi#field(1,1,'MODE_ECHO_SUPPRESSION', 'int'),
   \ javaapi#method(0,1,'AudioGroup(', ')', ''),
-  \ javaapi#method(0,1,'getStreams(', ')', 'AudioStream[]'),
+  \ javaapi#method(0,1,'getStreams(', ')', 'AudioStream'),
   \ javaapi#method(0,1,'getMode(', ')', 'int'),
   \ javaapi#method(0,1,'setMode(', 'int)', 'void'),
   \ javaapi#method(0,1,'sendDtmf(', 'int)', 'void'),
@@ -39,7 +39,7 @@ call javaapi#class('AudioCodec', '', [
   \ javaapi#field(1,1,'GSM', 'AudioCodec'),
   \ javaapi#field(1,1,'GSM_EFR', 'AudioCodec'),
   \ javaapi#field(1,1,'AMR', 'AudioCodec'),
-  \ javaapi#method(1,1,'getCodecs(', ')', 'AudioCodec[]'),
+  \ javaapi#method(1,1,'getCodecs(', ')', 'AudioCodec'),
   \ javaapi#method(1,1,'getCodec(', 'int, String, String)', 'AudioCodec'),
   \ ])
 

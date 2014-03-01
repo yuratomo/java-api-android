@@ -60,8 +60,8 @@ call javaapi#class('Pattern', 'Serializable', [
   \ javaapi#method(0,1,'matcher(', 'CharSequence)', 'Matcher'),
   \ javaapi#method(0,1,'flags(', ')', 'int'),
   \ javaapi#method(1,1,'matches(', 'String, CharSequence)', 'boolean'),
-  \ javaapi#method(0,1,'split(', 'CharSequence, int)', 'String[]'),
-  \ javaapi#method(0,1,'split(', 'CharSequence)', 'String[]'),
+  \ javaapi#method(0,1,'split(', 'CharSequence, int)', 'String'),
+  \ javaapi#method(0,1,'split(', 'CharSequence)', 'String'),
   \ javaapi#method(1,1,'quote(', 'String)', 'String'),
   \ ])
 

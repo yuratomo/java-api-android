@@ -48,7 +48,7 @@ call javaapi#class('WebView', 'AbsoluteLayout', [
   \ javaapi#method(0,1,'setCertificate(', 'SslCertificate)', 'void'),
   \ javaapi#method(0,1,'savePassword(', 'String, String, String)', 'void'),
   \ javaapi#method(0,1,'setHttpAuthUsernamePassword(', 'String, String, String, String)', 'void'),
-  \ javaapi#method(0,1,'getHttpAuthUsernamePassword(', 'String, String)', 'String[]'),
+  \ javaapi#method(0,1,'getHttpAuthUsernamePassword(', 'String, String)', 'String'),
   \ javaapi#method(0,1,'destroy(', ')', 'void'),
   \ javaapi#method(0,1,'setNetworkAvailable(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'saveState(', 'Bundle)', 'WebBackForwardList'),
@@ -229,7 +229,7 @@ call javaapi#class('URLUtil', '', [
   \ javaapi#method(0,1,'URLUtil(', ')', ''),
   \ javaapi#method(1,1,'guessUrl(', 'String)', 'String'),
   \ javaapi#method(1,1,'composeSearchUrl(', 'String, String, String)', 'String'),
-  \ javaapi#method(1,1,'decode(', 'byte[]) throws IllegalArgumentException', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'byte[]) throws IllegalArgumentException', 'byte'),
   \ javaapi#method(1,1,'isAssetUrl(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'isCookielessProxyUrl(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'isFileUrl(', 'String)', 'boolean'),
@@ -463,7 +463,7 @@ call javaapi#interface('PluginStub', '', [
   \ javaapi#method(0,1,'getFullScreenView(', 'int, Context)', 'View'),
   \ ])
 
-call javaapi#interface('ValueCallback<T>', '', [
+call javaapi#interface('ValueCallback', '', [
   \ javaapi#method(0,1,'onReceiveValue(', 'T)', 'void'),
   \ ])
 

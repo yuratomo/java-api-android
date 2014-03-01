@@ -20,6 +20,6 @@ call javaapi#class('KeyChain', '', [
   \ javaapi#method(1,1,'createInstallIntent(', ')', 'Intent'),
   \ javaapi#method(1,1,'choosePrivateKeyAlias(', 'Activity, KeyChainAliasCallback, String[], Principal[], String, int, String)', 'void'),
   \ javaapi#method(1,1,'getPrivateKey(', 'Context, String) throws KeyChainException, InterruptedException', 'PrivateKey'),
-  \ javaapi#method(1,1,'getCertificateChain(', 'Context, String) throws KeyChainException, InterruptedException', 'X509Certificate[]'),
+  \ javaapi#method(1,1,'getCertificateChain(', 'Context, String) throws KeyChainException, InterruptedException', 'X509Certificate'),
   \ ])
 

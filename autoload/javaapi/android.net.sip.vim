@@ -84,7 +84,7 @@ call javaapi#class('SipErrorCode', '', [
   \ ])
 
 call javaapi#class('SipProfile', 'Cloneable', [
-  \ javaapi#field(1,1,'CREATOR', 'SipProfile>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),
   \ javaapi#method(0,1,'getUriString(', ')', 'String'),

@@ -7,8 +7,8 @@ call javaapi#interface('DHPrivateKey', 'PrivateKey', [
 
 call javaapi#interface('PBEKey', 'SecretKey', [
   \ javaapi#field(1,1,'serialVersionUID', 'long'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getSalt(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
+  \ javaapi#method(0,1,'getSalt(', ')', 'byte'),
   \ javaapi#method(0,1,'getIterationCount(', ')', 'int'),
   \ ])
 

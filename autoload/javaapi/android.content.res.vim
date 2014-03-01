@@ -4,7 +4,7 @@ call javaapi#interface('XmlResourceParser', 'AttributeSet', [
   \ javaapi#method(0,1,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('Configuration', 'Configuration>', [
+call javaapi#class('Configuration', 'Comparable', [
   \ javaapi#field(0,1,'fontScale', 'float'),
   \ javaapi#field(0,1,'mcc', 'int'),
   \ javaapi#field(0,1,'mnc', 'int'),
@@ -79,7 +79,7 @@ call javaapi#class('Configuration', 'Configuration>', [
   \ javaapi#field(0,1,'smallestScreenWidthDp', 'int'),
   \ javaapi#field(1,1,'DENSITY_DPI_UNDEFINED', 'int'),
   \ javaapi#field(0,1,'densityDpi', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Configuration>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Configuration(', ')', ''),
   \ javaapi#method(0,1,'Configuration(', 'Configuration)', ''),
   \ javaapi#method(0,1,'isLayoutSizeAtLeast(', 'int)', 'boolean'),
@@ -124,7 +124,7 @@ call javaapi#class('TypedArray', '', [
   \ javaapi#method(0,1,'getFraction(', 'int, int, int, float)', 'float'),
   \ javaapi#method(0,1,'getResourceId(', 'int, int)', 'int'),
   \ javaapi#method(0,1,'getDrawable(', 'int)', 'Drawable'),
-  \ javaapi#method(0,1,'getTextArray(', 'int)', 'CharSequence[]'),
+  \ javaapi#method(0,1,'getTextArray(', 'int)', 'CharSequence'),
   \ javaapi#method(0,1,'getValue(', 'int, TypedValue)', 'boolean'),
   \ javaapi#method(0,1,'hasValue(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'peekValue(', 'int)', 'TypedValue'),
@@ -143,9 +143,9 @@ call javaapi#class('Resources', '', [
   \ javaapi#method(0,1,'getQuantityString(', 'int, int, ) throws NotFoundException', 'String'),
   \ javaapi#method(0,1,'getQuantityString(', 'int, int) throws NotFoundException', 'String'),
   \ javaapi#method(0,1,'getText(', 'int, CharSequence)', 'CharSequence'),
-  \ javaapi#method(0,1,'getTextArray(', 'int) throws NotFoundException', 'CharSequence[]'),
-  \ javaapi#method(0,1,'getStringArray(', 'int) throws NotFoundException', 'String[]'),
-  \ javaapi#method(0,1,'getIntArray(', 'int) throws NotFoundException', 'int[]'),
+  \ javaapi#method(0,1,'getTextArray(', 'int) throws NotFoundException', 'CharSequence'),
+  \ javaapi#method(0,1,'getStringArray(', 'int) throws NotFoundException', 'String'),
+  \ javaapi#method(0,1,'getIntArray(', 'int) throws NotFoundException', 'int'),
   \ javaapi#method(0,1,'obtainTypedArray(', 'int) throws NotFoundException', 'TypedArray'),
   \ javaapi#method(0,1,'getDimension(', 'int) throws NotFoundException', 'float'),
   \ javaapi#method(0,1,'getDimensionPixelOffset(', 'int) throws NotFoundException', 'int'),
@@ -193,18 +193,18 @@ call javaapi#class('AssetManager', '', [
   \ javaapi#method(0,1,'open(', 'String) throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'open(', 'String, int) throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'openFd(', 'String) throws IOException', 'AssetFileDescriptor'),
-  \ javaapi#method(0,1,'list(', 'String) throws IOException', 'String[]'),
+  \ javaapi#method(0,1,'list(', 'String) throws IOException', 'String'),
   \ javaapi#method(0,1,'openNonAssetFd(', 'String) throws IOException', 'AssetFileDescriptor'),
   \ javaapi#method(0,1,'openNonAssetFd(', 'int, String) throws IOException', 'AssetFileDescriptor'),
   \ javaapi#method(0,1,'openXmlResourceParser(', 'String) throws IOException', 'XmlResourceParser'),
   \ javaapi#method(0,1,'openXmlResourceParser(', 'int, String) throws IOException', 'XmlResourceParser'),
   \ javaapi#method(0,0,'finalize(', ') throws Throwable', 'void'),
-  \ javaapi#method(0,1,'getLocales(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getLocales(', ')', 'String'),
   \ ])
 
 call javaapi#class('AssetFileDescriptor', 'Parcelable', [
   \ javaapi#field(1,1,'UNKNOWN_LENGTH', 'long'),
-  \ javaapi#field(1,1,'CREATOR', 'AssetFileDescriptor>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'AssetFileDescriptor(', 'ParcelFileDescriptor, long, long)', ''),
   \ javaapi#method(0,1,'getParcelFileDescriptor(', ')', 'ParcelFileDescriptor'),
   \ javaapi#method(0,1,'getFileDescriptor(', ')', 'FileDescriptor'),
@@ -229,14 +229,14 @@ call javaapi#class('ObbInfo', 'Parcelable', [
   \ javaapi#field(0,1,'packageName', 'String'),
   \ javaapi#field(0,1,'version', 'int'),
   \ javaapi#field(0,1,'flags', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'ObbInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
   \ ])
 
 call javaapi#class('ColorStateList', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'ColorStateList>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'ColorStateList(', 'int[][], int[])', ''),
   \ javaapi#method(1,1,'valueOf(', 'int)', 'ColorStateList'),
   \ javaapi#method(1,1,'createFromXml(', 'Resources, XmlPullParser) throws XmlPullParserException, IOException', 'ColorStateList'),

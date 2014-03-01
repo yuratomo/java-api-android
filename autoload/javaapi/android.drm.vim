@@ -5,9 +5,9 @@ call javaapi#class('DrmInfo', '', [
   \ javaapi#method(0,1,'DrmInfo(', 'int, String, String)', ''),
   \ javaapi#method(0,1,'put(', 'String, Object)', 'void'),
   \ javaapi#method(0,1,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'keyIterator(', ')', 'String>'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Object>'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'keyIterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,1,'getInfoType(', ')', 'int'),
   \ ])
@@ -29,7 +29,7 @@ call javaapi#class('DrmInfoEvent', 'DrmEvent', [
   \ ])
 
 call javaapi#class('ProcessedData', '', [
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getAccountId(', ')', 'String'),
   \ javaapi#method(0,1,'getSubscriptionId(', ')', 'String'),
   \ ])
@@ -57,7 +57,7 @@ call javaapi#class('DrmRights', '', [
   \ javaapi#method(0,1,'DrmRights(', 'String, String, String, String)', ''),
   \ javaapi#method(0,1,'DrmRights(', 'File, String)', ''),
   \ javaapi#method(0,1,'DrmRights(', 'ProcessedData, String)', ''),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getMimeType(', ')', 'String'),
   \ javaapi#method(0,1,'getAccountId(', ')', 'String'),
   \ javaapi#method(0,1,'getSubscriptionId(', ')', 'String'),
@@ -75,8 +75,8 @@ call javaapi#class('DrmInfoRequest', '', [
   \ javaapi#method(0,1,'getInfoType(', ')', 'int'),
   \ javaapi#method(0,1,'put(', 'String, Object)', 'void'),
   \ javaapi#method(0,1,'get(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'keyIterator(', ')', 'String>'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Object>'),
+  \ javaapi#method(0,1,'keyIterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#class('DrmErrorEvent', 'DrmEvent', [
@@ -101,7 +101,7 @@ call javaapi#class('DrmManagerClient', '', [
   \ javaapi#method(0,1,'setOnInfoListener(', 'OnInfoListener)', 'void'),
   \ javaapi#method(0,1,'setOnEventListener(', 'OnEventListener)', 'void'),
   \ javaapi#method(0,1,'setOnErrorListener(', 'OnErrorListener)', 'void'),
-  \ javaapi#method(0,1,'getAvailableDrmEngines(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getAvailableDrmEngines(', ')', 'String'),
   \ javaapi#method(0,1,'getConstraints(', 'String, int)', 'ContentValues'),
   \ javaapi#method(0,1,'getMetadata(', 'String)', 'ContentValues'),
   \ javaapi#method(0,1,'getConstraints(', 'Uri, int)', 'ContentValues'),
@@ -132,8 +132,8 @@ call javaapi#class('DrmSupportInfo', '', [
   \ javaapi#method(0,1,'DrmSupportInfo(', ')', ''),
   \ javaapi#method(0,1,'addMimeType(', 'String)', 'void'),
   \ javaapi#method(0,1,'addFileSuffix(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getMimeTypeIterator(', ')', 'String>'),
-  \ javaapi#method(0,1,'getFileSuffixIterator(', ')', 'String>'),
+  \ javaapi#method(0,1,'getMimeTypeIterator(', ')', 'Iterator'),
+  \ javaapi#method(0,1,'getFileSuffixIterator(', ')', 'Iterator'),
   \ javaapi#method(0,1,'setDescription(', 'String)', 'void'),
   \ javaapi#method(0,1,'getDescriprition(', ')', 'String'),
   \ javaapi#method(0,1,'getDescription(', ')', 'String'),
@@ -146,7 +146,7 @@ call javaapi#class('DrmConvertedStatus', '', [
   \ javaapi#field(1,1,'STATUS_INPUTDATA_ERROR', 'int'),
   \ javaapi#field(1,1,'STATUS_ERROR', 'int'),
   \ javaapi#field(0,1,'statusCode', 'int'),
-  \ javaapi#field(0,1,'convertedData', 'byte[]'),
+  \ javaapi#field(0,1,'convertedData', 'byte'),
   \ javaapi#field(0,1,'offset', 'int'),
   \ javaapi#method(0,1,'DrmConvertedStatus(', 'int, byte[], int)', ''),
   \ ])

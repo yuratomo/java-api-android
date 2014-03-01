@@ -253,7 +253,7 @@ call javaapi#class('SQLiteCursor', 'AbstractWindowedCursor', [
   \ javaapi#method(0,1,'onMove(', 'int, int)', 'boolean'),
   \ javaapi#method(0,1,'getCount(', ')', 'int'),
   \ javaapi#method(0,1,'getColumnIndex(', 'String)', 'int'),
-  \ javaapi#method(0,1,'getColumnNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getColumnNames(', ')', 'String'),
   \ javaapi#method(0,1,'deactivate(', ')', 'void'),
   \ javaapi#method(0,1,'close(', ')', 'void'),
   \ javaapi#method(0,1,'requery(', ')', 'boolean'),

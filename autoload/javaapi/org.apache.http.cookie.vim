@@ -18,7 +18,7 @@ call javaapi#interface('Cookie', '', [
   \ javaapi#method(0,1,'isPersistent(', ')', 'boolean'),
   \ javaapi#method(0,1,'getDomain(', ')', 'String'),
   \ javaapi#method(0,1,'getPath(', ')', 'String'),
-  \ javaapi#method(0,1,'getPorts(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getPorts(', ')', 'int'),
   \ javaapi#method(0,1,'isSecure(', ')', 'boolean'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'isExpired(', 'Date)', 'boolean'),
@@ -53,7 +53,7 @@ call javaapi#interface('ClientCookie', 'Cookie', [
   \ javaapi#method(0,1,'containsAttribute(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('CookiePathComparator', 'Cookie>', [
+call javaapi#class('CookiePathComparator', 'Comparator', [
   \ javaapi#method(0,1,'CookiePathComparator(', ')', ''),
   \ javaapi#method(0,1,'compare(', 'Cookie, Cookie)', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),
@@ -79,7 +79,7 @@ call javaapi#class('CookieSpecRegistry', '', [
   \ javaapi#method(0,1,'unregister(', 'String)', 'void'),
   \ javaapi#method(0,1,'getCookieSpec(', 'String, HttpParams) throws IllegalStateException', 'CookieSpec'),
   \ javaapi#method(0,1,'getCookieSpec(', 'String) throws IllegalStateException', 'CookieSpec'),
-  \ javaapi#method(0,1,'getSpecNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getSpecNames(', ')', 'List'),
   \ javaapi#method(0,1,'setItems(', 'Map<String, CookieSpecFactory>)', 'void'),
   \ ])
 
@@ -98,14 +98,14 @@ call javaapi#interface('SM', '', [
 
 call javaapi#interface('CookieSpec', '', [
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
   \ javaapi#method(0,1,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,1,'match(', 'Cookie, CookieOrigin)', 'boolean'),
-  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'Header>'),
+  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'List'),
   \ javaapi#method(0,1,'getVersionHeader(', ')', 'Header'),
   \ ])
 
-call javaapi#class('CookieIdentityComparator', 'Cookie>', [
+call javaapi#class('CookieIdentityComparator', 'Comparator', [
   \ javaapi#method(0,1,'CookieIdentityComparator(', ')', ''),
   \ javaapi#method(0,1,'compare(', 'Cookie, Cookie)', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),

@@ -4,7 +4,7 @@ call javaapi#class('Location', 'Parcelable', [
   \ javaapi#field(1,1,'FORMAT_DEGREES', 'int'),
   \ javaapi#field(1,1,'FORMAT_MINUTES', 'int'),
   \ javaapi#field(1,1,'FORMAT_SECONDS', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Location>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Location(', 'String)', ''),
   \ javaapi#method(0,1,'Location(', 'Location)', ''),
   \ javaapi#method(0,1,'set(', 'Location)', 'void'),
@@ -57,10 +57,10 @@ call javaapi#class('LocationManager', '', [
   \ javaapi#field(1,1,'KEY_PROVIDER_ENABLED', 'String'),
   \ javaapi#field(1,1,'KEY_LOCATION_CHANGED', 'String'),
   \ javaapi#field(1,1,'PROVIDERS_CHANGED_ACTION', 'String'),
-  \ javaapi#method(0,1,'getAllProviders(', ')', 'String>'),
-  \ javaapi#method(0,1,'getProviders(', 'boolean)', 'String>'),
+  \ javaapi#method(0,1,'getAllProviders(', ')', 'List'),
+  \ javaapi#method(0,1,'getProviders(', 'boolean)', 'List'),
   \ javaapi#method(0,1,'getProvider(', 'String)', 'LocationProvider'),
-  \ javaapi#method(0,1,'getProviders(', 'Criteria, boolean)', 'String>'),
+  \ javaapi#method(0,1,'getProviders(', 'Criteria, boolean)', 'List'),
   \ javaapi#method(0,1,'getBestProvider(', 'Criteria, boolean)', 'String'),
   \ javaapi#method(0,1,'requestLocationUpdates(', 'String, long, float, LocationListener)', 'void'),
   \ javaapi#method(0,1,'requestLocationUpdates(', 'String, long, float, LocationListener, Looper)', 'void'),
@@ -94,7 +94,7 @@ call javaapi#class('LocationManager', '', [
   \ ])
 
 call javaapi#class('Address', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'Address>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Address(', 'Locale)', ''),
   \ javaapi#method(0,1,'getLocale(', ')', 'Locale'),
   \ javaapi#method(0,1,'getMaxAddressLineIndex(', ')', 'int'),
@@ -147,7 +147,7 @@ call javaapi#class('GpsStatus', '', [
   \ javaapi#field(1,1,'GPS_EVENT_FIRST_FIX', 'int'),
   \ javaapi#field(1,1,'GPS_EVENT_SATELLITE_STATUS', 'int'),
   \ javaapi#method(0,1,'getTimeToFirstFix(', ')', 'int'),
-  \ javaapi#method(0,1,'getSatellites(', ')', 'GpsSatellite>'),
+  \ javaapi#method(0,1,'getSatellites(', ')', 'Iterable'),
   \ javaapi#method(0,1,'getMaxSatellites(', ')', 'int'),
   \ ])
 
@@ -155,9 +155,9 @@ call javaapi#class('Geocoder', '', [
   \ javaapi#method(0,1,'Geocoder(', 'Context, Locale)', ''),
   \ javaapi#method(0,1,'Geocoder(', 'Context)', ''),
   \ javaapi#method(1,1,'isPresent(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getFromLocation(', 'double, double, int) throws IOException', 'Address>'),
-  \ javaapi#method(0,1,'getFromLocationName(', 'String, int) throws IOException', 'Address>'),
-  \ javaapi#method(0,1,'getFromLocationName(', 'String, int, double, double, double, double) throws IOException', 'Address>'),
+  \ javaapi#method(0,1,'getFromLocation(', 'double, double, int) throws IOException', 'List'),
+  \ javaapi#method(0,1,'getFromLocationName(', 'String, int) throws IOException', 'List'),
+  \ javaapi#method(0,1,'getFromLocationName(', 'String, int, double, double, double, double) throws IOException', 'List'),
   \ ])
 
 call javaapi#class('GpsSatellite', '', [
@@ -204,7 +204,7 @@ call javaapi#class('Criteria', 'Parcelable', [
   \ javaapi#field(1,1,'ACCURACY_LOW', 'int'),
   \ javaapi#field(1,1,'ACCURACY_MEDIUM', 'int'),
   \ javaapi#field(1,1,'ACCURACY_HIGH', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Criteria>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Criteria(', ')', ''),
   \ javaapi#method(0,1,'Criteria(', 'Criteria)', ''),
   \ javaapi#method(0,1,'setHorizontalAccuracy(', 'int)', 'void'),

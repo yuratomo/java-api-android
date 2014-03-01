@@ -326,7 +326,7 @@ call javaapi#class('MediaMetadataRetriever', '', [
   \ javaapi#method(0,1,'getFrameAtTime(', 'long, int)', 'Bitmap'),
   \ javaapi#method(0,1,'getFrameAtTime(', 'long)', 'Bitmap'),
   \ javaapi#method(0,1,'getFrameAtTime(', ')', 'Bitmap'),
-  \ javaapi#method(0,1,'getEmbeddedPicture(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEmbeddedPicture(', ')', 'byte'),
   \ javaapi#method(0,1,'release(', ')', 'void'),
   \ javaapi#method(0,0,'finalize(', ') throws Throwable', 'void'),
   \ ])
@@ -512,7 +512,7 @@ call javaapi#class('MediaPlayer', '', [
   \ javaapi#method(0,1,'getAudioSessionId(', ')', 'int'),
   \ javaapi#method(0,1,'attachAuxEffect(', 'int)', 'void'),
   \ javaapi#method(0,1,'setAuxEffectSendLevel(', 'float)', 'void'),
-  \ javaapi#method(0,1,'getTrackInfo(', ') throws IllegalStateException', 'TrackInfo[]'),
+  \ javaapi#method(0,1,'getTrackInfo(', ') throws IllegalStateException', 'TrackInfo'),
   \ javaapi#method(0,1,'addTimedTextSource(', 'String, String) throws IOException, IllegalArgumentException, IllegalStateException', 'void'),
   \ javaapi#method(0,1,'addTimedTextSource(', 'Context, Uri, String) throws IOException, IllegalArgumentException, IllegalStateException', 'void'),
   \ javaapi#method(0,1,'addTimedTextSource(', 'FileDescriptor, String) throws IllegalArgumentException, IllegalStateException', 'void'),
@@ -557,8 +557,8 @@ call javaapi#class('MediaCodec', '', [
   \ javaapi#method(0,1,'dequeueOutputBuffer(', 'BufferInfo, long)', 'int'),
   \ javaapi#method(0,1,'releaseOutputBuffer(', 'int, boolean)', 'void'),
   \ javaapi#method(0,1,'getOutputFormat(', ')', 'MediaFormat'),
-  \ javaapi#method(0,1,'getInputBuffers(', ')', 'ByteBuffer[]'),
-  \ javaapi#method(0,1,'getOutputBuffers(', ')', 'ByteBuffer[]'),
+  \ javaapi#method(0,1,'getInputBuffers(', ')', 'ByteBuffer'),
+  \ javaapi#method(0,1,'getOutputBuffers(', ')', 'ByteBuffer'),
   \ javaapi#method(0,1,'setVideoScalingMode(', 'int)', 'void'),
   \ ])
 
@@ -567,7 +567,7 @@ call javaapi#namespace('android.media')
 call javaapi#class('MediaCodecInfo', '', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'isEncoder(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getSupportedTypes(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getSupportedTypes(', ')', 'String'),
   \ javaapi#method(0,1,'getCapabilitiesForType(', 'String)', 'CodecCapabilities'),
   \ ])
 
@@ -797,7 +797,7 @@ call javaapi#class('ExifInterface', '', [
   \ javaapi#method(0,1,'setAttribute(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'saveAttributes(', ') throws IOException', 'void'),
   \ javaapi#method(0,1,'hasThumbnail(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getThumbnail(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getThumbnail(', ')', 'byte'),
   \ javaapi#method(0,1,'getLatLong(', 'float[])', 'boolean'),
   \ javaapi#method(0,1,'getAltitude(', 'double)', 'double'),
   \ ])

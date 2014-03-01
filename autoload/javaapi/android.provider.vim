@@ -74,8 +74,8 @@ call javaapi#class('Contacts', '', [
   \ ])
 
 call javaapi#class('SearchRecentSuggestions', '', [
-  \ javaapi#field(1,1,'QUERIES_PROJECTION_1LINE', 'String[]'),
-  \ javaapi#field(1,1,'QUERIES_PROJECTION_2LINE', 'String[]'),
+  \ javaapi#field(1,1,'QUERIES_PROJECTION_1LINE', 'String'),
+  \ javaapi#field(1,1,'QUERIES_PROJECTION_2LINE', 'String'),
   \ javaapi#field(1,1,'QUERIES_PROJECTION_DATE_INDEX', 'int'),
   \ javaapi#field(1,1,'QUERIES_PROJECTION_QUERY_INDEX', 'int'),
   \ javaapi#field(1,1,'QUERIES_PROJECTION_DISPLAY1_INDEX', 'int'),
@@ -168,7 +168,7 @@ call javaapi#class('Browser', '', [
   \ javaapi#field(1,1,'INITIAL_ZOOM_LEVEL', 'String'),
   \ javaapi#field(1,1,'EXTRA_APPLICATION_ID', 'String'),
   \ javaapi#field(1,1,'EXTRA_HEADERS', 'String'),
-  \ javaapi#field(1,1,'HISTORY_PROJECTION', 'String[]'),
+  \ javaapi#field(1,1,'HISTORY_PROJECTION', 'String'),
   \ javaapi#field(1,1,'HISTORY_PROJECTION_ID_INDEX', 'int'),
   \ javaapi#field(1,1,'HISTORY_PROJECTION_URL_INDEX', 'int'),
   \ javaapi#field(1,1,'HISTORY_PROJECTION_VISITS_INDEX', 'int'),
@@ -176,11 +176,11 @@ call javaapi#class('Browser', '', [
   \ javaapi#field(1,1,'HISTORY_PROJECTION_BOOKMARK_INDEX', 'int'),
   \ javaapi#field(1,1,'HISTORY_PROJECTION_TITLE_INDEX', 'int'),
   \ javaapi#field(1,1,'HISTORY_PROJECTION_FAVICON_INDEX', 'int'),
-  \ javaapi#field(1,1,'TRUNCATE_HISTORY_PROJECTION', 'String[]'),
+  \ javaapi#field(1,1,'TRUNCATE_HISTORY_PROJECTION', 'String'),
   \ javaapi#field(1,1,'TRUNCATE_HISTORY_PROJECTION_ID_INDEX', 'int'),
   \ javaapi#field(1,1,'TRUNCATE_N_OLDEST', 'int'),
   \ javaapi#field(1,1,'SEARCHES_URI', 'Uri'),
-  \ javaapi#field(1,1,'SEARCHES_PROJECTION', 'String[]'),
+  \ javaapi#field(1,1,'SEARCHES_PROJECTION', 'String'),
   \ javaapi#field(1,1,'SEARCHES_PROJECTION_SEARCH_INDEX', 'int'),
   \ javaapi#field(1,1,'SEARCHES_PROJECTION_DATE_INDEX', 'int'),
   \ javaapi#field(1,1,'EXTRA_CREATE_NEW_TAB', 'String'),

@@ -26,7 +26,7 @@ call javaapi#class('BaseTestRunner', 'TestListener', [
   \ javaapi#method(1,1,'truncate(', 'String)', 'String'),
   \ javaapi#method(0,0,'runFailed(', 'String)', 'void'),
   \ javaapi#method(0,1,'getLoader(', ')', 'TestSuiteLoader'),
-  \ javaapi#method(0,0,'loadSuiteClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,0,'loadSuiteClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,0,'clearStatus(', ')', 'void'),
   \ javaapi#method(0,0,'useReloadingTestSuiteLoader(', ')', 'boolean'),
   \ javaapi#method(1,1,'getPreference(', 'String)', 'String'),

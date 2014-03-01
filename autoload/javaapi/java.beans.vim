@@ -14,7 +14,7 @@ call javaapi#interface('PropertyChangeListener', 'EventListener', [
   \ javaapi#method(0,1,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('PropertyChangeListenerProxy', 'PropertyChangeListener>', [
+call javaapi#class('PropertyChangeListenerProxy', 'EventListenerProxy', [
   \ javaapi#method(0,1,'PropertyChangeListenerProxy(', 'String, PropertyChangeListener)', ''),
   \ javaapi#method(0,1,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,1,'getPropertyName(', ')', 'String'),
@@ -24,10 +24,10 @@ call javaapi#class('PropertyChangeSupport', 'Serializable', [
   \ javaapi#method(0,1,'PropertyChangeSupport(', 'Object)', ''),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'String, PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', 'String)', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', 'String)', 'PropertyChangeListener'),
   \ javaapi#method(0,1,'firePropertyChange(', 'String, Object, Object)', 'void'),
   \ javaapi#method(0,1,'firePropertyChange(', 'String, int, int)', 'void'),
   \ javaapi#method(0,1,'firePropertyChange(', 'String, boolean, boolean)', 'void'),

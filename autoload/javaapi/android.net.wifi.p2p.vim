@@ -4,7 +4,7 @@ call javaapi#class('WifiP2pInfo', 'Parcelable', [
   \ javaapi#field(0,1,'groupFormed', 'boolean'),
   \ javaapi#field(0,1,'isGroupOwner', 'boolean'),
   \ javaapi#field(0,1,'groupOwnerAddress', 'InetAddress'),
-  \ javaapi#field(1,1,'CREATOR', 'WifiP2pInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WifiP2pInfo(', ')', ''),
   \ javaapi#method(0,1,'WifiP2pInfo(', 'WifiP2pInfo)', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -13,10 +13,10 @@ call javaapi#class('WifiP2pInfo', 'Parcelable', [
   \ ])
 
 call javaapi#class('WifiP2pDeviceList', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'WifiP2pDeviceList>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WifiP2pDeviceList(', ')', ''),
   \ javaapi#method(0,1,'WifiP2pDeviceList(', 'WifiP2pDeviceList)', ''),
-  \ javaapi#method(0,1,'getDeviceList(', ')', 'WifiP2pDevice>'),
+  \ javaapi#method(0,1,'getDeviceList(', ')', 'Collection'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
@@ -25,13 +25,13 @@ call javaapi#class('WifiP2pDeviceList', 'Parcelable', [
 call javaapi#namespace('android.net.wifi.p2p')
 
 call javaapi#class('WifiP2pGroup', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'WifiP2pGroup>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WifiP2pGroup(', ')', ''),
   \ javaapi#method(0,1,'WifiP2pGroup(', 'WifiP2pGroup)', ''),
   \ javaapi#method(0,1,'getNetworkName(', ')', 'String'),
   \ javaapi#method(0,1,'isGroupOwner(', ')', 'boolean'),
   \ javaapi#method(0,1,'getOwner(', ')', 'WifiP2pDevice'),
-  \ javaapi#method(0,1,'getClientList(', ')', 'WifiP2pDevice>'),
+  \ javaapi#method(0,1,'getClientList(', ')', 'Collection'),
   \ javaapi#method(0,1,'getPassphrase(', ')', 'String'),
   \ javaapi#method(0,1,'getInterface(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -43,7 +43,7 @@ call javaapi#class('WifiP2pConfig', 'Parcelable', [
   \ javaapi#field(0,1,'deviceAddress', 'String'),
   \ javaapi#field(0,1,'wps', 'WpsInfo'),
   \ javaapi#field(0,1,'groupOwnerIntent', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'WifiP2pConfig>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WifiP2pConfig(', ')', ''),
   \ javaapi#method(0,1,'WifiP2pConfig(', 'WifiP2pConfig)', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -103,7 +103,7 @@ call javaapi#class('WifiP2pDevice', 'Parcelable', [
   \ javaapi#field(1,1,'AVAILABLE', 'int'),
   \ javaapi#field(1,1,'UNAVAILABLE', 'int'),
   \ javaapi#field(0,1,'status', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'WifiP2pDevice>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WifiP2pDevice(', ')', ''),
   \ javaapi#method(0,1,'WifiP2pDevice(', 'WifiP2pDevice)', ''),
   \ javaapi#method(0,1,'wpsPbcSupported(', ')', 'boolean'),

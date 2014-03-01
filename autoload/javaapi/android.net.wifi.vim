@@ -18,7 +18,7 @@ call javaapi#class('WifiConfiguration', 'Parcelable', [
   \ javaapi#field(0,1,'SSID', 'String'),
   \ javaapi#field(0,1,'BSSID', 'String'),
   \ javaapi#field(0,1,'preSharedKey', 'String'),
-  \ javaapi#field(0,1,'wepKeys', 'String[]'),
+  \ javaapi#field(0,1,'wepKeys', 'String'),
   \ javaapi#field(0,1,'wepTxKeyIndex', 'int'),
   \ javaapi#field(0,1,'priority', 'int'),
   \ javaapi#field(0,1,'hiddenSSID', 'boolean'),
@@ -43,7 +43,7 @@ call javaapi#class('WpsInfo', 'Parcelable', [
   \ javaapi#field(1,1,'INVALID', 'int'),
   \ javaapi#field(0,1,'setup', 'int'),
   \ javaapi#field(0,1,'pin', 'String'),
-  \ javaapi#field(1,1,'CREATOR', 'WpsInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WpsInfo(', ')', ''),
   \ javaapi#method(0,1,'WpsInfo(', 'WpsInfo)', ''),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -78,7 +78,7 @@ call javaapi#class('WifiManager', '', [
   \ javaapi#field(1,1,'WIFI_MODE_FULL', 'int'),
   \ javaapi#field(1,1,'WIFI_MODE_SCAN_ONLY', 'int'),
   \ javaapi#field(1,1,'WIFI_MODE_FULL_HIGH_PERF', 'int'),
-  \ javaapi#method(0,1,'getConfiguredNetworks(', ')', 'WifiConfiguration>'),
+  \ javaapi#method(0,1,'getConfiguredNetworks(', ')', 'List'),
   \ javaapi#method(0,1,'addNetwork(', 'WifiConfiguration)', 'int'),
   \ javaapi#method(0,1,'updateNetwork(', 'WifiConfiguration)', 'int'),
   \ javaapi#method(0,1,'removeNetwork(', 'int)', 'boolean'),
@@ -90,7 +90,7 @@ call javaapi#class('WifiManager', '', [
   \ javaapi#method(0,1,'pingSupplicant(', ')', 'boolean'),
   \ javaapi#method(0,1,'startScan(', ')', 'boolean'),
   \ javaapi#method(0,1,'getConnectionInfo(', ')', 'WifiInfo'),
-  \ javaapi#method(0,1,'getScanResults(', ')', 'ScanResult>'),
+  \ javaapi#method(0,1,'getScanResults(', ')', 'List'),
   \ javaapi#method(0,1,'saveConfiguration(', ')', 'boolean'),
   \ javaapi#method(0,1,'getDhcpInfo(', ')', 'DhcpInfo'),
   \ javaapi#method(0,1,'setWifiEnabled(', 'boolean)', 'boolean'),
@@ -104,7 +104,7 @@ call javaapi#class('WifiManager', '', [
   \ javaapi#method(0,0,'finalize(', ') throws Throwable', 'void'),
   \ ])
 
-call javaapi#class('SupplicantState', 'SupplicantState>', [
+call javaapi#class('SupplicantState', 'Enum', [
   \ javaapi#field(1,1,'ASSOCIATED', 'SupplicantState'),
   \ javaapi#field(1,1,'ASSOCIATING', 'SupplicantState'),
   \ javaapi#field(1,1,'AUTHENTICATING', 'SupplicantState'),
@@ -118,7 +118,7 @@ call javaapi#class('SupplicantState', 'SupplicantState>', [
   \ javaapi#field(1,1,'INVALID', 'SupplicantState'),
   \ javaapi#field(1,1,'SCANNING', 'SupplicantState'),
   \ javaapi#field(1,1,'UNINITIALIZED', 'SupplicantState'),
-  \ javaapi#method(1,1,'values(', ')', 'SupplicantState[]'),
+  \ javaapi#method(1,1,'values(', ')', 'SupplicantState'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'SupplicantState'),
   \ javaapi#method(1,1,'isValidState(', 'SupplicantState)', 'boolean'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),

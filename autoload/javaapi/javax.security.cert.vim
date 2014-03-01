@@ -14,7 +14,7 @@ call javaapi#class('X509Certificate', 'Certificate', [
   \ javaapi#method(0,1,'getNotAfter(', ')', 'Date'),
   \ javaapi#method(0,1,'getSigAlgName(', ')', 'String'),
   \ javaapi#method(0,1,'getSigAlgOID(', ')', 'String'),
-  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getSigAlgParams(', ')', 'byte'),
   \ ])
 
 call javaapi#class('CertificateNotYetValidException', 'CertificateException', [
@@ -36,7 +36,7 @@ call javaapi#class('Certificate', '', [
   \ javaapi#method(0,1,'Certificate(', ')', ''),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ') throws CertificateEncodingException', 'byte'),
   \ javaapi#method(0,1,'verify(', 'PublicKey) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'verify(', 'PublicKey, String) throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException, SignatureException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),

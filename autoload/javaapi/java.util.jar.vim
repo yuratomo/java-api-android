@@ -38,8 +38,8 @@ call javaapi#class('Attributes', 'Cloneable', [
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'keySet(', ')', 'Object>'),
-  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Set'),
+  \ javaapi#method(0,1,'values(', ')', 'Collection'),
   \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -61,7 +61,7 @@ call javaapi#class('JarFile', 'ZipFile', [
   \ javaapi#method(0,1,'getManifest(', ') throws IOException', 'Manifest'),
   \ javaapi#method(0,1,'getJarEntry(', 'String)', 'JarEntry'),
   \ javaapi#method(0,1,'getEntry(', 'String)', 'ZipEntry'),
-  \ javaapi#method(0,1,'entries(', ')', 'JarEntry>'),
+  \ javaapi#method(0,1,'entries(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getInputStream(', 'ZipEntry) throws IOException', 'InputStream'),
   \ ])
 
@@ -75,8 +75,8 @@ call javaapi#class('JarEntry', 'ZipEntry', [
   \ javaapi#method(0,1,'JarEntry(', 'ZipEntry)', ''),
   \ javaapi#method(0,1,'JarEntry(', 'JarEntry)', ''),
   \ javaapi#method(0,1,'getAttributes(', ') throws IOException', 'Attributes'),
-  \ javaapi#method(0,1,'getCertificates(', ')', 'Certificate[]'),
-  \ javaapi#method(0,1,'getCodeSigners(', ')', 'CodeSigner[]'),
+  \ javaapi#method(0,1,'getCertificates(', ')', 'Certificate'),
+  \ javaapi#method(0,1,'getCodeSigners(', ')', 'CodeSigner'),
   \ ])
 
 call javaapi#class('JarInputStream', 'ZipInputStream', [

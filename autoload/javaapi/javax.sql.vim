@@ -74,7 +74,7 @@ call javaapi#interface('ConnectionEventListener', 'EventListener', [
   \ ])
 
 call javaapi#interface('RowSetInternal', '', [
-  \ javaapi#method(0,1,'getParams(', ') throws SQLException', 'Object[]'),
+  \ javaapi#method(0,1,'getParams(', ') throws SQLException', 'Object'),
   \ javaapi#method(0,1,'getConnection(', ') throws SQLException', 'Connection'),
   \ javaapi#method(0,1,'setMetaData(', 'RowSetMetaData) throws SQLException', 'void'),
   \ javaapi#method(0,1,'getOriginal(', ') throws SQLException', 'ResultSet'),
@@ -98,7 +98,7 @@ call javaapi#interface('RowSet', 'ResultSet', [
   \ javaapi#method(0,1,'setPassword(', 'String) throws SQLException', 'void'),
   \ javaapi#method(0,1,'getTransactionIsolation(', ')', 'int'),
   \ javaapi#method(0,1,'setTransactionIsolation(', 'int) throws SQLException', 'void'),
-  \ javaapi#method(0,1,'getTypeMap(', ') throws SQLException', 'Class<?>>'),
+  \ javaapi#method(0,1,'getTypeMap(', ') throws SQLException', 'Class'),
   \ javaapi#method(0,1,'setTypeMap(', 'Map<String, Class<?>>) throws SQLException', 'void'),
   \ javaapi#method(0,1,'getCommand(', ')', 'String'),
   \ javaapi#method(0,1,'setCommand(', 'String) throws SQLException', 'void'),

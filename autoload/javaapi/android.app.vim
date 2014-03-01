@@ -2,10 +2,10 @@ call javaapi#namespace('android.app')
 
 call javaapi#class('LoaderManager', '', [
   \ javaapi#method(0,1,'LoaderManager(', ')', ''),
-  \ javaapi#method(0,1,'initLoader(', 'int, Bundle, LoaderCallbacks<D>)', 'Loader<D>'),
-  \ javaapi#method(0,1,'restartLoader(', 'int, Bundle, LoaderCallbacks<D>)', 'Loader<D>'),
+  \ javaapi#method(0,1,'initLoader(', 'int, Bundle, LoaderCallbacks<D>)', 'Loader'),
+  \ javaapi#method(0,1,'restartLoader(', 'int, Bundle, LoaderCallbacks<D>)', 'Loader'),
   \ javaapi#method(0,1,'destroyLoader(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getLoader(', 'int)', 'Loader<D>'),
+  \ javaapi#method(0,1,'getLoader(', 'int)', 'Loader'),
   \ javaapi#method(0,1,'dump(', 'String, FileDescriptor, PrintWriter, String[])', 'void'),
   \ javaapi#method(1,1,'enableDebugLogging(', 'boolean)', 'void'),
   \ ])
@@ -105,8 +105,8 @@ call javaapi#class('LauncherActivity', 'ListActivity', [
   \ javaapi#method(0,0,'intentForPosition(', 'int)', 'Intent'),
   \ javaapi#method(0,0,'itemForPosition(', 'int)', 'ListItem'),
   \ javaapi#method(0,0,'getTargetIntent(', ')', 'Intent'),
-  \ javaapi#method(0,0,'onQueryPackageManager(', 'Intent)', 'ResolveInfo>'),
-  \ javaapi#method(0,1,'makeListItems(', ')', 'ListItem>'),
+  \ javaapi#method(0,0,'onQueryPackageManager(', 'Intent)', 'List'),
+  \ javaapi#method(0,1,'makeListItems(', ')', 'List'),
   \ ])
 
 call javaapi#class('MediaRouteButton', 'View', [
@@ -117,7 +117,7 @@ call javaapi#class('MediaRouteButton', 'View', [
   \ javaapi#method(0,1,'performLongClick(', ')', 'boolean'),
   \ javaapi#method(0,1,'setRouteTypes(', 'int)', 'void'),
   \ javaapi#method(0,1,'getRouteTypes(', ')', 'int'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
   \ javaapi#method(0,0,'verifyDrawable(', 'Drawable)', 'boolean'),
   \ javaapi#method(0,1,'jumpDrawablesToCurrentState(', ')', 'void'),
@@ -192,11 +192,11 @@ call javaapi#class('TaskStackBuilder', '', [
   \ javaapi#method(0,1,'startActivities(', 'Bundle)', 'void'),
   \ javaapi#method(0,1,'getPendingIntent(', 'int, int)', 'PendingIntent'),
   \ javaapi#method(0,1,'getPendingIntent(', 'int, int, Bundle)', 'PendingIntent'),
-  \ javaapi#method(0,1,'getIntents(', ')', 'Intent[]'),
+  \ javaapi#method(0,1,'getIntents(', ')', 'Intent'),
   \ ])
 
 call javaapi#class('WallpaperInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'WallpaperInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'WallpaperInfo(', 'Context, ResolveInfo) throws XmlPullParserException, IOException', ''),
   \ javaapi#method(0,1,'getPackageName(', ')', 'String'),
   \ javaapi#method(0,1,'getServiceName(', ')', 'String'),
@@ -490,7 +490,7 @@ call javaapi#class('PendingIntent', 'Parcelable', [
   \ javaapi#field(1,1,'FLAG_NO_CREATE', 'int'),
   \ javaapi#field(1,1,'FLAG_CANCEL_CURRENT', 'int'),
   \ javaapi#field(1,1,'FLAG_UPDATE_CURRENT', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'PendingIntent>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(1,1,'getActivity(', 'Context, int, Intent, int)', 'PendingIntent'),
   \ javaapi#method(1,1,'getActivity(', 'Context, int, Intent, int, Bundle)', 'PendingIntent'),
   \ javaapi#method(1,1,'getActivities(', 'Context, int, Intent[], int)', 'PendingIntent'),
@@ -534,7 +534,7 @@ call javaapi#class('ApplicationErrorReport', 'Parcelable', [
   \ javaapi#field(0,1,'anrInfo', 'AnrInfo'),
   \ javaapi#field(0,1,'batteryInfo', 'BatteryInfo'),
   \ javaapi#field(0,1,'runningServiceInfo', 'RunningServiceInfo'),
-  \ javaapi#field(1,1,'CREATOR', 'ApplicationErrorReport>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'ApplicationErrorReport(', ')', ''),
   \ javaapi#method(1,1,'getErrorReportReceiver(', 'Context, String, int)', 'ComponentName'),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
@@ -544,7 +544,7 @@ call javaapi#class('ApplicationErrorReport', 'Parcelable', [
   \ ])
 
 call javaapi#class('SearchableInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'SearchableInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getSuggestAuthority(', ')', 'String'),
   \ javaapi#method(0,1,'getSuggestPackage(', ')', 'String'),
   \ javaapi#method(0,1,'getSearchActivity(', ')', 'ComponentName'),
@@ -580,17 +580,17 @@ call javaapi#class('ActivityManager', '', [
   \ javaapi#field(1,1,'MOVE_TASK_NO_USER_ACTION', 'int'),
   \ javaapi#method(0,1,'getMemoryClass(', ')', 'int'),
   \ javaapi#method(0,1,'getLargeMemoryClass(', ')', 'int'),
-  \ javaapi#method(0,1,'getRecentTasks(', 'int, int) throws SecurityException', 'RecentTaskInfo>'),
-  \ javaapi#method(0,1,'getRunningTasks(', 'int) throws SecurityException', 'RunningTaskInfo>'),
+  \ javaapi#method(0,1,'getRecentTasks(', 'int, int) throws SecurityException', 'List'),
+  \ javaapi#method(0,1,'getRunningTasks(', 'int) throws SecurityException', 'List'),
   \ javaapi#method(0,1,'moveTaskToFront(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'moveTaskToFront(', 'int, int, Bundle)', 'void'),
-  \ javaapi#method(0,1,'getRunningServices(', 'int) throws SecurityException', 'RunningServiceInfo>'),
+  \ javaapi#method(0,1,'getRunningServices(', 'int) throws SecurityException', 'List'),
   \ javaapi#method(0,1,'getRunningServiceControlPanel(', 'ComponentName) throws SecurityException', 'PendingIntent'),
   \ javaapi#method(0,1,'getMemoryInfo(', 'MemoryInfo)', 'void'),
-  \ javaapi#method(0,1,'getProcessesInErrorState(', ')', 'ProcessErrorStateInfo>'),
-  \ javaapi#method(0,1,'getRunningAppProcesses(', ')', 'RunningAppProcessInfo>'),
+  \ javaapi#method(0,1,'getProcessesInErrorState(', ')', 'List'),
+  \ javaapi#method(0,1,'getRunningAppProcesses(', ')', 'List'),
   \ javaapi#method(1,1,'getMyMemoryState(', 'RunningAppProcessInfo)', 'void'),
-  \ javaapi#method(0,1,'getProcessMemoryInfo(', 'int[])', 'MemoryInfo[]'),
+  \ javaapi#method(0,1,'getProcessMemoryInfo(', 'int[])', 'MemoryInfo'),
   \ javaapi#method(0,1,'restartPackage(', 'String)', 'void'),
   \ javaapi#method(0,1,'killBackgroundProcesses(', 'String)', 'void'),
   \ javaapi#method(0,1,'getDeviceConfigurationInfo(', ')', 'ConfigurationInfo'),
@@ -722,7 +722,7 @@ call javaapi#class('Notification', 'Parcelable', [
   \ javaapi#field(0,1,'sound', 'Uri'),
   \ javaapi#field(1,1,'STREAM_DEFAULT', 'int'),
   \ javaapi#field(0,1,'audioStreamType', 'int'),
-  \ javaapi#field(0,1,'vibrate', 'long[]'),
+  \ javaapi#field(0,1,'vibrate', 'long'),
   \ javaapi#field(0,1,'ledARGB', 'int'),
   \ javaapi#field(0,1,'ledOnMS', 'int'),
   \ javaapi#field(0,1,'ledOffMS', 'int'),
@@ -742,7 +742,7 @@ call javaapi#class('Notification', 'Parcelable', [
   \ javaapi#field(1,1,'PRIORITY_HIGH', 'int'),
   \ javaapi#field(1,1,'PRIORITY_MAX', 'int'),
   \ javaapi#field(0,1,'priority', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Notification>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Notification(', ')', ''),
   \ javaapi#method(0,1,'Notification(', 'int, CharSequence, long)', ''),
   \ javaapi#method(0,1,'Notification(', 'Parcel)', ''),
@@ -1024,7 +1024,7 @@ call javaapi#class('SearchManager', 'OnCancelListener', [
   \ javaapi#method(0,1,'onCancel(', 'DialogInterface)', 'void'),
   \ javaapi#method(0,1,'onDismiss(', 'DialogInterface)', 'void'),
   \ javaapi#method(0,1,'getSearchableInfo(', 'ComponentName)', 'SearchableInfo'),
-  \ javaapi#method(0,1,'getSearchablesInGlobalSearch(', ')', 'SearchableInfo>'),
+  \ javaapi#method(0,1,'getSearchablesInGlobalSearch(', ')', 'List'),
   \ ])
 
 call javaapi#class('WallpaperManager', '', [
@@ -1060,7 +1060,7 @@ call javaapi#class('Activity', 'ContextThemeWrapper', [
   \ javaapi#field(1,1,'RESULT_CANCELED', 'int'),
   \ javaapi#field(1,1,'RESULT_OK', 'int'),
   \ javaapi#field(1,1,'RESULT_FIRST_USER', 'int'),
-  \ javaapi#field(1,0,'FOCUSED_STATE_SET', 'int[]'),
+  \ javaapi#field(1,0,'FOCUSED_STATE_SET', 'int'),
   \ javaapi#field(1,1,'DEFAULT_KEYS_DISABLE', 'int'),
   \ javaapi#field(1,1,'DEFAULT_KEYS_DIALER', 'int'),
   \ javaapi#field(1,1,'DEFAULT_KEYS_SHORTCUT', 'int'),

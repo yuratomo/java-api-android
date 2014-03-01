@@ -269,7 +269,7 @@ call javaapi#class('Drawable', '', [
   \ javaapi#method(0,1,'clearColorFilter(', ')', 'void'),
   \ javaapi#method(0,1,'isStateful(', ')', 'boolean'),
   \ javaapi#method(0,1,'setState(', 'int[])', 'boolean'),
-  \ javaapi#method(0,1,'getState(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getState(', ')', 'int'),
   \ javaapi#method(0,1,'jumpToCurrentState(', ')', 'void'),
   \ javaapi#method(0,1,'getCurrent(', ')', 'Drawable'),
   \ javaapi#method(0,1,'setLevel(', 'int)', 'boolean'),

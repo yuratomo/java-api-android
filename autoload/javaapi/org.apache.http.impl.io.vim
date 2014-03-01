@@ -16,7 +16,7 @@ call javaapi#class('ChunkedInputStream', 'InputStream', [
   \ javaapi#method(0,1,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ javaapi#method(0,1,'read(', 'byte[]) throws IOException', 'int'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
-  \ javaapi#method(0,1,'getFooters(', ')', 'Header[]'),
+  \ javaapi#method(0,1,'getFooters(', ')', 'Header'),
   \ ])
 
 call javaapi#class('HttpResponseWriter', 'AbstractMessageWriter', [
@@ -80,7 +80,7 @@ call javaapi#class('IdentityOutputStream', 'OutputStream', [
 call javaapi#class('AbstractMessageParser', 'HttpMessageParser', [
   \ javaapi#field(0,0,'lineParser', 'LineParser'),
   \ javaapi#method(0,1,'AbstractMessageParser(', 'SessionInputBuffer, LineParser, HttpParams)', ''),
-  \ javaapi#method(1,1,'parseHeaders(', 'SessionInputBuffer, int, int, LineParser) throws HttpException, IOException', 'Header[]'),
+  \ javaapi#method(1,1,'parseHeaders(', 'SessionInputBuffer, int, int, LineParser) throws HttpException, IOException', 'Header'),
   \ javaapi#method(0,0,'parseHead(', 'SessionInputBuffer) throws IOException, HttpException, ParseException', 'HttpMessage'),
   \ javaapi#method(0,1,'parse(', ') throws IOException, HttpException', 'HttpMessage'),
   \ ])

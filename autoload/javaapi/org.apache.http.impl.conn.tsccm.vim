@@ -1,12 +1,12 @@
 call javaapi#namespace('org.apache.http.impl.conn.tsccm')
 
-call javaapi#class('BasicPoolEntryRef', 'BasicPoolEntry>', [
+call javaapi#class('BasicPoolEntryRef', 'WeakReference', [
   \ javaapi#method(0,1,'BasicPoolEntryRef(', 'BasicPoolEntry, ReferenceQueue<Object>)', ''),
   \ javaapi#method(0,1,'getRoute(', ')', 'HttpRoute'),
   \ ])
 
 call javaapi#class('RefQueueWorker', 'Runnable', [
-  \ javaapi#field(0,0,'refQueue', 'ReferenceQueue<?>'),
+  \ javaapi#field(0,0,'refQueue', 'ReferenceQueue'),
   \ javaapi#field(0,0,'refHandler', 'RefQueueHandler'),
   \ javaapi#field(0,0,'workerThread', 'Thread'),
   \ javaapi#method(0,1,'RefQueueWorker(', 'ReferenceQueue<?>, RefQueueHandler)', ''),
@@ -27,10 +27,10 @@ call javaapi#class('WaitingThread', '', [
 
 call javaapi#class('AbstractConnPool', 'RefQueueHandler', [
   \ javaapi#field(0,0,'poolLock', 'Lock'),
-  \ javaapi#field(0,0,'issuedConnections', 'BasicPoolEntryRef>'),
+  \ javaapi#field(0,0,'issuedConnections', 'Set'),
   \ javaapi#field(0,0,'idleConnHandler', 'IdleConnectionHandler'),
   \ javaapi#field(0,0,'numConnections', 'int'),
-  \ javaapi#field(0,0,'refQueue', 'Object>'),
+  \ javaapi#field(0,0,'refQueue', 'ReferenceQueue'),
   \ javaapi#field(0,0,'isShutDown', 'boolean'),
   \ javaapi#method(0,0,'AbstractConnPool(', ')', ''),
   \ javaapi#method(0,1,'enableConnectionGC(', ') throws IllegalStateException', 'void'),
@@ -54,13 +54,13 @@ call javaapi#class('WaitingThreadAborter', '', [
 
 call javaapi#class('ConnPoolByRoute', 'AbstractConnPool', [
   \ javaapi#field(0,0,'operator', 'ClientConnectionOperator'),
-  \ javaapi#field(0,0,'freeConnections', 'BasicPoolEntry>'),
-  \ javaapi#field(0,0,'waitingThreads', 'WaitingThread>'),
+  \ javaapi#field(0,0,'freeConnections', 'Queue'),
+  \ javaapi#field(0,0,'waitingThreads', 'Queue'),
   \ javaapi#field(0,0,'routeToPool', 'RouteSpecificPool>'),
   \ javaapi#field(0,0,'maxTotalConnections', 'int'),
   \ javaapi#method(0,1,'ConnPoolByRoute(', 'ClientConnectionOperator, HttpParams)', ''),
-  \ javaapi#method(0,0,'createFreeConnQueue(', ')', 'BasicPoolEntry>'),
-  \ javaapi#method(0,0,'createWaitingThreadQueue(', ')', 'WaitingThread>'),
+  \ javaapi#method(0,0,'createFreeConnQueue(', ')', 'Queue'),
+  \ javaapi#method(0,0,'createWaitingThreadQueue(', ')', 'Queue'),
   \ javaapi#method(0,0,'createRouteToPoolMap(', ')', 'RouteSpecificPool>'),
   \ javaapi#method(0,0,'newRouteSpecificPool(', 'HttpRoute)', 'RouteSpecificPool'),
   \ javaapi#method(0,0,'newWaitingThread(', 'Condition, RouteSpecificPool)', 'WaitingThread'),
@@ -112,8 +112,8 @@ call javaapi#interface('PoolEntryRequest', '', [
 call javaapi#class('RouteSpecificPool', '', [
   \ javaapi#field(0,0,'route', 'HttpRoute'),
   \ javaapi#field(0,0,'maxEntries', 'int'),
-  \ javaapi#field(0,0,'freeEntries', 'BasicPoolEntry>'),
-  \ javaapi#field(0,0,'waitingThreads', 'WaitingThread>'),
+  \ javaapi#field(0,0,'freeEntries', 'LinkedList'),
+  \ javaapi#field(0,0,'waitingThreads', 'Queue'),
   \ javaapi#field(0,0,'numEntries', 'int'),
   \ javaapi#method(0,1,'RouteSpecificPool(', 'HttpRoute, int)', ''),
   \ javaapi#method(0,1,'getRoute(', ')', 'HttpRoute'),

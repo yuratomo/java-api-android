@@ -26,7 +26,7 @@ call javaapi#class('ConnectivityManager', '', [
   \ javaapi#method(0,1,'getNetworkPreference(', ')', 'int'),
   \ javaapi#method(0,1,'getActiveNetworkInfo(', ')', 'NetworkInfo'),
   \ javaapi#method(0,1,'getNetworkInfo(', 'int)', 'NetworkInfo'),
-  \ javaapi#method(0,1,'getAllNetworkInfo(', ')', 'NetworkInfo[]'),
+  \ javaapi#method(0,1,'getAllNetworkInfo(', ')', 'NetworkInfo'),
   \ javaapi#method(0,1,'startUsingNetworkFeature(', 'int, String)', 'int'),
   \ javaapi#method(0,1,'stopUsingNetworkFeature(', 'int, String)', 'int'),
   \ javaapi#method(0,1,'requestRouteToHost(', 'int, int)', 'boolean'),
@@ -95,7 +95,7 @@ call javaapi#class('LocalSocket', 'Closeable', [
   \ javaapi#method(0,1,'isInputShutdown(', ')', 'boolean'),
   \ javaapi#method(0,1,'connect(', 'LocalSocketAddress, int) throws IOException', 'void'),
   \ javaapi#method(0,1,'setFileDescriptorsForSend(', 'FileDescriptor[])', 'void'),
-  \ javaapi#method(0,1,'getAncillaryFileDescriptors(', ') throws IOException', 'FileDescriptor[]'),
+  \ javaapi#method(0,1,'getAncillaryFileDescriptors(', ') throws IOException', 'FileDescriptor'),
   \ javaapi#method(0,1,'getPeerCredentials(', ') throws IOException', 'Credentials'),
   \ javaapi#method(0,1,'getFileDescriptor(', ')', 'FileDescriptor'),
   \ ])
@@ -162,9 +162,9 @@ call javaapi#class('TrafficStats', '', [
   \ javaapi#method(1,1,'getUidUdpRxPackets(', 'int)', 'long'),
   \ ])
 
-call javaapi#class('Uri', 'Uri>', [
+call javaapi#class('Uri', 'Comparable', [
   \ javaapi#field(1,1,'EMPTY', 'Uri'),
-  \ javaapi#field(1,1,'CREATOR', 'Uri>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'isHierarchical(', ')', 'boolean'),
   \ javaapi#method(0,1,'isOpaque(', ')', 'boolean'),
   \ javaapi#method(0,1,'isRelative(', ')', 'boolean'),
@@ -184,7 +184,7 @@ call javaapi#class('Uri', 'Uri>', [
   \ javaapi#method(0,1,'getEncodedQuery(', ')', 'String'),
   \ javaapi#method(0,1,'getFragment(', ')', 'String'),
   \ javaapi#method(0,1,'getEncodedFragment(', ')', 'String'),
-  \ javaapi#method(0,1,'getPathSegments(', ')', 'String>'),
+  \ javaapi#method(0,1,'getPathSegments(', ')', 'List'),
   \ javaapi#method(0,1,'getLastPathSegment(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -194,8 +194,8 @@ call javaapi#class('Uri', 'Uri>', [
   \ javaapi#method(1,1,'parse(', 'String)', 'Uri'),
   \ javaapi#method(1,1,'fromFile(', 'File)', 'Uri'),
   \ javaapi#method(1,1,'fromParts(', 'String, String, String)', 'Uri'),
-  \ javaapi#method(0,1,'getQueryParameterNames(', ')', 'String>'),
-  \ javaapi#method(0,1,'getQueryParameters(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'getQueryParameterNames(', ')', 'Set'),
+  \ javaapi#method(0,1,'getQueryParameters(', 'String)', 'List'),
   \ javaapi#method(0,1,'getQueryParameter(', 'String)', 'String'),
   \ javaapi#method(0,1,'getBooleanQueryParameter(', 'String, boolean)', 'boolean'),
   \ javaapi#method(0,1,'normalizeScheme(', ')', 'Uri'),
@@ -227,7 +227,7 @@ call javaapi#class('SSLCertificateSocketFactory', 'SSLSocketFactory', [
   \ javaapi#method(1,1,'getHttpSocketFactory(', 'int, SSLSessionCache)', 'SSLSocketFactory'),
   \ javaapi#method(0,1,'setTrustManagers(', 'TrustManager[])', 'void'),
   \ javaapi#method(0,1,'setNpnProtocols(', 'byte[][])', 'void'),
-  \ javaapi#method(0,1,'getNpnSelectedProtocol(', 'Socket)', 'byte[]'),
+  \ javaapi#method(0,1,'getNpnSelectedProtocol(', 'Socket)', 'byte'),
   \ javaapi#method(0,1,'setKeyManagers(', 'KeyManager[])', 'void'),
   \ javaapi#method(0,1,'setUseSessionTickets(', 'Socket, boolean)', 'void'),
   \ javaapi#method(0,1,'setHostname(', 'Socket, String)', 'void'),
@@ -237,8 +237,8 @@ call javaapi#class('SSLCertificateSocketFactory', 'SSLSocketFactory', [
   \ javaapi#method(0,1,'createSocket(', 'InetAddress, int) throws IOException', 'Socket'),
   \ javaapi#method(0,1,'createSocket(', 'String, int, InetAddress, int) throws IOException', 'Socket'),
   \ javaapi#method(0,1,'createSocket(', 'String, int) throws IOException', 'Socket'),
-  \ javaapi#method(0,1,'getDefaultCipherSuites(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getSupportedCipherSuites(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDefaultCipherSuites(', ')', 'String'),
+  \ javaapi#method(0,1,'getSupportedCipherSuites(', ')', 'String'),
   \ ])
 
 call javaapi#class('Proxy', '', [
@@ -282,8 +282,8 @@ call javaapi#class('UrlQuerySanitizer', '', [
   \ javaapi#method(1,1,'getAllButNulAndAngleBracketsLegal(', ')', 'ValueSanitizer'),
   \ javaapi#method(0,1,'parseUrl(', 'String)', 'void'),
   \ javaapi#method(0,1,'parseQuery(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getParameterSet(', ')', 'String>'),
-  \ javaapi#method(0,1,'getParameterList(', ')', 'ParameterValuePair>'),
+  \ javaapi#method(0,1,'getParameterSet(', ')', 'Set'),
+  \ javaapi#method(0,1,'getParameterList(', ')', 'List'),
   \ javaapi#method(0,1,'hasParameter(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'getValue(', 'String)', 'String'),
   \ javaapi#method(0,1,'registerParameter(', 'String, ValueSanitizer)', 'void'),

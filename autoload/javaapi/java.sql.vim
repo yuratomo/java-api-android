@@ -5,7 +5,7 @@ call javaapi#class('DriverPropertyInfo', '', [
   \ javaapi#field(0,1,'description', 'String'),
   \ javaapi#field(0,1,'required', 'boolean'),
   \ javaapi#field(0,1,'value', 'String'),
-  \ javaapi#field(0,1,'choices', 'String[]'),
+  \ javaapi#field(0,1,'choices', 'String'),
   \ javaapi#method(0,1,'DriverPropertyInfo(', 'String, String)', ''),
   \ ])
 
@@ -31,18 +31,18 @@ call javaapi#class('Time', 'Date', [
 
 call javaapi#interface('RowId', '', [
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('RowIdLifetime', 'RowIdLifetime>', [
+call javaapi#class('RowIdLifetime', 'Enum', [
   \ javaapi#field(1,1,'ROWID_UNSUPPORTED', 'RowIdLifetime'),
   \ javaapi#field(1,1,'ROWID_VALID_OTHER', 'RowIdLifetime'),
   \ javaapi#field(1,1,'ROWID_VALID_SESSION', 'RowIdLifetime'),
   \ javaapi#field(1,1,'ROWID_VALID_TRANSACTION', 'RowIdLifetime'),
   \ javaapi#field(1,1,'ROWID_VALID_FOREVER', 'RowIdLifetime'),
-  \ javaapi#method(1,1,'values(', ')', 'RowIdLifetime[]'),
+  \ javaapi#method(1,1,'values(', ')', 'RowIdLifetime'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'RowIdLifetime'),
   \ ])
 
@@ -128,12 +128,12 @@ call javaapi#class('SQLTransientException', 'SQLException', [
   \ javaapi#method(0,1,'SQLTransientException(', 'String, String, int, Throwable)', ''),
   \ ])
 
-call javaapi#class('ClientInfoStatus', 'ClientInfoStatus>', [
+call javaapi#class('ClientInfoStatus', 'Enum', [
   \ javaapi#field(1,1,'REASON_UNKNOWN', 'ClientInfoStatus'),
   \ javaapi#field(1,1,'REASON_UNKNOWN_PROPERTY', 'ClientInfoStatus'),
   \ javaapi#field(1,1,'REASON_VALUE_INVALID', 'ClientInfoStatus'),
   \ javaapi#field(1,1,'REASON_VALUE_TRUNCATED', 'ClientInfoStatus'),
-  \ javaapi#method(1,1,'values(', ')', 'ClientInfoStatus[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ClientInfoStatus'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ClientInfoStatus'),
   \ ])
 
@@ -179,7 +179,7 @@ call javaapi#interface('ResultSet', 'AutoCloseable', [
   \ javaapi#method(0,1,'getFloat(', 'int) throws SQLException', 'float'),
   \ javaapi#method(0,1,'getDouble(', 'int) throws SQLException', 'double'),
   \ javaapi#method(0,1,'getBigDecimal(', 'int, int) throws SQLException', 'BigDecimal'),
-  \ javaapi#method(0,1,'getBytes(', 'int) throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'int) throws SQLException', 'byte'),
   \ javaapi#method(0,1,'getDate(', 'int) throws SQLException', 'Date'),
   \ javaapi#method(0,1,'getTime(', 'int) throws SQLException', 'Time'),
   \ javaapi#method(0,1,'getTimestamp(', 'int) throws SQLException', 'Timestamp'),
@@ -195,7 +195,7 @@ call javaapi#interface('ResultSet', 'AutoCloseable', [
   \ javaapi#method(0,1,'getFloat(', 'String) throws SQLException', 'float'),
   \ javaapi#method(0,1,'getDouble(', 'String) throws SQLException', 'double'),
   \ javaapi#method(0,1,'getBigDecimal(', 'String, int) throws SQLException', 'BigDecimal'),
-  \ javaapi#method(0,1,'getBytes(', 'String) throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'String) throws SQLException', 'byte'),
   \ javaapi#method(0,1,'getDate(', 'String) throws SQLException', 'Date'),
   \ javaapi#method(0,1,'getTime(', 'String) throws SQLException', 'Time'),
   \ javaapi#method(0,1,'getTimestamp(', 'String) throws SQLException', 'Timestamp'),
@@ -421,7 +421,7 @@ call javaapi#class('DriverManager', '', [
   \ javaapi#method(1,1,'getDriver(', 'String) throws SQLException', 'Driver'),
   \ javaapi#method(1,1,'registerDriver(', 'Driver) throws SQLException', 'void'),
   \ javaapi#method(1,1,'deregisterDriver(', 'Driver) throws SQLException', 'void'),
-  \ javaapi#method(1,1,'getDrivers(', ')', 'Driver>'),
+  \ javaapi#method(1,1,'getDrivers(', ')', 'Enumeration'),
   \ javaapi#method(1,1,'setLoginTimeout(', 'int)', 'void'),
   \ javaapi#method(1,1,'getLoginTimeout(', ')', 'int'),
   \ javaapi#method(1,1,'setLogStream(', 'PrintStream)', 'void'),
@@ -431,8 +431,8 @@ call javaapi#class('DriverManager', '', [
 
 call javaapi#interface('Struct', '', [
   \ javaapi#method(0,1,'getSQLTypeName(', ') throws SQLException', 'String'),
-  \ javaapi#method(0,1,'getAttributes(', ') throws SQLException', 'Object[]'),
-  \ javaapi#method(0,1,'getAttributes(', 'Map<String, Class<?>>) throws SQLException', 'Object[]'),
+  \ javaapi#method(0,1,'getAttributes(', ') throws SQLException', 'Object'),
+  \ javaapi#method(0,1,'getAttributes(', 'Map<String, Class<?>>) throws SQLException', 'Object'),
   \ ])
 
 call javaapi#interface('PreparedStatement', 'Statement', [
@@ -517,7 +517,7 @@ call javaapi#class('SQLException', 'Exception', [
   \ javaapi#method(0,1,'getErrorCode(', ')', 'int'),
   \ javaapi#method(0,1,'getNextException(', ')', 'SQLException'),
   \ javaapi#method(0,1,'setNextException(', 'SQLException)', 'void'),
-  \ javaapi#method(0,1,'iterator(', ')', 'Throwable>'),
+  \ javaapi#method(0,1,'iterator(', ')', 'Iterator'),
   \ ])
 
 call javaapi#interface('SQLXML', '', [
@@ -626,7 +626,7 @@ call javaapi#interface('SQLInput', '', [
   \ javaapi#method(0,1,'readFloat(', ') throws SQLException', 'float'),
   \ javaapi#method(0,1,'readDouble(', ') throws SQLException', 'double'),
   \ javaapi#method(0,1,'readBigDecimal(', ') throws SQLException', 'BigDecimal'),
-  \ javaapi#method(0,1,'readBytes(', ') throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'readBytes(', ') throws SQLException', 'byte'),
   \ javaapi#method(0,1,'readDate(', ') throws SQLException', 'Date'),
   \ javaapi#method(0,1,'readTime(', ') throws SQLException', 'Time'),
   \ javaapi#method(0,1,'readTimestamp(', ') throws SQLException', 'Timestamp'),
@@ -670,7 +670,7 @@ call javaapi#class('Date', 'Date', [
 call javaapi#interface('Driver', '', [
   \ javaapi#method(0,1,'connect(', 'String, Properties) throws SQLException', 'Connection'),
   \ javaapi#method(0,1,'acceptsURL(', 'String) throws SQLException', 'boolean'),
-  \ javaapi#method(0,1,'getPropertyInfo(', 'String, Properties) throws SQLException', 'DriverPropertyInfo[]'),
+  \ javaapi#method(0,1,'getPropertyInfo(', 'String, Properties) throws SQLException', 'DriverPropertyInfo'),
   \ javaapi#method(0,1,'getMajorVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getMinorVersion(', ')', 'int'),
   \ javaapi#method(0,1,'jdbcCompliant(', ')', 'boolean'),
@@ -711,7 +711,7 @@ call javaapi#interface('Statement', 'AutoCloseable', [
   \ javaapi#method(0,1,'getResultSetType(', ') throws SQLException', 'int'),
   \ javaapi#method(0,1,'addBatch(', 'String) throws SQLException', 'void'),
   \ javaapi#method(0,1,'clearBatch(', ') throws SQLException', 'void'),
-  \ javaapi#method(0,1,'executeBatch(', ') throws SQLException', 'int[]'),
+  \ javaapi#method(0,1,'executeBatch(', ') throws SQLException', 'int'),
   \ javaapi#method(0,1,'getConnection(', ') throws SQLException', 'Connection'),
   \ javaapi#method(0,1,'getMoreResults(', 'int) throws SQLException', 'boolean'),
   \ javaapi#method(0,1,'getGeneratedKeys(', ') throws SQLException', 'ResultSet'),
@@ -751,7 +751,7 @@ call javaapi#class('BatchUpdateException', 'SQLException', [
   \ javaapi#method(0,1,'BatchUpdateException(', 'String, int[], Throwable)', ''),
   \ javaapi#method(0,1,'BatchUpdateException(', 'String, String, int[], Throwable)', ''),
   \ javaapi#method(0,1,'BatchUpdateException(', 'String, String, int, int[], Throwable)', ''),
-  \ javaapi#method(0,1,'getUpdateCounts(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getUpdateCounts(', ')', 'int'),
   \ ])
 
 call javaapi#class('SQLInvalidAuthorizationSpecException', 'SQLNonTransientException', [
@@ -821,7 +821,7 @@ call javaapi#interface('CallableStatement', 'PreparedStatement', [
   \ javaapi#method(0,1,'getFloat(', 'int) throws SQLException', 'float'),
   \ javaapi#method(0,1,'getDouble(', 'int) throws SQLException', 'double'),
   \ javaapi#method(0,1,'getBigDecimal(', 'int, int) throws SQLException', 'BigDecimal'),
-  \ javaapi#method(0,1,'getBytes(', 'int) throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'int) throws SQLException', 'byte'),
   \ javaapi#method(0,1,'getDate(', 'int) throws SQLException', 'Date'),
   \ javaapi#method(0,1,'getTime(', 'int) throws SQLException', 'Time'),
   \ javaapi#method(0,1,'getTimestamp(', 'int) throws SQLException', 'Timestamp'),
@@ -873,7 +873,7 @@ call javaapi#interface('CallableStatement', 'PreparedStatement', [
   \ javaapi#method(0,1,'getLong(', 'String) throws SQLException', 'long'),
   \ javaapi#method(0,1,'getFloat(', 'String) throws SQLException', 'float'),
   \ javaapi#method(0,1,'getDouble(', 'String) throws SQLException', 'double'),
-  \ javaapi#method(0,1,'getBytes(', 'String) throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'String) throws SQLException', 'byte'),
   \ javaapi#method(0,1,'getDate(', 'String) throws SQLException', 'Date'),
   \ javaapi#method(0,1,'getTime(', 'String) throws SQLException', 'Time'),
   \ javaapi#method(0,1,'getTimestamp(', 'String) throws SQLException', 'Timestamp'),
@@ -972,7 +972,7 @@ call javaapi#interface('Connection', 'AutoCloseable', [
   \ javaapi#method(0,1,'createStatement(', 'int, int) throws SQLException', 'Statement'),
   \ javaapi#method(0,1,'prepareStatement(', 'String, int, int) throws SQLException', 'PreparedStatement'),
   \ javaapi#method(0,1,'prepareCall(', 'String, int, int) throws SQLException', 'CallableStatement'),
-  \ javaapi#method(0,1,'getTypeMap(', ') throws SQLException', 'Class<?>>'),
+  \ javaapi#method(0,1,'getTypeMap(', ') throws SQLException', 'Class'),
   \ javaapi#method(0,1,'setTypeMap(', 'Map<String, Class<?>>) throws SQLException', 'void'),
   \ javaapi#method(0,1,'setHoldability(', 'int) throws SQLException', 'void'),
   \ javaapi#method(0,1,'getHoldability(', ') throws SQLException', 'int'),
@@ -1260,7 +1260,7 @@ call javaapi#class('SQLIntegrityConstraintViolationException', 'SQLNonTransientE
 
 call javaapi#interface('Blob', '', [
   \ javaapi#method(0,1,'length(', ') throws SQLException', 'long'),
-  \ javaapi#method(0,1,'getBytes(', 'long, int) throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'long, int) throws SQLException', 'byte'),
   \ javaapi#method(0,1,'getBinaryStream(', ') throws SQLException', 'InputStream'),
   \ javaapi#method(0,1,'position(', 'byte[], long) throws SQLException', 'long'),
   \ javaapi#method(0,1,'position(', 'Blob, long) throws SQLException', 'long'),

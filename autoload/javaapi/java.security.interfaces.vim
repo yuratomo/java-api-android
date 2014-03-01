@@ -57,7 +57,7 @@ call javaapi#interface('RSAMultiPrimePrivateCrtKey', 'RSAPrivateKey', [
   \ javaapi#method(0,1,'getPrimeExponentP(', ')', 'BigInteger'),
   \ javaapi#method(0,1,'getPrimeExponentQ(', ')', 'BigInteger'),
   \ javaapi#method(0,1,'getCrtCoefficient(', ')', 'BigInteger'),
-  \ javaapi#method(0,1,'getOtherPrimeInfo(', ')', 'RSAOtherPrimeInfo[]'),
+  \ javaapi#method(0,1,'getOtherPrimeInfo(', ')', 'RSAOtherPrimeInfo'),
   \ ])
 
 call javaapi#interface('RSAKey', '', [

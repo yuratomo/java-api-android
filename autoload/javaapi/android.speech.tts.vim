@@ -5,11 +5,11 @@ call javaapi#class('TextToSpeechService', 'Service', [
   \ javaapi#method(0,1,'onCreate(', ')', 'void'),
   \ javaapi#method(0,1,'onDestroy(', ')', 'void'),
   \ javaapi#method(0,0,'onIsLanguageAvailable(', 'String, String, String)', 'int'),
-  \ javaapi#method(0,0,'onGetLanguage(', ')', 'String[]'),
+  \ javaapi#method(0,0,'onGetLanguage(', ')', 'String'),
   \ javaapi#method(0,0,'onLoadLanguage(', 'String, String, String)', 'int'),
   \ javaapi#method(0,0,'onStop(', ')', 'void'),
   \ javaapi#method(0,0,'onSynthesizeText(', 'SynthesisRequest, SynthesisCallback)', 'void'),
-  \ javaapi#method(0,0,'onGetFeaturesForLanguage(', 'String, String, String)', 'String>'),
+  \ javaapi#method(0,0,'onGetFeaturesForLanguage(', 'String, String, String)', 'Set'),
   \ javaapi#method(0,1,'onBind(', 'Intent)', 'IBinder'),
   \ ])
 
@@ -34,7 +34,7 @@ call javaapi#class('TextToSpeech', '', [
   \ javaapi#method(0,1,'speak(', 'String, int, HashMap<String, String>)', 'int'),
   \ javaapi#method(0,1,'playEarcon(', 'String, int, HashMap<String, String>)', 'int'),
   \ javaapi#method(0,1,'playSilence(', 'long, int, HashMap<String, String>)', 'int'),
-  \ javaapi#method(0,1,'getFeatures(', 'Locale)', 'String>'),
+  \ javaapi#method(0,1,'getFeatures(', 'Locale)', 'Set'),
   \ javaapi#method(0,1,'isSpeaking(', ')', 'boolean'),
   \ javaapi#method(0,1,'stop(', ')', 'int'),
   \ javaapi#method(0,1,'setSpeechRate(', 'float)', 'int'),
@@ -48,7 +48,7 @@ call javaapi#class('TextToSpeech', '', [
   \ javaapi#method(0,1,'setEngineByPackageName(', 'String)', 'int'),
   \ javaapi#method(0,1,'getDefaultEngine(', ')', 'String'),
   \ javaapi#method(0,1,'areDefaultsEnforced(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getEngines(', ')', 'EngineInfo>'),
+  \ javaapi#method(0,1,'getEngines(', ')', 'List'),
   \ ])
 
 call javaapi#interface('SynthesisCallback', '', [

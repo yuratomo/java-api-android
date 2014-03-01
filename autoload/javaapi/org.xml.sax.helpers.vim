@@ -114,7 +114,7 @@ call javaapi#class('NamespaceSupport', '', [
   \ javaapi#method(0,1,'pushContext(', ')', 'void'),
   \ javaapi#method(0,1,'popContext(', ')', 'void'),
   \ javaapi#method(0,1,'declarePrefix(', 'String, String)', 'boolean'),
-  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String[]'),
+  \ javaapi#method(0,1,'processName(', 'String, String[], boolean)', 'String'),
   \ javaapi#method(0,1,'getURI(', 'String)', 'String'),
   \ javaapi#method(0,1,'getPrefixes(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getPrefix(', 'String)', 'String'),

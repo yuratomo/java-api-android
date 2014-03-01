@@ -29,7 +29,7 @@ call javaapi#class('SchemeRegistry', '', [
   \ javaapi#method(0,1,'get(', 'String)', 'Scheme'),
   \ javaapi#method(0,1,'register(', 'Scheme)', 'Scheme'),
   \ javaapi#method(0,1,'unregister(', 'String)', 'Scheme'),
-  \ javaapi#method(0,1,'getSchemeNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getSchemeNames(', ')', 'List'),
   \ javaapi#method(0,1,'setItems(', 'Map<String, Scheme>)', 'void'),
   \ ])
 

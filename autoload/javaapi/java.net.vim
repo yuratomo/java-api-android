@@ -16,9 +16,9 @@ call javaapi#class('URISyntaxException', 'Exception', [
 
 call javaapi#interface('CookieStore', '', [
   \ javaapi#method(0,1,'add(', 'URI, HttpCookie)', 'void'),
-  \ javaapi#method(0,1,'get(', 'URI)', 'HttpCookie>'),
-  \ javaapi#method(0,1,'getCookies(', ')', 'HttpCookie>'),
-  \ javaapi#method(0,1,'getURIs(', ')', 'URI>'),
+  \ javaapi#method(0,1,'get(', 'URI)', 'List'),
+  \ javaapi#method(0,1,'getCookies(', ')', 'List'),
+  \ javaapi#method(0,1,'getURIs(', ')', 'List'),
   \ javaapi#method(0,1,'remove(', 'URI, HttpCookie)', 'boolean'),
   \ javaapi#method(0,1,'removeAll(', ')', 'boolean'),
   \ ])
@@ -72,29 +72,29 @@ call javaapi#class('SocketAddress', 'Serializable', [
 call javaapi#class('SecureCacheResponse', 'CacheResponse', [
   \ javaapi#method(0,1,'SecureCacheResponse(', ')', ''),
   \ javaapi#method(0,1,'getCipherSuite(', ')', 'String'),
-  \ javaapi#method(0,1,'getLocalCertificateChain(', ')', 'Certificate>'),
-  \ javaapi#method(0,1,'getServerCertificateChain(', ') throws SSLPeerUnverifiedException', 'Certificate>'),
+  \ javaapi#method(0,1,'getLocalCertificateChain(', ')', 'List'),
+  \ javaapi#method(0,1,'getServerCertificateChain(', ') throws SSLPeerUnverifiedException', 'List'),
   \ javaapi#method(0,1,'getPeerPrincipal(', ') throws SSLPeerUnverifiedException', 'Principal'),
   \ javaapi#method(0,1,'getLocalPrincipal(', ')', 'Principal'),
   \ ])
 
 call javaapi#class('NetworkInterface', '', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getInetAddresses(', ')', 'InetAddress>'),
-  \ javaapi#method(0,1,'getInterfaceAddresses(', ')', 'InterfaceAddress>'),
-  \ javaapi#method(0,1,'getSubInterfaces(', ')', 'NetworkInterface>'),
+  \ javaapi#method(0,1,'getInetAddresses(', ')', 'Enumeration'),
+  \ javaapi#method(0,1,'getInterfaceAddresses(', ')', 'List'),
+  \ javaapi#method(0,1,'getSubInterfaces(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getParent(', ')', 'NetworkInterface'),
   \ javaapi#method(0,1,'getIndex(', ')', 'int'),
   \ javaapi#method(0,1,'getDisplayName(', ')', 'String'),
   \ javaapi#method(1,1,'getByName(', 'String) throws SocketException', 'NetworkInterface'),
   \ javaapi#method(1,1,'getByIndex(', 'int) throws SocketException', 'NetworkInterface'),
   \ javaapi#method(1,1,'getByInetAddress(', 'InetAddress) throws SocketException', 'NetworkInterface'),
-  \ javaapi#method(1,1,'getNetworkInterfaces(', ') throws SocketException', 'NetworkInterface>'),
+  \ javaapi#method(1,1,'getNetworkInterfaces(', ') throws SocketException', 'Enumeration'),
   \ javaapi#method(0,1,'isUp(', ') throws SocketException', 'boolean'),
   \ javaapi#method(0,1,'isLoopback(', ') throws SocketException', 'boolean'),
   \ javaapi#method(0,1,'isPointToPoint(', ') throws SocketException', 'boolean'),
   \ javaapi#method(0,1,'supportsMulticast(', ') throws SocketException', 'boolean'),
-  \ javaapi#method(0,1,'getHardwareAddress(', ') throws SocketException', 'byte[]'),
+  \ javaapi#method(0,1,'getHardwareAddress(', ') throws SocketException', 'byte'),
   \ javaapi#method(0,1,'getMTU(', ') throws SocketException', 'int'),
   \ javaapi#method(0,1,'isVirtual(', ')', 'boolean'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -104,7 +104,7 @@ call javaapi#class('NetworkInterface', '', [
 
 call javaapi#class('HttpCookie', 'Cloneable', [
   \ javaapi#method(0,1,'HttpCookie(', 'String, String)', ''),
-  \ javaapi#method(1,1,'parse(', 'String)', 'HttpCookie>'),
+  \ javaapi#method(1,1,'parse(', 'String)', 'List'),
   \ javaapi#method(0,1,'hasExpired(', ')', 'boolean'),
   \ javaapi#method(0,1,'setComment(', 'String)', 'void'),
   \ javaapi#method(0,1,'getComment(', ')', 'String'),
@@ -146,7 +146,7 @@ call javaapi#class('JarURLConnection', 'URLConnection', [
   \ javaapi#method(0,1,'getJarEntry(', ') throws IOException', 'JarEntry'),
   \ javaapi#method(0,1,'getAttributes(', ') throws IOException', 'Attributes'),
   \ javaapi#method(0,1,'getMainAttributes(', ') throws IOException', 'Attributes'),
-  \ javaapi#method(0,1,'getCertificates(', ') throws IOException', 'Certificate[]'),
+  \ javaapi#method(0,1,'getCertificates(', ') throws IOException', 'Certificate'),
   \ ])
 
 call javaapi#class('InterfaceAddress', '', [
@@ -178,14 +178,14 @@ call javaapi#class('InetAddress', 'Serializable', [
   \ javaapi#method(0,1,'isReachable(', 'NetworkInterface, int, int) throws IOException', 'boolean'),
   \ javaapi#method(0,1,'getHostName(', ')', 'String'),
   \ javaapi#method(0,1,'getCanonicalHostName(', ')', 'String'),
-  \ javaapi#method(0,1,'getAddress(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAddress(', ')', 'byte'),
   \ javaapi#method(0,1,'getHostAddress(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(1,1,'getByAddress(', 'String, byte[]) throws UnknownHostException', 'InetAddress'),
   \ javaapi#method(1,1,'getByName(', 'String) throws UnknownHostException', 'InetAddress'),
-  \ javaapi#method(1,1,'getAllByName(', 'String) throws UnknownHostException', 'InetAddress[]'),
+  \ javaapi#method(1,1,'getAllByName(', 'String) throws UnknownHostException', 'InetAddress'),
   \ javaapi#method(1,1,'getLoopbackAddress(', ')', 'InetAddress'),
   \ javaapi#method(1,1,'getByAddress(', 'byte[]) throws UnknownHostException', 'InetAddress'),
   \ javaapi#method(1,1,'getLocalHost(', ') throws UnknownHostException', 'InetAddress'),
@@ -252,7 +252,7 @@ call javaapi#class('SocketException', 'IOException', [
 
 call javaapi#class('CacheResponse', '', [
   \ javaapi#method(0,1,'CacheResponse(', ')', ''),
-  \ javaapi#method(0,1,'getHeaders(', ') throws IOException', 'String>>'),
+  \ javaapi#method(0,1,'getHeaders(', ') throws IOException', 'List'),
   \ javaapi#method(0,1,'getBody(', ') throws IOException', 'InputStream'),
   \ ])
 
@@ -299,7 +299,7 @@ call javaapi#class('ProxySelector', '', [
   \ javaapi#method(0,1,'ProxySelector(', ')', ''),
   \ javaapi#method(1,1,'getDefault(', ')', 'ProxySelector'),
   \ javaapi#method(1,1,'setDefault(', 'ProxySelector)', 'void'),
-  \ javaapi#method(0,1,'select(', 'URI)', 'Proxy>'),
+  \ javaapi#method(0,1,'select(', 'URI)', 'List'),
   \ javaapi#method(0,1,'connectFailed(', 'URI, SocketAddress, IOException)', 'void'),
   \ ])
 
@@ -423,7 +423,7 @@ call javaapi#class('Inet4Address', 'InetAddress', [
   \ javaapi#method(0,1,'isMCLinkLocal(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMCSiteLocal(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMCOrgLocal(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAddress(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAddress(', ')', 'byte'),
   \ javaapi#method(0,1,'getHostAddress(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -442,11 +442,11 @@ call javaapi#class('URLClassLoader', 'SecureClassLoader', [
   \ javaapi#method(0,1,'getResourceAsStream(', 'String)', 'InputStream'),
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,0,'addURL(', 'URL)', 'void'),
-  \ javaapi#method(0,1,'getURLs(', ')', 'URL[]'),
-  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,1,'getURLs(', ')', 'URL'),
+  \ javaapi#method(0,0,'findClass(', 'String) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(0,0,'definePackage(', 'String, Manifest, URL) throws IllegalArgumentException', 'Package'),
   \ javaapi#method(0,1,'findResource(', 'String)', 'URL'),
-  \ javaapi#method(0,1,'findResources(', 'String) throws IOException', 'URL>'),
+  \ javaapi#method(0,1,'findResources(', 'String) throws IOException', 'Enumeration'),
   \ javaapi#method(0,0,'getPermissions(', 'CodeSource)', 'PermissionCollection'),
   \ javaapi#method(1,1,'newInstance(', 'URL[], ClassLoader)', 'URLClassLoader'),
   \ javaapi#method(1,1,'newInstance(', 'URL[])', 'URLClassLoader'),
@@ -546,7 +546,7 @@ call javaapi#interface('FileNameMap', '', [
 call javaapi#class('PasswordAuthentication', '', [
   \ javaapi#method(0,1,'PasswordAuthentication(', 'String, char[])', ''),
   \ javaapi#method(0,1,'getUserName(', ')', 'String'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
   \ ])
 
 call javaapi#class('URLDecoder', '', [
@@ -572,7 +572,7 @@ call javaapi#class('CookieHandler', '', [
   \ javaapi#method(0,1,'CookieHandler(', ')', ''),
   \ javaapi#method(1,1,'getDefault(', ')', 'CookieHandler'),
   \ javaapi#method(1,1,'setDefault(', 'CookieHandler)', 'void'),
-  \ javaapi#method(0,1,'get(', 'URI, Map<String, List<String>>) throws IOException', 'String>>'),
+  \ javaapi#method(0,1,'get(', 'URI, Map<String, List<String>>) throws IOException', 'List'),
   \ javaapi#method(0,1,'put(', 'URI, Map<String, List<String>>) throws IOException', 'void'),
   \ ])
 
@@ -630,7 +630,7 @@ call javaapi#class('URLConnection', '', [
   \ javaapi#method(0,1,'getDate(', ')', 'long'),
   \ javaapi#method(0,1,'getLastModified(', ')', 'long'),
   \ javaapi#method(0,1,'getHeaderField(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getHeaderFields(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getHeaderFields(', ')', 'List'),
   \ javaapi#method(0,1,'getHeaderFieldInt(', 'String, int)', 'int'),
   \ javaapi#method(0,1,'getHeaderFieldLong(', 'String, long)', 'long'),
   \ javaapi#method(0,1,'getHeaderFieldDate(', 'String, long)', 'long'),
@@ -659,7 +659,7 @@ call javaapi#class('URLConnection', '', [
   \ javaapi#method(0,1,'setRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'addRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getRequestProperty(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getRequestProperties(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestProperties(', ')', 'List'),
   \ javaapi#method(1,1,'setDefaultRequestProperty(', 'String, String)', 'void'),
   \ javaapi#method(1,1,'getDefaultRequestProperty(', 'String)', 'String'),
   \ javaapi#method(1,1,'setContentHandlerFactory(', 'ContentHandlerFactory)', 'void'),
@@ -799,7 +799,7 @@ call javaapi#class('DatagramPacket', '', [
   \ javaapi#method(0,1,'DatagramPacket(', 'byte[], int, SocketAddress) throws SocketException', ''),
   \ javaapi#method(0,1,'getAddress(', ')', 'InetAddress'),
   \ javaapi#method(0,1,'getPort(', ')', 'int'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'getLength(', ')', 'int'),
   \ javaapi#method(0,1,'setData(', 'byte[], int, int)', 'void'),
@@ -824,7 +824,7 @@ call javaapi#class('Inet6Address', 'InetAddress', [
   \ javaapi#method(0,1,'isMCLinkLocal(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMCSiteLocal(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMCOrgLocal(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAddress(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getAddress(', ')', 'byte'),
   \ javaapi#method(0,1,'getScopeId(', ')', 'int'),
   \ javaapi#method(0,1,'getScopedInterface(', ')', 'NetworkInterface'),
   \ javaapi#method(0,1,'getHostAddress(', ')', 'String'),
@@ -853,7 +853,7 @@ call javaapi#class('CookieManager', 'CookieHandler', [
   \ javaapi#method(0,1,'CookieManager(', 'CookieStore, CookiePolicy)', ''),
   \ javaapi#method(0,1,'setCookiePolicy(', 'CookiePolicy)', 'void'),
   \ javaapi#method(0,1,'getCookieStore(', ')', 'CookieStore'),
-  \ javaapi#method(0,1,'get(', 'URI, Map<String, List<String>>) throws IOException', 'String>>'),
+  \ javaapi#method(0,1,'get(', 'URI, Map<String, List<String>>) throws IOException', 'List'),
   \ javaapi#method(0,1,'put(', 'URI, Map<String, List<String>>) throws IOException', 'void'),
   \ ])
 

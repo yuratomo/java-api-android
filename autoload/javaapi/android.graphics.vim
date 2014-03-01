@@ -57,7 +57,7 @@ call javaapi#class('Camera', '', [
   \ ])
 
 call javaapi#class('Region', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'Region>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Region(', ')', ''),
   \ javaapi#method(0,1,'Region(', 'Region)', ''),
   \ javaapi#method(0,1,'Region(', 'Rect)', ''),
@@ -123,7 +123,7 @@ call javaapi#class('PixelFormat', '', [
 
 call javaapi#class('Bitmap', 'Parcelable', [
   \ javaapi#field(1,1,'DENSITY_NONE', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Bitmap>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getDensity(', ')', 'int'),
   \ javaapi#method(0,1,'setDensity(', 'int)', 'void'),
   \ javaapi#method(0,1,'recycle(', ')', 'void'),
@@ -142,7 +142,7 @@ call javaapi#class('Bitmap', 'Parcelable', [
   \ javaapi#method(1,1,'createBitmap(', 'DisplayMetrics, int[], int, int, int, int, Config)', 'Bitmap'),
   \ javaapi#method(1,1,'createBitmap(', 'int[], int, int, Config)', 'Bitmap'),
   \ javaapi#method(1,1,'createBitmap(', 'DisplayMetrics, int[], int, int, Config)', 'Bitmap'),
-  \ javaapi#method(0,1,'getNinePatchChunk(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getNinePatchChunk(', ')', 'byte'),
   \ javaapi#method(0,1,'compress(', 'CompressFormat, int, OutputStream)', 'boolean'),
   \ javaapi#method(0,1,'isMutable(', ')', 'boolean'),
   \ javaapi#method(0,1,'isPremultiplied(', ')', 'boolean'),
@@ -178,7 +178,7 @@ call javaapi#class('ColorMatrix', '', [
   \ javaapi#method(0,1,'ColorMatrix(', ')', ''),
   \ javaapi#method(0,1,'ColorMatrix(', 'float[])', ''),
   \ javaapi#method(0,1,'ColorMatrix(', 'ColorMatrix)', ''),
-  \ javaapi#method(0,1,'getArray(', ')', 'float[]'),
+  \ javaapi#method(0,1,'getArray(', ')', 'float'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ javaapi#method(0,1,'set(', 'ColorMatrix)', 'void'),
   \ javaapi#method(0,1,'set(', 'float[])', 'void'),
@@ -368,7 +368,7 @@ call javaapi#class('RectF', 'Parcelable', [
   \ javaapi#field(0,1,'top', 'float'),
   \ javaapi#field(0,1,'right', 'float'),
   \ javaapi#field(0,1,'bottom', 'float'),
-  \ javaapi#field(1,1,'CREATOR', 'RectF>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'RectF(', ')', ''),
   \ javaapi#method(0,1,'RectF(', 'float, float, float, float)', ''),
   \ javaapi#method(0,1,'RectF(', 'RectF)', ''),
@@ -411,9 +411,9 @@ call javaapi#class('RectF', 'Parcelable', [
 call javaapi#class('YuvImage', '', [
   \ javaapi#method(0,1,'YuvImage(', 'byte[], int, int, int, int[])', ''),
   \ javaapi#method(0,1,'compressToJpeg(', 'Rect, int, OutputStream)', 'boolean'),
-  \ javaapi#method(0,1,'getYuvData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getYuvData(', ')', 'byte'),
   \ javaapi#method(0,1,'getYuvFormat(', ')', 'int'),
-  \ javaapi#method(0,1,'getStrides(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getStrides(', ')', 'int'),
   \ javaapi#method(0,1,'getWidth(', ')', 'int'),
   \ javaapi#method(0,1,'getHeight(', ')', 'int'),
   \ ])
@@ -670,7 +670,7 @@ call javaapi#class('LightingColorFilter', 'ColorFilter', [
 call javaapi#class('Point', 'Parcelable', [
   \ javaapi#field(0,1,'x', 'int'),
   \ javaapi#field(0,1,'y', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Point>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Point(', ')', ''),
   \ javaapi#method(0,1,'Point(', 'int, int)', ''),
   \ javaapi#method(0,1,'Point(', 'Point)', ''),
@@ -825,7 +825,7 @@ call javaapi#class('Rect', 'Parcelable', [
   \ javaapi#field(0,1,'top', 'int'),
   \ javaapi#field(0,1,'right', 'int'),
   \ javaapi#field(0,1,'bottom', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'Rect>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Rect(', ')', ''),
   \ javaapi#method(0,1,'Rect(', 'int, int, int, int)', ''),
   \ javaapi#method(0,1,'Rect(', 'Rect)', ''),
@@ -868,7 +868,7 @@ call javaapi#class('Rect', 'Parcelable', [
 call javaapi#class('PointF', 'Parcelable', [
   \ javaapi#field(0,1,'x', 'float'),
   \ javaapi#field(0,1,'y', 'float'),
-  \ javaapi#field(1,1,'CREATOR', 'PointF>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'PointF(', ')', ''),
   \ javaapi#method(0,1,'PointF(', 'float, float)', ''),
   \ javaapi#method(0,1,'PointF(', 'Point)', ''),

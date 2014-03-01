@@ -68,11 +68,11 @@ call javaapi#class('AppWidgetManager', '', [
   \ javaapi#method(0,1,'updateAppWidget(', 'ComponentName, RemoteViews)', 'void'),
   \ javaapi#method(0,1,'notifyAppWidgetViewDataChanged(', 'int[], int)', 'void'),
   \ javaapi#method(0,1,'notifyAppWidgetViewDataChanged(', 'int, int)', 'void'),
-  \ javaapi#method(0,1,'getInstalledProviders(', ')', 'AppWidgetProviderInfo>'),
+  \ javaapi#method(0,1,'getInstalledProviders(', ')', 'List'),
   \ javaapi#method(0,1,'getAppWidgetInfo(', 'int)', 'AppWidgetProviderInfo'),
   \ javaapi#method(0,1,'bindAppWidgetIdIfAllowed(', 'int, ComponentName)', 'boolean'),
   \ javaapi#method(0,1,'bindAppWidgetIdIfAllowed(', 'int, ComponentName, Bundle)', 'boolean'),
-  \ javaapi#method(0,1,'getAppWidgetIds(', 'ComponentName)', 'int[]'),
+  \ javaapi#method(0,1,'getAppWidgetIds(', 'ComponentName)', 'int'),
   \ ])
 
 call javaapi#class('AppWidgetProviderInfo', 'Parcelable', [
@@ -97,7 +97,7 @@ call javaapi#class('AppWidgetProviderInfo', 'Parcelable', [
   \ javaapi#field(0,1,'previewImage', 'int'),
   \ javaapi#field(0,1,'resizeMode', 'int'),
   \ javaapi#field(0,1,'widgetCategory', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'AppWidgetProviderInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'AppWidgetProviderInfo(', ')', ''),
   \ javaapi#method(0,1,'AppWidgetProviderInfo(', 'Parcel)', ''),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),

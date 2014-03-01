@@ -10,12 +10,12 @@ call javaapi#class('GestureStore', '', [
   \ javaapi#method(0,1,'getOrientationStyle(', ')', 'int'),
   \ javaapi#method(0,1,'setSequenceType(', 'int)', 'void'),
   \ javaapi#method(0,1,'getSequenceType(', ')', 'int'),
-  \ javaapi#method(0,1,'getGestureEntries(', ')', 'String>'),
-  \ javaapi#method(0,1,'recognize(', 'Gesture)', 'Prediction>'),
+  \ javaapi#method(0,1,'getGestureEntries(', ')', 'Set'),
+  \ javaapi#method(0,1,'recognize(', 'Gesture)', 'ArrayList'),
   \ javaapi#method(0,1,'addGesture(', 'String, Gesture)', 'void'),
   \ javaapi#method(0,1,'removeGesture(', 'String, Gesture)', 'void'),
   \ javaapi#method(0,1,'removeEntry(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getGestures(', 'String)', 'Gesture>'),
+  \ javaapi#method(0,1,'getGestures(', 'String)', 'ArrayList'),
   \ javaapi#method(0,1,'hasChanged(', ')', 'boolean'),
   \ javaapi#method(0,1,'save(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'save(', 'OutputStream, boolean) throws IOException', 'void'),
@@ -26,7 +26,7 @@ call javaapi#class('GestureStore', '', [
 call javaapi#class('GestureStroke', '', [
   \ javaapi#field(0,1,'boundingBox', 'RectF'),
   \ javaapi#field(0,1,'length', 'float'),
-  \ javaapi#field(0,1,'points', 'float[]'),
+  \ javaapi#field(0,1,'points', 'float'),
   \ javaapi#method(0,1,'GestureStroke(', 'ArrayList<GesturePoint>)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'getPath(', ')', 'Path'),
@@ -45,12 +45,12 @@ call javaapi#class('GestureLibrary', '', [
   \ javaapi#method(0,1,'getOrientationStyle(', ')', 'int'),
   \ javaapi#method(0,1,'setSequenceType(', 'int)', 'void'),
   \ javaapi#method(0,1,'getSequenceType(', ')', 'int'),
-  \ javaapi#method(0,1,'getGestureEntries(', ')', 'String>'),
-  \ javaapi#method(0,1,'recognize(', 'Gesture)', 'Prediction>'),
+  \ javaapi#method(0,1,'getGestureEntries(', ')', 'Set'),
+  \ javaapi#method(0,1,'recognize(', 'Gesture)', 'ArrayList'),
   \ javaapi#method(0,1,'addGesture(', 'String, Gesture)', 'void'),
   \ javaapi#method(0,1,'removeGesture(', 'String, Gesture)', 'void'),
   \ javaapi#method(0,1,'removeEntry(', 'String)', 'void'),
-  \ javaapi#method(0,1,'getGestures(', 'String)', 'Gesture>'),
+  \ javaapi#method(0,1,'getGestures(', 'String)', 'ArrayList'),
   \ ])
 
 call javaapi#class('GestureLibraries', '', [
@@ -61,10 +61,10 @@ call javaapi#class('GestureLibraries', '', [
   \ ])
 
 call javaapi#class('Gesture', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'Gesture>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Gesture(', ')', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getStrokes(', ')', 'GestureStroke>'),
+  \ javaapi#method(0,1,'getStrokes(', ')', 'ArrayList'),
   \ javaapi#method(0,1,'getStrokesCount(', ')', 'int'),
   \ javaapi#method(0,1,'addStroke(', 'GestureStroke)', 'void'),
   \ javaapi#method(0,1,'getLength(', ')', 'float'),
@@ -81,9 +81,9 @@ call javaapi#class('Gesture', 'Parcelable', [
   \ ])
 
 call javaapi#class('GestureUtils', '', [
-  \ javaapi#method(1,1,'spatialSampling(', 'Gesture, int)', 'float[]'),
-  \ javaapi#method(1,1,'spatialSampling(', 'Gesture, int, boolean)', 'float[]'),
-  \ javaapi#method(1,1,'temporalSampling(', 'GestureStroke, int)', 'float[]'),
+  \ javaapi#method(1,1,'spatialSampling(', 'Gesture, int)', 'float'),
+  \ javaapi#method(1,1,'spatialSampling(', 'Gesture, int, boolean)', 'float'),
+  \ javaapi#method(1,1,'temporalSampling(', 'GestureStroke, int)', 'float'),
   \ javaapi#method(1,1,'computeOrientedBoundingBox(', 'ArrayList<GesturePoint>)', 'OrientedBoundingBox'),
   \ javaapi#method(1,1,'computeOrientedBoundingBox(', 'float[])', 'OrientedBoundingBox'),
   \ ])
@@ -102,7 +102,7 @@ call javaapi#class('GestureOverlayView', 'FrameLayout', [
   \ javaapi#method(0,1,'GestureOverlayView(', 'Context)', ''),
   \ javaapi#method(0,1,'GestureOverlayView(', 'Context, AttributeSet)', ''),
   \ javaapi#method(0,1,'GestureOverlayView(', 'Context, AttributeSet, int)', ''),
-  \ javaapi#method(0,1,'getCurrentStroke(', ')', 'GesturePoint>'),
+  \ javaapi#method(0,1,'getCurrentStroke(', ')', 'ArrayList'),
   \ javaapi#method(0,1,'getOrientation(', ')', 'int'),
   \ javaapi#method(0,1,'setOrientation(', 'int)', 'void'),
   \ javaapi#method(0,1,'setGestureColor(', 'int)', 'void'),

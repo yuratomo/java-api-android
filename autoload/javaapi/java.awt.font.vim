@@ -96,7 +96,7 @@ call javaapi#class('NumericShaper', 'Serializable', [
   \ javaapi#method(0,1,'shape(', 'char[], int, int, Range)', 'void'),
   \ javaapi#method(0,1,'isContextual(', ')', 'boolean'),
   \ javaapi#method(0,1,'getRanges(', ')', 'int'),
-  \ javaapi#method(0,1,'getRangeSet(', ')', 'Range>'),
+  \ javaapi#method(0,1,'getRangeSet(', ')', 'Set'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),

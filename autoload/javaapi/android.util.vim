@@ -12,7 +12,7 @@ call javaapi#class('PrintStreamPrinter', 'Printer', [
   \ javaapi#method(0,1,'println(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('Pair<F,S>', '', [
+call javaapi#class('Pair', '', [
   \ javaapi#field(0,1,'first', 'F'),
   \ javaapi#field(0,1,'second', 'S'),
   \ javaapi#method(0,1,'Pair(', 'F, S)', ''),
@@ -55,16 +55,16 @@ call javaapi#class('Xml', '', [
   \ ])
 
 call javaapi#class('StateSet', '', [
-  \ javaapi#field(1,1,'WILD_CARD', 'int[]'),
-  \ javaapi#field(1,1,'NOTHING', 'int[]'),
+  \ javaapi#field(1,1,'WILD_CARD', 'int'),
+  \ javaapi#field(1,1,'NOTHING', 'int'),
   \ javaapi#method(1,1,'isWildCard(', 'int[])', 'boolean'),
   \ javaapi#method(1,1,'stateSetMatches(', 'int[], int[])', 'boolean'),
   \ javaapi#method(1,1,'stateSetMatches(', 'int[], int)', 'boolean'),
-  \ javaapi#method(1,1,'trimStateSet(', 'int[], int)', 'int[]'),
+  \ javaapi#method(1,1,'trimStateSet(', 'int[], int)', 'int'),
   \ javaapi#method(1,1,'dump(', 'int[])', 'String'),
   \ ])
 
-call javaapi#class('JsonToken', 'JsonToken>', [
+call javaapi#class('JsonToken', 'Enum', [
   \ javaapi#field(1,1,'BEGIN_ARRAY', 'JsonToken'),
   \ javaapi#field(1,1,'BEGIN_OBJECT', 'JsonToken'),
   \ javaapi#field(1,1,'BOOLEAN', 'JsonToken'),
@@ -75,7 +75,7 @@ call javaapi#class('JsonToken', 'JsonToken>', [
   \ javaapi#field(1,1,'NULL', 'JsonToken'),
   \ javaapi#field(1,1,'NUMBER', 'JsonToken'),
   \ javaapi#field(1,1,'STRING', 'JsonToken'),
-  \ javaapi#method(1,1,'values(', ')', 'JsonToken[]'),
+  \ javaapi#method(1,1,'values(', ')', 'JsonToken'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'JsonToken'),
   \ ])
 
@@ -84,14 +84,14 @@ call javaapi#class('TimeUtils', '', [
   \ javaapi#method(1,1,'getTimeZoneDatabaseVersion(', ')', 'String'),
   \ ])
 
-call javaapi#class('Property<T,V>', '', [
+call javaapi#class('Property', '', [
   \ javaapi#method(0,1,'Property(', 'Class<V>, String)', ''),
   \ javaapi#method(1,1,'of(', 'Class<T>, Class<V>, String)', 'V>'),
   \ javaapi#method(0,1,'isReadOnly(', ')', 'boolean'),
   \ javaapi#method(0,1,'set(', 'T, V)', 'void'),
   \ javaapi#method(0,1,'get(', 'T)', 'V'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getType(', ')', 'Class<V>'),
+  \ javaapi#method(0,1,'getType(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('AttributeSet', '', [
@@ -390,10 +390,10 @@ call javaapi#class('JsonReader', 'Closeable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SparseArray<E>', 'Cloneable', [
+call javaapi#class('SparseArray', 'Cloneable', [
   \ javaapi#method(0,1,'SparseArray(', ')', ''),
   \ javaapi#method(0,1,'SparseArray(', 'int)', ''),
-  \ javaapi#method(0,1,'clone(', ')', 'SparseArray<E>'),
+  \ javaapi#method(0,1,'clone(', ')', 'SparseArray'),
   \ javaapi#method(0,1,'get(', 'int)', 'E'),
   \ javaapi#method(0,1,'get(', 'int, E)', 'E'),
   \ javaapi#method(0,1,'delete(', 'int)', 'void'),
@@ -411,10 +411,10 @@ call javaapi#class('SparseArray<E>', 'Cloneable', [
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('LongSparseArray<E>', 'Cloneable', [
+call javaapi#class('LongSparseArray', 'Cloneable', [
   \ javaapi#method(0,1,'LongSparseArray(', ')', ''),
   \ javaapi#method(0,1,'LongSparseArray(', 'int)', ''),
-  \ javaapi#method(0,1,'clone(', ')', 'LongSparseArray<E>'),
+  \ javaapi#method(0,1,'clone(', ')', 'LongSparseArray'),
   \ javaapi#method(0,1,'get(', 'long)', 'E'),
   \ javaapi#method(0,1,'get(', 'long, E)', 'E'),
   \ javaapi#method(0,1,'delete(', 'long)', 'void'),
@@ -432,7 +432,7 @@ call javaapi#class('LongSparseArray<E>', 'Cloneable', [
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#class('LruCache<K,V>', '', [
+call javaapi#class('LruCache', '', [
   \ javaapi#method(0,1,'LruCache(', 'int)', ''),
   \ javaapi#method(0,1,'get(', 'K)', 'V'),
   \ javaapi#method(0,1,'put(', 'K, V)', 'V'),
@@ -460,13 +460,13 @@ call javaapi#class('Base64', '', [
   \ javaapi#field(1,1,'CRLF', 'int'),
   \ javaapi#field(1,1,'URL_SAFE', 'int'),
   \ javaapi#field(1,1,'NO_CLOSE', 'int'),
-  \ javaapi#method(1,1,'decode(', 'String, int)', 'byte[]'),
-  \ javaapi#method(1,1,'decode(', 'byte[], int)', 'byte[]'),
-  \ javaapi#method(1,1,'decode(', 'byte[], int, int, int)', 'byte[]'),
+  \ javaapi#method(1,1,'decode(', 'String, int)', 'byte'),
+  \ javaapi#method(1,1,'decode(', 'byte[], int)', 'byte'),
+  \ javaapi#method(1,1,'decode(', 'byte[], int, int, int)', 'byte'),
   \ javaapi#method(1,1,'encodeToString(', 'byte[], int)', 'String'),
   \ javaapi#method(1,1,'encodeToString(', 'byte[], int, int, int)', 'String'),
-  \ javaapi#method(1,1,'encode(', 'byte[], int)', 'byte[]'),
-  \ javaapi#method(1,1,'encode(', 'byte[], int, int, int)', 'byte[]'),
+  \ javaapi#method(1,1,'encode(', 'byte[], int)', 'byte'),
+  \ javaapi#method(1,1,'encode(', 'byte[], int, int, int)', 'byte'),
   \ ])
 
 call javaapi#class('Patterns', '', [
@@ -498,7 +498,7 @@ call javaapi#class('AtomicFile', '', [
   \ javaapi#method(0,1,'finishWrite(', 'FileOutputStream)', 'void'),
   \ javaapi#method(0,1,'failWrite(', 'FileOutputStream)', 'void'),
   \ javaapi#method(0,1,'openRead(', ') throws FileNotFoundException', 'FileInputStream'),
-  \ javaapi#method(0,1,'readFully(', ') throws IOException', 'byte[]'),
+  \ javaapi#method(0,1,'readFully(', ') throws IOException', 'byte'),
   \ ])
 
 call javaapi#class('MonthDisplayHelper', '', [
@@ -510,7 +510,7 @@ call javaapi#class('MonthDisplayHelper', '', [
   \ javaapi#method(0,1,'getFirstDayOfMonth(', ')', 'int'),
   \ javaapi#method(0,1,'getNumberOfDaysInMonth(', ')', 'int'),
   \ javaapi#method(0,1,'getOffset(', ')', 'int'),
-  \ javaapi#method(0,1,'getDigitsForRow(', 'int)', 'int[]'),
+  \ javaapi#method(0,1,'getDigitsForRow(', 'int)', 'int'),
   \ javaapi#method(0,1,'getDayAt(', 'int, int)', 'int'),
   \ javaapi#method(0,1,'getRowOf(', 'int)', 'int'),
   \ javaapi#method(0,1,'getColumnOf(', 'int)', 'int'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('android.animation')
 
-call javaapi#class('FloatEvaluator', 'Number>', [
+call javaapi#class('FloatEvaluator', 'TypeEvaluator', [
   \ javaapi#method(0,1,'FloatEvaluator(', ')', ''),
   \ javaapi#method(0,1,'evaluate(', 'float, Number, Number)', 'Float'),
   \ javaapi#method(0,1,'evaluate(', 'float, Object, Object)', 'Object'),
@@ -35,7 +35,7 @@ call javaapi#class('Animator', 'Cloneable', [
   \ javaapi#method(0,1,'isStarted(', ')', 'boolean'),
   \ javaapi#method(0,1,'addListener(', 'AnimatorListener)', 'void'),
   \ javaapi#method(0,1,'removeListener(', 'AnimatorListener)', 'void'),
-  \ javaapi#method(0,1,'getListeners(', ')', 'AnimatorListener>'),
+  \ javaapi#method(0,1,'getListeners(', ')', 'ArrayList'),
   \ javaapi#method(0,1,'removeAllListeners(', ')', 'void'),
   \ javaapi#method(0,1,'clone(', ')', 'Animator'),
   \ javaapi#method(0,1,'setupStartValues(', ')', 'void'),
@@ -76,7 +76,7 @@ call javaapi#class('LayoutTransition', '', [
   \ javaapi#method(0,1,'hideChild(', 'ViewGroup, View, int)', 'void'),
   \ javaapi#method(0,1,'addTransitionListener(', 'TransitionListener)', 'void'),
   \ javaapi#method(0,1,'removeTransitionListener(', 'TransitionListener)', 'void'),
-  \ javaapi#method(0,1,'getTransitionListeners(', ')', 'TransitionListener>'),
+  \ javaapi#method(0,1,'getTransitionListeners(', ')', 'List'),
   \ ])
 
 call javaapi#class('Keyframe', 'Cloneable', [
@@ -112,7 +112,7 @@ call javaapi#class('ValueAnimator', 'Animator', [
   \ javaapi#method(0,1,'setFloatValues(', ')', 'void'),
   \ javaapi#method(0,1,'setObjectValues(', ')', 'void'),
   \ javaapi#method(0,1,'setValues(', ')', 'void'),
-  \ javaapi#method(0,1,'getValues(', ')', 'PropertyValuesHolder[]'),
+  \ javaapi#method(0,1,'getValues(', ')', 'PropertyValuesHolder'),
   \ javaapi#method(0,1,'setDuration(', 'long)', 'ValueAnimator'),
   \ javaapi#method(0,1,'getDuration(', ')', 'long'),
   \ javaapi#method(0,1,'setCurrentPlayTime(', 'long)', 'void'),
@@ -199,11 +199,11 @@ call javaapi#class('ObjectAnimator', 'ValueAnimator', [
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
-call javaapi#interface('TypeEvaluator<T>', '', [
+call javaapi#interface('TypeEvaluator', '', [
   \ javaapi#method(0,1,'evaluate(', 'float, T, T)', 'T'),
   \ ])
 
-call javaapi#class('IntEvaluator', 'Integer>', [
+call javaapi#class('IntEvaluator', 'TypeEvaluator', [
   \ javaapi#method(0,1,'IntEvaluator(', ')', ''),
   \ javaapi#method(0,1,'evaluate(', 'float, Integer, Integer)', 'Integer'),
   \ javaapi#method(0,1,'evaluate(', 'float, Object, Object)', 'Object'),
@@ -228,7 +228,7 @@ call javaapi#class('AnimatorSet', 'Animator', [
   \ javaapi#method(0,1,'playTogether(', 'Collection<Animator>)', 'void'),
   \ javaapi#method(0,1,'playSequentially(', ')', 'void'),
   \ javaapi#method(0,1,'playSequentially(', 'List<Animator>)', 'void'),
-  \ javaapi#method(0,1,'getChildAnimations(', ')', 'Animator>'),
+  \ javaapi#method(0,1,'getChildAnimations(', ')', 'ArrayList'),
   \ javaapi#method(0,1,'setTarget(', 'Object)', 'void'),
   \ javaapi#method(0,1,'setInterpolator(', 'TimeInterpolator)', 'void'),
   \ javaapi#method(0,1,'play(', 'Animator)', 'Builder'),

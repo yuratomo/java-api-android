@@ -42,23 +42,23 @@ call javaapi#class('MultiTapKeyListener', 'BaseKeyListener', [
 
 call javaapi#class('HideReturnsTransformationMethod', 'ReplacementTransformationMethod', [
   \ javaapi#method(0,1,'HideReturnsTransformationMethod(', ')', ''),
-  \ javaapi#method(0,0,'getOriginal(', ')', 'char[]'),
-  \ javaapi#method(0,0,'getReplacement(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getOriginal(', ')', 'char'),
+  \ javaapi#method(0,0,'getReplacement(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'HideReturnsTransformationMethod'),
   \ ])
 
 call javaapi#class('DateTimeKeyListener', 'NumberKeyListener', [
-  \ javaapi#field(1,1,'CHARACTERS', 'char[]'),
+  \ javaapi#field(1,1,'CHARACTERS', 'char'),
   \ javaapi#method(0,1,'DateTimeKeyListener(', ')', ''),
   \ javaapi#method(0,1,'getInputType(', ')', 'int'),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'DateTimeKeyListener'),
   \ ])
 
 call javaapi#class('DigitsKeyListener', 'NumberKeyListener', [
   \ javaapi#method(0,1,'DigitsKeyListener(', ')', ''),
   \ javaapi#method(0,1,'DigitsKeyListener(', 'boolean, boolean)', ''),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'DigitsKeyListener'),
   \ javaapi#method(1,1,'getInstance(', 'boolean, boolean)', 'DigitsKeyListener'),
   \ javaapi#method(1,1,'getInstance(', 'String)', 'DigitsKeyListener'),
@@ -108,24 +108,24 @@ call javaapi#class('QwertyKeyListener', 'BaseKeyListener', [
   \ ])
 
 call javaapi#class('DateKeyListener', 'NumberKeyListener', [
-  \ javaapi#field(1,1,'CHARACTERS', 'char[]'),
+  \ javaapi#field(1,1,'CHARACTERS', 'char'),
   \ javaapi#method(0,1,'DateKeyListener(', ')', ''),
   \ javaapi#method(0,1,'getInputType(', ')', 'int'),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'DateKeyListener'),
   \ ])
 
 call javaapi#class('SingleLineTransformationMethod', 'ReplacementTransformationMethod', [
   \ javaapi#method(0,1,'SingleLineTransformationMethod(', ')', ''),
-  \ javaapi#method(0,0,'getOriginal(', ')', 'char[]'),
-  \ javaapi#method(0,0,'getReplacement(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getOriginal(', ')', 'char'),
+  \ javaapi#method(0,0,'getReplacement(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'SingleLineTransformationMethod'),
   \ ])
 
 call javaapi#class('ReplacementTransformationMethod', 'TransformationMethod', [
   \ javaapi#method(0,1,'ReplacementTransformationMethod(', ')', ''),
-  \ javaapi#method(0,0,'getOriginal(', ')', 'char[]'),
-  \ javaapi#method(0,0,'getReplacement(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getOriginal(', ')', 'char'),
+  \ javaapi#method(0,0,'getReplacement(', ')', 'char'),
   \ javaapi#method(0,1,'getTransformation(', 'CharSequence, View)', 'CharSequence'),
   \ javaapi#method(0,1,'onFocusChanged(', 'View, CharSequence, boolean, int, Rect)', 'void'),
   \ ])
@@ -158,10 +158,10 @@ call javaapi#class('BaseMovementMethod', 'MovementMethod', [
   \ ])
 
 call javaapi#class('TimeKeyListener', 'NumberKeyListener', [
-  \ javaapi#field(1,1,'CHARACTERS', 'char[]'),
+  \ javaapi#field(1,1,'CHARACTERS', 'char'),
   \ javaapi#method(0,1,'TimeKeyListener(', ')', ''),
   \ javaapi#method(0,1,'getInputType(', ')', 'int'),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'TimeKeyListener'),
   \ ])
 
@@ -192,7 +192,7 @@ call javaapi#class('LinkMovementMethod', 'ScrollingMovementMethod', [
 
 call javaapi#class('NumberKeyListener', 'BaseKeyListener', [
   \ javaapi#method(0,1,'NumberKeyListener(', ')', ''),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(0,0,'lookup(', 'KeyEvent, Spannable)', 'int'),
   \ javaapi#method(0,1,'filter(', 'CharSequence, int, int, Spanned, int, int)', 'CharSequence'),
   \ javaapi#method(1,0,'ok(', 'char[], char)', 'boolean'),
@@ -268,9 +268,9 @@ call javaapi#class('ScrollingMovementMethod', 'BaseMovementMethod', [
   \ ])
 
 call javaapi#class('DialerKeyListener', 'NumberKeyListener', [
-  \ javaapi#field(1,1,'CHARACTERS', 'char[]'),
+  \ javaapi#field(1,1,'CHARACTERS', 'char'),
   \ javaapi#method(0,1,'DialerKeyListener(', ')', ''),
-  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char[]'),
+  \ javaapi#method(0,0,'getAcceptedChars(', ')', 'char'),
   \ javaapi#method(1,1,'getInstance(', ')', 'DialerKeyListener'),
   \ javaapi#method(0,1,'getInputType(', ')', 'int'),
   \ javaapi#method(0,0,'lookup(', 'KeyEvent, Spannable)', 'int'),

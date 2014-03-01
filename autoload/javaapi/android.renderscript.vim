@@ -231,7 +231,7 @@ call javaapi#class('Byte2', '', [
 call javaapi#class('Matrix2f', '', [
   \ javaapi#method(0,1,'Matrix2f(', ')', ''),
   \ javaapi#method(0,1,'Matrix2f(', 'float[])', ''),
-  \ javaapi#method(0,1,'getArray(', ')', 'float[]'),
+  \ javaapi#method(0,1,'getArray(', ')', 'float'),
   \ javaapi#method(0,1,'get(', 'int, int)', 'float'),
   \ javaapi#method(0,1,'set(', 'int, int, float)', 'void'),
   \ javaapi#method(0,1,'loadIdentity(', ')', 'void'),
@@ -326,7 +326,7 @@ call javaapi#class('FieldPacker', '', [
   \ javaapi#method(0,1,'addMatrix(', 'Matrix3f)', 'void'),
   \ javaapi#method(0,1,'addMatrix(', 'Matrix2f)', 'void'),
   \ javaapi#method(0,1,'addBoolean(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ScriptIntrinsicBlend', 'ScriptIntrinsic', [
@@ -376,7 +376,7 @@ call javaapi#class('Type', 'BaseObj', [
 call javaapi#class('Matrix3f', '', [
   \ javaapi#method(0,1,'Matrix3f(', ')', ''),
   \ javaapi#method(0,1,'Matrix3f(', 'float[])', ''),
-  \ javaapi#method(0,1,'getArray(', ')', 'float[]'),
+  \ javaapi#method(0,1,'getArray(', ')', 'float'),
   \ javaapi#method(0,1,'get(', 'int, int)', 'float'),
   \ javaapi#method(0,1,'set(', 'int, int, float)', 'void'),
   \ javaapi#method(0,1,'loadIdentity(', ')', 'void'),
@@ -431,7 +431,7 @@ call javaapi#class('Short4', '', [
 call javaapi#class('Matrix4f', '', [
   \ javaapi#method(0,1,'Matrix4f(', ')', ''),
   \ javaapi#method(0,1,'Matrix4f(', 'float[])', ''),
-  \ javaapi#method(0,1,'getArray(', ')', 'float[]'),
+  \ javaapi#method(0,1,'getArray(', ')', 'float'),
   \ javaapi#method(0,1,'get(', 'int, int)', 'float'),
   \ javaapi#method(0,1,'set(', 'int, int, float)', 'void'),
   \ javaapi#method(0,1,'loadIdentity(', ')', 'void'),

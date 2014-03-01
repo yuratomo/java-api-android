@@ -104,7 +104,7 @@ call javaapi#class('DefaultConnectionKeepAliveStrategy', 'ConnectionKeepAliveStr
   \ javaapi#method(0,1,'getKeepAliveDuration(', 'HttpResponse, HttpContext)', 'long'),
   \ ])
 
-call javaapi#class('BasicResponseHandler', 'String>', [
+call javaapi#class('BasicResponseHandler', 'ResponseHandler', [
   \ javaapi#method(0,1,'BasicResponseHandler(', ')', ''),
   \ javaapi#method(0,1,'handleResponse(', 'HttpResponse) throws HttpResponseException, IOException', 'String'),
   \ javaapi#method(0,1,'handleResponse(', 'HttpResponse) throws ClientProtocolException, IOException', 'Object'),
@@ -151,7 +151,7 @@ call javaapi#class('RedirectLocations', '', [
 call javaapi#class('AbstractAuthenticationHandler', 'AuthenticationHandler', [
   \ javaapi#method(0,1,'AbstractAuthenticationHandler(', ')', ''),
   \ javaapi#method(0,0,'parseChallenges(', 'Header[]) throws MalformedChallengeException', 'Header>'),
-  \ javaapi#method(0,0,'getAuthPreferences(', ')', 'String>'),
+  \ javaapi#method(0,0,'getAuthPreferences(', ')', 'List'),
   \ javaapi#method(0,1,'selectScheme(', 'Map<String, Header>, HttpResponse, HttpContext) throws AuthenticationException', 'AuthScheme'),
   \ ])
 
@@ -159,7 +159,7 @@ call javaapi#class('BasicCookieStore', 'CookieStore', [
   \ javaapi#method(0,1,'BasicCookieStore(', ')', ''),
   \ javaapi#method(0,1,'addCookie(', 'Cookie)', 'void'),
   \ javaapi#method(0,1,'addCookies(', 'Cookie[])', 'void'),
-  \ javaapi#method(0,1,'getCookies(', ')', 'Cookie>'),
+  \ javaapi#method(0,1,'getCookies(', ')', 'List'),
   \ javaapi#method(0,1,'clearExpired(', 'Date)', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),

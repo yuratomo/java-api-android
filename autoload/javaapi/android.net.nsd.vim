@@ -17,7 +17,7 @@ call javaapi#class('NsdManager', '', [
   \ ])
 
 call javaapi#class('NsdServiceInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'NsdServiceInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'NsdServiceInfo(', ')', ''),
   \ javaapi#method(0,1,'getServiceName(', ')', 'String'),
   \ javaapi#method(0,1,'setServiceName(', 'String)', 'void'),

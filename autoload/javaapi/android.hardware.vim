@@ -72,7 +72,7 @@ call javaapi#interface('SensorEventListener', '', [
   \ ])
 
 call javaapi#class('SensorEvent', '', [
-  \ javaapi#field(0,1,'values', 'float[]'),
+  \ javaapi#field(0,1,'values', 'float'),
   \ javaapi#field(0,1,'sensor', 'Sensor'),
   \ javaapi#field(0,1,'accuracy', 'int'),
   \ javaapi#field(0,1,'timestamp', 'long'),
@@ -146,7 +146,7 @@ call javaapi#class('SensorManager', '', [
   \ javaapi#field(1,1,'AXIS_MINUS_Y', 'int'),
   \ javaapi#field(1,1,'AXIS_MINUS_Z', 'int'),
   \ javaapi#method(0,1,'getSensors(', ')', 'int'),
-  \ javaapi#method(0,1,'getSensorList(', 'int)', 'Sensor>'),
+  \ javaapi#method(0,1,'getSensorList(', 'int)', 'List'),
   \ javaapi#method(0,1,'getDefaultSensor(', 'int)', 'Sensor'),
   \ javaapi#method(0,1,'registerListener(', 'SensorListener, int)', 'boolean'),
   \ javaapi#method(0,1,'registerListener(', 'SensorListener, int, int)', 'boolean'),
@@ -159,7 +159,7 @@ call javaapi#class('SensorManager', '', [
   \ javaapi#method(1,1,'getRotationMatrix(', 'float[], float[], float[], float[])', 'boolean'),
   \ javaapi#method(1,1,'getInclination(', 'float[])', 'float'),
   \ javaapi#method(1,1,'remapCoordinateSystem(', 'float[], int, int, float[])', 'boolean'),
-  \ javaapi#method(1,1,'getOrientation(', 'float[], float[])', 'float[]'),
+  \ javaapi#method(1,1,'getOrientation(', 'float[], float[])', 'float'),
   \ javaapi#method(1,1,'getAltitude(', 'float, float)', 'float'),
   \ javaapi#method(1,1,'getAngleChange(', 'float[], float[], float[])', 'void'),
   \ javaapi#method(1,1,'getRotationMatrixFromVector(', 'float[], float[])', 'void'),

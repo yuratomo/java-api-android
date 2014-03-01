@@ -9,7 +9,7 @@ call javaapi#class('PasswordCallback', 'Serializable', [
   \ javaapi#method(0,1,'getPrompt(', ')', 'String'),
   \ javaapi#method(0,1,'isEchoOn(', ')', 'boolean'),
   \ javaapi#method(0,1,'setPassword(', 'char[])', 'void'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
   \ javaapi#method(0,1,'clearPassword(', ')', 'void'),
   \ ])
 

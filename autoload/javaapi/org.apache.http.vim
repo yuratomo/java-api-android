@@ -56,16 +56,16 @@ call javaapi#namespace('org.apache.http')
 call javaapi#interface('Header', '', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
-  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement[]'),
+  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement'),
   \ ])
 
 call javaapi#interface('HttpMessage', '', [
   \ javaapi#method(0,1,'getProtocolVersion(', ')', 'ProtocolVersion'),
   \ javaapi#method(0,1,'containsHeader(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header[]'),
+  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getFirstHeader(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getLastHeader(', 'String)', 'Header'),
-  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header[]'),
+  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header'),
   \ javaapi#method(0,1,'addHeader(', 'Header)', 'void'),
   \ javaapi#method(0,1,'addHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'setHeader(', 'Header)', 'void'),
@@ -203,7 +203,7 @@ call javaapi#namespace('org.apache.http')
 call javaapi#interface('HeaderElement', '', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
-  \ javaapi#method(0,1,'getParameters(', ')', 'NameValuePair[]'),
+  \ javaapi#method(0,1,'getParameters(', ')', 'NameValuePair'),
   \ javaapi#method(0,1,'getParameterByName(', 'String)', 'NameValuePair'),
   \ javaapi#method(0,1,'getParameterCount(', ')', 'int'),
   \ javaapi#method(0,1,'getParameter(', 'int)', 'NameValuePair'),

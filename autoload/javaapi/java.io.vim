@@ -236,8 +236,8 @@ call javaapi#class('ObjectInputStream', 'InputStream', [
   \ javaapi#method(0,1,'defaultReadObject(', ') throws IOException, ClassNotFoundException', 'void'),
   \ javaapi#method(0,1,'readFields(', ') throws IOException, ClassNotFoundException', 'GetField'),
   \ javaapi#method(0,1,'registerValidation(', 'ObjectInputValidation, int) throws NotActiveException, InvalidObjectException', 'void'),
-  \ javaapi#method(0,0,'resolveClass(', 'ObjectStreamClass) throws IOException, ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(0,0,'resolveProxyClass(', 'String[]) throws IOException, ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(0,0,'resolveClass(', 'ObjectStreamClass) throws IOException, ClassNotFoundException', 'Class'),
+  \ javaapi#method(0,0,'resolveProxyClass(', 'String[]) throws IOException, ClassNotFoundException', 'Class'),
   \ javaapi#method(0,0,'resolveObject(', 'Object) throws IOException', 'Object'),
   \ javaapi#method(0,0,'enableResolveObject(', 'boolean) throws SecurityException', 'boolean'),
   \ javaapi#method(0,0,'readStreamHeader(', ') throws IOException, StreamCorruptedException', 'void'),
@@ -284,11 +284,11 @@ call javaapi#class('Reader', 'Closeable', [
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ObjectStreamField', 'Object>', [
+call javaapi#class('ObjectStreamField', 'Comparable', [
   \ javaapi#method(0,1,'ObjectStreamField(', 'String, Class<?>)', ''),
   \ javaapi#method(0,1,'ObjectStreamField(', 'String, Class<?>, boolean)', ''),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'getType(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getType(', ')', 'Class'),
   \ javaapi#method(0,1,'getTypeCode(', ')', 'char'),
   \ javaapi#method(0,1,'getTypeString(', ')', 'String'),
   \ javaapi#method(0,1,'getOffset(', ')', 'int'),
@@ -310,7 +310,7 @@ call javaapi#class('PipedOutputStream', 'OutputStream', [
   \ ])
 
 call javaapi#class('ByteArrayInputStream', 'InputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'pos', 'int'),
   \ javaapi#field(0,0,'mark', 'int'),
   \ javaapi#field(0,0,'count', 'int'),
@@ -327,7 +327,7 @@ call javaapi#class('ByteArrayInputStream', 'InputStream', [
   \ ])
 
 call javaapi#class('ByteArrayOutputStream', 'OutputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'count', 'int'),
   \ javaapi#method(0,1,'ByteArrayOutputStream(', ')', ''),
   \ javaapi#method(0,1,'ByteArrayOutputStream(', 'int)', ''),
@@ -335,7 +335,7 @@ call javaapi#class('ByteArrayOutputStream', 'OutputStream', [
   \ javaapi#method(0,1,'write(', 'byte[], int, int)', 'void'),
   \ javaapi#method(0,1,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
-  \ javaapi#method(0,1,'toByteArray(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'toByteArray(', ')', 'byte'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', 'String) throws UnsupportedEncodingException', 'String'),
@@ -427,8 +427,8 @@ call javaapi#class('Console', 'Flushable', [
   \ javaapi#method(0,1,'printf(', 'String, )', 'Console'),
   \ javaapi#method(0,1,'readLine(', 'String, )', 'String'),
   \ javaapi#method(0,1,'readLine(', ')', 'String'),
-  \ javaapi#method(0,1,'readPassword(', 'String, )', 'char[]'),
-  \ javaapi#method(0,1,'readPassword(', ')', 'char[]'),
+  \ javaapi#method(0,1,'readPassword(', 'String, )', 'char'),
+  \ javaapi#method(0,1,'readPassword(', ')', 'char'),
   \ javaapi#method(0,1,'flush(', ')', 'void'),
   \ ])
 
@@ -500,7 +500,7 @@ call javaapi#class('EOFException', 'IOException', [
   \ ])
 
 call javaapi#class('CharArrayWriter', 'Writer', [
-  \ javaapi#field(0,0,'buf', 'char[]'),
+  \ javaapi#field(0,0,'buf', 'char'),
   \ javaapi#field(0,0,'count', 'int'),
   \ javaapi#method(0,1,'CharArrayWriter(', ')', ''),
   \ javaapi#method(0,1,'CharArrayWriter(', 'int)', ''),
@@ -512,7 +512,7 @@ call javaapi#class('CharArrayWriter', 'Writer', [
   \ javaapi#method(0,1,'append(', 'CharSequence, int, int)', 'CharArrayWriter'),
   \ javaapi#method(0,1,'append(', 'char)', 'CharArrayWriter'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
-  \ javaapi#method(0,1,'toCharArray(', ')', 'char[]'),
+  \ javaapi#method(0,1,'toCharArray(', ')', 'char'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'flush(', ')', 'void'),
@@ -536,7 +536,7 @@ call javaapi#class('OutputStream', 'Flushable', [
 
 call javaapi#class('PipedInputStream', 'InputStream', [
   \ javaapi#field(1,0,'PIPE_SIZE', 'int'),
-  \ javaapi#field(0,0,'buffer', 'byte[]'),
+  \ javaapi#field(0,0,'buffer', 'byte'),
   \ javaapi#field(0,0,'in', 'int'),
   \ javaapi#field(0,0,'out', 'int'),
   \ javaapi#method(0,1,'PipedInputStream(', 'PipedOutputStream) throws IOException', ''),
@@ -683,7 +683,7 @@ call javaapi#class('StringBufferInputStream', 'InputStream', [
   \ ])
 
 call javaapi#class('BufferedOutputStream', 'FilterOutputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'count', 'int'),
   \ javaapi#method(0,1,'BufferedOutputStream(', 'OutputStream)', ''),
   \ javaapi#method(0,1,'BufferedOutputStream(', 'OutputStream, int)', ''),
@@ -725,13 +725,13 @@ call javaapi#interface('ObjectStreamConstants', '', [
   \ ])
 
 call javaapi#class('ObjectStreamClass', 'Serializable', [
-  \ javaapi#field(1,1,'NO_FIELDS', 'ObjectStreamField[]'),
+  \ javaapi#field(1,1,'NO_FIELDS', 'ObjectStreamField'),
   \ javaapi#method(1,1,'lookup(', 'Class<?>)', 'ObjectStreamClass'),
   \ javaapi#method(1,1,'lookupAny(', 'Class<?>)', 'ObjectStreamClass'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getSerialVersionUID(', ')', 'long'),
-  \ javaapi#method(0,1,'forClass(', ')', 'Class<?>'),
-  \ javaapi#method(0,1,'getFields(', ')', 'ObjectStreamField[]'),
+  \ javaapi#method(0,1,'forClass(', ')', 'Class'),
+  \ javaapi#method(0,1,'getFields(', ')', 'ObjectStreamField'),
   \ javaapi#method(0,1,'getField(', 'String)', 'ObjectStreamField'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
@@ -823,7 +823,7 @@ call javaapi#class('PipedWriter', 'Writer', [
   \ ])
 
 call javaapi#class('PushbackInputStream', 'FilterInputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'pos', 'int'),
   \ javaapi#method(0,1,'PushbackInputStream(', 'InputStream, int)', ''),
   \ javaapi#method(0,1,'PushbackInputStream(', 'InputStream)', ''),
@@ -854,7 +854,7 @@ call javaapi#class('LineNumberReader', 'BufferedReader', [
   \ ])
 
 call javaapi#class('BufferedInputStream', 'FilterInputStream', [
-  \ javaapi#field(0,0,'buf', 'byte[]'),
+  \ javaapi#field(0,0,'buf', 'byte'),
   \ javaapi#field(0,0,'count', 'int'),
   \ javaapi#field(0,0,'pos', 'int'),
   \ javaapi#field(0,0,'markpos', 'int'),
@@ -886,7 +886,7 @@ call javaapi#class('FilterOutputStream', 'OutputStream', [
   \ javaapi#method(0,1,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('File', 'File>', [
+call javaapi#class('File', 'Comparable', [
   \ javaapi#field(1,1,'separatorChar', 'char'),
   \ javaapi#field(1,1,'separator', 'String'),
   \ javaapi#field(1,1,'pathSeparatorChar', 'char'),
@@ -917,11 +917,11 @@ call javaapi#class('File', 'File>', [
   \ javaapi#method(0,1,'createNewFile(', ') throws IOException', 'boolean'),
   \ javaapi#method(0,1,'delete(', ')', 'boolean'),
   \ javaapi#method(0,1,'deleteOnExit(', ')', 'void'),
-  \ javaapi#method(0,1,'list(', ')', 'String[]'),
-  \ javaapi#method(0,1,'list(', 'FilenameFilter)', 'String[]'),
-  \ javaapi#method(0,1,'listFiles(', ')', 'File[]'),
-  \ javaapi#method(0,1,'listFiles(', 'FilenameFilter)', 'File[]'),
-  \ javaapi#method(0,1,'listFiles(', 'FileFilter)', 'File[]'),
+  \ javaapi#method(0,1,'list(', ')', 'String'),
+  \ javaapi#method(0,1,'list(', 'FilenameFilter)', 'String'),
+  \ javaapi#method(0,1,'listFiles(', ')', 'File'),
+  \ javaapi#method(0,1,'listFiles(', 'FilenameFilter)', 'File'),
+  \ javaapi#method(0,1,'listFiles(', 'FileFilter)', 'File'),
   \ javaapi#method(0,1,'mkdir(', ')', 'boolean'),
   \ javaapi#method(0,1,'mkdirs(', ')', 'boolean'),
   \ javaapi#method(0,1,'renameTo(', 'File)', 'boolean'),
@@ -934,7 +934,7 @@ call javaapi#class('File', 'File>', [
   \ javaapi#method(0,1,'setExecutable(', 'boolean, boolean)', 'boolean'),
   \ javaapi#method(0,1,'setExecutable(', 'boolean)', 'boolean'),
   \ javaapi#method(0,1,'canExecute(', ')', 'boolean'),
-  \ javaapi#method(1,1,'listRoots(', ')', 'File[]'),
+  \ javaapi#method(1,1,'listRoots(', ')', 'File'),
   \ javaapi#method(0,1,'getTotalSpace(', ')', 'long'),
   \ javaapi#method(0,1,'getFreeSpace(', ')', 'long'),
   \ javaapi#method(0,1,'getUsableSpace(', ')', 'long'),
@@ -965,7 +965,7 @@ call javaapi#class('PipedReader', 'Reader', [
   \ ])
 
 call javaapi#class('CharArrayReader', 'Reader', [
-  \ javaapi#field(0,0,'buf', 'char[]'),
+  \ javaapi#field(0,0,'buf', 'char'),
   \ javaapi#field(0,0,'pos', 'int'),
   \ javaapi#field(0,0,'markedPos', 'int'),
   \ javaapi#field(0,0,'count', 'int'),

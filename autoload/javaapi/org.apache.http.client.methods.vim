@@ -75,7 +75,7 @@ call javaapi#class('HttpOptions', 'HttpRequestBase', [
   \ javaapi#method(0,1,'HttpOptions(', 'URI)', ''),
   \ javaapi#method(0,1,'HttpOptions(', 'String)', ''),
   \ javaapi#method(0,1,'getMethod(', ')', 'String'),
-  \ javaapi#method(0,1,'getAllowedMethods(', 'HttpResponse)', 'String>'),
+  \ javaapi#method(0,1,'getAllowedMethods(', 'HttpResponse)', 'Set'),
   \ ])
 
 call javaapi#class('HttpRequestBase', 'AbstractHttpMessage', [

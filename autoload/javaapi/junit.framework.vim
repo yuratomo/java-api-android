@@ -1,9 +1,9 @@
 call javaapi#namespace('junit.framework')
 
 call javaapi#class('TestResult', '', [
-  \ javaapi#field(0,0,'fFailures', 'TestFailure>'),
-  \ javaapi#field(0,0,'fErrors', 'TestFailure>'),
-  \ javaapi#field(0,0,'fListeners', 'TestListener>'),
+  \ javaapi#field(0,0,'fFailures', 'Vector'),
+  \ javaapi#field(0,0,'fErrors', 'Vector'),
+  \ javaapi#field(0,0,'fListeners', 'Vector'),
   \ javaapi#field(0,0,'fRunTests', 'int'),
   \ javaapi#method(0,1,'TestResult(', ')', ''),
   \ javaapi#method(0,1,'addError(', 'Test, Throwable)', 'void'),
@@ -12,9 +12,9 @@ call javaapi#class('TestResult', '', [
   \ javaapi#method(0,1,'removeListener(', 'TestListener)', 'void'),
   \ javaapi#method(0,1,'endTest(', 'Test)', 'void'),
   \ javaapi#method(0,1,'errorCount(', ')', 'int'),
-  \ javaapi#method(0,1,'errors(', ')', 'TestFailure>'),
+  \ javaapi#method(0,1,'errors(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'failureCount(', ')', 'int'),
-  \ javaapi#method(0,1,'failures(', ')', 'TestFailure>'),
+  \ javaapi#method(0,1,'failures(', ')', 'Enumeration'),
   \ javaapi#method(0,0,'run(', 'TestCase)', 'void'),
   \ javaapi#method(0,1,'runCount(', ')', 'int'),
   \ javaapi#method(0,1,'runProtected(', 'Test, Protectable)', 'void'),
@@ -39,7 +39,7 @@ call javaapi#class('TestSuite', 'Test', [
   \ javaapi#method(0,1,'TestSuite(', 'Class<?>)', ''),
   \ javaapi#method(0,1,'TestSuite(', 'Class<? extends TestCase>[], String)', ''),
   \ javaapi#method(1,1,'createTest(', 'Class<?>, String)', 'Test'),
-  \ javaapi#method(1,1,'getTestConstructor(', 'Class<?>) throws NoSuchMethodException', 'Constructor<?>'),
+  \ javaapi#method(1,1,'getTestConstructor(', 'Class<?>) throws NoSuchMethodException', 'Constructor'),
   \ javaapi#method(1,1,'warning(', 'String)', 'Test'),
   \ javaapi#method(0,1,'addTest(', 'Test)', 'void'),
   \ javaapi#method(0,1,'addTestSuite(', 'Class<? extends TestCase>)', 'void'),
@@ -50,7 +50,7 @@ call javaapi#class('TestSuite', 'Test', [
   \ javaapi#method(0,1,'setName(', 'String)', 'void'),
   \ javaapi#method(0,1,'testAt(', 'int)', 'Test'),
   \ javaapi#method(0,1,'testCount(', ')', 'int'),
-  \ javaapi#method(0,1,'tests(', ')', 'Test>'),
+  \ javaapi#method(0,1,'tests(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 

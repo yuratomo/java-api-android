@@ -3,8 +3,8 @@ call javaapi#namespace('org.apache.http.client.utils')
 call javaapi#class('URLEncodedUtils', '', [
   \ javaapi#field(1,1,'CONTENT_TYPE', 'String'),
   \ javaapi#method(0,1,'URLEncodedUtils(', ')', ''),
-  \ javaapi#method(1,1,'parse(', 'URI, String)', 'NameValuePair>'),
-  \ javaapi#method(1,1,'parse(', 'HttpEntity) throws IOException', 'NameValuePair>'),
+  \ javaapi#method(1,1,'parse(', 'URI, String)', 'List'),
+  \ javaapi#method(1,1,'parse(', 'HttpEntity) throws IOException', 'List'),
   \ javaapi#method(1,1,'isEncoded(', 'HttpEntity)', 'boolean'),
   \ javaapi#method(1,1,'parse(', 'List<NameValuePair>, Scanner, String)', 'void'),
   \ javaapi#method(1,1,'format(', 'List<? extends NameValuePair>, String)', 'String'),

@@ -33,13 +33,13 @@ call javaapi#class('AccountManager', '', [
   \ javaapi#method(1,1,'get(', 'Context)', 'AccountManager'),
   \ javaapi#method(0,1,'getPassword(', 'Account)', 'String'),
   \ javaapi#method(0,1,'getUserData(', 'Account, String)', 'String'),
-  \ javaapi#method(0,1,'getAuthenticatorTypes(', ')', 'AuthenticatorDescription[]'),
-  \ javaapi#method(0,1,'getAccounts(', ')', 'Account[]'),
-  \ javaapi#method(0,1,'getAccountsByType(', 'String)', 'Account[]'),
-  \ javaapi#method(0,1,'hasFeatures(', 'Account, String[], AccountManagerCallback<Boolean>, Handler)', 'Boolean>'),
-  \ javaapi#method(0,1,'getAccountsByTypeAndFeatures(', 'String, String[], AccountManagerCallback<Account[]>, Handler)', 'Account[]>'),
+  \ javaapi#method(0,1,'getAuthenticatorTypes(', ')', 'AuthenticatorDescription'),
+  \ javaapi#method(0,1,'getAccounts(', ')', 'Account'),
+  \ javaapi#method(0,1,'getAccountsByType(', 'String)', 'Account'),
+  \ javaapi#method(0,1,'hasFeatures(', 'Account, String[], AccountManagerCallback<Boolean>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'getAccountsByTypeAndFeatures(', 'String, String[], AccountManagerCallback<Account[]>, Handler)', 'AccountManagerFuture'),
   \ javaapi#method(0,1,'addAccountExplicitly(', 'Account, String, Bundle)', 'boolean'),
-  \ javaapi#method(0,1,'removeAccount(', 'Account, AccountManagerCallback<Boolean>, Handler)', 'Boolean>'),
+  \ javaapi#method(0,1,'removeAccount(', 'Account, AccountManagerCallback<Boolean>, Handler)', 'AccountManagerFuture'),
   \ javaapi#method(0,1,'invalidateAuthToken(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'peekAuthToken(', 'Account, String)', 'String'),
   \ javaapi#method(0,1,'setPassword(', 'Account, String)', 'void'),
@@ -47,14 +47,14 @@ call javaapi#class('AccountManager', '', [
   \ javaapi#method(0,1,'setUserData(', 'Account, String, String)', 'void'),
   \ javaapi#method(0,1,'setAuthToken(', 'Account, String, String)', 'void'),
   \ javaapi#method(0,1,'blockingGetAuthToken(', 'Account, String, boolean) throws OperationCanceledException, IOException, AuthenticatorException', 'String'),
-  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, boolean, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, Bundle, boolean, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'addAccount(', 'String, String, String[], Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'confirmCredentials(', 'Account, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'updateCredentials(', 'Account, String, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'editProperties(', 'String, Activity, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
-  \ javaapi#method(0,1,'getAuthTokenByFeatures(', 'String, String, String[], Activity, Bundle, Bundle, AccountManagerCallback<Bundle>, Handler)', 'Bundle>'),
+  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, boolean, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'getAuthToken(', 'Account, String, Bundle, boolean, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'addAccount(', 'String, String, String[], Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'confirmCredentials(', 'Account, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'updateCredentials(', 'Account, String, Bundle, Activity, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'editProperties(', 'String, Activity, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
+  \ javaapi#method(0,1,'getAuthTokenByFeatures(', 'String, String, String[], Activity, Bundle, Bundle, AccountManagerCallback<Bundle>, Handler)', 'AccountManagerFuture'),
   \ javaapi#method(1,1,'newChooseAccountIntent(', 'Account, ArrayList<Account>, String[], boolean, String, String, String[], Bundle)', 'Intent'),
   \ javaapi#method(0,1,'addOnAccountsUpdatedListener(', 'OnAccountsUpdateListener, Handler, boolean)', 'void'),
   \ javaapi#method(0,1,'removeOnAccountsUpdatedListener(', 'OnAccountsUpdateListener)', 'void'),
@@ -75,7 +75,7 @@ call javaapi#class('AuthenticatorDescription', 'Parcelable', [
   \ javaapi#field(0,1,'accountPreferencesId', 'int'),
   \ javaapi#field(0,1,'packageName', 'String'),
   \ javaapi#field(0,1,'customTokens', 'boolean'),
-  \ javaapi#field(1,1,'CREATOR', 'AuthenticatorDescription>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'AuthenticatorDescription(', 'String, String, int, int, int, int, boolean)', ''),
   \ javaapi#method(0,1,'AuthenticatorDescription(', 'String, String, int, int, int, int)', ''),
   \ javaapi#method(1,1,'newKey(', 'String)', 'AuthenticatorDescription'),
@@ -96,7 +96,7 @@ call javaapi#class('AccountAuthenticatorActivity', 'Activity', [
 call javaapi#class('Account', 'Parcelable', [
   \ javaapi#field(0,1,'name', 'String'),
   \ javaapi#field(0,1,'type', 'String'),
-  \ javaapi#field(1,1,'CREATOR', 'Account>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'Account(', 'String, String)', ''),
   \ javaapi#method(0,1,'Account(', 'Parcel)', ''),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -124,7 +124,7 @@ call javaapi#interface('OnAccountsUpdateListener', '', [
   \ javaapi#method(0,1,'onAccountsUpdated(', 'Account[])', 'void'),
   \ ])
 
-call javaapi#interface('AccountManagerFuture<V>', '', [
+call javaapi#interface('AccountManagerFuture', '', [
   \ javaapi#method(0,1,'cancel(', 'boolean)', 'boolean'),
   \ javaapi#method(0,1,'isCancelled(', ')', 'boolean'),
   \ javaapi#method(0,1,'isDone(', ')', 'boolean'),
@@ -133,7 +133,7 @@ call javaapi#interface('AccountManagerFuture<V>', '', [
   \ ])
 
 call javaapi#class('AccountAuthenticatorResponse', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'AccountAuthenticatorResponse>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'AccountAuthenticatorResponse(', 'Parcel)', ''),
   \ javaapi#method(0,1,'onResult(', 'Bundle)', 'void'),
   \ javaapi#method(0,1,'onRequestContinued(', ')', 'void'),
@@ -162,7 +162,7 @@ call javaapi#class('AuthenticatorException', 'AccountsException', [
   \ javaapi#method(0,1,'AuthenticatorException(', 'Throwable)', ''),
   \ ])
 
-call javaapi#interface('AccountManagerCallback<V>', '', [
+call javaapi#interface('AccountManagerCallback', '', [
   \ javaapi#method(0,1,'run(', 'AccountManagerFuture<V>)', 'void'),
   \ ])
 

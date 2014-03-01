@@ -15,7 +15,7 @@ call javaapi#class('AbstractCookieSpec', 'CookieSpec', [
   \ javaapi#method(0,1,'registerAttribHandler(', 'String, CookieAttributeHandler)', 'void'),
   \ javaapi#method(0,0,'findAttribHandler(', 'String)', 'CookieAttributeHandler'),
   \ javaapi#method(0,0,'getAttribHandler(', 'String)', 'CookieAttributeHandler'),
-  \ javaapi#method(0,0,'getAttribHandlers(', ')', 'CookieAttributeHandler>'),
+  \ javaapi#method(0,0,'getAttribHandlers(', ')', 'Collection'),
   \ ])
 
 call javaapi#class('RFC2965PortAttributeHandler', 'CookieAttributeHandler', [
@@ -44,11 +44,11 @@ call javaapi#class('RFC2965DomainAttributeHandler', 'CookieAttributeHandler', [
   \ ])
 
 call javaapi#class('BrowserCompatSpec', 'CookieSpecBase', [
-  \ javaapi#field(1,0,'DATE_PATTERNS', 'String[]'),
+  \ javaapi#field(1,0,'DATE_PATTERNS', 'String'),
   \ javaapi#method(0,1,'BrowserCompatSpec(', 'String[])', ''),
   \ javaapi#method(0,1,'BrowserCompatSpec(', ')', ''),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
-  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'Header>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
+  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'List'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getVersionHeader(', ')', 'Header'),
   \ ])
@@ -56,9 +56,9 @@ call javaapi#class('BrowserCompatSpec', 'CookieSpecBase', [
 call javaapi#class('RFC2109Spec', 'CookieSpecBase', [
   \ javaapi#method(0,1,'RFC2109Spec(', 'String[], boolean)', ''),
   \ javaapi#method(0,1,'RFC2109Spec(', ')', ''),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
   \ javaapi#method(0,1,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
-  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'Header>'),
+  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'List'),
   \ javaapi#method(0,0,'formatParamAsVer(', 'CharArrayBuffer, String, String, int)', 'void'),
   \ javaapi#method(0,0,'formatCookieAsVer(', 'CharArrayBuffer, Cookie, int)', 'void'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
@@ -69,8 +69,8 @@ call javaapi#class('NetscapeDraftSpec', 'CookieSpecBase', [
   \ javaapi#field(1,0,'EXPIRES_PATTERN', 'String'),
   \ javaapi#method(0,1,'NetscapeDraftSpec(', 'String[])', ''),
   \ javaapi#method(0,1,'NetscapeDraftSpec(', ')', ''),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
-  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'Header>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
+  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'List'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getVersionHeader(', ')', 'Header'),
   \ ])
@@ -78,10 +78,10 @@ call javaapi#class('NetscapeDraftSpec', 'CookieSpecBase', [
 call javaapi#class('BestMatchSpec', 'CookieSpec', [
   \ javaapi#method(0,1,'BestMatchSpec(', 'String[], boolean)', ''),
   \ javaapi#method(0,1,'BestMatchSpec(', ')', ''),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
   \ javaapi#method(0,1,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,1,'match(', 'Cookie, CookieOrigin)', 'boolean'),
-  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'Header>'),
+  \ javaapi#method(0,1,'formatCookies(', 'List<Cookie>)', 'List'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getVersionHeader(', ')', 'Header'),
   \ ])
@@ -146,7 +146,7 @@ call javaapi#class('BasicClientCookie', 'Cloneable', [
   \ javaapi#method(0,1,'setPath(', 'String)', 'void'),
   \ javaapi#method(0,1,'isSecure(', ')', 'boolean'),
   \ javaapi#method(0,1,'setSecure(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getPorts(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getPorts(', ')', 'int'),
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'setVersion(', 'int)', 'void'),
   \ javaapi#method(0,1,'isExpired(', 'Date)', 'boolean'),
@@ -168,7 +168,7 @@ call javaapi#class('CookieSpecBase', 'AbstractCookieSpec', [
   \ javaapi#method(0,1,'CookieSpecBase(', ')', ''),
   \ javaapi#method(1,0,'getDefaultPath(', 'CookieOrigin)', 'String'),
   \ javaapi#method(1,0,'getDefaultDomain(', 'CookieOrigin)', 'String'),
-  \ javaapi#method(0,0,'parse(', 'HeaderElement[], CookieOrigin) throws MalformedCookieException', 'Cookie>'),
+  \ javaapi#method(0,0,'parse(', 'HeaderElement[], CookieOrigin) throws MalformedCookieException', 'List'),
   \ javaapi#method(0,1,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,1,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ ])
@@ -182,7 +182,7 @@ call javaapi#class('RFC2965CommentUrlAttributeHandler', 'CookieAttributeHandler'
 
 call javaapi#class('BasicClientCookie2', 'BasicClientCookie', [
   \ javaapi#method(0,1,'BasicClientCookie2(', 'String, String)', ''),
-  \ javaapi#method(0,1,'getPorts(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getPorts(', ')', 'int'),
   \ javaapi#method(0,1,'setPorts(', 'int[])', 'void'),
   \ javaapi#method(0,1,'getCommentURL(', ')', 'String'),
   \ javaapi#method(0,1,'setCommentURL(', 'String)', 'void'),
@@ -225,7 +225,7 @@ call javaapi#class('AbstractCookieAttributeHandler', 'CookieAttributeHandler', [
 call javaapi#class('RFC2965Spec', 'RFC2109Spec', [
   \ javaapi#method(0,1,'RFC2965Spec(', ')', ''),
   \ javaapi#method(0,1,'RFC2965Spec(', 'String[], boolean)', ''),
-  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'Cookie>'),
+  \ javaapi#method(0,1,'parse(', 'Header, CookieOrigin) throws MalformedCookieException', 'List'),
   \ javaapi#method(0,1,'validate(', 'Cookie, CookieOrigin) throws MalformedCookieException', 'void'),
   \ javaapi#method(0,1,'match(', 'Cookie, CookieOrigin)', 'boolean'),
   \ javaapi#method(0,0,'formatCookieAsVer(', 'CharArrayBuffer, Cookie, int)', 'void'),

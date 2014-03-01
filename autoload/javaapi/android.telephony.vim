@@ -22,7 +22,7 @@ call javaapi#class('ServiceState', 'Parcelable', [
   \ javaapi#field(1,1,'STATE_OUT_OF_SERVICE', 'int'),
   \ javaapi#field(1,1,'STATE_EMERGENCY_ONLY', 'int'),
   \ javaapi#field(1,1,'STATE_POWER_OFF', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'ServiceState>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'ServiceState(', ')', ''),
   \ javaapi#method(0,1,'ServiceState(', 'ServiceState)', ''),
   \ javaapi#method(0,1,'ServiceState(', 'Parcel)', ''),
@@ -47,7 +47,7 @@ call javaapi#class('ServiceState', 'Parcelable', [
   \ ])
 
 call javaapi#class('CellIdentityGsm', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CellIdentityGsm>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getMcc(', ')', 'int'),
   \ javaapi#method(0,1,'getMnc(', ')', 'int'),
   \ javaapi#method(0,1,'getLac(', ')', 'int'),
@@ -61,7 +61,7 @@ call javaapi#class('CellIdentityGsm', 'Parcelable', [
   \ ])
 
 call javaapi#class('CellSignalStrengthLte', 'CellSignalStrength', [
-  \ javaapi#field(1,1,'CREATOR', 'CellSignalStrengthLte>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getDbm(', ')', 'int'),
   \ javaapi#method(0,1,'getAsuLevel(', ')', 'int'),
@@ -103,9 +103,9 @@ call javaapi#class('PhoneNumberUtils', '', [
   \ javaapi#method(1,1,'calledPartyBCDFragmentToString(', 'byte[], int, int)', 'String'),
   \ javaapi#method(1,1,'isWellFormedSmsAddress(', 'String)', 'boolean'),
   \ javaapi#method(1,1,'isGlobalPhoneNumber(', 'String)', 'boolean'),
-  \ javaapi#method(1,1,'networkPortionToCalledPartyBCD(', 'String)', 'byte[]'),
-  \ javaapi#method(1,1,'networkPortionToCalledPartyBCDWithLength(', 'String)', 'byte[]'),
-  \ javaapi#method(1,1,'numberToCalledPartyBCD(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'networkPortionToCalledPartyBCD(', 'String)', 'byte'),
+  \ javaapi#method(1,1,'networkPortionToCalledPartyBCDWithLength(', 'String)', 'byte'),
+  \ javaapi#method(1,1,'numberToCalledPartyBCD(', 'String)', 'byte'),
   \ javaapi#method(1,1,'formatNumber(', 'String)', 'String'),
   \ javaapi#method(1,1,'getFormatTypeForLocale(', 'Locale)', 'int'),
   \ javaapi#method(1,1,'formatNumber(', 'Editable, int)', 'void'),
@@ -116,7 +116,7 @@ call javaapi#class('PhoneNumberUtils', '', [
   \ ])
 
 call javaapi#class('CellInfoGsm', 'CellInfo', [
-  \ javaapi#field(1,1,'CREATOR', 'CellInfoGsm>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getCellIdentity(', ')', 'CellIdentityGsm'),
   \ javaapi#method(0,1,'getCellSignalStrength(', ')', 'CellSignalStrengthGsm'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -127,7 +127,7 @@ call javaapi#class('CellInfoGsm', 'CellInfo', [
   \ ])
 
 call javaapi#class('CellIdentityCdma', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CellIdentityCdma>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getNetworkId(', ')', 'int'),
   \ javaapi#method(0,1,'getSystemId(', ')', 'int'),
   \ javaapi#method(0,1,'getBasestationId(', ')', 'int'),
@@ -141,7 +141,7 @@ call javaapi#class('CellIdentityCdma', 'Parcelable', [
   \ ])
 
 call javaapi#class('CellIdentityLte', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CellIdentityLte>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getMcc(', ')', 'int'),
   \ javaapi#method(0,1,'getMnc(', ')', 'int'),
   \ javaapi#method(0,1,'getCi(', ')', 'int'),
@@ -171,7 +171,7 @@ call javaapi#class('SignalStrength', 'Parcelable', [
   \ ])
 
 call javaapi#class('CellInfoCdma', 'CellInfo', [
-  \ javaapi#field(1,1,'CREATOR', 'CellInfoCdma>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getCellIdentity(', ')', 'CellIdentityCdma'),
   \ javaapi#method(0,1,'getCellSignalStrength(', ')', 'CellSignalStrengthCdma'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -188,7 +188,7 @@ call javaapi#class('CellLocation', '', [
   \ ])
 
 call javaapi#class('CellInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CellInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'isRegistered(', ')', 'boolean'),
   \ javaapi#method(0,1,'getTimeStamp(', ')', 'long'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -201,7 +201,7 @@ call javaapi#class('CellInfo', 'Parcelable', [
 call javaapi#class('NeighboringCellInfo', 'Parcelable', [
   \ javaapi#field(1,1,'UNKNOWN_RSSI', 'int'),
   \ javaapi#field(1,1,'UNKNOWN_CID', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'NeighboringCellInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'NeighboringCellInfo(', ')', ''),
   \ javaapi#method(0,1,'NeighboringCellInfo(', 'int, int)', ''),
   \ javaapi#method(0,1,'NeighboringCellInfo(', 'int, String, int)', ''),
@@ -229,8 +229,8 @@ call javaapi#class('SmsMessage', '', [
   \ javaapi#field(1,1,'MAX_USER_DATA_SEPTETS_WITH_HEADER', 'int'),
   \ javaapi#method(1,1,'createFromPdu(', 'byte[])', 'SmsMessage'),
   \ javaapi#method(1,1,'getTPLayerLengthForPDU(', 'String)', 'int'),
-  \ javaapi#method(1,1,'calculateLength(', 'CharSequence, boolean)', 'int[]'),
-  \ javaapi#method(1,1,'calculateLength(', 'String, boolean)', 'int[]'),
+  \ javaapi#method(1,1,'calculateLength(', 'CharSequence, boolean)', 'int'),
+  \ javaapi#method(1,1,'calculateLength(', 'String, boolean)', 'int'),
   \ javaapi#method(1,1,'getSubmitPdu(', 'String, String, String, boolean)', 'SubmitPdu'),
   \ javaapi#method(1,1,'getSubmitPdu(', 'String, String, short, byte[], boolean)', 'SubmitPdu'),
   \ javaapi#method(0,1,'getServiceCenterAddress(', ')', 'String'),
@@ -250,8 +250,8 @@ call javaapi#class('SmsMessage', '', [
   \ javaapi#method(0,1,'isMWIClearMessage(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMWISetMessage(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMwiDontStore(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getUserData(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getPdu(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getUserData(', ')', 'byte'),
+  \ javaapi#method(0,1,'getPdu(', ')', 'byte'),
   \ javaapi#method(0,1,'getStatusOnSim(', ')', 'int'),
   \ javaapi#method(0,1,'getStatusOnIcc(', ')', 'int'),
   \ javaapi#method(0,1,'getIndexOnSim(', ')', 'int'),
@@ -262,7 +262,7 @@ call javaapi#class('SmsMessage', '', [
   \ ])
 
 call javaapi#class('CellInfoLte', 'CellInfo', [
-  \ javaapi#field(1,1,'CREATOR', 'CellInfoLte>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getCellIdentity(', ')', 'CellIdentityLte'),
   \ javaapi#method(0,1,'getCellSignalStrength(', ')', 'CellSignalStrengthLte'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -283,7 +283,7 @@ call javaapi#class('SmsManager', '', [
   \ javaapi#field(1,1,'RESULT_ERROR_NULL_PDU', 'int'),
   \ javaapi#field(1,1,'RESULT_ERROR_NO_SERVICE', 'int'),
   \ javaapi#method(0,1,'sendTextMessage(', 'String, String, String, PendingIntent, PendingIntent)', 'void'),
-  \ javaapi#method(0,1,'divideMessage(', 'String)', 'String>'),
+  \ javaapi#method(0,1,'divideMessage(', 'String)', 'ArrayList'),
   \ javaapi#method(0,1,'sendMultipartTextMessage(', 'String, String, ArrayList<String>, ArrayList<PendingIntent>, ArrayList<PendingIntent>)', 'void'),
   \ javaapi#method(0,1,'sendDataMessage(', 'String, String, short, byte[], PendingIntent, PendingIntent)', 'void'),
   \ javaapi#method(1,1,'getDefault(', ')', 'SmsManager'),
@@ -318,7 +318,7 @@ call javaapi#class('PhoneStateListener', '', [
 call javaapi#namespace('android.telephony')
 
 call javaapi#class('CellSignalStrengthGsm', 'CellSignalStrength', [
-  \ javaapi#field(1,1,'CREATOR', 'CellSignalStrengthGsm>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getDbm(', ')', 'int'),
   \ javaapi#method(0,1,'getAsuLevel(', ')', 'int'),
@@ -330,7 +330,7 @@ call javaapi#class('CellSignalStrengthGsm', 'CellSignalStrength', [
   \ ])
 
 call javaapi#class('CellSignalStrengthCdma', 'CellSignalStrength', [
-  \ javaapi#field(1,1,'CREATOR', 'CellSignalStrengthCdma>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getAsuLevel(', ')', 'int'),
   \ javaapi#method(0,1,'getCdmaLevel(', ')', 'int'),
@@ -396,7 +396,7 @@ call javaapi#class('TelephonyManager', '', [
   \ javaapi#method(0,1,'getDeviceSoftwareVersion(', ')', 'String'),
   \ javaapi#method(0,1,'getDeviceId(', ')', 'String'),
   \ javaapi#method(0,1,'getCellLocation(', ')', 'CellLocation'),
-  \ javaapi#method(0,1,'getNeighboringCellInfo(', ')', 'NeighboringCellInfo>'),
+  \ javaapi#method(0,1,'getNeighboringCellInfo(', ')', 'List'),
   \ javaapi#method(0,1,'getPhoneType(', ')', 'int'),
   \ javaapi#method(0,1,'getNetworkOperatorName(', ')', 'String'),
   \ javaapi#method(0,1,'getNetworkOperator(', ')', 'String'),
@@ -417,6 +417,6 @@ call javaapi#class('TelephonyManager', '', [
   \ javaapi#method(0,1,'getDataActivity(', ')', 'int'),
   \ javaapi#method(0,1,'getDataState(', ')', 'int'),
   \ javaapi#method(0,1,'listen(', 'PhoneStateListener, int)', 'void'),
-  \ javaapi#method(0,1,'getAllCellInfo(', ')', 'CellInfo>'),
+  \ javaapi#method(0,1,'getAllCellInfo(', ')', 'List'),
   \ ])
 

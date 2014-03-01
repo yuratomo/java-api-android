@@ -2,7 +2,7 @@ call javaapi#namespace('android.net.http')
 
 call javaapi#class('X509TrustManagerExtensions', '', [
   \ javaapi#method(0,1,'X509TrustManagerExtensions(', 'X509TrustManager) throws IllegalArgumentException', ''),
-  \ javaapi#method(0,1,'checkServerTrusted(', 'X509Certificate[], String, String) throws CertificateException', 'X509Certificate>'),
+  \ javaapi#method(0,1,'checkServerTrusted(', 'X509Certificate[], String, String) throws CertificateException', 'List'),
   \ ])
 
 call javaapi#class('AndroidHttpClient', 'HttpClient', [

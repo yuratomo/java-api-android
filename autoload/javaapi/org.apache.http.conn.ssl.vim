@@ -27,8 +27,8 @@ call javaapi#class('AbstractVerifier', 'X509HostnameVerifier', [
   \ javaapi#method(0,1,'verify(', 'String, X509Certificate) throws SSLException', 'void'),
   \ javaapi#method(0,1,'verify(', 'String, String[], String[], boolean) throws SSLException', 'void'),
   \ javaapi#method(1,1,'acceptableCountryWildcard(', 'String)', 'boolean'),
-  \ javaapi#method(1,1,'getCNs(', 'X509Certificate)', 'String[]'),
-  \ javaapi#method(1,1,'getDNSSubjectAlts(', 'X509Certificate)', 'String[]'),
+  \ javaapi#method(1,1,'getCNs(', 'X509Certificate)', 'String'),
+  \ javaapi#method(1,1,'getDNSSubjectAlts(', 'X509Certificate)', 'String'),
   \ javaapi#method(1,1,'countDots(', 'String)', 'int'),
   \ ])
 

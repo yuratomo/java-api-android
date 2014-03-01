@@ -74,10 +74,10 @@ call javaapi#class('AbstractHttpMessage', 'HttpMessage', [
   \ javaapi#method(0,0,'AbstractHttpMessage(', 'HttpParams)', ''),
   \ javaapi#method(0,0,'AbstractHttpMessage(', ')', ''),
   \ javaapi#method(0,1,'containsHeader(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header[]'),
+  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getFirstHeader(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getLastHeader(', 'String)', 'Header'),
-  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header[]'),
+  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header'),
   \ javaapi#method(0,1,'addHeader(', 'Header)', 'void'),
   \ javaapi#method(0,1,'addHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'setHeader(', 'Header)', 'void'),
@@ -103,7 +103,7 @@ call javaapi#class('BufferedHeader', 'Cloneable', [
   \ javaapi#method(0,1,'BufferedHeader(', 'CharArrayBuffer) throws ParseException', ''),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
-  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement[]'),
+  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement'),
   \ javaapi#method(0,1,'getValuePos(', ')', 'int'),
   \ javaapi#method(0,1,'getBuffer(', ')', 'CharArrayBuffer'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -125,10 +125,10 @@ call javaapi#class('HeaderGroup', 'Cloneable', [
   \ javaapi#method(0,1,'updateHeader(', 'Header)', 'void'),
   \ javaapi#method(0,1,'setHeaders(', 'Header[])', 'void'),
   \ javaapi#method(0,1,'getCondensedHeader(', 'String)', 'Header'),
-  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header[]'),
+  \ javaapi#method(0,1,'getHeaders(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getFirstHeader(', 'String)', 'Header'),
   \ javaapi#method(0,1,'getLastHeader(', 'String)', 'Header'),
-  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header[]'),
+  \ javaapi#method(0,1,'getAllHeaders(', ')', 'Header'),
   \ javaapi#method(0,1,'containsHeader(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'iterator(', ')', 'HeaderIterator'),
   \ javaapi#method(0,1,'iterator(', 'String)', 'HeaderIterator'),
@@ -175,13 +175,13 @@ call javaapi#class('BasicHttpResponse', 'AbstractHttpMessage', [
 call javaapi#class('BasicHeaderValueParser', 'HeaderValueParser', [
   \ javaapi#field(1,1,'DEFAULT', 'BasicHeaderValueParser'),
   \ javaapi#method(0,1,'BasicHeaderValueParser(', ')', ''),
-  \ javaapi#method(1,1,'parseElements(', 'String, HeaderValueParser) throws ParseException', 'HeaderElement[]'),
-  \ javaapi#method(0,1,'parseElements(', 'CharArrayBuffer, ParserCursor)', 'HeaderElement[]'),
+  \ javaapi#method(1,1,'parseElements(', 'String, HeaderValueParser) throws ParseException', 'HeaderElement'),
+  \ javaapi#method(0,1,'parseElements(', 'CharArrayBuffer, ParserCursor)', 'HeaderElement'),
   \ javaapi#method(1,1,'parseHeaderElement(', 'String, HeaderValueParser) throws ParseException', 'HeaderElement'),
   \ javaapi#method(0,1,'parseHeaderElement(', 'CharArrayBuffer, ParserCursor)', 'HeaderElement'),
   \ javaapi#method(0,0,'createHeaderElement(', 'String, String, NameValuePair[])', 'HeaderElement'),
-  \ javaapi#method(1,1,'parseParameters(', 'String, HeaderValueParser) throws ParseException', 'NameValuePair[]'),
-  \ javaapi#method(0,1,'parseParameters(', 'CharArrayBuffer, ParserCursor)', 'NameValuePair[]'),
+  \ javaapi#method(1,1,'parseParameters(', 'String, HeaderValueParser) throws ParseException', 'NameValuePair'),
+  \ javaapi#method(0,1,'parseParameters(', 'CharArrayBuffer, ParserCursor)', 'NameValuePair'),
   \ javaapi#method(1,1,'parseNameValuePair(', 'String, HeaderValueParser) throws ParseException', 'NameValuePair'),
   \ javaapi#method(0,1,'parseNameValuePair(', 'CharArrayBuffer, ParserCursor)', 'NameValuePair'),
   \ javaapi#method(0,1,'parseNameValuePair(', 'CharArrayBuffer, ParserCursor, char[])', 'NameValuePair'),
@@ -198,9 +198,9 @@ call javaapi#class('BasicStatusLine', 'Cloneable', [
   \ ])
 
 call javaapi#interface('HeaderValueParser', '', [
-  \ javaapi#method(0,1,'parseElements(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'HeaderElement[]'),
+  \ javaapi#method(0,1,'parseElements(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'HeaderElement'),
   \ javaapi#method(0,1,'parseHeaderElement(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'HeaderElement'),
-  \ javaapi#method(0,1,'parseParameters(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'NameValuePair[]'),
+  \ javaapi#method(0,1,'parseParameters(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'NameValuePair'),
   \ javaapi#method(0,1,'parseNameValuePair(', 'CharArrayBuffer, ParserCursor) throws ParseException', 'NameValuePair'),
   \ ])
 
@@ -250,7 +250,7 @@ call javaapi#class('BasicHeaderElement', 'Cloneable', [
   \ javaapi#method(0,1,'BasicHeaderElement(', 'String, String)', ''),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
-  \ javaapi#method(0,1,'getParameters(', ')', 'NameValuePair[]'),
+  \ javaapi#method(0,1,'getParameters(', ')', 'NameValuePair'),
   \ javaapi#method(0,1,'getParameterCount(', ')', 'int'),
   \ javaapi#method(0,1,'getParameter(', 'int)', 'NameValuePair'),
   \ javaapi#method(0,1,'getParameterByName(', 'String)', 'NameValuePair'),
@@ -265,7 +265,7 @@ call javaapi#class('BasicHeader', 'Cloneable', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement[]'),
+  \ javaapi#method(0,1,'getElements(', ') throws ParseException', 'HeaderElement'),
   \ javaapi#method(0,1,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
@@ -279,7 +279,7 @@ call javaapi#class('BasicHttpEntityEnclosingRequest', 'BasicHttpRequest', [
   \ ])
 
 call javaapi#class('BasicHeaderIterator', 'HeaderIterator', [
-  \ javaapi#field(0,0,'allHeaders', 'Header[]'),
+  \ javaapi#field(0,0,'allHeaders', 'Header'),
   \ javaapi#field(0,0,'currentIndex', 'int'),
   \ javaapi#field(0,0,'headerName', 'String'),
   \ javaapi#method(0,1,'BasicHeaderIterator(', 'Header[], String)', ''),

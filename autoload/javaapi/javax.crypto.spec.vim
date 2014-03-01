@@ -2,7 +2,7 @@ call javaapi#namespace('javax.crypto.spec')
 
 call javaapi#class('PBEParameterSpec', 'AlgorithmParameterSpec', [
   \ javaapi#method(0,1,'PBEParameterSpec(', 'byte[], int)', ''),
-  \ javaapi#method(0,1,'getSalt(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getSalt(', ')', 'byte'),
   \ javaapi#method(0,1,'getIterationCount(', ')', 'int'),
   \ ])
 
@@ -23,7 +23,7 @@ call javaapi#class('DESKeySpec', 'KeySpec', [
   \ javaapi#field(1,1,'DES_KEY_LEN', 'int'),
   \ javaapi#method(0,1,'DESKeySpec(', 'byte[]) throws InvalidKeyException', ''),
   \ javaapi#method(0,1,'DESKeySpec(', 'byte[], int) throws InvalidKeyException', ''),
-  \ javaapi#method(0,1,'getKey(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getKey(', ')', 'byte'),
   \ javaapi#method(1,1,'isParityAdjusted(', 'byte[], int) throws InvalidKeyException', 'boolean'),
   \ javaapi#method(1,1,'isWeak(', 'byte[], int) throws InvalidKeyException', 'boolean'),
   \ ])
@@ -49,7 +49,7 @@ call javaapi#class('SecretKeySpec', 'SecretKey', [
   \ javaapi#method(0,1,'SecretKeySpec(', 'byte[], int, int, String)', ''),
   \ javaapi#method(0,1,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,1,'getFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoded(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ')', 'byte'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ ])
@@ -58,7 +58,7 @@ call javaapi#class('DESedeKeySpec', 'KeySpec', [
   \ javaapi#field(1,1,'DES_EDE_KEY_LEN', 'int'),
   \ javaapi#method(0,1,'DESedeKeySpec(', 'byte[]) throws InvalidKeyException', ''),
   \ javaapi#method(0,1,'DESedeKeySpec(', 'byte[], int) throws InvalidKeyException', ''),
-  \ javaapi#method(0,1,'getKey(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getKey(', ')', 'byte'),
   \ javaapi#method(1,1,'isParityAdjusted(', 'byte[], int) throws InvalidKeyException', 'boolean'),
   \ ])
 
@@ -72,8 +72,8 @@ call javaapi#class('PBEKeySpec', 'KeySpec', [
   \ javaapi#method(0,1,'PBEKeySpec(', 'char[], byte[], int, int)', ''),
   \ javaapi#method(0,1,'PBEKeySpec(', 'char[], byte[], int)', ''),
   \ javaapi#method(0,1,'clearPassword(', ')', 'void'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
-  \ javaapi#method(0,1,'getSalt(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
+  \ javaapi#method(0,1,'getSalt(', ')', 'byte'),
   \ javaapi#method(0,1,'getIterationCount(', ')', 'int'),
   \ javaapi#method(0,1,'getKeyLength(', ')', 'int'),
   \ ])
@@ -81,7 +81,7 @@ call javaapi#class('PBEKeySpec', 'KeySpec', [
 call javaapi#class('IvParameterSpec', 'AlgorithmParameterSpec', [
   \ javaapi#method(0,1,'IvParameterSpec(', 'byte[])', ''),
   \ javaapi#method(0,1,'IvParameterSpec(', 'byte[], int, int)', ''),
-  \ javaapi#method(0,1,'getIV(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getIV(', ')', 'byte'),
   \ ])
 
 call javaapi#class('RC2ParameterSpec', 'AlgorithmParameterSpec', [
@@ -89,7 +89,7 @@ call javaapi#class('RC2ParameterSpec', 'AlgorithmParameterSpec', [
   \ javaapi#method(0,1,'RC2ParameterSpec(', 'int, byte[])', ''),
   \ javaapi#method(0,1,'RC2ParameterSpec(', 'int, byte[], int)', ''),
   \ javaapi#method(0,1,'getEffectiveKeyBits(', ')', 'int'),
-  \ javaapi#method(0,1,'getIV(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getIV(', ')', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])
@@ -109,7 +109,7 @@ call javaapi#class('RC5ParameterSpec', 'AlgorithmParameterSpec', [
   \ javaapi#method(0,1,'getVersion(', ')', 'int'),
   \ javaapi#method(0,1,'getRounds(', ')', 'int'),
   \ javaapi#method(0,1,'getWordSize(', ')', 'int'),
-  \ javaapi#method(0,1,'getIV(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getIV(', ')', 'byte'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ ])

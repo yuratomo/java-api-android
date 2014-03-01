@@ -214,7 +214,7 @@ call javaapi#class('CheckedTextView', 'TextView', [
   \ javaapi#method(0,1,'getCheckMarkDrawable(', ')', 'Drawable'),
   \ javaapi#method(0,1,'onRtlPropertiesChanged(', 'int)', 'void'),
   \ javaapi#method(0,0,'onDraw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'onInitializeAccessibilityEvent(', 'AccessibilityEvent)', 'void'),
   \ javaapi#method(0,1,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
@@ -427,7 +427,7 @@ call javaapi#class('NumberPicker', 'LinearLayout', [
   \ javaapi#method(0,1,'setMinValue(', 'int)', 'void'),
   \ javaapi#method(0,1,'getMaxValue(', ')', 'int'),
   \ javaapi#method(0,1,'setMaxValue(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getDisplayedValues(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDisplayedValues(', ')', 'String'),
   \ javaapi#method(0,1,'setDisplayedValues(', 'String[])', 'void'),
   \ javaapi#method(0,0,'getTopFadingEdgeStrength(', ')', 'float'),
   \ javaapi#method(0,0,'getBottomFadingEdgeStrength(', ')', 'float'),
@@ -530,8 +530,8 @@ call javaapi#class('TextView', 'View', [
   \ javaapi#method(0,1,'setCompoundDrawablesRelative(', 'Drawable, Drawable, Drawable, Drawable)', 'void'),
   \ javaapi#method(0,1,'setCompoundDrawablesRelativeWithIntrinsicBounds(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,1,'setCompoundDrawablesRelativeWithIntrinsicBounds(', 'Drawable, Drawable, Drawable, Drawable)', 'void'),
-  \ javaapi#method(0,1,'getCompoundDrawables(', ')', 'Drawable[]'),
-  \ javaapi#method(0,1,'getCompoundDrawablesRelative(', ')', 'Drawable[]'),
+  \ javaapi#method(0,1,'getCompoundDrawables(', ')', 'Drawable'),
+  \ javaapi#method(0,1,'getCompoundDrawablesRelative(', ')', 'Drawable'),
   \ javaapi#method(0,1,'setCompoundDrawablePadding(', 'int)', 'void'),
   \ javaapi#method(0,1,'getCompoundDrawablePadding(', ')', 'int'),
   \ javaapi#method(0,1,'setPadding(', 'int, int, int, int)', 'void'),
@@ -562,7 +562,7 @@ call javaapi#class('TextView', 'View', [
   \ javaapi#method(0,1,'setAutoLinkMask(', 'int)', 'void'),
   \ javaapi#method(0,1,'setLinksClickable(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getLinksClickable(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getUrls(', ')', 'URLSpan[]'),
+  \ javaapi#method(0,1,'getUrls(', ')', 'URLSpan'),
   \ javaapi#method(0,1,'setHintTextColor(', 'int)', 'void'),
   \ javaapi#method(0,1,'setHintTextColor(', 'ColorStateList)', 'void'),
   \ javaapi#method(0,1,'getHintTextColors(', ')', 'ColorStateList'),
@@ -636,7 +636,7 @@ call javaapi#class('TextView', 'View', [
   \ javaapi#method(0,1,'setError(', 'CharSequence, Drawable)', 'void'),
   \ javaapi#method(0,0,'setFrame(', 'int, int, int, int)', 'boolean'),
   \ javaapi#method(0,1,'setFilters(', 'InputFilter[])', 'void'),
-  \ javaapi#method(0,1,'getFilters(', ')', 'InputFilter[]'),
+  \ javaapi#method(0,1,'getFilters(', ')', 'InputFilter'),
   \ javaapi#method(0,1,'onPreDraw(', ')', 'boolean'),
   \ javaapi#method(0,0,'onAttachedToWindow(', ')', 'void'),
   \ javaapi#method(0,0,'onDetachedFromWindow(', ')', 'void'),
@@ -652,7 +652,7 @@ call javaapi#class('TextView', 'View', [
   \ javaapi#method(0,1,'hasOverlappingRendering(', ')', 'boolean'),
   \ javaapi#method(0,1,'isTextSelectable(', ')', 'boolean'),
   \ javaapi#method(0,1,'setTextIsSelectable(', 'boolean)', 'void'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'onDraw(', 'Canvas)', 'void'),
   \ javaapi#method(0,1,'getFocusedRect(', 'Rect)', 'void'),
   \ javaapi#method(0,1,'getLineCount(', ')', 'int'),
@@ -829,7 +829,7 @@ call javaapi#class('CompoundButton', 'Button', [
   \ javaapi#method(0,1,'getCompoundPaddingLeft(', ')', 'int'),
   \ javaapi#method(0,1,'getCompoundPaddingRight(', ')', 'int'),
   \ javaapi#method(0,0,'onDraw(', 'Canvas)', 'void'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
   \ javaapi#method(0,0,'verifyDrawable(', 'Drawable)', 'boolean'),
   \ javaapi#method(0,1,'jumpDrawablesToCurrentState(', ')', 'void'),
@@ -983,7 +983,7 @@ call javaapi#class('SimpleCursorTreeAdapter', 'ResourceCursorTreeAdapter', [
   \ ])
 
 call javaapi#class('RemoteViews', 'Filter', [
-  \ javaapi#field(1,1,'CREATOR', 'RemoteViews>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'RemoteViews(', 'String, int)', ''),
   \ javaapi#method(0,1,'RemoteViews(', 'RemoteViews, RemoteViews)', ''),
   \ javaapi#method(0,1,'RemoteViews(', 'Parcel)', ''),
@@ -1136,7 +1136,7 @@ call javaapi#class('ImageView', 'View', [
   \ javaapi#method(0,1,'setImageMatrix(', 'Matrix)', 'void'),
   \ javaapi#method(0,1,'getCropToPadding(', ')', 'boolean'),
   \ javaapi#method(0,1,'setCropToPadding(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,1,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'onMeasure(', 'int, int)', 'void'),
   \ javaapi#method(0,0,'setFrame(', 'int, int, int, int)', 'boolean'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
@@ -1315,7 +1315,7 @@ call javaapi#class('Switch', 'CompoundButton', [
   \ javaapi#method(0,0,'onDraw(', 'Canvas)', 'void'),
   \ javaapi#method(0,1,'getCompoundPaddingLeft(', ')', 'int'),
   \ javaapi#method(0,1,'getCompoundPaddingRight(', ')', 'int'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
   \ javaapi#method(0,0,'verifyDrawable(', 'Drawable)', 'boolean'),
   \ javaapi#method(0,1,'jumpDrawablesToCurrentState(', ')', 'void'),
@@ -1370,7 +1370,7 @@ call javaapi#class('DatePicker', 'FrameLayout', [
   \ ])
 
 call javaapi#interface('SectionIndexer', '', [
-  \ javaapi#method(0,1,'getSections(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getSections(', ')', 'Object'),
   \ javaapi#method(0,1,'getPositionForSection(', 'int)', 'int'),
   \ javaapi#method(0,1,'getSectionForPosition(', 'int)', 'int'),
   \ ])
@@ -1591,14 +1591,14 @@ call javaapi#class('ListView', 'AbsListView', [
   \ javaapi#method(0,0,'onFinishInflate(', ')', 'void'),
   \ javaapi#method(0,0,'findViewTraversal(', 'int)', 'View'),
   \ javaapi#method(0,0,'findViewWithTagTraversal(', 'Object)', 'View'),
-  \ javaapi#method(0,1,'getCheckItemIds(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getCheckItemIds(', ')', 'long'),
   \ javaapi#method(0,1,'onInitializeAccessibilityEvent(', 'AccessibilityEvent)', 'void'),
   \ javaapi#method(0,1,'onInitializeAccessibilityNodeInfo(', 'AccessibilityNodeInfo)', 'void'),
   \ javaapi#method(0,1,'setAdapter(', 'Adapter)', 'void'),
   \ javaapi#method(0,1,'getAdapter(', ')', 'Adapter'),
   \ ])
 
-call javaapi#class('AbsSpinner', 'SpinnerAdapter>', [
+call javaapi#class('AbsSpinner', 'AdapterView', [
   \ javaapi#method(0,1,'AbsSpinner(', 'Context)', ''),
   \ javaapi#method(0,1,'AbsSpinner(', 'Context, AttributeSet)', ''),
   \ javaapi#method(0,1,'AbsSpinner(', 'Context, AttributeSet, int)', ''),
@@ -1689,7 +1689,7 @@ call javaapi#class('RadioGroup', 'LinearLayout', [
   \ javaapi#method(0,1,'generateLayoutParams(', 'AttributeSet)', 'LayoutParams'),
   \ ])
 
-call javaapi#class('ArrayAdapter<T>', 'BaseAdapter', [
+call javaapi#class('ArrayAdapter', 'BaseAdapter', [
   \ javaapi#method(0,1,'ArrayAdapter(', 'Context, int)', ''),
   \ javaapi#method(0,1,'ArrayAdapter(', 'Context, int, int)', ''),
   \ javaapi#method(0,1,'ArrayAdapter(', 'Context, int, T[])', ''),
@@ -1713,7 +1713,7 @@ call javaapi#class('ArrayAdapter<T>', 'BaseAdapter', [
   \ javaapi#method(0,1,'getView(', 'int, View, ViewGroup)', 'View'),
   \ javaapi#method(0,1,'setDropDownViewResource(', 'int)', 'void'),
   \ javaapi#method(0,1,'getDropDownView(', 'int, View, ViewGroup)', 'View'),
-  \ javaapi#method(1,1,'createFromResource(', 'Context, int, int)', 'CharSequence>'),
+  \ javaapi#method(1,1,'createFromResource(', 'Context, int, int)', 'ArrayAdapter'),
   \ javaapi#method(0,1,'getFilter(', ')', 'Filter'),
   \ ])
 
@@ -1775,7 +1775,7 @@ call javaapi#class('Gallery', 'AbsSpinner', [
   \ javaapi#method(0,1,'performAccessibilityAction(', 'int, Bundle)', 'boolean'),
   \ ])
 
-call javaapi#class('AbsListView', 'ListAdapter>', [
+call javaapi#class('AbsListView', 'AdapterView', [
   \ javaapi#field(1,1,'TRANSCRIPT_MODE_DISABLED', 'int'),
   \ javaapi#field(1,1,'TRANSCRIPT_MODE_NORMAL', 'int'),
   \ javaapi#field(1,1,'TRANSCRIPT_MODE_ALWAYS_SCROLL', 'int'),
@@ -1792,7 +1792,7 @@ call javaapi#class('AbsListView', 'ListAdapter>', [
   \ javaapi#method(0,1,'isItemChecked(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'getCheckedItemPosition(', ')', 'int'),
   \ javaapi#method(0,1,'getCheckedItemPositions(', ')', 'SparseBooleanArray'),
-  \ javaapi#method(0,1,'getCheckedItemIds(', ')', 'long[]'),
+  \ javaapi#method(0,1,'getCheckedItemIds(', ')', 'long'),
   \ javaapi#method(0,1,'clearChoices(', ')', 'void'),
   \ javaapi#method(0,1,'setItemChecked(', 'int, boolean)', 'void'),
   \ javaapi#method(0,1,'performItemClick(', 'View, int, long)', 'boolean'),
@@ -1851,7 +1851,7 @@ call javaapi#class('AbsListView', 'ListAdapter>', [
   \ javaapi#method(0,1,'getSelector(', ')', 'Drawable'),
   \ javaapi#method(0,1,'setScrollIndicators(', 'View, View)', 'void'),
   \ javaapi#method(0,0,'drawableStateChanged(', ')', 'void'),
-  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int[]'),
+  \ javaapi#method(0,0,'onCreateDrawableState(', 'int)', 'int'),
   \ javaapi#method(0,1,'verifyDrawable(', 'Drawable)', 'boolean'),
   \ javaapi#method(0,1,'jumpDrawablesToCurrentState(', ')', 'void'),
   \ javaapi#method(0,0,'onAttachedToWindow(', ')', 'void'),
@@ -2114,7 +2114,7 @@ call javaapi#class('AlphabetIndexer', 'DataSetObserver', [
   \ javaapi#field(0,0,'mColumnIndex', 'int'),
   \ javaapi#field(0,0,'mAlphabet', 'CharSequence'),
   \ javaapi#method(0,1,'AlphabetIndexer(', 'Cursor, int, CharSequence)', ''),
-  \ javaapi#method(0,1,'getSections(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getSections(', ')', 'Object'),
   \ javaapi#method(0,1,'setCursor(', 'Cursor)', 'void'),
   \ javaapi#method(0,0,'compare(', 'String, String)', 'int'),
   \ javaapi#method(0,1,'getPositionForSection(', 'int)', 'int'),
@@ -2123,7 +2123,7 @@ call javaapi#class('AlphabetIndexer', 'DataSetObserver', [
   \ javaapi#method(0,1,'onInvalidated(', ')', 'void'),
   \ ])
 
-call javaapi#class('AdapterViewAnimator', 'Adapter>', [
+call javaapi#class('AdapterViewAnimator', 'AdapterView', [
   \ javaapi#method(0,1,'AdapterViewAnimator(', 'Context)', ''),
   \ javaapi#method(0,1,'AdapterViewAnimator(', 'Context, AttributeSet)', ''),
   \ javaapi#method(0,1,'AdapterViewAnimator(', 'Context, AttributeSet, int)', ''),
@@ -2552,7 +2552,7 @@ call javaapi#class('SlidingDrawer', 'ViewGroup', [
   \ ])
 
 call javaapi#class('QuickContactBadge', 'ImageView', [
-  \ javaapi#field(0,0,'mExcludeMimes', 'String[]'),
+  \ javaapi#field(0,0,'mExcludeMimes', 'String'),
   \ javaapi#method(0,1,'QuickContactBadge(', 'Context)', ''),
   \ javaapi#method(0,1,'QuickContactBadge(', 'Context, AttributeSet)', ''),
   \ javaapi#method(0,1,'QuickContactBadge(', 'Context, AttributeSet, int)', ''),

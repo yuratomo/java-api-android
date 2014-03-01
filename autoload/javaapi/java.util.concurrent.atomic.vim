@@ -1,6 +1,6 @@
 call javaapi#namespace('java.util.concurrent.atomic')
 
-call javaapi#class('AtomicReferenceFieldUpdater<T,V>', '', [
+call javaapi#class('AtomicReferenceFieldUpdater', '', [
   \ javaapi#method(1,1,'newUpdater(', 'Class<U>, Class<W>, String)', 'W>'),
   \ javaapi#method(0,0,'AtomicReferenceFieldUpdater(', ')', ''),
   \ javaapi#method(0,1,'compareAndSet(', 'T, V, V)', 'boolean'),
@@ -11,7 +11,7 @@ call javaapi#class('AtomicReferenceFieldUpdater<T,V>', '', [
   \ javaapi#method(0,1,'getAndSet(', 'T, V)', 'V'),
   \ ])
 
-call javaapi#class('AtomicReferenceArray<E>', 'Serializable', [
+call javaapi#class('AtomicReferenceArray', 'Serializable', [
   \ javaapi#method(0,1,'AtomicReferenceArray(', 'int)', ''),
   \ javaapi#method(0,1,'AtomicReferenceArray(', 'E[])', ''),
   \ javaapi#method(0,1,'length(', ')', 'int'),
@@ -84,7 +84,7 @@ call javaapi#class('AtomicIntegerArray', 'Serializable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AtomicStampedReference<V>', '', [
+call javaapi#class('AtomicStampedReference', '', [
   \ javaapi#method(0,1,'AtomicStampedReference(', 'V, int)', ''),
   \ javaapi#method(0,1,'getReference(', ')', 'V'),
   \ javaapi#method(0,1,'getStamp(', ')', 'int'),
@@ -95,7 +95,7 @@ call javaapi#class('AtomicStampedReference<V>', '', [
   \ javaapi#method(0,1,'attemptStamp(', 'V, int)', 'boolean'),
   \ ])
 
-call javaapi#class('AtomicMarkableReference<V>', '', [
+call javaapi#class('AtomicMarkableReference', '', [
   \ javaapi#method(0,1,'AtomicMarkableReference(', 'V, boolean)', ''),
   \ javaapi#method(0,1,'getReference(', ')', 'V'),
   \ javaapi#method(0,1,'isMarked(', ')', 'boolean'),
@@ -106,7 +106,7 @@ call javaapi#class('AtomicMarkableReference<V>', '', [
   \ javaapi#method(0,1,'attemptMark(', 'V, boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('AtomicReference<V>', 'Serializable', [
+call javaapi#class('AtomicReference', 'Serializable', [
   \ javaapi#method(0,1,'AtomicReference(', 'V)', ''),
   \ javaapi#method(0,1,'AtomicReference(', ')', ''),
   \ javaapi#method(0,1,'get(', ')', 'V'),
@@ -118,8 +118,8 @@ call javaapi#class('AtomicReference<V>', 'Serializable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AtomicIntegerFieldUpdater<T>', '', [
-  \ javaapi#method(1,1,'newUpdater(', 'Class<U>, String)', 'AtomicIntegerFieldUpdater<U>'),
+call javaapi#class('AtomicIntegerFieldUpdater', '', [
+  \ javaapi#method(1,1,'newUpdater(', 'Class<U>, String)', 'AtomicIntegerFieldUpdater'),
   \ javaapi#method(0,0,'AtomicIntegerFieldUpdater(', ')', ''),
   \ javaapi#method(0,1,'compareAndSet(', 'T, int, int)', 'boolean'),
   \ javaapi#method(0,1,'weakCompareAndSet(', 'T, int, int)', 'boolean'),
@@ -169,8 +169,8 @@ call javaapi#class('AtomicBoolean', 'Serializable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('AtomicLongFieldUpdater<T>', '', [
-  \ javaapi#method(1,1,'newUpdater(', 'Class<U>, String)', 'AtomicLongFieldUpdater<U>'),
+call javaapi#class('AtomicLongFieldUpdater', '', [
+  \ javaapi#method(1,1,'newUpdater(', 'Class<U>, String)', 'AtomicLongFieldUpdater'),
   \ javaapi#method(0,0,'AtomicLongFieldUpdater(', ')', ''),
   \ javaapi#method(0,1,'compareAndSet(', 'T, long, long)', 'boolean'),
   \ javaapi#method(0,1,'weakCompareAndSet(', 'T, long, long)', 'boolean'),

@@ -3,7 +3,7 @@ call javaapi#namespace('android.hardware.usb')
 call javaapi#class('UsbDeviceConnection', '', [
   \ javaapi#method(0,1,'close(', ')', 'void'),
   \ javaapi#method(0,1,'getFileDescriptor(', ')', 'int'),
-  \ javaapi#method(0,1,'getRawDescriptors(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getRawDescriptors(', ')', 'byte'),
   \ javaapi#method(0,1,'claimInterface(', 'UsbInterface, boolean)', 'boolean'),
   \ javaapi#method(0,1,'releaseInterface(', 'UsbInterface)', 'boolean'),
   \ javaapi#method(0,1,'controlTransfer(', 'int, int, int, int, byte[], int, int)', 'int'),
@@ -13,7 +13,7 @@ call javaapi#class('UsbDeviceConnection', '', [
   \ ])
 
 call javaapi#class('UsbDevice', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'UsbDevice>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getDeviceName(', ')', 'String'),
   \ javaapi#method(0,1,'getDeviceId(', ')', 'int'),
   \ javaapi#method(0,1,'getVendorId(', ')', 'int'),
@@ -42,7 +42,7 @@ call javaapi#class('UsbManager', '', [
   \ javaapi#field(1,1,'EXTRA_PERMISSION_GRANTED', 'String'),
   \ javaapi#method(0,1,'getDeviceList(', ')', 'UsbDevice>'),
   \ javaapi#method(0,1,'openDevice(', 'UsbDevice)', 'UsbDeviceConnection'),
-  \ javaapi#method(0,1,'getAccessoryList(', ')', 'UsbAccessory[]'),
+  \ javaapi#method(0,1,'getAccessoryList(', ')', 'UsbAccessory'),
   \ javaapi#method(0,1,'openAccessory(', 'UsbAccessory)', 'ParcelFileDescriptor'),
   \ javaapi#method(0,1,'hasPermission(', 'UsbDevice)', 'boolean'),
   \ javaapi#method(0,1,'hasPermission(', 'UsbAccessory)', 'boolean'),
@@ -63,7 +63,7 @@ call javaapi#class('UsbRequest', '', [
   \ ])
 
 call javaapi#class('UsbAccessory', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'UsbAccessory>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getManufacturer(', ')', 'String'),
   \ javaapi#method(0,1,'getModel(', ')', 'String'),
   \ javaapi#method(0,1,'getDescription(', ')', 'String'),
@@ -78,7 +78,7 @@ call javaapi#class('UsbAccessory', 'Parcelable', [
   \ ])
 
 call javaapi#class('UsbInterface', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'UsbInterface>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getId(', ')', 'int'),
   \ javaapi#method(0,1,'getInterfaceClass(', ')', 'int'),
   \ javaapi#method(0,1,'getInterfaceSubclass(', ')', 'int'),
@@ -91,7 +91,7 @@ call javaapi#class('UsbInterface', 'Parcelable', [
   \ ])
 
 call javaapi#class('UsbEndpoint', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'UsbEndpoint>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getAddress(', ')', 'int'),
   \ javaapi#method(0,1,'getEndpointNumber(', ')', 'int'),
   \ javaapi#method(0,1,'getDirection(', ')', 'int'),

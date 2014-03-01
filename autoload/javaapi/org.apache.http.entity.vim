@@ -1,7 +1,7 @@
 call javaapi#namespace('org.apache.http.entity')
 
 call javaapi#class('StringEntity', 'AbstractHttpEntity', [
-  \ javaapi#field(0,0,'content', 'byte[]'),
+  \ javaapi#field(0,0,'content', 'byte'),
   \ javaapi#method(0,1,'StringEntity(', 'String, String) throws UnsupportedEncodingException', ''),
   \ javaapi#method(0,1,'StringEntity(', 'String) throws UnsupportedEncodingException', ''),
   \ javaapi#method(0,1,'isRepeatable(', ')', 'boolean'),
@@ -115,7 +115,7 @@ call javaapi#interface('ContentLengthStrategy', '', [
   \ ])
 
 call javaapi#class('ByteArrayEntity', 'AbstractHttpEntity', [
-  \ javaapi#field(0,0,'content', 'byte[]'),
+  \ javaapi#field(0,0,'content', 'byte'),
   \ javaapi#method(0,1,'ByteArrayEntity(', 'byte[])', ''),
   \ javaapi#method(0,1,'isRepeatable(', ')', 'boolean'),
   \ javaapi#method(0,1,'getContentLength(', ')', 'long'),

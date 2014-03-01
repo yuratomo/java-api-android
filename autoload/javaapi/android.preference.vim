@@ -41,7 +41,7 @@ call javaapi#class('CheckBoxPreference', 'TwoStatePreference', [
   \ javaapi#method(0,0,'onBindView(', 'View)', 'void'),
   \ ])
 
-call javaapi#class('Preference', 'Preference>', [
+call javaapi#class('Preference', 'Comparable', [
   \ javaapi#field(1,1,'DEFAULT_ORDER', 'int'),
   \ javaapi#method(0,1,'Preference(', 'Context, AttributeSet, int)', ''),
   \ javaapi#method(0,1,'Preference(', 'Context, AttributeSet)', ''),
@@ -308,12 +308,12 @@ call javaapi#class('MultiSelectListPreference', 'DialogPreference', [
   \ javaapi#method(0,1,'MultiSelectListPreference(', 'Context)', ''),
   \ javaapi#method(0,1,'setEntries(', 'CharSequence[])', 'void'),
   \ javaapi#method(0,1,'setEntries(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getEntries(', ')', 'CharSequence[]'),
+  \ javaapi#method(0,1,'getEntries(', ')', 'CharSequence'),
   \ javaapi#method(0,1,'setEntryValues(', 'CharSequence[])', 'void'),
   \ javaapi#method(0,1,'setEntryValues(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getEntryValues(', ')', 'CharSequence[]'),
+  \ javaapi#method(0,1,'getEntryValues(', ')', 'CharSequence'),
   \ javaapi#method(0,1,'setValues(', 'Set<String>)', 'void'),
-  \ javaapi#method(0,1,'getValues(', ')', 'String>'),
+  \ javaapi#method(0,1,'getValues(', ')', 'Set'),
   \ javaapi#method(0,1,'findIndexOfValue(', 'String)', 'int'),
   \ javaapi#method(0,0,'onPrepareDialogBuilder(', 'Builder)', 'void'),
   \ javaapi#method(0,0,'onDialogClosed(', 'boolean)', 'void'),
@@ -348,10 +348,10 @@ call javaapi#class('ListPreference', 'DialogPreference', [
   \ javaapi#method(0,1,'ListPreference(', 'Context)', ''),
   \ javaapi#method(0,1,'setEntries(', 'CharSequence[])', 'void'),
   \ javaapi#method(0,1,'setEntries(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getEntries(', ')', 'CharSequence[]'),
+  \ javaapi#method(0,1,'getEntries(', ')', 'CharSequence'),
   \ javaapi#method(0,1,'setEntryValues(', 'CharSequence[])', 'void'),
   \ javaapi#method(0,1,'setEntryValues(', 'int)', 'void'),
-  \ javaapi#method(0,1,'getEntryValues(', ')', 'CharSequence[]'),
+  \ javaapi#method(0,1,'getEntryValues(', ')', 'CharSequence'),
   \ javaapi#method(0,1,'setValue(', 'String)', 'void'),
   \ javaapi#method(0,1,'getSummary(', ')', 'CharSequence'),
   \ javaapi#method(0,1,'setSummary(', 'CharSequence)', 'void'),

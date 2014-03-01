@@ -9,9 +9,9 @@ call javaapi#class('InputMethodManager', '', [
   \ javaapi#field(1,1,'RESULT_HIDDEN', 'int'),
   \ javaapi#field(1,1,'HIDE_IMPLICIT_ONLY', 'int'),
   \ javaapi#field(1,1,'HIDE_NOT_ALWAYS', 'int'),
-  \ javaapi#method(0,1,'getInputMethodList(', ')', 'InputMethodInfo>'),
-  \ javaapi#method(0,1,'getEnabledInputMethodList(', ')', 'InputMethodInfo>'),
-  \ javaapi#method(0,1,'getEnabledInputMethodSubtypeList(', 'InputMethodInfo, boolean)', 'InputMethodSubtype>'),
+  \ javaapi#method(0,1,'getInputMethodList(', ')', 'List'),
+  \ javaapi#method(0,1,'getEnabledInputMethodList(', ')', 'List'),
+  \ javaapi#method(0,1,'getEnabledInputMethodSubtypeList(', 'InputMethodInfo, boolean)', 'List'),
   \ javaapi#method(0,1,'showStatusIcon(', 'IBinder, String, int)', 'void'),
   \ javaapi#method(0,1,'hideStatusIcon(', 'IBinder)', 'void'),
   \ javaapi#method(0,1,'isFullscreenMode(', ')', 'boolean'),
@@ -40,7 +40,7 @@ call javaapi#class('InputMethodManager', '', [
   \ javaapi#method(0,1,'showInputMethodAndSubtypeEnabler(', 'String)', 'void'),
   \ javaapi#method(0,1,'getCurrentInputMethodSubtype(', ')', 'InputMethodSubtype'),
   \ javaapi#method(0,1,'setCurrentInputMethodSubtype(', 'InputMethodSubtype)', 'boolean'),
-  \ javaapi#method(0,1,'getShortcutInputMethodsAndSubtypes(', ')', 'InputMethodSubtype>>'),
+  \ javaapi#method(0,1,'getShortcutInputMethodsAndSubtypes(', ')', 'List'),
   \ javaapi#method(0,1,'switchToLastInputMethod(', 'IBinder)', 'boolean'),
   \ javaapi#method(0,1,'switchToNextInputMethod(', 'IBinder, boolean)', 'boolean'),
   \ javaapi#method(0,1,'setAdditionalInputMethodSubtypes(', 'String, InputMethodSubtype[])', 'void'),
@@ -48,7 +48,7 @@ call javaapi#class('InputMethodManager', '', [
   \ ])
 
 call javaapi#class('InputMethodInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'InputMethodInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'InputMethodInfo(', 'Context, ResolveInfo) throws XmlPullParserException, IOException', ''),
   \ javaapi#method(0,1,'InputMethodInfo(', 'String, String, CharSequence, String)', ''),
   \ javaapi#method(0,1,'getId(', ')', 'String'),
@@ -116,7 +116,7 @@ call javaapi#class('EditorInfo', 'Parcelable', [
   \ javaapi#field(0,1,'fieldId', 'int'),
   \ javaapi#field(0,1,'fieldName', 'String'),
   \ javaapi#field(0,1,'extras', 'Bundle'),
-  \ javaapi#field(1,1,'CREATOR', 'EditorInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'EditorInfo(', ')', ''),
   \ javaapi#method(0,1,'makeCompatible(', 'int)', 'void'),
   \ javaapi#method(0,1,'dump(', 'Printer, String)', 'void'),
@@ -125,7 +125,7 @@ call javaapi#class('EditorInfo', 'Parcelable', [
   \ ])
 
 call javaapi#class('InputMethodSubtype', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'InputMethodSubtype>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'InputMethodSubtype(', 'int, int, String, String, String, boolean, boolean)', ''),
   \ javaapi#method(0,1,'InputMethodSubtype(', 'int, int, String, String, String, boolean, boolean, int)', ''),
   \ javaapi#method(0,1,'getNameResId(', ')', 'int'),
@@ -193,7 +193,7 @@ call javaapi#interface('InputMethod', '', [
   \ ])
 
 call javaapi#class('CompletionInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CompletionInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'CompletionInfo(', 'long, int, CharSequence)', ''),
   \ javaapi#method(0,1,'CompletionInfo(', 'long, int, CharSequence, CharSequence)', ''),
   \ javaapi#method(0,1,'getId(', ')', 'long'),
@@ -210,14 +210,14 @@ call javaapi#class('ExtractedTextRequest', 'Parcelable', [
   \ javaapi#field(0,1,'flags', 'int'),
   \ javaapi#field(0,1,'hintMaxLines', 'int'),
   \ javaapi#field(0,1,'hintMaxChars', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'ExtractedTextRequest>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'ExtractedTextRequest(', ')', ''),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),
   \ ])
 
 call javaapi#class('CorrectionInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'CorrectionInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'CorrectionInfo(', 'int, CharSequence, CharSequence)', ''),
   \ javaapi#method(0,1,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'getOldText(', ')', 'CharSequence'),
@@ -263,14 +263,14 @@ call javaapi#class('ExtractedText', 'Parcelable', [
   \ javaapi#field(1,1,'FLAG_SINGLE_LINE', 'int'),
   \ javaapi#field(1,1,'FLAG_SELECTING', 'int'),
   \ javaapi#field(0,1,'flags', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'ExtractedText>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'ExtractedText(', ')', ''),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
   \ javaapi#method(0,1,'describeContents(', ')', 'int'),
   \ ])
 
 call javaapi#class('InputBinding', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'InputBinding>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'InputBinding(', 'InputConnection, IBinder, int, int)', ''),
   \ javaapi#method(0,1,'InputBinding(', 'InputConnection, InputBinding)', ''),
   \ javaapi#method(0,1,'getConnection(', ')', 'InputConnection'),

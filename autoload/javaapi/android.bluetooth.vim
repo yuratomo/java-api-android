@@ -10,8 +10,8 @@ call javaapi#interface('BluetoothProfile', '', [
   \ javaapi#field(1,1,'HEADSET', 'int'),
   \ javaapi#field(1,1,'A2DP', 'int'),
   \ javaapi#field(1,1,'HEALTH', 'int'),
-  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'BluetoothDevice>'),
-  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'BluetoothDevice>'),
+  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'List'),
+  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'List'),
   \ javaapi#method(0,1,'getConnectionState(', 'BluetoothDevice)', 'int'),
   \ ])
 
@@ -22,7 +22,7 @@ call javaapi#class('BluetoothServerSocket', 'Closeable', [
   \ ])
 
 call javaapi#class('BluetoothHealthAppConfiguration', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'BluetoothHealthAppConfiguration>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -61,8 +61,8 @@ call javaapi#class('BluetoothHealth', 'BluetoothProfile', [
   \ javaapi#method(0,1,'disconnectChannel(', 'BluetoothDevice, BluetoothHealthAppConfiguration, int)', 'boolean'),
   \ javaapi#method(0,1,'getMainChannelFd(', 'BluetoothDevice, BluetoothHealthAppConfiguration)', 'ParcelFileDescriptor'),
   \ javaapi#method(0,1,'getConnectionState(', 'BluetoothDevice)', 'int'),
-  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'BluetoothDevice>'),
-  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'BluetoothDevice>'),
+  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'List'),
+  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'List'),
   \ ])
 
 call javaapi#class('BluetoothA2dp', 'BluetoothProfile', [
@@ -71,8 +71,8 @@ call javaapi#class('BluetoothA2dp', 'BluetoothProfile', [
   \ javaapi#field(1,1,'STATE_PLAYING', 'int'),
   \ javaapi#field(1,1,'STATE_NOT_PLAYING', 'int'),
   \ javaapi#method(0,1,'finalize(', ')', 'void'),
-  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'BluetoothDevice>'),
-  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'BluetoothDevice>'),
+  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'List'),
+  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'List'),
   \ javaapi#method(0,1,'getConnectionState(', 'BluetoothDevice)', 'int'),
   \ javaapi#method(0,1,'isA2dpPlaying(', 'BluetoothDevice)', 'boolean'),
   \ ])
@@ -120,7 +120,7 @@ call javaapi#class('BluetoothAdapter', '', [
   \ javaapi#method(0,1,'startDiscovery(', ')', 'boolean'),
   \ javaapi#method(0,1,'cancelDiscovery(', ')', 'boolean'),
   \ javaapi#method(0,1,'isDiscovering(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getBondedDevices(', ')', 'BluetoothDevice>'),
+  \ javaapi#method(0,1,'getBondedDevices(', ')', 'Set'),
   \ javaapi#method(0,1,'getProfileConnectionState(', 'int)', 'int'),
   \ javaapi#method(0,1,'listenUsingRfcommWithServiceRecord(', 'String, UUID) throws IOException', 'BluetoothServerSocket'),
   \ javaapi#method(0,1,'listenUsingInsecureRfcommWithServiceRecord(', 'String, UUID) throws IOException', 'BluetoothServerSocket'),
@@ -131,7 +131,7 @@ call javaapi#class('BluetoothAdapter', '', [
   \ ])
 
 call javaapi#class('BluetoothClass', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'BluetoothClass>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -158,8 +158,8 @@ call javaapi#class('BluetoothHeadset', 'BluetoothProfile', [
   \ javaapi#field(1,1,'STATE_AUDIO_DISCONNECTED', 'int'),
   \ javaapi#field(1,1,'STATE_AUDIO_CONNECTING', 'int'),
   \ javaapi#field(1,1,'STATE_AUDIO_CONNECTED', 'int'),
-  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'BluetoothDevice>'),
-  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'BluetoothDevice>'),
+  \ javaapi#method(0,1,'getConnectedDevices(', ')', 'List'),
+  \ javaapi#method(0,1,'getDevicesMatchingConnectionStates(', 'int[])', 'List'),
   \ javaapi#method(0,1,'getConnectionState(', 'BluetoothDevice)', 'int'),
   \ javaapi#method(0,1,'startVoiceRecognition(', 'BluetoothDevice)', 'boolean'),
   \ javaapi#method(0,1,'stopVoiceRecognition(', 'BluetoothDevice)', 'boolean'),
@@ -292,7 +292,7 @@ call javaapi#class('BluetoothDevice', 'Parcelable', [
   \ javaapi#field(1,1,'BOND_BONDED', 'int'),
   \ javaapi#field(1,1,'ACTION_UUID', 'String'),
   \ javaapi#field(1,1,'EXTRA_UUID', 'String'),
-  \ javaapi#field(1,1,'CREATOR', 'BluetoothDevice>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -302,7 +302,7 @@ call javaapi#class('BluetoothDevice', 'Parcelable', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getBondState(', ')', 'int'),
   \ javaapi#method(0,1,'getBluetoothClass(', ')', 'BluetoothClass'),
-  \ javaapi#method(0,1,'getUuids(', ')', 'ParcelUuid[]'),
+  \ javaapi#method(0,1,'getUuids(', ')', 'ParcelUuid'),
   \ javaapi#method(0,1,'fetchUuidsWithSdp(', ')', 'boolean'),
   \ javaapi#method(0,1,'createRfcommSocketToServiceRecord(', 'UUID) throws IOException', 'BluetoothSocket'),
   \ javaapi#method(0,1,'createInsecureRfcommSocketToServiceRecord(', 'UUID) throws IOException', 'BluetoothSocket'),

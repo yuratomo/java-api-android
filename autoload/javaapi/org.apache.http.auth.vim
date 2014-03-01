@@ -5,7 +5,7 @@ call javaapi#class('AuthSchemeRegistry', '', [
   \ javaapi#method(0,1,'register(', 'String, AuthSchemeFactory)', 'void'),
   \ javaapi#method(0,1,'unregister(', 'String)', 'void'),
   \ javaapi#method(0,1,'getAuthScheme(', 'String, HttpParams) throws IllegalStateException', 'AuthScheme'),
-  \ javaapi#method(0,1,'getSchemeNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getSchemeNames(', ')', 'List'),
   \ javaapi#method(0,1,'setItems(', 'Map<String, AuthSchemeFactory>)', 'void'),
   \ ])
 

@@ -3,7 +3,7 @@ call javaapi#namespace('android.text.util')
 call javaapi#class('Rfc822Tokenizer', 'Tokenizer', [
   \ javaapi#method(0,1,'Rfc822Tokenizer(', ')', ''),
   \ javaapi#method(1,1,'tokenize(', 'CharSequence, Collection<Rfc822Token>)', 'void'),
-  \ javaapi#method(1,1,'tokenize(', 'CharSequence)', 'Rfc822Token[]'),
+  \ javaapi#method(1,1,'tokenize(', 'CharSequence)', 'Rfc822Token'),
   \ javaapi#method(0,1,'findTokenStart(', 'CharSequence, int)', 'int'),
   \ javaapi#method(0,1,'findTokenEnd(', 'CharSequence, int)', 'int'),
   \ javaapi#method(0,1,'terminateToken(', 'CharSequence)', 'CharSequence'),

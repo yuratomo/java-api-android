@@ -166,7 +166,7 @@ call javaapi#class('AnimationSet', 'Animation', [
   \ javaapi#method(0,1,'scaleCurrentDuration(', 'float)', 'void'),
   \ javaapi#method(0,1,'initialize(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
-  \ javaapi#method(0,1,'getAnimations(', ')', 'Animation>'),
+  \ javaapi#method(0,1,'getAnimations(', ')', 'List'),
   \ javaapi#method(0,1,'willChangeTransformationMatrix(', ')', 'boolean'),
   \ javaapi#method(0,1,'willChangeBounds(', ')', 'boolean'),
   \ javaapi#method(0,0,'clone(', ') throws CloneNotSupportedException', 'Animation'),

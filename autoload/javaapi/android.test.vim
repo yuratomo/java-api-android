@@ -26,12 +26,12 @@ call javaapi#class('RenamingDelegatingContext', 'ContextWrapper', [
   \ javaapi#method(0,1,'openOrCreateDatabase(', 'String, int, CursorFactory, DatabaseErrorHandler)', 'SQLiteDatabase'),
   \ javaapi#method(0,1,'deleteDatabase(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'getDatabasePath(', 'String)', 'File'),
-  \ javaapi#method(0,1,'databaseList(', ')', 'String[]'),
+  \ javaapi#method(0,1,'databaseList(', ')', 'String'),
   \ javaapi#method(0,1,'openFileInput(', 'String) throws FileNotFoundException', 'FileInputStream'),
   \ javaapi#method(0,1,'openFileOutput(', 'String, int) throws FileNotFoundException', 'FileOutputStream'),
   \ javaapi#method(0,1,'getFileStreamPath(', 'String)', 'File'),
   \ javaapi#method(0,1,'deleteFile(', 'String)', 'boolean'),
-  \ javaapi#method(0,1,'fileList(', ')', 'String[]'),
+  \ javaapi#method(0,1,'fileList(', ')', 'String'),
   \ javaapi#method(0,1,'getCacheDir(', ')', 'File'),
   \ ])
 
@@ -152,7 +152,7 @@ call javaapi#namespace('android.test')
 
 call javaapi#class('IsolatedContext', 'ContextWrapper', [
   \ javaapi#method(0,1,'IsolatedContext(', 'ContentResolver, Context)', ''),
-  \ javaapi#method(0,1,'getAndClearBroadcastIntents(', ')', 'Intent>'),
+  \ javaapi#method(0,1,'getAndClearBroadcastIntents(', ')', 'List'),
   \ javaapi#method(0,1,'getContentResolver(', ')', 'ContentResolver'),
   \ javaapi#method(0,1,'bindService(', 'Intent, ServiceConnection, int)', 'boolean'),
   \ javaapi#method(0,1,'registerReceiver(', 'BroadcastReceiver, IntentFilter)', 'Intent'),
@@ -172,7 +172,7 @@ call javaapi#class('AndroidTestRunner', 'BaseTestRunner', [
   \ javaapi#method(0,1,'clearTestListeners(', ')', 'void'),
   \ javaapi#method(0,1,'addTestListener(', 'TestListener)', 'void'),
   \ javaapi#method(0,0,'createTestResult(', ')', 'TestResult'),
-  \ javaapi#method(0,1,'getTestCases(', ')', 'TestCase>'),
+  \ javaapi#method(0,1,'getTestCases(', ')', 'List'),
   \ javaapi#method(0,1,'getTestClassName(', ')', 'String'),
   \ javaapi#method(0,1,'getTestResult(', ')', 'TestResult'),
   \ javaapi#method(0,1,'runTest(', ')', 'void'),

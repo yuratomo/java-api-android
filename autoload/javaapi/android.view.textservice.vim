@@ -1,7 +1,7 @@
 call javaapi#namespace('android.view.textservice')
 
 call javaapi#class('SpellCheckerSubtype', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'SpellCheckerSubtype>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'SpellCheckerSubtype(', 'int, String, String)', ''),
   \ javaapi#method(0,1,'getNameResId(', ')', 'int'),
   \ javaapi#method(0,1,'getLocale(', ')', 'String'),
@@ -16,7 +16,7 @@ call javaapi#class('SpellCheckerSubtype', 'Parcelable', [
   \ ])
 
 call javaapi#class('TextInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'TextInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'TextInfo(', 'String)', ''),
   \ javaapi#method(0,1,'TextInfo(', 'String, int, int)', ''),
   \ javaapi#method(0,1,'TextInfo(', 'Parcel)', ''),
@@ -28,7 +28,7 @@ call javaapi#class('TextInfo', 'Parcelable', [
   \ ])
 
 call javaapi#class('SpellCheckerInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'SpellCheckerInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'getId(', ')', 'String'),
   \ javaapi#method(0,1,'getComponent(', ')', 'ComponentName'),
   \ javaapi#method(0,1,'getPackageName(', ')', 'String'),
@@ -59,7 +59,7 @@ call javaapi#class('TextServicesManager', '', [
   \ ])
 
 call javaapi#class('SentenceSuggestionsInfo', 'Parcelable', [
-  \ javaapi#field(1,1,'CREATOR', 'SentenceSuggestionsInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'SentenceSuggestionsInfo(', 'SuggestionsInfo[], int[], int[])', ''),
   \ javaapi#method(0,1,'SentenceSuggestionsInfo(', 'Parcel)', ''),
   \ javaapi#method(0,1,'writeToParcel(', 'Parcel, int)', 'void'),
@@ -74,7 +74,7 @@ call javaapi#class('SuggestionsInfo', 'Parcelable', [
   \ javaapi#field(1,1,'RESULT_ATTR_IN_THE_DICTIONARY', 'int'),
   \ javaapi#field(1,1,'RESULT_ATTR_LOOKS_LIKE_TYPO', 'int'),
   \ javaapi#field(1,1,'RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS', 'int'),
-  \ javaapi#field(1,1,'CREATOR', 'SuggestionsInfo>'),
+  \ javaapi#field(1,1,'CREATOR', 'Creator'),
   \ javaapi#method(0,1,'SuggestionsInfo(', 'int, String[])', ''),
   \ javaapi#method(0,1,'SuggestionsInfo(', 'int, String[], int, int)', ''),
   \ javaapi#method(0,1,'SuggestionsInfo(', 'Parcel)', ''),
